@@ -266,11 +266,8 @@ table.hlcodetable {
 
 #content {
 	padding-bottom: 40px;
+	margin-bottom: 10px;
   border-bottom: 1px dashed #E5D6D6;
-}
-
-#footer{
-	padding-top: 15px;
 }
 
 .btn {

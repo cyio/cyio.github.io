@@ -28,5 +28,6 @@
 	#container{
 		width: 95%;
 		padding: 1.5em .5em;
+		overflow: hidden;
 		}
 }
