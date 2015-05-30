@@ -23,7 +23,7 @@
             <div id="content" class="markdown-body">
                 <image id="wait" src="wait.gif" class="aligncenter"></image>
             </div>
-            <div id="comment">
+            <div id="comment" class="btn">
             </div>
         </div>
         <div id="footer"></div>
@@ -45,7 +45,7 @@
                 var comment = document.getElementById("comment");
                 var href = document.createElement("a");
                 href.href = getCommentUrl(id);
-                var txt = document.createTextNode("Click here to comments");
+                var txt = document.createTextNode("Comment");
                 href.appendChild(txt);
                 comment.appendChild(href);
             });
