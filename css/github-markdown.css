@@ -6,7 +6,7 @@
 .markdown-body {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-  color: #333;
+  color: #424242;
   overflow: hidden;
   font-family: Cousine, "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
   font-size: 16px;
@@ -182,14 +182,14 @@
 }
 
 .markdown-body code {
-  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-family: Cousine, Consolas, "Liberation Mono", Menlo, Courier, monospace;
   font-size: 12px;
 }
 
 .markdown-body pre {
   margin-top: 0;
   margin-bottom: 0;
-  font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font: 12px Cousine, Consolas, "Liberation Mono", Menlo, Courier, monospace;
 }
 
 .markdown-body .octicon {
@@ -471,7 +471,7 @@
   overflow: auto;
   font-size: 85%;
   line-height: 1.45;
-  background-color: #f7f7f7;
+  background-color: #E4E4E4;
   border-radius: 3px;
 }
 
