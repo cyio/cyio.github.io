@@ -126,7 +126,7 @@ pre code {
 /* Custom Configuration */
 #container {
     background: #F5F5F5;
-    width: 50em;
+    width: 700px;
     line-height: 1.5em;
     margin: 1.5em auto 3em auto;
     padding: 1.5em 2em;
@@ -262,48 +262,11 @@ table.hlcodetable {
     display: block;
     margin:auto;
 }
+
 /* by Oaker */
 
 #content {
 	padding-bottom: 40px;
 	margin-bottom: 10px;
   border-bottom: 1px dashed #BDBABA;
-}
-
-.btn {
-  position: relative;
-  display: inline-block;
-  padding: 6px 12px;
-  font-size: 13px;
-  font-weight: bold;
-  line-height: 20px;
-  color: #333;
-  white-space: nowrap;
-  vertical-align: middle;
-  cursor: pointer;
-  background-color: #EEE;
-  background-image: linear-gradient(#FCFCFC, #EEE);
-  border: 1px solid #D5D5D5;
-  border-radius: 3px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-appearance: none;
-}
-
-.btn:focus {
-    text-decoration: none;
-    border-color: #51a7e8;
-    outline: none;
-    box-shadow: 0 0 5px rgba(81, 167, 232, 0.5)
-}
-.btn:focus:hover, .btn.selected:focus {
-    border-color: #51a7e8
-}
-.btn:hover, .btn:active {
-    text-decoration: none;
-    background-color: #ddd;
-    background-image: linear-gradient(#eee, #ddd);
-    border-color: #ccc
 }
