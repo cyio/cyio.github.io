@@ -182,7 +182,7 @@
 }
 
 .markdown-body code {
-	font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+	font-family:  "Droid Sans Mono", Consolas, "Liberation Mono", Menlo, Courier, monospace;
 	font-size: 12px;
 }
 
