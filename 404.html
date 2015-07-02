@@ -30,7 +30,7 @@
 		<div class="clearfix"></div>
 		<div id="title"></div>
 		<div id="content" class="markdown-body">
-			<image id="wait" src="wait.gif" class="aligncenter"></image>
+<!--			<img id="wait" src="wait.gif" class="aligncenter">-->
 		</div>
 		<div id="comment" class="btn">
 		</div>
@@ -45,7 +45,7 @@
 	// id = 1; // for local test.
 	if (id) {
 		getJSON(getIssuesUrl(id), function (data) {
-			setTitle(config.blog_name + " - " + data.title);
+			setTitle(data.title + " - " + config.blog_name);
 			var title = document.getElementById("title");
 			var txt = document.createTextNode(data.title);
 			title.appendChild(txt);
