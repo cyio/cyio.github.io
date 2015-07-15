@@ -4,3 +4,4 @@
 todo:
 - [x]添加文章目录
 参考：[一段JS代码让Markdown自动生成目录 - Ray](http://iyanlei.com/markdown_catelog.html)
+- 自己添加的js没有执行，待解决

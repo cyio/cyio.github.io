@@ -430,7 +430,7 @@
 	background-color: #f8f8f8;
 }
 
-.markdown-body img {
+.markdown-body img:not(#wait) {
 	max-width: 100%;
 	box-sizing: border-box;
 	box-shadow: 0 10px 25px #737373;
@@ -474,8 +474,9 @@
 	overflow: auto;
 	font-size: 85%;
 	line-height: 1.45;
-	background-color: #E4E4E4;
+	background-color: #F8F8F8;
 	border-radius: 3px;
+	border-color: #E7E7E7;
 }
 
 .markdown-body .highlight pre {
