@@ -31,7 +31,6 @@
 		<div id="content" class="markdown-body">
 			<img id="wait" src="wait.gif" class="aligncenter"></img>
 		</div>
-		<div id="toc"></div>
 		<div id="comment" class="btn"></div>
 	</div>
 	<div id="footer"></div>
@@ -64,12 +63,13 @@
 <script src="http://libs.useso.com/js/jquery/2.1.1/jquery.min.js"></script>
 <script>
 	// $(document).ready(function(){
-//	$("#content").children(":first").before('<button onclick="show_toc()" style="padding: 2px 82px;">目录</button>')  
+//	$("#content").children(":first").before('<button onclick="show_toc()" style="padding: 2px 82px;">目录</button>')
+
 	function show_toc() {
 //		if (document.getElementById("toc")) {
 //			$("#toc").remove()
 //		} else {
-//			$("#content").children(":first").before('<div id="toc" style="background-color: #FFF;border: 1px solid #D8D8D8;border-radius: 3px;padding-left: 0;width: 200px;"></div>');
+			$("#content").before('<div id="toc" style="background-color: #FFF;border: 1px solid #D8D8D8;border-radius: 3px;padding-left: 0;width: 200px;"></div>');
 			$("h2,h3,h4,h5,h6").each(function (i, item) {
 				var tag = $(item).get(0).localName;
 				$(item).attr("id", "wow" + i);
@@ -82,7 +82,7 @@
 			});
 //		};
 	};
-  $(document).ready(function show_toc());
+  show_toc()
 </script>
 
 </html>
