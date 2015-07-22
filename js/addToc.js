@@ -12,4 +12,4 @@ function show_toc() {
   });
 }
 
-addLoadEvent(show_toc);
+setTimeout('addLoadEvent(show_toc())',3000)
