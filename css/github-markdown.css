@@ -433,8 +433,9 @@
 .markdown-body img:not(#wait) {
 	max-width: 100%;
 	box-sizing: border-box;
-	box-shadow: 0 10px 25px #737373;
-	margin: 20px;
+	box-shadow: 0 0 25px 2px #B3B3B3;
+	margin-top: 10px;
+	margin-bottom: 10px;
 }
 
 .markdown-body code {
@@ -443,7 +444,7 @@
 	padding-bottom: 0.2em;
 	margin: 0;
 	font-size: 85%;
-	background-color: #DDD;
+	background-color: #D8DFED;
 	border-radius: 3px;
 	color: #1D1D1D;
 }
