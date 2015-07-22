@@ -1,17 +1,15 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<!doctype html>
+<html lang="zh-CN" xml:lang="zh-CN">
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<link rel="stylesheet" href="css/normalize.css">
-	<link rel="Stylesheet" type="text/css" href="css/style.css">
-	<link rel="Stylesheet" type="text/css" href="css/tango.css">
-	<link rel="Stylesheet" type="text/css" href="css/github-markdown.css">
-	<link rel="stylesheet" href="css/media-queries.css">
-	<link href='http://fonts.useso.com/css?family=Cousine|Droid+Sans+Mono' rel='stylesheet' type='text/css'>
+	<link rel="Stylesheet" href="css/style.css">
+	<link rel="Stylesheet" href="css/tango.css">
+	<link rel="Stylesheet" href="css/github-markdown.css">
+	<link rel="stylesheet" href="css/media-queries.css">	
 	<title></title>
 	<script src="config.js"></script>
 	<script src="ajax.js"></script>
@@ -59,21 +57,9 @@
 		location.replace("/");
 	}
 </script>
-<script src="http://libs.useso.com/js/jquery/2.1.1/jquery.min.js"></script>
-<script>
-	$(document).ready(function show_toc() {
-			$("#content").before('<div id="toc" style="background-color: #FFF;border: 1px solid #D8D8D8;border-radius: 3px;padding-left: 0;width: 200px;"></div>');
-			$("h2,h3,h4,h5,h6").each(function (i, item) {
-				var tag = $(item).get(0).localName;
-				$(item).attr("id", "wow" + i);
-				$("#toc").append('<a class="new' + tag + '" href="#wow' + i + '" style="position: relative;display: block;padding: 8px 10px 8px 0;text-shadow: 0 1px 0 #FFF;border-bottom: 1px solid #EEE;font-size: 13px;">' + $(this).text() + '</a>');
-				$(".newh2").css("margin-left", 0);
-				$(".newh3").css("margin-left", 20);
-				$(".newh4").css("margin-left", 40);
-				$(".newh5").css("margin-left", 60);
-				$(".newh6").css("margin-left", 80);
-			});
-	})
-</script>
+<script type="text/javascript" src="http://libs.useso.com/js/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/addLoadEvent.js"></script>
+<script type="text/javascript" src="js/addToc.js"></script>
+<link href='http://fonts.useso.com/css?family=Cousine|Droid+Sans+Mono' rel='stylesheet' type='text/css'>
 
 </html>
