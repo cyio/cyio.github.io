@@ -333,7 +333,10 @@ table.hlcodetable {
   top: 162px;
   right: -webkit-calc(50% - 555px);
   right: calc(50% - 555px);
-  overflow: hidden;
+  background-color: #FFF;
+  border: 1px solid #D8D8D8;
+  border-radius: 3%;
+  width: 200px;
 }
 
 #toc a {
@@ -351,4 +354,9 @@ table.hlcodetable {
 #toc a:hover {
   text-decoration: none;
   background-color: #FAFAFA;
+}
+
+#toc a{
+  -webkit-transition: all .3s;
+  transition: all .3s;
 }
