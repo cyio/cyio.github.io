@@ -61,13 +61,7 @@
 </script>
 <script src="http://libs.useso.com/js/jquery/2.1.1/jquery.min.js"></script>
 <script>
-	// $(document).ready(function(){
-//	$("#content").children(":first").before('<button onclick="show_toc()" style="padding: 2px 82px;">目录</button>')
-
-	function show_toc() {
-//		if (document.getElementById("toc")) {
-//			$("#toc").remove()
-//		} else {
+	$(document).ready(function show_toc() {
 			$("#content").before('<div id="toc" style="background-color: #FFF;border: 1px solid #D8D8D8;border-radius: 3px;padding-left: 0;width: 200px;"></div>');
 			$("h2,h3,h4,h5,h6").each(function (i, item) {
 				var tag = $(item).get(0).localName;
@@ -79,9 +73,7 @@
 				$(".newh5").css("margin-left", 60);
 				$(".newh6").css("margin-left", 80);
 			});
-//		};
-	};
-  show_toc()
+	})
 </script>
 
 </html>
