@@ -1,7 +1,10 @@
-@media only screen and (max-width: 959px){
-	#container{
-		width: 95%;
-		padding: 1.5em .5em;
-		overflow: hidden;
-		}
+@media only screen and (max-width: 959px) {
+  #container {
+    width: 95%;
+    padding: 1.5em .5em;
+    overflow: hidden;
+  }
+  #toc {
+    display: none;
+  }
 }
