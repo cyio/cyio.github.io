@@ -1,11 +1,1 @@
-function addLoadEvent(func) {
-  var oldonload = window.onload;
-  if (typeof window.onload != 'function') {
-    window.onload = func;
-  } else {
-    window.onload = function() {
-      oldonload();
-      func();
-    }
-  }
-}
+function addLoadEvent(o){var n=window.onload;window.onload="function"!=typeof window.onload?o:function(){n(),o()}}
