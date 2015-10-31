@@ -326,6 +326,7 @@ table.hlcodetable {
   padding: 0 12px 40px;
   margin-bottom: 10px;
   border-bottom: 1px dashed #BDBABA;
+  min-height: 500px;
 }
 
 #toc {
@@ -366,9 +367,8 @@ table.hlcodetable {
   width: 1em;
   height: 1em;
   border-radius: 50%;
-  margin: 100px auto;
+  margin: 30% auto;
   box-shadow: 0 -2em rgba(255, 0, 0, 1), 1.414em -1.414em rgba(255, 165, 0, 0.875), 2em 0 rgba(0, 128, 0, 0.75), 1.414em 1.414em rgba(0, 0, 255, 0.625), 0 2em rgba(75, 0, 130, 0.5), -1.414em 1.414em rgba(238, 130, 238, 0.375), -2em 0 rgba(255, 0, 0, 0.25), -1.414em -1.414em rgba(255, 0, 0, 0.125);
-
   animation: rotate 1s infinite forwards steps(8, end);
 }
 
