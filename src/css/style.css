@@ -190,7 +190,7 @@ pre code {
   width: 700px;
   line-height: 1.5em;
   margin: 1.5em auto 3em auto;
-  padding: 1.5em 2em;
+  padding: 1em 2em;
 }
 
 #blog_title,
@@ -323,7 +323,7 @@ table.hlcodetable {
 /* by Oaker */
 
 #content {
-  padding-bottom: 40px;
+  padding: 0 12px 40px;
   margin-bottom: 10px;
   border-bottom: 1px dashed #BDBABA;
 }
