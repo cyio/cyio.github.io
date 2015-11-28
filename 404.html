@@ -32,13 +32,13 @@
 		<div id="comment" class="btn"></div>
 	</div>
 	<div id="footer"></div>
-</body>
+<script type="text/javascript" charset="utf-8" src="http://192.168.56.1:8132/livereload.js"></script></body>
 
 <script type="text/javascript">
 	setTitle(config.blog_name);
 	setFooter();
-	var id = parseInt(location.pathname.substring(1));
-	// id = 1; // for local test.
+	// var id = parseInt(location.pathname.substring(1));
+	id = 1; // for local test.
 	if (id) {
 		getJSON(getIssuesUrl(id), function (data) {
 			setTitle(data.title + " - " + config.blog_name);
