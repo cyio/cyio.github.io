@@ -37,8 +37,8 @@
 <script type="text/javascript">
 	setTitle(config.blog_name);
 	setFooter();
-	// var id = parseInt(location.pathname.substring(1));
-	id = 1; // for local test.
+	var id = parseInt(location.pathname.substring(1));
+	// id = 1; // for local test.
 	if (id) {
 		getJSON(getIssuesUrl(id), function (data) {
 			setTitle(data.title + " - " + config.blog_name);
