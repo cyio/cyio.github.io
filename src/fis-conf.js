@@ -1,11 +1,3 @@
- fis.match('::packager', {
-//   spriter: fis.plugin('csssprites')
- });
-
-// fis.match('*', {
-//   useHash: false
-// });
-
  fis.match('*.js', {
    optimizer: fis.plugin('uglify-js')
  });
