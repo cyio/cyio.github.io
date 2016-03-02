@@ -1,1 +1,1 @@
-function addLoadEvent(o){var n=window.onload;window.onload="function"!=typeof window.onload?o:function(){n(),o()}}
+function addLoadEvent(o){var n=window.onload;"function"!=typeof window.onload?window.onload=o:window.onload=function(){n(),o()}}

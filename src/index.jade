@@ -1,42 +1,38 @@
-<!DOCTYPE html>
-<html lang="zh-CN" xml:lang="zh-CN">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="Stylesheet" href="css/style.css">
-    <!-- link(rel='Stylesheet', href='css/tango.css')-->
-    <link rel="Stylesheet" href="css/github-markdown.css">
-    <link rel="stylesheet" href="css/media-queries.css">
-    <!-- link(href='http://fonts.useso.com/css?family=Cousine|Droid+Sans+Mono', rel='stylesheet', type='text/css')-->
-    <title></title>
-    <script src="js/detect-microsoft-edge.js"></script>
-    <script src="config.js"></script>
-    <script src="ajax.js"></script>
-    <script src="util.js"></script>
-  </head>
-  <body>
-    <div id="container">
-      <div id="blog_title"></div>
-      <div id="index">
-        <!-- img#wait.aligncenter(src='wait.gif')-->
-        <div id="wait" class="loading-book"></div>
-        <ul id="post_list"></ul>
-        <div class="clearfix"></div>
-      </div>
-    </div>
-    <div id="footer"></div>
-  </body>
-</html>
-<script>
+doctype
+html(lang='zh-CN', xml:lang='zh-CN')
+  head
+    meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+    meta(http-equiv='x-ua-compatible', content='ie=edge')
+    meta(name='viewport', content='width=device-width,initial-scale=1')
+    link(rel='stylesheet', href='css/normalize.css')
+    link(rel='Stylesheet', href='css/style.css')
+    // link(rel='Stylesheet', href='css/tango.css')
+    link(rel='Stylesheet', href='css/github-markdown.css')
+    link(rel='stylesheet', href='css/media-queries.css')
+    // link(href='http://fonts.useso.com/css?family=Cousine|Droid+Sans+Mono', rel='stylesheet', type='text/css')
+    title
+    script(src='js/detect-microsoft-edge.js')
+    script(src='config.js')
+    script(src='ajax.js')
+    script(src='util.js')
+  body
+    #container
+      #blog_title
+      #index
+        // img#wait.aligncenter(src='wait.gif')
+        #wait.loading-book
+        ul#post_list
+        .clearfix
+    #footer
+
+script.
   setTitle(config.blog_name);
   setBlogName();
   setFooter();
   var page = 1;
   var link = {};
   var postlist = document.getElementById("post_list");
-  
+
   function loadPage(page) {
   	var more = document.getElementById("more");
   	if (more) {
@@ -59,7 +55,7 @@
   			href.appendChild(txt);
   			posttitle.appendChild(href);
   		}
-  
+
   		if (headers.Link) {
   			var linkArray = headers.Link.split(",");
   			for (var i = 0; i < linkArray.length; i++) {
@@ -84,4 +80,3 @@
   	});
   }
   loadPage(1);
-</script>
