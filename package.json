@@ -1,0 +1,31 @@
+{
+  "name": "cyio.github.io",
+  "version": "1.0.0",
+  "description": "personal blog based github issues",
+  "main": "ajax.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cyio/cyio.github.io.git"
+  },
+  "keywords": [
+    "blog"
+  ],
+  "author": "oaker",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cyio/cyio.github.io/issues"
+  },
+  "homepage": "https://github.com/cyio/cyio.github.io#readme",
+  "devDependencies": {
+    "browser-sync": "^2.11.1",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^2.0.2",
+    "gulp-dest": "^0.2.3",
+    "gulp-jade": "^1.1.0",
+    "gulp-uglify": "^1.5.3",
+    "gulp-util": "^3.0.7"
+  }
+}
