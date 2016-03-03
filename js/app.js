@@ -1,1 +1,82 @@
-function gotoHome(){function e(e){var a=document.getElementById("more");if(a){removeChildById(n,"more");var o=document.createElement("img");o.id="more",o.src="littlewait.gif",n.appendChild(o)}getJSON(getPageUrl(e),function(a,o){removeChildById(document.getElementById("index"),"wait"),removeChildById(n,"more");for(var d=0;d<a.length;d++){var r=document.createElement("li");r.className="pagelist",n.appendChild(r);var l=document.createElement("a");l.href="?p="+a[d].number+"&t="+(new Date).getTime();var m=document.createTextNode(a[d].title);l.appendChild(m),r.appendChild(l)}if(o.Link){for(var i=o.Link.split(","),d=0;d<i.length;d++){var c=i[d].match(/\?per_page=(\d+)&page=(\d+)>; rel="(\w+)"/);c&&(t[c[3]]={per_page:c[1],page:c[2]})}var g=parseInt(t.last.page);if(g>e){var l=document.createElement("a");l.id="more",l.href="javascript:loadPage("+(e+1)+");";var m=document.createTextNode("More");l.appendChild(m),n.appendChild(l)}}})}setTitle(config.blog_name),setBlogName(),setFooter();var t={},n=document.getElementById("post_list");e(1)}function gotoPage(e){setTitle(config.blog_name),setFooter(),getJSON(getIssuesUrl(e),function(t){setTitle(config.blog_name+" - "+t.title);var n=document.getElementById("title"),a=document.createTextNode(t.title);n.appendChild(a);var o=document.getElementById("content");renderMarkdown(o,t.body);var d=document.getElementById("comment"),r=document.createElement("a");r.href=getCommentUrl(e);var a=document.createTextNode("Click here to comments");r.appendChild(a),d.appendChild(r)})}
+function gotoHome()
+{
+    setTitle(config.blog_name);
+    setBlogName();
+    setFooter();
+    var page = 1;
+    var link = {};
+    var postlist = document.getElementById("post_list");
+    function loadPage(page) {
+        var more = document.getElementById("more");
+        if (more) {
+            removeChildById(postlist, "more");
+            var newMore = document.createElement("img");
+            newMore.id = "more";
+            newMore.src = "littlewait.gif";
+            postlist.appendChild(newMore);
+        }
+        getJSON(getPageUrl(page), function(data, headers) {
+            if (more) {
+                removeChildById(postlist, "more");
+            } else {
+                removeChildById(document.getElementById("index"), "wait");
+            }
+            for (var i=0; i<data.length; i++) {
+                var posttitle = document.createElement("li");
+                posttitle.className = "pagelist";
+                postlist.appendChild(posttitle);
+                var href = document.createElement("a");
+                href.href = "?p="+data[i].number+"&t="+(new Date().getTime());
+                var txt = document.createTextNode(data[i].title);
+                href.appendChild(txt);
+                posttitle.appendChild(href);
+            }
+
+            if (headers.Link) {
+                var linkArray = headers.Link.split(",");
+                for (var i=0; i<linkArray.length; i++) {
+                    var m = linkArray[i].match(/\?per_page=(\d+)&page=(\d+)&access_token=[a-z0-9]+>; rel="(\w+)"/);
+                    if (m) {
+                        link[m[3]] = {
+                            "per_page": m[1],
+                            "page": m[2]
+                        }
+                    }
+                }
+                var last = parseInt(link.last.page);
+                if (page<last) {
+                    var href = document.createElement("a");
+                    href.id = "more";
+                    href.addEventListener("click", function() {
+                      loadPage(page+1)
+                    });
+                    var txt = document.createTextNode("More");
+                    href.appendChild(txt);
+                    postlist.appendChild(href);
+                }
+            }
+        });
+    }
+    loadPage(1);
+}
+
+function gotoPage(id)
+{
+    setTitle(config.blog_name);
+    setFooter();
+    getJSON(getIssuesUrl(id), function(data) {
+        setTitle(config.blog_name + " - " + data.title);
+        var title = document.getElementById("title");
+        var txt = document.createTextNode(data.title);
+        title.appendChild(txt);
+        var content = document.getElementById("content");
+        renderMarkdown(content, data.body);
+        var comment = document.getElementById("comment");
+        var href = document.createElement("a");
+        href.href = getCommentUrl(id);
+        var txt = document.createTextNode("Click here to comments");
+        href.appendChild(txt);
+        comment.appendChild(href);
+    });
+}
+
