@@ -32,7 +32,7 @@ function gotoHome()
             if (headers.Link) {
                 var linkArray = headers.Link.split(",");
                 for (var i=0; i<linkArray.length; i++) {
-                    var m = linkArray[i].match(/\?per_page=(\d+)&page=(\d+)>; rel="(\w+)"/);
+                    var m = linkArray[i].match(/\?per_page=(\d+)&page=(\d+)&access_token=[a-z0-9]+>; rel="(\w+)"/);
                     if (m) {
                         link[m[3]] = {
                             "per_page": m[1],
