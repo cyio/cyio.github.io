@@ -16,8 +16,11 @@ function gotoHome()
             postlist.appendChild(newMore);
         }
         getJSON(getPageUrl(page), function(data, headers) {
-            removeChildById(document.getElementById("index"), "wait");
-            removeChildById(postlist, "more");
+            if (more) {
+                removeChildById(postlist, "more");
+            } else {
+                removeChildById(document.getElementById("index"), "wait");
+            }
             for (var i=0; i<data.length; i++) {
                 var posttitle = document.createElement("li");
                 posttitle.className = "pagelist";
@@ -44,7 +47,9 @@ function gotoHome()
                 if (page<last) {
                     var href = document.createElement("a");
                     href.id = "more";
-                    href.href = "javascript:loadPage("+(page+1)+");";
+                    href.addEventListener("click", function() {
+                      loadPage(page+1)
+                    });
                     var txt = document.createTextNode("More");
                     href.appendChild(txt);
                     postlist.appendChild(href);
