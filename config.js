@@ -1,1 +1,0 @@
-config={blog_name:"Oaker's Blog",github_username:"cyio",github_repo:"cyio.github.io",per_page:10};

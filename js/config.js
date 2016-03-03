@@ -1,0 +1,1 @@
+config={blog_name:"Oaker's Blog",github_username:"cyio",github_repo:"cyio.github.io",per_page:10,access_token:"0a3ffcc46865e590820e675798b4f5fdc0a332ea"};
