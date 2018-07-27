@@ -10,7 +10,7 @@ cache:
 before_install:
   - git config --global user.name "cyio"
   - git config --global user.email "ibeceo@gmail.com"
-  - git clone --branch master https://github.com/cyio/cyio.github.io.git dist
+  - git clone --branch dev https://github.com/cyio/cyio.github.io.git
 install:
   - npm install
 script:
