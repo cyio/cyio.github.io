@@ -1,0 +1,27 @@
+branches:
+  only:
+  - dev
+language: node_js
+sudo: false
+node_js: stable
+cache:
+  directories:
+  - node_modules
+before_install:
+  - git config --global user.name "cyio"
+  - git config --global user.email "ibeceo@gmail.com"
+  - git clone --branch master https://github.com/cyio/cyio.github.io.git dist
+install:
+  - npm install
+script:
+  - npm run docs:build
+after_script:
+  - cd docs/.vuepress/dist
+  - git init
+  - git add --all .
+  - git commit --message "auto deploy"
+  - git push "https://${GITHUB_TOKEN}@${GH_REF}" master:master
+env:
+  global:
+    - GH_REF: github.com/cyio/cyio.github.io.git
+    - secure: krWUI1hujIaNbX+tCYXmjTtnQsZ0KlEERSQ6hbVRn07AIzhbdTObsMYuOsgul9cJVd6TiD3cJq0F1jLealgfIFIoBxbKVToQiaNdxqGvITFpu89haFiuYR6J4LT2w5kIAHkqEXxrsuFvfJAu4yo4UWhyQgtjtFAIuCkAMWtC+l7nGiUIdY8KE6WU8cR7BdXzWvdKbby5DGZEDSu05iKA7r1ZTUgN2ivZRF4J1dYooKJRKjqo2s3SqvC6qkf6COQ5XMkFRMakbAa8cewSCkJ/5Ljt3JfyFr3Y8sN/nJcUsksKR/Ye77LCfxV76CGx1hmhRraOM1+sTpo2Vua95CsstRrS3yXjSBhzOIEE8Y0GLiORJz/DjOKxaVqQtOrGMQSq8q7dJBXPf6jZuMSzeys6M/IuOsTYoJ+nTrFtR3fyzUg4cjsyDIssY6vrEJ0Zq3e3SlkSaEP8NlpBt7zlVRPZk9enmRVqSROcvqUiNKHkBjv6HlLfA+ShZ5w/dDZ+0hcGn5cTYliV6h6KXj2/loWrvIoUHsmd4eEZ8eXl7Ivy2qOl3PzrCUHD5U0GQK/zFyQd4bHZt+ToIM6F2/Yp/R28AYDH5RyzggmBF4luknL3xCyuaqOyoBhlt3cwtZUaBMO/y/bZjoL8RCKtWXmY5PL5793zqnv9RRWHCv8t1rki6Es=
