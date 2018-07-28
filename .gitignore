@@ -79,5 +79,5 @@ typings/
 
 # End of https://www.gitignore.io/api/node
 
-docs/.vuepress
+docs/.vuepress/dist
 dist

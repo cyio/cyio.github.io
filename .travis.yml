@@ -18,6 +18,7 @@ script:
 after_script:
   - cd dist/docs/.vuepress/dist
   - git init
+  - git branch
   - git add --all .
   - git commit --message "auto deploy"
   - git push -f "https://${GITHUB_TOKEN}@${GH_REF}" master
