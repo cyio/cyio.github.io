@@ -8,20 +8,20 @@ cache:
   directories:
   - node_modules
 before_install:
-  - git config --global user.name "cyio"
-  - git config --global user.email "ibeceo@gmail.com"
-  - git clone --branch dev https://github.com/cyio/cyio.github.io.git
+- git config --global user.name "cyio"
+- git config --global user.email "ibeceo@gmail.com"
+- git clone --branch dev https://github.com/cyio/cyio.github.io.git
 install:
-  - npm install
+- npm install
 script:
-  - npm run docs:build
+- npm run docs:build
 after_script:
-  - cd docs/.vuepress/dist
-  - git init
-  - git add --all .
-  - git commit --message "auto deploy"
-  - git push -f "https://${GITHUB_TOKEN}@${GH_REF}" master
+- cd docs/.vuepress/dist
+- git init
+- git add --all .
+- git commit --message "auto deploy"
+- git push -f "https://${GITHUB_TOKEN}@${GH_REF}" master
 env:
   global:
-    - GH_REF: github.com/cyio/cyio.github.io.git
-    - secure: krWUI1hujIaNbX+tCYXmjTtnQsZ0KlEERSQ6hbVRn07AIzhbdTObsMYuOsgul9cJVd6TiD3cJq0F1jLealgfIFIoBxbKVToQiaNdxqGvITFpu89haFiuYR6J4LT2w5kIAHkqEXxrsuFvfJAu4yo4UWhyQgtjtFAIuCkAMWtC+l7nGiUIdY8KE6WU8cR7BdXzWvdKbby5DGZEDSu05iKA7r1ZTUgN2ivZRF4J1dYooKJRKjqo2s3SqvC6qkf6COQ5XMkFRMakbAa8cewSCkJ/5Ljt3JfyFr3Y8sN/nJcUsksKR/Ye77LCfxV76CGx1hmhRraOM1+sTpo2Vua95CsstRrS3yXjSBhzOIEE8Y0GLiORJz/DjOKxaVqQtOrGMQSq8q7dJBXPf6jZuMSzeys6M/IuOsTYoJ+nTrFtR3fyzUg4cjsyDIssY6vrEJ0Zq3e3SlkSaEP8NlpBt7zlVRPZk9enmRVqSROcvqUiNKHkBjv6HlLfA+ShZ5w/dDZ+0hcGn5cTYliV6h6KXj2/loWrvIoUHsmd4eEZ8eXl7Ivy2qOl3PzrCUHD5U0GQK/zFyQd4bHZt+ToIM6F2/Yp/R28AYDH5RyzggmBF4luknL3xCyuaqOyoBhlt3cwtZUaBMO/y/bZjoL8RCKtWXmY5PL5793zqnv9RRWHCv8t1rki6Es=
+  - GH_REF: github.com/cyio/cyio.github.io.git
+  - secure: YUuusBs+U7XpC+qkSbFHUg+DusBx7s0yuEdzXi65GzDaYt9/jV6q7caJ7djH9eE/na0t6zZ9wERl0B7CMOgCNexpySizO5K8kRBYQut1qOgo2ruNCiNauW5/R7zEqn/8024Kj7ZV3dO2JOh/IDb8OY6acViout5KvfHQYmOhfj4WsIBxEvNTnBZpQGwPdqRL6xGcPjLWVlKcpPYaBlocoVbDm0Dfnllsz/F4vE2C/YjeLt8xzVDlDRjp0Kd6ZeyeEaL6ecg6O6qYoqYLAKfR5Gl3EDp7is9+w0WTvHDPkDCWDDM+QEheoE5ylgTfCYsnNY/mj8CSkhbKCvv6HO4MdcxiHIEqKxsEPVeJfiU1X9Llk6XC9aXxGtUiHAJrhjqngUDQd14jSx6uPLqSdO6NUs5CUtITdN9hj2ZAS18zZ3z3DQwrbzwh9xSHyZDsMf18MVMLPQvR8CNleDvfvUGP6wgIK4craVpZswH7MlYLsDu7SinQFasN3ZzWbTD2ieMkE5zHibxs/8WYgUK8/z6woB3BZAdwUJuaWXD8IWeHeiNF0CQPz+UyZoRrrxSqOrunGx/S8iqNyrmA5SF4Qw6v91C2ozSPdeb8YeZYq8DDOOMNhqdAZbtyQ4BHc6WIfyhcpaD1jb2nmbRimCl/BuMx41df8nSQtiHROzxszt3bk9A=
