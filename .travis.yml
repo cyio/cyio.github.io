@@ -10,15 +10,14 @@ cache:
 before_install:
   - git config --global user.name "cyio"
   - git config --global user.email "ibeceo@gmail.com"
-  - git clone --branch dev https://github.com/cyio/cyio.github.io.git dist
+  - git clone --branch dev https://github.com/cyio/cyio.github.io.git
 install:
   - npm install
 script:
   - npm run docs:build
 after_script:
-  - cd dist/docs/.vuepress/dist
+  - cd docs/.vuepress/dist
   - git init
-  - git branch
   - git add --all .
   - git commit --message "auto deploy"
   - git push -f "https://${GITHUB_TOKEN}@${GH_REF}" master
