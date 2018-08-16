@@ -8,15 +8,11 @@
 ## 数据类型
 
 ES6 共 7 个
-* 6 种原始类型
-Undefined Null Number String Symbol Boolean 
-快记：UNSB 联合国傻逼 两个n
-* object
+* 6 种原始类型`Undefined Null Number String Symbol Boolean`
+* `Object`
 
 #### symbol
-
-ES6 新增，表示独一无二的值，由函数 Symbol() 产生
-可用于对象属性的标识符
+ES6 新增，表示独一无二的值，由函数`Symbol()`产生， 可用于对象属性的标识符
 
 ## 闭包
 无论什么地方，只要临时需要一些变量，就可以使用私有作用域，如：
@@ -32,37 +28,23 @@ function outputNumbers(x){
 outputNumbers(4); //0123
 ```
 
-setTimeout("待执行函数", 毫秒)
-* 最好赋给变量
-* 取消执行 `clearTimeout(变量名)`
-
-```js
-var up = setTimeout(update(), 0)
-function update() {
-    console.log('updated')
-}
-clearTimeout(up)
-```
-
-两个等号 -> 相等
-一个等号 -> 赋值
-
 * JS里的数值都是用浮点数表示的，所以常用到取整的方法 `parseInt`
 
-*  i++ 和 ++i 的区别
-都是对变量自增(原值增1)，区别是返回的值不同，i++ 是旧值，即加之前的，++i是新值，即加之后的值（记忆，变量在前为旧值，在后为新值）
+*  i++ 和 ++i 比较
+  - 都是对变量自增(原值增1)
+  - 区别是返回的值不同，i++ 是旧值，即加之前的，++i是新值，即加之后的值（记忆，变量在前为旧值，在后为新值）
 ```js
 a = 5;
 b = 5;
 c = ++a;
 d = b++;
-// abcd分别是多少
+// abcd 分别是多少
 // 6, 6, 6, 5
 ```
 [operators - javascript i++ vs ++i - Stack Overflow](http://stackoverflow.com/questions/6867876/javascript-i-vs-i)
 
 * 关于转换规则
-- JavaScript会将0、NaN和空字符串("")视为false，其余值视为true
+- JavaScript会将`0、NaN`和空字符串`''`视为false，其余值视为true
 - 使用三字符串运算符，防止意外类型转换的发生
 
 ## 函数式编程

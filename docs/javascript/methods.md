@@ -202,16 +202,25 @@ fetch(url).then(res => res.json().then(console.table))
 * 需要服务器设置支持
 * Access-Control-Allow-Origin 有两种情况，一个域名或`*`
 * Access-Control-Allow-Credentials 表示是否允许发送 cookie，只能是 true，不需要就不要写
-* cookie  比较敏感，需要两端配合，才能传送，且只能同源
+* cookie  比较敏感，需要两端配合，才能传送，且只能同源，域名要求至少有两个点，localhost 不符合
 * 有些操作是浏览器处理的，如 origin 的设置 
+
 [跨域资源共享 CORS 详解 - 阮一峰的网络日志](http://www.ruanyifeng.com/blog/2016/04/cors.html)
+
+[axios的cookie跨域以及相关配置 - 个人文章 - SegmentFault 思否](https://segmentfault.com/a/1190000011811117)
+
+[http - Set-Cookie header has no effect - Stack Overflow](https://stackoverflow.com/questions/46288437/set-cookie-header-has-no-effect)
+
+[ajax如何带上cookie - DCloud问答](https://ask.dcloud.net.cn/article/13372)
+
+[webpack-dev-server 代理解决cookie丢失问题 - 掘金](https://juejin.im/post/5a9e6592f265da23870e59eb)
 
 ## location
 ```js
 location.assign('http://baidu.com')
 location.replace('http://baidu.com')
 ```
-两个方法都会载入一个新地址，区别是replace会抹掉当前页的历史记录（之前的不影响）。
+两个方法都会载入一个新地址，区别是`replace`会抹掉当前页的历史记录（之前的不影响）。
 
 ## map
 
@@ -247,7 +256,7 @@ var num = Math.floor(Math.random() * 9 + 2)
 // 进阶，给定范围直接返回随机数
 function selectFrom (lowerValue, upperValue) {
     var choices = upperValue - lowerValue + 1;
-    return Math.floor(Math.random * choices + lowerValue)
+    return Math.floor(Math.random() * choices + lowerValue)
 }
 
 var num = selectFrom(2, 10);
@@ -318,3 +327,16 @@ function getRandomIntInclusive(min, max) {
 
 HTTP是一种无连接，无状态协议，它只负责HTTP报文，真正维护那个连接的是传输层的TCP协议
 “request”事件对应的是HTTP的request，而“connect/connection”事件才对应着TCP connection
+
+## setTimeout(待执行函数, 毫秒)
+* 最好赋给变量
+* 取消执行 `clearTimeout(变量名)`
+
+```js
+var up = setTimeout(update(), 0)
+function update() {
+    console.log('updated')
+}
+clearTimeout(up)
+```
+

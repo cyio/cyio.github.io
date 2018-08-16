@@ -20,9 +20,9 @@ module.exports = {
       { text: 'CSS', link: '/css/' },
       { text: '框架', link: '/frameworks/' },
       { text: 'Node', link: '/node/' },
-      { text: 'Linux', link: '/linux/' },
+      { text: '工具', link: '/tools/' },
       { text: '项目', link: '/projects/' },
-      { text: '未分类', link: '/uncategorized/' },
+      // { text: '未分类', link: '/uncategorized/' },
       // { text: '关于', link: '/about' },
     ],
     sidebarDepth: 2,
@@ -32,7 +32,7 @@ module.exports = {
       '/css/': genSidebarConfig('css'),
       '/node/': genSidebarConfig('node'),
       '/frameworks/': genSidebarConfig('frameworks'),
-      '/linux/': genSidebarConfig('linux'),
+      '/tools/': genSidebarConfig('tools'),
       // '/blog/',
     }
   },
@@ -45,7 +45,7 @@ function genSidebarConfig (title) {
         title: 'Javascript',
         collapsable: false,
         children: [
-          '',
+          // '',
           'concept',
           'string',
           'array',
@@ -71,7 +71,9 @@ function genSidebarConfig (title) {
         title: 'css',
         collapsable: false,
         children: [
-          '',
+          // '',
+          'pseudo-elements',
+          'grid',
         ]
       },
     ],
@@ -91,18 +93,21 @@ function genSidebarConfig (title) {
         title: 'frameworks',
         collapsable: true,
         children: [
-          '',
+          // '',
           'vue',
+          'react',
+          'react-native',
         ]
       },
     ],
-    'linux': [
+    'tools': [
       {
-        title: 'Linux',
+        title: '工具',
         collapsable: false,
         children: [
           'vim',
           'git',
+          'photoshop',
         ]
       },
     ]

@@ -203,9 +203,9 @@ child3.$dispatch('test')
 
 [计算属性 - vue.js](https://cn.vuejs.org/v2/guide/computed.html#%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7)
 
-## 变化检测问题
+## 变化检测
+要让新增加的值支持响应更新，需挂到data已存在的属性上，不支持添加新的根级响应式属性
 ```js
-// 要让新增加的值支持响应更新，需挂到data已存在的属性上，不支持添加新的根级响应式属性
 this.$set(this.someObject,'b',2)
 ```
 

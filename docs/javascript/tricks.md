@@ -85,3 +85,4 @@ console.log(RandomString(23));
 * [累加按钮，自加1](http://fgm.cc/learn/lesson3/03.html)
 * 初始值为 0
 * `click`一次，将值加1并弹出
+* 不要只是为了添加一个`console.log`来转换箭头函数，你可以用||添加它 然后在以后去掉它
