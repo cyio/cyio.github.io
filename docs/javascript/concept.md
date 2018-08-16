@@ -8,8 +8,8 @@
 ## 数据类型
 
 ES6 共 7 个
-* 6 种原始类型`Undefined Null Number String Symbol Boolean`
-* `Object`
+* 6 个原始类型`Undefined Null Number String Symbol Boolean`
+* 1 个引用类型`Object`
 
 #### symbol
 ES6 新增，表示独一无二的值，由函数`Symbol()`产生， 可用于对象属性的标识符

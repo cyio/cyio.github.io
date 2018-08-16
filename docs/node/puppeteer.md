@@ -4,29 +4,30 @@
 * 截取特定区域，如推文卡片
 
 ## 缺失能力与替代方法
-### 无法处理权限对话框
-指定用户文件夹
+* 无法处理权限对话框，可指定用户文件夹，在指定一次后记住
 
 ## 状态条件
-```
+```js
 // networkidle0 所有请求加载完
 // domcontentloaded 只关心 markup
 await page.goto(url, {waitUtil: 'domcontentloaded'})
 ```
 
 ## 监听页面变化
-```
+```js
 const watchDog = page.waitForFunction('window.innerWidth < 100');
 ```
 
 ## 缓存
+```js
 new Map
 set
 has
+```
 
 
 ## 启动参数
-```
+```js
 const chromeConfig = {
   headless: false, // 为假时打开浏览器窗口，服务端直接注释掉
   args: [
@@ -44,34 +45,34 @@ const chromeConfig = {
 ## 无法选中元素的处理
 CSS 选择器中，没有选择父元素的选择器
 利用`puppeteer.evaluate`，加上 ID
-```
-    // 点击 input name=x 的下拉框中的Item1
-    let name = 'x'
-    let value = 'Item1'
-    let result = await this.page.evaluate((name, value) => {
-      let result = -1
-      let list = document.querySelector('[name=' + name + ']').parentElement.parentElement.children[1].children)
-      for (let i = 0; i < list.length; i++) {
-        let c = list[i]
-        c.id = '_select_' + name + '_' + i
-        if (c.innerText === value) { // found ?
-          result = i
-        }
-      }
-      return result
-    }, name, value)
-    if (result == -1) {
-        throw new Error(value + ' not found!!')
+```js
+// 点击 input name=x 的下拉框中的Item1
+let name = 'x'
+let value = 'Item1'
+let result = await this.page.evaluate((name, value) => {
+  let result = -1
+  let list = document.querySelector('[name=' + name + ']').parentElement.parentElement.children[1].children)
+  for (let i = 0; i < list.length; i++) {
+    let c = list[i]
+    c.id = '_select_' + name + '_' + i
+    if (c.innerText === value) { // found ?
+      result = i
     }
-    await this.page.click('#_select_x_' + result)
+  }
+  return result
+}, name, value)
+if (result == -1) {
+    throw new Error(value + ' not found!!')
+}
+await this.page.click('#_select_x_' + result)
 ```
 
-```
+```js
 var resp = await page.goto(url, {timeout:120000}); var html = await resp.text();
 ```
 
 ## 保存和恢复 localStorage
-```
+```js
 const restoreLocalStorage = async () => {
     let json = JSON.parse(fs.readFileSync(`${__dirname}/local.json`));
     await page.evaluate(json => {
@@ -97,7 +98,7 @@ const restoreLocalStorage = async () => {
 ```
 
 ## 等待元素可见
-```
+```js
 await page.waitForSelector('#element', {
   visible: true,
 })
@@ -109,7 +110,7 @@ await page.waitForSelector('#element', {
 但是遇到一些网站，并没有对外开放API接口，每次请求数据是通过登录后的Cookis进行判断。这时候我们也可以使用Request,截取Set-Cookie 头部信息即可。
 
 但是，还有一些网站，在登录时候，需要添加服务器发送给客户端的安全码，这个时候如果单单使用Request就有些费力了。
-```
+```js
 page.on('response', res => {
     if(res.hasOwnProperty('headers')){
         for(let key in res.headers){
@@ -123,7 +124,7 @@ page.on('response', res => {
 });
 ```
 ## cookie 存取
-```
+```js
 // here --->
 const sessionCookies = await page.cookies();
 
@@ -142,7 +143,7 @@ fs.writeFileSync(`${dir}/cookie.txt`, JSON.stringify(cookies, null, '\t'))
 ```
 
 ## 结合 cheerio
-```
+```js
 const puppeteer = require('puppeteer');
 const cheerio = require('cheerio');
 (async function () {
