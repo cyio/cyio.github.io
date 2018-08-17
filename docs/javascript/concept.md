@@ -300,3 +300,4 @@ var calculateBonus = function(level, salary) {
 console.log(calculateBonus('A', 5000));
 console.log(calculateBonus('S', 5000));
 ```
+

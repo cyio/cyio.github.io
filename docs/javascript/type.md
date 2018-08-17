@@ -25,25 +25,7 @@ xxx instanceof Array
 
 如果要使用某种数据类型的方法，最好在开始检测数据类型，以免传入不合适的类型导致错误
 
-## 数据判断不严谨
-原来是这么写的，数据是数字，存在数据时显示，有什么问题呢？
-```js
-| {{#if data.score_left3}}
-li {{data.score_left3}}
-| {{/if}}
-```
-本地端，无数据时，空。
-服务端，无数据显示成了null，而0也会被视作  
-![null](http://ww1.sinaimg.cn/large/4e5d3ea7jw1eynp4psv0yj204a03lq34.jpg)
-
-这时尝试去判断undefined
-```js
-| {{#js_compare "typeof(this.data.score_left3) !== 'undefined' && this.data.score_left3 !== null"}}
-li {{data.score_left3}}
-| {{/js_compare}}
-```
-
-
+## 类型判断
 ```js
 typeof [1, 2]
 //"object"   无法区分数组和对象

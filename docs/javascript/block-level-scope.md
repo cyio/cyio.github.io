@@ -9,20 +9,20 @@
 但是，在JS中，作用域是在函数体内。
 ```js
 function outputNumbers(count) {
-    for (var i = 0; i < count; i++) {
-        alert(i);
-    }
-    alert(i);   // 计数
+  for (var i = 0; i < count; i++) {
+    alert(i);
+  }
+  alert(i);   // 计数
 }
 ```
 重新声明会被忽视，且不会改变它的值。
 ```js
 function outputNumbers(count) {
-    for (var i = 0; i < count; i++) {
-        alert(i);
-    }
-    var i;
-    alert(i);   // 计数
+  for (var i = 0; i < count; i++) {
+    alert(i);
+  }
+  var i;
+  alert(i);   // 计数
 }
 ```
 
@@ -31,23 +31,34 @@ function outputNumbers(count) {
 这里是一种 hack，因为目的并不是要创建一个函数，只是借助函数生成块级作用域
 ```js
 (funciton(){
-    // 块级作用域
+  // 块级作用域
 })()
 ```
 第一对圆括号是干嘛的？能省略吗？
 ```js
 funciton(){
-    // 块级作用域
+  // 块级作用域
 }()  // 报错
 ```
 因为在JS中 function 作为关键字开头，表示函数，后面不能接圆括号。
 ```js
 var someFunction = funciton(){
-    // 块级作用域
+  // 块级作用域
 }
 someFunction();
 ```
 这段代码的含义是创建一个匿名函数，然后将其赋值给变量someFunction
+
+## ES6
+大括号内声明的`let const function`，都是块内有效
+```js
+let i = 1
+{
+  let i = 2
+  console.log(i)
+}
+console.log(i)
+```
 
 ## 何时使用
 无论在什么地方，只要临时需要一些变量
@@ -57,8 +68,8 @@ someFunction();
 // 因为 var 没有块级作用域，setTimeout 中的函数是另外一个作用域，执行时 i 已经循环完，打印 10
 // 改成 let 后，保持在作用域内有效
 for(let i = 0; i < 10; i += 1) {
-	setTimeout(() => {
-		console.log(i);
-	}, 100);
+  setTimeout(() => {
+    console.log(i);
+  }, 100);
 }
 ```

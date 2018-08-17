@@ -5,6 +5,10 @@
 因为 NodeList 对象是动态的，每次访问 NodeList 对象，都会运行一次查询。
 
   > 理解 DOM 的关键，就是理解 DOM 对性能的影响。DOM 操作往往是 JavaScript 程序中开销最大的部分，而因访问 NodeList 导致的问题为最多。NodeList 对象都是“动态的”，这就意味着每次访问 NodeList 对象，都会运行一次查询。所以应减少对 NodeList 的访问，对DOM的操作。
+#### 优化
+* `document.createDocumentFragment` [DocumentFragment - 简书](https://www.jianshu.com/p/7628670a94e6)
+  - 文档片段，不属于文档树，用于占位
+  - 继承了 Node 方法
 
 ## API
 常用方法：

@@ -20,6 +20,11 @@ export function fetchHtml(url) {
 * Promise.all
 可以并行请求，也就是说多个请求依赖时，都尽量写成 all 形式
 ```js
+function test() {
+  return Promise.all([1, 2]).then((a, b) => ({a, b}))
+}
+console.log(test().then(r => console.log(r)))
+
 // bad
 async function someAsyncFunc() {
   const user = await asyncGetUser();
