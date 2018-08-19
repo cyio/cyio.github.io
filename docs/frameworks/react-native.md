@@ -88,47 +88,48 @@
     `on-drag`: 拖动ScrollView时，键盘收回
 
 * 样式写多个类用数组
-
-    {[styles.container, {backgroundColor:"#ccc"}]}
+```js
+{[styles.container, {backgroundColor:"#ccc"}]}
+```
 
 * 动态样式
-    ```js
-    var myColor = randomColor()
-    <View style={jewelStyle(myColor)} />
+```js
+var myColor = randomColor()
+<View style={jewelStyle(myColor)} />
 
-    jewelStyle = function(myColor) {
-       return {
-         borderRadius: 10,
-         background: myColor,
-       }
-     }
-    ```
+jewelStyle = function(myColor) {
+   return {
+     borderRadius: 10,
+     background: myColor,
+   }
+ }
+```
 
 * webstorm live模板
-    ```js
-    import React from 'react';
+```js
+import React from 'react';
 
-    class $className$ extends React.Component {
+class $className$ extends React.Component {
 
-      render() {
-        return (
-            $content$
-          );
-      }
-    }
+  render() {
+    return (
+        $content$
+      );
+  }
+}
 
-    export default $className$;
-    ```
+export default $className$;
+```
 
 * Image 图片组件
 
 resizeMode 有三种样式 contain, cover, stretch
 
 通过嵌套来实现背景图片
-```
-    <Image source={...}>
-      <Text>Inside</Text>
-    </Image>
+```jsx
+<Image source={...}>
+  <Text>Inside</Text>
+</Image>
 ```
 
 * props 和 state，一静一动
@@ -141,7 +142,7 @@ resizeMode 有三种样式 contain, cover, stretch
 
 [Android React Native加载图片资源的正确姿势 - 安卓弟的专栏 - 博客频道 - CSDN.NET](http://blog.csdn.net/sbsujjbcy/article/details/49981529)
 
-```js
+```jsx
 <View
   style={[styles.base, {
     width: this.state.width,
@@ -202,13 +203,12 @@ https://github.com/facebook/react-native/tree/master/Examples/UIExplorer/js
 * 顶栏左中右结构，标题居中由容器设置，两边用绝对定位
 * 固定定位 [React Native fixed footer - Stack Overflow](http://stackoverflow.com/questions/29447715/react-native-fixed-footer)
 * 解构
-    ```js
-    render() {
-      let { source, storyIndex, state, onEnd } = this.props;
+```js
+render() {
+  let { source, storyIndex, state, onEnd } = this.props;
 
-      return (
-    ```
-
+  return (
+```
 * 需要自己实现视频控制
   [Video player with controllers using React Native – cubbuk – Medium](https://medium.com/@cubbuk/video-player-with-controllers-using-react-native-72e35d7ab469)
   [inProgress-team/react-native-youtube: A <YouTube/> component for React Native.](https://github.com/inProgress-team/react-native-youtube)
@@ -216,22 +216,22 @@ https://github.com/facebook/react-native/tree/master/Examples/UIExplorer/js
 * 改端口涉及到 debug，需要改AppDelegate.m，主项目最好别改，如果要修改参考
   [Intro to Debugging React Native (iOS and Android) - Differential](https://differential.com/insights/intro-to-debugging-react-native-ios-and-android/)
 * 注释，一般注释, 用 {} 包围
-    ```
-    {/* code */}
+```
+{/* code */}
 
-    " not work
-    Plug 'scrooloose/nerdcommenter'
-    let g:NERDCustomDelimiters = { 'javascript.jsx': { 'left': '//', 'leftAlt': '/*', 'rightAlt': '*/' } }
-    let NERD_javascript_alt_style=1
-    ```
+" not work
+Plug 'scrooloose/nerdcommenter'
+let g:NERDCustomDelimiters = { 'javascript.jsx': { 'left': '//', 'leftAlt': '/*', 'rightAlt': '*/' } }
+let NERD_javascript_alt_style=1
+```
 ## 全局变量
 使用global，其类似web中的window
 例如
 ```js
-    global.userToken = '***';
+global.userToken = '***';
 
-    //则在其他地方可以读取
-    console.log(userToken);
+//则在其他地方可以读取
+console.log(userToken);
 ```
 如果需要持久化的存储，推荐使用 https://github.com/sunnylqm/react-native-storage
 
@@ -245,8 +245,8 @@ https://github.com/facebook/react-native/tree/master/Examples/UIExplorer/js
 ## android 下 lineHeight 贴底
 
 ## 垂直居中
-给父容器　alignItems: 'center'
-android textAlignVertical
+给父容器`alignItems: 'center'`
+android`textAlignVertical`
 
 image 没有 onPress，text 有
 数组节点必须有 key，可随意给个值
@@ -272,30 +272,31 @@ image 没有 onPress，text 有
 
 ## ISSUES
 ### webview 不起作用
-  <WebView
-    style={{
-      backgroundColor: 'red',
-      height: 100,
-    }}
-    source={{html: '<h1>Hello</h1>'}}
-    scalesPageToFit={true}
-  />
-
+```jsx
+<WebView
+  style={{
+    backgroundColor: 'red',
+    height: 100,
+  }}
+  source={{html: '<h1>Hello</h1>'}}
+  scalesPageToFit={true}
+/>
+```
 可能跟插件容器有关 ScrollableTabView,
 改用普通 view 没问题了
-```
-    import ScrollableTabView, { DefaultTabBar } from 'react-native-scrollable-tab-view';
+```js
+import ScrollableTabView, { DefaultTabBar } from 'react-native-scrollable-tab-view';
 ```
 ### 路由导航问题
 旧代码　参见 HeaderBar.js
 调用:
 ```jsx
-    <HeaderBar
-      // leftIconAction={alert('debug')}
-      title='课程详情'
-      leftIcon={require('../images/back_dark.png')}
-      rightIcon={require('../images/back_dark.png')}
-    />
+<HeaderBar
+  // leftIconAction={alert('debug')}
+  title='课程详情'
+  leftIcon={require('../images/back_dark.png')}
+  rightIcon={require('../images/back_dark.png')}
+/>
 ```
 原生不需要 react-router
 刚开始用官方 react-navigation
@@ -353,11 +354,14 @@ react-native 结合ant-Design- mobile, 发现有些组件样式不好调,... - �
 
 ### tabs/webview 高度适应
 [Tab view always has the height equal to height of the highest tab · Issue #415 · skv-headless/react-native-scrollable-tab-view](https://github.com/skv-headless/react-native-scrollable-tab-view/issues/415)
+
 tabs 考虑手动实现
+
 webview 解决 [react native里webview怎么设置高度自适应？ - 知乎](https://www.zhihu.com/question/42864534/answer/115386718)
+
 [iou90/react-native-autoheight-webview: An auto height webview for React Native](https://github.com/iou90/react-native-autoheight-webview)
-通信，更复杂
-[alinz/react-native-webview-bridge: React Native Webview with Javascript Bridge](https://github.com/alinz/react-native-webview-bridge)
+
+通信，更复杂 [alinz/react-native-webview-bridge: React Native Webview with Javascript Bridge](https://github.com/alinz/react-native-webview-bridge)
 
 ### map/迭代器中的 this
 你在map里使用this，this会指向当前的迭代对象，你需要在map里绑定“正确”的this
@@ -398,7 +402,7 @@ ES6形式不需要这么做？
 修改`package.json`中包的地址为自己的地址
 删除`node_modules`原包文件夹，把自己的项目软链接过来
 
-最后应该是使用 git submodule 来管理
+最后应该是使用`git submodule`来管理
 
 ### react-native-video
 * 全屏切换只支持 iOS，解决只能是自己写，通过布局隐藏和转屏间接实现
@@ -436,13 +440,13 @@ ES6形式不需要这么做？
 似乎是某些RN版本问题，无解
 [UnhandledPromiseRejectionWarning: Unhandled promise rejection · Issue #640 · mzabriskie/axios](https://github.com/mzabriskie/axios/issues/640#issuecomment-271588481)
 
-### Raw Text must be wrapped in an explicit`<Text>`component · Issue #186 · GeekyAnts/NativeBase https://github.com/GeekyAnts/NativeBase/issues/186#issuecomment-268979620
+### [Raw Text must be wrapped in an explicit`<Text>`component · Issue #186 · GeekyAnts/NativeBase](https://github.com/GeekyAnts/NativeBase/issues/186#issuecomment-268979620)
 ```js
-    {
-      value && <Text>haha</Text>j
-    }
+{
+  value && <Text>haha</Text>j
+}
 ```
-这里要求布尔值，而 value 可能是字符串，会报错提示用 Text 包起来，用 !! 转换一下
+这里要求布尔值，而`value`可能是字符串，会报错提示用`Text`包起来，用`!!`转换一下
 
 ### iOS
 

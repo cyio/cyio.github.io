@@ -49,3 +49,37 @@ function tmp (...args) {
 
 tmp(1, 2)
 ```
+## 函数防抖和函数节流
+* 函数防抖是指频繁触发的情况下，只有足够的空闲时间，才执行代码一次
+
+函数防抖的要点，也是需要一个setTimeout来辅助实现。延迟执行需要跑的代码。
+如果方法多次触发，则把上次记录的延迟执行代码用clearTimeout清掉，重新开始。
+```js
+//函数防抖
+var timer = false
+document.getElementById("debounce").onScroll = function() {
+  clearTimeout(timer)  
+  timer = setTimeout(function(){
+    console.log(‘函数防抖’) 
+  }, 300)     
+}
+```
+* 函数节流是指一定时间内js方法只跑一次
+
+函数节流的要点是，声明一个变量当标志位，记录当前代码是否在执行。 
+如果空闲，则可以正常触发方法执行。 
+如果代码正在执行，则取消这次方法执行，直接return。
+```
+//函数节流
+var canScroll = true;
+document.getElementById('throttle').onScroll = function() {
+  if (!canScroll) {
+    return;
+  }
+  canScroll = false;
+  setTimeout(function(){
+    console.log('函数节流');
+    canScroll = true;
+  },300)       
+}
+```

@@ -98,13 +98,13 @@ bind() 最简单的用法是创建一个函数，使这个函数不论怎么调�
   console.log(Math.max.apply(null, allNumbers)); // 56
   ```
 
-## 复制与合并
+## 深度复制
+ES5 递归，ES6 Object.assign
 
-Object.asign 将多个对象复制到目标对象，与其说是复制，更像合并，如果有相同 key， 后边会覆盖前边
+Object.assign 将多个对象复制到目标对象，与其说是复制，更像合并，如果有相同 key， 后边会覆盖前边
 ```JS
 var obj1 = {a: 1}
 var obj2 = {a: 3, b: 1}
 var merge = Object.assign({}, obj1, obj2)
 console.log(merge)
 ```
-* 深度复制问题

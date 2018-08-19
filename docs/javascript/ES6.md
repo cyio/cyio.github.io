@@ -1,4 +1,36 @@
 # ES6
+
+* 新特性：模块，类，数据解构，promise，构造器，Proxy，Reflect，箭头函数，模板字符串
+* ES6 不允许在同一个作用域内用 let 或 const 重复声明同名变量。这对于防止在不同的 js 库中存在重复声明的函数表达式十分有帮助。
+* 不再需要使用立即执行函数以避免全局污染，用大括号配合`let/const`即可
+* `this`总是指向声明时的那个对象
+* rest 参数，更便利访问函数参数
+
+[在 ES6 中 改良的 5 个 JavaScript “缺陷” - WEB前端 - 伯乐在线](http://web.jobbole.com/86210/)
+
+## 类 class
+* 简化构造函数创建
+```js
+class Animal {
+  constructor() {
+    this.type = 'animal'
+  }
+  says(msg) {
+    console.log(this.type, ' ', msg)
+  }
+}
+let animal = new Animal()
+animal.says('hello') // animal says hello
+class Cat extends Animal {
+  constructor() {
+    super() // 调用父类构造函数
+    this.type = 'cat'
+  }
+}
+let cat = new Cat()
+cat.says('world')
+```
+
 ## 模块
 * 特征：
   1. 总是在严格模式下
@@ -22,6 +54,20 @@ UC android 不支持
 
 [es module vue](https://codepen.io/cyio/pen/mjPzqJ)
 [jspm.io - Native ES Modules CDN](https://jspm.io/)
+
+### 导入导出
+
+```js
+import First from './First'
+import Second from './Second'
+/..../
+export { First, Second }
+
+export {default as SomeClass} from './SomeClass';
+export {someFunction} from './utils';
+export {default as React} from 'react';
+```
+
 ## 箭头函数
 * 当使用箭头函数创建普通对象时，你总是需要将对象包裹在小括号里
 ```js
@@ -112,14 +158,11 @@ let clsName = class {}
 let clsName = class clsName {}
 ```
 
-模板字面量
+## 模板字面量
 * 不支持纯字符串
 ```js
 var who = 'world'; var str = `Hello ${who}`;
 ```
-
-* fetch 
-支持情况：微软家族和苹果家族均不支持，因此尚属早期
 
 ## for-of 循环
 20年前，for i++
@@ -155,18 +198,8 @@ function fn () {
 console.log(fn())
 ```
 
-## 花式导入导出
-
-```js
-import First from './First'
-import Second from './Second'
-/..../
-export { First, Second }
-
-export {default as SomeClass} from './SomeClass';
-export {someFunction} from './utils';
-export {default as React} from 'react';
-```
+## Promise
+* Promise 构造函数是同步执行的（故封装时用 return），promise.then 中的函数是异步执行的。
 
 ## 平行请求 await each
 for ... of 可以，forEach 不行，会先打印 nums
@@ -205,6 +238,7 @@ async function printFiles () {
 
 ## async/await
 
+* async 是 Generator 的语法糖和改进
 * async function 返回的是 Promise
 * await 后面接 Promise，如果不是会转为 Promise.resolve(value)
 * await 只能与 async 配合使用

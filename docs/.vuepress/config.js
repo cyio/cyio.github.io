@@ -17,7 +17,7 @@ module.exports = {
       // { text: '主页', link: '/' },
       { text: 'Blog', link: '/' },
       { text: 'JS', link: '/javascript/' },
-      { text: 'CSS', link: '/css/' },
+      { text: 'Web', link: '/web/' },
       { text: '框架', link: '/frameworks/' },
       { text: 'Node', link: '/node/' },
       { text: '工具', link: '/tools/' },
@@ -30,7 +30,7 @@ module.exports = {
     sidebar: 'auto',
     sidebar: {
       '/javascript/': genSidebarConfig('javascript'),
-      '/css/': genSidebarConfig('css'),
+      '/web/': genSidebarConfig('web'),
       '/node/': genSidebarConfig('node'),
       '/frameworks/': genSidebarConfig('frameworks'),
       '/tools/': genSidebarConfig('tools'),
@@ -56,7 +56,6 @@ function genSidebarConfig (title) {
           'closure',
           'methods',
           'data-structures',
-          'dom',
           'debug',
           'ES6',
           'event',
@@ -67,12 +66,17 @@ function genSidebarConfig (title) {
         ]
       },
     ],
-    'css': [
+    'web': [
       {
-        title: 'css',
+        title: 'web',
         collapsable: false,
         children: [
           // '',
+          'dom',
+          'html',
+          'http',
+          'security',
+          'css-concept',
           'pseudo-elements',
           'grid',
         ]

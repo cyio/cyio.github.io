@@ -115,6 +115,21 @@ forEach() 遍历运行指定函数，无返回值，有副作用，不推荐
   ```
 ## 排序
 arr.sort()　默认的比较函数会将比较元素视为字符串，所以通常要传入自定义比较函数
+```
+const arr = [{
+  name: 'Apple'
+}, {
+  name: 'Google'
+}, {
+  name: 'Baidu'
+}]
+console.log(arr.sort(
+  (a, b) => a.name > b.name  // 字母顺序
+))
+
+const arr = [1, 20, 10, 30, 22, 11, 55, 24, 31, 88, 12, 100, 50];
+console.log(arr.sort((a, b) => a - b)) // 为什么不能写 a > b，而要写成 a > b ? 1 : -1
+```
 
 ## 处理方法分辨
 

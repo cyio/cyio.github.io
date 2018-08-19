@@ -29,9 +29,13 @@ const c1 = props => <h1 {...props}>hello</h1>
 
     用 stateless 组件来负责显示，class 组件来负责状态和逻辑
 
-## 参考
+## 学习参考
 
 [5 Steps for Learning React Application Development - Telerik Developer Network](http://developer.telerik.com/featured/5-steps-for-learning-react-application-development/)
+
+## Virtual DOM
+* 两个前提：JS 高效，DOM 操作慢
+* 生成虚拟 ODM 树，对比虚拟 DOM 树，用最少的操作更新视图
 
 ## Issues
 

@@ -1,4 +1,16 @@
 # Vue
+## 与 React 比较
+* 相同点：
+  - VirtualDOM 性能好
+  - 组件化开发
+  - 单向数据流
+    * 单向数据流中的单向：数据从父组件到子组件这个流向叫单向。
+    * 绑定的单双向：View 层与 Model 层之间的映射关系。
+* 不同点：
+    - vue 双向绑定，react 单向
+      > 单向绑定使得数据流也是单向的，对于复杂应用来说这是实施统一的状态管理（如redux）的前提。双向绑定在一些需要实时反应用户输入的场合会非常方便（比如多级联动菜单）。但通常认为复杂应用中这种便利比不上引入状态管理带来的优势。注意，Vue 虽然通过 v-model 支持双向绑定，但是如果引入了类似redux的vuex，就无法同时使用 v-model。参见[vuex/forms.md at master · vuejs/vuex](https://github.com/vuejs/vuex/blob/master/docs/zh-cn/forms.md)
+
+[React的单向数据流与Vue的双向绑定 - CSDN博客](https://blog.csdn.net/qq_41206257/article/details/80992085)
 
 ## Vue 2
 

@@ -12,24 +12,16 @@ Number(true) === 1
 * 逻辑值
 0、NaN和空字符串("")视为false，其余值视为true
 
-## 转换
-
+## 类型判断
+* 如果要使用某种数据类型的方法，最好在开始检测数据类型，以免传入不合适的类型导致错误
 ```js
 // 检测数字
 typeof xxx === "number"
 // 检测字符串
 typeof xxx === "string"
+typeof [1, 2] //"object"   无法区分数组和对象
 // 检测数组
 xxx instanceof Array
+xxx.constructor === Array
 ```
 
-如果要使用某种数据类型的方法，最好在开始检测数据类型，以免传入不合适的类型导致错误
-
-## 类型判断
-```js
-typeof [1, 2]
-//"object"   无法区分数组和对象
-
-[1, 2] instanceof Array
-//true
-```
