@@ -55,3 +55,7 @@ xpos = xpos + dist;
 ## 注意点
 * foucs blur 事件只会在 input textaera select 等键盘元素上发生
 
+## 重绘和回流
+重绘，样式变化，浏览器重新绘制样式
+
+回流，尺寸、位置、属性变化，浏览器重新渲染部分或全部

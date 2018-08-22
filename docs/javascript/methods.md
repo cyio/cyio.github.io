@@ -225,25 +225,41 @@ console.log(data.map(mapper).reduce(reducer, initial));
 [Simple implementation and explanation of Map Reduce using Javascript](https://gist.github.com/johnhenry/5487382)
 
 ## math
-### 获取两个值之间的随机整数
+### 获取两个值之间的随机数/整数
+* 原理：大于最小值数，但小于最大值，随机性
+* 实现：基数是最小值，相加值是最大值与最小值的差的随机缩放
+
 MDN random 上有，不要自己推了
-
 ```js
-// 获取随机数公式
-var num = Math.floor(Math.random() * 随机数的总数 + 随机数的最小值)
-// 从1到10的随机数
-var num = Math.floor(Math.random() * 10 + 1)
-// 从2到10的随机数
-var num = Math.floor(Math.random() * 9 + 2)
-
-// 进阶，给定范围直接返回随机数
-function selectFrom (lowerValue, upperValue) {
-    var choices = upperValue - lowerValue + 1;
-    return Math.floor(Math.random() * choices + lowerValue)
+// 获取随机数/整数
+function getRandom(min, max) {
+  // return min + Math.random() * (max - min)
+  return Math.floor(min + Math.random() * (max - min))
 }
+console.log(getRandom(2, 5))
 
-var num = selectFrom(2, 10);
 
+// 编写函数fn， 该函数有一个参数n（数字类型），返回值是一个数组，该数组内是n个随机不重复的整数，且整书取值范围是[2, 32]
+// 参数 n 不一定是整数
+function fn(n) {
+  let min = 2
+  let max = 32
+  let length = max - min + 1
+  if (n < 1 || n > length) { // 2 到 32 间取，最少是1，最多是 length，可能想象 2 到 32 的整数数组，个数就是 length
+    return
+  }
+  let random
+  let set = new Set()
+  n = Math.round(n)
+  while(set.size < n) {
+    random = Math.floor(min + Math.random() * (max - min))
+    if (!set.has(random)) {
+      set.add(random)
+    }
+  }
+  return [...set]
+}
+console.log(fn(4))
 // 程序模拟抛硬币，计算概率 未指派
 function throwCoins(times) {
 	let r

@@ -49,28 +49,28 @@ function tmp (...args) {
 
 tmp(1, 2)
 ```
-## 函数防抖和函数节流
-* 函数防抖是指频繁触发的情况下，只有足够的空闲时间，才执行代码一次
+## 防抖和节流 debounce/throttle
+* 函数防抖是只有足够的空闲时间，才执行一次代码
+> bounce 是弹跳抖的意思，debounce 去抖动，平稳
 
-函数防抖的要点，也是需要一个setTimeout来辅助实现。延迟执行需要跑的代码。
-如果方法多次触发，则把上次记录的延迟执行代码用clearTimeout清掉，重新开始。
+函数防抖的要点，也是需要一个`setTimeout`来辅助实现。延迟执行需要跑的代码。
+如果方法多次触发，则把上次记录的延迟执行代码用`clearTimeout`清掉，重新开始。
 ```js
-//函数防抖
 var timer = false
 document.getElementById("debounce").onScroll = function() {
-  clearTimeout(timer)  
+  clearTimeout(timer)   // 当滚动停止超过 300 MS，不清除定时器，预约代码得以执行
   timer = setTimeout(function(){
     console.log(‘函数防抖’) 
   }, 300)     
 }
 ```
-* 函数节流是指一定时间内js方法只跑一次
+* 函数节流是限制一定时间内最大执行次数
+> throat 喉咙
 
 函数节流的要点是，声明一个变量当标志位，记录当前代码是否在执行。 
 如果空闲，则可以正常触发方法执行。 
 如果代码正在执行，则取消这次方法执行，直接return。
-```
-//函数节流
+```js
 var canScroll = true;
 document.getElementById('throttle').onScroll = function() {
   if (!canScroll) {
@@ -83,3 +83,6 @@ document.getElementById('throttle').onScroll = function() {
   },300)       
 }
 ```
+[浅谈 Underscore.js 中 _.throttle 和 _.debounce 的差异 - Coding 博客](https://blog.coding.net/blog/the-difference-between-throttle-and-debounce-in-underscorejs)
+
+* 使用场景，如监听滚动计算位置，用户拖拽

@@ -8,8 +8,12 @@
 
 [在 ES6 中 改良的 5 个 JavaScript “缺陷” - WEB前端 - 伯乐在线](http://web.jobbole.com/86210/)
 
+## map 映射
+* 如果 key 是复杂数据类型，如`[1]`，无法直接查改删，可以同名。需要遍历或转换为数组
+
 ## 类 class
 * 简化构造函数创建
+* `super`(调用父类构造函数)不是必要的，什么情况下写呢？ 如果在`contrustor`中要用`this[props]`
 ```js
 class Animal {
   constructor() {
@@ -23,7 +27,7 @@ let animal = new Animal()
 animal.says('hello') // animal says hello
 class Cat extends Animal {
   constructor() {
-    super() // 调用父类构造函数
+    super() // 下面使用了 this，如果不写 super 的会，ReferenceError: Must call super constructor in derived class before accessing 'this' or returning from derived constructor
     this.type = 'cat'
   }
 }
@@ -75,6 +79,13 @@ export {default as React} from 'react';
 var chewToys = puppies.map(puppy => {});   // 这样写会报Bug！
 var chewToys = puppies.map(puppy => ({})); //
 ```    
+* 箭头函数和普通函数的区别
+
+箭头函数的 this 就是定义时所在的对象，而不是使用时所在的对象
+
+箭头函数不能用作构造函数，
+
+箭头函数不能使用 arguments 对象，该对象不存在，但可以使用 rest 对象
 
 ## ES5 中的 this 继承问题
 ```js
@@ -199,8 +210,22 @@ console.log(fn())
 ```
 
 ## Promise
-* Promise 构造函数是同步执行的（故封装时用 return），promise.then 中的函数是异步执行的。
-
+* Promise 构造函数是同步执行的（故封装时用 return），then/catch 中的函数是异步执行的。
+```js
+console.log(1);
+new Promise(function(resolve, reject) {
+  reject(true);
+  window.setTimeout(function() {
+    resolve(false)
+  }, 0)
+}).then(function() {
+  console.log(2)
+}, function() {
+  console.log(3)
+});
+console.log(4);
+// 1 4 3
+```
 ## 平行请求 await each
 for ... of 可以，forEach 不行，会先打印 nums
 [javascript - Using async/await with a forEach loop - Stack Overflow](https://stackoverflow.com/questions/37576685/using-async-await-with-a-foreach-loop)

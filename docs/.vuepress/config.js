@@ -56,6 +56,7 @@ function genSidebarConfig (title) {
           'closure',
           'methods',
           'data-structures',
+          'design-patterns',
           'debug',
           'ES6',
           'event',

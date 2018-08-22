@@ -10,9 +10,13 @@
 ES6 共 7 个
 * 6 个原始类型`Undefined Null Number String Symbol Boolean`
 * 1 个引用类型`Object`
+* symbol
 
-#### symbol
 ES6 新增，表示独一无二的值，由函数`Symbol()`产生， 可用于对象属性的标识符
+
+## 逻辑值
+* `&& ||`只在必要情况下才会执行右边的值；可用于检测值左测值的有效性
+* 运算符优先级排序：`‖ < && < 比较 < 其它`
 
 ## 闭包
 无论什么地方，只要临时需要一些变量，就可以使用私有作用域，如：
@@ -82,12 +86,6 @@ a += -1 && a *= 2
 // 引用错误
 // 解决办法是把后面括起来
 ```
-
-## 节流 rate-limit 
-用在事件处理函数上，不让 resize/mousemove/scroll 等事件触发得太快
-
-throttle 以一定间隔多次执行
-debounce 只执行一次
 
 ## 声明提升
 
@@ -271,46 +269,38 @@ function MyObject () {
 
 `new`就是创建新对象，并把构造函数的原型和作用域添加到新对象上。
 
-## 策略模式
-
-将不变的部分和变化的部分分隔开来是每个设计模式的主题。
-策略模式的目的是把算法的实现和使用进行分离。
-
-至少两部分组成：
-一是策略类，策略类封装了具体的算法，并负责具体的算法。
-二是环境，类Context接受客户的请求，随后把请求委托给某一个策略类。
-```js
-// 计算工资
-var strategies = {
-  "S" : function(salary) {
-    return salary * 4;
-  },
-  "A" : function(salary) {
-    return salary * 5;
-  },
-  "B" : function(salary) {
-    return salary * 6;
-  }
-}
-
-var calculateBonus = function(level, salary) {
-  return strategies[level](salary); // Context
-}
-
-console.log(calculateBonus('A', 5000));
-console.log(calculateBonus('S', 5000));
-```
-
 ## 严格模式的特性
-严格模式对Javascript的语法和行为，都做了一些改变。
-
-全局变量必须显式声明。
-
-对象不能有重名的属性
-
-函数必须声明在顶层
+* 变量使用前必须先声明
+* 函数必须声明在所在作用域的顶层
+* 对象属性名唯一
+* 要求参数唯一，在函数内部改变`arguments`对象会报错
 
 消除Javascript语法的一些不合理、不严谨之处，减少一些怪异行为;
+原来的静默会报异常，如拼写错误
 消除代码运行的一些不安全之处，保证代码运行的安全；
 提高编译器效率，增加运行速度；
 为未来新版本的Javascript做好铺垫。
+```js
+// 'use strict';
+
+let obj = {
+  a: 1
+}
+for (key in obj) { // 启用严格模式后会报错
+  console.log(key)
+}
+
+
+// 'use strict'
+
+let o = {
+  a: function() {
+    var that = this
+    a()
+    function a() {
+      console.log(this) // 值为 global，启用严格模式后，undefined
+    }
+  }
+}
+o.a()
+```

@@ -102,14 +102,13 @@ JS 中数组效率低，除了随机访问，都可以用链表替换一维数�
 function quickSort(arr) {
   // 先考虑主要功能，再考虑边界情况
   // 是否假定了数组没有重复项，如果有重复项如何处理
-  if (arr.length <= 1) {
-    return arr
-  }
+  if (arr.length <= 1) return arr
+
   let left = []
   let right = []
   // let pivot = arr[arr.length - 1]
   // for (let i = 0; i < arr.length - 1; i++) {
-  // 改进，不要依赖最后一个值
+  // 改进，不要依赖最后一个值，注意 pivot 表示基准值，还需要提前算下 privotIndex
   let pivotIndex = Math.floor(arr.length / 2)
   let pivot = arr[pivotIndex]
   for (let i = 0; i < arr.length; i++) {
@@ -124,3 +123,4 @@ function quickSort(arr) {
 const arr = [85, 24, 63, 45, 17, 31, 96, 50];
 console.log(quickSort(arr))
 ```
+### 二分查找
