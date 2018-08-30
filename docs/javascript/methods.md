@@ -150,6 +150,14 @@ fetch 相对于旧的 XHR ，主要不同即使用 Promise
 响应类型有三种，basic cors opaque，cors 不设限制时跟 basic 一样
 fetch 目前无法取消
 ```
+fetch(apiUrl, {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({q: 1})
+}).then(async res => console.log(await res.json()))
+
 fetch('./api/some.json', {mode: 'cors'})
 	.then(
 		function(response) {

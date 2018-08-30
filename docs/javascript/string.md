@@ -56,3 +56,25 @@ parseInt('1rem') // 1
 'github'.startsWith('git')
 'github'.startsWith('hub', 3)  // 可以指定位置
 ```
+## 实现 repeat
+```js
+// 实现一，
+// 空 + 字符串，这里字符串作为了拼接符
+// n 个拼接符，需要 n + 1 个空
+String.prototype.repeatString1 = function (n) {
+  return Array(n + 1).join(this);
+}
+console.log('ni'.repeatString1(4));
+
+// 实现二 fill 不传位置参数，填充全部
+String.prototype.repeatString2 = function (n) {
+  return Array(n).fill(this).join('');
+}
+console.log('ni'.repeatString2(3));
+
+
+作者：等你下课
+链接：https://juejin.im/post/5aa7d82c6fb9a028c522de43
+来源：掘金
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+```

@@ -1,12 +1,33 @@
 # ES6
 
-* 新特性：模块，类，数据解构，promise，构造器，Proxy，Reflect，箭头函数，模板字符串
+* 新特性：模块，类，解构赋值，promise，构造器，Proxy，Reflect，箭头函数，模板字符串
 * ES6 不允许在同一个作用域内用 let 或 const 重复声明同名变量。这对于防止在不同的 js 库中存在重复声明的函数表达式十分有帮助。
 * 不再需要使用立即执行函数以避免全局污染，用大括号配合`let/const`即可
 * `this`总是指向声明时的那个对象
 * rest 参数，更便利访问函数参数
+* let/var 全局声明有区别，var 存在 window 对象中，而 let 存在声明式环境中（看不到），不影响 window.xxx 的使用，但 var xxx 不行
 
 [在 ES6 中 改良的 5 个 JavaScript “缺陷” - WEB前端 - 伯乐在线](http://web.jobbole.com/86210/)
+* 实现模板字符串功能
+```js
+// 1. 正则匹配出 key，然后字符串替换 2. 字符串可用点号分割成数组 3. shift 出来依次供对象访问
+function render(template, context) {
+  return template.replace(/\{\{(.*?)\}\}/g, (match, key) => {
+    for (let k of key.split('.')) {
+      context[key]
+    }
+    key = key.split('.')
+    let result = context
+    while(key.length > 0) {
+      result = result[key.shift()]
+    }
+    return result
+  });
+}
+const template = "{{name}}很厉name害，才{{age}}岁，身高{{detail.height}}";
+const context = { name: "jawil", age: "15" , detail: { height: "170" }};
+console.log(render(template, context));
+```
 
 ## map 映射
 * 如果 key 是复杂数据类型，如`[1]`，无法直接查改删，可以同名。需要遍历或转换为数组
@@ -74,6 +95,7 @@ export {default as React} from 'react';
 
 ## 箭头函数
 * 当使用箭头函数创建普通对象时，你总是需要将对象包裹在小括号里
+* 没有`arguments`，可以使用`...args`
 ```js
 // 为与你玩耍的每一个小狗创建一个新的空对象
 var chewToys = puppies.map(puppy => {});   // 这样写会报Bug！

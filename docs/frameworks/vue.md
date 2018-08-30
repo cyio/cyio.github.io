@@ -13,7 +13,7 @@
 [React的单向数据流与Vue的双向绑定 - CSDN博客](https://blog.csdn.net/qq_41206257/article/details/80992085)
 
 ## 双向绑定
-采用数据劫持结合发布者-订阅者模式的方式，通过`Object.defineProperty()`来劫持各个属性的`setter/getter`，在数据变动时发布消息给订阅者，触发相应的监听回调。
+采用数据劫持结合发布者-订阅者模式的方式，通过`Object.defineProperty()`来劫持各个数据属性的`setter/getter`，在数据变动时发布消息给订阅者，触发相应的监听回调。
 具体步骤：
 
 第一步：需要 observe 的数据对象进行递归遍历，包括子属性对象的属性，都加上 setter 和 getter
@@ -30,11 +30,9 @@
 
 [仿Vue极简双向绑定](https://codepen.io/cyio/pen/aaboyQ?editors=0010)
 
-## 文档深读
-* 只有当实例被创建时 data 中存在的属性才是响应式的
-
 ## Vue 2
 
+* 只有当实例被创建时 data 中存在的属性才是响应式的
 * ready -> mounted
 * 对 dom 没依赖的操作可放到 created 中，如数据请求
 * 页面内可定义 filters，如果不需要共享的话

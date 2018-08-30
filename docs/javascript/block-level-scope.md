@@ -6,7 +6,7 @@
 块级作用域，指的是一个语句结束后其内部变量销毁。
 
 ## JS 中的作用域
-但是，在JS中，作用域是在函数体内。
+但是，在JS中，作用域是在函数体内。注意 if 语句不是函数，所以没有单独作用域
 ```js
 function outputNumbers(count) {
   for (var i = 0; i < count; i++) {

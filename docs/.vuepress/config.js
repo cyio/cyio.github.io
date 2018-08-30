@@ -80,6 +80,7 @@ function genSidebarConfig (title) {
           'css-concept',
           'pseudo-elements',
           'grid',
+          'browser',
         ]
       },
     ],

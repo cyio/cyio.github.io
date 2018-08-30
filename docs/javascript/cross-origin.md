@@ -1,4 +1,5 @@
 # 跨域
+> 出于安全原因，浏览器限制从脚本内发起的跨源HTTP请求。 例如，XMLHttpRequest和Fetch API遵循同源策略。 这意味着使用这些API的Web应用程序只能从加载应用程序的同一个域请求HTTP资源，除非使用CORS头文件。
 
 1. 服务端设置允许：Access-Control-Allow-Origin
 2. jsonp 伪跨域，需要服务端配合
@@ -24,7 +25,7 @@ import jsonp from 'jsonp-es6'
 * Access-Control-Allow-Origin 有两种情况，一个域名或`*`
 * Access-Control-Allow-Credentials 表示是否允许发送 cookie，只能是 true，不需要就不要写
 * cookie  比较敏感，需要两端配合，才能传送，且只能同源，域名要求至少有两个点，localhost 不符合
-* 有些字段操作是浏览器处理的，如 origin 的设置 
+* 不管是否为跨域请求，ORIGIN 字段总是被发送
 * Chrome/Firefox 不允许 https 向 http 发跨域请求，会被拦截
 
 [跨域资源共享 CORS 详解 - 阮一峰的网络日志](http://www.ruanyifeng.com/blog/2016/04/cors.html)
