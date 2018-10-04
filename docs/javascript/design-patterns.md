@@ -8,20 +8,20 @@
 ```js
 class Event {
   constructor() {
-    this.subscribers = new Map()
+    this.cacheList = new Map()
   }
 
   on (type, fn) {
-    if (!this.subscribers.get(type)) {
-      this.subscribers.set(type, [fn]) // 注意这里设置的值是数组
+    if (!this.cacheList.get(type)) {
+      this.cacheList.set(type, [fn]) // 注意这里设置的值是数组
     } else {
-      this.subscribers.get(type).push(fn)
+      (this.cacheList.get(type)).push(fn)
     }
   }
 
   emit (type, data) {
-    if (!this.subscribers.get(type)) throw('event not found')
-    for (let fn of this.subscribers.get(type)) {
+    if (!this.cacheList.get(type)) throw('event not found')
+    for (let fn of this.cacheList.get(type)) {
       fn(data)
     }
   }

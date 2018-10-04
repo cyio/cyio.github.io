@@ -1,32 +1,11 @@
 # 常用方法
 ## console 
 
+```js
 .log
-.error 红色
+.error // 红色
 .info
-.warn 黄色
-
-```js
-function divide(num1, num2) {
-  if (typeof num1 != "number" || typeof num2 != "number") {
-    throw new Error("divide(): Both arguments must be numbers.");
-  }
-  return num1 / num2;
-}
-```
-用 assert 函数进行抽象，简化错误输出
-```js
-function assert (conditon, message) {
-  if (!condition) {
-    throw new Error(message);
-  }
-}
-
-function divide(num1, num2) {
-  assert(typeof num1 != "number" || typeof num2 != "number",
-    "divide(): Both arguments must be numbers.");
-  return num1/num2;
-}
+.warn // 黄色
 ```
 
 ### 子字符串
@@ -41,8 +20,6 @@ VM146:2 this is Jack 20
 ## history
 不能查看用户浏览了哪些页面
 
-### 可用方法：
-
 ```js
 history.go(-1) // 向后跳转一页 等价于 history.forward()
 history.go(1)  // 向前跳转一页，等价于 history.back()
@@ -55,19 +32,20 @@ push pop 是 HTML5 新增方法，专用于单页应用，骗用户用的
 
 ```js
 function timeFormat(timestamp) {
-    var date = new Date(parseInt(timestamp)*1000);
-    var year = date.getFullYear();
-    var month = date.getMonth()+1;
-    var day = date.getDate();
-    var hour = date.getHours();
-    var minite= date.getMinutes();
-    var second = date.getSeconds();
-    return year+"年"+month+"月"+day+"日";
-    //return year+"."+month+"."+day;
+  var date = new Date(parseInt(timestamp)*1000);
+  var year = date.getFullYear();
+  var month = date.getMonth()+1;
+  var day = date.getDate();
+  var hour = date.getHours();
+  var minite= date.getMinutes();
+  var second = date.getSeconds();
+  return year+"年"+month+"月"+day+"日";
+  //return year+"."+month+"."+day;
 }
 ```
 
-通用的时间函数 [JavaScript date function - php.js](http://phpjs.org/functions/date/)
+## 通用的时间函数
+[JavaScript date function - php.js](http://phpjs.org/functions/date/)
 
 示例：
 ```js
@@ -81,12 +59,7 @@ date('Y.m.d' , this.updated_at)
 //  2003.09.01
 ```
 
-如何将自己的函数添加到框架中？
-1. 把文件添加到JS框架文件夹中
-2. 修改gulp配置
-
-
-date存储的是value值，以毫秒（millisecond）为单位，可用getTime()获取。
+`date`存储的是`value`值，以毫秒（millisecond）为单位，可用`getTime()`获取。
 
 ```js
 new Date('1970-01-01').getTime()
@@ -115,10 +88,11 @@ aMinute = new Date(60 * 1000).getTime();
 // 60000
 jsDate = new Date('2016-01-21').getTime();  // 日月如为个数，前面的0不可省略
 phpDate = new Date('2016-01-21').getTime()/1000;
+
+getFullYear() // getYear()是被废弃的用法
+getMonth() // 获取月份(0-11,0代表1月,用的时候记得加上1)
+Date.parse(date) // 只能精确到秒，毫秒将用0来代替
 ```
-用getFullYear()，getYear()是被废弃的用法
-getMonth();  // 获取月份(0-11,0代表1月,用的时候记得加上1)
-Date.parse(date)  // 只能精确到秒，毫秒将用0来代替
 
 目前F7项目中引入的date时间格式化函数，来自PHP，时间以秒为单位，在用JS处理时要注意转换。
 
@@ -134,7 +108,7 @@ Date.parse(date)  // 只能精确到秒，毫秒将用0来代替
 给定数字，如果是个位数，前面加 0
 
 ### 时区
-nodejs 端输入 new Date()，打印出来是标准时区时间，而 getHours() 执行出来是系统环境时区
+nodejs 端输入`new Date()`打印出来是标准时区时间，而`getHours()`执行出来是系统环境时区
 
 ```js
 let dt = new Date()
@@ -144,18 +118,18 @@ dt.setUTCHours()
 
 ## fetch
 
-fetch 相对于旧的 XHR ，主要不同即使用 Promise
-完整流程应该先检查状态码，与 callback 写法一致
-返回的是 Stream，因此用 json() 方法读取是异步的
-响应类型有三种，basic cors opaque，cors 不设限制时跟 basic 一样
-fetch 目前无法取消
-```
+* fetch 相对于旧的 XHR ，主要不同即使用 Promise
+* 完整流程应该先检查状态码，与 callback 写法一致
+* 返回的是 Stream，因此用 json() 方法读取是异步的
+* 响应类型有三种，basic cors opaque，cors 不设限制时跟 basic 一样
+* fetch 目前无法取消
+```js
 fetch(apiUrl, {
-    method: 'POST',
-    headers: {
-        'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({q: 1})
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({q: 1})
 }).then(async res => console.log(await res.json()))
 
 fetch('./api/some.json', {mode: 'cors'})
@@ -308,7 +282,18 @@ function getRandomIntInclusive(min, max) {
 
 > 通常，取模运算也叫取余运算，它们返回结果都是余数.rem（取余）和mod（取模）唯一的区别在于： 当x和y的正负号一样的时候，两个函数结果是等同的；当x和y的符号不同时，rem函数结果的符号和x的一样，而mod和y一样。
 
-## settimeout
+## setTimeout(待执行函数, 毫秒)
+* 最好赋给变量
+* 取消执行 `clearTimeout(变量名)`
+
+```js
+var up = setTimeout(update(), 0)
+function update() {
+    console.log('updated')
+}
+clearTimeout(up)
+```
+
 * 尽快执行，不能保证，浏览器负责排序
     在JavaScript中没有任何代码是立刻执行的，但一旦进程空闲则尽快执行（表面看是立刻执行）。
 
@@ -323,27 +308,18 @@ function getRandomIntInclusive(min, max) {
     })();
     ```
 
-## websocket
-
-加一个回传机制，server 推送后，客户端回传一个消息，当 server 多次推送后，没有收到回传消息，就删除这个客户端
-客户端和服务器端 应该一直有 ping pong 这种心跳来维持在线和判断在线.
-主动断开连接或正常关闭页面时浏览器会发送一个断开事件。如果是异常断开，那要看服务端 Socket 的 KeepAlive 参数是设置的是多长时间，要等到超时才能收到断开事件。如果应用层不能设置 KeepAlive 参数，那只能自己加心跳来及时处理异常情况。
-
-如何生成自签名证书
-[WebSocket Over SSL/TLS · Issue #49 · abbshr/abbshr.github.io](https://github.com/abbshr/abbshr.github.io/issues/49)
-
-HTTP是一种无连接，无状态协议，它只负责HTTP报文，真正维护那个连接的是传输层的TCP协议
-“request”事件对应的是HTTP的request，而“connect/connection”事件才对应着TCP connection
-
-## setTimeout(待执行函数, 毫秒)
-* 最好赋给变量
-* 取消执行 `clearTimeout(变量名)`
-
+## switch
 ```js
-var up = setTimeout(update(), 0)
-function update() {
-    console.log('updated')
+// default 位置没有限制
+// case 中不写 break 会继续在其它 case 中执行，即使 case 条件并不满足
+function compare(n, m) {
+  switch(n - m) {
+    default:
+      return 'not equal'
+    case 0:
+      return 'equal'
+  }
 }
-clearTimeout(up)
+console.log(equal(2, 3))
 ```
 

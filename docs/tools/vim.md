@@ -28,7 +28,7 @@
 始终添加 nore，禁用递归 如，`inoremap clg console.log`
 
 ### 快速 source .vimrc
-`:so %`
+`:so %` 注意只在 VIM 中运行，不需要在 SHELL 中运行
 
 ### 退出插入模式，vim 自带按键
 `^[`
@@ -176,6 +176,10 @@
 * `num g t`切换到某个标签页
 * `ctrl-w shift-t`移动当前窗口到新标签页，替代方法`:tabedit %<cr>`
 
+### 窗口管理
+* `<c-w><c-p>`切换到最近的窗口 
+* `<c-w> x`调换对称窗口
+
 ### 跳转
 `ctrl i[in]/o[out]`
 
@@ -202,7 +206,7 @@
 ### inside 和 around的区别
 后者包括空格
 
-### 记一个 macro
+### 记一个 macro 宏
 1. `qa`开始录制
 2. `0`按下跳到行开头
 3. `daw`删除第一个词
@@ -279,6 +283,15 @@
 ### nerdtree
 * 存在时，按`q`关掉，再`ctrl-p`，或者找到文件按`t`在新标签中打开
 * 操作当前文件，如重命名`:NERDTreeFind`
+* 切换显示隐藏 `shift i`
+* 重命名等操作，nerdtree模拟的是文件管理器的右键(这一点不如原生文件浏览方便)
+  ```
+  (a)dd a childnode
+  (m)ove the curent node
+  (d)elete the curent node
+  (c)copy the current node
+  ```
+
 
 ### 第一个 tab 只用作目录浏览
 要浏览就跳到第一个 tab，始终按`t`在新 tab 中打开文件
@@ -313,14 +326,9 @@
   :h tern_map_keys
   ```
 
-### nerdtree
-  重命名等操作，nerdtree模拟的是文件管理器的右键(这一点不如原生文件浏览方便)
-  ```
-  (a)dd a childnode
-  (m)ove the curent node
-  (d)elete the curent node
-  (c)copy the current node
-  ```
+### LeaderF
+`ctrl f` 切换路径搜索和名字搜索，名字不惟一时，适合路径查找，如果输入关键词后，内容很多，按些键切换模式
+`ctrl u` 清除，重新输入关键字
 
 ### 创建便携 vim 
   ```
@@ -372,10 +380,6 @@ vim scp://oaker@vserver.oaker.bid:29979//home/oaker/tmp.js
   中文模式编辑完成后，`shift - esc or jk`
   英文模式编辑完成后，`esc or jk`
 
-### 清除^m等标记(第一个有效)
-  `:%s/\r//g`
-  `:%s/^v^m//g`
-
 ### 不使用当前配置启动(标准vim)
   `$ vim -u none -n`
 
@@ -391,7 +395,7 @@ vim scp://oaker@vserver.oaker.bid:29979//home/oaker/tmp.js
   `:b keyword<TAB>` 关键字tab补全/或编号，快速定位打开缓冲区中的文件
   `:sb keyword<TAB>` 分屏打开文件
   `bn/bp` 上一个/下一个
-  `<C-^>` 来回切换，然后切换回原目录`:cd -`
+  `<C-^>``:e #` 来回切换，然后切换回原目录`:cd -`
   `leader cd` 切换工作目录为当前文件所在目录
 
 
@@ -419,11 +423,8 @@ vim scp://oaker@vserver.oaker.bid:29979//home/oaker/tmp.js
 ### 重载当前文件
 `:e`
 
-### 切换到最近的窗口 
-`<c-w><c-p>`
-
-### 移除换行无用字符，执行命令
-`%s/\r$//`
+### 移除换行无用字符^m
+`:%s/\r$//g`
 
 ### 提示不能修改 Cannot make changes, 'Modifiable' is off
   set ma (modifiable) / set noma
@@ -456,3 +457,29 @@ vim scp://oaker@vserver.oaker.bid:29979//home/oaker/tmp.js
 ### 主题
 [256 Terminal colors and their 24bit equivalent (or similar)](http://www.calmar.ws/vim/256-xterm-24bit-rgb-color-chart.html)
 [papercolor-theme/PaperColor.vim at master · NLKNguyen/papercolor-theme](https://github.com/NLKNguyen/papercolor-theme/blob/master/colors/PaperColor.vim)
+
+### vim-vue 插件卡顿
+原因分析：并不仅仅是多语言语法高亮问题导致
+[I can't fix the slowness. · Issue #95 · posva/vim-vue](https://github.com/posva/vim-vue/issues/95#issuecomment-374108025)
+* 关闭相对行数 `set nornu`
+* 使用 vim-vue 性能优化分支
+#### 如何分析语法时间开销
+    ```
+    :syntime on
+
+    :syntime report
+
+    then remove the offending patterns
+    ```
+
+## vim-task
+* 简单专注，不用离开 Vim
+* 快捷键
+  n/N 创建
+  d(one) 切换完成
+  x(cancel) 取消
+  a(rchive) 存档
+
+## 浏览一番后快速跳回原处
+使用全局标记 `ma`
+

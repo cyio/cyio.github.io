@@ -275,3 +275,30 @@ git config  user.name "suzie"
 
 ## debug
 `ssh -vv "your githost"`为什么要用这个，因为参数`-T`，即使返回成功，配置也可能不行（push 时还会问账密）
+## 文件大小写重命名
+```
+git mv ABC.java Abc.java
+git status
+```
+## git 仓库删除文件/夹，本地不删除
+```
+# For single file:
+git rm --cached mylogfile.log
+
+# For single directory:
+git rm --cached -r mydirectory
+```
+## 只是查看旧 commit，不要 reset
+```
+git checkout xxx
+git checkout master # 根据你的分支名修改
+
+git checkout HEAD^ # 检出前一个
+git checkout HEAD~3 # 检出前三个
+```
+
+## 意外 reset 了怎么办
+```
+git reflog # 打印出 git 切换步骤记录
+git reset HEAD@{1} # 根据步骤跳转
+```

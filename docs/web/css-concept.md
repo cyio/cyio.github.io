@@ -42,3 +42,22 @@ float定义了元素向哪个方向浮动，占据一定空间，其余内容围
 带有 !important 的优先级最高，都带 !important 的再以之前的顺序计算优先级。
 
 就近原则 inline > internal > external
+
+
+## flex
+
+* display 属性值为flex时，渲染为**块级元素，为 inline-flex 时渲染为行内元素
+* 由伸缩容器+伸缩项目构成，支持任意嵌套，内外互不干扰
+* justify-content 区别在两头
+  space-between 只内部有，两头无
+  space-around 两头有，但为半格
+  space-evenly 相等
+
+[JS Bin - Collaborative JavaScript Debugging](http://jsbin.com/mesivil/edit?html,css,output)
+[移动端全兼容的flexbox速成班 - 前端技术 - 腾讯ISUX](https://isux.tencent.com/flexbox.html)
+
+## （内容）替换元素
+* 可替换元素， 渲染时根据元素的标签和属性进行替换再展示内容，源码看不出内容，嵌入内容、表单，如 img video iframe，一般有内在样式和宽高比，独产于 CSS 格式化模型的外部对象。
+* 不可替换元素，源码和展示一致，不需要替换。大部分是不可替换元素。
+* 区分标准是，内容在渲染时是否要进行替换
+* `object-fit` 定义可替换元素如何填充容器

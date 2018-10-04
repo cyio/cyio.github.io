@@ -518,3 +518,71 @@ npm uninstall react-native-windows
 菜单找下声音输出，根据需要指定下
 
 ### 自己托管的视频文件在 iOS 下无法播放
+
+## 安装
+
+[搭建开发环境 - react native 中文网](http://reactnative.cn/docs/0.31/getting-started.html)
+注意文档对Android IDE的部分设置，可能过时
+
+- 安装环境依赖
+    ```
+    choco install jdk8
+    choco install vcredist2013
+    choco install android-sdk
+    ```
+
+- 安装 android-sdk 环境
+    版本不够，需要手动在SDK Manager中升级
+
+- SDK Manager
+ + 加速
+    [Android development tools mirror.](http://android-mirror.bugly.qq.com:8080/include/usage.html)
+
+  + 看不到 Extras/Android Support Library
+    需要更新后重新打开SDK Manager，才能看到
+
+- 设置环境变量
+    - 新增ANDROID_SDK_HOME
+    ```
+    C:\Users\galaxy\AppData\Local\Android\android-sdk
+    ```
+    - 修改path
+    ```
+    %ANDROID_SDK_HOME%\tools;%ANDROID_SDK_HOME%\platform-tools;
+    ```
+
+- 安装react-native命令行工具
+    ```
+    npm install -g react-native-cli
+    ```
+
+- 初始化项目，会自动装react-native，所以要等一会
+    ```
+    react-native init reactDemo
+    ```
+
+- SDK location not found
+根据终端提示，在android目录下新建文件 local.properties，写入
+    ```
+    sdk.dir = C\:\\Users\\galaxy\\AppData\\Local\\Android\\android-sdk
+    ```
+
+    就是sdk路径，注意格式
+
+注意linux下上述方法可能不太行，改用另一种方法，在终端中运行`export ANDROID_HOME=/home/oaker/d/cyio/Android/Sdk`
+
+- 虚拟机设置(Genymotion)
+    - 开启自动刷新，在dev菜单中找
+
+[在设备上运行 - react native 中文网](http://reactnative.cn/docs/next/running-on-device-android.html)
+注意Andorid5.0上下有所区别
+
+build命令 `react-native run-android`
+运行上述命令后，有些系统不能启动实时编译服务，手动启动 `react-native start`
+
+### linux 下为 android 模拟器设置打开 dev menu 快捷键
+设置快捷键的关键是执行命令中需要 adb 的完整路径
+```sh
+which adb
+adb-path shell input keyevent 82
+```

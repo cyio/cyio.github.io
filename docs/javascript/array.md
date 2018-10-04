@@ -21,14 +21,14 @@
   ```
 
 ## 由已有数组创建新数组
-concat 合并多个数组创建为一个新数组
-splice 截取一个数组的子集创建一个新数组（有副作用，不推荐
+`concat`合并多个数组创建为一个新数组
+`splice`截取一个数组的子集创建一个新数组（有副作用，不推荐）
 
 ## 添加
-push() 和 unshift()
+`push() unshift()`
 
 ## 删除
-pop() 和 shift()
+`pop() shift()`
 
 ## 中间插入
   ```js
@@ -48,8 +48,8 @@ pop() 和 shift()
   ```
 
 ## 移除
-shift, pop 转移，取出，分别删除并返回数组的第一个和最后一个元素。数组为空时不操作，返回 undifined
-unshift/shift [  ] push/pop
+`shift pop` 转移，取出，分别删除并返回数组的第一个和最后一个元素。数组为空时不操作，返回 undifined
+`unshift/shift [  ] push/pop`
 
 ## 类数组转换
 DOM 数组本质上不是 Array，是 NodeList。 你可以通过`Array.prototype.slice.call(nodeList, 0)`把节点全部复制到 Array 再操作。
@@ -73,7 +73,7 @@ DOM 数组本质上不是 Array，是 NodeList。 你可以通过`Array.prototyp
 [Ditch the [].forEach.call(NodeList) hack](https://toddmotto.com/ditch-the-array-foreach-call-nodelist-hack/)
 
 ## 分解处理
-array.reduce(处理函数(累加值，当前值)，初始值)
+`array.reduce(处理函数(累加值，当前值)，初始值)`
 
 * 每 reduce 一次，把累加值和当前值作为参数传入处理函数
 * 初始值可选，没有时使用数组的第一个值

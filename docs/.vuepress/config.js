@@ -78,9 +78,11 @@ function genSidebarConfig (title) {
           'http',
           'security',
           'css-concept',
+          'css-practice',
           'pseudo-elements',
           'grid',
           'browser',
+          'web-browser-compatible',
         ]
       },
     ],
@@ -114,6 +116,7 @@ function genSidebarConfig (title) {
         children: [
           'vim',
           'git',
+          'tmux',
           'photoshop',
         ]
       },

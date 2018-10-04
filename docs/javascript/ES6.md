@@ -6,6 +6,13 @@
 * `this`总是指向声明时的那个对象
 * rest 参数，更便利访问函数参数
 * let/var 全局声明有区别，var 存在 window 对象中，而 let 存在声明式环境中（看不到），不影响 window.xxx 的使用，但 var xxx 不行
+* let 最好放在 block 最上面，防止过早访问引起抛错
+* 显式地声明块级变量，建议把 let 与大括号放在一行
+    ```js
+    { let a = 3, b, c
+
+    }
+    ```
 
 [在 ES6 中 改良的 5 个 JavaScript “缺陷” - WEB前端 - 伯乐在线](http://web.jobbole.com/86210/)
 * 实现模板字符串功能
