@@ -28,3 +28,14 @@
   background-size: 100% 100%;  
 }
 ```
+
+## 工具、库、语言特性兼容性
+
+| name  | compatible |
+| ---   | --         |
+| axios | IE10+      |
+| vue   | IE9+       |
+| flexbox   | IE10+    |
+
+* axios 不支持 IE9 跨域请求
+[Vue - ie9 全面兼容方案](https://github.com/TerryZ/js-develop-skill-summary/blob/master/vue-ie9.md)

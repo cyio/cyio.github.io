@@ -84,6 +84,17 @@ DOM 数组本质上不是 Array，是 NodeList。 你可以通过`Array.prototyp
   const sum = (init= 0, ...values) => values.reduce((acc, value) => acc + value, init)
   const result = sum(1)
   console.log(result)
+
+  // 求和
+  // 1. for
+  let nums = [1, 2, 3]
+  let total = 0
+  for (let i = 0; i < nums.length; i++) {
+      total += nums[i]
+  }
+  console.log(total)
+  // 2. reduce
+  let total = nums.reduce((pre, cur) => pre + cur)
   ```
 
 ## 迭代方法

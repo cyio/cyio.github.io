@@ -3,7 +3,10 @@
 > 学习目标：基础扎实，熟练运用
 > 积累一些练习题，隔段时间回忆考察
 
+[RegExr: Learn, Build, & Test RegEx](https://regexr.com/)
 [社区规则集 RegexHQ](https://github.com/regexhq)
+[JS正则表达式完整教程（略长） - 掘金](https://juejin.im/post/5965943ff265da6c30653879)
+[Regulex：JavaScript Regular Expression Visualizer](https://jex.im/regulex)
 
 ```js
 var re = /hello src=(.+) yes/; // 创建正则表达式对象，这里不是字符串
@@ -124,3 +127,6 @@ d 的字符一个或多个（至少有一个）
 ## 手机号
 `/^1(?:3\d|4[4-9]|5[0-35-9]|6[67]|7[013-8]|8\d|9\d)\d{8}$/`
 中国所有合法手机号码的正则表达式 (link: http://t.cn/RDFhxUP)
+
+
+

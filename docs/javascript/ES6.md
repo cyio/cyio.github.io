@@ -14,6 +14,7 @@
     }
     ```
 
+[Javascript - ES6 实用技巧](https://github.com/TerryZ/js-develop-skill-summary/blob/master/javascript-es6.md)
 [在 ES6 中 改良的 5 个 JavaScript “缺陷” - WEB前端 - 伯乐在线](http://web.jobbole.com/86210/)
 * 实现模板字符串功能
 ```js
@@ -311,3 +312,7 @@ router.get('/user/:id', async (req, res, next) => {
 })
 ```
 [Using Async Await in Express with Node 9 – Alex Bazhenov – Medium](https://medium.com/@Abazhenov/using-async-await-in-express-with-node-8-b8af872c0016)
+
+## 参数类型
+ES6 不支持，用 flow，然后通过 babel plugin 移除
+[javascript - Babel: Function parameter types in ES6 - Stack Overflow](https://stackoverflow.com/questions/35916921/babel-function-parameter-types-in-es6)

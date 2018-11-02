@@ -96,3 +96,10 @@ import 'web_modules/modernizr'  // must import first
 ## loader
 
 file-loader 将资源复制过去，然后返回资源路径，一般是图片文件，那别的格式如 mp3 文件怎么办？加到正则即可
+
+## 打包
+vendor 第三方库
+common 共用
+> 
+With this bundle configuration, you would load your third party libraries, then your common application code, then your page-specific application code.
+

@@ -1,5 +1,8 @@
 # 技巧
 
+## 插件库
+[The Vanilla JS Toolkit](https://vanillajstoolkit.com/)
+
 - 建议不要使用`||`来接默认值，因为这样，就不能赋值为0了，0会被当作假值而取默认值。
     ```js
     function setAge(age) {
@@ -86,3 +89,23 @@ console.log(RandomString(23));
 * 初始值为 0
 * `click`一次，将值加1并弹出
 * 不要只是为了添加一个`console.log`来转换箭头函数，你可以用||添加它 然后在以后去掉它
+
+## 从 Object 构建 URL querystring
+```js
+// build a query string from an object 
+function buildQuery(data) {
+	if (typeof (data) === 'string') return data
+
+	const query = []
+
+	for (const key in data) {
+		if (data.hasOwnProperty(key)) {
+			query.push(encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+		}
+	}
+
+	return query.join('&')
+}
+```
+[How to build a query string from an object with vanilla JS | Go Make Things](https://gomakethings.com/how-to-build-a-query-string-from-an-object-with-vanilla-js/)
+

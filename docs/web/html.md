@@ -182,9 +182,16 @@
 ### DNS预取
     ```
     正确的使用姿势
-    1.对静态资源域名做手动dns prefetching。 
-    2.对js里会发起的跳转、请求做手动dns prefetching。 
-    3.不用对超链接做手动dns prefetching，因为chrome会自动做dns prefetching。 
-    4.对重定向跳转的新域名做手动dns prefetching，比如：页面上有个A域名的链接，但访问A会重定向到B域名的链接，这么在当前页对B域名做手动dns prefetching是有意义的。
+    1.对静态资源域名做手动 dns prefetching。 
+    2.对js里会发起的跳转、请求做手动 dns prefetching。 
+    3.不用对超链接做手动 dns prefetching，因为 chrome 会自动做 dns prefetching。 
+    4.对重定向跳转的新域名做手动 dns prefetching，比如：页面上有个A域名的链接，但访问A会重定向到B域名的链接，这么在当前页对B域名做手动 dns prefetching 是有意义的。
     ```
 		[预加载系列一：DNS Prefetching 的正确使用姿势 - Delai - 有赞技术团队](https://tech.youzan.com/dns-prefetching/)
+
+## 三种方式阻止 href 跳转
+()[https://stackoverflow.com/a/44491091/5657916]
+最简单的，锚点跳转找不到
+```
+<a href="#!" class="someclass">Text</a>
+```

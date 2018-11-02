@@ -9,6 +9,7 @@
 
 * 传布尔值，是否向顶边界对齐，默认是
 * 传对象，block 指定对齐位置，behavior 是否平滑
+* 存在离奇卡顿问题，原因未知
 [ScrollIntoView Tests](https://codepen.io/fatmedia/pres/aNZavB)
 浏览器有基本支持，IE8/Safari 只是不支持`scrollIntoViewOptions`，不能实现平滑滚动
 移动端使用可能导致 fixed 元素抖动，替代用 translate

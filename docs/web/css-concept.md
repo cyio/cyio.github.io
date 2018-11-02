@@ -15,7 +15,23 @@ display block list-item table 三个独占行的排版
 * 常规流
 * 浮动
 * 绝对定位
- 
+
+### 相对定位
+
+* 相对于自身原有位置进行偏移（物理中的参照物）
+* 仍处于标准文档流中
+* 随即拥有偏移属性和z-index属性
+
+### 绝对定位
+
+* 建立了以包含块为基准的定位
+* 完全脱离了标准文档流
+* 随即拥有偏移属性和z-index属性
+* 绝对于浏览器
+* 如果将父级设为relative,则子元素将在父级盒子内定位
+* 当三个盒子都是绝对定位时，运用z-index定位的叠加：z-index:0/1/2/… 表示从上到下显示的次序
+* top 值依赖 relative 元素设置 height
+
 ## 盒模型
 ## box-sizing
 `width/height`如何计算，默认值`content-box`，常用`border-box`，把 border 和 padding 也算上，特别是涉及百分比计算时，更方便
@@ -43,21 +59,12 @@ float定义了元素向哪个方向浮动，占据一定空间，其余内容围
 
 就近原则 inline > internal > external
 
-
-## flex
-
-* display 属性值为flex时，渲染为**块级元素，为 inline-flex 时渲染为行内元素
-* 由伸缩容器+伸缩项目构成，支持任意嵌套，内外互不干扰
-* justify-content 区别在两头
-  space-between 只内部有，两头无
-  space-around 两头有，但为半格
-  space-evenly 相等
-
-[JS Bin - Collaborative JavaScript Debugging](http://jsbin.com/mesivil/edit?html,css,output)
-[移动端全兼容的flexbox速成班 - 前端技术 - 腾讯ISUX](https://isux.tencent.com/flexbox.html)
-
 ## （内容）替换元素
 * 可替换元素， 渲染时根据元素的标签和属性进行替换再展示内容，源码看不出内容，嵌入内容、表单，如 img video iframe，一般有内在样式和宽高比，独产于 CSS 格式化模型的外部对象。
 * 不可替换元素，源码和展示一致，不需要替换。大部分是不可替换元素。
 * 区分标准是，内容在渲染时是否要进行替换
 * `object-fit` 定义可替换元素如何填充容器
+
+## 外边距折叠
+BFC 的特性，不是缺陷
+[Mastering margin collapsing - CSS: Cascading Style Sheets | MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing)

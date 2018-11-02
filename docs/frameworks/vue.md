@@ -212,7 +212,6 @@ child3.$dispatch('test')
 * 如果不用vuex，如何共享状态
   > 把这个状态放到这两个组件共同的父组件中然后通过 prop.sync 来同步这两个组件的这个状态
   > 在这两个组件中都放置这个状态然后通过共同父组件的一个 prop 来在父组件中调用函数执行一个 this.$dispatch 通知子组件这个状态有改动，借此来同步各个组件中的这个状态。
-* 把组件逻辑暴露在mixin中
 * 用事件通知prop更新
 * 使用umd风格，实现更多支持
     ```
@@ -358,3 +357,59 @@ git checkout feature/cache-file-timestamps
 ### vue-cli-service 如何本地配置某个依赖
 [neutrinojs/webpack-chain: A chaining API to generate and simplify the modification of Webpack configurations.](https://github.com/neutrinojs/webpack-chain)
 [javascript - vue-cli 3.0 多页面 怎么配置？ - SegmentFault 思否](https://segmentfault.com/q/1010000013659421)
+webpack 的 stats 配置不能用，选了别的插件
+[stats config invalid ? · Issue #2652 · vuejs/vue-cli](https://github.com/vuejs/vue-cli/issues/2652#issuecomment-425632179)
+
+## 打包优化
+多页，每个页面全部资源加起来超过 1.7MB，原因是 vendor js 和 vendor css 加起来就 1.5M
+[vue.js - How to break the js files into chunks in vue cli 3 with webpack performance object? - Stack Overflow](https://stackoverflow.com/a/51817891/5657916)
+[blog/2018-07-14-wpk.md at master · wqzwh/blog](https://github.com/wqzwh/blog/blob/master/source/_posts/2018-07-14-wpk.md#webpackprodconfjs)
+
+## 前端编译服务崩溃问题
+升级 vue-cli 3 后，在修改 JS 文件，尤其是频繁保存时，服务极易崩溃，可以稳定重现
+因为我大部分时间在编辑 vue 文件，感觉不明显，景帅反映比较突出，严重影响开发效率
+崩溃原因： sourcemap 生成、 文件 watch 等功能内存占用大，webpack 部分插件内存泄漏、高内存占用，触及 V8 默认回收上限 1400Mb
+解决办法是提升上限，避免触及，需要注意如何正确地添加参数
+
+错误方式（景帅在 package.json 中添加的）：
+`$ vue-cli-service serve --max_old_space_size=4096`
+正确方式：
+1. [yarn serve - JavaScript heap out of memory crash · Issue #1453 · vuejs/vue-cli](https://github.com/vuejs/vue-cli/issues/1453#issuecomment-430969846)
+`node --max_old_space_size=4096 node_modules/@vue/cli-service/bin/vue-cli-service.js serve --open`
+2. [fix: increase Node memory limit to workaround webpack crash, fix #1453 · octref/vue-cli@bb98ef0](https://github.com/octref/vue-cli/commit/bb98ef08874bf07b9a510b23f8d6f94c0afaf01c)
+相关Issue：
+[Process out of memory - Webpack · Issue #1914 · webpack/webpack](https://github.com/webpack/webpack/issues/1914#issuecomment-392660230)
+
+## 多页路由
+* 使用 vue-router 的问题，如果层级深，需要调用父级
+
+## 单文件拆分
+```
+<template src="./template.pug" lang="pug"></template>
+<script src="./script.js"></script>
+<style src="./style.styl" lang="stylus"></style>
+```
+```
+├── app.js
+└── component
+    ├── item-edit
+    └── item-list
+        ├── config.json
+        ├── index.vue
+        ├── script.js
+        ├── style.styl
+        └── template.pug
+```
+
+## mixin
+* 把组件逻辑暴露在mixin中
+* 有些耦合度高的数据不适用
+[Vue文档中几个易忽视部分的剖析 - 掘金](https://juejin.im/post/5ab3924b6fb9a028db589b57)
+
+## 组件切换数据问题 v-if 和 v-show
+如果用`v-show`的话，`mounted`只执行一次，如果希望组件显示时执行，简单解决是改用`v-if`，比较复杂的方法如下：
+[vue.js - Trigger code on component v-show=true - Stack Overflow](https://stackoverflow.com/questions/42813594/trigger-code-on-component-v-show-true)
+
+## 动态样式
+可以绑定计算属性
+[Edit fiddle - JSFiddle](https://jsfiddle.net/Andy0708/8t8902gn/1/?utm_source=website&utm_medium=embed&utm_campaign=8t8902gn)

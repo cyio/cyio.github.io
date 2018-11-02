@@ -292,6 +292,9 @@ function update() {
     console.log('updated')
 }
 clearTimeout(up)
+
+const delay = (t, f) => setTimeout(f, t)
+delay(500, () => alert(‘hey!’))
 ```
 
 * 尽快执行，不能保证，浏览器负责排序
@@ -322,4 +325,60 @@ function compare(n, m) {
 }
 console.log(equal(2, 3))
 ```
+## `requestAnimationFrame()`
+IE10+
+```js
+// Setup a timer
+var timeout;
 
+// Listen for resize events
+window.addEventListener('scroll', function (event) {
+
+	console.log('no debounce');
+
+	// If there's a timer, cancel it
+	if (timeout) {
+		window.cancelAnimationFrame(timeout);
+	}
+
+	// Setup the new requestAnimationFrame()
+	timeout = window.requestAnimationFrame(function () {
+
+		// Run our scroll functions
+		console.log('debounced');
+
+	});
+
+}, false);
+
+// helper
+/**
+ * Debounce functions for better performance
+ * @param  {Function} fn The function to debounce
+ */
+var debounce = function (fn) {
+
+	// Setup a timer
+	var timeout;
+
+	// Return a function to run debounced
+	return function () {
+
+		// Setup the arguments
+		var context = this;
+		var args = arguments;
+
+		// If there's a timer, cancel it
+		if (timeout) {
+			window.cancelAnimationFrame(timeout);
+		}
+
+		// Setup the new requestAnimationFrame()
+		timeout = window.requestAnimationFrame(function () {
+			fn.apply(context, args);
+		});
+
+	}
+
+};
+```

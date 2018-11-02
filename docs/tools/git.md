@@ -302,3 +302,11 @@ git checkout HEAD~3 # 检出前三个
 git reflog # 打印出 git 切换步骤记录
 git reset HEAD@{1} # 根据步骤跳转
 ```
+## 部分提交
+可以反复按下面步骤操作
+```
+git add somefile
+// 暂存不提交的文件，以便测试将要提交代码
+// -u 包括新文件 -k 保持文件完整
+git stash -u -k 
+```

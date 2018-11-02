@@ -10,6 +10,7 @@ module.exports = {
   serviceWorker: true,
   themeConfig: {
     serviceWorker: {
+      lastUpdated: 'Last Updated',
       updatePopup: true
     },
     evergreen: true,
@@ -81,6 +82,7 @@ function genSidebarConfig (title) {
           'css-practice',
           'pseudo-elements',
           'grid',
+          'flexbox',
           'browser',
           'web-browser-compatible',
         ]
