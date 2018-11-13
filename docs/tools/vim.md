@@ -291,6 +291,8 @@
   (d)elete the curent node
   (c)copy the current node
   ```
+`u`: 切换目录树的根目录为上层目录
+`U`: 切换目录树的根目录为上层目录，并保持旧的目录树的状态
 
 
 ### 第一个 tab 只用作目录浏览

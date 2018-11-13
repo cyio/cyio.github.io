@@ -11,3 +11,5 @@ const config = {
 [axios post提交formdata - wopelo的博客 - CSDN博客](http://blog.csdn.net/wopelo/article/details/78783442)
 
 ## 验证
+
+[前端表单进阶之路：通过 Vue.js 实现表单可配置化 - 掘金](https://juejin.im/post/59e4740251882578cb511d3e)

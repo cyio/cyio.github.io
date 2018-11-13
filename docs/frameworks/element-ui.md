@@ -1,6 +1,6 @@
 # element-ui
 
-```js
+```javascript
       const loadingInstance = this.$loading({
         target: window.document.querySelector('.courseListContainer'),
         fullscreen: false,
@@ -13,4 +13,36 @@
           this.loading = false
         });
       })
+```
+
+## 简单扩展
+示例：input 之 html/css 定制
+* 使用 type 和 template
+* 调整 html 结构，写 css
+```html
+    <template v-if="type === 'custom'">
+      <!-- 前置元素 -->
+      <div class="el-input__inner">
+        <div class="el-input-group__prepend" v-if="$slots.prepend">
+          <slot name="prepend"></slot>
+        </div>
+        <input
+          :tabindex="tabindex"
+          v-if="type !== 'textarea'"
+          v-bind="$attrs"
+          :type="type"
+          :disabled="inputDisabled"
+          :readonly="readonly"
+          :autocomplete="autoComplete || autocomplete"
+          :value="currentValue"
+          ref="input"
+          @compositionstart="handleComposition"
+          @compositionupdate="handleComposition"
+          @compositionend="handleComposition"
+          @input="handleInput"
+          @focus="handleFocus"
+          @blur="handleBlur"
+          @change="handleChange"
+          :aria-label="label"
+        >
 ```

@@ -5,26 +5,15 @@
 
 * 滚动页面时，元素出现动画
   - [Reveal Animations When Scrolling — WOW.js](http://mynameismatthieu.com/WOW/) 
+  - 加上 wow 后，元素在用户滚动到前隐藏
+  - 可以自己写 JS 配合`animate.css`
   ```
   class="animated wow fadeInDown"
   ```
 
 	- [ajlkn/jquery.scrollex: Nifty scroll events for jQuery.](https://github.com/ajlkn/jquery.scrollex)
 
-* 载入中处理
-  ```
-  // Disable animations/transitions until the page has loaded.
-  $body.addClass('is-loading');
-
-  $window.on('load', function() {
-      window.setTimeout(function() {
-          $body.removeClass('is-loading');
-          }, 0);
-      });
-
-  ```
-
-* 视差滚动插件
+* 视差滚动
   [Victa/scrolly: Super simple and easy to use parallax plugin for jQuery (THIS PROJECT IS NOT MAINTAINED ANYMORE)](https://github.com/Victa/scrolly)
   ```
   // Scrolly links.
@@ -38,10 +27,10 @@
 
 ## 源码收集
 
-	* 首屏视频
-		- 按窗口动态设定视频宽高
-		- 滚动时停止播放
-	[www.zigeer.com 自个官网](https://gist.github.com/cyio/35bb90d1e9ea65980994e47f4de25ef4)
+* 首屏视频
+  - 按窗口动态设定视频宽高
+  - 滚动时停止播放
+[www.zigeer.com 自个官网](https://gist.github.com/cyio/35bb90d1e9ea65980994e47f4de25ef4)
 
 
 *	img srcset explain

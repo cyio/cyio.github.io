@@ -10,7 +10,7 @@
   ```
 
 ## 未知宽度下的居中
-  - 方案一，需要父子配合
+* 方案一，需要父子配合
   ```html
   <div class="wrap">
     <div class="inner">html ： 让 inner 居中</div>
@@ -27,9 +27,9 @@
     left: -50%; 
   }
   ```
-	- 方案二，块宽度未知，绝对定位，偏移50%，加上负的水平变形进行校正
+* 方案二，块宽度未知，绝对定位，偏移50%，加上负的水平变形进行校正
 	```css
-  #horizontal-center {
+  .horizontal-center {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -49,7 +49,7 @@
   }
   ```
 
-* 对需要水平垂直居中的元素写css:
+## 对需要水平垂直居中的元素写css:
   ```css
   elem {
     position: absolute;
@@ -129,12 +129,24 @@
   - color-stop 可有多个，如果不指定百分比位置，则是均匀散开
   - 支持透明度
   - 可以搭配背景图使用
+  - 至少定义两种颜色，希望呈现的平稳过渡的颜色
   ```
   background: linear-gradient(to bottom, black 90%, green 95%, yellow);
 
   background: linear-gradient(to top, rgba(255,255,255,0), rgba(255,255,255,1)), url(https://www.codeproject.com/KB/GDI-plus/ImageProcessing2/flip.jpg) no-repeat;
   background-size: cover;
   ```
+
+## 径向渐变
+- 线性渐变是直线渐变，径向是圆形的渐变
+- 圆只是一种特殊的椭圆
+-径向渐变从圆心点以椭圆形状向外扩散，渐变的实现由两部分组成：椭圆和色标。椭圆部分用来控制径向渐变的位置、大小和形状等。而色标部分包含一个颜色值和一个位置，用来控制渐变的颜色变化
+- 中心位置的值，用单词，或者都用 px，不能混用
+- 应用：切角，用透明色填充
+
+[css - Multiple gradients and radial gradient with center outside of the element - Stack Overflow](https://stackoverflow.com/a/32859121/5657916)
+[Radial Gradient Recipes | CSS-Tricks](https://css-tricks.com/radial-gradient-recipes/)
+[css实现平角切角和弧形切角效果 - 小圣贤君的博客 - CSDN博客](https://blog.csdn.net/zhongguohaoshaonian/article/details/77870217)
 
 ## CSS变量命名示例
 [colors-by-use.md](https://gist.github.com/dbox/e7b206a04d39598e32237b5f1317ef83)

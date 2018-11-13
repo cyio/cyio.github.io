@@ -148,3 +148,37 @@ $(‘.parallax-obj’).parallax()
 
 [Make a Flippin’ 3D Countdown with CSS & JavaScript | Viget](https://www.viget.com/articles/make-a-flippin-3d-countdown-with-css-and-javascript/)
 [FlipClock.js](http://flipclockjs.com/) 需要 jQuery，可以看效果
+
+## flip
+```css
+.img-contain:hover .overlay {
+  opacity: 1;
+  background: hsla(50, 0%, 0%, 0.6);
+  transition: 0.3s opacity ease-out;
+}
+
+.img-contain .overlay {
+  position: absolute;
+  z-index: 1000;
+  display: block;
+  width: 245px;
+  height: 155px;
+  margin: 5px;
+  opacity: 0;
+  overflow: hidden;
+  transition: 0.3s opacity ease-in;
+}
+
+.flip-enter-active {
+  transition: all .2s cubic-bezier(0.55, 0.085, 0.68, 0.53); //ease-in-quad
+}
+
+.flip-leave-active {
+  transition: all .25s cubic-bezier(0.25, 0.46, 0.45, 0.94); //ease-out-quad
+}
+
+.flip-enter, .flip-leave-to {
+  transform: scaleY(0) translateZ(0);
+  opacity: 0;
+}
+```

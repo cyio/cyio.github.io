@@ -303,10 +303,15 @@ git reflog # 打印出 git 切换步骤记录
 git reset HEAD@{1} # 根据步骤跳转
 ```
 ## 部分提交
-可以反复按下面步骤操作
+可以反复按下面步骤操作：
+1. add 需要提交的文件或代码
+2. 暂存其余，以便测试将要提交代码，`-u 包括新文件 -k 保持文件完整`
 ```
 git add somefile
-// 暂存不提交的文件，以便测试将要提交代码
-// -u 包括新文件 -k 保持文件完整
 git stash -u -k 
+```
+
+暂存某个文件
+```
+git stash push -m welcome_cart app/views/cart/welcome.thtml
 ```

@@ -8,6 +8,7 @@
     * 绑定的单双向：View 层与 Model 层之间的映射关系。
 * 不同点：
     - vue 双向绑定，react 单向
+
       > 单向绑定使得数据流也是单向的，对于复杂应用来说这是实施统一的状态管理（如redux）的前提。双向绑定在一些需要实时反应用户输入的场合会非常方便（比如多级联动菜单）。但通常认为复杂应用中这种便利比不上引入状态管理带来的优势。注意，Vue 虽然通过 v-model 支持双向绑定，但是如果引入了类似redux的vuex，就无法同时使用 v-model。参见[vuex/forms.md at master · vuejs/vuex](https://github.com/vuejs/vuex/blob/master/docs/zh-cn/forms.md)
 
 [React的单向数据流与Vue的双向绑定 - CSDN博客](https://blog.csdn.net/qq_41206257/article/details/80992085)
@@ -30,6 +31,7 @@
 
 [仿Vue极简双向绑定](https://codepen.io/cyio/pen/aaboyQ?editors=0010)
 [Vue.js源码解析：深入响应式原理](http://www.infoq.com/cn/articles/Vue.js-code)
+[How I built my own vanilla JS alternative to Vue and React | Go Make Things](https://gomakethings.com/how-i-built-my-own-vanilla-js-alternative-to-vue-and-react/)
 
 ## Vue 2
 
@@ -73,59 +75,22 @@ Understanding Components Communication in Vue 2.0 http://taha-sh.com/blog/unders
 使用后者的情况是，我们需要用到`to from`，比如数据获取需要参数`to.params.id`，需要知道来源页面
 然后在`next`中使用`vm`来代表实例
 
-## Vue 1
-
 * 响应是指，改动数据就更新视图。
 * data 数据属性 
 * 实例属性，表达时比数据属性多个美元符号
-* methods 钩子（实例方法）
-* 绑定表达式，支持全功能JS表达式，一个绑定只能包含单个表达式。
-* 过滤器 | pipe
-* 指令 前缀v-，加JS表达式，用于判断
-```js
-<p v-if="greeting">Hello!</p>   // 相当于 if(greeting)
-```
-* 绑定
-  v-bind 参数绑定
-```js
-<a :href="url"></a>
-```
-v-on 监听事件
-```js
-<a @click="doSomething"></a>
-```
-* 计算属性
-```js
-var vm = new Vue({
-  data: {
-    firstName: 'Foo',
-    lastName: 'Bar'
-  },
-  computed: {
-    fullName: function () {
-      return this.firstName + ' ' + this.lastName
-    }
-  }
-})
-```
-
-* 双向绑定后，可以由用户手动输入修改数据
-* 利用 v-model 和 filter 实现搜索过滤 http://codepen.io/SitePoint/pen/VLdQEW
 * slot 插槽，调用组件时供插入内容 ，没有插入内容时供回退显示
-
-  组件定义
-    .modal-mask
-      slot(name='body')
-
+* 组件定义
+  ```
+  .modal-mask
+    slot(name='body')
+  ```
   组件调用
+  ```
     modal
       div(slot='body')
 
-* 配置预处理支持，如 jade , sass，[Pre-Processors | Introduction](https://vuejs.github.io/vue-loader/configurations/pre-processors.html)
-* 组件间通信 [JS Bin - Collaborative JavaScript Debugging](http://jsbin.com/poninazoku/edit?html,js,output)  
-* 如何引入外部资源，比如地图JS，[javascript - webpack external react 时只能使用其全局变量或相对路径怎么办？ - SegmentFault](https://segmentfault.com/q/1010000002720840)  
-* 如何引入`node_modules`中的文件
-* set remove [Edit fiddle - JSFiddle](http://jsfiddle.net/tianhai/6fLeb/1/)
+  ```
+
 * 实现简单的路由（页面切换）
 ```html
 // index.html
@@ -325,6 +290,33 @@ methods: {
 ## 过滤器 - filter
 * 2.x 起，不能在指令中使用，改用 JS 原生 filter，写成计算属性
 * 2.x 起，传参数由原来空格变成括号，即普通函数调用形式
+* 不像其它方法会转换数据，只是输出给用户看的变了
+```js
+//global
+Vue.filter('filterName', function(value) {
+  return // thing to transform
+});
+ 
+//locally, like methods or computed
+filters: {
+  filterName(value) {
+    return // thing to transform
+  }
+}
+```
+* 可以串联
+* 可以传多个参数
+```js
+{{ data | filterName(arg1, arg2) }}
+
+// arguments are passed in order after the value
+filters: {
+  filterName(value, arg1, arg2) {
+    return //thing to transform
+  }
+}
+```
+* 每次更新都会执行，如果有大量数据且应该是缓存，用 computed
 
 [Edit fiddle - JSFiddle](https://jsfiddle.net/nw5yhLwv/)
 
@@ -402,8 +394,50 @@ webpack 的 stats 配置不能用，选了别的插件
 ```
 
 ## mixin
-* 把组件逻辑暴露在mixin中
+* 把组件逻辑暴露在 mixin 中
 * 有些耦合度高的数据不适用
+* 可以是局部，可以是全局
+```js
+Vue.mixin({
+  mounted() {
+    console.log('hello from mixin!')
+  }
+})
+
+new Vue({
+  ...
+})
+// This console.log would now appear in every component
+```
+* pure
+```js
+const toggle = {
+  data() {
+    return {
+      isShowing: false
+    }
+  },
+  methods: {
+    toggleShow() {
+      this.isShowing = !this.isShowing;
+    }
+  }
+}
+```
+```js
+const toggle = {
+  data() {
+    return {
+      isShowing: false
+    }
+  },
+  methods: {
+    toggleShow() {
+      this.isShowing = !this.isShowing;
+    }
+  }
+}
+```
 [Vue文档中几个易忽视部分的剖析 - 掘金](https://juejin.im/post/5ab3924b6fb9a028db589b57)
 
 ## 组件切换数据问题 v-if 和 v-show
@@ -413,3 +447,12 @@ webpack 的 stats 配置不能用，选了别的插件
 ## 动态样式
 可以绑定计算属性
 [Edit fiddle - JSFiddle](https://jsfiddle.net/Andy0708/8t8902gn/1/?utm_source=website&utm_medium=embed&utm_campaign=8t8902gn)
+
+## 生命周期
+* `beforeDestory`不会在窗口 refresh 或 close 时触发
+    ```js
+    window.onbeforeunload = function(){
+      console.warn('haha') // 要执行的代码
+      return "确认离开页面";
+    }
+    ```

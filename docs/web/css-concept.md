@@ -68,3 +68,7 @@ float定义了元素向哪个方向浮动，占据一定空间，其余内容围
 ## 外边距折叠
 BFC 的特性，不是缺陷
 [Mastering margin collapsing - CSS: Cascading Style Sheets | MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing)
+
+## calc
+IE10+
+[css兼容所有浏览器的宽度计算方法，非calc - 个人文章 - SegmentFault 思否](https://segmentfault.com/a/1190000010806965)
