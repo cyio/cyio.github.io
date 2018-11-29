@@ -329,7 +329,6 @@ manifest 异步、script 动态引入
 ```
 [webpack使用CommonsChunkPlugin拆包心得 - 简书](https://www.jianshu.com/p/5a543a0284f6)
 [Splitting Bundles with Webpack 4](https://lmiller1990.github.io/electic/posts/splitting_bundles_with_webpack_4.html)
-[vue多页面开发和打包的正确姿势 - 掘金](https://juejin.im/post/5a8e3f00f265da4e747fc700#heading-1)
 [webpack/examples/common-chunk-and-vendor-chunk at master · webpack/webpack](https://github.com/webpack/webpack/tree/master/examples/common-chunk-and-vendor-chunk)
 [SplitChunksPlugin](https://webpack.js.org/plugins/split-chunks-plugin/)
 查看完整配置`./node_modules/.bin/vue-cli-service inspect`
@@ -348,14 +347,8 @@ git checkout feature/cache-file-timestamps
 [build performance · webpack/docs Wiki](https://github.com/webpack/docs/wiki/build-performance)
 ### vue-cli-service 如何本地配置某个依赖
 [neutrinojs/webpack-chain: A chaining API to generate and simplify the modification of Webpack configurations.](https://github.com/neutrinojs/webpack-chain)
-[javascript - vue-cli 3.0 多页面 怎么配置？ - SegmentFault 思否](https://segmentfault.com/q/1010000013659421)
 webpack 的 stats 配置不能用，选了别的插件
 [stats config invalid ? · Issue #2652 · vuejs/vue-cli](https://github.com/vuejs/vue-cli/issues/2652#issuecomment-425632179)
-
-## 打包优化
-多页，每个页面全部资源加起来超过 1.7MB，原因是 vendor js 和 vendor css 加起来就 1.5M
-[vue.js - How to break the js files into chunks in vue cli 3 with webpack performance object? - Stack Overflow](https://stackoverflow.com/a/51817891/5657916)
-[blog/2018-07-14-wpk.md at master · wqzwh/blog](https://github.com/wqzwh/blog/blob/master/source/_posts/2018-07-14-wpk.md#webpackprodconfjs)
 
 ## 前端编译服务崩溃问题
 升级 vue-cli 3 后，在修改 JS 文件，尤其是频繁保存时，服务极易崩溃，可以稳定重现
@@ -371,9 +364,6 @@ webpack 的 stats 配置不能用，选了别的插件
 2. [fix: increase Node memory limit to workaround webpack crash, fix #1453 · octref/vue-cli@bb98ef0](https://github.com/octref/vue-cli/commit/bb98ef08874bf07b9a510b23f8d6f94c0afaf01c)
 相关Issue：
 [Process out of memory - Webpack · Issue #1914 · webpack/webpack](https://github.com/webpack/webpack/issues/1914#issuecomment-392660230)
-
-## 多页路由
-* 使用 vue-router 的问题，如果层级深，需要调用父级
 
 ## 单文件拆分
 ```
