@@ -2,6 +2,10 @@
 
 > web优化专家一定是图片优化专家
 
+## 显示优化
+* 缩略图到原图过渡
+[web前端图片加载优化，从图片模糊到清晰的实现过程](http://www.fly63.com/article/detial/359)
+
 [CodePen - JPNG.svg (Transparent PNG with JPEG Compression)](https://codepen.io/shshaw/full/LVKEdv)
 
 ## 图片压缩
@@ -27,22 +31,22 @@
 
 ## 处理上传
 blob 必须设置 name
-```
-        blobToFile (theBlob, fileName) {
-            theBlob.lastModifiedDate = new Date()
-            theBlob.name = fileName
-            return theBlob
-        },
+```js
+  blobToFile (theBlob, fileName) {
+      theBlob.lastModifiedDate = new Date()
+      theBlob.name = fileName
+      return theBlob
+  },
 
-                const newFile = this.blobToFile(blob, 'upload.png')
-                const formData = new FormData()
-                formData.append('file', newFile, newFile.name)
+  const newFile = this.blobToFile(blob, 'upload.png')
+  const formData = new FormData()
+  formData.append('file', newFile, newFile.name)
 ```
 [原理：Vue 实现图片预览、裁剪并获取被裁剪区域的base64(无组件) - hhzzcc_的博客 - CSDN博客](https://blog.csdn.net/hhzzcc_/article/details/80324546)
 [Vue+element-ui图片上传剪裁组件 - 掘金](https://juejin.im/post/5b3f14c2f265da0f5405080f)
 
 * element-ui
-```
+```pug
         el-upload.avatar-uploader(action='https://jsonplaceholder.typicode.com/posts/', :show-file-list='false', :on-success='handleAvatarSuccess', :before-upload='beforeAvatarUpload')
             el-button(type='primary') 上传
 ```

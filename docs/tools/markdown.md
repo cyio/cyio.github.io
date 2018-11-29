@@ -26,7 +26,7 @@ Content in the first column | Content in the second column
 
 ## 语法参考
 
-```javascript
+```js
 function syntaxHighlighting() {
   var n = 33;
   var s = "hello, こんにちは";

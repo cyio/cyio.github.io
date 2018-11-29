@@ -50,6 +50,7 @@
   ```
 
 ## 对需要水平垂直居中的元素写css:
+translate 修正偏差
   ```css
   elem {
     position: absolute;

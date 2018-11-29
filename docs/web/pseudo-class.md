@@ -2,7 +2,7 @@
 
 给内容的状态添加样式
 
-```scss
+```css
 // Syntax
 selector:pseudo-class {
   property: value;

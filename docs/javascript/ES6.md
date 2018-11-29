@@ -256,7 +256,69 @@ new Promise(function(resolve, reject) {
 console.log(4);
 // 1 4 3
 ```
-## 平行请求 await each
+## async/await
+
+* async 是 Generator 的语法糖和改进
+* async function 返回的是 Promise，可以替代 Promise?
+```js
+async function add (x, y) {
+  return x + y
+}
+
+add(2,3).then((result) => {
+  console.log(result) // 5
+})
+```
+* await 后面接 Promise，如果不是会转为 Promise.resolve(value)
+* await 只能与 async 配合使用
+
+旧的写法，同步异步代码混在一起时，需要单独做错误处理
+用 async/await 只需要在外面处理一次
+```js
+router.get('/user/:id', async (req, res, next) => {
+	try {
+		const user = await getUserFromDb({ id: req.params.id })
+		res.json(user);
+	} catch (e) {
+		//this will eventually be handled by your error handling middleware
+		next(e) 
+	}
+})
+```
+[Using Async Await in Express with Node 9 – Alex Bazhenov – Medium](https://medium.com/@Abazhenov/using-async-await-in-express-with-node-8-b8af872c0016)
+
+### 错误处理
+* 一般是在 await 外面写 try-catch
+```js
+try {
+    await foo();
+} catch (error) {
+    // Here, `error` would be an `Error` (with stack trace, etc.).
+    // Whereas if you used `throw 400`, it would just be `400`.
+    // throw new Error(400);
+    // throw 400; no stack trace info
+}
+
+$("#btn").on("click", async () => {
+  try {
+    const user = await getUser('tylermcginnis')
+    const weather = await getWeather(user.location)
+
+    updateUI({
+      user,
+      weather,
+    })
+  } catch (e) {
+    showError(e)
+  }
+})
+```
+* chain catch，避免使用 try-catch
+```js
+await foo().catch(error => console.log(error));
+```
+
+### 平行请求 await each
 for ... of 可以，forEach 不行，会先打印 nums
 [javascript - Using async/await with a forEach loop - Stack Overflow](https://stackoverflow.com/questions/37576685/using-async-await-with-a-foreach-loop)
 ```js
@@ -290,28 +352,6 @@ async function printFiles () {
   }));
 }
 ```
-
-## async/await
-
-* async 是 Generator 的语法糖和改进
-* async function 返回的是 Promise
-* await 后面接 Promise，如果不是会转为 Promise.resolve(value)
-* await 只能与 async 配合使用
-
-旧的写法，同步异步代码混在一起时，需要单独做错误处理
-用 async/await 只需要在外面处理一次
-```js
-router.get('/user/:id', async (req, res, next) => {
-	try {
-		const user = await getUserFromDb({ id: req.params.id })
-		res.json(user);
-	} catch (e) {
-		//this will eventually be handled by your error handling middleware
-		next(e) 
-	}
-})
-```
-[Using Async Await in Express with Node 9 – Alex Bazhenov – Medium](https://medium.com/@Abazhenov/using-async-await-in-express-with-node-8-b8af872c0016)
 
 ## 参数类型
 ES6 不支持，用 flow，然后通过 babel plugin 移除

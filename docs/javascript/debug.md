@@ -35,3 +35,5 @@ window.onerror = function (errorMsg, url, lineNumber) {
 中断函数执行，抛出一个 exception 对象，包含 name 和 message 两个属性，也可以添加其它的属性
 `try ... catch (e) {console.log(e.name, e.message)}` catch 从句可捕获异常错误
 
+## 调试工具
+[移动端调试痛点？——送你五款前端开发利器 - 掘金](https://juejin.im/post/5b72e1f66fb9a009d018fb94)

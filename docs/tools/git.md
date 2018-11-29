@@ -7,7 +7,7 @@
 - refactor: 重构代码，不能影响原功能
 - perf: 提升性能
 - test: 测试用例增删改
-- chore: 工具操作，例如初始化脚本，启动脚本和代码校验脚本等等
+- chore: (锁事的意思)工具操作，例如初始化脚本，启动脚本和代码校验脚本等等
 - deps: 依赖修改，例如升级、降级或锁死版本
 
 ## 编码问题
@@ -305,13 +305,27 @@ git reset HEAD@{1} # 根据步骤跳转
 ## 部分提交
 可以反复按下面步骤操作：
 1. add 需要提交的文件或代码
-2. 暂存其余，以便测试将要提交代码，`-u 包括新文件 -k 保持文件完整`
+2. 暂存其余，以便测试将要提交代码，`-u untracked 包括新文件 -k 保持文件完整`
 ```
 git add somefile
 git stash -u -k 
 ```
 
-暂存某个文件
+## 暂存某个文件
+* `git stash -p`，需要跳转过某个更改，按`d`，能满足文件改动不多的情况
 ```
 git stash push -m welcome_cart app/views/cart/welcome.thtml
+```
+* stash 是略简化的 branch，所以直接用 branch 就好了
+```sh
+git checkout -b tmpbranch
+git add the_file
+git commit -m "stashing the_file"
+git checkout master
+```
+[git - Stash just a single file - Stack Overflow](https://stackoverflow.com/questions/12420924/stash-just-a-single-file)
+
+## zsh alias
+```sh
+v ~/.oh-my-zsh/plugins/git/git.plugin.zsh
 ```

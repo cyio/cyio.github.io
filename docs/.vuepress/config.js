@@ -28,7 +28,7 @@ module.exports = {
       // { text: '关于', link: '/about' },
     ],
     sidebarDepth: 2,
-    sidebar: 'auto',
+    // sidebar: 'auto',
     sidebar: {
       '/javascript/': genSidebarConfig('javascript'),
       '/web/': genSidebarConfig('web'),

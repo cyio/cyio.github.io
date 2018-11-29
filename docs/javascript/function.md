@@ -50,17 +50,19 @@ function tmp (...args) {
 tmp(1, 2)
 ```
 ## 防抖和节流 debounce/throttle
+都是为了限制一定时间内执行频率，一般用于减少用户输入引起的函数调用次数
+
 1. 函数防抖是只有足够的空闲时间，才执行一次代码
 > bounce 是弹跳抖的意思，debounce 去抖动，平稳
 
 函数防抖的要点，也是需要一个`setTimeout`来辅助实现。延迟执行需要跑的代码。
 如果方法多次触发，则把上次记录的延迟执行代码用`clearTimeout`清掉，重新开始。
 ```js
-var timer = false
-document.getElementById("debounce").onScroll = function() {
+let timer = false
+document.body.onscroll = function() {
   clearTimeout(timer)   // 当滚动停止超过 300 MS，不清除定时器，预约代码得以执行
-  timer = setTimeout(function(){
-    console.log(‘函数防抖’) 
+  timer = setTimeout(() => {
+    console.log('函数防抖', +new Date())
   }, 300)     
 }
 ```
@@ -84,6 +86,8 @@ document.getElementById('throttle').onScroll = function() {
   },300)       
 }
 ```
-[浅谈 Underscore.js 中 _.throttle 和 _.debounce 的差异 - Coding 博客](https://blog.coding.net/blog/the-difference-between-throttle-and-debounce-in-underscorejs)
+[浅谈 Underscore.js 中 _.throttle 和 _.debounce 的差异 - Coding 博客](https://blog.coding.net/blog/the-difference-between-throttle-and-debounce-in-underscorejs) 
+[通过例子来对比Debouncing,Throttling，requestAnimationFrame | CSS-Tricks - 众成翻译](https://www.zcfy.cc/article/debouncing-and-throttling-explained-through-examples-css-tricks)
+[JavaScript专题之跟着 underscore 学节流 · Issue #26 · mqyqingfeng/Blog](https://github.com/mqyqingfeng/Blog/issues/26)
 
 * 使用场景，如监听滚动计算位置，用户拖拽

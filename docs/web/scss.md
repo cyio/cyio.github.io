@@ -1,0 +1,42 @@
+# SCSS
+
+[scss play](https://codepen.io/cyio/pen/KrzwYv)
+## 关键点
+* vue scoped 不能使用全局 mixin ?
+
+## extend
+* 实现DRY
+
+```scss
+// css 方式，需要新建类
+.message-shared
+
+// 避免创建多个类
+%message-shared {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333;
+}
+
+.message {
+  @extend .message-;
+  @extend %message-shared;
+}
+```
+
+## mixin
+属性名表达：`#{$name}`
+```scss
+@mixin color($name, $value) {
+	#{$name}: $value;
+}
+h1 {
+	// @extend .red;
+	@include color(color, blue)
+}
+
+.red {
+	color: red
+}
+```
+[mixins | Element源码分析](http://athena0304.cn/element-analysis/packages/theme-chalk/src/mixins/mixins.html#mixin-scss)

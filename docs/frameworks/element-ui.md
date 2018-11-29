@@ -1,6 +1,6 @@
 # element-ui
 
-```javascript
+```js
       const loadingInstance = this.$loading({
         target: window.document.querySelector('.courseListContainer'),
         fullscreen: false,

@@ -6,21 +6,17 @@
 
 ## HTML中外链脚本的下载与执行
 
-* <script> 下载和执行双阻塞
-  默认情况下，HTML自上向下解析，发现script标签，如果是外链脚本，则暂停HTML解析(阻塞)，去下载外链脚本，然后执行脚本，至此才会恢复解析HTML。
-
-  async —  Execute script when available, without blocking
-    异步下载，仅执行阻塞
-    HTML解析过程中异步下载脚本，只在执行时暂停HTML解析。
-
-  defer —  Defer script execution
-    异步下载，并延迟执行，完全不阻塞，且是按顺序执行，有依赖关系时可放心使用
-    与 asnyc 不同的是，在 HTML 解析完后再执行脚本
-
+* `<script>`下载和执行双阻塞
+   默认情况下，HTML自上向下解析，发现script标签，如果是外链脚本，则暂停HTML解析(阻塞)，去下载外链脚本，然后执行脚本，至此才会恢复解析HTML。
+* async —  Execute script when available, without blocking
+  异步下载，仅执行阻塞
+  HTML解析过程中异步下载脚本，只在执行时暂停HTML解析。
+* defer —  Defer script execution
+  异步下载，并延迟执行，完全不阻塞，且是按顺序执行，有依赖关系时可放心使用
+  与 asnyc 不同的是，在 HTML 解析完后再执行脚本
   [HTML Standard](https://html.spec.whatwg.org/multipage/scripting.html)
   [async vs defer attributes - Growing with the Web](http://www.growingwiththeweb.com/2014/02/async-vs-defer-attributes.html)
-
-目前大网站，有使用 async ，但没 defer，两者兼容性对低版本 IE 是个问题，因此 Web 端网站要求强兼容性的话就不要用了
+* 目前大网站，有使用 async ，但没 defer，两者兼容性对低版本 IE 是个问题，因此 Web 端网站要求强兼容性的话就不要用了
 [使用defer或async加载脚本 | levy](http://levy.work/2017-01-25-script-defer-and-async/)
 
 * src 必须存在，不能手动创建
@@ -45,44 +41,6 @@
 * 文档流能搞定吗（一层）？
 * 需要浮动层（二层）？占位的影响？重叠？
 * 需要定位校正位置吗（三层）？
-
-### lable标签实现，共性属性？
-```css
-.elem{
-    border:solid #6AC5AC 3px;
-    position:relative;
-}
-.elem-red {
-    border: solid #D64078 3px;
-}
-.elem-orange {
-    border: solid #FDC72F 3px;
-}
-.elem-green {
-    border: solid #96C02E 3px;
-} //上面是块元素的设定
-.label{
-    position:absolute; //脱离文档流
-    background-color:#6AC5AC; //绿标签
-    line-height:1em;
-    padding:3px;
-}
-.elem-red > .label{
-    background-color:#D64078; //不同标签背景色
-}
-.elem-orange > .label{
-    background-color:#FDC72F;
-}
-.begin{
-    left:0;
-    top:0;
-} //开头、结尾两个定位
-.end{
-    right:0;
-    bottom:0;
-}
-
-```
 
 ## 布局汇总
 
@@ -174,8 +132,8 @@
     }
 
 ## html5 下 ios，android 数字键盘的统一（如输入手机号)
-		type设为tel，两个平台都会调出拨号键盘
-		type为num时，ios调出的是全键盘，不符合预期
+* type设为tel，两个平台都会调出拨号键盘
+* type为num时，ios调出的是全键盘，不符合预期
 
 ## 优化
 

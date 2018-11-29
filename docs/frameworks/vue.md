@@ -448,6 +448,29 @@ const toggle = {
 可以绑定计算属性
 [Edit fiddle - JSFiddle](https://jsfiddle.net/Andy0708/8t8902gn/1/?utm_source=website&utm_medium=embed&utm_campaign=8t8902gn)
 
+### 设置当视口变化时，元素总是垂直居中
+```js
+.container(:style="alignStyle")
+
+  data() {
+    return {
+      cHeight: document.querySelector('body').clientHeight,
+    };
+  },
+  computed: {
+    alignStyle() {
+      return {
+        marginTop: Number.parseInt((this.cHeight - 576 - 56 - 44) / 2) + 'px'
+      }
+    },
+  },
+  mounted() {
+    window.onresize = () => {
+      this.cHeight = document.querySelector('body').clientHeight
+    }
+  },
+```
+
 ## 生命周期
 * `beforeDestory`不会在窗口 refresh 或 close 时触发
     ```js

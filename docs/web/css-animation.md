@@ -1,4 +1,26 @@
 ## 基础
+* 弹出框，如播放器
+  [fancyBox - Fancy jQuery Lightbox Alternative](http://fancyapps.com/fancybox/#examples)
+
+* 滚动页面时，元素出现动画
+  - [Reveal Animations When Scrolling — WOW.js](http://mynameismatthieu.com/WOW/) 
+  - 加上 wow 后，元素在用户滚动到前隐藏
+  - 可以自己写 JS 配合`animate.css`
+  ```
+  class="animated wow fadeInDown"
+  ```
+
+	- [ajlkn/jquery.scrollex: Nifty scroll events for jQuery.](https://github.com/ajlkn/jquery.scrollex)
+
+* 视差滚动
+  [Victa/scrolly: Super simple and easy to use parallax plugin for jQuery (THIS PROJECT IS NOT MAINTAINED ANYMORE)](https://github.com/Victa/scrolly)
+  ```
+  // Scrolly links.
+    $('.scrolly').scrolly({
+      speed: 400
+    });
+  ```
+
 
 animation 是缩写属性，类似 background，有几种缩写形式，参看 MDN
 会自动插入补间动画  
