@@ -1,3 +1,5 @@
+# websocket
+
 websocket 是浏览器标准
 nodejs 常用这个 https://github.com/websockets/ws
 koa2 用这个 koa-websocket 或 koa-socket

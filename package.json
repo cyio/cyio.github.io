@@ -1,9 +1,10 @@
 {
   "scripts": {
-    "docs:dev": "vuepress dev docs",
+    "docs:dev": "vuepress dev docs --port 8090",
     "docs:build": "vuepress build docs"
   },
   "devDependencies": {
+    "glob": "^7.1.3",
     "vuepress": "^1.0.0-alpha.4"
   }
 }

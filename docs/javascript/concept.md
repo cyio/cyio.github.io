@@ -283,9 +283,3 @@ o.a()
 ## 什么时候用 switch
 > 一般来说，如果 if 和 else if 分支超过 3 个就可以考虑写成 switch。如果 switch 的分支超过 10 个就可以考虑写成 config，然后专门写一个函数根据 config 来做 mapping。如果需要进行的映射逻辑很复杂，但使用频率很高，可以考虑做一个专门的 rule engine 来处理这件事情，或者是一门 DSL。
 > switch的条件切换只能基于单一变量的值。但if-else的条件可以是任意表达式。
-
-
-作者：Cat Chen
-链接：https://www.zhihu.com/question/300975864/answer/525450205
-来源：知乎
-著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。

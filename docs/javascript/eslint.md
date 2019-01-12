@@ -2,6 +2,8 @@
 
 ## 禁用
 ```js
+/* eslint-disable */
+
 const h = this.$createElement // eslint-disable-line
 ```
 ## 禁用 for in
@@ -16,10 +18,15 @@ const h = this.$createElement // eslint-disable-line
 ## rules
 * 导出全部规则，`./node_modules/.bin/eslint --print-config .eslintrc.js > .git/rules.json`
 * `extends`的规则集会扩展或覆盖之前的，每条规则只有一个设置。如果出现冲突，不好排序时，只能单独在`rules`明确指定
+* airbnb-base 不包含 react [javascript/packages/eslint-config-airbnb-base at master · airbnb/javascript](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb-base) 
+* @vue/eslint-config-airbnb 用的就是 airbnb-base 
+[vue-cli/packages/@vue/eslint-config-airbnb at dev · vuejs/vue-cli](https://github.com/vuejs/vue-cli/tree/dev/packages/%2540vue/eslint-config-airbnb)
+* [Introduction | eslint-plugin-vue](https://vuejs.github.io/eslint-plugin-vue/)
+* [Efficient Code Analyzing and Formatting (for Vue.js) with ESLint and Prettier](https://medium.com/@doppelmutzi/eslint-prettier-vue-workflow-46a3cf54332f)
 ```js
   extends: [
-    'plugin:vue/essential',
     '@vue/airbnb', // 缩进要求 2
+    'plugin:vue/essential',
     // 'eslint:recommended' // 不检查缩进
   ],
 

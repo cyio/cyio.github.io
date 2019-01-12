@@ -1,3 +1,5 @@
+# echarts
+
 术语名称参考：
 [ECharts 在线构建](http://echarts.baidu.com/builder.html)
 

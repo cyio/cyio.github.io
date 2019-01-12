@@ -4,17 +4,17 @@
 ```js
 // test
 const device = getDeviceInfo()
-  if (device.android) {
-    console.log('before scroll, bodyscrollHeight: ', document.body.scrollHeight)
-      setTimeout(() => {
-          window.scrollTo(0, document.body.scrollHeight)
-          console.log('after scroll', document.body.scrollHeight)
-          }, 200)
-    // if (this.$refs.submitBtn) {
-    // this.$refs.submitBtn.scrollIntoView()
-    // console.log('submit button scroll into view')
-    // }
-  }
+if (device.android) {
+  console.log('before scroll, bodyscrollHeight: ', document.body.scrollHeight)
+    setTimeout(() => {
+        window.scrollTo(0, document.body.scrollHeight)
+        console.log('after scroll', document.body.scrollHeight)
+        }, 200)
+  // if (this.$refs.submitBtn) {
+  // this.$refs.submitBtn.scrollIntoView()
+  // console.log('submit button scroll into view')
+  // }
+}
 
 // 1. 最终代码
 // 只在有问题的输入框上应用，不要和原生滚动重叠

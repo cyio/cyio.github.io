@@ -121,6 +121,7 @@ var chewToys = puppies.map(puppy => ({})); //
 ```js
 {
   ...
+  add: function() {},
   addAll: function addAll(pieces) {
     var self = this;
     _.each(pieces, function (piece) {
@@ -188,7 +189,7 @@ constructor 只在实例化时被调用
 使用 extends 关键字创建子类
 与一般函数写法的比较
 静态方法只能由未实例化的类调用，常用作工具函数
-```
+```js
 class Name {}
 function Name ()
 
@@ -256,6 +257,7 @@ new Promise(function(resolve, reject) {
 console.log(4);
 // 1 4 3
 ```
+[unhandled promise rejection - 不忘初心，上下求索。](https://liyaoli.com/2017-06-26/unhandled-promise-rejection.html)
 ## async/await
 
 * async 是 Generator 的语法糖和改进
@@ -313,13 +315,34 @@ $("#btn").on("click", async () => {
   }
 })
 ```
-* chain catch，避免使用 try-catch
+* rejection 会向上抛，在上层 catch
 ```js
-await foo().catch(error => console.log(error));
+function get() {
+  return {
+    then: (resolve, reject) => {
+      // resolve(0)
+      reject(1)
+    }
+  }
+}
+async function main() {
+  let r = await get()
+  console.log(r)
+  // try{
+    // let r = await get()
+    // console.log(r)
+  // }catch(e) {
+    // console.error(e)
+  // }
+}
+main().catch(e => console.error(e))
 ```
-
-### 平行请求 await each
-for ... of 可以，forEach 不行，会先打印 nums
+[Async/await](https://javascript.info/async-await)
+### await each
+* for ... of 可以，forEach 不行，会先打印 nums
+* 按序请求可以用 for-await-of
+* 并行请求可以用 await Promise.all([])
+* 需要 async 配合，可以`(async function(){})()`
 [javascript - Using async/await with a forEach loop - Stack Overflow](https://stackoverflow.com/questions/37576685/using-async-await-with-a-foreach-loop)
 ```js
 function sleep(ms = 0) {

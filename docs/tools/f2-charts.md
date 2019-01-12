@@ -1,8 +1,10 @@
+# f2-charts
+
 1. `git clone https://github.com/antvis/wx-f2.git`
 2. `cp wx-f2/f2-canvas static/`
 3. 只能写在页面？因为需要配置`main.js`
 4. 
-```
+```js
   onLoad() {
     // 在 onLoad 内部通过id找到该组件, 然后调用该组件的初始化方法
     // 注意这里选择组件名称是页面名

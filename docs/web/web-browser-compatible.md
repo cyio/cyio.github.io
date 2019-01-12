@@ -2,11 +2,14 @@
 
 ## 国内双核浏览器强制使用Webkit内核渲染页面
 ```html
-<meta name="renderer" content="webkit"> <!-- 360 6.X 以上可识别 -->
-<meta name="force-rendering" content="webkit"> <!-- 其他双核可识别 -->
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/> <!-- 对于没有自带 IE7 内核的浏览器 强制使用用户已安装的最高版本浏览器渲染, 有Chrome框架的优先使用 -->
+<!-- 强制Chromium内核，作用于360浏览器、QQ浏览器等国产双核浏览器： -->
+<meta name="renderer" content="webkit">
+<!-- 强制Chromium内核，作用于其他双核浏览器： -->
+<meta name="force-rendering" content="webkit">
+<!-- 如果有安装 Google Chrome Frame 插件则强制为Chromium内核，否则强制本机支持的最高版本IE内核，作用于IE浏览器： -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/> 
 ```
-[360安全浏览器_帮助](http://se.360.cn/v6/help/meta.html)
+[旧版 Internet Explorer 淘汰行动「极速浏览器普及计划」](https://support.dmeng.net/kill-old-versions-of-ie.html?utm_source=InternalLinks)
 
 ## 在线兼容测试
 * [Browserling - Live interactive cross-browser testing](https://www.browserling.com/browse/ie/9/baidu.com)// 免费只有IE9
@@ -31,11 +34,18 @@
 
 ## 工具、库、语言特性兼容性
 
-| name  | compatible |
-| ---   | --         |
-| axios | IE10+      |
-| vue   | IE9+       |
-| flexbox   | IE10+    |
+| name                | compatible         |
+| ---                 | --                 |
+| vue                 | IE9+               |
+| axios               | IE10+              |
+| flexbox             | IE10+              |
+| http2               | EDGE               |
+| srcset/sizes        | EDGE               |
+| cloudflare free ssl | not xp IE/Chromium |
 
+
+* cloudflare 的免费CDN 只适用于支持 SNI 的浏览器。
+[SSL证书常见错误姿势分析 - 简书](https://www.jianshu.com/p/d443a3c4971d)
+[This site works only in browsers with SNI support – 木瓜园](https://muguayuan.com/2015/2863.html)
 * axios 不支持 IE9 跨域请求
 [Vue - ie9 全面兼容方案](https://github.com/TerryZ/js-develop-skill-summary/blob/master/vue-ie9.md)

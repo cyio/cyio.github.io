@@ -1,11 +1,11 @@
 # Flexbox
 
-* display 属性值为 flex 时，渲染为块级元素，为 inline-flex 时渲染为行内元素
-* 由伸缩容器+伸缩项目构成，支持任意嵌套，内外互不干扰
+* display 属性值为`flex`时，渲染为块级元素，为`inline-flex`时渲染为行内元素
+* 由**伸缩容器**和**伸缩条目**构成，支持任意嵌套，内外互不干扰
 * 
-| justify-content | 两头空间如何       |
+| justify-content | 两头间隔           |
 | ---             | ---                |
-| space-between   | 没有               |
+| space-between   | 没有（只元素间有） |
 | space-around    | 有，但为半格       |
 | space-evenly    | 有，与其它间隔相等 |
 * `flex-grow`增长系数，`flex-shrink`收缩系数。总和不足 1 时，按 1 计算

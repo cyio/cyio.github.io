@@ -1,3 +1,6 @@
+const path = require('path');
+const glob = require('glob');
+
 module.exports = {
   title: 'Oaker小站',
   description: 'Just playing around',
@@ -29,100 +32,101 @@ module.exports = {
     ],
     sidebarDepth: 2,
     // sidebar: 'auto',
-    sidebar: {
-      '/javascript/': genSidebarConfig('javascript'),
-      '/web/': genSidebarConfig('web'),
-      '/node/': genSidebarConfig('node'),
-      '/frameworks/': genSidebarConfig('frameworks'),
-      '/tools/': genSidebarConfig('tools'),
-      // '/blog/',
-    }
+    sidebar: genSidebarConfig()
   },
 }
 
-function genSidebarConfig (title) {
+function genSidebarConfig () {
+  let sideBarData = {}
+  let navKeys = [
+    {
+      name: 'javascript',
+      displayName: 'JS',
+      collapsable: false,
+    },
+    {
+      name: 'web',
+      displayName: 'Web',
+      collapsable: false,
+    },
+    {
+      name: 'node',
+      displayName: 'Node',
+      collapsable: false,
+    },
+    {
+      name: 'frameworks',
+      displayName: '框架',
+      collapsable: true,
+    },
+    {
+      name: 'tools',
+      displayName: '工具',
+      collapsable: false,
+    },
+  ]
+  navKeys.forEach(item => {
+    sideBarData[`/${item.name}/`] = [
+      {
+        title: item.name,
+        collapsable: item.collapsable,
+        children: getChildren(item.name)
+      },
+    ]
+  })
   let config = {
     'javascript': [
       {
         title: 'Javascript',
         collapsable: false,
-        children: [
-          // '',
-          'concept',
-          'string',
-          'array',
-          'object',
-          'function',
-          'block-level-scope',
-          'closure',
-          'methods',
-          'data-structures',
-          'design-patterns',
-          'debug',
-          'ES6',
-          'event',
-          'async',
-          'regexp',
-          'type',
-          'tricks',
-        ]
+        children: getChildren('javascript')
       },
     ],
     'web': [
       {
         title: 'web',
         collapsable: false,
-        children: [
-          // '',
-          'dom',
-          'html',
-          'http',
-          'security',
-          'css-concept',
-          'css-practice',
-          'pseudo-elements',
-          'grid',
-          'flexbox',
-          'browser',
-          'web-browser-compatible',
-        ]
+        children: getChildren('javascript')
       },
     ],
     'node': [
       {
         title: 'Node',
         collapsable: false,
-        children: [
-          '',
-          'puppeteer',
-          'express',
-        ]
+        children: getChildren('javascript')
       },
     ],
     'frameworks': [
       {
         title: 'frameworks',
         collapsable: true,
-        children: [
-          // '',
-          'vue',
-          'react',
-          'react-native',
-        ]
+        children: getChildren('javascript')
       },
     ],
     'tools': [
       {
         title: '工具',
         collapsable: false,
-        children: [
-          'vim',
-          'git',
-          'tmux',
-          'photoshop',
-        ]
+        children: getChildren('javascript')
       },
     ]
   }
-  return config[title]
+  return sideBarData
+}
+/*
+ * 获取文件夹下所有 md 文件名列表
+ * input 目录名
+ * return Arrary
+ */
+function getChildren(dirName) {
+  let names = []
+  let globPath = path.resolve(`./docs/${dirName}/*.md`)
+  glob.sync(globPath).forEach(file => {
+    const name = path.parse(file).name
+    if (name.indexOf('README') < 0) {
+      names.push(name)
+    }
+  })
+  // console.log('glob', names)
+  return names
 }

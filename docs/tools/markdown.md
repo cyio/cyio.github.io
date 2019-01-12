@@ -1,3 +1,5 @@
+# markdown
+
 ## Standard
 
 * 代码直接缩进，不用标记包围也行，如果需要发表，再作处理，如需要高亮
@@ -39,7 +41,7 @@ function syntaxHighlighting() {
 * `inline code`
 
 1. Numbered list
-	 1. Numbered sub-list
+	 1. Numbered sub-list  
 			1. Numbered sub-sub-list
 2. [Link](https://www.google.com)
 

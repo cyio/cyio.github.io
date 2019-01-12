@@ -387,7 +387,9 @@ webpack 的 stats 配置不能用，选了别的插件
 * 把组件逻辑暴露在 mixin 中
 * 有些耦合度高的数据不适用
 * 可以是局部，可以是全局
+* 生命周期钩子中的代码会合并到组件对应生命周期中
 ```js
+// 设为全局
 Vue.mixin({
   mounted() {
     console.log('hello from mixin!')

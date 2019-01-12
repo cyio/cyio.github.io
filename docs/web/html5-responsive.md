@@ -1,3 +1,8 @@
+# 响应式设计
+
+## 尺寸依据
+[Web网页 - 设计尺寸 - 老姜尺寸网ChiCun💎](http://www.chicun.vc/html/web.html)
+
 ## 常见效果实现
 
 * 弹出框，如播放器

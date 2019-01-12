@@ -312,9 +312,11 @@ delay(500, () => alert(‘hey!’))
     ```
 
 ## switch
+* default 位置没有限制
+* case 中不写 break 会继续在其它 case 中执行，即使 case 条件并不满足
+* 函数中的 return 可以帮助提前返回
+* 建议避免switch贯穿，凡是有case的地方，一律加上break。
 ```js
-// default 位置没有限制
-// case 中不写 break 会继续在其它 case 中执行，即使 case 条件并不满足
 function compare(n, m) {
   switch(n - m) {
     default:
@@ -323,7 +325,7 @@ function compare(n, m) {
       return 'equal'
   }
 }
-console.log(equal(2, 3))
+console.log(compare(2, 3))
 ```
 ## `requestAnimationFrame()`
 IE10+

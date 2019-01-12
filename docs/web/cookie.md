@@ -7,6 +7,7 @@
 
 ## 参考
 [Cookie -- 前端视角 - hf872914334的博客 - CSDN博客](https://blog.csdn.net/hf872914334/article/details/78979007)
+[Cookie的设置、读取以及是否自动携带问题 · Issue #2 · yinxin630/blog](https://github.com/yinxin630/blog/issues/2)
 
 ## 封装
 ```js

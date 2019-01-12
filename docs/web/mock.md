@@ -9,4 +9,27 @@
 
 ## 方案
 * json 文件，开发阶段适用
+    1. page.js 页面文件
+    ```js
+    import axios from 'axios';
+    import MockAdapter from 'axios-mock-adapter';
+
+    // 辅助库
+    // import dayjs from 'dayjs';
+    // import Mock from 'mockjs';
+
+    // 配置和数据
+    import config from '@/config';
+    import res from './exam-intro.json'
+
+    const mock = new MockAdapter(axios)
+    const { baseUrl } = config;
+
+    // 具体规则
+    mock.onGet(`${baseUrl}/api/course/getExaminationById?examId=1`).reply(200, res);
+    ```
+    2. request.js 请求封装文件
+    ```js
+    import '../mock/exam-intro' // eslint-disable-line
+    ```
 

@@ -1,4 +1,9 @@
 # 跨域
+
+## 定义
+翻译问题，实际是跨源
+origin = protocol + domain + port
+
 > 出于安全原因，浏览器限制从脚本内发起的跨源HTTP请求。 例如，XMLHttpRequest和Fetch API遵循同源策略。 这意味着使用这些API的Web应用程序只能从加载应用程序的同一个域请求HTTP资源，除非使用CORS头文件。
 
 1. 服务端设置允许：Access-Control-Allow-Origin

@@ -37,3 +37,13 @@ window.onerror = function (errorMsg, url, lineNumber) {
 
 ## 调试工具
 [移动端调试痛点？——送你五款前端开发利器 - 掘金](https://juejin.im/post/5b72e1f66fb9a009d018fb94)
+
+
+```js
+function waitForever() {
+  return new Promise(r => {});
+}
+
+// Usage:
+await waitForever();
+```

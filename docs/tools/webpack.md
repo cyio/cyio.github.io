@@ -1,10 +1,17 @@
+# Webpack
+
+## why
+* 传统 script 引入缺点
+    - 全局污染
+    - 顺序难保证
+
 ## 安装
 ```bash
-  npm install webpack-dev-server -g
-  webpack-dev-server --progress --colors
+npm install webpack-dev-server -g
+webpack-dev-server --progress --colors
 ```
 
-http://localhost:8080/webpack-dev-server/bundle
+`http://localhost:8080/webpack-dev-server/bundle`
 
 配置文件是node.js(CommonJS)模块，使用JavaScript编写
 
@@ -18,13 +25,14 @@ http://localhost:8080/webpack-dev-server/bundle
 ```js
   // File1.js
   module.export = 2;
+
   // File2.js
   var two = require("./File1.js");
   console.log(2 + two); // 4
 ```
 
 流程
-`code -> loaders -> plugins -> output`  
+`code -> loaders -> plugins -> output`
 **loaders** 相当于其它工具中的 **tasks**
 
 entry 从哪开始打包
@@ -94,12 +102,50 @@ import 'web_modules/modernizr'  // must import first
 参考：[Resolve](https://webpack.js.org/configuration/resolve/#resolve-alias)
 
 ## loader
-
-file-loader 将资源复制过去，然后返回资源路径，一般是图片文件，那别的格式如 mp3 文件怎么办？加到正则即可
+* file-loader 将资源复制过去，然后返回资源路径，一般是图片文件，那别的格式如 mp3 文件怎么办？加到正则即可
+* url-loader 小于多少字节时，转换为 base64 内联，支持回退到 file-loader，场景如 icon
 
 ## 打包
+
+* 自带分析`webpack --profile --json > stats.json`
+
 vendor 第三方库
 common 共用
 > 
 With this bundle configuration, you would load your third party libraries, then your common application code, then your page-specific application code.
 
+## 分包 - 提取公共模块
+* why: 
+  - 分离业务代码和第三方库（ vendor ）
+  - 按需加载（利用 import() 语法）
+* 4.x 内置 SplitChunks
+* chunks 类别？async
+* 默认规则
+* chunks: all, async, and initial 指定哪类包可以优化，initial 同步，all 可用于同步和异步
+* 观察下 vendors hash 是否变化，应该保持不变
+* 样式是如何拆包 scss，官方插件是把 css 从 js 中提取
+  [Working with CSS | Vue CLI 3](https://cli.vuejs.org/guide/css.html#automatic-imports)
+  - 按上面链接处理不行，打成了 scoped 样式，文件更大了
+```js
+module.exports = {
+  //...
+  optimization: {
+    splitChunks: {
+      cacheGroups: { // 拆取规则
+        vendors: {
+          test: /[\\/]node_modules[\\/]/, // node_modules 下引入的包归类为 vendors
+          priority: -10 // 优先级
+        },
+        default: {
+          minChunks: 2, // 默认被引用 2 次及以上时拆包
+          priority: -20,
+          reuseExistingChunk: true
+        }
+      }
+    }
+```
+[SplitChunksPlugin - 默认设置](https://webpack.js.org/plugins/split-chunks-plugin/#optimization-splitchunks)
+
+## 构建性能
+### noParse
+* 含有 process.env.NODE_ENV 的文件也不要让webpack noParse。

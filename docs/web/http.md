@@ -4,6 +4,11 @@
 * 协商缓存，header->modifier，先发请求，命中 返回 304
 * 刷新，会跳过强缓存，强制刷新，可以连协商缓存也跳过
 [浏览器缓存知识小结及应用 - 流云诸葛 - 博客园](https://www.cnblogs.com/lyzg/p/5125934.html)
+[HTTP 缓存  |  Web  |  Google Developers](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching?hl=zh-cn)
+
+## 缓存策略
+* For html files, use Cache-Control: no-cache, and Etag.
+* For js,css, and image files, set Cache-Control: public, max-age=31536000, no Etag, no Last-Modified settings.
 
 ## HTTPS
 建立在SSL/TLS协议上，采用了公钥加密法，基本过程是：
@@ -11,12 +16,17 @@
 2. 双方协商生成”对话密钥”。
 3. 双方采用”对话密钥”进行加密通信
 
+* cors跨域处理非简单请求会触发options，chromuim maxage 上限是 600，即 10 分钟
+[减少options请求次数 和 数据量大时前端渲染的处理 - wanwan5856的博客 - CSDN博客](https://blog.csdn.net/wanwan5856/article/details/79592681)
+
 ## HTTP2
 * 新特性：多路复用的单一长连接、请求优先级、服务器推送
 * 1.x 浏览器有同域并发限制，会导致阻塞
 * 2 同一连接并发互换
 > 在HTTP/2中，客户端向某个域名的服务器请求页面的过程中，只会创建一条TCP连接，即使这页面可能包含上百个资源。而之前的HTTP/1.x一般会创建6-8条TCP连接来请求这100多个资源。单一的连接应该是HTTP2的主要优势，单一的连接能减少TCP握手带来的时延
 > HTTP2中用一条单一的长连接，避免了创建多个TCP连接带来的网络开销，提高了吞吐量。
+
+[The http2 protocol · http2 explained](https://http2-explained.haxx.se/content/en/part6.html)
 
 ## 返回状态码
 助记：1-5 / I OR CS
@@ -46,7 +56,7 @@ pragma 〔计〕杂注,编译指示
 
 ## axios
 不支持设置 user agent
-浏览器不允许，但 nodejs 应该可以，但 axios 就是不行
+浏览器不允许，nodejs 应该可以，但 axios 就是不行
 https://github.com/axios/axios/issues/1411
 https://github.com/axios/axios/issues/1231
 
@@ -64,3 +74,5 @@ https://github.com/axios/axios/issues/1231
 http-server 简单，支持文件夹浏览，当然也就没自动刷新了
 liteserver 基于 browser-sync
 
+## 与 tcp 区别 
+* tcp 是传输层，http 是跑在 tcp 上的应用层协议

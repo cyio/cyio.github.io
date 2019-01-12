@@ -1,4 +1,4 @@
-# Git
+ # Git
 ## commit 提交规范
 - feat: 添加新功能
 - docs: 修改注释、文档
@@ -22,6 +22,11 @@
 
 ## 回撤 commit，丢弃之后的修改，慎用，会撤销工作区
 `$ git reset HEAD --hard`
+
+## 回撤工作区，包括新文件
+先测试，以防误删 `git clean -nfd`
+
+`git clean -fd`
 
 ## 从暂存区回撤某个文件
 `$ git reset HEAD CONTRIBUTING.md`
@@ -136,8 +141,10 @@ git clean -fdx
 
 ## 删除分支
   ```shell
-  git push origin --delete <branch_name>
   git branch -d <branch_name>
+  git push origin --delete <branch_name>
+  // or
+  git push origin :<branch_name>
   ```
 
 ## 修改优化历史提交信息

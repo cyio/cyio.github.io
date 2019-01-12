@@ -8,7 +8,7 @@
 
 [CodePen - JPNG.svg (Transparent PNG with JPEG Compression)](https://codepen.io/shshaw/full/LVKEdv)
 
-## 图片压缩
+## 静态图片压缩
 
 * 首先原图往往尺寸很大，先缩小
 * 把大文件挑出来，用智图的在线服务，压缩效果好，它的 gulp 工具依赖在线api，不支持多层目录，有待观察
@@ -20,6 +20,14 @@
             .pipe(gulp.dest('./h5/group4/M00-dist/'));
     });
 ```
+
+## 表单图片压缩
+* 图片→canvas压缩→图片
+* canvas 设置宽度
+* `toBlob()`，转换成二进制，后端友好
+
+## 图片预览
+* filereader onload
 
 ## 图片格式
 * WebP 有损、无损，30% 体积优势
@@ -47,6 +55,16 @@ blob 必须设置 name
 
 * element-ui
 ```pug
-        el-upload.avatar-uploader(action='https://jsonplaceholder.typicode.com/posts/', :show-file-list='false', :on-success='handleAvatarSuccess', :before-upload='beforeAvatarUpload')
-            el-button(type='primary') 上传
+  el-upload.avatar-uploader(action='https://jsonplaceholder.typicode.com/posts/', :show-file-list='false', :on-success='handleAvatarSuccess', :before-upload='beforeAvatarUpload')
+      el-button(type='primary') 上传
 ```
+
+## 响应式展示
+srcset/sizes
+* 查看设备宽度
+* 计算 sizes 中第一个符合媒体查询条件
+* 查看给定 slot size
+* 匹配 srcset 中最接近 size
+* 旧浏览器会忽略
+[Responsive Images with srcset and sizes](https://codepen.io/tombennet/pen/yYgLaQ)
+[图片响应式解决方案 - 简书](https://www.jianshu.com/p/235ef450f5e9)

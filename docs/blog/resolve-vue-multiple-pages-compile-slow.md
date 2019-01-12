@@ -46,3 +46,5 @@ vue-cli 创建的项目配置多页后，随着多页入口的增加，编译日
 [Multiple entry points -> multiple html outputs webpack rebuild very slow · Issue #724 · jantimon/html-webpack-plugin](https://github.com/jantimon/html-webpack-plugin/issues/724#issuecomment-419885840)
 
 [关于webpack多入口热加载很慢的原因 - 掘金](https://juejin.im/post/5af46971f265da0b95272330)
+
+[使用webpack4提升180%编译速度 | louis blog](http://louiszhai.github.io/2019/01/04/webpack4/#%25E7%25BC%2596%25E8%25AF%2591%25E7%25BB%2593%25E6%259E%259C%25E5%2588%2586%25E6%259E%2590)

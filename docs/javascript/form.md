@@ -4,7 +4,7 @@
 类型是`multipart/form-data`
 ```js
 const config = {
-		headers: { 'content-type': 'multipart/form-data' }
+  headers: { 'content-type': 'multipart/form-data' }
 }
 ```
 
@@ -12,6 +12,7 @@ const config = {
 [axios post提交formdata - wopelo的博客 - CSDN博客](http://blog.csdn.net/wopelo/article/details/78783442)
 
 * 姓名、昵称中间如果有多个连续空格，替换为一个空格
+
   问题：`white-space: normal`，超过一个的空格会被省略
     ```js
     this.ruleForm.consignee = this.ruleForm.consignee.replace(/\s+/g, ' ')
