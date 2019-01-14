@@ -27,6 +27,7 @@
 [Should I start with Cypress.io? | Better world by better software](https://glebbahmutov.com/blog/should-i-start-with-cypress/)
 [Cypress tips and tricks | Better world by better software](https://glebbahmutov.com/blog/cypress-tips-and-tricks/)
 [Element coverage for end-to-end tests | Better world by better software](https://glebbahmutov.com/blog/element-coverage/)
+[Visual Regression testing with Cypress.io — Xebia Blog](https://xebia.com/blog/visual-regression-testing-cypress/)
 
 ### 常用方法
 ```js
@@ -42,10 +43,6 @@ cy.get('[data-cy="submit-login"]').click()
 * 后端给接口，ajax 获取
 
 [自动化测试解决验证码问题 - 简书](https://www.jianshu.com/p/2cafdae0abe0)
-
-## 单元测试
-最小可测试单元
-有别于 e2e-test，更多跑在 node 环境
 
 ## Vue 组件测试
 [bahmutov/cypress-vue-unit-test: A little helper to unit test Vue components in the Cypress.io E2E test runner](https://github.com/bahmutov/cypress-vue-unit-test)
