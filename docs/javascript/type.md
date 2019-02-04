@@ -1,13 +1,15 @@
 # 数据类型
 
 * 数字
+```js
 Number("0.00") === 0
 Number("0") === 0
 Number(null) === 0
-Number(undefined) === NaN (没有有效结果)
+Number(undefined) === NaN // 没有有效结果
 Number([]) === 0
 Number({}) === NaN
 Number(true) === 1
+```
 
 * 逻辑值
 0、NaN和空字符串("")视为false，其余值视为true

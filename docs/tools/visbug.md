@@ -1,4 +1,4 @@
-# visbug
+# Visbug
 
 [Keyboard Master List · GoogleChromeLabs/ProjectVisBug Wiki](https://github.com/GoogleChromeLabs/ProjectVisBug/wiki/Keyboard-Master-List)
 

@@ -36,3 +36,15 @@
 ```
 [The Anti-hero of CSS Layout - "display:table" | Colin Toh](https://colintoh.com/blog/display-table-anti-hero)
 [Solved by Flexbox — Cleaner, hack-free CSS](https://philipwalton.github.io/solved-by-flexbox/)
+
+## 列表水平排列带 gap wrap
+```css
+.list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.item {
+  width: calc(25% - 0.02rem);
+}
+```

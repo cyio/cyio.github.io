@@ -1,4 +1,4 @@
-# NEXT
+# Next
 
 pages -> next -> next build -> next start(prod)
 ```

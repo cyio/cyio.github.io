@@ -1,8 +1,8 @@
 # vue-issues
 
-## vue nextTick 指令 v-el
-nextTick 解决要等dom显示出来才执行操作
-v-el:name this.$els.name
+## vue nextTick
+nextTick 解决要等 dom 后执行操作
+比如对有 if 条件渲染的 dom 节点要进行处理
 
 ## Vue项目实践
 
@@ -16,18 +16,18 @@ import {date} from 'phpjs'
 将阿拉伯数字转换为中文
 高阶函数，过滤器，数组
 星期几的数字作为数组索引取出对应的中文
-```
-星期{{day | date 'w' | week}}
+```js
+// 星期{{day | date 'w' | week}}
 
 filters: {
-	week: function (value) {
-		return ['日', '一', '二', '三', '四', '五', '六'][value]
-	}
+  week: function (value) {
+    return ['日', '一', '二', '三', '四', '五', '六'][value]
+  }
 }
 ```
 
 ## 将 vue data 对象转换为普通对象
-```
+```js
 const newObj = { ...vueObj }
 ```
 
@@ -51,3 +51,64 @@ const newObj = { ...vueObj }
 [[译] 更可靠的 React 组件：单一职责原则-云栖社区-阿里云](https://yq.aliyun.com/articles/617955)
 [前端早读课](https://mp.weixin.qq.com/s?__biz=MjM5MTA1MjAxMQ==&mid=2651230706&idx=1&sn=e96555bdf9b8251852928f4a3c5193e0)
 [前端早读课](https://mp.weixin.qq.com/s?__biz=MjM5MTA1MjAxMQ==&mid=2651230683&idx=3&sn=72a870d0c1bede39b5560244495a14c4)
+
+## watch
+* default 是组件不绑定 prop 的回退
+* 数据有变化，watch 一定会触发
+* 不触发，两个并行请求，第一个请求完成时渲染子组件，当第二个请求更快完成时，会准备好数据，先于子组件渲染
+
+## 前端编译服务崩溃问题
+升级 vue-cli 3 后，在修改 JS 文件，尤其是频繁保存时，服务极易崩溃，可以稳定重现
+因为我大部分时间在编辑 vue 文件，感觉不明显，x同事反映比较突出，严重影响开发效率
+崩溃原因： sourcemap 生成、 文件 watch 等功能内存占用大，webpack 部分插件内存泄漏、高内存占用，触及 V8 默认回收上限 1400Mb
+解决办法是提升上限，避免触及，需要注意如何正确地添加参数
+
+错误方式（x同事在 package.json 中添加的）：
+`$ vue-cli-service serve --max_old_space_size=4096`
+正确方式：
+1. [yarn serve - JavaScript heap out of memory crash · Issue #1453 · vuejs/vue-cli](https://github.com/vuejs/vue-cli/issues/1453#issuecomment-430969846)
+`node --max_old_space_size=4096 node_modules/@vue/cli-service/bin/vue-cli-service.js serve --open`
+2. [fix: increase Node memory limit to workaround webpack crash, fix #1453 · octref/vue-cli@bb98ef0](https://github.com/octref/vue-cli/commit/bb98ef08874bf07b9a510b23f8d6f94c0afaf01c)
+相关Issue：
+[Process out of memory - Webpack · Issue #1914 · webpack/webpack](https://github.com/webpack/webpack/issues/1914#issuecomment-392660230)
+
+## 编译慢问题
+[feat(compiler): Use a single compiler for multiple plugin instances by jantimon · Pull Request #967 · jantimon/html-webpack-plugin](https://github.com/jantimon/html-webpack-plugin/pull/967)
+[Multiple entry points -> multiple html outputs webpack rebuild very slow · Issue #724 · jantimon/html-webpack-plugin](https://github.com/jantimon/html-webpack-plugin/issues/724#issuecomment-419885840)
+```
+npm install html-webpack-plugin@4.0.0-alpha.2
+或者
+cd node_modules
+git clone https://github.com/jantimon/html-webpack-plugin.git
+git checkout feature/cache-file-timestamps
+```
+[build performance · webpack/docs Wiki](https://github.com/webpack/docs/wiki/build-performance)
+### vue-cli-service 如何本地配置某个依赖
+[neutrinojs/webpack-chain: A chaining API to generate and simplify the modification of Webpack configurations.](https://github.com/neutrinojs/webpack-chain)
+webpack 的 stats 配置不能用，选了别的插件
+[stats config invalid ? · Issue #2652 · vuejs/vue-cli](https://github.com/vuejs/vue-cli/issues/2652#issuecomment-425632179)
+
+## 解决 iOS 中 fixed 定位，输入时错位的问题
+
+根据 focus 和 blur 的状态添加移除 fixfixed 类
+把 position 改为 absolute 是普遍做法，当试了不行，干脆直接隐藏
+
+```css
+.fixfixed .ui-header, .fixfixed .ui-footer {
+	/*position: absolute;*/
+	display: none
+}
+```
+```js
+methods: {
+	inputFocus: function () {
+		var body = window.document.getElementsByTagName('body')[0]
+		body.className = 'fixfixed'
+	},
+	inputBlur: function () {
+		var body = window.document.getElementsByTagName('body')[0]
+		body.className = ''
+	}
+}
+```
+

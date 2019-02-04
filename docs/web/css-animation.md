@@ -1,3 +1,5 @@
+# CSS 动画
+
 ## 基础
 * 弹出框，如播放器
   [fancyBox - Fancy jQuery Lightbox Alternative](http://fancyapps.com/fancybox/#examples)
@@ -6,32 +8,36 @@
   - [Reveal Animations When Scrolling — WOW.js](http://mynameismatthieu.com/WOW/) 
   - 加上 wow 后，元素在用户滚动到前隐藏
   - 可以自己写 JS 配合`animate.css`
-  ```
+  ```html
   class="animated wow fadeInDown"
   ```
-
 	- [ajlkn/jquery.scrollex: Nifty scroll events for jQuery.](https://github.com/ajlkn/jquery.scrollex)
 
 * 视差滚动
   [Victa/scrolly: Super simple and easy to use parallax plugin for jQuery (THIS PROJECT IS NOT MAINTAINED ANYMORE)](https://github.com/Victa/scrolly)
-  ```
+  ```js
   // Scrolly links.
     $('.scrolly').scrolly({
       speed: 400
     });
   ```
 
-
 animation 是缩写属性，类似 background，有几种缩写形式，参看 MDN
-会自动插入补间动画  
+
+会自动插入补间动画
+
 最简单的`animation: 3s slidein`
 
 [ duration 持续时间 | 类型 默认 ease  | delay 开始时间 | iteration-count 循环次数 | 方向 ]
 
 timing 定时、记时
-timing-function 作用于每两个关键帧之间，而不是整个动画。  
-steps 第一个参数表示补帧数，第二个参数表跳过，可选  
-timing-function: steps(24); 人眼中的动画  
+
+timing-function 作用于每两个关键帧之间，而不是整个动画。
+
+steps 第一个参数表示补帧数，第二个参数表跳过，可选
+
+timing-function: steps(24); 人眼中的动画
+
 alternate 交替
 
 [深入理解CSS3 Animation 帧动画 - 【Aaron】 - 博客园](http://www.cnblogs.com/aaronjs/p/4642015.html)
@@ -126,17 +132,17 @@ $(‘.parallax-obj’).parallax()
 
 ## 左侧属性都可能会带来性能问题
 1. 位移动画
-  top/left/right/bottom => translate3d(x, y, z)
+  `top/left/right/bottom => translate3d(x, y, z)`
 2. 边框动画
-  border(1px -> 1000px) => scale(0.1) -> (1)
+  `border(1px -> 1000px) => scale(0.1) -> (1)`
 3. 放大缩小动画
-  zoom(1px -> 10px) => scale(0.9) -> (1)
+  `zoom(1px -> 10px) => scale(0.9) -> (1)`
 4. 图片背景动画
-  background-position => translate(x, y)
+  `background-position => translate(x, y)`
 5. 即时显隐动画
-  visibility:hidden -> visible => keyframe(0%(opacity: 0) 1%(opacity: 1))
+  `visibility:hidden -> visible => keyframe(0%(opacity: 0) 1%(opacity: 1))`
 6. 飞入飞出屏幕动画
-  translateZ(0px) -> (50px) => scale(1) -> (1.1)
+  `translateZ(0px) -> (50px) => scale(1) -> (1.1)`
 
 ## 无限旋转动画
 ```css
@@ -156,7 +162,7 @@ $(‘.parallax-obj’).parallax()
 
 ## perspective 3d cube 透视 景深 近大远小
 * 相当于人眼感觉的实景，因为我们的屏幕一般是平面的。
-* perspective 定义 z=0 平面和用户的距离，z>0 的元素变大，z<0 的变小
+* perspective 定义`z=0`平面和用户的距离，`z>0`的元素变大，`z<0`的变小
 * 应用景深的元素称为“舞台元素”，舞台元素的所有后代元素都会受影响
 * 灭点指的是立体图形各条边的延伸线所产生的相交点，透视点的消失点
 * 景深越大，灭点越远，元素的变形越小；
@@ -204,3 +210,8 @@ $(‘.parallax-obj’).parallax()
   opacity: 0;
 }
 ```
+
+## transition animation 异同
+* 过渡指从一个状态到另一个状态的平滑的变化过程，而动画可以是多个“状态”间的变化
+* 动画可以自动开始，过渡一般需要通过添加样式类或更改状态（如悬停）来触发
+ 

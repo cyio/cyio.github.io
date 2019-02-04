@@ -155,3 +155,21 @@
 
 ## head/meta
 [HTML 文档之 Head 最佳实践 - 前端 - 掘金](https://juejin.im/entry/5a5395d76fb9a01c9e45d027)
+
+## data 属性
+```
+// html
+data-columns="3"
+// js
+var article = document.getElementById('electriccars');
+article.dataset.columns // "3"
+// css
+article::before {
+  content: attr(data-parent);
+}
+article[data-columns='3'] {
+  width: 400px;
+}
+
+```
+[Using data attributes | MDN](https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes)

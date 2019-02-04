@@ -36,12 +36,11 @@
 ## Vue 2
 
 * 只有当实例被创建时 data 中存在的属性才是响应式的
-* ready -> mounted
+* ~~ready -> mounted~~
 * 对 dom 没依赖的操作可放到 created 中，如数据请求
-* 页面内可定义 filters，如果不需要共享的话
 * 学习框架，官方的 examples 一定要 clone 下来看源码，这是对框架特性最好的学习资料
 * 如果需要对纯 DOM 元素进行底层操作，就会用到自定义指令，可全局可局部
-* 要保证文档加载完才执行需 nextTic
+* 要保证文档加载或更新后才执行，需 nextTick
 * transition 成组件，应用范围更广，类名变化
 * loader 升级 `npm install browser-sync postcss  postcss-cssnext  postcss-import  postcss-nested postcss-pxtorem pug vux vuex weixin-js-sdk--save-dev --cache-min 0`
 * 单向数据流，不允许直接修改 props，不要在子组件内部直接修改 props，而需要 emit 事件通知父组件修改
@@ -88,7 +87,6 @@ Understanding Components Communication in Vue 2.0 http://taha-sh.com/blog/unders
   ```
     modal
       div(slot='body')
-
   ```
 
 * 实现简单的路由（页面切换）
@@ -115,7 +113,7 @@ Understanding Components Communication in Vue 2.0 http://taha-sh.com/blog/unders
 > Vue 文件格式可以支持局部 CSS，只要在`<style>`标签上加上一个 scoped 属性
 > 避免使用，会带来不必要的麻烦，请手动使用命名空间解决
 
-* 派发事件`$dispatch`
+* ~~派发事件`$dispatch`~~
   1. 在当前实例上触发
   2. 向上冒泡触发一个后停止，除非返回 true
   3. 附加参数传给回调
@@ -144,7 +142,7 @@ child3.$dispatch('test')
 // -> "child2 notified"
 ```
 
-* 广播事件`$broadcast`
+* ~~广播事件`$broadcast`~~
   1. 广播给全部后代
   2. 各分叉传播时，触发一个后在当前分叉停止，除非返回 true
 
@@ -178,7 +176,7 @@ child3.$dispatch('test')
   > 把这个状态放到这两个组件共同的父组件中然后通过 prop.sync 来同步这两个组件的这个状态
   > 在这两个组件中都放置这个状态然后通过共同父组件的一个 prop 来在父组件中调用函数执行一个 this.$dispatch 通知子组件这个状态有改动，借此来同步各个组件中的这个状态。
 * 用事件通知prop更新
-* 使用umd风格，实现更多支持
+* 使用 UMD 风格，实现更多支持
     ```
     output: {
       library: 'ComponentName',
@@ -259,30 +257,6 @@ inputs[x].addEventListener('blur', function() {
 })
 ```
 
-## 解决 iOS 中 fixed 定位，输入时错位的问题
-
-根据 focus 和 blur 的状态添加移除 fixfixed 类
-把 position 改为 absolute 是普遍做法，当试了不行，干脆直接隐藏
-
-```css
-.fixfixed .ui-header, .fixfixed .ui-footer {
-	/*position: absolute;*/
-	display: none
-}
-```
-```js
-methods: {
-	inputFocus: function () {
-		var body = window.document.getElementsByTagName('body')[0]
-		body.className = 'fixfixed'
-	},
-	inputBlur: function () {
-		var body = window.document.getElementsByTagName('body')[0]
-		body.className = ''
-	}
-}
-```
-
 ## 学习参考
 
 [Vue 探索与实践 | Aotu.io「凹凸实验室」](https://aotu.io/notes/2017/07/17/The-Exploration-and-Practice-of-Vue/)
@@ -333,37 +307,6 @@ manifest 异步、script 动态引入
 [SplitChunksPlugin](https://webpack.js.org/plugins/split-chunks-plugin/)
 查看完整配置`./node_modules/.bin/vue-cli-service inspect`
 偶然编译出错，尝试删除`node_modules/.cache`
-
-## 编译慢问题
-[feat(compiler): Use a single compiler for multiple plugin instances by jantimon · Pull Request #967 · jantimon/html-webpack-plugin](https://github.com/jantimon/html-webpack-plugin/pull/967)
-[Multiple entry points -> multiple html outputs webpack rebuild very slow · Issue #724 · jantimon/html-webpack-plugin](https://github.com/jantimon/html-webpack-plugin/issues/724#issuecomment-419885840)
-```
-npm install html-webpack-plugin@4.0.0-alpha.2
-或者
-cd node_modules
-git clone https://github.com/jantimon/html-webpack-plugin.git
-git checkout feature/cache-file-timestamps
-```
-[build performance · webpack/docs Wiki](https://github.com/webpack/docs/wiki/build-performance)
-### vue-cli-service 如何本地配置某个依赖
-[neutrinojs/webpack-chain: A chaining API to generate and simplify the modification of Webpack configurations.](https://github.com/neutrinojs/webpack-chain)
-webpack 的 stats 配置不能用，选了别的插件
-[stats config invalid ? · Issue #2652 · vuejs/vue-cli](https://github.com/vuejs/vue-cli/issues/2652#issuecomment-425632179)
-
-## 前端编译服务崩溃问题
-升级 vue-cli 3 后，在修改 JS 文件，尤其是频繁保存时，服务极易崩溃，可以稳定重现
-因为我大部分时间在编辑 vue 文件，感觉不明显，景帅反映比较突出，严重影响开发效率
-崩溃原因： sourcemap 生成、 文件 watch 等功能内存占用大，webpack 部分插件内存泄漏、高内存占用，触及 V8 默认回收上限 1400Mb
-解决办法是提升上限，避免触及，需要注意如何正确地添加参数
-
-错误方式（景帅在 package.json 中添加的）：
-`$ vue-cli-service serve --max_old_space_size=4096`
-正确方式：
-1. [yarn serve - JavaScript heap out of memory crash · Issue #1453 · vuejs/vue-cli](https://github.com/vuejs/vue-cli/issues/1453#issuecomment-430969846)
-`node --max_old_space_size=4096 node_modules/@vue/cli-service/bin/vue-cli-service.js serve --open`
-2. [fix: increase Node memory limit to workaround webpack crash, fix #1453 · octref/vue-cli@bb98ef0](https://github.com/octref/vue-cli/commit/bb98ef08874bf07b9a510b23f8d6f94c0afaf01c)
-相关Issue：
-[Process out of memory - Webpack · Issue #1914 · webpack/webpack](https://github.com/webpack/webpack/issues/1914#issuecomment-392660230)
 
 ## 单文件拆分
 ```
@@ -464,10 +407,13 @@ const toggle = {
 ```
 
 ## 生命周期
-* `beforeDestory`不会在窗口 refresh 或 close 时触发
+* `beforeDestory`不会在窗口 refresh 或 close 时触发，一般用在路由切换
     ```js
     window.onbeforeunload = function(){
       console.warn('haha') // 要执行的代码
       return "确认离开页面";
     }
     ```
+
+## 大小写
+[Prop — Vue.js](https://cn.vuejs.org/v2/guide/components-props.html#Prop-%25E7%259A%2584%25E5%25A4%25A7%25E5%25B0%258F%25E5%2586%2599-camelCase-vs-kebab-case)

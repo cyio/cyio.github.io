@@ -118,10 +118,10 @@ dt.setUTCHours()
 
 ## fetch
 
-* fetch 相对于旧的 XHR ，主要不同即使用 Promise
-* 完整流程应该先检查状态码，与 callback 写法一致
-* 返回的是 Stream，因此用 json() 方法读取是异步的
-* 响应类型有三种，basic cors opaque，cors 不设限制时跟 basic 一样
+* fetch 相对于旧的 XHR ，主要不同即使用`Promise`
+* 完整流程应该先检查状态码，与`callback`写法一致
+* 返回的是`stream`，因此用`json()`方法读取是异步的
+* 响应类型有三种，`basic cors opaque`，`cors`不设限制时跟`basic`一样
 * fetch 目前无法取消
 ```js
 fetch(apiUrl, {
@@ -133,45 +133,45 @@ fetch(apiUrl, {
 }).then(async res => console.log(await res.json()))
 
 fetch('./api/some.json', {mode: 'cors'})
-	.then(
-		function(response) {
-			if (response.status !== 200) {
-				console.log('Looks like there was a problem. Status Code: ' +
-					response.status);
-				return;
-			}
+  .then(
+    function(response) {
+      if (response.status !== 200) {
+        console.log('Looks like there was a problem. Status Code: ' +
+          response.status);
+        return;
+      }
 
-			// Examine the text in the response
-			response.json().then(function(data) {
-				console.log(data);
-			});
-		}
-	)
-	.catch(function(err) {
-		console.log('Fetch Error :-S', err);
-	});
+      // Examine the text in the response
+      response.json().then(function(data) {
+        console.log(data);
+      });
+    }
+  )
+  .catch(function(err) {
+    console.log('Fetch Error :-S', err);
+  });
 
 // 简化办支，是分离 status 和 json 等步骤，更关注结果
 function status(response) {
-	if (response.status >= 200 && response.status < 300) {
-		return Promise.resolve(response)
-	} else {
-		return Promise.reject(new Error(response.statusText))
-	}
+  if (response.status >= 200 && response.status < 300) {
+    return Promise.resolve(response)
+  } else {
+    return Promise.reject(new Error(response.statusText))
+  }
 }
 
 function json(response) {
-	return response.json()
+  return response.json()
 }
 
 fetch('users.json')
-	.then(status)
-	.then(json)
-	.then(function(data) {
-		console.log('Request succeeded with JSON response', data);
-	}).catch(function(error) {
-		console.log('Request failed', error);
-	});
+  .then(status)
+  .then(json)
+  .then(function(data) {
+    console.log('Request succeeded with JSON response', data);
+  }).catch(function(error) {
+    console.log('Request failed', error);
+  });
 ```
 简写
 ```js
@@ -182,7 +182,7 @@ fetch(url).then(res => res.json().then(console.table))
 
 ## location
 ```js
-location.assign('http://baidu.com')
+location.assign('http://baidu.com') // 等价于 location = url
 location.replace('http://baidu.com')
 ```
 两个方法都会载入一个新地址，区别是`replace`会抹掉当前页的历史记录（之前的不影响）。
@@ -336,20 +336,20 @@ var timeout;
 // Listen for resize events
 window.addEventListener('scroll', function (event) {
 
-	console.log('no debounce');
+  console.log('no debounce');
 
-	// If there's a timer, cancel it
-	if (timeout) {
-		window.cancelAnimationFrame(timeout);
-	}
+  // If there's a timer, cancel it
+  if (timeout) {
+    window.cancelAnimationFrame(timeout);
+  }
 
-	// Setup the new requestAnimationFrame()
-	timeout = window.requestAnimationFrame(function () {
+  // Setup the new requestAnimationFrame()
+  timeout = window.requestAnimationFrame(function () {
 
-		// Run our scroll functions
-		console.log('debounced');
+    // Run our scroll functions
+    console.log('debounced');
 
-	});
+  });
 
 }, false);
 
@@ -360,27 +360,28 @@ window.addEventListener('scroll', function (event) {
  */
 var debounce = function (fn) {
 
-	// Setup a timer
-	var timeout;
+  // Setup a timer
+  var timeout;
 
-	// Return a function to run debounced
-	return function () {
+  // Return a function to run debounced
+  return function () {
 
-		// Setup the arguments
-		var context = this;
-		var args = arguments;
+    // Setup the arguments
+    var context = this;
+    var args = arguments;
 
-		// If there's a timer, cancel it
-		if (timeout) {
-			window.cancelAnimationFrame(timeout);
-		}
+    // If there's a timer, cancel it
+    if (timeout) {
+      window.cancelAnimationFrame(timeout);
+    }
 
-		// Setup the new requestAnimationFrame()
-		timeout = window.requestAnimationFrame(function () {
-			fn.apply(context, args);
-		});
+    // Setup the new requestAnimationFrame()
+    timeout = window.requestAnimationFrame(function () {
+      fn.apply(context, args);
+    });
 
-	}
+  }
 
 };
+
 ```

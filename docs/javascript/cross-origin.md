@@ -54,12 +54,19 @@ import jsonp from 'jsonp-es6'
 ```js
 dev: {
   // ...
-	proxyTable: {
-		'/api': {
-			target: 'http://localhost:8081',
-			changeOrigin: true
-		}
-	},
+  proxyTable: {
+    '/api': {
+      target: 'http://localhost:8081',
+      // changeOrigin: true // 不是必须？
+      pathRewrite: {
+        '^/api': '' // 重写接口
+      }
+    },
+    // http://example.com/result/xxxx.mp4
+    '/result': {
+      target: 'http://example.com',
+    }
+  },
 ```
 [Vue-cli proxyTable 解决开发环境的跨域问题 - 简书](http://www.jianshu.com/p/95b2caf7e0da)
 [JS中关于跨域及实现方法 | plainnany](https://plainnany.github.io/2017/08/05/JS%25E4%25B8%25AD%25E5%2585%25B3%25E4%25BA%258E%25E8%25B7%25A8%25E5%259F%259F%25E5%258F%258A%25E5%25AE%259E%25E7%258E%25B0%25E6%2596%25B9%25E6%25B3%2595/)

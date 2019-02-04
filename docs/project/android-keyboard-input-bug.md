@@ -27,6 +27,9 @@ fixLoginInput () {
   }
 }
 
+// 使用
+input.text(@focus="fixLoginInput")
+
 // 2. intoview
 var inputTextBox = document.getElementById('input-text-box');
 setInterval(function(){

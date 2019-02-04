@@ -188,3 +188,29 @@ when(() => boolean, () => {}) 第一参数返回布尔值，为真时执行一�
   一些 todo 操作方法，加上与对象转换的方法
 * id 随机生成
 * 子组件之所以能修改数据，就是从父级传下来不只是某个值，而是包括修改方法的类
+
+## render 中绑定函数提到外面
+官方解答，使用箭头函数是 OK 的，在你遇到性能问题之前
+[Passing Functions to Components – React](https://reactjs.org/docs/faq-functions.html)
+原理：创建新函数，意味着 prop 值每次变化，进而不必要地 re render 子组件
+1. 外提箭头函数赋值
+```js
+  handleClick = () => {
+    console.log('clickity');
+  }
+```
+2. 在构造器中统一绑定
+```js
+  constructor(props) {
+    super(props);
+
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    console.log('clickity');
+  }
+```
+3. 解决绑定传参，拆分组件
+[Don't Use Bind When Passing Props](https://daveceddia.com/avoid-bind-when-passing-props/)
+

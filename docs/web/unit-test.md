@@ -21,3 +21,15 @@ E2E: Mimic user inputs using Protractor and Selenium
 [Configuration Reference | Vue CLI 3](https://cli.vuejs.org/config/#unit-testing)
 [tdd - End-to-end tests versus unit tests, should tests be decoupled? - Software Engineering Stack Exchange](https://softwareengineering.stackexchange.com/questions/198918/end-to-end-tests-versus-unit-tests-should-tests-be-decoupled)
 [Google Testing Blog: Just Say No to More End-to-End Tests](https://testing.googleblog.com/2015/04/just-say-no-to-more-end-to-end-tests.html)
+
+## Vue 组件测试
+[Wrapper | Vue Test Utils](https://vue-test-utils.vuejs.org/zh/api/wrapper/#%25E5%25B1%259E%25E6%2580%25A7)
+[setTimeout not triggering when unit testing · Issue #3211 · facebook/jest](https://github.com/facebook/jest/issues/3211#issuecomment-289276061)
+`yarn unit tests/unit/modal.spec.js`
+
+* 异步代码
+    1. `done`
+    2. `jest.runAllTimers();`
+    3. promise/await
+
+> 一个标准的互联网应用产品的前端部分，我粗略估计大概有20%的业务基础代码比较稳定，比如通用组件、通用算法和数据模块等，可以针对这些建立复杂一些的API和GUI测试用例来保证质量。剩下80%的部分不是很稳定，每天都在迭代，针对他们维护case的成本非常高。目前业界中号称做了自动化测试的项目，也大多是在做那稳定的20%。

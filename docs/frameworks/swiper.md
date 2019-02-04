@@ -1,4 +1,4 @@
-# swiper
+# Swiper
 
 ## 兼容性
 swiper3是专门针对移动端写的。如果想兼容IE8的话，应该引入swiper2.

@@ -41,6 +41,7 @@
 | flexbox             | IE10+              |
 | http2               | EDGE               |
 | srcset/sizes        | EDGE               |
+| calc                | IE9+               |
 | cloudflare free ssl | not xp IE/Chromium |
 
 

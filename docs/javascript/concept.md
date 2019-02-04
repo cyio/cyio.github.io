@@ -22,12 +22,12 @@ ES6 新增，表示独一无二的值，由函数`Symbol()`产生， 可用于�
 无论什么地方，只要临时需要一些变量，就可以使用私有作用域，如：
 ```js
 function outputNumbers(x){
-    (function(){
-        // i作为临时变量
-        for (var i = 0; i < x; i ++){ 
-            console.log(i);
-        }
-    })()
+  (function(){
+    // i作为临时变量
+    for (var i = 0; i < x; i ++){ 
+      console.log(i);
+    }
+  })()
 }
 outputNumbers(4); //0123
 ```
@@ -55,7 +55,7 @@ d = b++;
 * 面向值编程，相对于面向对象编程，而不是用函数编程
 
 ## 运算法则
-```
+```js
 var a = 1
 a += -1 && a *= 2
 // 引用错误
@@ -65,17 +65,17 @@ a += -1 && a *= 2
 ## 声明提升
 
 三句话:
-> 变量仅声明提升（赋值不提升）
-> 函数定义提升
-> 函数表达式定义不提升 （同变量）
+* 变量仅声明提升（赋值不提升）
+* 函数定义提升
+* 函数表达式定义不提升 （同变量）
 
 ```js
 console.log(a)
-VM365:2 Uncaught ReferenceError: a is not defined(…)(anonymous function) @ VM365:2InjectedScript._evaluateOn @ VM297:875InjectedScript._evaluateAndWrap @ VM297:808InjectedScript.evaluate @ VM297:664
+// VM365:2 Uncaught ReferenceError: a is not defined(…)(anonymous function) @ VM365:2InjectedScript._evaluateOn @ VM297:875InjectedScript._evaluateAndWrap @ VM297:808InjectedScript.evaluate @ VM297:664
 
 console.log(a)
 var a = 'A'
-VM390:2 undefined
+// VM390:2 undefined
 ```
 分析：
 第一个输出`引用错误`，a 未定义
@@ -121,23 +121,23 @@ VM250:3 try
 
 // 完整，兼容 Node UMD 和 require.js
 (function (root, factory) {
-	if (typeof define === 'function' && define.amd) {
-		define(factory);
-	} else if (typeof exports === 'object') {
-		module.exports = factory;
-	} else {
-		root.MYMODULE = factory();
-	}
+  if (typeof define === 'function' && define.amd) {
+    define(factory);
+  } else if (typeof exports === 'object') {
+    module.exports = factory;
+  } else {
+    root.MYMODULE = factory();
+  }
 })(this, function () {
-	// 在这里写自己的代码
+  // 在这里写自己的代码
 });
 
 // ES6 ? 现在可以这么写
 block: {
-	const num = Math.random();
-	console.log(num);
-	if (num <= 0.5) break block;
-	console.log('Number is greater than 0.5');
+  const num = Math.random();
+  console.log(num);
+  if (num <= 0.5) break block;
+  console.log('Number is greater than 0.5');
 }
 console.log('Done!');
 ```
@@ -158,11 +158,11 @@ break 终止迭代
 i = 0;
 n = 0;
 while (i < 5) {
-   i++;
-   if (i === 3) {
-      continue;
-   }
-   n += i;
+  i++;
+  if (i === 3) {
+     continue;
+  }
+  n += i;
 }
 // 1 + 2 + 4 + 5
 console.log(n) // 12
@@ -170,7 +170,7 @@ console.log(n) // 12
 
 ## 模块
 
-### 什么是模块？ (需要纠正发音，不是 modal)
+### 什么是模块？ (module，不是 modal)
 提供接口却隐藏状态与实现的函数或对象
 
 ### 模块有什么用？
@@ -191,18 +191,18 @@ console.log(n) // 12
 1. 在构造函数中定义特权方法（实例变量）
 ```js
 function MyObject () {
-    // 私有变量和私有函数
-    var privateVariable = 10;
-    
-    function privateFunction() {
-        return false;
-    }
-    
-    // 特权方法
-    this.publicMethod = function () {
-        privateVariable++;
-        return privateFunction();
-    }
+  // 私有变量和私有函数
+  var privateVariable = 10;
+
+  function privateFunction() {
+    return false;
+  }
+
+  // 特权方法
+  this.publicMethod = function () {
+    privateVariable++;
+    return privateFunction();
+  }
 }
 ```
 
@@ -211,22 +211,22 @@ function MyObject () {
 2. 静态私有变量
 ```js
 (function () {
-    // 私有变量和私有函数
-    var privateVariable = 10;
-    
-    function privateFunction() {
-        return false;
-    }
-    
-    // 构造函数
-    MyObject = function(){
-    };
-    
-    //  公有/特权方法
-    MyObject.prototype.publicMethod = function () {
-        privateVariable++;
-        return privateFunction();
-    };
+  // 私有变量和私有函数
+  var privateVariable = 10;
+
+  function privateFunction() {
+    return false;
+  }
+
+  // 构造函数
+  MyObject = function(){
+  };
+
+  //  公有/特权方法
+  MyObject.prototype.publicMethod = function () {
+    privateVariable++;
+    return privateFunction();
+  };
 })();
 ```
 这个模式创建了一个私有作用域 ，并在其中封装了一个构造函数及相应的方法。

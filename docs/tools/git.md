@@ -200,6 +200,8 @@ git clean -fdx
   ```sh
   git clone --mirror git://example.com/some-big-repo.git
   bfg --strip-blobs-bigger-than 100M some-big-repo.git
+  // or 
+  // bfg -D filename[not path]
   cd some-big-repo.git
   git reflog expire --expire=now --all && git gc --prune=now --aggressive
   git push
@@ -216,6 +218,21 @@ git clean -fdx
 ## 导出
   - 创建两个 commits 的 patch `git diff COMMIT1 COMMIT2 > patch.txt`
     如果有在线管理，可直接查看 commit 的 diff 内容
+
+## patch
+```
+# creat patch
+git format-patch -1 HEAD
+
+# show stats
+git apply --stat file.patch 
+
+# check error
+git apply --check file.patch
+
+# apply the patch finally
+git am < file.patch
+```
 
 ## hub
   在 github 上新建仓库
@@ -335,4 +352,20 @@ git checkout master
 ## zsh alias
 ```sh
 v ~/.oh-my-zsh/plugins/git/git.plugin.zsh
+```
+## push 策略
+git 默认是 simple 与 upstream 差不多，区别是不允许不同名推，防止新手覆盖
+用 upstream 即可
+[配置Git Push策略 - The Kai Way](http://thekaiway.com/2013/07/30/config-your-git-push-strategy/)
+
+## 统计文件修改
+```
+git log --name-status
+```
+
+## git pull after forced update
+
+```
+git fetch
+git reset origin/dev --hard
 ```

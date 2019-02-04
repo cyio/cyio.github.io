@@ -100,8 +100,9 @@ var allNumbers = [23, 11, 34, 56];
 console.log(Math.max.apply(null, allNumbers)); // 56
 ```
 
-## 深度复制
-ES5 递归，ES6`Object.assign`
+## 深拷贝
+ES5 递归
+ES6 `Object.assign`和`...`扩展符不是深拷贝，如果属性里有对象或数组，拷贝的是引用
 
 `Object.assign`将多个对象复制到目标对象，与其说是复制，更像合并，如果有相同 key， 后边会覆盖前边
 ```JS
@@ -110,3 +111,12 @@ var obj2 = {a: 3, b: 1}
 var merge = Object.assign({}, obj1, obj2)
 console.log(merge)
 ```
+
+纯数据对象的话可以用JSON的接口，MDN 也是这个
+```js
+let obj_snapshot = JSON.parse(JSON.stringify(obj))
+```
+
+可以用lodash的cloneDeep函数。
+狠一点就上immutable，facebook官方出的，所有数据都是不可变，不需要深拷贝之类的操作
+

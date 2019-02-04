@@ -1,5 +1,10 @@
 # CSS 实践
 
+## 不使用 @import
+* import 的文件 b 在依赖 a 下载完成后才能下载
+* 应该合并，减少下载，或写到 link，实现并行下载
+[html - Best way to include CSS? Why use @import? - Stack Overflow](https://stackoverflow.com/questions/10036977/best-way-to-include-css-why-use-import)
+
 ## 在iframe中插入CSS
   ```js
   var css = document.createElement("link") 
@@ -73,7 +78,9 @@ translate 修正偏差
   * 以 750px 为例，分成 100 份（单位假定为a）
   * 1a = 7.5px
   * 1rem = 10a = 75px
-    [em unit explain](http://codepen.io/cyio/pen/BWgamb?editors=1100)
+[em unit explain](http://codepen.io/cyio/pen/BWgamb?editors=1100)
+[Vue项目自动转换 px 为 rem，高保真还原设计图 - 掘金](https://juejin.im/post/5a716c4c6fb9a01cb42cac4b)
+[在 Vue Cli 3 中使用 px2rem - 简书](https://www.jianshu.com/p/5b8b7cd11fce)
 
 ## background-position
   控制背景图的起始点，相对于左上角为原点坐标

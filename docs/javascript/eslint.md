@@ -1,4 +1,9 @@
-# eslint
+# ESLint
+
+## 串联和等级
+* 可在子文件夹设置规则，会合并和覆盖更高层
+* 会一直向上查找，如用户主目录`~/.eslintrc`，或在`package.json`显示指定`root`
+[Configuring ESLint - ESLint - Pluggable JavaScript linter](https://eslint.org/docs/user-guide/configuring#configuration-cascading-and-hierarchy)
 
 ## 禁用
 ```js
@@ -110,3 +115,17 @@ const h = this.$createElement // eslint-disable-line
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
   },
 ```
+
+## 对象深嵌套解构
+```js
+const { statement: { isConfirmed }, statement } = this.props;
+// 一行解出 statement 及下一级的 isConfirmed
+```
+[Destructuring assignment | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Nested_object_and_array_destructuring)
+
+## vue/require-default-prop
+* 没有设为 required 的 props 必须设置默认值（布尔值除外）
+* 两种情况
+  1. 没设置 required
+  2. 设置为 false
+[eslint-plugin-vue/require-default-prop.md at master · vuejs/eslint-plugin-vue](https://github.com/vuejs/eslint-plugin-vue/blob/master/docs/rules/require-default-prop.md)

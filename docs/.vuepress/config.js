@@ -20,7 +20,7 @@ module.exports = {
     nav: [
       // { text: '主页', link: '/' },
       { text: 'Blog', link: '/' },
-      { text: 'JS', link: '/javascript/' },
+      { text: 'JS', link: '/javascript/concept' },
       { text: 'Web', link: '/web/' },
       { text: '框架', link: '/frameworks/' },
       { text: 'Node', link: '/node/' },
@@ -57,7 +57,7 @@ function genSidebarConfig () {
     {
       name: 'frameworks',
       displayName: '框架',
-      collapsable: true,
+      collapsable: false,
     },
     {
       name: 'tools',
@@ -74,43 +74,6 @@ function genSidebarConfig () {
       },
     ]
   })
-  let config = {
-    'javascript': [
-      {
-        title: 'Javascript',
-        collapsable: false,
-        children: getChildren('javascript')
-      },
-    ],
-    'web': [
-      {
-        title: 'web',
-        collapsable: false,
-        children: getChildren('javascript')
-      },
-    ],
-    'node': [
-      {
-        title: 'Node',
-        collapsable: false,
-        children: getChildren('javascript')
-      },
-    ],
-    'frameworks': [
-      {
-        title: 'frameworks',
-        collapsable: true,
-        children: getChildren('javascript')
-      },
-    ],
-    'tools': [
-      {
-        title: '工具',
-        collapsable: false,
-        children: getChildren('javascript')
-      },
-    ]
-  }
   return sideBarData
 }
 /*

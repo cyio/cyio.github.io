@@ -111,3 +111,6 @@ function getPosition(e) {
   -  注意 right 和 bottom 是按左上边计算
   - 这两个函数对block元素得到的结果相同，只不过getClientRects()得到的是一个数组。对于inline元素来说，如果inline元素跨行后，每行都会形成一个DOMRect，因此getClientRects()会得到多个DOMRect的位置大小信息组成的数组。而getBoundingClientRect()会得到包围所有DOMRect的最小矩形的位置大小信息。
 [DOM tests - rectangles](https://www.quirksmode.org/dom/tests/rectangles.html)
+
+## z-index
+定位元素（非 static）及其后代设置 stack level
