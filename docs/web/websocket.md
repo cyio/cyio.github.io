@@ -1,5 +1,12 @@
 # websocket
 
+ws - websocket over http
+wss - websocket over https
+
+[ssl - WSS works on http? - Stack Overflow](https://stackoverflow.com/questions/34532006/wss-works-on-http?lq=1)
+
+* http 可连接 https，所以 http 应该可连 wss
+
 websocket 是浏览器标准
 nodejs 常用这个 https://github.com/websockets/ws
 koa2 用这个 koa-websocket 或 koa-socket

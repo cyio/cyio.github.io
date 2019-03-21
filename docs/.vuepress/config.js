@@ -13,18 +13,22 @@ module.exports = {
   serviceWorker: true,
   themeConfig: {
     serviceWorker: {
-      lastUpdated: 'Last Updated',
-      updatePopup: true
+      lastUpdated: '最后更新',
+      updatePopup: true,
+      updatePopup: { 
+         message: "有新内容可用", 
+         buttonText: "更新" 
+      }
     },
     evergreen: true,
     nav: [
       // { text: '主页', link: '/' },
       { text: 'Blog', link: '/' },
       { text: 'JS', link: '/javascript/concept' },
-      { text: 'Web', link: '/web/' },
-      { text: '框架', link: '/frameworks/' },
-      { text: 'Node', link: '/node/' },
-      { text: '工具', link: '/tools/' },
+      { text: 'Web', link: '/web/html' },
+      { text: '框架', link: '/frameworks/vue' },
+      { text: 'Node', link: '/node/concept' },
+      { text: '工具', link: '/tools/markdown' },
       { text: 'Github', link: 'https://github.com/cyio' },
       // { text: '项目', link: '/projects/' },
       // { text: '未分类', link: '/uncategorized/' },

@@ -55,7 +55,7 @@ const newObj = { ...vueObj }
 ## watch
 * default 是组件不绑定 prop 的回退
 * 数据有变化，watch 一定会触发
-* 不触发，两个并行请求，第一个请求完成时渲染子组件，当第二个请求更快完成时，会准备好数据，先于子组件渲染
+* 数据 ready 后渲染子组件，子组件中的 watch 不会触发，因为没为变化，如，两个并行请求，第一个请求完成时渲染子组件，当第二个请求更快完成时，会准备好数据，先于子组件渲染
 
 ## 前端编译服务崩溃问题
 升级 vue-cli 3 后，在修改 JS 文件，尤其是频繁保存时，服务极易崩溃，可以稳定重现
@@ -112,3 +112,11 @@ methods: {
 }
 ```
 
+## v-for 循环绑定不生效
+```js
+// not work
+  .item(v-for="key of answerKeys" :class="[ key === rightAnswer ? 'right' : 'wrong' ]")
+
+// work
+  .item(v-for="key of answerKeys" :class="{ 'right': key === rightAnswer, 'wrong': key !== rightAnswer }")
+```

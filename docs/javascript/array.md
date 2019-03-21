@@ -233,3 +233,8 @@ arr['0']
   const copy8 = Object.assign([], names)
   ```
 
+## from 数组生成
+```
+// 生成 6 - 24，v 初始值是 undefined
+Array.from({length: 19}, (v, i) => i + 6);
+```

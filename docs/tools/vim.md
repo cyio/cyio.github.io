@@ -487,3 +487,6 @@ vim scp://oaker@vserver.oaker.bid:29979//home/oaker/tmp.js
 ## 浏览一番后快速跳回原处
 使用全局标记 `ma`
 
+## 只能运行 zsh 非交互命令
+比如 alias.sh 中的运行不了
+[How to run zsh aliased command from vim command mode? - Vi and Vim Stack Exchange](https://vi.stackexchange.com/questions/16186/how-to-run-zsh-aliased-command-from-vim-command-mode/16197)

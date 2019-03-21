@@ -15,7 +15,7 @@ iOS10之前，不支持 参考这个 http://stackoverflow.com/a/37967643/5657916
 poster 在 android 下兼容不好，不如在视频上层加个div铺张图片
 解决：视频上加一层div做封面，由于android不允许视频上层有东西，所以首先将视频设为的 width：1px ，当播放后，上层的封面remove掉，同时 width：100% 或者你想要的宽度。
 
-2. android下是不允许自动播放的，即使你用了 video.play() ,也是不行的。必须有用户的主动触发，比如触摸了屏幕，有click或touch事件产生
+2. android / chrome 70 下是不允许自动播放的，即使你用了 video.play() ,也是不行的。必须有用户的主动触发，比如触摸了屏幕，有click或touch事件产生
 
 3. 常用方法：play(),pause() 常用事件：'loadstart','canplay','canplaythrough','ended','timeupdate'
 ios需要播放后才会触发'canplay'和'canplaythrough'
@@ -97,3 +97,5 @@ http://content.jwplatform.com/manifests/vM7nH0Kl.m3u8
 
 ## 视频格式
 查看`ffmpeg -i sample.flv`
+
+[Live FLV Stream on Android Chrome: "Playback seems stuck at 0, seek to 0.009" · Issue #291 · bilibili/flv.js](https://github.com/Bilibili/flv.js/issues/291#issuecomment-378025263)

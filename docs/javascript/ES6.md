@@ -105,6 +105,7 @@ export {default as React} from 'react';
 ## 箭头函数
 * 当使用箭头函数创建普通对象时，你总是需要将对象包裹在小括号里
 * 没有`arguments`，可以使用`...args`
+* 自身没有 this
 ```js
 // 为与你玩耍的每一个小狗创建一个新的空对象
 var chewToys = puppies.map(puppy => {});   // 这样写会报Bug！
@@ -118,38 +119,6 @@ var chewToys = puppies.map(puppy => ({})); //
 
 箭头函数不能使用 arguments 对象，该对象不存在，但可以使用 rest 对象
 
-## ES5 中的 this 继承问题
-```js
-{
-  ...
-  add: function() {},
-  addAll: function addAll(pieces) {
-    var self = this;
-    _.each(pieces, function (piece) {
-      self.add(piece);
-    });
-  },
-  ...
-}
-```
-
-> 在这里，你希望在内层函数里写的是`this.add(piece)`，不幸的是，内层函数并未从外层函数继承 this 的值。在内层函数里，this 会是 window 或 undefined，临时变量 self 用来将外部的 this 值导入内部函数。（另一种方式是在内部函数上执行`.bind(this)`，两种方法都不甚美观。）
-
-箭头函数内的 this 值继承自外围作用域
-```js
-// ES6
-{
-  ...
-  addAll: function addAll(pieces) {
-    _.each(pieces, piece => this.add(piece));
-  },
-  ...
-}
-```
-
-> 在 ES6 的版本中，注意 addAll 方法从它的调用者处获取了 this 值，内部函数是一个箭头函数，所以它继承了外围作用域的 this 值。
-
-结论：箭头函数和 function 要配合使用，无法完全弃用 function
 
 * 函数表达式称为 lambda 函数，λ-calculus，演算的意思
 
@@ -200,6 +169,21 @@ let func = function func(){}
 let clsName = class {}
 let clsName = class clsName {}
 ```
+### 什么时候不使用
+1. 对象方法
+2. 有动态上下文的回调
+```js
+var button = document.getElementById('press');
+button.addEventListener('click', () => {
+	console.log(this) // Window
+});
+button.addEventListener('click', function() {
+	console.log(this) // button element
+});
+```
+### 什么时候放心用
+* this 继承 parent context
+* 不关心 this
 
 ## 模板字面量
 * 不支持纯字符串
@@ -244,3 +228,9 @@ console.log(fn())
 ## 参数类型
 ES6 不支持，用 flow，然后通过 babel plugin 移除
 [javascript - Babel: Function parameter types in ES6 - Stack Overflow](https://stackoverflow.com/questions/35916921/babel-function-parameter-types-in-es6)
+
+## Set
+- Set 对象允许你存储任何类型的唯一值，无论是原始值或者是对象引用。
+- 包括 null 等，用来做去重时，添加的值可能需要做类型判断
+- 特殊的对象，继承了对象的方法
+

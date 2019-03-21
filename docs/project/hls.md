@@ -1,11 +1,12 @@
 # HLS
 
-| 视频协议   | 用途      | PC                           | 移动   | 延时   |
-| ---        | --        | --                           | --     | --     |
-| HLS(m3u8)  | 直播/点播 | 支持                         | 支持   | 10-30s |
-| FLV(flash) | 直播/点播 | 支持(需要用户安装启用 flash) | 支持   |        |
-| RTMP       | 只能直播  | 支持                         | 不支持 | 3s     |
-| MP4        | 只能点播  | 支持                         | 支持   |        |
+| 视频协议   | 用途      | PC                           | 移动              | 延时   |
+| ---        | --        | --                           | --                | --     |
+| HLS(m3u8)  | 直播/点播 | 支持                         | 支持              | 10-30s |
+| FLV(flash) | 直播/点播 | 支持(需要用户安装启用 flash) | 支持              |        |
+| HTTP-FLV   | 直播/点播 | 支持                         | ios safari 不支持 | 1-3s   |
+| RTMP       | 只能直播  | 支持                         | 不支持            | 3s     |
+| MP4        | 只能点播  | 支持                         | 支持              |        |
 
 ## 直播和点播
 直播是指视频源是实时的，一旦主播停播了，这个地址就已经失去意义了，而且由于是实时直播，所以播放器在播直播视频的时候是没有进度条的。
@@ -40,4 +41,4 @@ HLS，目前各手机浏览器产品对这种格式的兼容性最好，但它�
 
 [直播协议 HTTP-FLV 详解 - 简书](https://www.jianshu.com/p/bfdba8ab903a)
 
-[使用flv.js做直播 · Issue #3 · gwuhaolin/blog](https://github.com/gwuhaolin/blog/issues/3)
+[为什么使用flv.js做直播 · Issue #3 · gwuhaolin/blog](https://github.com/gwuhaolin/blog/issues/3)

@@ -104,10 +104,10 @@ Date.parse(date) // 只能精确到秒，毫秒将用0来代替
 
 [Exact Age Calculator](http://codepen.io/Codeman12323/pen/HqCyw/)
 
-### 倒计时 countdown
+## 倒计时 countdown
 给定数字，如果是个位数，前面加 0
 
-### 时区
+## 时区
 nodejs 端输入`new Date()`打印出来是标准时区时间，而`getHours()`执行出来是系统环境时区
 
 ```js

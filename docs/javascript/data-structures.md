@@ -242,6 +242,7 @@ console.log(result)
 ```
 
 ## 阶乘
+正整数的阶乘（英语：factorial）是所有小于及等于该数的正整数的积，计为`n!`
 ```js
 // 非递归
 function factorial (n) {

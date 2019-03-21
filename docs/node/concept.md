@@ -21,9 +21,11 @@ V8的垃圾回收机制，把内存分为新生代和老生代
 新生代中的对象存活时间较短，而老生代中的对象存活时间较长或者为常驻对象
 
 ## path
+
 * `path.join`正确使用路径分隔符连接
 * `path.resolve(from..., to)`把相对路径转换为绝对路径，类似 cd，多个参数是跳转关系
 * `path.relative(from, to)` 获取两路径之间的相对关系
+* `path.normalize(path)` 转换`\/ ..`
 
 ##  stream/buffer/string
 无论是处理文件，还是请求远程资源，处理的就是数据流

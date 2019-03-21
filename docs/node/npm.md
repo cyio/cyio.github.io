@@ -59,3 +59,7 @@ proxychains npm install node-sass --save-dev
 ```bash
 echo -e "export PATH=$(npm prefix -g)/bin:$PATH" >> ~/.zshrc && source ~/.zshrc
 ```
+
+## 特殊包安装
+### puppeteer
+`PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true yarn add puppeteer` 忽略 chromium 下载

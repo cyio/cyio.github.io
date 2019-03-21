@@ -1,5 +1,8 @@
 # Tmux
 
+[tmux(1) - OpenBSD manual pages](http://man.openbsd.org/OpenBSD-current/man1/tmux.1)
+> server <=> client => session => pane => window
+
 ## 按键
 | 功能 | 按键 |
 | --- | --- |
@@ -12,9 +15,9 @@
 | 调整大小 | ctrl+方向键 |
 | 列出所有窗口 | w |
 | 关闭当前窗口 | & |
-| 关闭pane | x |
-| 显示pane编号 | q |
-| 切换 panel | ; |
+| 关闭 pane | x |
+| 显示 pane 编号 | q |
+| 切换 pane | ; |
 | 查找 window | f |
 | last window | ctrl+l |
 | 独立为新窗口 | ! |
@@ -23,6 +26,7 @@
 | 放大当前窗口/恢复 | z |
 
 前缀键改为 `ctrl+k`，进入命令模式输入：`set -g prefix ^k`
+[tmux shortcuts & cheatsheet](https://gist.github.com/MohamedAlaa/2961058)
 
 ## 滚屏模式
 默认状态下不能滚屏，进入：前缀键 + [ 

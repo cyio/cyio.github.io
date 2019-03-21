@@ -68,3 +68,8 @@ srcset/sizes
 * 旧浏览器会忽略
 [Responsive Images with srcset and sizes](https://codepen.io/tombennet/pen/yYgLaQ)
 [图片响应式解决方案 - 简书](https://www.jianshu.com/p/235ef450f5e9)
+
+[Use Imagemin to compress images  |  web.dev](https://web.dev/fast/use-imagemin-to-compress-images)
+
+## 在线压缩
+[Squoosh](https://squoosh.app/)
