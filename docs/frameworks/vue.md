@@ -417,3 +417,7 @@ const toggle = {
 
 ## 大小写
 [Prop — Vue.js](https://cn.vuejs.org/v2/guide/components-props.html#Prop-%25E7%259A%2584%25E5%25A4%25A7%25E5%25B0%258F%25E5%2586%2599-camelCase-vs-kebab-case)
+
+## 函数式
+无状态，可以无 script，props.itemClick 与上级通信
+[Vue Template - CodeSandbox](https://codesandbox.io/s/rwxp7pnklo)

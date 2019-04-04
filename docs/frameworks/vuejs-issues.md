@@ -52,10 +52,25 @@ const newObj = { ...vueObj }
 [前端早读课](https://mp.weixin.qq.com/s?__biz=MjM5MTA1MjAxMQ==&mid=2651230706&idx=1&sn=e96555bdf9b8251852928f4a3c5193e0)
 [前端早读课](https://mp.weixin.qq.com/s?__biz=MjM5MTA1MjAxMQ==&mid=2651230683&idx=3&sn=72a870d0c1bede39b5560244495a14c4)
 
-## watch
+## watch bug
 * default 是组件不绑定 prop 的回退
 * 数据有变化，watch 一定会触发
 * 数据 ready 后渲染子组件，子组件中的 watch 不会触发，因为没为变化，如，两个并行请求，第一个请求完成时渲染子组件，当第二个请求更快完成时，会准备好数据，先于子组件渲染
+
+## watch object array
+* object deep
+    ```js
+    // 该回调将会在侦听开始之后被立即调用
+    d: {
+      handler: function (val, oldVal) { /* ... */ }, // 这里 function 不要用箭头函数
+      immediate: true
+    },
+    // 或者
+    'a.d'() {}
+    ```
+* array 无法 watch ?
+把数组转字符串存储，用的时候再解析为数组:
+[vue.js - vue watch数组变化问题 - SegmentFault 思否](https://segmentfault.com/q/1010000010805746)
 
 ## 前端编译服务崩溃问题
 升级 vue-cli 3 后，在修改 JS 文件，尤其是频繁保存时，服务极易崩溃，可以稳定重现

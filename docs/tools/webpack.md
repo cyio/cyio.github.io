@@ -123,7 +123,7 @@ With this bundle configuration, you would load your third party libraries, then 
 * 默认规则
 * chunks: all, async, and initial 指定哪类包可以优化，initial 同步，all 可用于同步和异步
 * 观察下 vendors hash 是否变化，应该保持不变
-* 样式是如何拆包 scss，官方插件是把 css 从 js 中提取
+* 样式如何拆包 scss，官方插件是把 css 从 js 中提取
   [Working with CSS | Vue CLI 3](https://cli.vuejs.org/guide/css.html#automatic-imports)
   - 按上面链接处理不行，打成了 scoped 样式，文件更大了
 ```js

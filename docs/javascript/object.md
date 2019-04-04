@@ -120,3 +120,8 @@ let obj_snapshot = JSON.parse(JSON.stringify(obj))
 可以用lodash的cloneDeep函数。
 狠一点就上immutable，facebook官方出的，所有数据都是不可变，不需要深拷贝之类的操作
 
+### Object.assign
+
+参数：(target, source, ...)
+注意会改变 target
+如果只是想合并 `let merged = Object.assign({}, a, b)`

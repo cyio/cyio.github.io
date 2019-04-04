@@ -84,30 +84,31 @@ IE10+
  * 获取鼠标相对于canvas画布的位置
  **/
 function getPosition(e) {   
-    var rect = e.currentTarget.getBoundingClientRect(), 
-        touch,
-        po;
-    if(this.clientType === 'mobile'){    
-        touch = e.touches[0];  
-        //console.log(touch);
-        po = {
-          x: touch.clientX - rect.left,
-          y: touch.clientY - rect.top
-        };
-    }else{
-        po = {
-          x: e.clientX - rect.left,
-          y: e.clientY - rect.top
-        }
+  var rect = e.currentTarget.getBoundingClientRect(), 
+    touch,
+    po;
+  if(this.clientType === 'mobile'){    
+    touch = e.touches[0];  
+    //console.log(touch);
+    po = {
+      x: touch.clientX - rect.left,
+      y: touch.clientY - rect.top
+    };
+  }else{
+    po = {
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top
     }
-    
-    return po;
+  }
+
+  return po;
 }
 ```
 
 这里我们也可以使用offsetX/Y来获取鼠标相对元素的位置信息，只不过需要注意一点的是，offsetX/Y得到的是相对元素padding box的相对位置，和通过clientX/Y-rect.left/top得到的是相对元素border box得到的相对位置。
 
-* getBoundingClientRect 和 getClientRects 异同
+* `getBoundingClientRect`和`getClientRects`异同
+  - bounding 界限 rectangle 矩形
   -  注意 right 和 bottom 是按左上边计算
   - 这两个函数对block元素得到的结果相同，只不过getClientRects()得到的是一个数组。对于inline元素来说，如果inline元素跨行后，每行都会形成一个DOMRect，因此getClientRects()会得到多个DOMRect的位置大小信息组成的数组。而getBoundingClientRect()会得到包围所有DOMRect的最小矩形的位置大小信息。
 [DOM tests - rectangles](https://www.quirksmode.org/dom/tests/rectangles.html)

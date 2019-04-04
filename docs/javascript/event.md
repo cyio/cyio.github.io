@@ -7,3 +7,14 @@
 ## scroll
 
 `scroll`的`event.target`是`document`，只能在`window/document`上监听到
+
+## mouseout vs mouseleave
+* mouseout 会冒泡，mouseleave 不会
+    ```
+    parent
+      > child
+    ```
+    1. 鼠标称出 child 会触发
+    2. 鼠标从 parent 可见区域移到 child 会触发
+
+[Element: mouseleave event - Web APIs | MDN](https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseleave_event)

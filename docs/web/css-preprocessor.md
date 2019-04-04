@@ -6,9 +6,9 @@
 [浅谈css预处理器，Sass、Less和Stylus - 知乎专栏](https://zhuanlan.zhihu.com/p/23382462)
 
 ## BEM
-* .block 代表了更高级别的抽象或组件。
-* .block__element 代表.block的后代，用于形成一个完整的.block的整体。
-* .block--modifier代表.block的不同状态或不同版本。
+* `.block`代表了更高级别的抽象或组件。
+* `.block__element`代表.block的后代，用于形成一个完整的.block的整体。
+* `.block--modifier`代表.block的不同状态或不同版本。
 * `page-header` — block.
 * `button_theme_islands` — modifier.
 * 不适合照搬，如果用的话，注意两点，选择器扁平化和抽象类。

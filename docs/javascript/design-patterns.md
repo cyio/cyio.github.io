@@ -1,41 +1,44 @@
 # 设计模式
 
-> 软件模式的产生是因为变化的东西太多，为减轻人类的负担， 将一些不变的东西先用模式固化，这样让人类可以更加集中精力对付变化的东西，所以在软 件中大量反复使用模式（我个人认为这样的软件就叫框架软件了，比如 Ｊ２ＥＥ），不但没阻碍软 件的发展，反而是推动了软件的发展．因为其他使用这套软件的人就可以将更多精力集中在 对付那些无法用模式的应用上来．　
+> 软件模式的产生是因为变化的东西太多，为减轻人类的负担， 将一些不变的东西先用模式固化，这样让人类可以更加集中精力对付变化的东西，所以在软 件中大量反复使用模式（我个人认为这样的软件就叫框架软件了，比如 Ｊ２ＥＥ），不但没阻碍软 件的发展，反而是推动了软件的发展．因为其他使用这套软件的人就可以将更多精力集中在 对付那些无法用模式的应用上来．
 
 ## 订阅/发布模式
-* 订阅者，数据结构是事件名到事件回调列表的映射，有一个默认事件`any`
-* 两个方法，一个是接收，参数是回调和事件名，一个是发出，参数是消息和事件名
-    - 接收， 就是写入订阅表，注意事件名存在时，回调列表要 push
-    - 发出，遍历调用事件名下的回调
-* 观察者模式中观察者和被观察者是互相知道对方的存在的，而在发布订阅模式中是不知道的。
+
+- 订阅者，数据结构是事件名到事件回调列表的映射，有一个默认事件`any`
+- 两个方法，一个是接收，参数是回调和事件名，一个是发出，参数是消息和事件名
+  - 接收， 就是写入订阅表，注意事件名存在时，回调列表要 push
+  - 发出，遍历调用事件名下的回调
+- 观察者模式中观察者和被观察者是互相知道对方的存在的，而在发布订阅模式中是不知道的。
+
 ```js
 class Event {
   constructor() {
     this.cacheList = new Map()
   }
 
-  on (type, fn) {
+  on(type, fn) {
     if (!this.cacheList.get(type)) {
       this.cacheList.set(type, [fn]) // 注意这里设置的值是数组
     } else {
-      (this.cacheList.get(type)).push(fn)
+      this.cacheList.get(type).push(fn)
     }
   }
 
-  emit (type, data) {
-    if (!this.cacheList.get(type)) throw('event not found')
+  emit(type, data) {
+    if (!this.cacheList.get(type)) throw 'event not found'
     for (let fn of this.cacheList.get(type)) {
       fn(data)
     }
   }
 }
 
-let event = new Event();
+let event = new Event()
 
-event.on('click', (data) => console.log(`event data: ${data}`))
+event.on('click', data => console.log(`event data: ${data}`))
 event.emit('click', 'hello') // event data: hello
 ```
-[ES6语法实践，用ES6重写《JavaScript Patterns》中的设计模式 - CNode技术社区](https://cnodejs.org/topic/5565b4a77d4c64752effb5dd)
+
+[ES6 语法实践，用 ES6 重写《JavaScript Patterns》中的设计模式 - CNode 技术社区](https://cnodejs.org/topic/5565b4a77d4c64752effb5dd)
 
 ## 策略模式
 
@@ -44,37 +47,134 @@ event.emit('click', 'hello') // event data: hello
 
 至少两部分组成：
 一是策略类，策略类封装了具体的算法，并负责具体的算法。
-二是环境，类Context接受客户的请求，随后把请求委托给某一个策略类。
+二是环境，类 Context 接受客户的请求，随后把请求委托给某一个策略类。
+
 ```js
 // 计算工资
 var strategies = {
-  "S" : function(salary) {
-    return salary * 4;
+  S: function(salary) {
+    return salary * 4
   },
-  "A" : function(salary) {
-    return salary * 5;
+  A: function(salary) {
+    return salary * 5
   },
-  "B" : function(salary) {
-    return salary * 6;
-  }
+  B: function(salary) {
+    return salary * 6
+  },
 }
 
 var calculateBonus = function(level, salary) {
-  return strategies[level](salary); // Context
+  return strategies[level](salary) // Context
 }
 
-console.log(calculateBonus('A', 5000));
-console.log(calculateBonus('S', 5000));
+console.log(calculateBonus('A', 5000))
+console.log(calculateBonus('S', 5000))
 ```
 
 ## 工厂方法
+
 将创建实例的责任与使用实例的责任分开
+
 ## 单例
+
 单一 全局
 创建对象，管理单例两个职责分离
+
 ## 建造器
+
 将复杂对象的创建逻辑与最终表现分离
 JS 中很少用
+
 ## 适配器 adapter
+
 通过对象包装，解决接口数据结构不匹配，不改变已有接口，实现协同
+
 ## 代理
+* 场景：
+* 优点：
+* 分类：
+    1. 虚拟代理，把开销大的对象，延迟到真正需要时创建。
+       比较常用，如实现图片预加载，对象 A 负责创建 img 标签、设置 src，代理对象 B 设置 loading 图，监听 onload 后调用 A
+    2. 保护代理，权限控制
+
+## 开闭原则
+
+对扩展开放，对修改关闭
+
+## 合成复用原则
+
+
+## notes copy
+1. 设计模式是一门语言加速程序员之间的沟通效率
+2. 设计模式为了解决特定问题每个设计模式都有优缺点，使用就要付出缺点的代价
+  a. Eg 观察者模式
+    i. 优点
+      1) 解耦
+    ii. 缺点
+      1) 观察者模式会导致代码可读性和维护性下降
+3. 设计模式只做一件事
+  a. 控制逻辑集中化
+4. 设计模式分为三种
+  a. 创建
+    i. 目的为了创建对象
+    ii. 创建对象配置化，本身就是满足了设计模式的精髓，目的是灵活
+  b. 结构
+    1. 处理类或对象的组合
+    2. 处理功能的组合关系
+  c. 行为
+    1. 描述类和对象怎么交互和怎样分配职责
+    2. 数据和数据处理分离
+      1) 任何的代码都是
+        a) 数据结构
+        b) 算法逻辑
+5. 重点记忆
+  a. 创建型
+    1. 工厂
+    2. 建造者
+    3. 单例
+  b. 结构型
+    1. 适配器
+    2. 装饰
+    3. 享元
+    4. 代理
+  c. 行为型
+    1. 责任连
+    2. 命令
+    3. 观察者
+    4. 策略
+    5. 访问者
+    6. 模板方法
+6. 工厂方法
+  a. 简单工厂
+    1. 控制集中化，可以只维护一个地方的代码
+  b. 工厂方法的缺点
+    1. 开闭原则
+  c. 解决问题的思路
+    1. 工厂方法输出接口
+7. 建造者模式
+  a. 组合的过程配置化
+  b. 是一步一步创建一个复杂对象
+  c. 将一个复杂的对象构建与他的表示分离
+  d. 创建逻辑集中化
+8. 单例
+    a. 作用
+        1. 定义一个全局变量可以确保对象
+        2. 可以随时都可以被访问
+        3. 但不能防止我们的实例化多个对象
+    b. 单例的核心是
+        1. 配置核心化，配置集中
+        2. 解决系统控制粒度的核心化
+
+9. 适配器
+    a. 一个接口转换成另一个兼容接口
+    b. 使用场景
+        1. 第三方系统对接
+        2. 隔离外部变化时
+    c. 本质
+        1. 控制逻辑集中化、变化逻辑集中化
+        2. 就是一个变化的处理函数
+        3. 把变化的处理成使用不可变的数据
+    d. 引申
+        1. 生态系统稳定
+10. 代理模式
+  查一下代理模式的常用场景，具体优点

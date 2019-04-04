@@ -314,3 +314,9 @@ Node.js 鼓励程序员将程序划分为小单元，也就是模块。模块虽
 但我们的重点是 Node.js 和 JavaScript。
 
 [从Sun离职后，我“抛弃”了Java，拥抱JavaScript和Node](https://www.infoq.cn/article/why-is-a-java-guy-so-excited-about-node-js-and-javascript)
+
+## 特殊布尔值
+```js
+Boolean(0) // false
+Boolean(-1) // true
+```

@@ -99,3 +99,14 @@ http://content.jwplatform.com/manifests/vM7nH0Kl.m3u8
 查看`ffmpeg -i sample.flv`
 
 [Live FLV Stream on Android Chrome: "Playback seems stuck at 0, seek to 0.009" · Issue #291 · bilibili/flv.js](https://github.com/Bilibili/flv.js/issues/291#issuecomment-378025263)
+
+## 播放器样式
+16:9 自适应，高度有最大最小限制
+```css
+position: relative;
+width: 100%;
+height: calc((9 / 16) * 100vw);
+max-height: calc(100vh - 169px);
+min-height: 480px;
+background: #000;
+```
