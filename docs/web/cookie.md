@@ -64,6 +64,6 @@ function delCookie(name) {
 [setcookie - Cookies on localhost with explicit domain - Stack Overflow](https://stackoverflow.com/questions/1134290/cookies-on-localhost-with-explicit-domain)
 
 ## 同步
-* 写入 cookie 是同步操作
+* 写入 cookie 是同步操作，阻塞
 * 不知道写入成功还是失败
 [Cookie Store API](https://wicg.github.io/cookie-store/#intro-proposed-change)

@@ -106,14 +106,20 @@ git clean -fdx
   `git commit -a`
   新增文件还是需要另外 add
 
-## 打标签
-tag 是在本地的，除非你显式 push
+## 打标签 tag
+* tag 是在本地的，除非你显式 push
   ```sh
   git tag -a v1.2.4 -m "release 1.2.4"
   # 后面的 commit 信息最好写详细点
   git push github --tags
   或 git push --tags
   git tag -d UNUSED-TAG
+  ```
+* 根据 tag 查询 commit-id，回滚
+  ```
+  git tags
+  git show tag-name
+  git reset --hard commit-id
   ```
 
 ## 合并冲突
@@ -184,7 +190,7 @@ tag 是在本地的，除非你显式 push
 
 ## 子模块
   ```sh
-  git submodule add URL
+  git submodule add URL(需要引入模块)
   # 他人 
   git submodule init
   git submodule update

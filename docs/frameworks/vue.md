@@ -421,3 +421,8 @@ const toggle = {
 ## 函数式
 无状态，可以无 script，props.itemClick 与上级通信
 [Vue Template - CodeSandbox](https://codesandbox.io/s/rwxp7pnklo)
+## props
+* 自定义验证，接受多种类型
+```
+validator: prop => typeof prop === 'number' || prop === null,
+```

@@ -6,6 +6,13 @@
 > * vim 的口号是用思维的速度编码
 > * 正确使用vim的关键就是使得自己能够快速的离开插入模式，然后在常用模式下进行移动。
 
+## cheatsheet
+
+| 功能 | 按键 |
+| --- | --- |
+| 设置文件类型为 JS | <Leader>pj |
+| 设置文件类型为 none | <Leader>pn |
+| 设置文件类型为 vue | <Leader>pv |
 
 ## 基础
 ### 玩转帮助
@@ -401,7 +408,7 @@ vim scp://oaker@vserver.oaker.bid:29979//home/oaker/tmp.js
   `bn/bp` 上一个/下一个
   `<C-^>``:e #` 来回切换，然后切换回原目录`:cd -`
   `leader cd` 切换工作目录为当前文件所在目录
-
+  `b some-unique-part-of-the-file-path` 在文件间快速跳转
 
 ### 忽略已记录文件
   `$ git update-index --assume-unchanged <path>`
@@ -490,3 +497,5 @@ vim scp://oaker@vserver.oaker.bid:29979//home/oaker/tmp.js
 ## 只能运行 zsh 非交互命令
 比如 alias.sh 中的运行不了
 [How to run zsh aliased command from vim command mode? - Vi and Vim Stack Exchange](https://vi.stackexchange.com/questions/16186/how-to-run-zsh-aliased-command-from-vim-command-mode/16197)
+
+不匹配都删掉`:g!/pattern/d`

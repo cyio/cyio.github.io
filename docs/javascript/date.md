@@ -36,7 +36,7 @@ new Intl.DateTimeFormat('zh-CN').format(new Date)
 3. 用户修改系统时间
 
 解决：
-* 获取与服务器时间差，缺点是每秒获取当前时间，可能用户更改
+* (进入页面时)获取与服务器时间差，缺点是每秒获取当前时间，可能用户在进入页面后更改
 ```js
 //entry.js入口文件
 if(!window.dateDiff){

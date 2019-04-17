@@ -3,7 +3,7 @@
 [tmux(1) - OpenBSD manual pages](http://man.openbsd.org/OpenBSD-current/man1/tmux.1)
 > server <=> client => session => pane => window
 
-## 按键
+## cheatsheet
 | 功能 | 按键 |
 | --- | --- |
 | 前缀键 | ctrl+k |
