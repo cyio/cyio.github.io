@@ -426,3 +426,13 @@ const toggle = {
 ```
 validator: prop => typeof prop === 'number' || prop === null,
 ```
+
+## debug 模板
+```js
+Vue.prototype.$log = console.log
+
+{{$log(messaage)}}
+
+{{(function(){debugger})}}
+```
+[Debugging Templates in Vue.js](https://vuedose.tips/tips/debugging-templates-in-vue-js/)

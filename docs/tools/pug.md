@@ -15,7 +15,10 @@
   +hello 调用mixin
 
 * 遍历
-  ```
+  ```pug
+  - for (var x= 0; x<1000 ;x++)
+    li= x
+
   for i in ['a', 'b', 'c', 'd']
     .area(id='area-'+i)
   ```

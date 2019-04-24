@@ -37,6 +37,7 @@ WebRTC
 
 [video 标签在不同平台上的事件表现差异分析 - 腾讯 Web 前端 IMWeb 团队社区 | blog | 团队博客](http://imweb.io/topic/560a6015c2317a8c3e086207)
 [移动端 HTML5 video 视频播放优化实践 - 轩枫阁 – 前端开发 | web 前端技术博客](http://webcache.googleusercontent.com/search?q=cache:K3Kfv-HA0sMJ:www.xuanfengge.com/html5-video-play.html+&cd=1&hl=zh-CN&ct=clnk&gl=cn) 2015 年的不一定新
+[mister-ben/videojs-flvjs: Video.js tech using flv.js for FLV playback](https://github.com/mister-ben/videojs-flvjs)
 
 ## ISSUES
 
@@ -129,6 +130,9 @@ background: #000;
 
 ## 加密解密
 
+支持 AES-128 segment encryption
+[Content Protection for HLS with AES-128 Encryption](https://www.linkedin.com/pulse/content-protection-hls-aes-128-encryption-steven-tielemans)
+
 - MPS 私有加密 - 阿里私有服务
   - 不支持 H5
   - 必须使用阿里 CDN
@@ -176,3 +180,50 @@ oldVideo.load()
 ## 网络自适应
 
 [播放器原理（何李石） | MySlide - 专注 PPT 分享，追随 SlideShare 和 SpeakerDeck 的脚步](https://myslide.cn/slides/491?vertical=1)
+
+清晰度：分为普清、高清、超清、原画和4k，分别对应360p、480p、720p、1080p和以上
+
+使用这个支持 v6 的 fork 版本
+原插件只支持 v5，v6 变化较大，不要用 npm/cdn 版本，是旧的
+[neilhem/videojs-resolution-switcher: Resolution switcher adds the ability to select the video quality in video.js player.](https://github.com/neilhem/videojs-resolution-switcher)
+
+## data-setup
+会自动初始化，不要和手动初始化同时使用
+
+## 组件
+排序
+1. children 插件会影响
+```js
+    children: [
+      'playToggle',
+      'durationDisplay',
+      'timeDivider',
+      'currentTimeDisplay',
+      'progressControl',
+      'volumePanel',
+      'fullscreenToggle'
+    ],
+```
+2. flex order  tab 键切换还是按 html 顺序
+> Flex order change visual order, but html order stays the same. When you change focused element with your keyboard (TAB key) it keeps order defined by HTML. Tab index is scoped globally, so it is not right solution.
+3. re-order your plugin initialization order so the plugins add their buttons in a different order.
+
+## fade
+[video.js: force control bar fade out - Stack Overflow](https://stackoverflow.com/questions/24641448/video-js-force-control-bar-fade-out)
+
+## 主题 theme
+参考：
+[Videojs HLS Adaptive Streaming with quality resolution picker](https://www.nuevolab.com/videojs/tests/hls)
+百度网盘的视频播放也是基于videojs
+
+[ProgressControl](https://docs.videojs.com/docs/api/progress-control.html)
+
+## 点播使用 m3u8
+- 可减轻服务器压力
+- 首次加载更快？
+
+[HTML5点播m3u8(hls)格式视频_Helloweba](https://www.helloweba.net/javascript/571.html)
+[为什么网络点播系统使用m3u8更有优势-PPVOD视频点播源码/直播平台/服务器转码软件系统](http://www.ppvod.com/dianbo/wenti/443.html)
+
+## 版本
+videojs 7 集成 [http-streaming](https://github.com/videojs/http-streaming) 插件。如果不需要，使用 core.js

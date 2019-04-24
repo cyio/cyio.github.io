@@ -1,5 +1,7 @@
 # ESLint
 
+`eslint --init` 默认推荐安装 local，全局无法使用
+
 ## 串联和等级
 * 可在子文件夹设置规则，会合并和覆盖更高层
 * 会一直向上查找，如用户主目录`~/.eslintrc`，或在`package.json`显示指定`root`
@@ -129,3 +131,11 @@ const { statement: { isConfirmed }, statement } = this.props;
   1. 没设置 required
   2. 设置为 false
 [eslint-plugin-vue/require-default-prop.md at master · vuejs/eslint-plugin-vue](https://github.com/vuejs/eslint-plugin-vue/blob/master/docs/rules/require-default-prop.md)
+
+## 常用转换
+```js
+// error
+foo.hasOwnProperty("bar")
+// right
+Object.prototype.hasOwnProperty.call(foo, "bar")
+```

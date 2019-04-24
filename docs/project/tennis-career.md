@@ -1,5 +1,5 @@
 头像和昵称横排保持居中
-```jade
+```pug
 .career-name.row.no-gutter
   .wrap
     .inner
@@ -9,7 +9,7 @@
 ```
 
 地图页
-```jade
+```pug
 form.searchbar.searchbar-init.searchbar-active.searchbar-not-empty(data-search-list='.list-block-search', data-search-in='.item-title')
   .searchbar-input
     input(type='search', id="keyword" placeholder='搜索地点')

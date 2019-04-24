@@ -169,7 +169,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 - 添加下拉刷新
 
-```jade
+```pug
 .page-content.pull-to-refresh-content(data-ptr-distance="55")
   .pull-to-refresh-layer
     .preloader
@@ -188,7 +188,7 @@ ptrContent.on('refresh', function (e) {
 
 - swiper
     三层结构，注意一定要加下swiper-init。swiper-container是固定且必须的，进行JS控制也必须访问这个类。
-```jade
+```pug
 .swiper-container.swiper-init
   .swiper-wrapper
     .swiper-slide
