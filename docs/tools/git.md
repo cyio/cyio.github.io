@@ -12,6 +12,8 @@
 - chore: (锁事的意思)工具操作，例如初始化脚本，启动脚本和代码校验脚本等等
 - deps: 依赖修改，例如升级、降级或锁死版本
 
+[LeanCloud 开放资源: Git Commit 日志风格指南](https://open.leancloud.cn/git-commit-message/)
+
 ## 编码问题
 
 找到报错的文件，运行`:w ++ff=unix`
@@ -472,3 +474,7 @@ git branch --merged
 ## 清理分支
 
 [Git housekeeping tutorial: clean-up outdated branches in local and remote repositories | Blog by Railsware](https://railsware.com/blog/2014/08/11/git-housekeeping-tutorial-clean-up-outdated-branches-in-local-and-remote-repositories/)
+
+## 上线流程
+[Git 开发分支代码上线流程 - 王静静的博客 - CSDN博客](https://blog.csdn.net/Hedy17/article/details/83084149)
+

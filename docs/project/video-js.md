@@ -227,3 +227,24 @@ oldVideo.load()
 
 ## 版本
 videojs 7 集成 [http-streaming](https://github.com/videojs/http-streaming) 插件。如果不需要，使用 core.js
+
+## 异步加载脚本情况下显示 video 原生界面问题
+等 videojs 初始化后，再显示 dom
+
+## 5-6 迁移
+- `src()`改为异步
+    ```js
+    player.src({type: 'video/mp4', src: 'foo.mp4'});
+    player.ready(player.play);
+    ```
+[Video.js 6 Migration Guide · videojs/video.js Wiki](https://github.com/videojs/video.js/wiki/Video.js-6-Migration-Guide)
+
+## 恢复播放
+- 需要 loadedmetadata 发生后
+- 需要校验有效性？
+```js
+player.currentTime(this.lastTimeCopy)
+player.play()
+```
+[VideoJS event list](https://gist.github.com/alecsgone/a6db03bade4dc405a61c63294a64f97a)
+[[Video.js]隐藏和显示视频播放器控件 - 掘金](https://juejin.im/post/5adb020df265da0b7c06d970)

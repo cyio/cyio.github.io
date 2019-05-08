@@ -12,3 +12,8 @@
 ## 防盗链
 http-referer
 [Referer防盗链_访问控制_用户指南_全站加速-阿里云](https://help.aliyun.com/document_detail/65105.html)
+
+## 清晰度
+> 多清晰度预置：流畅、标清、高清、超清、2k、4k等多个预置清晰度，提供最佳经验值，降低接入门槛
+[音视频转码_媒体处理_开发指南_视频点播-阿里云](https://help.aliyun.com/document_detail/99719.html?spm=a2c4e.11153940.blogcont687092.13.76f0671fa7s4DI#%25E7%2582%25B9%25E6%2592%25AD%25E8%25BD%25AC%25E7%25A0%2581%25E5%258A%259F%25E8%2583%25BD%25E7%2589%25B9%25E6%2580%25A7)
+

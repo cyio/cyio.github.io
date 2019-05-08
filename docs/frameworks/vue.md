@@ -436,3 +436,22 @@ Vue.prototype.$log = console.log
 {{(function(){debugger})}}
 ```
 [Debugging Templates in Vue.js](https://vuedose.tips/tips/debugging-templates-in-vue-js/)
+
+## eventBus 全局事件总线
+```js
+//文件->event-bus.js
+
+import Vue from 'vue';
+export const EventBus = new Vue();
+```
+使用
+```js
+import { EventBus } from './event-bus.js';
+
+EventBus.$emit('i-got-clicked', this.clickCount);
+
+EventBus.$on('i-got-clicked', clickCount => {
+  console.log(`Oh, that's nice. It's gotten ${clickCount} clicks! :)`)
+});
+```
+[使用Vue.js创建全局事件总线（Global Event Bus ）-pilishen.com,做全球最好的实战教程](http://www.pilishen.com/posts/creating-a-global-event-bus-with-vuejs)

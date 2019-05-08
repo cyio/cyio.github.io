@@ -20,6 +20,7 @@
 
 [How to find vimdoc help : vim](https://www.reddit.com/r/vim/comments/2eb82s/how_to_find_vimdoc_help/)
 `:help help-summary`
+`:h usr_01.txt`
 `:` cmd/ex `:help :help`
 `'` options `:help 'incsearch`
 `i_` insert mode `:help i_CTRL-[`
@@ -610,4 +611,25 @@ set ma (modifiable) / set noma
 ## Lint
 [Vim插件之ale - Awakenedy - 博客园](https://www.cnblogs.com/awakenedy/articles/9110610.html)
 
+## note plugin
+正面：
+- 方便导航
+- 思维导图形象，但搜索差，不宜保存长久笔记
+- 设置多个 wiki
+```
+= My knowledge base =
+    * [Tasks](Tasks) -- things to be done _yesterday_!!!
+    * Project Gutenberg -- good books are power.
+    * Scratchpad -- various temporary stuff.
+```
+[How does vimwiki compare to emac's org mode? : vim](https://www.reddit.com/r/vim/comments/6bl4al/how_does_vimwiki_compare_to_emacs_org_mode/dhnn3i6?utm_source=share&utm_medium=web2x)
+[vimwiki cheatsheet](http://thedarnedestthing.com/vimwiki%2520cheatsheet)
+[How I Take Notes With Vim, Markdown, and Pandoc - things james does](https://jamesbvaughan.com/markdown-pandoc-notes/)
+[将 vim 作为日常笔记本使用 – VOID001's WOWO](https://void-shana.moe/linux/zh-taking-notes-with-vim.html)
 
+反面观点：认为不需要 vimwiki
+- 链接跳转用`gf`
+- `grep -Ri todo . > todos` 
+- 日志不方便
+  
+[Joe Reynolds Audio](http://joereynoldsaudio.com/2018/07/07/you-dont-need-vimwiki.html)

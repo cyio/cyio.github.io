@@ -46,3 +46,11 @@
           :aria-label="label"
         >
 ```
+
+## 表单组件
+
+- 级联下拉校验如何做？目前是 change
+- 后项依赖前项校验
+    ```pug
+    el-select(@focus="$refs.ruleForm.validateField('front') ")
+    ```
