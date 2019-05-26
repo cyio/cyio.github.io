@@ -46,3 +46,5 @@
 [CSS Flexible Box Layout Module Level 1](https://www.w3.org/TR/css-flexbox-1/#flex-containers)  
 [Progressively Enhancing CSS Layout: From Floats To Flexbox To Grid — Smashing Magazine](https://www.smashingmagazine.com/2017/07/enhancing-css-layout-floats-flexbox-grid/)  
 [gridtoflex.com](https://www.gridtoflex.com/)  
+
+> chrome73,74版本以后flex布局Web应用程序中的溢出将不再起作用，要在flex父元素，原来是    min-height: auto; 现在改为    min-height: 0;才可以

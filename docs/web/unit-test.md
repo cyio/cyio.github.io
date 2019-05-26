@@ -14,10 +14,11 @@
 | 范围 | 最小可测试单元/单元集成      | 整体                       |
 | 环境 | Node                         | Browser                    |
 | 框架 | Jest/Mocha                   | Cypress/Nightwatch         |
+| 编写角色 | 开发                   | 测试         |
 | 优点 | 容易编写，隔离，便于定位修复 | 模拟用户、真实             |
 | 缺点 | 无法保证整体工作如何         | 编写、维护成本高，反馈滞后 |
 
-![Qdmkv.png (381×329)](http://ww1.sinaimg.cn/large/4e5d3ea7ly1g16sp7ua41j20al095t8x.jpg)
+![测试金字塔](https://2.bp.blogspot.com/-YTzv_O4TnkA/VTgexlumP1I/AAAAAAAAAJ8/57-rnwyvP6g/s1600/image02.png)
 
 > 你应该瞄准以下金字塔，主要关注单元和集成测试，70/20/10
 
@@ -25,13 +26,11 @@
 
 > 另一方面，端到端测试工作更高层次 - 从用户的角度检查整个应用程序，所有移动部件协同工作。 当 e2e 测试失败没有给出关于出错的地方，导致失败的地点和原因的信息时，这种情况很常见。
 
-> 通常，单元测试由开发人员自己编写，而端到端测试由测试人员/ QA 专家编写。
-
 > 一个标准的互联网应用产品的前端部分，我粗略估计大概有 20%的业务基础代码比较稳定，比如通用组件、通用算法和数据模块等，可以针对这些建立复杂一些的 API 和 GUI 测试用例来保证质量。剩下 80%的部分不是很稳定，每天都在迭代，针对他们维护 case 的成本非常高。目前业界中号称做了自动化测试的项目，也大多是在做那稳定的 20%。
 
-> Unit test: Test classes
-> Integration test: Test component (class + template) using ComponentFixture
-> E2E: Mimic user inputs using Protractor and Selenium
+> - Unit test: Test classes
+> - Integration test: Test component (class + template) using ComponentFixture
+> - E2E: Mimic user inputs using Protractor and Selenium
 
 [Configuration Reference | Vue CLI 3](https://cli.vuejs.org/config/#unit-testing)
 [tdd - End-to-end tests versus unit tests, should tests be decoupled? - Software Engineering Stack Exchange](https://softwareengineering.stackexchange.com/questions/198918/end-to-end-tests-versus-unit-tests-should-tests-be-decoupled)
@@ -93,7 +92,7 @@ Default: ["/node_modules/"]
 expect(wrapper.isVisible()).toBe(false)
 
 expect(wrapper.props('show')).toBe(false)
-expect(wrapper.emitted().close).toBeTruthy()
+expect(wrapper.emitted().close).toBeTruthy() // toBeTruthy if 语句为真
 ```
 
 ### timer mock / 异步代码

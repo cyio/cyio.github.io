@@ -173,3 +173,6 @@ article[data-columns='3'] {
 
 ```
 [Using data attributes | MDN](https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes)
+
+## html-parse
+[vue/html-parser.js at dev · vuejs/vue](https://github.com/vuejs/vue/blob/dev/src/compiler/parser/html-parser.js)

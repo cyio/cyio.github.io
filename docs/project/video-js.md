@@ -248,3 +248,13 @@ player.play()
 ```
 [VideoJS event list](https://gist.github.com/alecsgone/a6db03bade4dc405a61c63294a64f97a)
 [[Video.js]隐藏和显示视频播放器控件 - 掘金](https://juejin.im/post/5adb020df265da0b7c06d970)
+
+## 组件
+[Tutorial: components | Video.js Documentation](https://docs.videojs.com/tutorial-components.html#creating-a-component)
+
+## 伪全屏
+允许元素显示在视频上，卸载自带事件，给播放器和要前置元素的公共容器设置全屏
+
+## timeupdate
+- 50ms - 250ms
+- 如果需要精确控制，可以使用`requestAnimationFrame`，并在里面检查`player.currentTime()`

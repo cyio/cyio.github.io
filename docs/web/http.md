@@ -41,6 +41,9 @@ pragma 〔计〕杂注,编译指示
 
 交换完连接即关闭，而长连接(HTTP1.1)只有在服务端收到`Connection: close`才会关闭
 
+* 206 - 大文件分块下载时使用
+`curl --header "Range: bytes=500-1000" https://raw.githubusercontent.com/Germey/LaravelGeetest/master/README.md`
+
 ## GET 与 POST 区别
 对于 GET 方式的请求，浏览器会把 http header 和 data 一并发送出去，服务器响应 200（返回数据）； 而对于 POST，浏览器先发送 header，服务器响应 100 continue，浏览器再发送 data，服务器响应 200 ok（返回数据）。
 

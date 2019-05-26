@@ -1,20 +1,32 @@
+# cors-anywhere
+
 ```
 git clone https://github.com/Rob--W/cors-anywhere.git
+```
 
-# 指定端口运行
+## 指定端口运行
+```
 PORT=8099 node server
+```
 
-# 写到 package.json 中固化下来
+## 写到 package.json 中固化下来
+```
 "start": "PORT=8099 node server",
+```
 
-# pm2
+## pm2
+```
 pm2 start npm --watch --name cors-anywhere -- run start
+```
 
-# server.js 注释掉以下
+## server.js 注释掉以下
+```
 // requireHeader: ['origin', 'x-requested-with'],
+```
 
-# nginx config
+## nginx config
 
+```config
 server {
 
 	listen 80;

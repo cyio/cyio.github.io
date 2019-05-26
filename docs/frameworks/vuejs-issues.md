@@ -135,3 +135,20 @@ methods: {
 // work
   .item(v-for="key of answerKeys" :class="{ 'right': key === rightAnswer, 'wrong': key !== rightAnswer }")
 ```
+
+## 异步引入
+1. script vue 插件
+```js
+    await Vue.loadScript(scripts[0])
+    const afterScripts = scripts.slice(1)
+    return Promise.all(afterScripts.map(url => Vue.loadScript(url)))
+
+    scripts.forEach(url => Vue.unloadScript(url))
+```
+2. import 加 promise，取出？
+```js
+  Promise.all([
+    import(/* webpackChunkName: "docsearch" */ 'docsearch.js/dist/cdn/docsearch.min.js'),
+    import(/* webpackChunkName: "docsearch" */ 'docsearch.js/dist/cdn/docsearch.min.css')
+  ]).then(([docsearch]) => {
+```

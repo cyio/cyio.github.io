@@ -429,6 +429,7 @@ git checkout master
 ```
 
 [git - Stash just a single file - Stack Overflow](https://stackoverflow.com/questions/12420924/stash-just-a-single-file)
+[CSS { In Real Life } | How Git Stash Can Help You Juggle Multiple Branches](https://css-irl.info/how-git-stash-can-help-you-juggle-multiple-branches/)
 
 ## zsh alias
 

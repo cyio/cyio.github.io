@@ -139,3 +139,12 @@ foo.hasOwnProperty("bar")
 // right
 Object.prototype.hasOwnProperty.call(foo, "bar")
 ```
+
+## vue
+
+```json
+    "extends": [
+      "plugin:vue/essential",
+      "@vue/prettier"
+    ],
+```

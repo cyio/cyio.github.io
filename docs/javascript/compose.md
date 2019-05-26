@@ -35,3 +35,4 @@ function compose() {
   };
 };
 ```
+[JavaScript 函数式编程术语大全-WEB前端开发](https://www.html.cn/archives/7833)
