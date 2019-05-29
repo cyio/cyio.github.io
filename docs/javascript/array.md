@@ -265,3 +265,19 @@ const copy8 = Object.assign([], names)
 // 生成 6 - 24，v 初始值是 undefined
 Array.from({length: 19}, (v, i) => i + 6);
 ```
+
+## 移动元素位置
+```js
+let arr = [1, 2, 3, 4]
+
+function move(arr, oldIndex, newIndex) {
+  arr = [...arr] // 不改变原数组
+  const newValue = arr[newIndex]
+  const [ oldValue ] = arr.splice(oldIndex, 1)
+  arr[newIndex - 1] = oldValue
+  arr.splice(newIndex - 1, 0, newValue)
+  return arr
+}
+console.log(move(arr, 1, 2))
+console.log(arr)
+```

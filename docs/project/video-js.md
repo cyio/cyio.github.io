@@ -258,3 +258,9 @@ player.play()
 ## timeupdate
 - 50ms - 250ms
 - 如果需要精确控制，可以使用`requestAnimationFrame`，并在里面检查`player.currentTime()`
+
+## 页面后台白屏
+7.4，可长达 10 s
+
+[High CPU usage after the player stays in background for a while · Issue #5937 · videojs/video.js](https://github.com/videojs/video.js/issues/5937)
+[高级播放器示例 - Video.js：播放器框架](https://videojs.com/advanced/#disneys-oceans)

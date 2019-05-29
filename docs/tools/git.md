@@ -12,6 +12,8 @@
 - chore: (锁事的意思)工具操作，例如初始化脚本，启动脚本和代码校验脚本等等
 - deps: 依赖修改，例如升级、降级或锁死版本
 
+`git fix -s 'scope' 'msg'`
+
 [LeanCloud 开放资源: Git Commit 日志风格指南](https://open.leancloud.cn/git-commit-message/)
 
 ## 编码问题
@@ -26,6 +28,9 @@
 ## 回撤 commit 或取消暂存，保留工作区
 
 `$ git reset HEAD` [path]
+
+回撤最近一个
+`$ git reset HEAD~1`
 
 ## 回撤 commit，丢弃之后的修改，慎用，会撤销工作区
 
