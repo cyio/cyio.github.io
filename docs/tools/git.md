@@ -283,7 +283,7 @@ git cherry-pick 584a2ef
 ## patch
 
 ```
-# creat patch
+# create patch
 git format-patch -1 HEAD
 
 # show stats
@@ -448,6 +448,8 @@ git 默认是 simple 与 upstream 差不多，区别是不允许不同名推，�
 用 upstream 即可
 [配置 Git Push 策略 - The Kai Way](http://thekaiway.com/2013/07/30/config-your-git-push-strategy/)
 
+- 设置关联 `git branch --set-upstream-to=origin/YOUR_BRANCH YOUR_BRANCH`，最好新建分支后就执行，方便后续推拉
+
 ## 统计文件修改
 
 ```
@@ -482,5 +484,11 @@ git branch --merged
 [Git housekeeping tutorial: clean-up outdated branches in local and remote repositories | Blog by Railsware](https://railsware.com/blog/2014/08/11/git-housekeeping-tutorial-clean-up-outdated-branches-in-local-and-remote-repositories/)
 
 ## 上线流程
-[Git 开发分支代码上线流程 - 王静静的博客 - CSDN博客](https://blog.csdn.net/Hedy17/article/details/83084149)
+[Git 开发分支代码上线流程 - 王静静的博客 - CSDN博客](https://blog.csdn.net/Hedy17/article/details/83084149) 
+[git-flow 的工作流程](https://www.git-tower.com/learn/git/ebook/cn/command-line/advanced-topics/git-flow)
+[Gitflow Workflow | Atlassian Git Tutorial](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
 
+## 比较两个分支
+```js
+git diff branch1 branch2 --stat
+```

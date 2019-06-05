@@ -1,5 +1,7 @@
 # Svelte
 
+入门 https://github.com/sveltejs/template-webpack
+
 - 响应赋值，数组操作注意
 [Reactivity / Updating arrays and objects • Svelte Tutorial](https://svelte.dev/tutorial/updating-arrays-and-objects)
 - props export

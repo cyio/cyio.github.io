@@ -56,6 +56,20 @@ const newObj = { ...vueObj }
 * default 是组件不绑定 prop 的回退
 * 数据有变化，watch 一定会触发
 * 数据 ready 后渲染子组件，子组件中的 watch 不会触发，因为没为变化，如，两个并行请求，第一个请求完成时渲染子组件，当第二个请求更快完成时，会准备好数据，先于子组件渲染
+    ```js
+    // watch 元素不一定变化，存在即需要执行
+    function ensureWatchVueData(key, callback) {
+      if (this[key]) {
+        callback()
+      } else {
+        this.$watch(key, (value) => {
+          if (value) {
+            callback()
+          }
+        })
+      }
+    }
+    ```
 
 ## watch object array
 * object deep

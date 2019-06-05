@@ -53,7 +53,7 @@ router.get('/user/:id', async (req, res, next) => {
 [Using Async Await in Express with Node 9 – Alex Bazhenov – Medium](https://medium.com/@Abazhenov/using-async-await-in-express-with-node-8-b8af872c0016)
 
 ### 错误处理
-* 一般是在 await 外面写 try-catch
+1. 一般是在 await 外面写 try-catch
 ```js
 try {
     await foo();
@@ -78,7 +78,7 @@ $("#btn").on("click", async () => {
   }
 })
 ```
-* rejection 会向上抛，在上层 catch
+2. rejection 会向上抛，在上层 catch
 ```js
 function get() {
   return {

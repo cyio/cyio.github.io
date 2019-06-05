@@ -35,3 +35,27 @@ new Vue({
 
 vuex modules mapGetters
 [vuex-namespaced-module-structure/Home.vue at master · igeligel/vuex-namespaced-module-structure](https://github.com/igeligel/vuex-namespaced-module-structure/blob/master/src/views/Home.vue)
+
+## 状态重置
+
+
+切换路由，组件销毁，vuex 不销毁，state 需重置
+场景：与后端交互逻辑写到 vuex，组件只负责对数据进行渲染
+
+> 开发业务前会确认vuex的root module，然后根据子业务功能细粒度到child module。多个root module切换时，若需要保留的state数据，可以通过preserveState将其归档
+
+> 动态装卸的问题的是当异步调用store方法的时候，如果模块已经卸载了的话会报找不到action/mutation错误
+
+[vuejs/vuex-router-sync: Effortlessly keep vue-router and vuex store in sync.](https://github.com/vuejs/vuex-router-sync)
+
+```js
+mounted () {
+  this.$store.registerModule('pushQuestions', pushQuestionsModule) 
+}
+
+destroyed () {
+  this.$store.unregisterModule('pushQuestions')
+}
+```
+
+[vuex 闲置状态重置方案 - 掘金](https://juejin.im/post/5a4c8da3f265da43085e6c64)

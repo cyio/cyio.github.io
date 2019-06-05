@@ -326,3 +326,19 @@ Node.js 鼓励程序员将程序划分为小单元，也就是模块。模块虽
 Boolean(0) // false
 Boolean(-1) // true
 ```
+
+## 微任务
+说出执行顺序
+```
+Promise.resolve().then(() => console.log(1));
+
+(async () => console.log(2))();
+
+(() => console.log(3))();
+
+setTimeout(() => console.log(4));
+```
+L1：安排微任务。 完成所有同步JS 
+L2：IIFE后执行。 它是一个异步功能，但仍然同步执行（没有等待！）
+L3：一个IIFE，同步。 
+L4：一个任务，所以它将在微任务之后运行。 所以 2-3-1-4

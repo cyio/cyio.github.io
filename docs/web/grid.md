@@ -40,3 +40,7 @@
 ```
 
 [Grid by Example - Usage examples of CSS Grid Layout](https://gridbyexample.com/examples/)
+
+[CSS Grid Generator](https://cssgrid-generator.netlify.com/)
+
+[My Favorite CSS Guides, Cheatsheets and Tools by Olivia Ng on CodePen](https://codepen.io/oliviale/post/css-guides)
