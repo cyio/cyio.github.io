@@ -79,6 +79,8 @@ this.$refs.videoPlayer.player.on('fullscreenchange', e => {
 
 [FullScreen Events · Issue #3009 · videojs/video.js](https://github.com/videojs/video.js/issues/3009#issuecomment-172627411)
 
+注意事件元素、方法，老版本 Chrome（如 63），Safari 等都需要前缀
+
 ## 错误处理
 
 ```js

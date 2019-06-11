@@ -458,3 +458,8 @@ EventBus.$on('i-got-clicked', clickCount => {
 
 ## 生命周期
 * 子组件后销毁，先挂载
+
+## 热重载
+编辑`<template>`，重新渲染，保留私有状态
+编辑`<script>`，销毁重建，created/mounted 都会执行
+只有在使用路由的情况，created 有可能不触发，比如这个组件没销毁，也没编辑其`<script>`部分

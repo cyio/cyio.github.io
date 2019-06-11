@@ -8,3 +8,35 @@
 
 应该只给 value 转码
 
+```js
+function encryptUrlParam(paramNames, url) {
+  let newUrl = url
+  paramNames.forEach(paramName => {
+    let oldValue = getUrlParameterByName(paramName, newUrl)
+    newUrl = replaceUrlParam(paramName, btoa(oldValue), newUrl)
+  })
+  return newUrl
+}
+function decryptUrlParam(paramNames, url) {
+  let newUrl = url
+  paramNames.forEach(paramName => {
+    let oldValue = getUrlParameterByName(paramName, newUrl)
+    newUrl = replaceUrlParam(paramName, atob(oldValue), newUrl)
+  })
+  return newUrl
+}
+
+let result = encryptUrlParam(['id', 'eid'], '/url-sample?id=3&eid=4&from=singlemessage')
+let result2 = decryptUrlParam(['id', 'eid'], result)
+console.log(result, '\n', result2)
+// /url-sample?id=Mw==&eid=NA==&from=singlemessage
+// /url-sample?id=3&eid=4&from=singlemessage
+
+function btoa(str) {
+  return Buffer.from(str).toString('base64')
+}
+function atob(str) {
+  return Buffer.from(str, 'base64').toString()
+}
+```
+

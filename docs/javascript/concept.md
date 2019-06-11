@@ -338,7 +338,7 @@ Promise.resolve().then(() => console.log(1));
 
 setTimeout(() => console.log(4));
 ```
-L1：安排微任务。 完成所有同步JS 
+L1：安排微任务。 完成所有同步JS 后执行
 L2：IIFE后执行。 它是一个异步功能，但仍然同步执行（没有等待！）
 L3：一个IIFE，同步。 
 L4：一个任务，所以它将在微任务之后运行。 所以 2-3-1-4

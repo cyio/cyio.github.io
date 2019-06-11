@@ -634,5 +634,4 @@ set ma (modifiable) / set noma
 - 链接跳转用`gf`
 - `grep -Ri todo . > todos` 
 - 日志不方便
-  
 [Joe Reynolds Audio](http://joereynoldsaudio.com/2018/07/07/you-dont-need-vimwiki.html)
