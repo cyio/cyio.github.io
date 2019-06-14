@@ -134,7 +134,10 @@ background: #000;
 
 支持 AES-128 segment encryption
 [Content Protection for HLS with AES-128 Encryption](https://www.linkedin.com/pulse/content-protection-hls-aes-128-encryption-steven-tielemans)
+- 密钥保护
+- 防盗播，需要自建服务器
 
+比较：
 - MPS 私有加密 - 阿里私有服务
   - 不支持 H5
   - 必须使用阿里 CDN
