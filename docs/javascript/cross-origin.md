@@ -74,3 +74,9 @@ dev: {
 [前端跨域问题及解决方案 · Issue #2 · wengjq/Blog](https://github.com/wengjq/Blog/issues/2)
 [由同源策略到前端跨域 | louis blog](http://louiszhai.github.io/2016/01/11/cross-domain/)
 
+## postMessage
+- html5 api，页面与 service worker 通信用的就是这个
+- 出于安全考虑，需要做 origin 判断
+[postMessage可太有用了 - 掘金](https://juejin.im/post/5b8359f351882542ba1dcc31)
+[手记：iframe、postMessage 及其它跨域通信实践 - 作业部落 Cmd Markdown 编辑阅读器](https://www.zybuluo.com/EncyKe/note/516702)
+[Cross-window communication](https://javascript.info/cross-window-communication)

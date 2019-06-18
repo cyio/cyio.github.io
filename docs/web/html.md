@@ -156,6 +156,22 @@
 ## head/meta
 [HTML 文档之 Head 最佳实践 - 前端 - 掘金](https://juejin.im/entry/5a5395d76fb9a01c9e45d027)
 
+```html
+  <meta http-equiv=Content-Type content="text/html; charset=UTF-8">
+  <meta name=renderer content=webkit>
+  <meta name=applicable-device content=pc>
+  <meta http-equiv=X-UA-Compatible content="IE=Edge">
+  <meta http-equiv=Cache-Control content=no-transform>
+  <meta name=viewport content="width=device-width,user-scalable=yes">
+  <meta name=application-name content="">
+  <meta name=renderer content=webkit>
+  <meta http-equiv=Pragma content=no-cache>
+  <meta http-equiv=Cache-Control content=no-cache>
+  <meta http-equiv=Cache content=no-cache>
+  <meta http-equiv=Expires content="Wed, 26 Feb 1997 08:21:57 GMT">
+  <meta http-equiv=Expires content=0>
+```
+
 ## data 属性
 ```
 // html

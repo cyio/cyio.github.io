@@ -269,3 +269,4 @@ player.play()
 
 [High CPU usage after the player stays in background for a while · Issue #5937 · videojs/video.js](https://github.com/videojs/video.js/issues/5937)
 [高级播放器示例 - Video.js：播放器框架](https://videojs.com/advanced/#disneys-oceans)
+

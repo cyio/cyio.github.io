@@ -313,6 +313,10 @@ y 是添加包围符的动作，注意空格打两个
 :gread
 
 gvdiff 检查变动
+
+:Gstatus
+-
+=
 ```
 
 ### 注释 - nerdcommenter
@@ -635,3 +639,4 @@ set ma (modifiable) / set noma
 - `grep -Ri todo . > todos` 
 - 日志不方便
 [Joe Reynolds Audio](http://joereynoldsaudio.com/2018/07/07/you-dont-need-vimwiki.html)
+

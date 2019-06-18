@@ -5,12 +5,13 @@
 - SEO 设置 title 与 desc 标签
 
 ## 渲染性能
+
 一些效果需要在用户电脑展示时计算
 
-- 浏览器渲染svg的性能一般，还不如png?（两年前描述）
-[Iconfont-阿里巴巴矢量图标库](https://www.iconfont.cn/help/detail?helptype=code)
+- 浏览器渲染 svg 的性能一般，还不如 png?（两年前描述）
+  [Iconfont-阿里巴巴矢量图标库](https://www.iconfont.cn/help/detail?helptype=code)
 - 即使 SVG 图像比光栅等效图像慢，这种差异通常也不会引起注意
-[SVG Guidelines - Mozilla | MDN](https://developer.mozilla.org/en-US/docs/Mozilla/Developer_guide/SVG_Guidelines)
+  [SVG Guidelines - Mozilla | MDN](https://developer.mozilla.org/en-US/docs/Mozilla/Developer_guide/SVG_Guidelines)
 
 缺点：
 
@@ -29,4 +30,4 @@
 - 闪动
 - 维护麻烦
 
-[Iconfont字体生成原理及使用技巧 Iconfont-阿里巴巴矢量图标库](https://www.iconfont.cn/help/article_detail?article_id=1)
+[Iconfont 字体生成原理及使用技巧 Iconfont-阿里巴巴矢量图标库](https://www.iconfont.cn/help/article_detail?article_id=1)
