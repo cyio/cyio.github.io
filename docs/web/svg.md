@@ -23,6 +23,17 @@
 [为什么要用 SVG？- svg 与 iconfont、图片多维度对比 - 云+社区 - 腾讯云](https://cloud.tencent.com/developer/article/1154360)
 [Delivering Octicons with SVG - The GitHub Blog](https://github.blog/2016-02-22-delivering-octicons-with-svg/)
 
+## 应用
+
+```css
+.icon_no-content {
+  width: 119px;
+  height: 93px;
+  background-image: url('~@/assets/images/no-content.svg');
+  background-repeat: no-repeat;
+}
+```
+
 ## 对比 iconfont
 
 - hack

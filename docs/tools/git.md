@@ -235,10 +235,16 @@ git reset -- main/*
 ## 子模块
 
 ```sh
+# 首次
 git submodule add URL(需要引入模块)
+
 # 他人
 git submodule init
 git submodule update
+
+# 维护
+git submodule update --remote
+git add
 ```
 
 更新子模块后，需要在主项目下添加提交，这样别人才会有更新

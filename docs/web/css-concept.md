@@ -115,3 +115,23 @@ function getPosition(e) {
 
 ## z-index
 定位元素（非 static）及其后代设置 stack level
+
+## inline 元素下面留白问题
+默认`vertical-align`为`baseline`
+iframe/img 等元素可能出现意外空白
+解决：
+1. 元素上设置`vertical-align`为其它值
+  ```
+  vertical-align: bottom;
+  ```
+2. 父级设置
+  ```
+  font-size: 0;
+  ```
+
+- 行内元素有两个高度
+  - 内容区域高度（基于 font）
+  - 虚拟区域调试（基于 line-height）
+  - 这两个高度不是很确定
+- 行盒高度，基于行内元素的 line-height 和 vertical-align 计算
+- vertical-align 百分比基于 line-height

@@ -5,7 +5,7 @@
 * 
 | justify-content | 两头间隔           |
 | ---             | ---                |
-| space-between   | 没有（只元素间有） |
+| space-between   | 没有（仅元素间有） |
 | space-around    | 有，但为半格       |
 | space-evenly    | 有，与其它间隔相等 |
 * `flex-grow`增长系数，`flex-shrink`收缩系数。总和不足 1 时，按 1 计算

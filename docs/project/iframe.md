@@ -7,7 +7,12 @@
 - iframe 全屏
   - 嵌套内容需要指定设置允许全屏
   - 如果有多层嵌套，都需要设置
-  ```pug
+  ```
   iframe(:src="url" width="100%" height="100%" allowfullscreen="allowfullscreen" webkitallowfullscreen="true" mozallowfullscreen="true" frameborder="0")
+
+  iframe {
+    border-width: 0;
+    vertical-align: bottom;
+  }
   ```
 
