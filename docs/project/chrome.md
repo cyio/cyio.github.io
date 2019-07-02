@@ -24,3 +24,4 @@ open -a "Google Chrome 63" --args --profile-directory=Profile-v63
 - 2020 年底，adobe 将停止 flash 更新，主流浏览器将彻底移除 flash 支持
 
 [Google’s latest Chrome update tightens the locks on Adobe Flash](https://www.usatoday.com/story/tech/columnist/2018/09/24/googles-latest-chrome-update-tightens-locks-adobe-flash/1348935002/)
+[19 Extensions to Turn Google Chrome into Penetration Testing tool](https://resources.infosecinstitute.com/19-extensions-to-turn-google-chrome-into-penetration-testing-tool/)

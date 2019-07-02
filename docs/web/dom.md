@@ -73,3 +73,8 @@ xpos = xpos + dist;
 
 ## tag 标签只用小写
 多个词用短杠连接，大小写不敏感？为了保证转换一致性，最好用小写。Vue 的组件在 HTML 中用的都是小写
+## 观察 DOM 更新
+DOM- MutationObserver
+[MutationObserver Example](https://codepen.io/dayvidwhy/pen/egdZyY?editors=1011)
+
+vue - update

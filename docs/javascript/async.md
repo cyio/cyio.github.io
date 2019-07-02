@@ -11,10 +11,20 @@ export function fetchHtml(url) {
   })
 }
 ```
-* 在 then 里面处理 error，与在外面 catch 有何区别？
+* 在 then 里面（第二个 fn）处理 error，与在外面 catch 有何区别？
   - catch() 即 Promise.prototype.catch(onRejected) 相当于 Promise.prototype.then(undefined, onRejected)
-  - 更方便，能捕获 then 中抛出的错误，比在 then 中处理错误更好
+  - catch 能捕获 then 中抛出的错误，比在 then 中处理错误更好
   - [示例](https://jsfiddle.net/x9bjmwo2/4/)
+
+  ```js
+  apiCall()
+    .then(function () {
+        throw new Error('uh oh 1');
+    })
+    .catch(function (e) {
+        log('this will catch the error');
+    })
+  ```
 * process.nextTick() 与 setTimeout(foo, 0) 差不多，延迟执行
 
 * Promise.all

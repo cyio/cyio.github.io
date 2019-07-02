@@ -28,16 +28,50 @@ android 下无法隐藏控件，可通过增加高度将控件顶出视窗以间
 
 ## 视频直播
 
-HLS (M3U8)
-苹果全家，高版本 Android 支持，桌面端 Chrome 不支持，需 Flash 间接支持
-缺点是延迟大
+- HLS (M3U8)
 
-WebRTC
-移动端支持较差，safari 不支持，高版本 Android 支持
+  苹果全家，高版本 Android 支持，桌面端 Chrome 不支持，需 Flash 间接支持
+  缺点是延迟大
+
+- WebRTC
+
+  移动端支持较差，safari 不支持，高版本 Android 支持
 
 [video 标签在不同平台上的事件表现差异分析 - 腾讯 Web 前端 IMWeb 团队社区 | blog | 团队博客](http://imweb.io/topic/560a6015c2317a8c3e086207)
 [移动端 HTML5 video 视频播放优化实践 - 轩枫阁 – 前端开发 | web 前端技术博客](http://webcache.googleusercontent.com/search?q=cache:K3Kfv-HA0sMJ:www.xuanfengge.com/html5-video-play.html+&cd=1&hl=zh-CN&ct=clnk&gl=cn) 2015 年的不一定新
 [mister-ben/videojs-flvjs: Video.js tech using flv.js for FLV playback](https://github.com/mister-ben/videojs-flvjs)
+
+- flv
+  需要引入
+
+  ```
+  video.js
+  flv.js
+  videojs-flvjs.js
+  ```
+
+  配置
+
+  ```
+    flvjs: {
+      mediaDataSource: {
+        isLive: true,
+        cors: true,
+        withCredentials: false,
+      },
+      // config: {},
+    },
+  ```
+
+- 直播样式
+
+  videojs 在检测到直播流`duration < 0`才会切到`LIVE`样式，在`video-js`上添加`vjs-live`，新版还会加上`vjs-liveui`
+  vjs-live-control 移除 vjs-hidden
+  需要找直播流测试？本地如何模拟
+
+  [video.js/player.js at f5fd94f61012af2269a5528746c7d62a7b435467 · videojs/video.js](https://github.com/videojs/video.js/blob/f5fd94f61012af2269a5528746c7d62a7b435467/src/js/player.js#L2485)
+  [video.js / live.md at 6c644feaa0ccef6e5e88e8bf45dc9caa82a94503·videojs / video.js](https://github.com/videojs/video.js/blob/6c644feaa0ccef6e5e88e8bf45dc9caa82a94503/docs/guides/live.md#the-new-user-interface)
+  [VideoJs Live streaming example](http://tests.nuevolab.com/videojs/tests/livestream)
 
 ## ISSUES
 
@@ -134,10 +168,12 @@ background: #000;
 
 支持 AES-128 segment encryption
 [Content Protection for HLS with AES-128 Encryption](https://www.linkedin.com/pulse/content-protection-hls-aes-128-encryption-steven-tielemans)
+
 - 密钥保护
 - 防盗播，需要自建服务器
 
 比较：
+
 - MPS 私有加密 - 阿里私有服务
   - 不支持 H5
   - 必须使用阿里 CDN
@@ -186,18 +222,22 @@ oldVideo.load()
 
 [播放器原理（何李石） | MySlide - 专注 PPT 分享，追随 SlideShare 和 SpeakerDeck 的脚步](https://myslide.cn/slides/491?vertical=1)
 
-清晰度：分为普清、高清、超清、原画和4k，分别对应360p、480p、720p、1080p和以上
+清晰度：分为普清、高清、超清、原画和 4k，分别对应 360p、480p、720p、1080p 和以上
 
 使用这个支持 v6 的 fork 版本
 原插件只支持 v5，v6 变化较大，不要用 npm/cdn 版本，是旧的
 [neilhem/videojs-resolution-switcher: Resolution switcher adds the ability to select the video quality in video.js player.](https://github.com/neilhem/videojs-resolution-switcher)
 
 ## data-setup
+
 会自动初始化，不要和手动初始化同时使用
 
 ## 组件
+
 排序
+
 1. children 插件会影响
+
 ```js
     children: [
       'playToggle',
@@ -209,64 +249,77 @@ oldVideo.load()
       'fullscreenToggle'
     ],
 ```
-2. flex order  tab 键切换还是按 html 顺序
-> Flex order change visual order, but html order stays the same. When you change focused element with your keyboard (TAB key) it keeps order defined by HTML. Tab index is scoped globally, so it is not right solution.
+
+2. flex order tab 键切换还是按 html 顺序
+   > Flex order change visual order, but html order stays the same. When you change focused element with your keyboard (TAB key) it keeps order defined by HTML. Tab index is scoped globally, so it is not right solution.
 3. re-order your plugin initialization order so the plugins add their buttons in a different order.
 
 ## fade
+
 [video.js: force control bar fade out - Stack Overflow](https://stackoverflow.com/questions/24641448/video-js-force-control-bar-fade-out)
 
 ## 主题 theme
+
 参考：
 [Videojs HLS Adaptive Streaming with quality resolution picker](https://www.nuevolab.com/videojs/tests/hls)
-百度网盘的视频播放也是基于videojs
+百度网盘的视频播放也是基于 videojs
 
 [ProgressControl](https://docs.videojs.com/docs/api/progress-control.html)
 
 ## 点播使用 m3u8
+
 - 可减轻服务器压力
 - 首次加载更快？
 
-[HTML5点播m3u8(hls)格式视频_Helloweba](https://www.helloweba.net/javascript/571.html)
-[为什么网络点播系统使用m3u8更有优势-PPVOD视频点播源码/直播平台/服务器转码软件系统](http://www.ppvod.com/dianbo/wenti/443.html)
+[HTML5 点播 m3u8(hls)格式视频\_Helloweba](https://www.helloweba.net/javascript/571.html)
+[为什么网络点播系统使用 m3u8 更有优势-PPVOD 视频点播源码/直播平台/服务器转码软件系统](http://www.ppvod.com/dianbo/wenti/443.html)
 
 ## 版本
+
 videojs 7 集成 [http-streaming](https://github.com/videojs/http-streaming) 插件。如果不需要，使用 core.js
 
 ## 异步加载脚本情况下显示 video 原生界面问题
+
 等 videojs 初始化后，再显示 dom
 
 ## 5-6 迁移
+
 - `src()`改为异步
-    ```js
-    player.src({type: 'video/mp4', src: 'foo.mp4'});
-    player.ready(player.play);
-    ```
-[Video.js 6 Migration Guide · videojs/video.js Wiki](https://github.com/videojs/video.js/wiki/Video.js-6-Migration-Guide)
+  `js player.src({type: 'video/mp4', src: 'foo.mp4'}); player.ready(player.play);`
+  [Video.js 6 Migration Guide · videojs/video.js Wiki](https://github.com/videojs/video.js/wiki/Video.js-6-Migration-Guide)
 
 ## 恢复播放
+
 - 需要 loadedmetadata 发生后
 - 需要校验有效性？
+
 ```js
 player.currentTime(this.lastTimeCopy)
 player.play()
 ```
+
 [VideoJS event list](https://gist.github.com/alecsgone/a6db03bade4dc405a61c63294a64f97a)
 [[Video.js]隐藏和显示视频播放器控件 - 掘金](https://juejin.im/post/5adb020df265da0b7c06d970)
 
 ## 组件
+
 [Tutorial: components | Video.js Documentation](https://docs.videojs.com/tutorial-components.html#creating-a-component)
 
 ## 伪全屏
+
 允许元素显示在视频上，卸载自带事件，给播放器和要前置元素的公共容器设置全屏
 
 ## timeupdate
+
 - 50ms - 250ms
 - 如果需要精确控制，可以使用`requestAnimationFrame`，并在里面检查`player.currentTime()`
 
 ## 页面后台白屏
+
 7.4，可长达 10 s
 
 [High CPU usage after the player stays in background for a while · Issue #5937 · videojs/video.js](https://github.com/videojs/video.js/issues/5937)
 [高级播放器示例 - Video.js：播放器框架](https://videojs.com/advanced/#disneys-oceans)
 
+## ref
+[视频云web播放器样式和组件自定义](http://vcloud.163.com/vcloud-sdk-manual/WebDemos/LivePlayer_Web/introToComponent.html)

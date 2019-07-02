@@ -35,9 +35,21 @@ window.onerror = function (errorMsg, url, lineNumber) {
 
 ```js
 function waitForever() {
-  return new Promise(r => {});
+  return new Promise(r => {})
 }
 
 // Usage:
-await waitForever();
+await waitForever()
+```
+
+## 打到页面上
+
+```js
+function log(msg) {
+  var elem = document.createElement('div')
+  elem.innerHTML = msg
+  document.querySelector('body').appendChild(elem)
+}
+
+log('Running...')
 ```

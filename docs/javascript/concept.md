@@ -330,6 +330,8 @@ Boolean(-1) // true
 ## 微任务
 说出执行顺序
 ```
+process.nextTick(() => console.log(5))
+
 Promise.resolve().then(() => console.log(1));
 
 (async () => console.log(2))();
@@ -338,9 +340,10 @@ Promise.resolve().then(() => console.log(1));
 
 setTimeout(() => console.log(4));
 ```
+L0: nextTick 无论放哪，都会在同步代码和任务间执行
 L1：安排微任务。 完成所有同步JS 后执行
 L2：IIFE后执行。 它是一个异步功能，但仍然同步执行（没有等待！）
 L3：一个IIFE，同步。 
-L4：一个任务，所以它将在微任务之后运行。 所以 2-3-1-4
+L4：一个任务，所以它将在微任务之后运行。 所以 2-3-5-1-4
 
 同步代码 -> 微任务 -> 任务

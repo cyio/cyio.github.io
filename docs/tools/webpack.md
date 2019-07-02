@@ -51,6 +51,7 @@ resolve  如何解析包
 [petehunt/webpack-howto](https://github.com/petehunt/webpack-howto)
 [Webpack slides](http://www.slideshare.net/ssuser0e4922/webpack-slides-51907869)
 [详解前端模块化工具-Webpack | 淡忘~浅思](http://www.ido321.com/1646.html)
+[Webpack configuration for Multi Page Application. All you need to start your project | Sergey Kryvets Blog](https://skryvets.com/blog/2018/03/25/webpack-configuration-for-multi-page-application/)
 
 * publicPath
 用于发布时文件路径的设置，是绝对路径

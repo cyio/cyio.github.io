@@ -12,3 +12,5 @@
     let a = await fetch()
     await a.json()
     ```
+
+[Chrome 开发者工具中文文档-在线手册-html中文网](https://www.html.cn/doc/chrome-devtools/)

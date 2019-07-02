@@ -249,6 +249,8 @@ git add
 
 更新子模块后，需要在主项目下添加提交，这样别人才会有更新
 
+[Using submodules in Git - Tutorial](https://www.vogella.com/tutorials/GitSubmodules/article.html)
+
 ## 交互式合并其它分支某部分代码
 
 `git checkout -p <branch> -- <paths> ...`

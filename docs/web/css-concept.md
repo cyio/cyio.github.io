@@ -116,7 +116,7 @@ function getPosition(e) {
 ## z-index
 定位元素（非 static）及其后代设置 stack level
 
-## inline 元素下面留白问题
+## inline 元素(iframe/img)下面留白问题
 默认`vertical-align`为`baseline`
 iframe/img 等元素可能出现意外空白
 解决：
