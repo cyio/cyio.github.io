@@ -53,3 +53,11 @@ function log(msg) {
 
 log('Running...')
 ```
+
+## 开发、线上兼顾
+- 线上不应该输出过多 console
+- 新功能初期不稳定，希望打出来，线上通过 url 参数
+
+    ```js
+    !isProd && console.log('\n \x1b[44m', 'RELOADING', '\x1b[0m\n')
+    ```

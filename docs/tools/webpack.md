@@ -150,3 +150,5 @@ module.exports = {
 ## 构建性能
 ### noParse
 * 含有 process.env.NODE_ENV 的文件也不要让webpack noParse。
+
+[Why is my webpack build slow?](https://samsaccone.com/posts/why-is-my-webpack-build-slow.html)

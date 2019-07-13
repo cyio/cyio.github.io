@@ -1,8 +1,12 @@
 # 错误处理
 
-- 什么情况下用 throw，即不满足继续执行条件，继续执行没意义，只会显示更多无用错误，甚至可能是死循环
 
-## 抛出错误
+## throw
+
+- 什么情况下用 throw，即不满足继续执行条件，继续执行没意义，只会显示更多无用错误，甚至可能是死循环
+- 中断函数执行，抛出一个 exception 对象，包含 name 和 message 两个属性，也可以添加其它的属性
+  `try ... catch (e) {console.log(e.name, e.message)}` catch 从句可捕获异常错误
+
 
 ```js
 function divide(num1, num2) {
@@ -36,11 +40,6 @@ function divide(num1, num2) {
 [前端代码异常日志收集与监控](https://gist.github.com/nevergiveup-j/f8df2b1854492e0f80b6)
 [您必须知道的几个 Nodejs 编码习惯 · GitBook](http://bitcoin-on-nodejs.ebookchain.org/2-Node.js%25E5%2585%25A5%25E9%2597%25A8%25E6%258C%2587%25E5%258D%2597/4-%25E6%2582%25A8%25E5%25BF%2585%25E9%25A1%25BB%25E7%259F%25A5%25E9%2581%2593%25E7%259A%2584%25E5%2587%25A0%25E4%25B8%25AANodejs%25E7%25BC%2596%25E7%25A0%2581%25E4%25B9%25A0%25E6%2583%25AF.html)
 
-## throw
-
-中断函数执行，抛出一个 exception 对象，包含 name 和 message 两个属性，也可以添加其它的属性
-`try ... catch (e) {console.log(e.name, e.message)}` catch 从句可捕获异常错误
-
 ## Vue
 
 - Vue.config.errorHandler 在这里设置上报
@@ -63,3 +62,9 @@ function divide(num1, num2) {
 
 1.  在 img 标签上设置 `v-on:error=""`
 2.  设置替换图片，要保证替换图片存在，否则可能造成死循环
+
+## Sentry
+手动上报
+`Sentry.captureMessage('Something went wrong');`
+
+Capturing Events - Docs https://docs.sentry.io/error-reporting/capturing/?platform=javascript

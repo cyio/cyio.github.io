@@ -33,3 +33,5 @@ client = mqtt.connect(options);
 const url = `wss://${config.host}:${config.port}`
 client = mqtt.connect(url, options);
 ```
+
+[mqtt 网页版客户端调试工具](https://codepen.io/cyio/pen/jJaQqX)

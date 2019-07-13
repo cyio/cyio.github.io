@@ -135,3 +135,13 @@ iframe/img 等元素可能出现意外空白
   - 这两个高度不是很确定
 - 行盒高度，基于行内元素的 line-height 和 vertical-align 计算
 - vertical-align 百分比基于 line-height
+
+[Components AI — A new way to explore generative design systems](https://components.ai/box-shadows/)
+
+## @import
+缺点，css 多个`@import`只能顺序下载，html `link`可并行下载
+适用场景：
+  - 媒体适配
+  - 样式存在依赖
+  - 平时可以用，遇上需要高性能、优化时，移除，合并`@import`，直接使用 link
+[html - Best way to include CSS? Why use @import? - Stack Overflow](https://stackoverflow.com/questions/10036977/best-way-to-include-css-why-use-import?answertab=votes#tab-top)

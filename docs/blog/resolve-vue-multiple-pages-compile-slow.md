@@ -40,6 +40,9 @@ vue-cli 创建的项目配置多页后，随着多页入口的增加，编译日
 启动服务 15 秒，热编译 0.16 - 2 秒之间，至少节省 33% 的时间
 
 在脚手架调整后，项目开发人员只要执行第 2 步替换旧的`html-webpack-plugin`插件即可
+
+注意，暂时不要用 html-webpack-plugin 4.x，模板语法有变化，3.x 的配置编译会报错。
+
 ## 参考
 [feat(compiler): Use a single compiler for multiple plugin instances by jantimon · Pull Request #967 · jantimon/html-webpack-plugin](https://github.com/jantimon/html-webpack-plugin/pull/967)
 
