@@ -25,3 +25,7 @@ open -a "Google Chrome 63" --args --profile-directory=Profile-v63
 
 [Google’s latest Chrome update tightens the locks on Adobe Flash](https://www.usatoday.com/story/tech/columnist/2018/09/24/googles-latest-chrome-update-tightens-locks-adobe-flash/1348935002/)
 [19 Extensions to Turn Google Chrome into Penetration Testing tool](https://resources.infosecinstitute.com/19-extensions-to-turn-google-chrome-into-penetration-testing-tool/)
+
+## Fix Tunnel Connection Failed
+出现这个错误说明是内网问题
+[Fix Tunnel Connection Failed Error in Google Chrome » WebNots](https://www.webnots.com/fix-tunnel-connection-failed-error-in-google-chrome/)

@@ -73,3 +73,6 @@
 [阿里敏捷实践| 4个迭代，从批量交付向持续交付转型-博客-云栖社区-阿里云](https://yq.aliyun.com/articles/651496)
 [腾讯优测优分享 | 这样做测试用例评审更高效 - 腾讯优测 - SegmentFault 思否](https://segmentfault.com/a/1190000006854541)
 [庄表伟：关于Code Review的真命题和伪命题 - GitChat精选 | 十条](http://www.10tiao.com/html/689/201612/2651576798/1.html)
+[敏捷软件开发中的指标](https://www.linkedin.com/pulse/%25E6%2595%258F%25E6%258D%25B7%25E8%25BD%25AF%25E4%25BB%25B6%25E5%25BC%2580%25E5%258F%2591%25E4%25B8%25AD%25E7%259A%2584%25E6%258C%2587%25E6%25A0%2587-cason-wang?trk=portfolio_article-card_title)
+
+> 为什么谷歌这样的公司不喜欢敏捷 // 此文认为敏捷偏向于面向终端用户的、快速迭代，且有丰富用户接口的项目。而不适用于需要长时间设计，具有巨大内在复杂性和简单外部接口的项目。

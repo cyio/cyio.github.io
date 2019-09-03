@@ -1,7 +1,7 @@
 # 响应式设计
 
 ## 尺寸依据
-[Web网页 - 设计尺寸 - 老姜尺寸网ChiCun💎](http://www.chicun.vc/html/web.html)
+[Web网页 - 设计尺寸](http://chicun.jammy.cc/)
 
 ## 常见效果实现
 
@@ -57,3 +57,20 @@ body {
 ```
 [Maintaining Aspect Ratio using viewport units - CSS](https://codepen.io/AndreusCafe/pen/bmBroR?editors=1100)
 [Flexbox Sticky Footer Example](https://codepen.io/hexagoncircle/pen/yvxyPW?editors=0100)
+
+## rem
+rem的关键是等比缩放
+用media为不同屏幕设置基准字体
+
+流式布局致命缺点，宽度为百分比，高度为px写死，在大屏幕手机下会被拉宽。
+
+固定宽度的缺点，大屏幕下两边留白，页面小、操作按钮小。
+
+高效的做法
+
+设置viewport进行等比缩放，天猫是320*1.3
+
+z-index只应用在兄弟元素上。
+static定位的元素z-index值是0，也就是常规流。
+
+npm viewtorem

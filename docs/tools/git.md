@@ -500,3 +500,19 @@ git branch --merged
 ```js
 git diff branch1 branch2 --stat
 ```
+
+## rebase
+- pick, squash(合并到上一个), fixup(类似squash，但丢弃消息), edit, reword, and drop
+  重新排序、省略、合并或修改
+- 尽量只 rebase 本地 commits，避免强制重写远程，他人需要重新合并
+    使用场景：
+- 将多个提交折叠为单个提交
+- 重新提交
+- 删除您现在后悔的错误更改
+- 将分支的基础移动到存储库中的任何其他提交。
+- 修改单个提交，以在事后很久修改更改。
+```
+brew install interactive-rebase-tool
+```
+[Git Interactive Rebase, Squash, Amend and Other Ways of Rewriting History](https://thoughtbot.com/blog/git-interactive-rebase-squash-amend-rewriting-history)
+[gold-miner/keeping-git-commit-history-clean.md at master · xitu/gold-miner](https://github.com/xitu/gold-miner/blob/master/TODO1/keeping-git-commit-history-clean.md)

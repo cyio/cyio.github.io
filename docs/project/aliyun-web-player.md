@@ -17,3 +17,15 @@ http-referer
 > 多清晰度预置：流畅、标清、高清、超清、2k、4k等多个预置清晰度，提供最佳经验值，降低接入门槛
 [音视频转码_媒体处理_开发指南_视频点播-阿里云](https://help.aliyun.com/document_detail/99719.html?spm=a2c4e.11153940.blogcont687092.13.76f0671fa7s4DI#%25E7%2582%25B9%25E6%2592%25AD%25E8%25BD%25AC%25E7%25A0%2581%25E5%258A%259F%25E8%2583%25BD%25E7%2589%25B9%25E6%2580%25A7)
 
+
+## 版本
+2.8.2 
+
+点击播放按钮报错
+aliplayer-min.js:2 Uncaught ReferenceError: liveForceLoad is not defined
+    at i.t.play (aliplayer-min.js:2)
+    at i.<anonymous> (aliplayer-min.js:2)
+    at HTMLDivElement.r (aliplayer-min.js:2)
+    at HTMLDivElement.a.dispatcher.a.dispatcher (aliplayer-min.js:2)
+
+使用 2.8.1 OK

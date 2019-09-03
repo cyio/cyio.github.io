@@ -78,3 +78,19 @@ DOM- MutationObserver
 [MutationObserver Example](https://codepen.io/dayvidwhy/pen/egdZyY?editors=1011)
 
 vue - update
+
+## 页面插入 dom 几种方式
+- `createElement`
+    ```html
+    const div = document.createElement('div')
+    div.innerHTML = `
+      <div id="global-page-close" onclick="window.close()">
+        <span></span>
+        <span></span>
+      </div>
+    `
+    document.body.appendChild(div)
+    ```
+- `document.createDocumentFragment` 不支持 innerHTML
+
+[es6-articles/13 - Creating HTML fragments with Template Literals.md at master · wesbos/es6-articles](https://github.com/wesbos/es6-articles/blob/master/13%2520-%2520Creating%2520HTML%2520fragments%2520with%2520Template%2520Literals.md)

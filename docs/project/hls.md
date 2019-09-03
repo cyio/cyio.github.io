@@ -42,3 +42,5 @@ HLS，目前各手机浏览器产品对这种格式的兼容性最好，但它�
 [直播协议 HTTP-FLV 详解 - 简书](https://www.jianshu.com/p/bfdba8ab903a)
 
 [为什么使用flv.js做直播 · Issue #3 · gwuhaolin/blog](https://github.com/gwuhaolin/blog/issues/3)
+
+m3u8是一段一段加载，速度快，不会卡，体验好。    mp4 是一开始加载视频头文件，如果mp4变大，就会开始卡几秒。

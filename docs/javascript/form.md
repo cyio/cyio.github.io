@@ -18,3 +18,19 @@ const config = {
 this.ruleForm.consignee = this.ruleForm.consignee.replace(/\s+/g, ' ')
 ```
 另一种处理是，`white-space: pre`
+
+## 表单交互
+  - 失焦验证
+  - 输入验证
+    input/textarea 没有change事件，是input事件
+  - 提交验证
+
+## 密码记忆规则
+
+[Save Credentials from Forms  |  Web Fundamentals  |  Google Developers](https://developers.google.com/web/fundamentals/security/credential-management/save-forms)
+
+不希望填充，使用 autocomplete 的`new-password`值
+```html
+<input id="userPassword" type="password" autocomplete="new-password">
+```
+[html - Google chrome autofilling all password inputs - Stack Overflow](https://stackoverflow.com/questions/23156578/google-chrome-autofilling-all-password-inputs)

@@ -26,3 +26,14 @@
 * [WebCodeFarmer/houtai: 基于VUE和ElementUI的微信后台编辑系统](https://github.com/WebCodeFarmer/houtai)
 * [hfq-pengyuanyuan/fe-template: 前端开发模版](https://github.com/hfq-pengyuanyuan/fe-template)
   vue/element-ui/vue-router/axios/less
+
+开发前写技术方案
+
+> 我们作为技术人员，往往以为一个软件项目最关键的就是代码开发，而传统的项目管理流程说，代码开发只占软件生命周期的 1/6 。根据本文相信你能体会到，代码开发真的只占软件项目的很少一部分。所以，作为程序员你要想自己值钱、有不可替代性，就要从整个软件项目的阶段入手，而不仅仅是提高开发能力。
+
+
+视觉联调、联调报告
+
+自测、自测记录，表格列出核心功能、测试结果，产出物
+
+[大厂前端项目的研发流程_慕课手记](https://www.imooc.com/article/289377)

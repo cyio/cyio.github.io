@@ -215,3 +215,10 @@ $(‘.parallax-obj’).parallax()
 * 过渡指从一个状态到另一个状态的平滑的变化过程，而动画可以是多个“状态”间的变化
 * 动画可以自动开始，过渡一般需要通过添加样式类或更改状态（如悬停）来触发
  
+
+ ```css
+ animation: shine 2s ease-in-out infinite;
+ ```
+
+transfrom 多个属性单独写，否则会相互影响
+[3 Ways to Use Independent Transform Properties](https://danielcwilson.com/blog/2017/10/all-the-transform-ways/)

@@ -642,3 +642,5 @@ set ma (modifiable) / set noma
 - 日志不方便
 [Joe Reynolds Audio](http://joereynoldsaudio.com/2018/07/07/you-dont-need-vimwiki.html)
 
+
+查找，`#`后向匹配，`g*`非精确匹配

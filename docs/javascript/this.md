@@ -1,5 +1,7 @@
 # this
 
+## basic
+
 - function 调用时，有隐式参数 this
 - function 可以在调用时，改变 this，箭头函数不行，总是定义时 context 所指
 - function 作为对象方法调用时，隐式传入对象作为 this

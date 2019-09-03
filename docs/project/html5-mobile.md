@@ -60,3 +60,7 @@ elf start
 * 注意写的先后顺序，先布局，后细节
 
 ## [OMS/移动优化经验.md at master · herbertliu/OMS](https://github.com/herbertliu/OMS/blob/master/%25E7%25A7%25BB%25E5%258A%25A8%25E4%25BC%2598%25E5%258C%2596%25E7%25BB%258F%25E9%25AA%258C.md)
+
+## UI 设计
+PC 端一张大 banner 的图片预算大概在 300kb，手机端建议不超过 150kb。手机端使用满铺背景的图片，需要给出适配方案，特别要考虑橫屏情况
+微信不支持横屏

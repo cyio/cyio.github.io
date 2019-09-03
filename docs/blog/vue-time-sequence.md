@@ -91,3 +91,22 @@ child beforeDestroy:
 child destroyed
 parent destroyed
 ```
+## new 
+
+清空 content 后，dom 没有立即更新，watch 取到的 textLength 是旧值
+```js
+  methods: {
+    resetForm() {
+      this.form.content = ''
+      // this.textLength = 0
+      setTimeout(() => {
+        this.textLength = 0
+      }, 0)
+    },
+  },
+  watch: {
+    'form.content': function () {
+      this.textLength = document.getElementById('feedback-content').textLength
+    },
+  },
+```

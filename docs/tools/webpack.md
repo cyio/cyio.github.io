@@ -115,6 +115,8 @@ common 共用
 > 
 With this bundle configuration, you would load your third party libraries, then your common application code, then your page-specific application code.
 
+[How to Reduce Your Vue.JS Bundle Size With Webpack](https://www.jenniferbland.com/how-to-reduce-your-vue-js-bundle-size-with-webpack/)
+
 ## 分包 - 提取公共模块
 * why: 
   - 分离业务代码和第三方库（ vendor ）
@@ -152,3 +154,15 @@ module.exports = {
 * 含有 process.env.NODE_ENV 的文件也不要让webpack noParse。
 
 [Why is my webpack build slow?](https://samsaccone.com/posts/why-is-my-webpack-build-slow.html)
+
+## webpack-cdn-plugin
+[webpack 打包优化 - 简书](https://www.jianshu.com/p/86602494dbb7)
+
+异步 import 默认会单独打包
+
+## chunks 含义是什么
+[SplitChunksPlugin | webpack](https://webpack.js.org/plugins/split-chunks-plugin/#splitchunkschunks)
+[vue.js - VueJs + Webpack lazyload modules from ElementUI - Stack Overflow](https://stackoverflow.com/questions/52104217/vuejs-webpack-lazyload-modules-from-elementui)
+
+## runtime
+[The Single Runtime Chunk > Webpack Encore: Frontend like a Pro! | SymfonyCasts](https://symfonycasts.com/screencast/webpack-encore/single-runtime-chunk)

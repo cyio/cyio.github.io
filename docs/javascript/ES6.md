@@ -220,6 +220,7 @@ var str = `Hello ${who}`
   - 相比于 forEach 支持搭配 break return
   - for-in 为普通对象设计，不适用数组
   - 遍历对象用 for-in，或 Object.keys()
+  - Array.from(obj.keys(), fn) 转换类数组
 
 ```js
 // 计算一些数字的均值

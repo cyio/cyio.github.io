@@ -38,7 +38,6 @@ vuex modules mapGetters
 
 ## 状态重置
 
-
 切换路由，组件销毁，vuex 不销毁，state 需重置
 场景：与后端交互逻辑写到 vuex，组件只负责对数据进行渲染
 

@@ -2,6 +2,8 @@
 
 给内容的状态添加样式
 
+- 前提是并列元素
+
 ```css
 // Syntax
 selector:pseudo-class {
@@ -25,3 +27,5 @@ div:empty {
   background: lime;
 }
 ```
+
+[Mastering the :nth-child | CSS3 pseudo classes and :nth-child ranges](http://nthmaster.com/)

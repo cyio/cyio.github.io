@@ -16,3 +16,17 @@
   }
   ```
 
+[Fallback for Blocked iframes: A (Crude) Solution With Vue.js - DZone Web Dev](https://dzone.com/articles/fallback-for-blocked-iframes-a-crude-solution-with)
+
+- 判断当前页是否是iframe
+    ```js
+    // 判断当前页是否是iframe
+    self == window.top
+    // 判断父窗口是否是iframe
+    parent==top
+    // similar behavior as an HTTP redirect
+    window.location.replace("http://stackoverflow.com");
+
+    // similar behavior as clicking on a link
+    window.location.href = "http://stackoverflow.com";
+    ```

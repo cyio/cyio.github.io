@@ -73,3 +73,15 @@ srcset/sizes
 
 ## 在线压缩
 [Squoosh](https://squoosh.app/)
+
+## 占位图工具
+[iph](http://iph.href.lu/200x200)
+
+## 本地压缩
+
+imageoptim-cli 不支持 svg，因为已经有 svgo
+注意参数需要有引号
+`imageoptim './*'`
+gui 更全面，且支持异步同步调用
+
+[自动优化图像  |  Web Fundamentals  |  Google Developers](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/automating-image-optimization/)

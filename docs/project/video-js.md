@@ -323,3 +323,15 @@ player.play()
 
 ## ref
 [视频云web播放器样式和组件自定义](http://vcloud.163.com/vcloud-sdk-manual/WebDemos/LivePlayer_Web/introToComponent.html)
+
+## mp4
+moov 需要放在开头，来启用 faststart
+
+判断 moov 位置
+```sh
+# zsh 里后面命令需要转义
+ffmpeg -v trace -i file.mp4 2>&1 | grep -e type:\'mdat\' -e type:\'moov\'
+```
+[How to tell if faststart for video is set using ffmpeg or ffprobe - Stack Overflow](https://stackoverflow.com/questions/56963790/how-to-tell-if-faststart-for-video-is-set-using-ffmpeg-or-ffprobe)
+[Optimizing MP4 Video for Fast Streaming in 2019 - VeerIT Solutions](https://veerit.com/other/optimizing-mp4-video-for-fast-streaming-in-2019/)
+[在线短视频秒播优化之视频文件格式之MP4文件Moov box的位置 - 个人文章 - SegmentFault 思否](https://segmentfault.com/a/1190000012477812)

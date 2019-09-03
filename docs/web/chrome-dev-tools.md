@@ -15,3 +15,7 @@
   ```
 
 [Chrome 开发者工具中文文档-在线手册-html 中文网](https://www.html.cn/doc/chrome-devtools/)
+
+- 在 console 中复制对象
+ `copy(JSON.stringify(object))`
+ 缺点是函数会被丢掉

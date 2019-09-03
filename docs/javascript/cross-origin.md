@@ -27,7 +27,7 @@ import jsonp from 'jsonp-es6'
 服务器通过设置 Access-Control-Allow-Origin 来指定接受哪些域
 
 * 需要服务器设置支持
-* Access-Control-Allow-Origin 有两种情况，一个域名或`*`
+* Access-Control-Allow-Origin 有两种情况，一个精确域名或`*`
 * Access-Control-Allow-Credentials 表示是否允许发送 cookie，只能是 true，不需要就不要写
 * cookie  比较敏感，需要两端配合，才能传送，且只能同源，域名要求至少有两个点，localhost 不符合
 * 不管是否为跨域请求，ORIGIN 字段总是被发送

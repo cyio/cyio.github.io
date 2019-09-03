@@ -117,3 +117,5 @@ beforeAll((done /* call it or remove it*/) => {
 [Wrapper | Vue Test Utils](https://vue-test-utils.vuejs.org/zh/api/wrapper/#%25E5%25B1%259E%25E6%2580%25A7)
 
 [setTimeout not triggering when unit testing · Issue #3211 · facebook/jest](https://github.com/facebook/jest/issues/3211#issuecomment-289276061)
+[到处都是测试 automate-everything/chapter6.md at master · azl397985856/automate-everything](https://github.com/azl397985856/automate-everything/blob/master/docs/chapter6.md)
+[Quick Content Testing using Snapshots in Vue.js](https://vuedose.tips/tips/quick-content-testing-using-snapshots-in-vue-js/)

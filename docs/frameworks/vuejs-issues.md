@@ -4,8 +4,6 @@
 nextTick 解决要等 dom 后执行操作
 比如对有 if 条件渲染的 dom 节点要进行处理
 
-## Vue项目实践
-
 ## 日期格式化之阿拉伯数字转中文
 
 导入日期函数
@@ -168,3 +166,12 @@ methods: {
 ```
 
 [Vue.js 技术揭秘 | 生命周期](https://ustbhuangyi.github.io/vue-analysis/components/lifecycle.html#beforedestroy-destroyed)
+
+## html 中使用相对路径
+[html image src require not respecting webpack aliases? · Issue #193 · vuejs/vue-loader](https://github.com/vuejs/vue-loader/issues/193#issuecomment-206510064)
+
+## 动态图片引入
+Using Dynamic Static Image URLS in Vue.js
+The quick answer, a partially defined path.
+`:src="require(`@/assets/cards/${image}.jpg`)"`
+[Dependency Management | webpack](https://webpack.js.org/guides/dependency-management/#require-context)

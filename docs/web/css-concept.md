@@ -145,3 +145,4 @@ iframe/img 等元素可能出现意外空白
   - 样式存在依赖
   - 平时可以用，遇上需要高性能、优化时，移除，合并`@import`，直接使用 link
 [html - Best way to include CSS? Why use @import? - Stack Overflow](https://stackoverflow.com/questions/10036977/best-way-to-include-css-why-use-import?answertab=votes#tab-top)
+[CSS Guidelines (2.2.5) – High-level advice and guidelines for writing sane, manageable, scalable CSS](https://cssguidelin.es/)

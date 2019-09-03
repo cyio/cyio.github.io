@@ -281,3 +281,7 @@ function move(arr, oldIndex, newIndex) {
 console.log(move(arr, 1, 2))
 console.log(arr)
 ```
+
+## 跳出循环
+- 代码简短，用 for 配 break
+- 代码较长，建议定义变量标记
