@@ -20,3 +20,9 @@ content-security-policy: script-src 'sha256-wxWy1+9LmiuOeDwtQyZNmWpT0jqCUikqaqVl
 HTTPS
 
 [[面试专题]前端需要知道的web安全知识 - 前端进阶计划 - SegmentFault 思否](https://segmentfault.com/a/1190000010913697#articleHeader5)
+
+## 混合内容（http + https）
+- 被动 image/media  威胁性低，可访问，但锁、控制台会提示
+- 主动 script style iframe flash  拦截
+
+[什么是混合内容？  |  Web  |  Google Developers](https://developers.google.com/web/fundamentals/security/prevent-mixed-content/what-is-mixed-content)

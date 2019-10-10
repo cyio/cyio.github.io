@@ -7,3 +7,5 @@
 ```
 notes: xxx
 ```
+
+The `/?print-pdf` url parameter/feature of Reveal.js

@@ -85,3 +85,29 @@ imageoptim-cli 不支持 svg，因为已经有 svgo
 gui 更全面，且支持异步同步调用
 
 [自动优化图像  |  Web Fundamentals  |  Google Developers](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/automating-image-optimization/)
+
+## h2 lazy
+h2 并行，对下行带宽来说，相当于在请求一个合并文件
+开发工具，切换到 image 标签，可以看当图片请求数，总请求大小
+如 9Mb，那 9 * 1000 / 500 = 18，理论要 18s 全部下载完
+假定 50 张图片，每张图片分配的下行 500 / 50 = 10 kb/s，实际考虑有的图片较小，下载完会释放
+带来的问题，优先级高的图片下载也慢了
+服务器带宽一般远大于用户带宽
+
+> 第2、3 张走了不同的域名，所以快。第一张因为首页 h2 并发下载图片太多了（56个请求，9Mb 大），4Mb带宽下 较大图片并行请求 20 张每张分配大概是 50kb/s，一张 200kb 的图至少需要 4s （实测，swiper 第一张 5s 多） 
+
+所以用h2，需要给图片排优先级(懒加载)，避免一次请求太多数据
+图片上单独 cdn
+
+## lazy load
+传统方法 scroll 性能不好
+交叉观察者接口，异步，空闲时执行
+Chrome 51+，不支持 IE，兼容性很好
+检查元素与父元素或视口(root)是否交叉，交叉比例 threshold
+
+应用场景：lazy load，无限滚动
+[IntersectionObserver - Web APIs | MDN](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver)
+
+缺点：依赖 JS 才能正确设置 src，Chrome 原生的好处
+
+[Tips for rolling your own lazy loading | CSS-Tricks](https://css-tricks.com/tips-for-rolling-your-own-lazy-loading/)

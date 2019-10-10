@@ -40,3 +40,9 @@ chrome 76 支持浏览器原生懒加载，显式指定加载规则
 # 商业方案
 [听云Browser・实时了解您网站的真实用户体验](https://www.tingyun.com/tingyun_browser.html)
 [测速 - 听云Network・国内领先的网站性能监测与优化产品](https://www.tingyun.com/tingyun_network.html)
+[Journey to the Content Mesh Part 4: Why Mobile Performance Is Crucial | GatsbyJS](https://www.gatsbyjs.org/blog/2018-10-16-why-mobile-performance-is-crucial/)
+
+# modern 构建
+构建两个版本，modern 降低体积，old 兼顾
+
+[Improving Browser Performance 10x - Universe Engineering](https://engineering.universe.com/improving-browser-performance-10x-f9551927dcff)

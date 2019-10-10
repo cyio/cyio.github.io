@@ -57,3 +57,10 @@
   [This site works only in browsers with SNI support – 木瓜园](https://muguayuan.com/2015/2863.html)
 - axios 不支持 IE9 跨域请求
   [Vue - ie9 全面兼容方案](https://github.com/TerryZ/js-develop-skill-summary/blob/master/vue-ie9.md)
+
+## IE 兼容
+
+11 不支持 ES6，想支持的话需要调整 babelrc
+
+[javascript - Compiling ES6 and VUE JS not working in IE 11 - Stack Overflow](https://stackoverflow.com/questions/52881807/compiling-es6-and-vue-js-not-working-in-ie-11)
+[浏览器兼容性 | Vue CLI](https://cli.vuejs.org/zh/guide/browser-compatibility.html#browserslist)

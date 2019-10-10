@@ -97,7 +97,7 @@ Understanding Components Communication in Vue 2.0 http://taha-sh.com/blog/unders
 ```
 [Dynamic Components in Vue.js - JSFiddle](https://jsfiddle.net/coligo/mfxb9aeh/)
 
-> 在 Vue 当中，组件被当作是一等公民，所以设计和完成一个 Web App 之前，最好先构思好如何构建各个组件，哪些组建需要被复用到，哪些页面是要切换的。
+> 在 Vue 当中，组件被当作是一等公民，所以设计和完成一个 Web App 之前，最好先构思好如何构建各个组件，哪些组件需要被复用到，哪些页面是要切换的。
 > 目录，views 页面，components 组件
 
 

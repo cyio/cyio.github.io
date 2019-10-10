@@ -145,7 +145,10 @@ checkboxes.forEach(checkbox => checkbox.addEventListener('click'.handleCheck))
 
 ## 排序
 
-arr.sort()　默认的比较函数会将比较元素视为字符串，所以通常要传入自定义比较函数
+- arr.sort()　默认的比较函数会将比较元素视为字符串，所以通常要传入自定义比较函数
+- number 上两位数就不准了，需要传入 compare function
+- undefined 总会排到最后，符合预期
+- null 需要注意
 
 ```
 const arr = [{
@@ -162,6 +165,8 @@ console.log(arr.sort(
 const arr = [1, 20, 10, 30, 22, 11, 55, 24, 31, 88, 12, 100, 50];
 console.log(arr.sort((a, b) => a - b)) // 为什么不能写 a > b，而要写成 a > b ? 1 : -1
 ```
+
+[How not to sort an array in JavaScript | Phil Nash](https://philna.sh/blog/2019/08/26/how-not-to-sort-an-array-in-javascript/)
 
 ## 处理方法分辨
 

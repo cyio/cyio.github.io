@@ -8,6 +8,7 @@
   - 评估能解决多大规模问题
 - 时间复杂度： 定性描述算法运行时间的函数，一般用大写 O(peration) - 时间限制，避免陷入死循环 - 需要实时响应
   [算法的时间复杂度和空间复杂度-总结 - CSDN 博客](https://blog.csdn.net/zolalad/article/details/11848739)
+  [冰与火之歌：「时间」与「空间」复杂度 - 掘金](https://juejin.im/post/5c174198f265da611036f4ea)
 
 ### 程序性能
 
@@ -92,3 +93,7 @@ console.log(checkStatus(3))
 
 [LeetCode 算法题刷题心得（JavaScript） - 简书](https://www.jianshu.com/p/8876704ea9c8)
 
+## 二分查找
+1-1000 找数 2 ** 10 = 1024
+有序 比较中点 范围减半
+O(log n)

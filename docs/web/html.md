@@ -5,9 +5,10 @@
 - 如果在文档开始处没有发现文档类型声明，则所有浏览器都会默认开启严格模式
 
 ## HTML 中外链脚本的下载与执行
+
 DOM parser => JS engine => DOM parser
 
-[i](https://html.spec.whatwg.org/images/asyncdefer.svg)
+![i](https://html.spec.whatwg.org/images/asyncdefer.svg)
 
 - `<script>`下载和执行双阻塞
   默认情况下，HTML 自上向下解析，发现 script 标签，如果是外链脚本，则暂停 HTML 解析(阻塞)，去下载外链脚本，然后执行脚本，至此才会恢复解析 HTML。
@@ -21,7 +22,7 @@ DOM parser => JS engine => DOM parser
   [async vs defer attributes - Growing with the Web](http://www.growingwiththeweb.com/2014/02/async-vs-defer-attributes.html)
 - 目前大网站，有使用 async ，但没 defer，两者兼容性对低版本 IE 是个问题，因此 Web 端网站要求强兼容性的话就不要用了
   [使用 defer 或 async 加载脚本 | levy](http://levy.work/2017-01-25-script-defer-and-async/)
-  [浏览器页面与vue2.0组件生命周期横向比较 - 掘金](https://juejin.im/post/5acb14f9f265da237719b50c)
+  [浏览器页面与 vue2.0 组件生命周期横向比较 - 掘金](https://juejin.im/post/5acb14f9f265da237719b50c)
   [javascript - How to run VueJS code only after Vue is fully loaded and initialized? - Stack Overflow](https://stackoverflow.com/questions/43652265/how-to-run-vuejs-code-only-after-vue-is-fully-loaded-and-initialized/43656809)
   [如何分析页面加载慢 - 简书](https://www.jianshu.com/p/24b93b13e5a9)
   [HTTPS 之 TLS 性能调优 - cyfonly - 博客园](https://www.cnblogs.com/cyfonly/p/9061262.html)
@@ -154,16 +155,23 @@ DOM parser => JS engine => DOM parser
 - type 设为 tel，两个平台都会调出拨号键盘
 - type 为 num 时，ios 调出的是全键盘，不符合预期
 
-## 优化
 
-### DNS 预取
+## DNS 预取
 
 正确的使用姿势：
 
 1. 对静态资源域名做手动 dns prefetching。
 2. 对 js 里会发起的跳转、请求做手动 dns prefetching。
 3. 不用对超链接做手动 dns prefetching，因为 chrome 会自动做 dns prefetching。
-4. 对重定向跳转的新域名做手动 dns prefetching，比如：页面上有个 A 域名的链接，但访问 A 会重定向到 B 域名的链接，这么在当前页对 B 域名做手动 dns prefetching 是有意义的。
+4. 对重定向跳转的新域名做手动 dns prefetching，比如：页面上有个 A 域名的链接，但访问 A 会重定向到 B 域名的链接，那么在当前页对 B 域名做手动 dns prefetching 是有意义的。
+
+总结，对第三方重要、间接发起（即浏览器无法自动处理）的域，使用预取。对弱网、https，改善大。
+
+兼容性 dns-prefetch > preconnect > preload
+
+preconnect 缺点 cpu 开销
+
+> Consider adding preconnect or dns-prefetch resource hints to establish early connections to important third-party origins.
 
 [预加载系列一：DNS Prefetching 的正确使用姿势 - Delai - 有赞技术团队](https://tech.youzan.com/dns-prefetching/)
 
@@ -198,20 +206,20 @@ DOM parser => JS engine => DOM parser
 
 ## data 属性
 
-```
-// html
+```html
 data-columns="3"
-// js
+```
+```js
 var article = document.getElementById('electriccars');
 article.dataset.columns // "3"
-// css
+```
+```css
 article::before {
   content: attr(data-parent);
 }
 article[data-columns='3'] {
   width: 400px;
 }
-
 ```
 
 [Using data attributes | MDN](https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes)
@@ -219,3 +227,24 @@ article[data-columns='3'] {
 ## html-parse
 
 [vue/html-parser.js at dev · vuejs/vue](https://github.com/vuejs/vue/blob/dev/src/compiler/parser/html-parser.js)
+
+## preload
+可以对各种资源预取，包括 media
+[Preloading content with rel="preload" - HTML: Hypertext Markup Language | MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content)
+
+css 是渲染阻塞资源
+
+require(DOM + CSSOM) = render tree
+
+html css 都是阻塞资源，大部分情况我们希望如此。但有些非关键 css 需要异步加载
+[Render Blocking CSS  |  Web Fundamentals  |  Google Developers](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/render-blocking-css)
+[Modern Asynchronous CSS Loading | Filament Group, Inc.](https://www.filamentgroup.com/lab/async-css.html)
+
+推荐方案
+```html
+<link rel="preload" href="mystyles.css" as="style" onload="this.rel='stylesheet'">
+```
+
+swiper 等三方依赖应该阻塞，new 时如果找不到，抛错会阻塞执行
+
+[HEAD - A free guide to <head> elements](https://htmlhead.dev/)

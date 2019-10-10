@@ -644,3 +644,6 @@ set ma (modifiable) / set noma
 
 
 查找，`#`后向匹配，`g*`非精确匹配
+
+## ts
+[Vim for JavaScript and React in 2019 | Vim From Scratch](https://www.vimfromscratch.com/articles/vim-for-javascript-and-react-in-2019/)

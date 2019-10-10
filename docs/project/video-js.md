@@ -26,23 +26,13 @@ ios 需要播放后才会触发`canplay`和`canplaythrough`
 
 android 下无法隐藏控件，可通过增加高度将控件顶出视窗以间接实现，有些副作用需要处理
 
-## 视频直播
-
-- HLS (M3U8)
-
-  苹果全家，高版本 Android 支持，桌面端 Chrome 不支持，需 Flash 间接支持
-  缺点是延迟大
-
-- WebRTC
-
-  移动端支持较差，safari 不支持，高版本 Android 支持
-
 [video 标签在不同平台上的事件表现差异分析 - 腾讯 Web 前端 IMWeb 团队社区 | blog | 团队博客](http://imweb.io/topic/560a6015c2317a8c3e086207)
 [移动端 HTML5 video 视频播放优化实践 - 轩枫阁 – 前端开发 | web 前端技术博客](http://webcache.googleusercontent.com/search?q=cache:K3Kfv-HA0sMJ:www.xuanfengge.com/html5-video-play.html+&cd=1&hl=zh-CN&ct=clnk&gl=cn) 2015 年的不一定新
 [mister-ben/videojs-flvjs: Video.js tech using flv.js for FLV playback](https://github.com/mister-ben/videojs-flvjs)
 
-- flv
-  需要引入
+## 直播
+1. 设置
+flv 需要引入
 
   ```
   video.js
@@ -63,11 +53,21 @@ android 下无法隐藏控件，可通过增加高度将控件顶出视窗以间
     },
   ```
 
-- 直播样式
+2. 界面
 
-  videojs 在检测到直播流`duration < 0`才会切到`LIVE`样式，在`video-js`上添加`vjs-live`，新版还会加上`vjs-liveui`
-  vjs-live-control 移除 vjs-hidden
-  需要找直播流测试？本地如何模拟
+  检测`duartionChange`事件，UI 有变化，不符合只看直播的期望
+  videojs 在检测到直播流`duration < 0`才会切到`LIVE`样式，在`video-js`上添加`vjs-live`，新版还会加上`vjs-liveui`，新版有问题先不要用（安卓、seek）
+  vjs-live-control 刚开始会隐藏，需要 hack 处理
+  ```pug
+  .video-js.vjs-live
+  ```
+  ```css
+  .vjs-live .vjs-control.vjs-live-control {
+    display: flex!important;
+  }
+  ```
+  需要找直播流测试？本地如何模拟 livego + ffmpeg
+  `ffmpeg -re -i aliyunmedia.mp4 -c copy -f flv rtmp://localhost/live/test`
 
   [video.js/player.js at f5fd94f61012af2269a5528746c7d62a7b435467 · videojs/video.js](https://github.com/videojs/video.js/blob/f5fd94f61012af2269a5528746c7d62a7b435467/src/js/player.js#L2485)
   [video.js / live.md at 6c644feaa0ccef6e5e88e8bf45dc9caa82a94503·videojs / video.js](https://github.com/videojs/video.js/blob/6c644feaa0ccef6e5e88e8bf45dc9caa82a94503/docs/guides/live.md#the-new-user-interface)
@@ -186,12 +186,16 @@ background: #000;
 
 ## 监控上报
 
-播放成功率 - play/canplay event
-首次缓冲时间/加载延迟 = loadeddata - loadstart
-缓冲概率
-缓冲时长 = playing - waiting，忽略第一次 playing，如果大于一定值，收集网速信息，上报
-播放次数
+- 播放成功率 - play/canplay event
+- 首次缓冲时间/加载延迟 = loadeddata - loadstart
+- 缓冲概率
+- 卡顿缓冲时长 = playing - waiting，忽略第一次 playing，如果大于一定值，收集网速信息，上报
+- 播放次数
 监控下载进度 video.duration video.buffered.end(0)
+
+收集信息：
+- 视频地址
+- 即时带宽
 [前端视频质量监控 | DaraW | Code is Poetry](https://blog.daraw.cn/2018/09/07/video-quality-monitor/)
 [十亿级视频播放技术优化揭密 - 踏雪无痕 SS - 博客园](https://www.cnblogs.com/chenpingzhao/p/6850595.html)
 
@@ -307,7 +311,7 @@ player.play()
 
 ## 伪全屏
 
-允许元素显示在视频上，卸载自带事件，给播放器和要前置元素的公共容器设置全屏
+允许元素显示在视频上，卸载自带事件，给播放器和要前置元素的**公共容器**设置全屏
 
 ## timeupdate
 
@@ -327,7 +331,7 @@ player.play()
 ## mp4
 moov 需要放在开头，来启用 faststart
 
-判断 moov 位置
+判断 moov 位置，在第一行（说明在开头），还是第二行（说明在末尾）
 ```sh
 # zsh 里后面命令需要转义
 ffmpeg -v trace -i file.mp4 2>&1 | grep -e type:\'mdat\' -e type:\'moov\'
@@ -335,3 +339,50 @@ ffmpeg -v trace -i file.mp4 2>&1 | grep -e type:\'mdat\' -e type:\'moov\'
 [How to tell if faststart for video is set using ffmpeg or ffprobe - Stack Overflow](https://stackoverflow.com/questions/56963790/how-to-tell-if-faststart-for-video-is-set-using-ffmpeg-or-ffprobe)
 [Optimizing MP4 Video for Fast Streaming in 2019 - VeerIT Solutions](https://veerit.com/other/optimizing-mp4-video-for-fast-streaming-in-2019/)
 [在线短视频秒播优化之视频文件格式之MP4文件Moov box的位置 - 个人文章 - SegmentFault 思否](https://segmentfault.com/a/1190000012477812)
+
+重新排序，moov 放到开头
+```sh
+ffmpeg -i input.mp4 -movflags faststart -acodec copy -vcodec copy output.mp4
+```
+
+
+
+转码
+
+[ffmpeg - Fastest way to convert videos (batch or single)? - Ask Ubuntu](https://askubuntu.com/questions/352920/fastest-way-to-convert-videos-batch-or-single)
+[Encode/H.264 – FFmpeg](https://trac.ffmpeg.org/wiki/Encode/H.264)
+[FFMPEG推流到RTMP服务器命令 - u013010310的专栏 - CSDN博客](https://blog.csdn.net/u013010310/article/details/52371440)
+[ffmpeg录制摄像头 - 简书](https://www.jianshu.com/p/6f345eaf3471)
+
+![youtube 指标](https://wx2.sinaimg.cn/large/69d3c9d2gy1g78ijxhwvxj20v00d6q7a.jpg)
+[MP4文件格式解析 - 心之所向，身之所往 - CSDN博客](https://blog.csdn.net/chenchong_219/article/details/44263691)
+[Audio/Video - The Chromium Projects](http://www.chromium.org/audio-video)
+[Web Media Application Developer Guidelines](https://www.w3.org/2018/12/webmediaguidelines.html#byte-range-requests-in-context-of-web-video-application)
+[How video streaming works on the web: An introduction](https://medium.com/canal-tech/how-video-streaming-works-on-the-web-an-introduction-7919739f7e1)
+
+将1080p转成720p，宽度自适应
+```sh
+ffmpeg -i input.mkv -c copy -c:v libx264 -vf scale=-2:720 output.mkv
+```
+[ffmpeg 将1080P视频转换成720P_楚盟网](https://www.5yun.org/14696.html)
+
+估算网速
+1. 文件大小/下载所用时间
+2. 视频下载本身符合上条
+[How does YouTube detect connection speed without testing/using all speeds? - Web Applications Stack Exchange](https://webapps.stackexchange.com/questions/106358/how-does-youtube-detect-connection-speed-without-testing-using-all-speeds)
+[How to detect internet speed in JavaScript? - Stack Overflow](https://stackoverflow.com/questions/5529718/how-to-detect-internet-speed-in-javascript)
+
+dash 第一个国际标准
+hls 非标准，chrome 移动端支持，pc 端可能永远不会支持
+> DASH客户端可以根据当前的网络状况，自动选择对应的最匹配的比特率文件段下载，进行回放，而不会引起停顿或重新缓冲。这样，DASH客户端可以无缝地适应不断变化的网络条件，并提供高品质的播放，而能够尽量减少播放的停顿或缓冲。
+> 虽然DASH是国际标准，但是 HLS 出现的更早，在业界占主流。
+[权利的游戏、破冰行动都烂尾了，那就来讨论一下视频点播吧 - 掘金](https://juejin.im/post/5d0892a0e51d455a694f9533)
+[我们为什么使用DASH - 哔哩哔哩](https://www.bilibili.com/read/cv855111/)
+> HTMLVideoElement.getVideoPlaybackQuality() 中新增firstFrameTime（首帧时间）和bufferTimes（卡顿次数）以及希望获取总共可使用 MSE 的内存上限
+
+fmp4 不需要一个 moov Box 来进行 initialization，fmp4 的 moov Box 只包含了一些 track 信息。
+fmp4 可以结合 MSE 进行 HTML5 直播。
+
+[W3C Web 中文兴趣组媒体特别任务组研讨会 -- 2019年3月23日](https://www.w3.org/2019/03/23-chinese-web-media-summary.html#item05)
+> 我们不看瞬时速度，而是对最近请求的4-10个分片计算平均值
+[西瓜播放器 | API](https://h5player.bytedance.com/api/#getbufferedrange)

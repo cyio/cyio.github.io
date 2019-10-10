@@ -251,6 +251,13 @@ git add
 
 [Using submodules in Git - Tutorial](https://www.vogella.com/tutorials/GitSubmodules/article.html)
 
+子模块更新有两种方式
+1. `git pull`主仓库记录的 id
+2. `update remote`
+```sh
+git submodule update --init --recursive --remote BRANCH-NAME
+```
+
 ## 交互式合并其它分支某部分代码
 
 `git checkout -p <branch> -- <paths> ...`
@@ -287,6 +294,19 @@ git cherry-pick 584a2ef
 
 - 创建两个 commits 的 patch `git diff COMMIT1 COMMIT2 > patch.txt`
   如果有在线管理，可直接查看 commit 的 diff 内容
+
+  ```sh
+  # dev1 exports unstaged changes
+  git diff > diff.patch
+
+  # dev1 exports staged changes
+  git diff --staged > diff.patch
+
+  Send patch file via Slack, etc...
+
+  # dev2 applies changes from the patch file
+  git apply diff.patch
+  ```
 
 ## patch
 

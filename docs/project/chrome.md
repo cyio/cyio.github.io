@@ -29,3 +29,7 @@ open -a "Google Chrome 63" --args --profile-directory=Profile-v63
 ## Fix Tunnel Connection Failed
 出现这个错误说明是内网问题
 [Fix Tunnel Connection Failed Error in Google Chrome » WebNots](https://www.webnots.com/fix-tunnel-connection-failed-error-in-google-chrome/)
+
+## 新布局引擎
+Chrome 77 使用了新的布局引擎，修复了很多问题，需要关注对网站布局的影响
+LayoutNG - Chromium项目 https://www.chromium.org/blink/layoutng

@@ -14,7 +14,7 @@
 window.addEventListener('unload', logData, false);
 
 function logData() {
-    navigator.sendBeacon("/log", analyticsData);
+  navigator.sendBeacon("/log", analyticsData);
 }
 ```
 

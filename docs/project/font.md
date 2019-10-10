@@ -28,3 +28,10 @@
 > css分片字体加载方式：这种方式是将大字体文件提前按照一定规则切分成多个小的字体文件，并对应每个小的字体文件生成所包含字体unicode的范围。将这个范围标记到css标签@font-face的unicode-range属性中。将所有的@font-face标签放到一个css文件中，这个文件就是整个字体的小文件映射关联表。在使用时只需要在需要特定字体的html文件中引用这个css文件，使用css自身特定动态定位需要应用字体的文字，在@font-face标签中查找文字所在的小字体文件，并下载所需的字体文件。这一些列操作都是css自身完成，不需要二次开发。同时该模式还支持动态文本的渲染，比如使用javaScript修改了文档中的文字内容，css还是会动态计算需要下在的字体文件。这种方式可以解决课件生成速度慢，字体文件繁多利用率低的问题。
 
 [CSS unicode-range特定字符使用font-face自定义字体 « 张鑫旭-鑫空间-鑫生活](https://www.zhangxinxu.com/wordpress/2016/11/css-unicode-range-character-font-face/)
+
+## google fonts 字体加载策略
+- 有较长缓存期，普通用户使用问题不大
+- 只请求需要的字重
+- 多个字体合并为一个请求
+- 请求构成 css + font srcs，且往往不在同载事下，dns-prefetch, preconnect
+[Web技巧(12) - 知乎](https://zhuanlan.zhihu.com/p/71640685)
