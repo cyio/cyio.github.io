@@ -11,3 +11,18 @@
 
 ## 工具
 Access-Control-Allow-Origin 
+
+## Think
+
+画图很麻烦
+
+理清、返工
+
+提前把主干理清楚
+
+mermaid 自己看没问题，有些问题需要规避
+
+[基于 Mermaid 的时序图、流程图和甘特图 - Powered by MinDoc](https://www.iminho.me/wiki/docs/mindoc/mermaid.md)
+[Online FlowChart & Diagrams Editor - Mermaid Live Editor](https://mermaidjs.github.io/mermaid-live-editor/#/edit/eyJjb2RlIjoiZ3JhcGggVERcbkFbQ2hyaXN0bWFzXSAtLT58R2V0IG1vbmV5fCBCKEdvIHNob3BwaW5nKVxuQiAtLT4gQ3tMZXQgbWUgdGhpbmt9XG5DIC0tPnxPbmV8IERbTGFwdG9wXVxuQyAtLT58VHdvfCBFW2lQaG9uZV1cbkMgLS0-fFRocmVlfCBGW2ZhOmZhLWNhciBDYXJdXG4iLCJtZXJtYWlkIjp7InRoZW1lIjoiZGVmYXVsdCJ9fQ)
+[Markdown 流程图 flowchart.js - JavaScript - 123si 博客](https://www.123si.org/javascript/article/markdown-flow-chart-flowchart-js/)
+
