@@ -20,7 +20,7 @@ select {
 
 无奈放弃原生表单，搬出CSS来从头模拟实现，HTML大概是这样
 
-``` jade
+```pug
 .dropdown
   span 请选择
   ul.dropdown-content

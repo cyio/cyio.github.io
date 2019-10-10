@@ -22,10 +22,12 @@ http-referer
 2.8.2 
 
 点击播放按钮报错
+```
 aliplayer-min.js:2 Uncaught ReferenceError: liveForceLoad is not defined
     at i.t.play (aliplayer-min.js:2)
     at i.<anonymous> (aliplayer-min.js:2)
     at HTMLDivElement.r (aliplayer-min.js:2)
     at HTMLDivElement.a.dispatcher.a.dispatcher (aliplayer-min.js:2)
+```
 
 使用 2.8.1 OK

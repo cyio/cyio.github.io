@@ -10,7 +10,12 @@ module.exports = {
     ['meta', { name: 'theme-color', content: '#0089a7' }],
     ['link', { rel: 'apple-touch-icon', sizes: '180x180', href: '/favicon.ico' }],
   ],
-  serviceWorker: true,
+  plugins: {
+    '@vuepress/pwa': {
+      serviceWorker: true,
+      updatePopup: true
+    }
+  },
   themeConfig: {
     serviceWorker: {
       lastUpdated: '最后更新',
