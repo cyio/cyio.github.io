@@ -27,3 +27,11 @@ Switched to localStorage instead of sessionStorage when "standalone" and persist
 [Beyond SPAs: alternative architectures for your PWA  |  Web  |  Google Developers](https://developers.google.com/web/updates/2018/05/beyond-spa)
 
 Trusted Web Activity
+
+[Why Progressive Web Apps Are The Future of Mobile Web [2019 Research]](https://ymedialabs.com/progressive-web-apps)
+
+## 与小程序区别
+小、快、轻，应对原生应用弊端，让 web 具有应用能力
+两个生态： 开放、封闭
+
+> 传统的 HttpCache，让资源在缓存时性能会很好，而 PWA 是让资源非常可靠地缓存起来，让页面性能一直都很好。

@@ -1,7 +1,6 @@
 # echarts
 
-术语名称参考：
-[ECharts 在线构建](http://echarts.baidu.com/builder.html)
+[术语速查手册 - Apache ECharts (incubating)](https://www.echartsjs.com/zh/cheat-sheet.html)
 
 在线编辑器 [ECharts Gallery](http://gallery.echartsjs.com/editor.html)
 
@@ -24,3 +23,5 @@ import echarts from 'echarts/dist/echarts.min.js'
 
 - 事件禁用
   [echarts 取消图例上的点击事件和图表上鼠标滑过点击事件 - CSDN 博客](https://blog.csdn.net/Amy126/article/details/73484739)
+
+[SandDance - Demo Vote](https://sanddance.js.org/app/)

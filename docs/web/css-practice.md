@@ -195,3 +195,6 @@ grid-column: 4 / 6 缩写语法
 grid-area: 1/2/4/6 区域简写，row / col
 
 不规则区域，可定义多个 grid-area 解决
+
+## clip-path
+[Clippy — CSS clip-path maker](https://bennettfeely.com/clippy/)

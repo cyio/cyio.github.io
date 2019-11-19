@@ -38,3 +38,6 @@ navigator.sendBeacon("/cgi-bin/leave_room", blob);
 ```
 (https://zhuanlan.zhihu.com/p/68838820)[https://zhuanlan.zhihu.com/p/68838820]
 
+sentry 不支持 [navigator.sendBeacon() · Issue #293 · getsentry/sentry-javascript](https://github.com/getsentry/sentry-javascript/issues/293#issuecomment-288626061)
+
+后台有报警，第三方接口调用有盲区

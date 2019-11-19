@@ -19,3 +19,15 @@
 - 在 console 中复制对象
  `copy(JSON.stringify(object))`
  缺点是函数会被丢掉
+在 vue 晨
+```js
+  mounted () {
+    window.myJSON = this.options
+  }
+// copy(JSON.stringify(window.myJSON))
+```
+
+## 网络
+- 在开启开发工具下，长按刷新按钮出现菜单，Empty Cache And Hard Reload 强制全部请求走网络，模拟新客访问
+- 点击截图，查看当时请求状态
+- cmd + 点击，同时查看多种资源

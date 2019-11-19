@@ -33,3 +33,16 @@ open -a "Google Chrome 63" --args --profile-directory=Profile-v63
 ## 新布局引擎
 Chrome 77 使用了新的布局引擎，修复了很多问题，需要关注对网站布局的影响
 LayoutNG - Chromium项目 https://www.chromium.org/blink/layoutng
+
+## 逐步禁止混合内容
+方式： 将 http 资源自动升级为 https，如果资源不可通过 https 访问，就加载不了了
+80 av 2020.1
+81 image 2020.2
+[Chromium Blog: No More Mixed Messages About HTTPS](https://blog.chromium.org/2019/10/no-more-mixed-messages-about-https.html)
+建议立即检查迁移
+
+
+## SameSite
+- 要求显式标记跨站设置
+
+[SameSite cookies explained](https://web.dev/samesite-cookies-explained/)

@@ -1,5 +1,7 @@
 # netinfo
 
+- 兼容性差，仅 chrome 支持。MDN 文档有误导？
+
 ```js
 navigator.onLine //是否在线
 navigator.offLine

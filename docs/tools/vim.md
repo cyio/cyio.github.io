@@ -617,6 +617,10 @@ set ma (modifiable) / set noma
 [A guide to modern Web Development with (Neo)vim – freeCodeCamp.org](https://medium.freecodecamp.org/a-guide-to-modern-web-development-with-neo-vim-333f7efbf8e2)
 [jarvis/init.vim at master · ctaylo21/jarvis](https://github.com/ctaylo21/jarvis/blob/master/config/nvim/init.vim)
 
+配合 snip
+`ctrl-y`
+[Completion with sources · neoclide/coc.nvim Wiki](https://github.com/neoclide/coc.nvim/wiki/Completion-with-sources#improve-the-completion-experience)
+
 ## Lint
 [Vim插件之ale - Awakenedy - 博客园](https://www.cnblogs.com/awakenedy/articles/9110610.html)
 
@@ -647,3 +651,11 @@ set ma (modifiable) / set noma
 
 ## ts
 [Vim for JavaScript and React in 2019 | Vim From Scratch](https://www.vimfromscratch.com/articles/vim-for-javascript-and-react-in-2019/)
+
+## 表格支持
+插件
+[dhruvasagar/vim-table-mode: VIM Table Mode for instant table creation.](https://github.com/dhruvasagar/vim-table-mode)
+
+```
+:[range]w !eslint --stdin
+```

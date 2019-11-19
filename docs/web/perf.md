@@ -1,7 +1,9 @@
 # 性能
 
 [性能为何至关重要  |  Web Fundamentals  |  Google Developers](https://developers.google.com/web/fundamentals/performance/why-performance-matters/?hl=zh-cn)
+
 [Front-End Performance Checklist 2019 [PDF, Apple Pages, MS Word] — Smashing Magazine](https://www.smashingmagazine.com/2019/01/front-end-performance-checklist-2019-pdf-pages/)
+
 [狙杀页面卡顿 —— Performance 指北 - 掘金](https://juejin.im/post/5b65105f5188251b134e9778)
 
 # 后台页面
@@ -33,16 +35,154 @@ chrome 76 支持浏览器原生懒加载，显式指定加载规则
 `lazy` 进入视口才加载
 `eager` 忽略默认规则
 ```html
-<img loading=”lazy”>
-<iframe loading=”lazy”></iframe>
+<img loading="lazy">
+<iframe loading="lazy"></iframe>
 ```
 
 # 商业方案
 [听云Browser・实时了解您网站的真实用户体验](https://www.tingyun.com/tingyun_browser.html)
+
 [测速 - 听云Network・国内领先的网站性能监测与优化产品](https://www.tingyun.com/tingyun_network.html)
+
 [Journey to the Content Mesh Part 4: Why Mobile Performance Is Crucial | GatsbyJS](https://www.gatsbyjs.org/blog/2018-10-16-why-mobile-performance-is-crucial/)
 
 # modern 构建
 构建两个版本，modern 降低体积，old 兼顾
 
 [Improving Browser Performance 10x - Universe Engineering](https://engineering.universe.com/improving-browser-performance-10x-f9551927dcff)
+
+[lighthouse/authenticated-pages.md at master · GoogleChrome/lighthouse](https://github.com/GoogleChrome/lighthouse/blob/master/docs/authenticated-pages.md)
+
+
+[Chrome 中的 First Meaningful Paint - 邹天得 - 博客园](https://www.cnblogs.com/videring/articles/7603864.html)
+算法：
+a. 首次有效绘制 = 具有最大布局变化的绘制
+b. 布局显著性 = 添加的对象数目 / max(1, 页面高度 / 屏幕高度)
+
+用户期待：页面的首屏内容应在1.5秒内加载完成
+
+普通用户期望且能够接受的页面加载时间在 3 秒以内
+
+搜索流量倾斜，3s 红线
+
+[前端加载优化及实践 | 微信开放社区](https://developers.weixin.qq.com/community/develop/article/doc/00062cad124c8867cf380f64156c13)
+
+[杨森 把前端性能监控做到极致 | ITSlide - 专注于PPT幻灯片的分享平台](https://www.itslide.com/slide/244993)
+
+[笔记 前端性能优化原理与实践](https://blog.shipengqi.top/2018/10/29/frontend-performance-optimize/)
+
+FMP  主要内容用户可见 1220ms 99分 基于真实网站数据
+
+[WebPageTest - Website Performance and Optimization Test](https://webpagetest.org/easy)
+
+可链接提供 Image Analysis Results，可压缩比
+
+[Lighthouse v3 Score Weighting [MAKE YOUR OWN COPY] - Google 表格](https://docs.google.com/spreadsheets/d/1Cxzhy5ecqJCucdf1M0iOzM8mIxNc7mmx107o5nj38Eo/edit#gid=0)
+
+可交互时间、速度指标权重更高，FMP 权重最低，比较容易实现
+
+[Performance audits  |  web.dev](https://web.dev/lighthouse-performance)
+
+[以用户为中心的性能指标  |  Web Fundamentals  |  Google Developers](https://developers.google.com/web/fundamentals/performance/user-centric-performance-metrics#tracking_fmp_using_hero_elements)
+
+传统指标或单个指标不可靠，Google 定义新指标
+
+Long Tasks API >50 毫秒
+
+100 毫秒内响应用户输入
+
+发生在后，权重大，对用户更重要
+
+PerformanceObserver 观测实际设备
+
+首屏加载时间定义
+一般 图片
+课件，可操作时间
+
+speedIndex 内容显示速度，综合指标，需要解决一系列问题提升
+
+持续集成、测试关键指标是否合格，低于阈值判定失败
+
+用户关注主要内容的展示和可交互，但浏览器不知道
+
+自定义指标，测量方法
+[SpeedCurve | User Timing and Custom Metrics](https://speedcurve.com/blog/user-timing-and-custom-metrics/)
+
+[Navigation Timing Level 2](https://www.w3.org/TR/navigation-timing-2/#performanceentry)
+
+````
+<body onload="init()">
+````
+这里`onload`即`window.onload`，完整 Document 资源加载结束，包括 images, scripts, links and sub-frames
+
+[让偶现Bug无所遁形：贝壳自研时光机如何解决前端行业痛点？-InfoQ](https://www.infoq.cn/article/pqSFIzu9DFuwmg4e51oM?utm_source=rss&utm_medium=article)
+
+> 在衡量 Web 页面性能时，最普遍的做法是通过 YSlow、Lighthouse 等工具对页面进行一次性的诊断分析。诚然这些工具可以检查出诸多页面性能的瓶颈和优化点，但我们依然无法感知并量化用户在访问页面时的具体表现，因为真实场景的页面性能会受到诸多因素的影响，如用户使用的终端类型、服务器响应速度、所在地域 CDN 性能等。
+
+真实用户访问 --> 提取性能指标 --> 数据清洗加工 --> 性能分析监控（监控平台）
+
+高精度时间，小数点后 12 位
+`performance.now`单调递增，不受修改系统时间影响
+
+原生 DCL --> FP/FCP --> FMP 算法推导 用户感知
+
+
+FMP 布局树，布局对象，最大之后的绘制，可见区域 页面高度
+
+> First meaningful paint = Paint that follows biggest layout change
+> Biggest layout change means layout with the largest number of LayoutObjectsThatHadNeverHadLayout. In Figure 1, the biggest layout change is at 1.86s, so the next paint (1.907s) is the first meaningful paint.
+
+## TTFB
+
+首字节时间(TTFB)用于测量服务器的响应能力。是从客户端发起 HTTP 请求到客户端浏览器收到资源的第一个字节所经历的时间。由 socket 连接时间、发送 HTTP 请求所需时间、收到页面第一个字节所需时间组成。
+
+Gzip 压缩会导致 TTFB 提升
+
+大多数服务器的 TTFB 时间都在 50 ms 以下
+
+本地过多 cookie ？每次请求会带上，上传受限，可能增加 TTFB
+
+h2 统计到的 TTFB 值会更高，因为 socket 连接更早？
+
+[Stop worrying about Time To First Byte (TTFB)](https://blog.cloudflare.com/ttfb-time-to-first-byte-considered-meaningles/)
+[iis - HTTP/2 has much higher TTFB than HTTP/1.1 - Super User](https://superuser.com/questions/931389/http-2-has-much-higher-ttfb-than-http-1-1)
+[Nginx tuning tips: TLS/SSL HTTPS - Improved TTFB/latency](https://haydenjames.io/nginx-tuning-tips-tls-ssl-https-ttfb-latency/)
+[《HTTP/2 基础教程》 阅读摘要 - 掘金](https://juejin.im/post/5cb54286e51d456e235d9be6)
+[页面加载与API服务响应--- 性能标定与标准 - 知乎](https://zhuanlan.zhihu.com/p/34020557)
+
+## 4x cpu
+仅影响主线程，产生额外线程频繁打断主线程
+simulated 与 Applied 区别，不实际节流，推测值
+
+[performance testing - What does 4x slower CPU throttle in Chrome DevTools simulate in terms of hardware? - Stack Overflow](https://stackoverflow.com/questions/50848341/what-does-4x-slower-cpu-throttle-in-chrome-devtools-simulate-in-terms-of-hardwar)
+
+## clear storage
+选中，模拟用户首次访问
+取消选中，模拟重复访问
+
+## show coverage
+按文件，按行分析，红色为未用到
+
+判断是否渲染阻塞资源， show block，刷新，页面是否正常渲染
+
+## main thread
+1. performance
+2. reload
+3. user timing
+4. bottom-up
+
+## 不同机器差民
+
+一次优化在一台机器上测，模拟环境，然后在真实环境验证。跨机器标准化可操作性差，影响因素太多。同一台机器，尽量减少影响结果的差异因素。
+
+## 总结
+- 先审计再优化
+- 一次改一点，隔离变化对性能影响
+
+[Optimize Website Speed With Chrome DevTools  |  Tools for Web Developers](https://developers.google.com/web/tools/chrome-devtools/speed/get-started)
+[Lighthouse 测试内幕 - 知乎](https://zhuanlan.zhihu.com/p/91365316)
+
+## 信息流内容页“闪开”
+
+流程上在Webview列表初始化的时候进行详情页资源的预加载，同时针对视图内的信息流列表进行内容页的预渲染，从而在用户点击详情页的时候可以直接从内存中读出HTML，达到闪开的效果。
+ 

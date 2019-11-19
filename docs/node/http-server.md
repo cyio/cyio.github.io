@@ -1,5 +1,8 @@
 # http-server
 
+- `http.get`取到的是流
+- 内置的`http`和`request`均不支持`Promise`
+
 ```js
 const http = require('http')
 const server = http.createServer()
@@ -19,3 +22,5 @@ server.on('error', e => {
 	}
 })
 ```
+
+- [HTTP 传输解析 | Node.js](https://nodejs.org/zh-cn/docs/guides/anatomy-of-an-http-transaction/)

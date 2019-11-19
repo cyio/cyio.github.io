@@ -78,7 +78,8 @@ echo -e "export PATH=$(npm prefix -g)/bin:$PATH" >> ~/.zshrc && source ~/.zshrc
 tldr:
 
 - npm 使用版本大于 5.4.2
-- 更新 lockfile，`npm install --package-lock-only`，用户可用 yarn
+- 维护者更新 lockfile，`npm install --package-lock-only`
+- 非维护者可用 yarn，修改包时，不要提交 lockfile，由维护者统一更新
 - lockfile 应尽量避免冲突
 
 问题：`package.json`松散版本号，安装易变

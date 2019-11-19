@@ -248,3 +248,6 @@ html css 都是阻塞资源，大部分情况我们希望如此。但有些非�
 swiper 等三方依赖应该阻塞，new 时如果找不到，抛错会阻塞执行
 
 [HEAD - A free guide to <-head> elements](https://htmlhead.dev/)
+
+兼容性：firefox 不支持，会忽略退化
+

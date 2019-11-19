@@ -189,3 +189,59 @@ handleClick = () => {
 3. 解决绑定传参，拆分组件
 
    [Don't Use Bind When Passing Props](https://daveceddia.com/avoid-bind-when-passing-props/)
+
+## learn
+
+state 每个组件私有
+当需要获取多个子组件数据，或两个组件需要相互通讯，state 提升到父组件
+受控组件
+
+不可变数据：
+
+- 跟踪更容易
+- 优势，帮助创建 pure components，变化时机 --> 确定重新渲染
+
+- 只有 render，不含 state，写成函数组件更简单
+
+  ```js
+  const NoStateComp = props => <div onClick={props.onClick}>{props.children}</div>
+  ```
+
+- React 元素 对象 一等公民 参数传递
+
+- 动态列表，指定 key，且 key 一般不要用数组索引
+
+- 组合，no 继承
+
+- 大型 webapp 首选
+
+- 组件划分原则，单一职责
+
+- 渲染 UI vs 添加交互
+
+    大量编码 vs 大量细节
+
+- prop vs state
+
+    构建静态版本时，不需要 state
+
+- 小型 vs 大型
+
+    自下而上 vs 自上而下
+
+state 需要定义的最少数据
+
+创建新上层组件理由，需要存放共同 state
+
+- class ==> hook
+  + 组件复用，抽象层嵌套地域
+  + 生命周期，不相关逻辑分散
+  + class this 理解难度大
+
+## useState
+use 设置对象或数组时替换， 有别于 class 合并
+
+除非需要替换更新的一类数据，否则都应该分开定义
+
+[Hooks FAQ – React](https://zh-hans.reactjs.org/docs/hooks-faq.html#should-i-use-one-or-many-state-variables)
+

@@ -1,6 +1,5 @@
 # 错误处理
 
-
 ## throw
 
 - 什么情况下用 throw，即不满足继续执行条件，继续执行没意义，只会显示更多无用错误，甚至可能是死循环
@@ -68,3 +67,7 @@ function divide(num1, num2) {
 `Sentry.captureMessage('Something went wrong');`
 
 Capturing Events - Docs https://docs.sentry.io/error-reporting/capturing/?platform=javascript
+
+## 错误模拟
+- dev tool block，忽略这种情况，意义不大
+- mock 500，这种常见，onError 能捕获到

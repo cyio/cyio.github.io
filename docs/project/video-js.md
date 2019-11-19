@@ -196,6 +196,7 @@ background: #000;
 收集信息：
 - 视频地址
 - 即时带宽
+
 [前端视频质量监控 | DaraW | Code is Poetry](https://blog.daraw.cn/2018/09/07/video-quality-monitor/)
 [十亿级视频播放技术优化揭密 - 踏雪无痕 SS - 博客园](https://www.cnblogs.com/chenpingzhao/p/6850595.html)
 
@@ -386,3 +387,19 @@ fmp4 可以结合 MSE 进行 HTML5 直播。
 [W3C Web 中文兴趣组媒体特别任务组研讨会 -- 2019年3月23日](https://www.w3.org/2019/03/23-chinese-web-media-summary.html#item05)
 > 我们不看瞬时速度，而是对最近请求的4-10个分片计算平均值
 [西瓜播放器 | API](https://h5player.bytedance.com/api/#getbufferedrange)
+
+播放本地视频，需要指定类型，blob 无法判断，不指定类型没有报错
+[javascript - How can I set preview of video file, selecting from input type='file' - Stack Overflow](https://stackoverflow.com/questions/36035721/how-can-i-set-preview-of-video-file-selecting-from-input-type-file/40580663)
+[Blob Url Support broke with 7.2.1 · Issue #5504 · videojs/video.js](https://github.com/videojs/video.js/issues/5504#issuecomment-481143136)
+
+## 如何监听交互事件
+如用户操作触发暂停
+
+pause 不行，跳转也会触发
+
+click，需要排除 dbclick，用户是在点击播放还是暂停
+
+[HTML Standard](https://html.spec.whatwg.org/multipage/media.html#the-video-element)
+
+## MIME
+"application/octet-stream" 例外 浏览器不会忽略

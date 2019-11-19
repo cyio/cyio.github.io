@@ -17,27 +17,10 @@ description:
 
 /* 定义一个走马灯动画 */
 
-@-webkit-keyframes marquee {
-    0% { left: 100%; }
-    50% { left: 0; }
-    100% { left: -100%; }
-}
-@-moz-keyframes marquee {
-    0% { left: 0; }
-    100% { left: -100%; }
-}
-@-ms-keyframes marquee {
-    0% { left: 0; }
-    100% { left: -100%; }
-}
-@-o-keyframes marquee {
-    0% { left: 0; }
-    100% { left: -100%; }
-}
 @keyframes marquee {
-    0% { left: 100%; }
-    50% { left: 0; }
-    100% { left: -100%; }
+  0% { left: 100%; }
+  50% { left: 0; }
+  100% { left: -100%; }
 }
 
 .marquee {
