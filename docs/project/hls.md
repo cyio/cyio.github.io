@@ -44,3 +44,42 @@ HLS，目前各手机浏览器产品对这种格式的兼容性最好，但它�
 [为什么使用flv.js做直播 · Issue #3 · gwuhaolin/blog](https://github.com/gwuhaolin/blog/issues/3)
 
 m3u8是一段一段加载，速度快，不会卡，体验好。    mp4 是一开始加载视频头文件，如果mp4变大，就会开始卡几秒。
+
+## 加密，用第 2 个
+```sh
+ffmpeg -v verbose \
+  -re \
+  -i aliyunmedia.mp4 \
+  -c:v libx264 \
+  -b:v 5000k \
+  -f hls \
+  -hls_time 6 \
+  -hls_list_size 4 \
+  -hls_wrap 40 \
+  -hls_delete_threshold 1 \
+  -hls_flags delete_segments \
+  -hls_start_number_source datetime \
+  -preset superfast \
+  -start_number 10 \
+  ./stream.m3u8
+
+ffmpeg \
+  -i ./source.mp4 \
+  -vcodec copy \
+  -acodec copy \
+  -vbsf h264_mp4toannexb \
+  -hls_time 12 \
+  -hls_key_info_file source.keyinfo \
+  -hls_playlist_type vod \
+  -hls_segment_filename "./output/stream_%d.ts" ./output/stream.m3u8
+```
+[How to Encrypt Video for HLS | HTTP Live Streaming](http://hlsbook.net/how-to-encrypt-hls-video-with-ffmpeg/)
+
+## 解密
+1. 修改 m3u8 里的 key uri 为本地路径。也可以把 ts 替换为完整路径，直接下载合并
+2. 
+```sh
+ffmpeg -allowed_extensions ALL -i stream.m3u8 -c copy new.mp4
+```
+可以直接修改留一个 ts 作解密测试
+

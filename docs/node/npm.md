@@ -80,7 +80,8 @@ tldr:
 - npm 使用版本大于 5.4.2
 - 维护者更新 lockfile，`npm install --package-lock-only`
 - 非维护者可用 yarn，修改包时，不要提交 lockfile，由维护者统一更新
-- lockfile 应尽量避免冲突
+- lockfile 应尽量避免冲突，建议由一个人维护，这样本地 npm 版本差异不是问题
+- 建议升下 npm，大家统一使用 5.10.x 或 6.x.x，这样生成的 lockfile 规则一致
 
 问题：`package.json`松散版本号，安装易变
 解决方案 yarn 引入 lockfile 锁死加 手动升级
@@ -143,4 +144,15 @@ lockfile 与 `package.json`依赖不匹配时，会报错，而不是更新 lock
     [Do you really know how a lockfile works for yarn and npm packages? | Snyk](https://snyk.io/blog/making-sense-of-package-lock-files-in-the-npm-ecosystem/)
     [How should you pin your npm dependencies and why? - The Guild - Medium](https://medium.com/the-guild/how-should-you-pin-your-npm-dependencies-and-why-2b8d545c7312)
 
+- lockfile version 规则 6.x 变了，混用 5.x 和 6.x 会生成不同规则的 lock file
+  npm install changes package-lock.json from exact versions to loosly versions · Issue #20434 · npm/npm https://github.com/npm/npm/issues/20434
+
 ## 语义化版本
+
+## npm windows unlink typescript 错误
+文件正在使用，无法访问
+- 关闭编辑器、安全软件
+- 删除缓存
+- 重启
+- 以管理员权限安装，不推荐
+

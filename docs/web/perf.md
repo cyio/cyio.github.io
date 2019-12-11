@@ -185,4 +185,23 @@ simulated 与 Applied 区别，不实际节流，推测值
 ## 信息流内容页“闪开”
 
 流程上在Webview列表初始化的时候进行详情页资源的预加载，同时针对视图内的信息流列表进行内容页的预渲染，从而在用户点击详情页的时候可以直接从内存中读出HTML，达到闪开的效果。
- 
+
+它将渲染的损耗分摊到了客户端，从而保证渲染不会受高流量访问的影响
+
+
+## 定位性能问题
+问题： 页面滚动不流畅
+1. 打开 console - `...` - rendering - Paint flashing
+2. 绿色块表示存在性能问题
+3. 反复移除内容，直到绿色块消失
+4. `fixed` 引起
+
+[Troubleshooting rendering performance issues - YouTube](https://www.youtube.com/watch?v=2vFrZXWiwIc)
+[css3 - CSS `will-change` - how to use it, how it works - Stack Overflow](https://stackoverflow.com/questions/26907265/css-will-change-how-to-use-it-how-it-works)
+
+## element-ui
+css vendor common 重合
+babel 配置隐式 import css
+改用 scss import，线开 js split 机制
+
+

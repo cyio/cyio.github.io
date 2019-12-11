@@ -621,8 +621,8 @@ set ma (modifiable) / set noma
 `ctrl-y`
 [Completion with sources · neoclide/coc.nvim Wiki](https://github.com/neoclide/coc.nvim/wiki/Completion-with-sources#improve-the-completion-experience)
 
-## Lint
-[Vim插件之ale - Awakenedy - 博客园](https://www.cnblogs.com/awakenedy/articles/9110610.html)
+指定类型使用，markdown 打字卡
+[Disable coc.nvim per filetype (i.e. a filetype whitelist or blacklist) · Issue #349 · neoclide/coc.nvim](https://github.com/neoclide/coc.nvim/issues/349#issuecomment-455332882)
 
 ## note plugin
 正面：
@@ -649,12 +649,34 @@ set ma (modifiable) / set noma
 
 查找，`#`后向匹配，`g*`非精确匹配
 
-## ts
+## typescript
 [Vim for JavaScript and React in 2019 | Vim From Scratch](https://www.vimfromscratch.com/articles/vim-for-javascript-and-react-in-2019/)
 
+| 按键      | 功能                   |
+|-----------|------------------------|
+| gd        | 跳转定义               |
+| gy        | 跳转类型定义           |
+| gi        | 跳转实现               |
+| gr        | 跳转引用               |
+| leader ac | 代码动作               |
+| leader a  | 可视模式，已选代码动作 |
+| leader qf | 修复当前               |
+| K         | 查看文档               |
+| c-j       | 插入模式，snip 展开    |
+
 ## 表格支持
-插件
-[dhruvasagar/vim-table-mode: VIM Table Mode for instant table creation.](https://github.com/dhruvasagar/vim-table-mode)
+`junegunn/vim-easy-align`
+> <leader>\ Align GitHub-flavored Markdown tables
+
+插件 [dhruvasagar/vim-table-mode: VIM Table Mode for instant table creation.](https://github.com/dhruvasagar/vim-table-mode)
+使用：`leadet tm` `insert ||`输入分割线
+
+支持 csv 转换 `leadet tt`
+```
+h,h,h
+||
+a,a,a
+```
 
 ```
 :[range]w !eslint --stdin

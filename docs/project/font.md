@@ -35,3 +35,6 @@
 - 多个字体合并为一个请求
 - 请求构成 css + font srcs，且往往不在同载事下，dns-prefetch, preconnect
 [Web技巧(12) - 知乎](https://zhuanlan.zhihu.com/p/71640685)
+- 设置`font-display: swap`，google 默认链接带了这个参数，第三方可能得手动加上，如 `https://fonts.font.im/css?family=Oswald&display=swap`
+
+  [`font-display` for the Masses | CSS-Tricks](https://css-tricks.com/font-display-masses/)

@@ -13,6 +13,10 @@
 ## postman
 - raw 是否要选 json
 - post 不同类型选择互斥 from|json
+- form-urlencoded 一般用来发送文本数据，而 form-data 发二进制数据
+- 工具一般默认 JSON
+- `queryString.stringify`，输出`name=hehe&age=10`
 
 > x-www-form-urlencoded vs multipart/form-data
 3) Both content types are used while sending form data as a POST request. 4) The x-www-form-urlencoded is used more generally to send text data to the server while multipart/form-data is used to send binary data, most notably for uploading files to the server.
+

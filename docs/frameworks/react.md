@@ -4,7 +4,9 @@
 
 - 名称含义：re hack html
 - 传统 web ，要更新一个状态，必须刷新整个页面，而重绘的伤害性体验，是传统 web 无法解决的
-  - 如何追踪变化？如何按需更新？
+
+  如何追踪变化？如何按需更新？
+
 - 组件化，解决协作，复用问题
 
   - VirtualDOM JS 版的 DOM ，高效渲染 DOM ，允许 diff ，允许服务端渲染
@@ -38,10 +40,12 @@ const c1 = props => <h1 {...props}>hello</h1>
 ## Issues
 
 - state 计算依赖，依赖值
+
   ```js
   this.setState({ counter: this.state.counter + 1 }) // won't update
   this.setState(previousState => ({ counter: previousState.counter + 1 }))
   ```
+
 - state 可作为 props 向下传递，props 按组件树向下传递，而 state 由组件单独管理和由函数冒泡改变
 
 ## 布局总结
@@ -195,6 +199,8 @@ handleClick = () => {
 state 每个组件私有
 当需要获取多个子组件数据，或两个组件需要相互通讯，state 提升到父组件
 受控组件
+> 受控”与“非受控”两个概念，区别在于这个组件的状态是否可以被外部修改。一个设计得当的组件应该同时支持“受控”与“非受控”两种形式，即当开发者不控制组件属性时，组件自己管理状态，而当开发者控制组件属性时，组件该由属性控制。而开发一个复杂组件更需要注意这点，以避免只有部分属性受控，使其变成一个半受控组件。
+[受控组件与非受控组件 · 语雀](https://www.yuque.com/ant-design/course/goozth)
 
 不可变数据：
 
@@ -238,10 +244,39 @@ state 需要定义的最少数据
   + 生命周期，不相关逻辑分散
   + class this 理解难度大
 
-## useState
+## hooks
+- Hooks 是一种在函数式组件内使用 state 逻辑，消除写 classes 的必要。
+- vue 可以结合 mixin 来写无状态的函数式组件。mixin 的缺点是无法消费或使用另一个 mixin。导致链式逻辑难以实现。
+- 更清晰定义和共享逻辑、传递state
+
+[Hooks are coming to Vue.js version 3.0 - LogRocket Blog](https://blog.logrocket.com/hooks-are-coming-to-vue/)
+### useState
 use 设置对象或数组时替换， 有别于 class 合并
 
 除非需要替换更新的一类数据，否则都应该分开定义
 
 [Hooks FAQ – React](https://zh-hans.reactjs.org/docs/hooks-faq.html#should-i-use-one-or-many-state-variables)
+[React Class features vs. Hooks equivalents • Soluto Engineering Blog](https://blog.solutotlv.com/react-class-to-hooks/)
+[无意识设计-复盘React Hook的创造过程 · Issue #4 · shanggqm/blog](https://github.com/shanggqm/blog/issues/4)
+
+- 调用限制：
+  - 只在 top level 调用 Hooks，而不能在循环、条件或嵌套函数中使用
+
+  - 只在 React 函数组件或自定义 Hooks 中调用，而不能在普通 JS 函数中
+
+- useState里数据务必为immutable
+```
+        // bad 这样无法触发更新
+        setList(list.sort((a, b) => a - b));
+        // good 必须传入一个新的对象
+        setList(list.slice().sort((a, b) => a - b));
+```
+
+### useEffect
+- async 要用 IIFE 包起来
+- 组件渲染后执行，不阻塞绘制。`componentDidMount` and `componentDidUpdate`是同步
+[react hooks踩坑记录 | Code for fun](https://frezc.github.io/2019/03/23/react-hooks-traps/)
+- 什么情况下不用？操作 DOM 且每次渲染不一样，DOM 更新后又触发 effect。用户会看到界面闪烁，只有这一种情况需要使用`useLayoutEffect`，执行在dom 更新后，绘制前
+
+[useEffect vs useLayoutEffect](https://kentcdodds.com/blog/useeffect-vs-uselayouteffect)
 

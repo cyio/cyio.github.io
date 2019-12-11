@@ -143,3 +143,4 @@ Chrome 51+，不支持 IE，兼容性很好
 - 文件 Giziped 95KB
 
 [chase-moskal/webp-hero: browser polyfill for the webp image format](https://github.com/chase-moskal/webp-hero)
+[Essential Image Optimization](https://images.guide/)

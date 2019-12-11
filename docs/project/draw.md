@@ -7,7 +7,8 @@
 > 流程图这方面我们研发部内部也做了讨论，最终决定需要用流程图来表述一些复杂、关键的状态转换。几个理由：1. 有些需要讨论采用哪种技术方案，避免走冤枉路。用流程图方便项目经理、程序员、市场经理三方共同讨论。这种流程图是粗线条的式的。2. 部分复杂、影响系统稳健性的逻辑，程序员需要画出流程，避免漏洞。编写、审核代码就有了依据。3. N年后再修改代码，有个流程图便于快速回忆主体逻辑。4. 代码移交。 当然流程图不能解决所有问题，有些不方便用流程图表述的，用文字、伪代码、波形图等手段。
 
 ## 时序图
-[WebSequenceDiagrams - Draw UML sequence diagrams online in seconds](https://www.websequencediagrams.com/)
+- 不是太好用 [WebSequenceDiagrams - Draw UML sequence diagrams online in seconds](https://www.websequencediagrams.com/)
+- mermaid typora
 
 ## 工具
 Access-Control-Allow-Origin 
@@ -26,3 +27,4 @@ mermaid 自己看没问题，有些问题需要规避
 [Online FlowChart & Diagrams Editor - Mermaid Live Editor](https://mermaidjs.github.io/mermaid-live-editor/#/edit/eyJjb2RlIjoiZ3JhcGggVERcbkFbQ2hyaXN0bWFzXSAtLT58R2V0IG1vbmV5fCBCKEdvIHNob3BwaW5nKVxuQiAtLT4gQ3tMZXQgbWUgdGhpbmt9XG5DIC0tPnxPbmV8IERbTGFwdG9wXVxuQyAtLT58VHdvfCBFW2lQaG9uZV1cbkMgLS0-fFRocmVlfCBGW2ZhOmZhLWNhciBDYXJdXG4iLCJtZXJtYWlkIjp7InRoZW1lIjoiZGVmYXVsdCJ9fQ)
 [Markdown 流程图 flowchart.js - JavaScript - 123si 博客](https://www.123si.org/javascript/article/markdown-flow-chart-flowchart-js/)
 
+带拼写提示，[Chart Mage - Draw sequence diagrams and flowcharts at lightning speed.](http://chartmage.com/index.html)

@@ -536,3 +536,7 @@ brew install interactive-rebase-tool
 ```
 [Git Interactive Rebase, Squash, Amend and Other Ways of Rewriting History](https://thoughtbot.com/blog/git-interactive-rebase-squash-amend-rewriting-history)
 [gold-miner/keeping-git-commit-history-clean.md at master · xitu/gold-miner](https://github.com/xitu/gold-miner/blob/master/TODO1/keeping-git-commit-history-clean.md)
+
+## filemode change
+[git gui - How do I remove files saying "old mode 100755 new mode 100644" from unstaged changes in Git? - Stack Overflow](https://stackoverflow.com/a/44866012/5657916)
+

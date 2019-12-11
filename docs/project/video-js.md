@@ -67,7 +67,9 @@ flv 需要引入
   }
   ```
   需要找直播流测试？本地如何模拟 livego + ffmpeg
+
   `ffmpeg -re -i aliyunmedia.mp4 -c copy -f flv rtmp://localhost/live/test`
+  播放`http://localhost:7001/live/test.flv`
 
   [video.js/player.js at f5fd94f61012af2269a5528746c7d62a7b435467 · videojs/video.js](https://github.com/videojs/video.js/blob/f5fd94f61012af2269a5528746c7d62a7b435467/src/js/player.js#L2485)
   [video.js / live.md at 6c644feaa0ccef6e5e88e8bf45dc9caa82a94503·videojs / video.js](https://github.com/videojs/video.js/blob/6c644feaa0ccef6e5e88e8bf45dc9caa82a94503/docs/guides/live.md#the-new-user-interface)
@@ -373,12 +375,16 @@ ffmpeg -i input.mkv -c copy -c:v libx264 -vf scale=-2:720 output.mkv
 [How does YouTube detect connection speed without testing/using all speeds? - Web Applications Stack Exchange](https://webapps.stackexchange.com/questions/106358/how-does-youtube-detect-connection-speed-without-testing-using-all-speeds)
 [How to detect internet speed in JavaScript? - Stack Overflow](https://stackoverflow.com/questions/5529718/how-to-detect-internet-speed-in-javascript)
 
-dash 第一个国际标准
-hls 非标准，chrome 移动端支持，pc 端可能永远不会支持
+DASH 第一个国际标准
+
+HLS 不是标准，chrome 移动端支持，pc 端可能永远不会支持
 > DASH客户端可以根据当前的网络状况，自动选择对应的最匹配的比特率文件段下载，进行回放，而不会引起停顿或重新缓冲。这样，DASH客户端可以无缝地适应不断变化的网络条件，并提供高品质的播放，而能够尽量减少播放的停顿或缓冲。
 > 虽然DASH是国际标准，但是 HLS 出现的更早，在业界占主流。
+
 [权利的游戏、破冰行动都烂尾了，那就来讨论一下视频点播吧 - 掘金](https://juejin.im/post/5d0892a0e51d455a694f9533)
+
 [我们为什么使用DASH - 哔哩哔哩](https://www.bilibili.com/read/cv855111/)
+
 > HTMLVideoElement.getVideoPlaybackQuality() 中新增firstFrameTime（首帧时间）和bufferTimes（卡顿次数）以及希望获取总共可使用 MSE 的内存上限
 
 fmp4 不需要一个 moov Box 来进行 initialization，fmp4 的 moov Box 只包含了一些 track 信息。
@@ -386,6 +392,7 @@ fmp4 可以结合 MSE 进行 HTML5 直播。
 
 [W3C Web 中文兴趣组媒体特别任务组研讨会 -- 2019年3月23日](https://www.w3.org/2019/03/23-chinese-web-media-summary.html#item05)
 > 我们不看瞬时速度，而是对最近请求的4-10个分片计算平均值
+
 [西瓜播放器 | API](https://h5player.bytedance.com/api/#getbufferedrange)
 
 播放本地视频，需要指定类型，blob 无法判断，不指定类型没有报错
@@ -403,3 +410,11 @@ click，需要排除 dbclick，用户是在点击播放还是暂停
 
 ## MIME
 "application/octet-stream" 例外 浏览器不会忽略
+
+## 获取远程视频文件大小
+
+- 额外发`HEAD`请求，获取`content-length`
+- 需要服务器支持`HEAD`方法，需要支持CORS（可能是多个域名）。目前阿里 OSS 可以配多个、支持通配符，而 CDN 只支持配一个、精确
+
+[Determine file size in JavaScript without downloading a file](https://bitexperts.com/Question/Detail/3316/determine-file-size-in-javascript-without-downloading-a-file)
+
