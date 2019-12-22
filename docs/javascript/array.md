@@ -88,8 +88,9 @@ Array.from(arrayLike)
 `array.reduce(处理函数(累加值，当前值)，初始值)`
 
 - 每 reduce 一次，把累加值和当前值作为参数传入处理函数
-- 初始值可选，没有时使用数组的第一个值
+- 初始值可选，没有时使用数组的第一个值作为初始值，并从第二个值开始累加
 - 替代`filter`加`map`，filter 可以在 reduce 中用 if 替代
+- 不好想，最直观把每次运算写下来
 
   ```js
   // values 表示剩余参数，由第一个参数外的的值构成的数组
@@ -110,6 +111,12 @@ Array.from(arrayLike)
   // 2. reduce
   let total = nums.reduce((pre, cur) => pre + cur)
   ```
+  ```js
+  var x = [];
+  [3,2,1].reduce(i => x.push(i))
+  console.log(x)
+  ```
+[Array methods](https://javascript.info/array-methods)
 
 ## 迭代方法
 

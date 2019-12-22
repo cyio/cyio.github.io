@@ -8,8 +8,8 @@
 
 ## cheatsheet
 
-| 功能                | 按键       |
-| ------------------- | ---------- |
+| 功能                | 按键      |
+| ------------------- | --------- |
 | 设置文件类型为 JS   | leader pj |
 | 设置文件类型为 none | leader pn |
 | 设置文件类型为 vue  | Leader pv |
@@ -220,6 +220,17 @@ y 是添加包围符的动作，注意空格打两个
 - `gt`
 - `num g t`切换到某个标签页
 - `ctrl-w shift-t`移动当前窗口到新标签页，替代方法`:tabedit %<cr>`
+
+1. Eight buffers open in eight tab pages (wrong)
+2. Two tabs for two specific tasks (right)
+
+缺点：无法模糊匹配跳转，超过 8 个就挤了
+
+tab 少用？有别于传统编辑器
+window 比较、参考
+buffer 可以开很多，不关心空间安排
+
+[vi - Why do Vim experts prefer buffers over tabs? - Stack Overflow](https://stackoverflow.com/questions/26708822/why-do-vim-experts-prefer-buffers-over-tabs/26710166#26710166)
 
 ### 窗口管理
 
@@ -488,13 +499,13 @@ d} 删除直到空行
 
 ### 缓冲区 buffers （对应浏览器中的标签页）
 
-`:ls` 列出缓冲区文件列表
-`:b keyword<TAB>` 关键字 tab 补全/或编号，快速定位打开缓冲区中的文件
-`:sb keyword<TAB>` 分屏打开文件
-`bn/bp` 上一个/下一个
-` <C-^>``:e # ` 来回切换，然后切换回原目录`:cd -`
-`leader cd` 切换工作目录为当前文件所在目录
-`:b some-unique-part-of-the-file-path` 在文件间快速跳转
+- `:ls` 列出缓冲区文件列表
+- `:b keyword<TAB>` 关键字 tab 补全/或编号，快速定位打开缓冲区中的文件
+- `:sb keyword<TAB>` 分屏打开文件，保持了固定顺序，也可`sbfirst`
+- `bn/bp` 上一个/下一个
+- ` <C-^>``:e # ` 来回切换，然后切换回原目录`:cd -`
+- `leader cd` 切换工作目录为当前文件所在目录
+- `:b some-unique-part-of-the-file-path` 在文件间快速跳转
 
 ### 忽略已记录文件
 
@@ -611,9 +622,11 @@ set ma (modifiable) / set noma
 不匹配都删掉`:g!/pattern/d`
 
 ## 插件的原生替代
+
 [Recommendations - #vim on freenode](https://www.vi-improved.org/recommendations/)
 
 ## coc
+
 [A guide to modern Web Development with (Neo)vim – freeCodeCamp.org](https://medium.freecodecamp.org/a-guide-to-modern-web-development-with-neo-vim-333f7efbf8e2)
 [jarvis/init.vim at master · ctaylo21/jarvis](https://github.com/ctaylo21/jarvis/blob/master/config/nvim/init.vim)
 
@@ -624,36 +637,50 @@ set ma (modifiable) / set noma
 指定类型使用，markdown 打字卡
 [Disable coc.nvim per filetype (i.e. a filetype whitelist or blacklist) · Issue #349 · neoclide/coc.nvim](https://github.com/neoclide/coc.nvim/issues/349#issuecomment-455332882)
 
+```
+" Remap for rename current word
+nmap <F2> <Plug>(coc-rename)
+```
+
+[init.vim](https://gist.github.com/benawad/b768f5a5bbd92c8baabd363b7e79786f#file-init-vim-L178)
+
+:CocInstall coc-explorer
+
 ## note plugin
+
 正面：
+
 - 方便导航
 - 思维导图形象，但搜索差，不宜保存长久笔记
 - 设置多个 wiki
+
 ```
 = My knowledge base =
     * [Tasks](Tasks) -- things to be done _yesterday_!!!
     * Project Gutenberg -- good books are power.
     * Scratchpad -- various temporary stuff.
 ```
+
 [How does vimwiki compare to emac's org mode? : vim](https://www.reddit.com/r/vim/comments/6bl4al/how_does_vimwiki_compare_to_emacs_org_mode/dhnn3i6?utm_source=share&utm_medium=web2x)
 [vimwiki cheatsheet](http://thedarnedestthing.com/vimwiki%2520cheatsheet)
 [How I Take Notes With Vim, Markdown, and Pandoc - things james does](https://jamesbvaughan.com/markdown-pandoc-notes/)
 [将 vim 作为日常笔记本使用 – VOID001's WOWO](https://void-shana.moe/linux/zh-taking-notes-with-vim.html)
 
 反面观点：认为不需要 vimwiki
-- 链接跳转用`gf`
-- `grep -Ri todo . > todos` 
-- 日志不方便
-[Joe Reynolds Audio](http://joereynoldsaudio.com/2018/07/07/you-dont-need-vimwiki.html)
 
+- 链接跳转用`gf`
+- `grep -Ri todo . > todos`
+- 日志不方便
+  [Joe Reynolds Audio](http://joereynoldsaudio.com/2018/07/07/you-dont-need-vimwiki.html)
 
 查找，`#`后向匹配，`g*`非精确匹配
 
 ## typescript
+
 [Vim for JavaScript and React in 2019 | Vim From Scratch](https://www.vimfromscratch.com/articles/vim-for-javascript-and-react-in-2019/)
 
 | 按键      | 功能                   |
-|-----------|------------------------|
+| --------- | ---------------------- |
 | gd        | 跳转定义               |
 | gy        | 跳转类型定义           |
 | gi        | 跳转实现               |
@@ -665,13 +692,16 @@ set ma (modifiable) / set noma
 | c-j       | 插入模式，snip 展开    |
 
 ## 表格支持
+
 `junegunn/vim-easy-align`
+
 > <leader>\ Align GitHub-flavored Markdown tables
 
 插件 [dhruvasagar/vim-table-mode: VIM Table Mode for instant table creation.](https://github.com/dhruvasagar/vim-table-mode)
 使用：`leadet tm` `insert ||`输入分割线
 
 支持 csv 转换 `leadet tt`
+
 ```
 h,h,h
 ||
@@ -681,3 +711,54 @@ a,a,a
 ```
 :[range]w !eslint --stdin
 ```
+
+## path
+
+`set path?` 查看
+`set path+=path/to/include`
+`set path=.,front/src/js/`
+
+`gF` 跳转到行
+
+vim-rest-console
+
+## vimscript
+
+- 每天使用的命令就是，进一步学习可增强
+- 评价不高，出了 vim 就没用，复杂逻辑运行慢，重绘
+
+[VimScript 五分钟入门（翻译） - 知乎](https://zhuanlan.zhihu.com/p/37352209)
+[tpope/vim-scriptease: scriptease.vim: A Vim plugin for Vim plugins](https://github.com/tpope/vim-scriptease)
+
+`exe 'cd ' expand('%:p:h')` 进入当前文件所在目录
+
+## 翻译
+
+`:Translate -w test`
+
+[VIM 插件推荐 - 知乎](https://zhuanlan.zhihu.com/p/58816186)
+
+## 性能
+
+- 停用 相对行数 功能，每次要重绘
+- 容易带来渲染问题的插件、设置
+  [](https://stefan.magnuson.co/posts/2019-04-15-improving-vim-neovim-rendering-performance/)
+
+[Slow Syntax Highlighting in Vim · Marcus Mu](https://www.chunkhang.com/blog/slow-syntax-highlighting-in-vim)
+
+## nvim
+
+- init, python3 module, restart 迁移比较简单
+
+`/`搜索时按下`c-f`，可显示搜索历史
+
+`:10sp ~/.zshrc`
+
+- 一些操作比 vim 快，如 source
+- vimagit commit slow
+
+## fugitive
+为什么用，命令行 git blame 需要记住文件名、行数
+Gmove 处理了 buffer，避免返回时修改原文件
+完整实现
+[The Fugitive Series - a retrospective](http://vimcasts.org/blog/2011/05/the-fugitive-series/)

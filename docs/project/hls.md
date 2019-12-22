@@ -47,6 +47,7 @@ m3u8是一段一段加载，速度快，不会卡，体验好。    mp4 是一�
 
 ## 加密，用第 2 个
 ```sh
+// 带压缩
 ffmpeg -v verbose \
   -re \
   -i aliyunmedia.mp4 \
@@ -72,8 +73,12 @@ ffmpeg \
   -hls_key_info_file source.keyinfo \
   -hls_playlist_type vod \
   -hls_segment_filename "./output/stream_%d.ts" ./output/stream.m3u8
+
+-hls_time 分片时长，苹果推荐 10
+-hls_key_info_file 加密配置
 ```
 [How to Encrypt Video for HLS | HTTP Live Streaming](http://hlsbook.net/how-to-encrypt-hls-video-with-ffmpeg/)
+[参数详解 - FFmpeg Formats Documentation](https://ffmpeg.org/ffmpeg-formats.html)
 
 ## 解密
 1. 修改 m3u8 里的 key uri 为本地路径。也可以把 ts 替换为完整路径，直接下载合并

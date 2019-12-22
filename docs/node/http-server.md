@@ -24,3 +24,5 @@ server.on('error', e => {
 ```
 
 - [HTTP 传输解析 | Node.js](https://nodejs.org/zh-cn/docs/guides/anatomy-of-an-http-transaction/)
+
+`npx live-server`

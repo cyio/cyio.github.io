@@ -90,3 +90,16 @@ liteserver 基于 browser-sync
 - tcp 是传输层，http 是跑在 tcp 上的应用层协议
 
 [HTTP/3 的过去、现在和未来-InfoQ](https://www.infoq.cn/article/x80uOvcRyxVYw3KVusUm)
+
+## dns
+1. 浏览器 cache
+2. 操作系统 cache
+3. 路由器 cache
+4. ISP 网络运营商 cache - 以上递归查询 - dns 服务器
+5. root - 以下 迭代查询
+6. 域
+7. 权威解析服务器 - 返回 IP
+
+流程：解析-请求-渲染
+
+[DNS 递归/迭代 原理 - kevin.Xiang - 博客园](https://www.cnblogs.com/xiangsikai/p/8438601.html)

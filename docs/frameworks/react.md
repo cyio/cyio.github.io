@@ -250,6 +250,8 @@ state 需要定义的最少数据
 - 更清晰定义和共享逻辑、传递state
 
 [Hooks are coming to Vue.js version 3.0 - LogRocket Blog](https://blog.logrocket.com/hooks-are-coming-to-vue/)
+[useHooks~小窍门 - 知乎](https://zhuanlan.zhihu.com/p/66170210)
+
 ### useState
 use 设置对象或数组时替换， 有别于 class 合并
 
@@ -280,3 +282,12 @@ use 设置对象或数组时替换， 有别于 class 合并
 
 [useEffect vs useLayoutEffect](https://kentcdodds.com/blog/useeffect-vs-uselayouteffect)
 
+Fragment 相当于 vue 的 template
+
+加空格方式 `{' '}`
+
+setState 更新回调
+1. componentDidUpdate
+2. `setState(updater, callback)`
+
+render return 里可直接定义变量`const ChapterName = <h2>{chapterName}</h2>;`
