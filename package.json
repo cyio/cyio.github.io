@@ -1,5 +1,6 @@
 {
   "scripts": {
+    "start": "npm run docs:dev",
     "docs:dev": "vuepress dev docs --port 8090",
     "docs:build": "vuepress build docs"
   },
