@@ -34,7 +34,7 @@ names.toString()
 
 ## 删除
 
-`pop() shift()`
+`shift pop` 转移，取出，分别删除并返回数组的第一个和最后一个元素。数组为空时不操作，返回 undifined
 
 ## 中间插入
 
@@ -55,11 +55,6 @@ nums.splice(3, 0, 4, 5, 6) // print 1, 2, 3, 4, 5, 6 ...
 
 'firefox'.replace('re', '$`') // "fififox"
 ```
-
-## 移除
-
-`shift pop` 转移，取出，分别删除并返回数组的第一个和最后一个元素。数组为空时不操作，返回 undifined
-`unshift/shift [ ] push/pop`
 
 ## 类数组转换
 
@@ -83,14 +78,15 @@ Array.from(arrayLike)
 [A Pen by Wes Bos](http://codepen.io/wesbos/pen/zrLjYq)
 [Ditch the [].forEach.call(NodeList) hack](https://toddmotto.com/ditch-the-array-foreach-call-nodelist-hack/)
 
-## 分解处理
+## 分解处理（归并）
 
 `array.reduce(处理函数(累加值，当前值)，初始值)`
 
-- 每 reduce 一次，把累加值和当前值作为参数传入处理函数
-- 初始值可选，没有时使用数组的第一个值作为初始值，并从第二个值开始累加
-- 替代`filter`加`map`，filter 可以在 reduce 中用 if 替代
+- 每`reduce`一次，把累加值和当前值作为参数传入处理函数
+- 初始值可选，没有时使用数组的第一个值作为初始值，并从第二个值开始累加。**即从第二位开始累加**
+- 替代`filter`加`map`，`filter`可以在`reduce`中用`if`替代
 - 不好想，最直观把每次运算写下来
+- 适用限于关联运算，如`+``*`，其它用途有不明确参数、隐式意图等问题
 
   ```js
   // values 表示剩余参数，由第一个参数外的的值构成的数组
@@ -111,12 +107,16 @@ Array.from(arrayLike)
   // 2. reduce
   let total = nums.reduce((pre, cur) => pre + cur)
   ```
+
   ```js
   var x = [];
   [3,2,1].reduce(i => x.push(i))
   console.log(x)
   ```
+  注意问的是 x，不是 reduce 结果。注意 push 返回的是 length
+
 [Array methods](https://javascript.info/array-methods)
+[The fate of reduce() in Python 3000](https://www.artima.com/weblogs/viewpost.jsp?thread=98196)
 
 ## 迭代方法
 

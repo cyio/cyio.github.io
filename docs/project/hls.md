@@ -88,3 +88,9 @@ ffmpeg -allowed_extensions ALL -i stream.m3u8 -c copy new.mp4
 ```
 可以直接修改留一个 ts 作解密测试
 
+## videojs 每次请求 key
+可防止 key 失效，新版本支持手动控制，开发者自行处理缓存控制
+
+https://github.com/videojs/http-streaming#cacheencryptionkeys
+[While doing HLS AES 128 playback, the player request key file for every chunk. · Issue #367 · videojs/http-streaming](https://github.com/videojs/http-streaming/issues/367#issuecomment-482603212)
+

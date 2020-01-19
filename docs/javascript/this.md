@@ -41,3 +41,9 @@
 
 结论：箭头函数和 function 要配合使用，无法完全弃用 function
 [A different way of understanding `this` in JavaScript](http://2ality.com/2017/12/alternate-this.html)
+
+[函数 · TypeScript中文网 · TypeScript——JavaScript的超集](https://www.tslang.cn/docs/handbook/functions.html)
+参看 this和箭头函数 一节，有助理解
+> this的值在函数被调用的时候才会指定
+> 顶级的非方法式调用会将 this视为window
+

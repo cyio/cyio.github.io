@@ -41,8 +41,20 @@ LayoutNG - Chromium项目 https://www.chromium.org/blink/layoutng
 [Chromium Blog: No More Mixed Messages About HTTPS](https://blog.chromium.org/2019/10/no-more-mixed-messages-about-https.html)
 建议立即检查迁移
 
-
 ## SameSite
 - 要求显式标记跨站设置
 
 [SameSite cookies explained](https://web.dev/samesite-cookies-explained/)
+
+## crash
+log 位置
+https://stackoverflow.com/a/22814349/5657916
+[解决内存问题  |  Tools for Web Developers  |  Google Developers](https://developers.google.com/web/tools/chrome-devtools/memory-problems)
+
+
+79 crash
+Chrome.exe --disable-features=RendererCodeIntegrity
+[Aw, Snap! Crashes Following Chrome M78 & M79 Updates - Google Chrome Help](https://support.google.com/chrome/thread/17555930?hl=en)
+
+
+

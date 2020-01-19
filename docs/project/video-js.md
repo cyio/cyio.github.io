@@ -418,3 +418,9 @@ click，需要排除 dbclick，用户是在点击播放还是暂停
 
 [Determine file size in JavaScript without downloading a file](https://bitexperts.com/Question/Detail/3316/determine-file-size-in-javascript-without-downloading-a-file)
 
+```
+    // not work 如何延迟设置自动隐藏
+    // player.on('loadeddata', function() {
+    // this.options.inactivityTimeout = 2000
+    // })
+```

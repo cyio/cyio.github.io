@@ -204,4 +204,4 @@ css vendor common 重合
 babel 配置隐式 import css
 改用 scss import，线开 js split 机制
 
-
+[Front-End Performance Checklist 2020 [PDF, Apple Pages, MS Word] — Smashing Magazine](https://www.smashingmagazine.com/2020/01/front-end-performance-checklist-2020-pdf-pages/)

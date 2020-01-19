@@ -291,3 +291,11 @@ setState 更新回调
 2. `setState(updater, callback)`
 
 render return 里可直接定义变量`const ChapterName = <h2>{chapterName}</h2>;`
+
+## 生命周期
+### componentDidUpdate
+- 组件更新后立即调用，首次渲染不调用
+- 用于网络请求导致 props 变化等
+- 注意，执行操作要有条件，避免死循环
+
+

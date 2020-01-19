@@ -63,3 +63,7 @@ Serverless 的适用场景
 [【腾讯云Serverless】使用云函数快速打造一个智障微信公众号自动回复机器人 - 云+社区 - 腾讯云](https://cloud.tencent.com/developer/article/1493846)
 - 必须用同步写法，才能返回？
 
+## 不适合场景
+- api 需要长期调用
+- 需要访问境外？
+

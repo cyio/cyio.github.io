@@ -54,6 +54,10 @@
 
 `$ git revert commitID`
 
+revert a merge 需要让 git 知道保留哪个父主线
+[github - Why does git revert complain about a missing -m option? - Stack Overflow](https://stackoverflow.com/questions/5970889/why-does-git-revert-complain-about-a-missing-m-option/5971033#5971033)
+
+
 ## diff
 
 ```sh
@@ -540,3 +544,8 @@ brew install interactive-rebase-tool
 ## filemode change
 [git gui - How do I remove files saying "old mode 100755 new mode 100644" from unstaged changes in Git? - Stack Overflow](https://stackoverflow.com/a/44866012/5657916)
 
+## unadd
+将改动从 index 移除
+`git reset <file>` or `git reset`
+
+## hooks

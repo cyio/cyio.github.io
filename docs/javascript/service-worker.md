@@ -5,3 +5,4 @@
 - service-worker 是基于 web-worker，主要处理网络请求相关
 
 [ServiceWorker Cookbook](https://serviceworke.rs/)
+[Smaller HTML Payloads with Service Workers — Philip Walton](https://philipwalton.com/articles/smaller-html-payloads-with-service-workers/)
