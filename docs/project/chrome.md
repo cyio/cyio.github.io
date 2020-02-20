@@ -56,5 +56,20 @@ https://stackoverflow.com/a/22814349/5657916
 Chrome.exe --disable-features=RendererCodeIntegrity
 [Aw, Snap! Crashes Following Chrome M78 & M79 Updates - Google Chrome Help](https://support.google.com/chrome/thread/17555930?hl=en)
 
+## 自动播放策略
 
+分析行为，媒体参与度，网站得分越高，自动播放的机会越高
 
+如果没有浏览记录，1. 最流行网站
+
+个性化
+
+> Chrome does this by learning your preferences. If you don’t have browsing history, Chrome allows autoplay for over 1,000 sites where we see that the highest percentage of visitors play media with sound. As you browse the web, that list changes as Chrome learns and enables autoplay on sites where you play media with sound during most of your visits, and disables it on sites where you don’t. This way, Chrome gives you a personalized, predictable browsing experience.
+
+[Improving Autoplay in Chrome](https://blog.google/products/chrome/improving-autoplay-chrome/)
+[Chrome's Autoplay Policy: what you need to know](https://www.theoplayer.com/blog/chrome-autoplay-policy-what-you-need-to-know)
+
+chrome://media-engagement/
+score 一栏
+
+catch 然后 mute play？

@@ -96,6 +96,12 @@ git diff | gitx
 
 `git stash, then git stash pop/apply`
 
+```
+git stash save "my_stash"
+git stash list
+git stash apply stash@{n}
+```
+
 ## 查找提交记录
 
 `$ git log -S KEYWORD`

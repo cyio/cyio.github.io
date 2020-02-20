@@ -52,7 +52,8 @@ function tmp(...args) {
 tmp(1, 2)
 ```
 
-## 防抖和节流 debounce/throttle
+## 防抖和节流
+> debounce/throttle
 
 都是为了限制一定时间内执行频率，一般用于减少用户输入引起的函数调用次数
 

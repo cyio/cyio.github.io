@@ -126,6 +126,7 @@
 ### 补全
 
 文件名补全不能对大小写进行模糊匹配
+
 直接按`<c-n><c-p>`，而不是先按`<c-x>`，匹配范围不限于当前文件
 
 ### 临时设置缩进
@@ -167,9 +168,10 @@ zt // 将光标所在行放置到屏幕项端
 ### z 命令
 
 - `zz`将当前行放到屏幕中间
-- `za zo`折叠展开
-- 折叠最佳实践：
-- `zM za`
+
+### 折叠
+- `za zi`折叠展开或关闭，最常用
+- `zj zk`跳转
 - 指定折叠`{{{1`
 
 ### 把当前单词插入到命令行
@@ -522,19 +524,17 @@ vim-rest-console
 
 ## vimdiff cheat sheet
 
-```
-vimdiff leftFile rightFile
-]c :        - next difference
-[c :        - previous difference
-do          - diff obtain
-dp          - diff put
-zo          - open folded text
-zc          - close folded text
-:diffupdate - re-scan the files for differences
-:diffget //2
-:diffget //3
-:only
-:qa!
-:wqa
-```
+    vimdiff leftFile rightFile
+    ]c :        - next difference
+    [c :        - previous difference
+    do          - diff obtain
+    dp          - diff put
+    zo          - open folded text
+    zc          - close folded text
+    :diffupdate - re-scan the files for differences
+    :diffget //2
+    :diffget //3
+    :only
+    :qa!
+    :wqa
 

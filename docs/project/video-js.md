@@ -1,5 +1,7 @@
 # videojs
 
+[video.js/player-workflows.md at master · videojs/video.js · GitHub](https://github.com/videojs/video.js/blob/master/docs/guides/player-workflows.md#accesing-the-tech-on-the-player)
+
 ## 1. 内联播放
 
 在 video 标签加 webkit-playsinline, webkit-playsinline(iOS10) 属性 或者 webview.allowsInlineMediaPlayback = YES
@@ -402,11 +404,17 @@ fmp4 可以结合 MSE 进行 HTML5 直播。
 ## 如何监听交互事件
 如用户操作触发暂停
 
-pause 不行，跳转也会触发
+pause 有问题，跳转也会触发，但可通过 readyState 区分开，4 是用户操作，1 是 seek 或加载时的用户操作
+
+[html - HTML5 video fires pause event while seeked - Stack Overflow](https://stackoverflow.com/questions/40584563/html5-video-fires-pause-event-while-seeked)
 
 click，需要排除 dbclick，用户是在点击播放还是暂停
 
 [HTML Standard](https://html.spec.whatwg.org/multipage/media.html#the-video-element)
+
+![image.png](https://ws1.sinaimg.cn/large/4e5d3ea7ly1gb33uahrhvj20am08ct9n.jpg)
+
+监听交互事件可能更容易，缺点是如果通过快捷键跳转可能需要单独判断
 
 ## MIME
 "application/octet-stream" 例外 浏览器不会忽略

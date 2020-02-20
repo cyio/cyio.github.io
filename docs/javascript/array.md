@@ -28,6 +28,12 @@ names.toString()
 `concat`合并多个数组创建为一个新数组
 `splice`截取一个数组的子集创建一个新数组（有副作用，不推荐）
 
+push 把数组参数当作单个元素追加，并返回 length，而 concat 是分别追加，返回新数组，不改变原数组。
+```js
+arr.push([1, 2])
+arr.concat([1, 2])
+```
+
 ## 添加
 
 `push() unshift()`
@@ -86,7 +92,7 @@ Array.from(arrayLike)
 - 初始值可选，没有时使用数组的第一个值作为初始值，并从第二个值开始累加。**即从第二位开始累加**
 - 替代`filter`加`map`，`filter`可以在`reduce`中用`if`替代
 - 不好想，最直观把每次运算写下来
-- 适用限于关联运算，如`+``*`，其它用途有不明确参数、隐式意图等问题
+- 适用限于关联运算，如` +``* `，其它用途有不明确参数、隐式意图等问题
 
   ```js
   // values 表示剩余参数，由第一个参数外的的值构成的数组
@@ -109,10 +115,11 @@ Array.from(arrayLike)
   ```
 
   ```js
-  var x = [];
-  [3,2,1].reduce(i => x.push(i))
+  var x = []
+  ;[3, 2, 1].reduce(i => x.push(i))
   console.log(x)
   ```
+
   注意问的是 x，不是 reduce 结果。注意 push 返回的是 length
 
 [Array methods](https://javascript.info/array-methods)
@@ -275,17 +282,18 @@ const copy8 = Object.assign([], names)
 
 ```js
 // 生成 6 - 24，v 初始值是 undefined
-Array.from({length: 19}, (v, i) => i + 6);
+Array.from({ length: 19 }, (v, i) => i + 6)
 ```
 
 ## 移动元素位置
+
 ```js
 let arr = [1, 2, 3, 4]
 
 function move(arr, oldIndex, newIndex) {
   arr = [...arr] // 不改变原数组
   const newValue = arr[newIndex]
-  const [ oldValue ] = arr.splice(oldIndex, 1)
+  const [oldValue] = arr.splice(oldIndex, 1)
   arr[newIndex - 1] = oldValue
   arr.splice(newIndex - 1, 0, newValue)
   return arr
@@ -295,5 +303,6 @@ console.log(arr)
 ```
 
 ## 跳出循环
+
 - 代码简短，用 for 配 break
 - 代码较长，建议定义变量标记

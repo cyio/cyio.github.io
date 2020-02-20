@@ -6,7 +6,7 @@
 
   > 理解 DOM 的关键，就是理解 DOM 对性能的影响。DOM 操作往往是 JavaScript 程序中开销最大的部分，而因访问 NodeList 导致的问题为最多。NodeList 对象都是“动态的”，这就意味着每次访问 NodeList 对象，都会运行一次查询。所以应减少对 NodeList 的访问，对DOM的操作。
 #### 优化
-* `document.createDocumentFragment` [DocumentFragment - 简书](https://www.jianshu.com/p/7628670a94e6)
+`document.createDocumentFragment` [DocumentFragment - 简书](https://www.jianshu.com/p/7628670a94e6)
   - 文档片段，不属于文档树，用于占位
   - 继承了 Node 方法
 
@@ -18,7 +18,7 @@ document.writeln  // 换行
 div.getAttribute("title")  // 或者 div.title
 ```
 
-[ele].insertAdjacentHTML([position], [html]) 邻接插入，比 innerHTML 效率高
+`[ele].insertAdjacentHTML([position], [html])` 邻接插入，比 innerHTML 效率高
 
 ## 脚本
 
@@ -53,7 +53,7 @@ xpos = xpos + dist;
 ```
 
 ## 注意点
-* foucs blur 事件只会在 input textaera select 等键盘元素上发生
+* focus blur 事件只会在 input textaera select 等键盘元素上发生
 
 ## 重绘和回流
 重绘，样式变化，浏览器重新绘制样式
@@ -94,3 +94,10 @@ vue - update
 - `document.createDocumentFragment` 不支持 innerHTML
 
 [es6-articles/13 - Creating HTML fragments with Template Literals.md at master · wesbos/es6-articles](https://github.com/wesbos/es6-articles/blob/master/13%2520-%2520Creating%2520HTML%2520fragments%2520with%2520Template%2520Literals.md)
+
+## DOM 选择
+![节点关系示意图](http://eloquentjavascript.net/img/html-links.svg)
+
+参考：
+[Plain JavaScript - Functions and Helpers](https://plainjs.com/javascript/)
+[DOM Enlightenment - Exploring the relationship between JavaScript and the modern HTML DOM](http://domenlightenment.com/)

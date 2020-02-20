@@ -209,3 +209,4 @@ $(‘.parallax-obj’).parallax()
   opacity: 0;
 }
 ```
+[SVG 动画精髓](https://www.villainhr.com/page/2017/05/01/SVG%2520%25E5%258A%25A8%25E7%2594%25BB%25E7%25B2%25BE%25E9%25AB%2593)

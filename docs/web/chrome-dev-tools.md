@@ -32,9 +32,12 @@
 // copy(JSON.stringify(window.myJSON))
 ```
 
+- 可以通过在函数中插入 console.count('执行次数') 来观察重复执行的情况
+
 ## 网络
 - 在开启开发工具下，长按刷新按钮出现菜单，Empty Cache And Hard Reload 强制全部请求走网络，模拟新客访问
 - 点击截图，查看当时请求状态
 - cmd + 点击，同时查看多种资源
 - 过滤 `-method:OPTIONS`
 - 隐藏来自扩展请求 `-scheme:chrome-extension`
+
