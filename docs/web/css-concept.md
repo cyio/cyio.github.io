@@ -59,7 +59,7 @@ float定义了元素向哪个方向浮动，占据一定空间，其余内容围
 
 就近原则 inline > internal > external
 
-## （内容）替换元素
+## (内容)替换元素
 * 可替换元素， 渲染时根据元素的标签和属性进行替换再展示内容，源码看不出内容，嵌入内容、表单，如 img video iframe，一般有内在样式和宽高比，独产于 CSS 格式化模型的外部对象。
 * 不可替换元素，源码和展示一致，不需要替换。大部分是不可替换元素。
 * 区分标准是，内容在渲染时是否要进行替换
@@ -72,9 +72,6 @@ BFC 的特性，不是缺陷
 ## calc
 IE10+
 [css兼容所有浏览器的宽度计算方法，非calc - 个人文章 - SegmentFault 思否](https://segmentfault.com/a/1190000010806965)
-
-## Ref
-[How To Learn CSS — Smashing Magazine](https://www.smashingmagazine.com/2019/01/how-to-learn-css/)
 
 ## 坐标、距离
 * clientX/Y 
@@ -146,3 +143,7 @@ iframe/img 等元素可能出现意外空白
   - 平时可以用，遇上需要高性能、优化时，移除，合并`@import`，直接使用 link
 [html - Best way to include CSS? Why use @import? - Stack Overflow](https://stackoverflow.com/questions/10036977/best-way-to-include-css-why-use-import?answertab=votes#tab-top)
 [CSS Guidelines (2.2.5) – High-level advice and guidelines for writing sane, manageable, scalable CSS](https://cssguidelin.es/)
+
+## 参考
+[How To Learn CSS — Smashing Magazine](https://www.smashingmagazine.com/2019/01/how-to-learn-css/)
+

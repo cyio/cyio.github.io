@@ -122,6 +122,8 @@ lockfile 加 `npm install` 在部署时不能保证可靠还原，一旦出现�
 
 5.7.1 引入`npm ci`只从 lockfile 进行复现安装。适用于纯净部署，比常规安装更快更严格，帮助捕获错误或增量安装引起的不一致
 
+缺点是会删除 node_modules，安装时间会长些
+
 lockfile 与 `package.json`依赖不匹配时，会报错，而不是更新 lockfile
 如查`node_modules`存在，会先删掉
 可以做为`npm i`失败的回退，大幅降低安装失败的情况

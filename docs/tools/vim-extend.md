@@ -176,15 +176,20 @@ nmap <F2> <Plug>(coc-rename)
 > <leader>\ Align GitHub-flavored Markdown tables
 
 插件 [dhruvasagar/vim-table-mode: VIM Table Mode for instant table creation.](https://github.com/dhruvasagar/vim-table-mode)
-使用：`leadet tm` `insert ||`输入分割线
 
-支持 csv 转换 `leadet tt`
+使用：
 
-```
-h,h,h
-||
-a,a,a
-```
+`leader tm`
+
+`||`输入分割线
+
+csv 转换 `leadet tt`
+
+    ```
+    h,h,h
+    ||
+    a,a,a
+    ```
 
 ```
 :[range]w !eslint --stdin
@@ -218,4 +223,13 @@ Gmove 处理了 buffer，避免返回时修改原文件
     au Filetype markdown set formatoptions=tcroqln
     ```
     会影响原功能`-`，暂时使用复制吧
+
+
+## 字符包围
+
+- 单词两侧加空格 `ysiw<space><space>` 分解：you surround inner word with space
+- y 是添加包围符的动作，注意空格打两个
+- 拓展，如何删除两边空格，`ds<space><space>`
+- 小写 s 表示不同行，同行使用大写 S
+- 查看帮助：`h surr<tab>`
 

@@ -9,16 +9,6 @@
 - 两层，前后端 cookie 有效期可能不一致
 - 前端 cookie 检查优先
 
-## 小程序不支持 cookie 设置
-
-意思是对接受的请求，不会存 cookie，我们可以自己封装利用 storage 存起来模拟
-[微信小程序 cookie-session 问题 | 等英博客](https://www.waitig.com/%25E5%25BE%25AE%25E4%25BF%25A1%25E5%25B0%258F%25E7%25A8%258B%25E5%25BA%258Fcookie-session%25E9%2597%25AE%25E9%25A2%2598.html)
-
-## 参考
-
-[Cookie -- 前端视角 - hf872914334 的博客 - CSDN 博客](https://blog.csdn.net/hf872914334/article/details/78979007)
-[Cookie 的设置、读取以及是否自动携带问题 · Issue #2 · yinxin630/blog](https://github.com/yinxin630/blog/issues/2)
-
 ## 封装
 
 ```js
@@ -78,4 +68,14 @@ var c_value = escape(value) + ((exdays == null) ? "" : "; expires=" + exdate.toU
 - 不知道写入成功还是失败
 
   [Cookie Store API](https://wicg.github.io/cookie-store/#intro-proposed-change)
+
+## 小程序不支持 cookie 设置
+
+意思是对接受的请求，不会存 cookie，我们可以自己封装利用 storage 存起来模拟
+[微信小程序 cookie-session 问题 | 等英博客](https://www.waitig.com/%25E5%25BE%25AE%25E4%25BF%25A1%25E5%25B0%258F%25E7%25A8%258B%25E5%25BA%258Fcookie-session%25E9%2597%25AE%25E9%25A2%2598.html)
+
+## 参考
+
+[Cookie -- 前端视角 - hf872914334 的博客 - CSDN 博客](https://blog.csdn.net/hf872914334/article/details/78979007)
+[Cookie 的设置、读取以及是否自动携带问题 · Issue #2 · yinxin630/blog](https://github.com/yinxin630/blog/issues/2)
 

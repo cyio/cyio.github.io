@@ -22,12 +22,12 @@
 - 实现模板字符串功能
 
 ```js
-// 1. 正则匹配出 key，然后字符串替换 2. 字符串可用点号分割成数组 3. shift 出来依次供对象访问
+// 1. 正则匹配出 key，然后字符串替换 
+// 2. 字符串可用点号分割成数组 
+// 3. shift 出来依次供对象访问
 function render(template, context) {
+  // 如果无匹配，返回 template
   return template.replace(/\{\{(.*?)\}\}/g, (match, key) => {
-    for (let k of key.split('.')) {
-      context[key]
-    }
     key = key.split('.')
     let result = context
     while (key.length > 0) {
@@ -39,6 +39,9 @@ function render(template, context) {
 const template = '{{name}}很厉name害，才{{age}}岁，身高{{detail.height}}'
 const context = { name: 'jawil', age: '15', detail: { height: '170' } }
 console.log(render(template, context))
+
+const template2 = 'plain text'
+console.log(render(template2, context))
 ```
 
 ## map 映射
@@ -201,6 +204,11 @@ button.addEventListener('click', function() {
 
 - this 继承 parent context
 - 不关心 this
+
+始终写上 return，方便增加语句、log
+```js
+let square = x => {console.log(x); return x * x; }
+```
 
 ## 模板字面量
 

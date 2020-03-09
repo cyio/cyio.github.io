@@ -195,14 +195,6 @@ zt // 将光标所在行放置到屏幕项端
 
 `caw`
 
-### 单词两侧加空格
-
-- `ysiw<space><space>` 分解：you surround inner word with space
-- y 是添加包围符的动作，注意空格打两个
-- 拓展，如何删除两边空格，`ds<space><space>`
-- 小写 s 表示不同行，同行使用大写 S
-- 查看帮助：`h surr<tab>`
-
 ### 原生文件浏览
 
 `:ex[plorer]`
@@ -214,10 +206,10 @@ zt // 将光标所在行放置到屏幕项端
 - `num g t`切换到某个标签页
 - `ctrl-w shift-t`移动当前窗口到新标签页，替代方法`:tabedit %<cr>`
 
-1. Eight buffers open in eight tab pages (wrong)
-2. Two tabs for two specific tasks (right)
+> 1. Eight buffers open in eight tab pages (wrong)
+> 2. Two tabs for two specific tasks (right)
 
-缺点：无法模糊匹配跳转，超过 8 个就挤了
+tab 缺点：无法模糊匹配跳转，超过 8 个就挤了
 
 tab 少用？有别于传统编辑器
 window 比较、参考
@@ -420,21 +412,24 @@ set ma (modifiable) / set noma
 
 ### nodejs 调试
 
-1.  `<leader>e` 执行 AsyncRun
-2.  `:cw` 打开 QuickFix 窗口
+1. `<leader>e` 执行 AsyncRun
+2. `:cw` 打开 QuickFix 窗口
 
 ### 终端
 
 ```
-`:vs`
+`:1sp`
 `:term`
 `<c-w>N` 在终端进入 normal 模式，按 i 恢复输入模式
 `<c-w>.` 向终端发送`<c-w>`
 `<c-w><c-c>` 强制结束终端
 `<c-w>:` ex 输入
 `<c-w>"{reg}` 粘贴寄存器
-`:Term`
 ```
+
+使用好处：只占用 Vim 内窗口，可以作为 buffer 存在，不一定占用可视窗口
+
+`:term npm start` 用 vim-term 插件，更好些？只需要启一个进程，能看到输出，退出窗口即杀掉进程
 
 ### 主题
 

@@ -549,7 +549,7 @@ EventBus.$on('i-got-clicked', clickCount => {
 
 - node 一次事件循环叫 tick
 - vue next DOM update cycle 用 promise/MutationObserver 微任务，如果没有可用的微任务特性，回退为宏任务，所以 vue 的 nextTick 是在 setTimeout 前执行
-- setTimeout 执行更快
+- 比 setTimeout 执行更快
 
 ```
 process.nextTick(callback)

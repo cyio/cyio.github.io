@@ -62,6 +62,13 @@ pragma 〔计〕杂注,编译指示
 - postman 不支持设置 socks5 代理
 - 在线测试 [Hurl.it - Make HTTP requests](https://www.hurl.it/)
 
+### 替代品
+insomnia: 基于 Electron
+[Kong/insomnia: Cross-platform HTTP and GraphQL Client](https://github.com/Kong/insomnia)
+
+Postwoman 支持 PWA
+[Postwoman • A free, fast and beautiful API request builder](https://postwoman.io/)
+
 ## axios
 
 不支持设置 user agent
