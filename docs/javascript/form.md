@@ -11,15 +11,7 @@ const config = {
 [FormData 对象的使用 - Web API 接口 | MDN](https://developer.mozilla.org/zh-CN/docs/Web/API/FormData/Using_FormData_Objects)
 [axios post提交formdata - wopelo的博客 - CSDN博客](http://blog.csdn.net/wopelo/article/details/78783442)
 
-## 姓名、昵称中间如果有多个连续空格，替换为一个空格
-
-问题：`white-space: normal`，超过一个的空格会被省略
-```js
-this.ruleForm.consignee = this.ruleForm.consignee.replace(/\s+/g, ' ')
-```
-另一种处理是，`white-space: pre`
-
-## 表单交互
+## 表单交互形式
   - 失焦验证
   - 输入验证
     input/textarea 没有change事件，是input事件
@@ -34,3 +26,11 @@ this.ruleForm.consignee = this.ruleForm.consignee.replace(/\s+/g, ' ')
 <input id="userPassword" type="password" autocomplete="new-password">
 ```
 [html - Google chrome autofilling all password inputs - Stack Overflow](https://stackoverflow.com/questions/23156578/google-chrome-autofilling-all-password-inputs)
+## 姓名、昵称中间如果有多个连续空格，替换为一个空格
+
+问题：`white-space: normal`，超过一个的空格会被省略
+```js
+this.ruleForm.consignee = this.ruleForm.consignee.replace(/\s+/g, ' ')
+```
+另一种处理是，`white-space: pre`
+
