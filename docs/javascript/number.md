@@ -20,7 +20,7 @@
 ```js
 
 ```
-// 精确价格减法计算
+// 精确价格减法计算，每次运算都要处理浮点数
 function subtract(n, m) {
   return (Number.parseInt(n * 100, 10) - Number.parseInt(m * 100, 10)) / 100
 }

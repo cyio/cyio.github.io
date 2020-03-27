@@ -83,7 +83,7 @@ const newObj = { ...vueObj }
   // 该回调将会在侦听开始之后被立即调用
   d: {
     handler: function (val, oldVal) { /* ... */ }, // 这里 function 不要用箭头函数
-    immediate: true
+    deep: true
   },
   // 或者
   'a.d'() {}

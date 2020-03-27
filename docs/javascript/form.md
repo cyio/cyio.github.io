@@ -34,3 +34,8 @@ this.ruleForm.consignee = this.ruleForm.consignee.replace(/\s+/g, ' ')
 ```
 另一种处理是，`white-space: pre`
 
+即：当一个 form 元素中只有一个输入框时，在该输入框中按下回车应提交该表单。如果希望阻止这一默认行为，可以在 标签上添加 @submit.native.prevent。
+
+————————————————
+版权声明：本文为CSDN博主「留给时间」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/qq_32340877/article/details/80272155

@@ -64,3 +64,19 @@ elf start
 ## UI 设计
 PC 端一张大 banner 的图片预算大概在 300kb，手机端建议不超过 150kb。手机端使用满铺背景的图片，需要给出适配方案，特别要考虑橫屏情况
 微信不支持横屏
+
+## 移动端开发总结
+
+- rem 设置是否正确，要验证
+- 展示图不要指定高度或限高，平板设备需要的高度不同
+
+## 返回刷新
+[javascript - How to force reloading a page when using browser back button? - Stack Overflow](https://stackoverflow.com/questions/43043113/how-to-force-reloading-a-page-when-using-browser-back-button)
+
+[网页后退不刷新的N种解决方案 · Issue #17 · rico-c/RICO-BLOG](https://github.com/rico-c/RICO-BLOG/issues/17)
+
+A -> B -> A 此时浏览器返回又到了 B，无解。写死地址，会引起别的页面间死循环。
+
+
+
+
