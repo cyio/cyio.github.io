@@ -144,3 +144,11 @@ Chrome 51+，不支持 IE，兼容性很好
 
 [chase-moskal/webp-hero: browser polyfill for the webp image format](https://github.com/chase-moskal/webp-hero)
 [Essential Image Optimization](https://images.guide/)
+
+## 高清图
+
+[Sketch用一倍图做设计稿还是二倍图？|UI|教程|Olaf_Chou - 原创文章 - 站酷 (ZCOOL)](https://www.zcool.com.cn/article/ZNDc5NTg4.html)
+
+二倍图设计默认导出的图片是 2x 高清的，可直接使用。
+二倍图导出时省去了点击+号 再选 2x ，操作方便。
+

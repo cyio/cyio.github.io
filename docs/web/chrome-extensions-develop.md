@@ -42,3 +42,8 @@
 
 支持CSP的模板库
 [addyosmani/mustache-for-chromeapps](https://github.com/addyosmani/mustache-for-chromeapps)
+
+## 权限
+在 permisions 和 content_script 中设置域名匹配，以便于跨域请求，发布时会要求深入审核
+
+建议在 permision 中使用 `activeTab`，可跨域访问当前打开的页面域名，减少审核难度

@@ -72,6 +72,15 @@ Understanding Components Communication in Vue 2.0 http://taha-sh.com/blog/unders
 - history 模式，nginx 需要特殊配置，否则线上访问首页外的页面会 404
   [NGiNX Configuration for Vue-Router in HTML5 Mode · GitHub](https://gist.github.com/szarapka/05ba804dfd1c10ad47bf)
 
+单独打包 lazy-load
+  ```
+    {
+      path: '/',
+      name: 'home',
+      component: () => import(/* webpackChunkName: "home" */ './views/index/Home.vue'),
+    },
+  ```
+
 #### 数据获取时机
 
 有两种，分隔点是导航是否完成
@@ -560,3 +569,15 @@ process.nextTick(callback)
 ```js
 const copies = callbacks.slice(0) // 复制一个数组，操作不会影响原数组
 ```
+
+## v-for key 是区分元素是否相同的依据
+
+一般来说，无状态的元素 props 值相同就是相同。此时 key 用 id 用 index 或者不用得到的表现相同，区别只是渲染时有些性能的差异。
+
+有状态的元素包含自己的状态，而 vue 并不知道子元素状态，此时需要用 key 区分。
+因为 vdom 渲染出来最后是和上次的 vdom 做 diff 的，如果 diff 出来只有 props 变化，那么就只会修改 props 。
+
+举个例子，比如你交换了 a[0] a[1]，他们都有自己的状态，而他们的 props 没有区别，那么 vue 就根本不会修改元素。但如果你给他们都设置了 id key，那么 vue 知道第一次渲染的 vdom 和 第二次 的 vdom key 发生了变化，从而会交换元素，即使其他属性根本没有发生变化
+
+使用 index 的缺点是，如果使用场景有插值，index 发生变化造成额外渲染
+

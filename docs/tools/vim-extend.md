@@ -1,5 +1,8 @@
 # 插件、扩展
 
+## 开发
+[vim 插件开发入门之 MRU - 知乎](https://zhuanlan.zhihu.com/p/47374698)
+
 ## git
 
 插件是对当前打开文件操作

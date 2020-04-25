@@ -28,3 +28,20 @@ mermaid 自己看没问题，有些问题需要规避
 [Markdown 流程图 flowchart.js - JavaScript - 123si 博客](https://www.123si.org/javascript/article/markdown-flow-chart-flowchart-js/)
 
 带拼写提示，[Chart Mage - Draw sequence diagrams and flowcharts at lightning speed.](http://chartmage.com/index.html)
+
+## 技巧
+
+- 元素：图形 链接 文本
+- 悬浮有操作提示
+- 对齐，可以先连上箭头，然后把不齐的图形用箭头微移
+- 使用cmd + click(鼠标左键点击)来进行特定元素的多选
+- 替换，drag 直到 替换图标（褐色） 出现
+- 可以先不处理样式，做完后统一选择处理
+- 样式都可以后期改，比如线的箭头，粗细
+
+[Releases · jgraph/drawio-desktop](https://github.com/jgraph/drawio-desktop/releases)
+桌面端，不支持打开线上文件？
+
+
+[使用draw.io绘制简洁大方的流程图 - 开发工具 - 掘金](https://juejin.im/entry/5acc5205f265da2391487073)
+

@@ -21,3 +21,10 @@ function fixIOSInput() {
 input(@blur="fixIOSInput")
 ```
 
+## 橡皮筋效果
+如果弹窗不滚动，没问题，滚动不好处理，尽量规避，如把露出的内容隐藏
+[zipeijun/vue-bounce: 禁用 iOS 平台橡皮筋效果的 Vue 插件](https://github.com/zipeijun/vue-bounce)
+
+```pug
+    toolbar(v-show="!showFullscreenModal") // 规避 ios 下 modal 滚动到底露底
+```

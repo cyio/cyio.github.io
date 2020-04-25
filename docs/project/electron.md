@@ -38,3 +38,4 @@ win.close()
 
 - 推荐使用 preload按
 [安全性，原生能力和你的责任 | Electron ](https://electronjs.org/docs/tutorial/security#2-do-not-enable-nodejs-integration-for-remote-content)
+[Electron 深度实践总结 | 欧长坤的博客](https://changkun.us/archives/2017/03/217/)

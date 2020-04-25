@@ -144,11 +144,18 @@ Gzip 压缩会导致 TTFB 提升
 
 h2 统计到的 TTFB 值会更高，因为 socket 连接更早？
 
+更好解答 [Is it possible to do HLS streaming over HTTP/2, and will it be better latency-wise than over HTTP/1.1? - Stack Overflow](https://stackoverflow.com/questions/53699584/is-it-possible-to-do-hls-streaming-over-http-2-and-will-it-be-better-latency-wi/53899295#53899295)
+h2 优势在大量并行小请求
+而视频流是串行请求大的数据块，HTTP1.1 + keep alive 就能满足，且更高效，不需要处理 h2 基于 TCP 的流控制架构
+
 [Stop worrying about Time To First Byte (TTFB)](https://blog.cloudflare.com/ttfb-time-to-first-byte-considered-meaningles/)
 [iis - HTTP/2 has much higher TTFB than HTTP/1.1 - Super User](https://superuser.com/questions/931389/http-2-has-much-higher-ttfb-than-http-1-1)
 [Nginx tuning tips: TLS/SSL HTTPS - Improved TTFB/latency](https://haydenjames.io/nginx-tuning-tips-tls-ssl-https-ttfb-latency/)
 [《HTTP/2 基础教程》 阅读摘要 - 掘金](https://juejin.im/post/5cb54286e51d456e235d9be6)
 [页面加载与API服务响应--- 性能标定与标准 - 知乎](https://zhuanlan.zhihu.com/p/34020557)
+
+可能是分帧，增加了延迟？
+[HTTP/2 技术调研和性能分析 - 个人文章 - SegmentFault 思否](https://segmentfault.com/a/1190000015030944#item-5-19)
 
 ## 4x cpu
 仅影响主线程，产生额外线程频繁打断主线程

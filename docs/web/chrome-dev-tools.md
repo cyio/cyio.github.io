@@ -40,4 +40,5 @@
 - cmd + 点击，同时查看多种资源
 - 过滤 `-method:OPTIONS`
 - 隐藏来自扩展请求 `-scheme:chrome-extension`
+- XAR 导出 录制、然后网络上右键 [How to generate a HAR file in Chrome or Firefox - KB254 - In](https://www.inflectra.com/support/knowledgebase/kb254.aspx)
 

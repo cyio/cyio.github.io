@@ -109,3 +109,15 @@ const stickyNavHeight = 56
     window.addEventListener('scroll', this.loadSroll)
   }
 ```
+
+## 实现
+- 滚动条 高度 = 容器高度 / 内容高度 * 容器高度
+- 滚动条位置计算
+- 滚动时，内容位置计算
+
+[一文读懂鼠标滚轮事件（wheelEvent） - 个人文章 - SegmentFault 思否](https://segmentfault.com/a/1190000017390159)
+
+要实现一致样式和交互，只能用 JS 实现。单设 CSS，无法解决 Windows。推荐使用 [Grsmto/simplebar: Custom scrollbars vanilla javascript library with native scroll, done simple, lightweight, easy to use and cross-browser.](https://github.com/Grsmto/simplebar)
+
+已经有了新标准，但兼容性很差
+[The Current State of Styling Scrollbars | CSS-Tricks](https://css-tricks.com/the-current-state-of-styling-scrollbars/)

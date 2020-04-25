@@ -555,3 +555,12 @@ brew install interactive-rebase-tool
 `git reset <file>` or `git reset`
 
 ## hooks
+
+## 三路合并
+比如双方同时改了某一行，只能人工 review 合并
+
+公共组先部分，作为参考，分辨改动
+
+[【Mac】升级 Git 版本 - 掘金](https://juejin.im/post/5c3e9de86fb9a049b5071413)
+[git diff - Should diff3 be default conflictstyle on git? - Stack Overflow](https://stackoverflow.com/questions/27417656/should-diff3-be-default-conflictstyle-on-git)
+[快速处理 git 合并冲突 - 知乎](https://zhuanlan.zhihu.com/p/78505692)
