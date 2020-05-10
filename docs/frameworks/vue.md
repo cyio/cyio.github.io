@@ -73,13 +73,14 @@ Understanding Components Communication in Vue 2.0 http://taha-sh.com/blog/unders
   [NGiNX Configuration for Vue-Router in HTML5 Mode · GitHub](https://gist.github.com/szarapka/05ba804dfd1c10ad47bf)
 
 单独打包 lazy-load
-  ```
-    {
-      path: '/',
-      name: 'home',
-      component: () => import(/* webpackChunkName: "home" */ './views/index/Home.vue'),
-    },
-  ```
+
+```
+  {
+    path: '/',
+    name: 'home',
+    component: () => import(/* webpackChunkName: "home" */ './views/index/Home.vue'),
+  },
+```
 
 #### 数据获取时机
 
@@ -527,16 +528,16 @@ EventBus.$on('i-got-clicked', clickCount => {
 
 ## 热重载
 
-编辑`<template>`，重新渲染，保留私有状态
-编辑`<script>`，销毁重建，created/mounted 都会执行
-只有在使用路由的情况，created 有可能不触发，比如这个组件没销毁，也没编辑其`<script>`部分
+- 编辑`<template>`，重新渲染，保留私有状态
+- 编辑`<script>`，销毁重建，created/mounted 都会执行
+- 只有在使用**路由**的情况，created 有可能不触发，比如这个组件复用了、没销毁，也没编辑其`<script>`部分
 
 ## vue 组件的 data 为啥非要是函数？
 
 > 因此每个实例可以维护一份被返回对象的独立的拷贝
 
 - 实例并不一定需要，官方示例、源码是可以写对象的
-- 组件是可复用的 Vue 实例，组件涉及数据隔离必须
+- 组件是可复用的 Vue 实例，组件涉及**数据隔离**必须
 
 ## watch
 
@@ -581,3 +582,17 @@ const copies = callbacks.slice(0) // 复制一个数组，操作不会影响原�
 
 使用 index 的缺点是，如果使用场景有插值，index 发生变化造成额外渲染
 
+## 异步组件
+
+import Foo from './Foo.vue' 改成 const Foo = () => import('./Foo.vue')
+
+## mock
+1. vue cli3 在 devServer 中添加 before 
+2. 添加自定义响应返回代码
+3. mockjs 增强 mock 能力，可选
+[Vue CLI 3 + webpack + Mockjs实现本地数据模拟 - 简书](https://www.jianshu.com/p/fea615354d10)
+[Mock Data | vue-element-admin](https://panjiachen.github.io/vue-element-admin-site/zh/guide/essentials/mock-api.html#mockjs)
+[javascript - Node.js - SyntaxError: Unexpected token import - Stack Overflow](https://stackoverflow.com/questions/39436322/node-js-syntaxerror-unexpected-token-import)
+[Mock 数据](https://umijs.org/zh-CN/docs/mock)
+[@babel/register · Babel](https://babeljs.io/docs/en/next/babel-register.html)
+[UMI mock 开发中遇到的问题，已经处理的，在这里记录一下。给朋友们一个参考 · Issue #246 · umijs/umi](https://github.com/umijs/umi/issues/246#issuecomment-375225156)

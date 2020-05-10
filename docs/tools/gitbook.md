@@ -1,4 +1,4 @@
-# 使用gitbook
+# gitbook
 
 1. 安装依赖
 ```

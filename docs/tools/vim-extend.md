@@ -1,6 +1,7 @@
-# 插件、扩展
+# Vim 插件、扩展
 
 ## 开发
+
 [vim 插件开发入门之 MRU - 知乎](https://zhuanlan.zhihu.com/p/47374698)
 
 ## git
@@ -30,17 +31,21 @@ gvdiff 检查变动
 ## 注释 - nerdcommenter
 
 ```
-<leader> c space 注释或取消注释
-<leader> c y 先复制再注释
-<leader> c A 行末尾追加注释
-<leader> c s 多行带星号(sexy)注释
-<leader> c m 单行带星号(minimal)注释
+leader c space 注释或取消注释
+leader c y 先复制再注释
+leader c A 行末尾追加注释
+leader c s 多行带星号(sexy)注释
+leader c m 单行带星号(minimal)注释
 ```
 
-## FZF
+## ~~FZF~~
 
 - 支持多种查找，包括一些插件功能
 - 定位后，c-t s v 用不同方式打开
+
+
+使用理由：全局性 zsh git
+[What am I missing by not using FZF? : vim](https://www.reddit.com/r/vim/comments/gbhvlo/what_am_i_missing_by_not_using_fzf/)
 
 ## wildfire
 
@@ -49,12 +54,13 @@ gvdiff 检查变动
 
 ## markdown
 
-`:Toc` 临时跳转窗口
-`:gentoc` 在光标位置生成目录，可放到标题上按`t)`跳转，按`ctrl - o`跳回
+- `:Toc` 临时跳转窗口
+- `:gentoc` 在光标位置生成目录，可放到标题上按`t)`跳转，按`ctrl - o`跳回
 
 ## emmet
 
 插件默认触发补全键是`ctrl y` ,
+
 期望是用 tab ，而原 tab 功能由`\tab`替代
 
 ## ctrlp 刷新索引
@@ -73,8 +79,8 @@ gvdiff 检查变动
   (d)elete the curent node
   (c)copy the current node
   ```
-  `u`: 切换目录树的根目录为上层目录
-  `U`: 切换目录树的根目录为上层目录，并保持旧的目录树的状态
+- `u`: 切换目录树的根目录为上层目录
+- `U`: 切换目录树的根目录为上层目录，并保持旧的目录树的状态
 
 ## `:UltiSnipsEdit`
 
@@ -82,7 +88,7 @@ tab 补全 ctrl-b 下一个点 ctrl-z 上一个点
 
 临时使用其它类型的补全，设置文件类型
 
-## ternjs 是 JS 代码分析引擎
+## ~~ternjs 是 JS 代码分析引擎~~
 
 自动完成|函数参数提示|查询表达示类型|查找定义|自动重构(改名)
 
@@ -125,11 +131,11 @@ nmap <F2> <Plug>(coc-rename)
 
 [init.vim](https://gist.github.com/benawad/b768f5a5bbd92c8baabd363b7e79786f#file-init-vim-L178)
 
-:CocInstall coc-explorer
+`:CocInstall coc-explorer`
 
 ## note plugin
 
-正面：
+### 正面观点
 
 - 方便导航
 - 思维导图形象，但搜索差，不宜保存长久笔记
@@ -147,7 +153,9 @@ nmap <F2> <Plug>(coc-rename)
 [How I Take Notes With Vim, Markdown, and Pandoc - things james does](https://jamesbvaughan.com/markdown-pandoc-notes/)
 [将 vim 作为日常笔记本使用 – VOID001's WOWO](https://void-shana.moe/linux/zh-taking-notes-with-vim.html)
 
-反面观点：认为不需要 vimwiki
+### 反面观点
+
+认为不需要 vimwiki
 
 - 链接跳转用`gf`
 - `grep -Ri todo . > todos`
@@ -176,7 +184,7 @@ nmap <F2> <Plug>(coc-rename)
 
 `junegunn/vim-easy-align`
 
-> <leader>\ Align GitHub-flavored Markdown tables
+`<leader>\` Align GitHub-flavored Markdown tables
 
 插件 [dhruvasagar/vim-table-mode: VIM Table Mode for instant table creation.](https://github.com/dhruvasagar/vim-table-mode)
 
@@ -202,11 +210,12 @@ csv 转换 `leadet tt`
 
 - 简单专注，不用离开 Vim
 - 快捷键
+  ```
   n/N 创建
   d(one) 切换完成
   x(cancel) 取消
   a(rchive) 存档
-
+  ```
 
 ## 翻译
 
@@ -215,18 +224,18 @@ csv 转换 `leadet tt`
 [VIM 插件推荐 - 知乎](https://zhuanlan.zhihu.com/p/58816186)
 
 ## fugitive
+
 为什么用，命令行 git blame 需要记住文件名、行数
 Gmove 处理了 buffer，避免返回时修改原文件
 完整实现
 [The Fugitive Series - a retrospective](http://vimcasts.org/blog/2011/05/the-fugitive-series/)
 
 - md new todo
-    ```
-    au Filetype markdown set com=s1:/*,mb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,b:-\ \[\ \]
-    au Filetype markdown set formatoptions=tcroqln
-    ```
-    会影响原功能`-`，暂时使用复制吧
-
+  ```
+  au Filetype markdown set com=s1:/*,mb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,b:-\ \[\ \]
+  au Filetype markdown set formatoptions=tcroqln
+  ```
+  会影响原功能`-`，暂时使用复制吧
 
 ## 字符包围
 
@@ -235,4 +244,4 @@ Gmove 处理了 buffer，避免返回时修改原文件
 - 拓展，如何删除两边空格，`ds<space><space>`
 - 小写 s 表示不同行，同行使用大写 S
 - 查看帮助：`h surr<tab>`
-
+    

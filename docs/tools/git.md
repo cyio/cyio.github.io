@@ -1,5 +1,7 @@
 # Git
 
+[Learn Git Branching](https://learngitbranching.js.org/?demo=&locale=zh_CN)
+
 ## commit 提交规范
 
 - feat: 添加新功能
@@ -266,6 +268,14 @@ git add
 2. `update remote`
 ```sh
 git submodule update --init --recursive --remote BRANCH-NAME
+```
+
+更改子模块 URL
+1. 修改 .gitmodules
+2. 同步到`.git/config`
+```sh
+git submodule sync
+git submodule update --force --recursive --init --remote
 ```
 
 ## 交互式合并其它分支某部分代码

@@ -158,3 +158,18 @@ lockfile 与 `package.json`依赖不匹配时，会报错，而不是更新 lock
 - 重启
 - 以管理员权限安装，不推荐
 
+
+## PNPM
+缺点：部分编辑器支持有问题？
+
+## yarn 2（Berry）
+
+实际是另一个工具了，暂不考虑使用
+- 很多批评，包括 yarn 1 作者
+- facebook 等大的工程项目，没有升级
+
+[Yarn 1 vs Yarn 2 vs NPM - Red Shift](https://shift.infinite.red/yarn-1-vs-yarn-2-vs-npm-a69ccf0229cd)
+
+## 提示 gyp: No Xcode or CLT version detected
+
+[gyp: No Xcode or CLT version detected macOS Catalina | Anansewaa](https://medium.com/flawless-app-stories/gyp-no-xcode-or-clt-version-detected-macos-catalina-anansewaa-38b536389e8d)

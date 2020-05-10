@@ -1,23 +1,25 @@
 # ajax/http 请求库
 
 ## axios
+
 ```js
-import axios from 'axios';
+import axios from 'axios'
 
 export const HTTP = axios.create({
-	baseURL: `http://jsonplaceholder.typicode.com/`,
-	headers: {
-		Authorization: 'Bearer {token}'
-	}
+  baseURL: `http://jsonplaceholder.typicode.com/`,
+  headers: {
+    Authorization: 'Bearer {token}'
+  }
 })
 
 // use
-import {HTTP} from './http-common';
+import { HTTP } from './http-common'
 ```
 
-* 请求图片
-直接在浏览器打开会提示下载，估计是要返回创建新的 stream
-[javascript - Download an image using Axios and convert it to base64 - Stack Overflow](https://stackoverflow.com/questions/41846669/download-an-image-using-axios-and-convert-it-to-base64)
+- 请求图片
+  直接在浏览器打开会提示下载，估计是要返回创建新的 stream
+  [javascript - Download an image using Axios and convert it to base64 - Stack Overflow](https://stackoverflow.com/questions/41846669/download-an-image-using-axios-and-convert-it-to-base64)
+
 ```
 // ctx.body = request(options)
 ctx.body = await axios({
@@ -32,13 +34,17 @@ ctx.body = await axios({
 })
 ```
 
+referrer 作用是识别页面，可以理解不包括 hash。如果需要 hash，可以手动在 headers 中添加 `window.location.href`
+
 ## superagent
+
 [[翻译] SuperAgent 中文使用指南(v3.8.0) · Issue #13 · zhaoqize/blog](https://github.com/zhaoqize/blog/issues/13)
 
-* 支持旧的回调方式，用 end
-* 支持 retry
+- 支持旧的回调方式，用 end
+- 支持 retry
 
 与 axios 写法对比
+
 ```
 // axios
 let data = res.data
@@ -54,6 +60,7 @@ const [foo, bar] = await Promise.all([
 ```
 
 Promise 化
+
 ```
 return new Promise((resolve, reject) => {
   superagent
@@ -68,6 +75,7 @@ return new Promise((resolve, reject) => {
 ```
 
 批量 Promise 化
+
 ```
 import request from "superagent";
 
