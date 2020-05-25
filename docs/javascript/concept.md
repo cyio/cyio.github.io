@@ -160,6 +160,11 @@ console.log('Done!')
 [What (function (window, document, undefined) {})(window, document); really means @toddmotto](http://toddmotto.com/what-function-window-document-undefined-iife-really-means/)
 [JS things I never knew existed](https://air.ghost.io/js-things-i-never-knew-existed/)
 
+替代：
+– ES modules
+– Blocks with const/let
+– A for loop with const/let (creates a new scope for each iteration—no manual scope creation needed)
+
 ## 作用域
 
 作用域控制着变量与参数的可见性和生命周期（减少命名冲突，提供自动内存管理）。
@@ -377,3 +382,12 @@ setTimeout(() => console.log(4));
 ## 解释型语言 VS 编译语言 - 解释型语言 动态变量类型 隐式解析
 
 [开发做了这么多年，你真的了解 JS 工作机制吗](https://www.infoq.cn/article/E2Vvaa-ZfIrMrjrxtdF9)
+
+JavaScript operator: Optional chaining operator (?.)
+兼容性：不支持 IE，chrome 80 以上，慎用？
+
+如果不确定 babel 是否能处理，可以去检查下
+[Babel · The compiler for next generation JavaScript](https://babeljs.io/repl)
+
+@vue/babel-preset-app 目前是接受 stage3 及以下
+

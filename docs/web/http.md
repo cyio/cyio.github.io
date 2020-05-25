@@ -2,21 +2,55 @@
 
 ## 浏览器缓存
 
-- 强缓存，header->max,cache，命中时不发网络请求
-- 协商缓存，header->modifier，先发请求，命中 返回 304
+- 强缓存，header -> max, cache，命中时不发网络请求
+- 协商缓存，header -> modifier，先发请求，命中 返回 304
 
-  `no-cache` 如果存在合适的验证令牌(ETag)，发起请求，如果资源无变化，304，不下载
+  `no-cache` = store + if change 如果存在合适的验证令牌(ETag)，发起请求，如果资源无变化，304，不下载
 
   `no-store` 完全不存储
 
-- 刷新，会跳过强缓存，强制刷新，可以连协商缓存也跳过
+- 刷新，会跳过强缓存，强制刷新，协商缓存也可跳过
+
   [浏览器缓存知识小结及应用 - 流云诸葛 - 博客园](https://www.cnblogs.com/lyzg/p/5125934.html)
+
   [HTTP 缓存  |  Web  |  Google Developers](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching?hl=zh-cn)
+
+  [HTTP caching - HTTP | MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching)
+
+- 不设置
+  - 跳转访问  size 列 显示 disk cache 或请求详情 General 显示 Status Code: 200 OK (from disk cache)
+  - 直接打开 chrome 会在请求头加上`max-age=0`，走协商缓存 显示 304，不需要再接收 body，节省一些带宽
+  - 浏览器缓存策略有差异，所以不需要缓存时，最好显式指定
+
+## 共享代理缓存 VS 私人浏览器缓存
+
+共享缓存可以存在中间服务器上，
 
 ## 缓存策略
 
 - For html files, use Cache-Control: no-cache, and Etag.
 - For js,css, and image files, set Cache-Control: public, max-age=31536000, no Etag, no Last-Modified settings.
+
+## 缓存有效期计算
+
+```
+// freshnessLifetime
+if `Cache-control: max-age=N` exist
+  = N
+else if `Expires` exist
+  = Expires - Date
+else if `Last-Modified` exist
+  = (Date - Last-Modified) / 10
+
+expirationTime = responseTime + freshnessLifetime - currentAge
+
+responseTime 浏览器接收响应时间
+currentAge = currentTime - storeTime
+```
+
+meta cache-control 不建议用，html4 标准，5 没有
+
+[http - How do we control web page caching, across all browsers? - Stack Overflow](https://stackoverflow.com/questions/49547/how-do-we-control-web-page-caching-across-all-browsers)
 
 ## HTTPS
 
@@ -110,3 +144,4 @@ liteserver 基于 browser-sync
 流程：解析-请求-渲染
 
 [DNS 递归/迭代 原理 - kevin.Xiang - 博客园](https://www.cnblogs.com/xiangsikai/p/8438601.html)
+[全面分析前端的网络请求方式](https://mp.weixin.qq.com/s?__biz=Mzg2NDAzMjE5NQ==&mid=2247484098&idx=1&sn=d9b077e093fef88febc36f87dfc15e8d&scene=21#wechat_redirect)

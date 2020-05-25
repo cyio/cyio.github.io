@@ -74,3 +74,5 @@ z-index只应用在兄弟元素上。
 static定位的元素z-index值是0，也就是常规流。
 
 npm viewtorem
+
+[关于移动端适配，你必须要知道的](https://mp.weixin.qq.com/s?__biz=Mzg2NDAzMjE5NQ==&mid=2247484266&idx=1&sn=50ee8117257c16c014f0067893c0d36d&scene=21#wechat_redirect)

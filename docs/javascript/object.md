@@ -125,3 +125,12 @@ let obj_snapshot = JSON.parse(JSON.stringify(obj))
 参数：(target, source, ...)
 注意会改变 target
 如果只是想合并 `let merged = Object.assign({}, a, b)`
+
+## 字典
+尽量用 Map，其次用
+```
+const dict = Object.create(null)
+```
+
+[Single objects • JavaScript for impatient programmers](https://exploringjs.com/impatient-js/ch_single-objects.html#the-pitfalls-of-using-an-object-as-a-dictionary)
+

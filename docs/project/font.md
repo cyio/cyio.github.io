@@ -38,3 +38,7 @@
 - 设置`font-display: swap`，google 默认链接带了这个参数，第三方可能得手动加上，如 `https://fonts.font.im/css?family=Oswald&display=swap`
 
   [`font-display` for the Masses | CSS-Tricks](https://css-tricks.com/font-display-masses/)
+
+自托管
+[KyleAMathews/typefaces: NPM packages for Open Source typefaces](https://github.com/KyleAMathews/typefaces)
+

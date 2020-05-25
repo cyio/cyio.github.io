@@ -574,3 +574,8 @@ brew install interactive-rebase-tool
 [【Mac】升级 Git 版本 - 掘金](https://juejin.im/post/5c3e9de86fb9a049b5071413)
 [git diff - Should diff3 be default conflictstyle on git? - Stack Overflow](https://stackoverflow.com/questions/27417656/should-diff3-be-default-conflictstyle-on-git)
 [快速处理 git 合并冲突 - 知乎](https://zhuanlan.zhihu.com/p/78505692)
+
+## 显示未跟踪文件夹详情
+
+`git status --untracked-files=all`
+

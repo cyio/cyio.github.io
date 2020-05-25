@@ -25,6 +25,9 @@ Number(true) === 1
 typeof xxx === 'number'
 // 检测字符串
 typeof xxx === 'string'
+typeof new String('a') // object
+xxx instanceof String 
+
 typeof [1, 2] //"object"   无法区分数组和对象
 // 检测数组
 xxx instanceof Array

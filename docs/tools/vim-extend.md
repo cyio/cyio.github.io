@@ -115,16 +115,20 @@ bash <(curl -L https://raw.githubusercontent.com/junegunn/myvim/master/myvim)
 ## coc
 
 [A guide to modern Web Development with (Neo)vim – freeCodeCamp.org](https://medium.freecodecamp.org/a-guide-to-modern-web-development-with-neo-vim-333f7efbf8e2)
+
 [jarvis/init.vim at master · ctaylo21/jarvis](https://github.com/ctaylo21/jarvis/blob/master/config/nvim/init.vim)
 
 配合 snip
+
 `ctrl-y`
+
 [Completion with sources · neoclide/coc.nvim Wiki](https://github.com/neoclide/coc.nvim/wiki/Completion-with-sources#improve-the-completion-experience)
 
 指定类型使用，markdown 打字卡
+
 [Disable coc.nvim per filetype (i.e. a filetype whitelist or blacklist) · Issue #349 · neoclide/coc.nvim](https://github.com/neoclide/coc.nvim/issues/349#issuecomment-455332882)
 
-```
+```sh
 " Remap for rename current word
 nmap <F2> <Plug>(coc-rename)
 ```
@@ -132,6 +136,8 @@ nmap <F2> <Plug>(coc-rename)
 [init.vim](https://gist.github.com/benawad/b768f5a5bbd92c8baabd363b7e79786f#file-init-vim-L178)
 
 `:CocInstall coc-explorer`
+
+定义跳转 GoTo 查看 `~/.vimrc`
 
 ## note plugin
 
