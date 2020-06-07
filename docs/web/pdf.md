@@ -19,3 +19,6 @@
 
 3. pdf.js
 canvas
+
+[pdfjs viewer 开发小结 - 网易云 - 博客园](https://www.cnblogs.com/163yun/p/9811569.html)
+

@@ -49,3 +49,21 @@ natapp 使用参考
 [准备工作 | 微信开放文档](https://developers.weixin.qq.com/doc/oplatform/Website_App/WeChat_Login/Wechat_Login.html)
 [第三方登录之WX登录从入门到填坑 - 六道有言 - OSCHINA](https://my.oschina.net/mtdg/blog/3235931/print)
 
+
+## 前端截图并保存
+
+[微信H5保存分享图片_观 止-CSDN博客_h5 gallery 保存网络图片](https://blog.csdn.net/u014259536/article/details/86743607)
+
+一进页面就给前端生成了
+
+[Html2canvas - 微信中长按存图 - 将h5活动结果保存到本地 - 云+社区 - 腾讯云](https://cloud.tencent.com/developer/article/1191774)
+[html2canvas - 实现网页截图(+下载截图) 功能 - xing.org1^ - 博客园](https://www.cnblogs.com/padding1015/p/8947062.html)
+
+html2canvas
+- fixed 定位内容需要移除？
+- 没有设置跨域头的外链图片，不行
+
+[微信H5实现网页长按保存图片及识别二维码 - 掘金](https://juejin.im/post/5b7982556fb9a019d9245cf1)
+
+[公众号H5如何通过点击按钮保存图片到手机本地？ | 微信开放社区](https://developers.weixin.qq.com/community/develop/doc/000cc884ec445859e1d728db156000)
+

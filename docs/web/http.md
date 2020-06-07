@@ -60,8 +60,10 @@ meta cache-control 不建议用，html4 标准，5 没有
 2. 双方协商生成”对话密钥”。
 3. 双方采用”对话密钥”进行加密通信
 
-- cors 跨域处理非简单请求会触发 options，chromuim maxage 上限是 600，即 10 分钟
+- CORS 处理非简单请求会触发 options
   [减少 options 请求次数 和 数据量大时前端渲染的处理 - wanwan5856 的博客 - CSDN 博客](https://blog.csdn.net/wanwan5856/article/details/79592681)
+
+简单请求的定义，来自 MDN，不是标准。简单请求要满足一系列条件，如仅使用 CORS 安全 请求头。而需求 prelight 的请求，意味着涉及用户数据
 
 ## 返回状态码
 
