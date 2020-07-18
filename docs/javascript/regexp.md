@@ -179,3 +179,12 @@ const validStrPattern = /^[\u4e00-\u9fa5_a-zA-Z0-9- ]+$/
 ```
 
 [当我问表单校验的面试题时，我期望得到什么样的答案-图灵社区](https://www.ituring.com.cn/article/500582)
+
+- URL 获取文件扩展
+
+```js
+function getUrlExtension(url) {
+  return url.split(/[#?]/)[0].split('.').pop().trim().toLowerCase();
+}
+```
+[How to pull url file extension out of url string using javascript - Stack Overflow](https://stackoverflow.com/a/47767860/5657916)

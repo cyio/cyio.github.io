@@ -38,11 +38,16 @@ leader c s 多行带星号(sexy)注释
 leader c m 单行带星号(minimal)注释
 ```
 
-## ~~FZF~~
+## FZF
 
 - 支持多种查找，包括一些插件功能
 - 定位后，c-t s v 用不同方式打开
+- `:Files`与 ctrlf 功能重合
+- 实用查找 `:Buffers` `:Snippets` `:GFiles?` `:BCommits`
+- 差异，交互式
+- 不如 ctrlsf 方便 [search and replace in project? · Issue #528 · junegunn/fzf.vim](https://github.com/junegunn/fzf.vim/issues/528#issuecomment-368260699)
 
+> Preview 我用的命令是bat，自动语法高亮
 
 使用理由：全局性 zsh git
 [What am I missing by not using FZF? : vim](https://www.reddit.com/r/vim/comments/gbhvlo/what_am_i_missing_by_not_using_fzf/)
@@ -84,7 +89,11 @@ leader c m 单行带星号(minimal)注释
 
 ## `:UltiSnipsEdit`
 
-tab 补全 ctrl-b 下一个点 ctrl-z 上一个点
+```
+tab 补全
+ctrl-b 下一个点
+ctrl-z 上一个点
+```
 
 临时使用其它类型的补全，设置文件类型
 
@@ -170,7 +179,7 @@ nmap <F2> <Plug>(coc-rename)
 
 查找，`#`后向匹配，`g*`非精确匹配
 
-## typescript
+## Coc Typescript
 
 [Vim for JavaScript and React in 2019 | Vim From Scratch](https://www.vimfromscratch.com/articles/vim-for-javascript-and-react-in-2019/)
 
@@ -185,6 +194,23 @@ nmap <F2> <Plug>(coc-rename)
 | leader qf | 修复当前               |
 | K         | 查看文档               |
 | c-j       | 插入模式，snip 展开    |
+
+## Coc snippets
+
+`c-j` 展开
+`c-j``c-k` 上、下一个编辑点
+
+查看当前 buffer 关联
+`:CocList snippets`
+
+可以不安装 ultisnips
+
+问题：编写 `useS` 可自动 import，但是对编辑点支持有限
+解决：为了使用 virtual placeholder，改用 ultisnips + coc-ultisnips，不使用 coc-snippets
+
+react snippets 位置
+`~/.vim/plugged/vim-snippets/UltiSnips/javascript_react.snippets`
+
 
 ## 表格支持
 
@@ -206,6 +232,11 @@ csv 转换 `leadet tt`
     h,h,h
     ||
     a,a,a
+
+    a,b
+    --
+    c,d
+    e,f
     ```
 
 ```
@@ -250,4 +281,14 @@ Gmove 处理了 buffer，避免返回时修改原文件
 - 拓展，如何删除两边空格，`ds<space><space>`
 - 小写 s 表示不同行，同行使用大写 S
 - 查看帮助：`h surr<tab>`
-    
+## ctrlsf
+搜索、查看、编辑
+
+GLOB search
+`:CtrlSF -G *.pug svg` 在所有 pug 文件中，查找 svg
+
+插件一般不支持工具的原生命令行参数，如果要用完整命令行，`Leaderf rg`
+
+## tmp
+- `set spell` 拼写检查，比如记不清楚某个单词拼写，可以新开 buffer，然后 `z=`，`num <cr>`
+

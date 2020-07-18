@@ -115,7 +115,8 @@ mike.say.bind(joy)() // JOY，this 指向被改成 joy
 
 ## 深拷贝
 
-ES5 递归
+ES5 用递归解决
+
 ES6 `Object.assign`和`...`扩展符不是深拷贝，如果属性里有对象或数组，拷贝的是引用
 
 `Object.assign`将多个对象复制到目标对象，与其说是复制，更像合并，如果有相同 key， 后边会覆盖前边
@@ -144,7 +145,7 @@ let obj_snapshot = JSON.parse(JSON.stringify(obj))
 
 ## 字典
 
-尽量用 Map，其次用
+尽量用 Map，其次用`Object.create`
 
 ```
 const dict = Object.create(null)

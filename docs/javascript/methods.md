@@ -190,6 +190,8 @@ location.replace('http://baidu.com')
 ```
 两个方法都会载入一个新地址，区别是`replace`会抹掉当前页的历史记录（之前的不影响）。
 
+现在浏览器只允许 click 触发的 js 里执行 window.open，避免了恶意弹窗
+
 ## map
 
 ```js

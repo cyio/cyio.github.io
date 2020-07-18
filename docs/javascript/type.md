@@ -22,14 +22,18 @@ Number(true) === 1
 
 ```js
 // 检测数字
-typeof xxx === 'number'
+typeof 1 === 'number'
 // 检测字符串
-typeof xxx === 'string'
+typeof '1' === 'string'
 typeof new String('a') // object
-xxx instanceof String 
+'1' instanceof String  // false
 
 typeof [1, 2] //"object"   无法区分数组和对象
 // 检测数组
 xxx instanceof Array
 xxx.constructor === Array
+
+const isObject = (arg) => Object.prototype.toString.call(arg) === '[object Object]';
 ```
+
+[第 21 题：有以下 3 个判断数组的方法，请分别介绍它们之间的区别和优劣 | 木易杨前端进阶](https://muyiy.vip/question/js/21.html)

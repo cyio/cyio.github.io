@@ -197,20 +197,25 @@ handleClick = () => {
 ## learn
 
 state 每个组件私有
+
 当需要获取多个子组件数据，或两个组件需要相互通讯，state 提升到父组件
+
 受控组件
+
 > 受控”与“非受控”两个概念，区别在于这个组件的状态是否可以被外部修改。一个设计得当的组件应该同时支持“受控”与“非受控”两种形式，即当开发者不控制组件属性时，组件自己管理状态，而当开发者控制组件属性时，组件该由属性控制。而开发一个复杂组件更需要注意这点，以避免只有部分属性受控，使其变成一个半受控组件。
-[受控组件与非受控组件 · 语雀](https://www.yuque.com/ant-design/course/goozth)
+> [受控组件与非受控组件 · 语雀](https://www.yuque.com/ant-design/course/goozth)
 
 不可变数据：
 
 - 跟踪更容易
 - 优势，帮助创建 pure components，变化时机 --> 确定重新渲染
 
-- 只有 render，不含 state，写成函数组件更简单
+- 只有 render，不含私有数据(state)，写成函数组件更简单
 
   ```js
-  const NoStateComp = props => <div onClick={props.onClick}>{props.children}</div>
+  const NoStateComp = props => (
+    <div onClick={props.onClick}>{props.children}</div>
+  )
   ```
 
 - React 元素 对象 一等公民 参数传递
@@ -225,49 +230,53 @@ state 每个组件私有
 
 - 渲染 UI vs 添加交互
 
-    大量编码 vs 大量细节
+  大量编码 vs 大量细节
 
 - prop vs state
 
-    构建静态版本时，不需要 state
+  构建静态版本时，不需要 state
 
 - 小型 vs 大型
 
-    自下而上 vs 自上而下
+  自下而上 vs 自上而下
 
 state 需要定义的最少数据
 
 创建新上层组件理由，需要存放共同 state
 
-- class ==> hook
-  + 组件复用，抽象层嵌套地域
-  + 生命周期，不相关逻辑分散
-  + class this 理解难度大
+- class ==> hook why
+  - 组件复用，抽象层嵌套地域
+  - 生命周期，不相关逻辑分散
+  - class this 理解难度大
 
 ## hooks
-- Hooks 是一种在函数式组件内使用 state 逻辑，消除写 classes 的必要。
+
+- hooks 是一种在函数式组件内使用 state 逻辑，消除写 classes 的必要。
 - vue 可以结合 mixin 来写无状态的函数式组件。mixin 的缺点是无法消费或使用另一个 mixin。导致链式逻辑难以实现。
-- 更清晰定义和共享逻辑、传递state
+- 更清晰定义和共享逻辑、传递 state
 
 [Hooks are coming to Vue.js version 3.0 - LogRocket Blog](https://blog.logrocket.com/hooks-are-coming-to-vue/)
 [useHooks~小窍门 - 知乎](https://zhuanlan.zhihu.com/p/66170210)
 
 ### useState
+
 use 设置对象或数组时替换， 有别于 class 合并
 
 除非需要替换更新的一类数据，否则都应该分开定义
 
 [Hooks FAQ – React](https://zh-hans.reactjs.org/docs/hooks-faq.html#should-i-use-one-or-many-state-variables)
 [React Class features vs. Hooks equivalents • Soluto Engineering Blog](https://blog.solutotlv.com/react-class-to-hooks/)
-[无意识设计-复盘React Hook的创造过程 · Issue #4 · shanggqm/blog](https://github.com/shanggqm/blog/issues/4)
+[无意识设计-复盘 React Hook 的创造过程 · Issue #4 · shanggqm/blog](https://github.com/shanggqm/blog/issues/4)
 
 - 调用限制：
+
   - 只在 top level 调用 Hooks，而不能在循环、条件或嵌套函数中使用
 
   - 只在 React 函数组件或自定义 Hooks 中调用，而不能在普通 JS 函数中
 
-- useState里数据务必为immutable
-```
+- useState 里数据务必为 immutable
+
+```js
         // bad 这样无法触发更新
         setList(list.sort((a, b) => a - b));
         // good 必须传入一个新的对象
@@ -275,10 +284,13 @@ use 设置对象或数组时替换， 有别于 class 合并
 ```
 
 ### useEffect
+
 - async 要用 IIFE 包起来
 - 组件渲染后执行，不阻塞绘制。`componentDidMount` and `componentDidUpdate`是同步
-[react hooks踩坑记录 | Code for fun](https://frezc.github.io/2019/03/23/react-hooks-traps/)
-- 什么情况下不用？操作 DOM 且每次渲染不一样，DOM 更新后又触发 effect。用户会看到界面闪烁，只有这一种情况需要使用`useLayoutEffect`，执行在dom 更新后，绘制前
+
+  [react hooks 踩坑记录 | Code for fun](https://frezc.github.io/2019/03/23/react-hooks-traps/)
+
+- 什么情况下不用？操作 DOM 且每次渲染不一样，DOM 更新后又触发 effect。用户会看到界面闪烁，只有这一种情况需要使用`useLayoutEffect`，执行在 dom 更新后，绘制前
 
 [useEffect vs useLayoutEffect](https://kentcdodds.com/blog/useeffect-vs-uselayouteffect)
 
@@ -287,15 +299,16 @@ Fragment 相当于 vue 的 template
 加空格方式 `{' '}`
 
 setState 更新回调
+
 1. componentDidUpdate
 2. `setState(updater, callback)`
 
 render return 里可直接定义变量`const ChapterName = <h2>{chapterName}</h2>;`
 
 ## 生命周期
+
 ### componentDidUpdate
+
 - 组件更新后立即调用，首次渲染不调用
 - 用于网络请求导致 props 变化等
 - 注意，执行操作要有条件，避免死循环
-
-

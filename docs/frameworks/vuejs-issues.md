@@ -202,3 +202,7 @@ The quick answer, a partially defined path.
 
 ## spa scroll
 [Automatic scroll restoration in Single Page Applications (SPA) — Childhood Cancer Data Lab](https://www.ccdatalab.org/blog/automatic-scroll-restoration-single-page-applications)
+
+## 2.6 Vue.observable
+[Vue Template - CodeSandbox](https://codesandbox.io/s/k3kpqz2wz7?file=/src/store.js:24-62)
+
