@@ -1,10 +1,25 @@
 # ES6
 
-- 新特性：模块|类|解构赋值|promise|构造器|Proxy|Reflect|箭头函数|模板字符串
-- ES6 不允许在同一个作用域内用 let 或 const 重复声明同名变量。这对于防止在不同的 js 库中存在重复声明的函数表达式十分有帮助。
-- 不再需要使用立即执行函数以避免全局污染，用大括号配合`let/const`即可
+- 新特性：模块 | 类 | 解构赋值 | promise | 构造器 |Proxy | Reflect | 箭头函数 | 模板字符串
+- 防止重复声明：ES6 不允许在同一个作用域内用 let 或 const 重复声明同名变量。这对于防止在不同的 js 库中存在重复声明的函数表达式十分有帮助。
+- 不再需要仅为了声明变量，而使用立即执行函数以避免全局污染，用大括号配合`let/const`即可
 - rest 参数，更便利访问函数参数
-- let/var 全局声明有区别，var 存在 window 对象中，而 let 存在声明式环境中（看不到），不影响 window.xxx 的使用，但 var xxx 不行
+- let/var 全局声明有区别：var 存在 window 对象中，而 let 存在声明式环境中（看不到），不影响 window.xxx 的使用，但 var xxx 不行
+    ```
+    var mine = 4
+    # undefined
+    window.mine
+    # 4
+    mine
+    # 4
+
+    let my = 3
+    # undefined
+    window.my
+    # undefined
+    my
+    # 3
+    ```
 - let 最好放在 block 最上面，防止过早访问引起抛错
 - 显式地声明块级变量，建议把 let 与大括号放在一行
 
@@ -19,34 +34,15 @@
 [Javascript - ES6 实用技巧](https://github.com/TerryZ/js-develop-skill-summary/blob/master/javascript-es6.md)
 [在 ES6 中 改良的 5 个 JavaScript “缺陷” - WEB 前端 - 伯乐在线](http://web.jobbole.com/86210/)
 
-- 实现模板字符串功能
-
-```js
-// 1. 正则匹配出 key，然后字符串替换 
-// 2. 字符串可用点号分割成数组 
-// 3. shift 出来依次供对象访问
-function render(template, context) {
-  // 如果无匹配，返回 template
-  return template.replace(/\{\{(.*?)\}\}/g, (match, key) => {
-    key = key.split('.')
-    let result = context
-    while (key.length > 0) {
-      result = result[key.shift()]
-    }
-    return result
-  })
-}
-const template = '{{name}}很厉name害，才{{age}}岁，身高{{detail.height}}'
-const context = { name: 'jawil', age: '15', detail: { height: '170' } }
-console.log(render(template, context))
-
-const template2 = 'plain text'
-console.log(render(template2, context))
-```
-
 ## map 映射
 
-- 如果 key 是复杂数据类型，如`[1]`，无法直接查改删，可以同名。需要遍历或转换为数组
+- 如果 key 是复杂数据类型，需要保存起来，以便 map 操作
+    ```
+    let key = [1]
+    ...
+    map.get(key)
+    map.delete(key)
+    ```
 
 ## 类 class
 
@@ -79,7 +75,7 @@ cat.says('world')
 
 - 特征：
   1.  总是在严格模式下
-  2.  有一个项级域而不是全局域
+  2.  有一个顶级域而不是全局域
   3.  能从其他模块导入绑定
   4.  能将绑定导出
 - 为什么
@@ -94,9 +90,9 @@ cat.says('world')
 
 ### 兼容性
 
-微信 android 不支持，iOS 因为跟 safari 一样，所以支持
-IE 被放弃了，不支持
-UC android 不支持
+- 微信 android 不支持，iOS 因为跟 safari 一样，所以支持
+- IE 被放弃了，不支持
+- UC android 不支持
 
 [es module vue](https://codepen.io/cyio/pen/mjPzqJ)
 [jspm.io - Native ES Modules CDN](https://jspm.io/)
@@ -106,12 +102,12 @@ UC android 不支持
 ```js
 import First from './First'
 import Second from './Second'
-/..../
+;/..../
 export { First, Second }
 
-export {default as SomeClass} from './SomeClass';
-export {someFunction} from './utils';
-export {default as React} from 'react';
+export { default as SomeClass } from './SomeClass'
+export { someFunction } from './utils'
+export { default as React } from 'react'
 ```
 
 ## 箭头函数
@@ -128,11 +124,11 @@ var chewToys = puppies.map(puppy => ({})) //
 
 - 箭头函数和普通函数的区别
 
-箭头函数的 this 就是定义时所在的对象，而不是使用时所在的对象
+  1. 箭头函数的 this 就是定义时所在的对象，而不是使用时所在的对象
 
-箭头函数不能用作构造函数，
+  2. 箭头函数不能用作构造函数
 
-箭头函数不能使用 arguments 对象，该对象不存在，但可以使用 rest 对象
+  3. 箭头函数不能使用 arguments 对象，该对象不存在，但可以使用 rest 对象
 
 - 函数表达式称为 lambda 函数，λ-calculus，演算的意思
 
@@ -140,38 +136,43 @@ var chewToys = puppies.map(puppy => ({})) //
 'use strict'
 // 打印i=几，每隔500毫秒迭代，第一次打印需立刻执行
 function sleep(ms = 0) {
-  return new Promise((resolve, reject) => setTimeout(resolve, ms));
+  return new Promise((resolve, reject) => setTimeout(resolve, ms))
 }
 
 async function test() {
   for (let i = 0; i < 10; i++) {
-    await sleep(500);
-    console.log(`i=${i}`);
+    await sleep(500)
+    console.log(`i=${i}`)
   }
 }
 
-test().then(() => console.log('done'));
+test().then(() => console.log('done'))
 
 // 类版本，props 就是函数参数
 class Sleep {
-	constructor(props){
-		this.ms = props | 0
-	}
+  constructor(props) {
+    this.ms = props | 0
+  }
 
-	then(resolve, reject) {
-		setTimeout(resolve, this.ms)
-	}
+  then(resolve, reject) {
+    setTimeout(resolve, this.ms)
+  }
 }
 
 await new Sleep(500)
-await new Sleep
+await new Sleep()
 ```
 
 class 实际上是函数
+
 不会自动提升，因此使用前需先声明
+
 constructor 只在实例化时被调用
+
 使用 extends 关键字创建子类
+
 与一般函数写法的比较
+
 静态方法只能由未实例化的类调用，常用作工具函数
 
 ```js
@@ -206,8 +207,12 @@ button.addEventListener('click', function() {
 - 不关心 this
 
 始终写上 return，方便增加语句、log
+
 ```js
-let square = x => {console.log(x); return x * x; }
+let square = x => {
+  console.log(x)
+  return x * x
+}
 ```
 
 ## 模板字面量

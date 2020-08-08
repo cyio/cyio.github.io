@@ -3,7 +3,9 @@
 ## 定义
 
 - `{ key: value }` {任意字符串: 任意值}
-- 对象是属性的容器，其中每个属性都拥有名字和值。属性名可以是包括空字符串在内的任意字符串，属性值可以是任意值
+
+  对象是属性的容器，其中每个属性都拥有名字和值。属性名可以是包括空字符串在内的任意字符串，属性值可以是任意值
+
 - 一个由空格或连字符，或者以数字开头,或者保留字的属性名，就只能通过方括号标记访问。这个标记法在属性名称是动态判定（属性名只有到运行时才能判定）时非常有用
   ![](http://wx4.sinaimg.cn/large/4e5d3ea7ly1fcj043tniuj206u06h3yj.jpg)
   > 从数据结构的角度来说，映射（Map）跟原本的 Object 非常相似，都是 Key/Value 的键值对结构。但是 Object 有一个让人非常不爽的限制：key 必须是字符串或数字。
@@ -140,7 +142,9 @@ let obj_snapshot = JSON.parse(JSON.stringify(obj))
 ### Object.assign
 
 参数：(target, source, ...)
+
 注意会改变 target
+
 如果只是想合并 `let merged = Object.assign({}, a, b)`
 
 ## 字典

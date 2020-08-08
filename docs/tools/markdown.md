@@ -24,11 +24,20 @@ Content in the first column | Content in the second column
 + doThisInstead()
 ```
 
+## Vim 配合
+
+| 特性     | markdown-preview | Typora       |
+|----------|------------------|--------------|
+| 触发     | :MarkdownPreview | `<leader>tp` |
+| 实时反馈 | 1                |              |
+| 侧栏 Toc |                  | 1            |
+
 ## Gitbook
 
 与 GFM 不一致的一些地方
 
-.号作前导缩进  
+.号作前导缩进
+
 换行要用双空格
 
 ## 语法参考
@@ -46,13 +55,13 @@ function syntaxHighlighting() {
 - `inline code`
 
 1.  Numbered list
-    1.  Numbered sub-list  
-         1. Numbered sub-sub-list
+    1.  Numbered sub-list
+        1.  Numbered sub-sub-list
 2.  [Link](https://www.google.com)
 
 An image: ![Markdown Here logo](http://adam-p.github.io/markdown-here/img/icon24.png)
 
-> Block quote.  
+> Block quote.
 > _With_ **some** `markdown`.
 
 If **TeX Math** support is enabled, this is the quadratic equation:
@@ -70,11 +79,11 @@ $-b \pm \sqrt{b^2 - 4ac} \over 2a$
 
 ###### Header 6
 
-| Tables        |      Are      |  Cool |
-| ------------- | :-----------: | ----: |
-| column 3 is   | right-aligned | $1600 |
-| column 2 is   |   centered    |   $12 |
-| zebra stripes |   are neat    |    $1 |
+| Tables        |      Are      |   Cool |
+| ------------- | :-----------: | -----: |
+| column 3 is   | right-aligned | \$1600 |
+| column 2 is   |   centered    |   \$12 |
+| zebra stripes |   are neat    |    \$1 |
 
 Here's a horizontal rule:
 

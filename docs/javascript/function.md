@@ -55,7 +55,12 @@ tmp(1, 2)
 ## 防抖和节流
 > debounce/throttle
 
-都是为了限制一定时间内执行频率，一般用于减少用户输入引起的函数调用次数
+- 都是为了限制一定时间内执行频率，一般用于减少用户输入引起的函数调用次数
+- 从实现上思考，是要延迟、还是过滤
+- debounce 一般是用户输入，throttle 一般如 scroll 等浏览器事件
+- `_.debounce(fn, true) `过滤意外点击，而 throttle 后续事件还是会执行，m 秒内不超过 n 次
+- 提交按钮点击，希望过滤掉误点，只执行一次
+拿这个例子，各点两次，观察区别 [Underscore.js throttle vs debounce example - JSFiddle - Code Playground](https://jsfiddle.net/missinglink/19e2r2we/)
 
 1. 函数防抖是只有足够的空闲时间，才执行一次代码
    > bounce 是弹跳抖的意思，debounce 去抖动，平稳

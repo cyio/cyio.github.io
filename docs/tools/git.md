@@ -420,10 +420,20 @@ git config  user.name "suzie"
 
 ## 文件大小写重命名
 
+注意，不要用`git config core.ignorecase false`，mv > git add 方式重名名后，分支无法直接合并
+
+正确操作
 ```
-git mv ABC.java Abc.java
+git mv <old name> <new name>
 git status
 ```
+
+由于 git 对大小写不敏感，同名文件 git mv 时会提示错误`Invalid argument`
+```
+git mv casesensitive tmp
+git mv tmp CaseSensitive
+```
+[In a Git repository, how to properly rename a directory? - Stack Overflow](https://stackoverflow.com/questions/11183788/in-a-git-repository-how-to-properly-rename-a-directory/11183844)
 
 ## git 仓库删除文件/夹，本地不删除
 
