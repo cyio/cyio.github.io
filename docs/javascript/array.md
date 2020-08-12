@@ -1,5 +1,7 @@
 # 数组 Array
 
+[toc]
+
 ## 独有 length 属性
 
 设置更大的 length 值，不会分配更多空间，设置较小的 length 值，会把等于大于新 length 值的属性删掉。
@@ -29,6 +31,7 @@ names.toString()
 `splice`截取一个数组的子集创建一个新数组（有副作用，不推荐）
 
 push 把数组参数当作单个元素追加，并返回 length，而 concat 是分别追加，返回新数组，不改变原数组。
+
 ```js
 arr.push([1, 2])
 arr.concat([1, 2])
@@ -40,7 +43,10 @@ arr.concat([1, 2])
 
 ## 删除
 
-`shift pop` 转移，取出，分别删除并返回数组的第一个和最后一个元素。数组为空时不操作，返回 undifined
+`shift pop` 转移，取出
+
+- 分别删除并返回数组的第一个和最后一个元素
+- 数组为空时不操作，返回 undifined
 
 ## 中间插入
 
@@ -135,36 +141,15 @@ Array.from(arrayLike)
    map() 结果数组
    forEach() 遍历运行指定函数，无返回值，有副作用，不推荐
 
-### forEach 示例
-
-```js
-// 创建所有复选框的数组
-var checkboxes = [].slice.call(
-  document.querySelectorAll('.inbox [type="checkbox"]')
-)
-
-// 最后选中
-var lastChecked
-
-// 点击处理函数
-function handleCheck(e) {
-  // 创建布尔值
-  var isBetween = false
-
-  checkboxes.forEach(input => {})
-}
-// 绑定点击事件
-checkboxes.forEach(checkbox => checkbox.addEventListener('click'.handleCheck))
-```
-
 ## 排序
 
-- arr.sort()　默认的比较函数会将比较元素视为字符串，所以通常要传入自定义比较函数
+- `arr.sort([compareFunction])` 默认的比较函数会将比较元素视为字符串，所以通常要传入自定义比较函数
 - number 上两位数就不准了，需要传入 compare function
+- compareFunction(a, b) 要求返回与 0 进行比较，`result > 0` 时，输出`b a`。也就是，默认是升序。
 - undefined 总会排到最后，符合预期
 - null 需要注意
 
-```
+```js
 const arr = [{
   name: 'Apple'
 }, {
@@ -177,7 +162,14 @@ console.log(arr.sort(
 ))
 
 const arr = [1, 20, 10, 30, 22, 11, 55, 24, 31, 88, 12, 100, 50];
-console.log(arr.sort((a, b) => a - b)) // 为什么不能写 a > b，而要写成 a > b ? 1 : -1
+console.log(arr.sort((a, b) => a - b)) // 为什么这里不能写成 a > b，因为返回布尔值，然后布尔值跟 0 比较，false < 0，于是 20 排在 10 前面
+
+// a > b 正确写法
+arr.sort((a, b) => {
+  if (a < b) return -1 
+  if (a > b) return 1  // 调换
+  if (a === b) return 0
+})
 ```
 
 [How not to sort an array in JavaScript | Phil Nash](https://philna.sh/blog/2019/08/26/how-not-to-sort-an-array-in-javascript/)
@@ -304,5 +296,5 @@ console.log(arr)
 
 ## 跳出循环
 
-- 代码简短，用 for 配 break
+- 代码简短，用 for 配合 break
 - 代码较长，建议定义变量标记

@@ -169,3 +169,6 @@ module.exports = {
 
 ## runtime
 [The Single Runtime Chunk > Webpack Encore: Frontend like a Pro! | SymfonyCasts](https://symfonycasts.com/screencast/webpack-encore/single-runtime-chunk)
+
+## hash 策略
+[webpack-文件指纹策略：chunkhash、contenthash和hash | 个人博客](https://jkfhto.github.io/2019-10-18/webpack/webpack-%E6%96%87%E4%BB%B6%E6%8C%87%E7%BA%B9%E7%AD%96%E7%95%A5%EF%BC%9Achunkhash%E3%80%81contenthash%E5%92%8Chash/)

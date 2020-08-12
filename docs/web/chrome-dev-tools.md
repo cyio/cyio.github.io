@@ -1,4 +1,5 @@
 # Chrome-DevTools
+[toc]
 
 ## 调试
 - 选项：恢复脚本执行，跳过下一个函数调用，进入函数，跳出当前函数
@@ -41,4 +42,15 @@
 - 过滤 `-method:OPTIONS`
 - 隐藏来自扩展请求 `-scheme:chrome-extension`
 - XAR 导出 录制、然后网络上右键 [How to generate a HAR file in Chrome or Firefox - KB254 - In](https://www.inflectra.com/support/knowledgebase/kb254.aspx)
+
+## playground
+可以巧用 snippets 作 playground，快速调试代码
+
+放在 IIFE 里，使代码可反复运行
+```js
+(async function (){
+
+})()
+```
+
 

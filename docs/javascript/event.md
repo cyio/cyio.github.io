@@ -2,8 +2,10 @@
 
 [事件介绍 - 学习 Web 开发 | MDN](https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/Building_blocks/Events)
 
-- 现代浏览器默认冒泡，如果不想用，`e.stopPropagation()`
-- 如果想捕获，`addEventListener()`第三个参数设为`true`
+- 现代浏览器默认冒泡，如果不希望这样，`e.stopPropagation()`
+- 如果想捕获，`addEventListener()`第三个参数(useCapture)设为`true`
+- 历史，IE 实现成冒泡，NetScape 实现成捕获，后期浏览器都支持了这两种事件机制
+- 冒泡允许我们利用事件委托，避免在每个子节点单独设置事件监听器
 
 ## 事件委托（代理）
 

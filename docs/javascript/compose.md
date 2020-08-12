@@ -1,9 +1,12 @@
 # 函数合成
 
+简单示例，只合成两个
 ```js
 const toUpperCase = function(x) { return x.toUpperCase(); };
 const hello = function(x) { return 'HELLO, ' + x; };
 
+// 原始合成
+// 返回值在子函数间传递
 // const greet = function(x){
     // return hello(toUpperCase(x));
 // };

@@ -4,13 +4,13 @@
 
 - mkdir 官方支持递归创建
 
-      ```js
-      // 10 以前，会提示 tmp 或 tmp/a 不存在，无法成功创建
-      fs.mkdir('/tmp/a')
+  ```js
+  // 10 以前，会提示 tmp 或 tmp/a 不存在，无法成功创建
+  fs.mkdir('/tmp/a')
 
-      // 10
-      fs.mkdir('/tmp/a', { recursive: true })
-      ```
+  // 10
+  fs.mkdir('/tmp/a', { recursive: true })
+  ```
 
   https://nodejs.org/api/fs.html#fs_fs_mkdir_path_options_callback
 
