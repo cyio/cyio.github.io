@@ -1,5 +1,8 @@
 # Typescript
 
+> 为了说明静态类型化的好处，由于环境变量中的错字，我仅花了30分钟进行调试 - TJ
+https://mobile.twitter.com/tjholowaychuk/status/1276470952059113473
+
 vim 快速 fix，默认根据使用推测（即使推测不准，也省去一些书写）
 
 [基础类型 · TypeScript中文网 · TypeScript——JavaScript的超集](https://www.tslang.cn/docs/handbook/basic-types.html)
@@ -61,3 +64,7 @@ let output = identity<string>("myString");  // type of output will be 'string'
 ```
 
 React.FC 有泛型接口
+
+```
+// @ts -check
+```

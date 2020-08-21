@@ -57,3 +57,17 @@
 [gridtoflex.com](https://www.gridtoflex.com/)
 
 > chrome73,74 版本以后 flex 布局 Web 应用程序中的溢出将不再起作用，要在 flex 父元素，原来是 min-height: auto; 现在改为 min-height: 0;才可以
+
+## flex 没有 justify-self
+比如，有三个元素，两个元素紧挨排列，第三个元素居右。首先不能用 justify-content
+```css
+.box  {
+  display; flex;
+}
+.push {
+  margin-left: auto;
+}
+```
+
+[Box alignment in Flexbox - CSS（层叠样式表） | MDN](https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Box_Alignment/Box_Alignment_in_Flexbox)
+

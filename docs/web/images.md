@@ -1,4 +1,5 @@
 # 图片
+[toc]
 
 > web 优化专家一定是图片优化专家
 
@@ -7,31 +8,6 @@
 - 缩略图到原图过渡
 
 [web 前端图片加载优化，从图片模糊到清晰的实现过程](http://www.fly63.com/article/detial/359)
-
-## 静态图片压缩
-
-- 首先原图往往尺寸很大，先缩小
-- 把大文件挑出来，用智图的在线服务，压缩效果好，它的 gulp 工具依赖在线 api，不支持多层目录，有待观察
-- gulp-imagemin 支持多层目录
-
-```js
-gulp.task('imagemin', function() {
-  gulp
-    .src('./h5/group4/M00/**/**/*.{png,jpg,gif,ico}')
-    .pipe(imagemin())
-    .pipe(gulp.dest('./h5/group4/M00-dist/'))
-})
-```
-
-## 表单图片压缩
-
-- 图片 → canvas 压缩 → 图片
-- canvas 设置宽度
-- `toBlob()`，转换成二进制，后端友好
-
-## 图片预览
-
-- filereader onload
 
 ## 图片格式
 
@@ -46,32 +22,17 @@ gulp.task('imagemin', function() {
 
   [iSparta－PNG 压缩与格式转换工具](http://isparta.github.io/)
 
-## 处理上传
+### 不同格式适用场景
+无损，压缩级别只是编码不同？
 
-- blob 必须设置 name
-
-```js
-  blobToFile (theBlob, fileName) {
-      theBlob.lastModifiedDate = new Date()
-      theBlob.name = fileName
-      return theBlob
-  },
-
-  const newFile = this.blobToFile(blob, 'upload.png')
-  const formData = new FormData()
-  formData.append('file', newFile, newFile.name)
-```
-
-  [原理：Vue 实现图片预览、裁剪并获取被裁剪区域的 base64(无组件) - hhzzcc\_的博客 - CSDN 博客](https://blog.csdn.net/hhzzcc_/article/details/80324546)
-
-  [Vue+element-ui 图片上传剪裁组件 - 掘金](https://juejin.im/post/5b3f14c2f265da0f5405080f)
-
-- element-ui
-
-```pug
-  el-upload.avatar-uploader(action='https://jsonplaceholder.typicode.com/posts/', :show-file-list='false', :on-success='handleAvatarSuccess', :before-upload='beforeAvatarUpload')
-      el-button(type='primary') 上传
-```
+| 格式     | 使用场景                                 |
+| --       | --                                       |
+| JPG/JPEG | 1. 大的背景图； 2. 轮播图； 3. Banner 图 |
+| PNG      | 1. 小 Logo； 2. 透明背景                 |
+| GIF      | 动态图片                                 |
+| SVG      | 能适应不同设备且画质不能损坏的图片       |
+| Base64   | 大小不超过 2KB，且更新率低的图片         |
+| WebP     | 现代浏览器                               |
 
 ## 响应式展示
 
@@ -87,22 +48,9 @@ srcset/sizes
 
 [Use Imagemin to compress images  |  web.dev](https://web.dev/fast/use-imagemin-to-compress-images)
 
-## 在线压缩
-
-[Squoosh](https://squoosh.app/)
-
 ## 占位图工具
 
 [iph](http://iph.href.lu/200x200)
-
-## 本地压缩
-
-imageoptim-cli 不支持 svg，因为已经有 svgo
-注意参数需要有引号
-`imageoptim './*'`
-gui 更全面，且支持异步同步调用
-
-[自动优化图像  |  Web Fundamentals  |  Google Developers](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/automating-image-optimization/)
 
 ## h2 lazy
 
@@ -152,16 +100,76 @@ Chrome 51+，不支持 IE，兼容性很好
 二倍图设计默认导出的图片是 2x 高清的，可直接使用。
 二倍图导出时省去了点击+号 再选 2x ，操作方便。
 
-## png
-无损，压缩级别只是编码不同？
+## 图片压缩
+### 表单图片压缩
 
-| 格式     | 使用场景                                 |
-| --       | --                                       |
-| JPG/JPEG | 1. 大的背景图； 2. 轮播图； 3. Banner 图 |
-| PNG      | 1. 小 Logo； 2. 透明背景                 |
-| GIF      | 动态图片                                 |
-| SVG      | 能适应不同设备且画质不能损坏的图片       |
-| Base64   | 大小不超过 2KB，且更新率低的图片         |
-| WebP     | 现代浏览器                               |
+- 图片 →  canvas 压缩 → 图片
+- canvas 设置宽度
+- `toBlob()`，转换成二进制，后端友好
 
+[imageConversion 大文件 png 测试](https://codepen.io/cyio/pen/MWyeBbg)
+
+图片预览，可以用 URL.creatObjectUrl(blob) 或 FileReader.readAsDataURL(blob) 
+
+### 在线压缩
+
+[Squoosh](https://squoosh.app/)
+
+### 本地手动压缩
+
+imageoptim-cli 不支持 svg，因为已经有 svgo
+
+注意参数需要有引号
+
+`imageoptim './*'`
+
+gui 更全面，且支持异步同步调用
+
+[自动优化图像  |  Web Fundamentals  |  Google Developers](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/automating-image-optimization/)
+
+### ~~工具压缩 gulp~~
+
+- 首先原图往往尺寸很大，先缩小
+- 把大文件挑出来，用智图的在线服务，压缩效果好，它的 gulp 工具依赖在线 api，不支持多层目录，有待观察
+- gulp-imagemin 支持多层目录
+
+```js
+gulp.task('imagemin', function() {
+  gulp
+    .src('./h5/group4/M00/**/**/*.{png,jpg,gif,ico}')
+    .pipe(imagemin())
+    .pipe(gulp.dest('./h5/group4/M00-dist/'))
+})
+```
+
+## 图片预览
+
+- filereader onload
+
+## 处理上传
+
+- blob 必须设置 name
+
+```js
+  blobToFile (theBlob, fileName) {
+      theBlob.lastModifiedDate = new Date()
+      theBlob.name = fileName
+      return theBlob
+  },
+
+  const newFile = this.blobToFile(blob, 'upload.png')
+  const formData = new FormData()
+  formData.append('file', newFile, newFile.name)
+```
+
+  [原理：Vue 实现图片预览、裁剪并获取被裁剪区域的 base64(无组件) - hhzzcc\_的博客 - CSDN 博客](https://blog.csdn.net/hhzzcc_/article/details/80324546)
+
+  [Vue+element-ui 图片上传剪裁组件 - 掘金](https://juejin.im/post/5b3f14c2f265da0f5405080f)
+
+- element-ui
+
+```pug
+  el-upload.avatar-uploader(action='https://jsonplaceholder.typicode.com/posts/', :show-file-list='false', :on-success='handleAvatarSuccess', :before-upload='beforeAvatarUpload')
+      el-button(type='primary') 上传
+```
 

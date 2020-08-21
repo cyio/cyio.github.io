@@ -432,3 +432,14 @@ click，需要排除 dbclick，用户是在点击播放还是暂停
     // this.options.inactivityTimeout = 2000
     // })
 ```
+
+## 源码
+worker? 字幕合成等
+https://github.com/videojs/http-streaming/blob/af5b4eee6605feb3a927efee1234f0ca49c32e72/src/media-segment-request.js#L472
+
+concatSegments
+https://github.com/videojs/http-streaming/blob/e50f4c93dc47cc9ce467aeff8ddd61e1ef9e7814/src/util/segment.js#L43
+
+appendBuffer
+https://github.com/videojs/http-streaming/blob/ea3650a08de481ac01f5562e54278e736a852e5c/src/segment-loader.js#L1918
+

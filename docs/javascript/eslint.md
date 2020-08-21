@@ -1,6 +1,6 @@
 # ESLint
 
-`eslint --init` 默认推荐安装 local，全局无法使用
+`eslint --init` 默认推荐本地安装 ，全局无法使用
 
 ## 串联和等级
 * 可在子文件夹设置规则，会合并和覆盖更高层
@@ -132,14 +132,6 @@ const { statement: { isConfirmed }, statement } = this.props;
   2. 设置为 false
 [eslint-plugin-vue/require-default-prop.md at master · vuejs/eslint-plugin-vue](https://github.com/vuejs/eslint-plugin-vue/blob/master/docs/rules/require-default-prop.md)
 
-## 常用转换
-```js
-// error
-foo.hasOwnProperty("bar")
-// right
-Object.prototype.hasOwnProperty.call(foo, "bar")
-```
-
 ## vue
 
 ```json
@@ -147,4 +139,22 @@ Object.prototype.hasOwnProperty.call(foo, "bar")
       "plugin:vue/essential",
       "@vue/prettier"
     ],
+```
+
+## case
+- Value must be omitted for boolean attributes
+存在默认值，删除即可
+- hasOwnProperty
+```js
+// error
+foo.hasOwnProperty("bar")
+// right
+Object.prototype.hasOwnProperty.call(foo, "bar")
+```
+- 对象方法，使用缩写，相当于 function。如果用到 this，这种方式就不行，还是用箭头函数吧
+
+## react
+如果用到 pre state 
+```js
+this.setState(state => { count: state.count + 1 })
 ```

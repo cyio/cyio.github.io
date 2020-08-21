@@ -20,6 +20,11 @@ ${toc}
 
 [LeanCloud 开放资源: Git Commit 日志风格指南](https://open.leancloud.cn/git-commit-message/)
 
+尽量写有意义的 msg：
+- 如果不能用句子完整表达，就用关键字
+- 改了不同的东西，要一起提交，主要的修改是什么
+- 改的都是零碎点，msg 随意 fix minor
+
 ## 编码问题
 
 找到报错的文件，运行`:w ++ff=unix`

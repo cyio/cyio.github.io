@@ -1,4 +1,5 @@
 # Promise
+[toc]
 
 - Promise 构造函数是同步执行的（故封装时用 return），then/catch 中的函数是异步执行的。
 
@@ -159,3 +160,20 @@ async function printFiles() {
 ```
 
 [JavaScript Promises: an Introduction  |  Web Fundamentals  |  Google Developers](https://developers.google.com/web/fundamentals/primers/promises#javascript_exceptions_and_promises)
+
+## 复杂异步依赖场景
+```js
+  let finishLoading
+  const ready = new Promise(resolve => finishLoading = resolve)
+  ready.then(() => console.log('ready'))
+  setTimeout(() => {
+    finishLoading() // 可能在某些数据依赖请求完成后调用
+  }, 3000)
+```
+
+等待 state 更新的封装
+```js
+  async forceStateUpdate (state) {
+    await new Promise(resolve => this.setState(state, resolve))
+  }
+```

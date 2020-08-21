@@ -134,16 +134,17 @@ liteserver 基于 browser-sync
 
 [HTTP/3 的过去、现在和未来-InfoQ](https://www.infoq.cn/article/x80uOvcRyxVYw3KVusUm)
 
-## dns
+## DNS
 1. 浏览器 cache
 2. 操作系统 cache
 3. 路由器 cache
-4. ISP 网络运营商 cache - 以上递归查询 - dns 服务器
-5. root - 以下 迭代查询
+4. ISP 网络运营商 cache (以上递归查询 - dns 服务器)
+5. root (以下 迭代查询)
 6. 域
 7. 权威解析服务器 - 返回 IP
 
 流程：解析-请求-渲染
 
+递归查询-客户端查一次，迭代查询-客户端反复查
 [DNS 递归/迭代 原理 - kevin.Xiang - 博客园](https://www.cnblogs.com/xiangsikai/p/8438601.html)
 [全面分析前端的网络请求方式](https://mp.weixin.qq.com/s?__biz=Mzg2NDAzMjE5NQ==&mid=2247484098&idx=1&sn=d9b077e093fef88febc36f87dfc15e8d&scene=21#wechat_redirect)
