@@ -68,3 +68,9 @@ React.FC 有泛型接口
 ```
 // @ts -check
 ```
+
+- Object is possibly 'undefined'?
+
+    提示结尾的访问，可能取不到，需要使用`?`
+
+[解读 Errors | 深入理解 TypeScript](https://jkchao.github.io/typescript-book-chinese/error/interpreting.html#%25E7%25AE%2580%25E6%25B4%2581)

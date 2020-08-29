@@ -177,3 +177,7 @@ async function printFiles() {
     await new Promise(resolve => this.setState(state, resolve))
   }
 ```
+
+## race
+兼容性：chrome 32+ 不支持 IE10
+

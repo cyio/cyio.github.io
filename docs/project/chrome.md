@@ -11,6 +11,8 @@
 # mac
 open -a "Google Chrome 63" --args --profile-directory=Profile-v63
 ```
+- 同时打开多个版本
+[Install multiple versions of Chrome on Mac](https://zhoukekestar.github.io/notes/2017/11/01/install-multi-chrome.html)
 
 - chromium
   [Download Chromium - The Chromium Projects](https://www.chromium.org/getting-involved/download-chromium)

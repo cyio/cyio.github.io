@@ -1,6 +1,5 @@
 # Git
-
-${toc}
+[toc]
 
 [Learn Git Branching](https://learngitbranching.js.org/?demo=&locale=zh_CN)
 
@@ -317,7 +316,7 @@ git push
 git cherry-pick 584a2ef
 ```
 
-## 导出
+## diff 导出
 
 - 创建两个 commits 的 patch `git diff COMMIT1 COMMIT2 > patch.txt`
   如果有在线管理，可直接查看 commit 的 diff 内容
@@ -334,6 +333,7 @@ git cherry-pick 584a2ef
   # dev2 applies changes from the patch file
   git apply diff.patch
   ```
+- 
 
 ## patch
 

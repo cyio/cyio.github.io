@@ -31,3 +31,6 @@ ctx.closePath()
 [blob - Copy image to clipboard using JavaScript - Stack Overflow](https://stackoverflow.com/questions/60400589/copy-image-to-clipboard-using-javascript)
 copy 事件只是文字
 
+
+[选择本地视频，自动生成缩略图 canvas](https://codepen.io/cyio/pen/QWNvvjX?editors=1011)
+

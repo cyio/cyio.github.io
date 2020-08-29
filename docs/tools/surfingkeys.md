@@ -92,3 +92,8 @@ ace tower 评论框不能用，中文排版较宽
 ## 从地址栏切换焦点回页面内容
 
 > If macOS System Preferences -> Keyboard -> Shortcuts -> Full Keyboard Access is set to “Text boxes and lists only”, then Tab from the omnibox should go to the web page.
+
+## 排除 Google Docs 和 印象笔记 diff
+```
+"exclude_matches": ["https://docs.google.com/*", "https://app.yinxiang.com/*"],
+```

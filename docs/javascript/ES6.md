@@ -5,7 +5,7 @@
 - 不再需要仅为了声明变量，而使用立即执行函数以避免全局污染，用大括号配合`let/const`即可
 - rest 参数，更便利访问函数参数
 - let/var 全局声明有区别：var 存在 window 对象中，而 let 存在声明式环境中（看不到），不影响 window.xxx 的使用，但 var xxx 不行
-    ```
+    ```js
     var mine = 4
     # undefined
     window.mine

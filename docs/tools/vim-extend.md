@@ -8,7 +8,7 @@
 
 插件是对当前打开文件操作
 
-```
+```sh
 :git rm &
 :gremove
 
@@ -123,6 +123,7 @@ bash <(curl -L https://raw.githubusercontent.com/junegunn/myvim/master/myvim)
 
 ## coc
 
+[dotfiles/.vimrc at master · vuhuucuong/dotfiles](https://github.com/vuhuucuong/dotfiles/blob/master/.vimrc)
 [A guide to modern Web Development with (Neo)vim – freeCodeCamp.org](https://medium.freecodecamp.org/a-guide-to-modern-web-development-with-neo-vim-333f7efbf8e2)
 
 [jarvis/init.vim at master · ctaylo21/jarvis](https://github.com/ctaylo21/jarvis/blob/master/config/nvim/init.vim)

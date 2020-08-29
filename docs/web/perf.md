@@ -178,7 +178,7 @@ simulated 与 Applied 区别，不实际节流，推测值
 3. user timing
 4. bottom-up
 
-## 不同机器差民
+## 不同机器差异
 
 一次优化在一台机器上测，模拟环境，然后在真实环境验证。跨机器标准化可操作性差，影响因素太多。同一台机器，尽量减少影响结果的差异因素。
 
@@ -212,3 +212,4 @@ babel 配置隐式 import css
 改用 scss import，线开 js split 机制
 
 [Front-End Performance Checklist 2020 [PDF, Apple Pages, MS Word] — Smashing Magazine](https://www.smashingmagazine.com/2020/01/front-end-performance-checklist-2020-pdf-pages/)
+

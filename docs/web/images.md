@@ -25,14 +25,16 @@
 ### 不同格式适用场景
 无损，压缩级别只是编码不同？
 
-| 格式     | 使用场景                                 |
-| --       | --                                       |
-| JPG/JPEG | 1. 大的背景图； 2. 轮播图； 3. Banner 图 |
-| PNG      | 1. 小 Logo； 2. 透明背景                 |
-| GIF      | 动态图片                                 |
-| SVG      | 能适应不同设备且画质不能损坏的图片       |
-| Base64   | 大小不超过 2KB，且更新率低的图片         |
-| WebP     | 现代浏览器                               |
+| 格式     | 使用场景                                         | 劣势                   |
+| --       | --                                               | -                      |
+| JPG/JPEG | 1. 大的背景图； 2. 轮播图； 3. Banner 图 4. 照片 |
+| PNG      | 1. 小 Logo； 2. 透明背景                         |
+| GIF      | 动态图片                                         |
+| SVG      | 能适应不同设备且画质不能损坏的图片               |
+| Base64   | 大小不超过 2KB，且更新率低的图片                 | 无法缓存，不适合大图片 |
+| WebP     | 现代浏览器                                       |
+
+[PNG - 维基百科，自由的百科全书](https://zh.wikipedia.org/wiki/PNG#%25E4%25B8%258E%25E5%2585%25B6%25E4%25BB%2596%25E6%25A0%25BC%25E5%25BC%258F%25E7%259B%25B8%25E6%25AF%2594)
 
 ## 响应式展示
 
@@ -172,4 +174,13 @@ gulp.task('imagemin', function() {
   el-upload.avatar-uploader(action='https://jsonplaceholder.typicode.com/posts/', :show-file-list='false', :on-success='handleAvatarSuccess', :before-upload='beforeAvatarUpload')
       el-button(type='primary') 上传
 ```
+
+## AVIF
+AV1 video keyframe
+> All we need to do is repack AVIF as a single-frame AV1 video and decode it using native decoder.
+polyfill 原理：将图片重打包成 AV! 视频，再复用浏览器原生支持能力解码
+`AVIF -> MP4 -> <video> -> canvas -> output`
+`.bmp`喂给浏览器，不必再压缩
+SW 不能创建`<video>`，需要主线程配合
+
 
