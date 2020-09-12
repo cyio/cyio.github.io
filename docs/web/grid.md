@@ -53,3 +53,6 @@
 [CSS Grid and Grid Inspector in Firefox — Mozilla](https://www.mozilla.org/en-US/developer/css-grid/)
 
 [Ten modern layouts in one line of CSS](https://web.dev/one-line-layouts/#05.-classic-holy-grail-layout:-grid-template:-auto-1fr-auto-auto-1fr-auto)
+
+[Deep Dive into CSS Grid ― Scotch.io](https://scotch.io/tutorials/deep-dive-into-css-grid-2)
+

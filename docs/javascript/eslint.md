@@ -158,3 +158,20 @@ Object.prototype.hasOwnProperty.call(foo, "bar")
 ```js
 this.setState(state => { count: state.count + 1 })
 ```
+
+## linebreak-style
+airbnb 是 unix
+
+不使用，只能关掉
+
+## jsx 部分字符符号可能意外渲染到界面上
+[eslint-plugin-react/no-unescaped-entities.md at master · yannickcr/eslint-plugin-react](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-unescaped-entities.md)
+解决：使用表达式，如`、`
+
+## div 上绑定 onClick
+[eslint-plugin-jsx-a11y/no-static-element-interactions.md at master · jsx-eslint/eslint-plugin-jsx-a11y](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/master/docs/rules/no-static-element-interactions.md)
+
+解决：添加 role
+```jsx
+<div className="foo" onClick={() => {}} role="button" />
+```

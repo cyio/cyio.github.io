@@ -97,6 +97,11 @@ pragma 〔计〕杂注,编译指示
 3. 有效期：cookie 在设置的 cookie 有效期之前有效，即使浏览器或窗口关闭；sessionStorage 仅在当前浏览器窗口关闭前有效，不可持久保存；localSorage 始终有效，窗口或浏览器关闭也一直保存，可做持久数据
 4. 作用域：cookie、localStorage 在所有的同源窗口中都是共享的；sessionStorage 只能在当前页面使用
 
+sessionStorage
+- 刷新或恢复页面（重新打开关闭的标签页）时，session 存在
+- 创建一个新的相同页面，会创建新的 session
+- 试验 https://codesandbox.io/s/992th?file=/src/index.js
+
 ## http 与 tcp 区别
 
 - tcp 是传输层，http 是跑在 tcp 上的应用层协议

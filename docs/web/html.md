@@ -10,7 +10,7 @@ DOM parser => JS engine => DOM parser
 
 ![i](https://html.spec.whatwg.org/images/asyncdefer.svg)
 
-- `<script>`下载和执行双阻塞
+- `<script>`下载和执行双阻塞，也就是同步的
   默认情况下，HTML 自上向下解析，发现 script 标签，如果是外链脚本，则暂停 HTML 解析(阻塞)，去下载外链脚本，然后执行脚本，至此才会恢复解析 HTML。
 - async — Execute script when available, without blocking
   异步下载，仅执行阻塞

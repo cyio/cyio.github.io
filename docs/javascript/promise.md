@@ -1,8 +1,7 @@
 # Promise
 [toc]
 
-- Promise 构造函数是同步执行的（故封装时用 return），then/catch 中的函数是异步执行的。
-
+题目：问数字打印顺序
 ```js
 console.log(1)
 new Promise(function(resolve, reject) {
@@ -12,7 +11,7 @@ new Promise(function(resolve, reject) {
   }, 0)
 }).then(
   function() {
-    console.log(2)
+    console.log(3)
   },
   function() {
     console.log(3)
@@ -21,6 +20,10 @@ new Promise(function(resolve, reject) {
 console.log(4)
 // 1 4 3
 ```
+考察：
+- Promise 构造函数是同步执行的（故封装时用 return），then/catch 中的函数是异步执行的。
+- Promise 能 reject 又 resolve 吗，实验不能
+
 
 [unhandled promise rejection - 不忘初心，上下求索。](https://liyaoli.com/2017-06-26/unhandled-promise-rejection.html)
 
@@ -30,8 +33,8 @@ console.log(4)
 
 ## async/await
 
+- async function 隐式返回 Promise，显式 return 的内容会包入 resolve，在 then 中可以取到
 - async 是 Generator 的语法糖和改进
-- async function 返回的是 Promise，可以替代 Promise?
 
 ```js
 async function add(x, y) {
@@ -178,6 +181,6 @@ async function printFiles() {
   }
 ```
 
-## race
+## race 方法
 兼容性：chrome 32+ 不支持 IE10
 

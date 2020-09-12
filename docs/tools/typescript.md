@@ -1,19 +1,25 @@
 # Typescript
 
-> 为了说明静态类型化的好处，由于环境变量中的错字，我仅花了30分钟进行调试 - TJ
-https://mobile.twitter.com/tjholowaychuk/status/1276470952059113473
+[toc]
+
+> 为了说明静态类型化的好处，由于环境变量中的错字，我仅花了 30 分钟进行调试 - TJ
+> https://mobile.twitter.com/tjholowaychuk/status/1276470952059113473
 
 vim 快速 fix，默认根据使用推测（即使推测不准，也省去一些书写）
 
-[基础类型 · TypeScript中文网 · TypeScript——JavaScript的超集](https://www.tslang.cn/docs/handbook/basic-types.html)
+[基础类型 · TypeScript 中文网 · TypeScript——JavaScript 的超集](https://www.tslang.cn/docs/handbook/basic-types.html)
+
 [Typescript 高级语法进阶](https://taskhub.work/article/80348744310312960)
-[用TypeScript编写React的最佳实践-技术圈](https://jishuin.proginn.com/p/763bfbd2418a)
-[TypeScript中高级应用与最佳实践 - 掘金](https://juejin.im/post/6844903904140853255)
+
+[用 TypeScript 编写 React 的最佳实践-技术圈](https://jishuin.proginn.com/p/763bfbd2418a)
+
+[TypeScript 中高级应用与最佳实践 - 掘金](https://juejin.im/post/6844903904140853255)
 
 Tuple 元组 有组织的数组
 
 ## interface 和 type
-interface 适合开发库，便于扩展，写业务组件建议用 type 
+
+interface 适合开发库，便于扩展，写业务组件建议用 type
 
 ```js
 interface Props {
@@ -22,13 +28,13 @@ interface Props {
 }
 
 type OtherProps = {
-  name: string;
-  color: string;
+  name: string,
+  color: string
 }
 ```
 
-
 ## 对象入参
+
 ```js
 function Heading({ name, color }: Props): React.ReactNode {
   return <h1>My Website Heading</h1>
@@ -36,41 +42,76 @@ function Heading({ name, color }: Props): React.ReactNode {
 ```
 
 ## extends
-type 也可以扩展
+
+type 也可以扩展，用`&`符号
 
 ```js
 type A = {
-    a: number
+  a: number
 }
 
 interface AB extends A {
-    b: string
+  b: string;
 }
 // 与上一种等价
 type TAB = A & {
-    b: string
+  b: string
 }
 ```
 
 ## 泛型
 
 适用多个类型，保证返回类型一致
-```js
-function identity<T>(arg: T): T {
-    return arg;
-}
 
-let output = identity<string>("myString");  // type of output will be 'string'
+```js
+// 定义，相当于函数，入参是类型约束
+function identity<T>(arg: T): T {
+  return arg
+}
+// 使用
+let output = identity < string > 'myString' // type of output will be 'string'
 ```
 
 React.FC 有泛型接口
 
 ```
-// @ts -check
+type $TSFixMe = any
+
+// @ts-nocheck
+
+// @ts-ignore
+
+// 没有错误后，会提示移除注释，优于 @ts-ignore
+// @ts-expect-error
+
+// tsx
+{/* 
+  // @ts-ignore */}
 ```
+渐近`nocheck -> expect-error`
 
-- Object is possibly 'undefined'?
+## Object is possibly 'undefined'?
 
-    提示结尾的访问，可能取不到，需要使用`?`
+  提示结尾的访问，可能取不到，需要使用`?`
 
 [解读 Errors | 深入理解 TypeScript](https://jkchao.github.io/typescript-book-chinese/error/interpreting.html#%25E7%25AE%2580%25E6%25B4%2581)
+
+## 对象访问下角标限制
+
+- No index signature with a parameter of type 'string' was found on type 'xxx'
+
+[Index Signatures - TypeScript Deep Dive](https://basarat.gitbook.io/typescript/type-system/index-signatures)
+
+08 Record & Dictionary & Many
+[TypeScript 高级技巧 - 掘金](https://juejin.im/post/6844903863791648782)
+
+[Adopting Typescript at Scale - Brie Bunge | JSConf Hawaii 2019 - YouTube](https://www.youtube.com/watch?v=P-J9Eg7hJwE)
+
+[ts-migrate/packages/ts-migrate at master · airbnb/ts-migrate](https://github.com/airbnb/ts-migrate/tree/master/packages/ts-migrate)
+
+[ts-migrate: A Tool for Migrating to TypeScript at Scale | by Sergii Rudenko | Airbnb Engineering & Data Science | Aug, 2020 | Medium](https://medium.com/airbnb-engineering/ts-migrate-a-tool-for-migrating-to-typescript-at-scale-cd23bfeb5cc)
+
+> TS的ROI（投入回报率）是勾型的。小型且不长久的项目慎入，越是需要多人合作和生命周期越长的项目，回报率越高
+
+[《TypeScript开发实战》总结 - 知乎](https://zhuanlan.zhihu.com/p/82567664)
+

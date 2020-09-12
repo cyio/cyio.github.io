@@ -598,3 +598,14 @@ brew install interactive-rebase-tool
 
 `git status --untracked-files=all`
 
+## 分支比较
+比较当前分支与 master
+```sh
+git log origin/master..HEAD --oneline --no-merges
+```
+
+## Git GUI
+一行短命令，命令行更方便
+
+复杂的操作如 merge，GUI 能提供比命令行大得多的信息密度
+

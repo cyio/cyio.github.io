@@ -1,8 +1,11 @@
 # 概念
 
+[toc]
+
 - 什么是特权方法
 
   特权方法就是有权访问私有变量和私有函数的公有方法
+
 - 什么是单例
 
   只有一个实例的对象
@@ -17,9 +20,9 @@ ES6 共 7 个
 - 7 个里没有数组
 - `typeof` 获取
 
-    ```
-    typeof [] // 'object'
-    ```
+  ```js
+  typeof [] // 'object'
+  ```
 
 ## 逻辑值
 
@@ -27,7 +30,7 @@ ES6 共 7 个
 - 运算符优先级排序：`‖ < && < 比较 < 其它`
 
 - 闭包使用场景
-无论什么地方，只要临时需要一些变量，就可以使用私有作用域，如：
+  无论什么地方，只要临时需要一些变量，就可以使用私有作用域，如：
 
 ```js
 function outputNumbers(x) {
@@ -45,8 +48,8 @@ outputNumbers(4) //0123
 
 - i++ 和 ++i 比较
 
-    * 都是对变量自增(原值增 1)
-    * 区别是返回的值不同，i++ 是旧值，即加之前的，++i 是新值，即加之后的值（记忆，变量在前为旧值，在后为新值）
+  - 都是对变量自增(原值增 1)
+  - 区别是返回的值不同，i++ 是旧值，即加之前的，++i 是新值，即加之后的值（记忆，变量在前为旧值，在后为新值）
 
   ```js
   a = 5
@@ -61,8 +64,8 @@ outputNumbers(4) //0123
 
 - 关于转换规则
 
-  * JavaScript 会将`0、NaN`和空字符串`''`视为 false，其余值视为 true
-  * 使用三字符串运算符，防止意外类型转换的发生
+  - JavaScript 会将`0、NaN`和空字符串`''`视为 false，其余值视为 true
+  - 使用三字符串运算符，防止意外类型转换的发生
 
 ## 函数式编程
 
@@ -258,7 +261,9 @@ function MyObject() {
 ```
 
 这个模式创建了一个私有作用域 ，并在其中封装了一个构造函数及相应的方法。
+
 这里的 MyObject 没有用 var 声明，是一个全局变量。
+
 这个模式与在构造函数中定义特权方法的主要区别：
 
 - 私有变量和函数由实例共享
@@ -268,7 +273,9 @@ function MyObject() {
 ## 构造函数
 
 当任意一个普通函数用于创建一类对象时，它就被称作构造函数，或构造器。一个函数要作为一个真正意义上的构造函数。constructor
+
 特征：函数内部定义新对象，返回新对象
+
 用处：共享原型、继承
 
 `new`就是创建新对象，并把构造函数的原型和作用域添加到新对象上。
@@ -313,7 +320,10 @@ o.a()
 
 ## 什么时候用 switch
 
-> 一般来说，如果 if 和 else if 分支超过 3 个就可以考虑写成 switch。如果 switch 的分支超过 10 个就可以考虑写成 config，然后专门写一个函数根据 config 来做 mapping。如果需要进行的映射逻辑很复杂，但使用频率很高，可以考虑做一个专门的 rule engine 来处理这件事情，或者是一门 DSL。
+> 一般来说，如果 if 和 else if 分支超过 3 个就可以考虑写成 switch。如果 switch 的分支超过 10 个就可以考虑写成 config，
+> 然后专门写一个函数根据 config 来做 mapping。如果需要进行的映射逻辑很复杂，但使用频率很高，可以考虑做一个专门的 rule engine 来处
+> 理这件事情， 或者是一门 DSL。
+
 > switch 的条件切换只能基于单一变量的值。但 if-else 的条件可以是任意表达式。
 
 ## 摘抄
@@ -357,31 +367,36 @@ Boolean(-1) // true
 
 ## 微任务
 
-说出执行顺序
-
-```
+题目：说出执行顺序
+```js
 process.nextTick(() => console.log(5))
 
-Promise.resolve().then(() => console.log(1));
+Promise.resolve().then(() => console.log(1))
 
-(async () => console.log(2))();
+;(async () => console.log(2))()
 
-(() => console.log(3))();
+;(() => console.log(3))()
 
-setTimeout(() => console.log(4));
+setTimeout(() => console.log(4))
+
+// 2 3 5 1 4
 ```
 
 - L0: nextTick 无论放哪，都会在同步代码和任务间执行
 - L1：安排微任务。 完成所有同步 JS 后执行，类型与 L0 相同，排队
-- L2：IIFE 后执行。 它是一个异步功能，但仍然同步执行（没有等待！）
+- L2：IIFE 后执行。 它是一个异步功能，但仍然同步执行（没有等待！），没有用 return
 - L3：一个 IIFE，同步。
 - L4：一个任务，所以它将在微任务之后运行。 所以 2-3-5-1-4
 
-**同步代码 -> 微任务 -> 任务**
+**同步代码 -> 微任务 promise -> 任务 setTimeout**
 
-## 解释型语言 VS 编译语言 - 解释型语言 动态变量类型 隐式解析
+## 解释型语言 VS 编译语言
+
+解释型语言 动态变量类型 隐式解析
 
 [开发做了这么多年，你真的了解 JS 工作机制吗](https://www.infoq.cn/article/E2Vvaa-ZfIrMrjrxtdF9)
+
+## 链式调用
 
 JavaScript operator: Optional chaining operator (?.)
 兼容性：不支持 IE，chrome 80 以上，慎用？
@@ -390,4 +405,7 @@ JavaScript operator: Optional chaining operator (?.)
 [Babel · The compiler for next generation JavaScript](https://babeljs.io/repl)
 
 @vue/babel-preset-app 目前是接受 stage3 及以下
+
+题目: 原型上添加 sum 方法
+题目: 实现 promise.all
 

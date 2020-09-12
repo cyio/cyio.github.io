@@ -314,3 +314,6 @@ render return 里可直接定义变量`const ChapterName = <h2>{chapterName}</h2
 - 用于网络请求导致 props 变化等
 - 注意，执行操作要有条件，避免死循环
 
+## 组件演化
+![image.png](http://ww1.sinaimg.cn/large/4e5d3ea7ly1gikjo188z2j21q80x8gs0.jpg)
+

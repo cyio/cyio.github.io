@@ -1,6 +1,6 @@
 # 设备判断
 
-npm install modernizr --save-dev
+`npm install modernizr --save-dev`
 
 存在的问题，刚引入判断不出来，需要一定执行时间？
 

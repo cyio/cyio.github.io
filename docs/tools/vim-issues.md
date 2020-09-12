@@ -162,3 +162,14 @@ set ma (modifiable) / set noma
 
 [How to run zsh aliased command from vim command mode? - Vi and Vim Stack Exchange](https://vi.stackexchange.com/questions/16186/how-to-run-zsh-aliased-command-from-vim-command-mode/16197)
 
+### 项目配置
+
+`set exrc`
+在项目根目录，创建`.exrc`，使用这个文件名可兼容 vim 和 nvim
+
+### color theme
+```
+" Plug 'joshdick/onedark.vim' " only dark
+" Plug 'tomasiser/vim-code-dark' " like vscode dark
+" Plug 'rakr/vim-one' " not work?
+```

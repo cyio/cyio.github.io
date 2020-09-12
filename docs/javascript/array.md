@@ -150,24 +150,30 @@ Array.from(arrayLike)
 - null 需要注意
 
 ```js
-const arr = [{
-  name: 'Apple'
-}, {
-  name: 'Google'
-}, {
-  name: 'Baidu'
-}]
-console.log(arr.sort(
-  (a, b) => a.name > b.name  // 字母顺序
-))
+const arr = [
+  {
+    name: 'Apple'
+  },
+  {
+    name: 'Google'
+  },
+  {
+    name: 'Baidu'
+  }
+]
+console.log(
+  arr.sort(
+    (a, b) => a.name > b.name // 字母顺序
+  )
+)
 
-const arr = [1, 20, 10, 30, 22, 11, 55, 24, 31, 88, 12, 100, 50];
+const arr = [1, 20, 10, 30, 22, 11, 55, 24, 31, 88, 12, 100, 50]
 console.log(arr.sort((a, b) => a - b)) // 为什么这里不能写成 a > b，因为返回布尔值，然后布尔值跟 0 比较，false < 0，于是 20 排在 10 前面
 
 // a > b 正确写法
 arr.sort((a, b) => {
-  if (a < b) return -1 
-  if (a > b) return 1  // 调换
+  if (a < b) return -1
+  if (a > b) return 1 // 调换
   if (a === b) return 0
 })
 ```
