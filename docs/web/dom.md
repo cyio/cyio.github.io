@@ -1,5 +1,13 @@
 # DOM
 
+## 遍历
+- 关系：父子、相邻，首尾
+- 区分 element 和 node，node 包含了 textNode、commentNode、空
+
+    childNodes vs children(Element)
+
+- 集合，类数组`for of` `Array.from`
+
 ## 性能
 
 简述，为什么 DOM 操作影响性能？

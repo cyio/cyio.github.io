@@ -308,6 +308,8 @@ render return 里可直接定义变量`const ChapterName = <h2>{chapterName}</h2
 
 ## 生命周期
 
+[React lifecycle methods diagram](https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/)
+
 ### componentDidUpdate
 
 - 组件更新后立即调用，首次渲染不调用

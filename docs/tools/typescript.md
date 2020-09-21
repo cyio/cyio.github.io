@@ -115,3 +115,6 @@ type $TSFixMe = any
 
 [《TypeScript开发实战》总结 - 知乎](https://zhuanlan.zhihu.com/p/82567664)
 
+- JSX element type 'Element[]' is not a constructor function for JSX elements #33487
+    React Element 要求是对象，用 Fragment 包下
+

@@ -1,4 +1,5 @@
 # ESLint
+[toc]
 
 `eslint --init` 默认推荐本地安装 ，全局无法使用
 
@@ -145,12 +146,16 @@ const { statement: { isConfirmed }, statement } = this.props;
 - Value must be omitted for boolean attributes
 存在默认值，删除即可
 - hasOwnProperty
+    不允许直接在 object 上使用 Object.prototype 上的方法
+    1. Object.create 创建的 object 可能没有这个方法
+    2. 原型方法可能被修改
 ```js
 // error
 foo.hasOwnProperty("bar")
 // right
 Object.prototype.hasOwnProperty.call(foo, "bar")
 ```
+
 - 对象方法，使用缩写，相当于 function。如果用到 this，这种方式就不行，还是用箭头函数吧
 
 ## react

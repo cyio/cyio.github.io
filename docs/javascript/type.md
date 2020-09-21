@@ -1,4 +1,5 @@
 # 数据类型
+[toc]
 
 ## 数字
 
@@ -19,20 +20,24 @@ Number(true) === 1
 ## 类型判断
 
 - 如果要使用某种数据类型的方法，最好在开始检测数据类型，以免传入不合适的类型导致错误
+- 有效值类型用`typeof`，null/undefined 直接用全等`===`，引用类型需要另外方法
 
 ```js
 // 检测数字
 typeof 1 === 'number'
+
 // 检测字符串
 typeof '1' === 'string'
 typeof new String('a') // object
 '1' instanceof String  // false
 
 typeof [1, 2] //"object"   无法区分数组和对象
+
 // 检测数组
 xxx instanceof Array
 xxx.constructor === Array
 
+// 检测对象
 const isObject = (arg) => Object.prototype.toString.call(arg) === '[object Object]';
 ```
 

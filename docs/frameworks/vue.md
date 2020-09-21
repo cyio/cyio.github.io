@@ -606,3 +606,5 @@ import Foo from './Foo.vue' 改成 const Foo = () => import('./Foo.vue')
 [Mock 数据](https://umijs.org/zh-CN/docs/mock)
 [@babel/register · Babel](https://babeljs.io/docs/en/next/babel-register.html)
 [UMI mock 开发中遇到的问题，已经处理的，在这里记录一下。给朋友们一个参考 · Issue #246 · umijs/umi](https://github.com/umijs/umi/issues/246#issuecomment-375225156)
+[30 道 Vue 面试题（涵盖入门到精通，自测 Vue 掌握程度） - 哔哩哔哩](https://www.bilibili.com/read/cv3663235/)
+

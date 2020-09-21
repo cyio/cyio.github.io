@@ -33,8 +33,10 @@ console.log(4)
 
 ## async/await
 
-- async function 隐式返回 Promise，显式 return 的内容会包入 resolve，在 then 中可以取到
+- async function 隐式返回 Promise，显式 return 的内容会包裹于 resolve，在 then 中可以取到
 - async 是 Generator 的语法糖和改进
+
+[标准 Async Functions](https://tc39.es/ecmascript-asyncawait/) 搜索 sugar
 
 ```js
 async function add(x, y) {

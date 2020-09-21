@@ -1,9 +1,11 @@
 # CSS 实践
+[toc]
 
 ## 不使用 @import
 
 - import 的文件 b 在依赖 a 下载完成后才能下载
 - 应该合并，减少下载，或写到 link，实现并行下载
+
   [html - Best way to include CSS? Why use @import? - Stack Overflow](https://stackoverflow.com/questions/10036977/best-way-to-include-css-why-use-import)
 
 ## 在 iframe 中插入 CSS
@@ -16,7 +18,7 @@ css.type = 'text/css'
 frames['frame-id'].document.body.appendChild(css)
 ```
 
-## 未知宽度下的居中
+## 未知宽度下的水平居中
 
 - 方案一，需要父子配合
   ```html
@@ -36,7 +38,13 @@ frames['frame-id'].document.body.appendChild(css)
   }
   ```
 - 方案二，块宽度未知，绝对定位，偏移 50%，加上负的水平变形进行校正
-  `css .horizontal-center { position: absolute; left: 50%; transform: translateX(-50%); }`
+    ```css
+    .horizontal-center { 
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    ```
 
 ## 用 flexbox 垂直居中任意元素
 
@@ -53,7 +61,7 @@ body {
 }
 ```
 
-## 对需要水平垂直居中的元素写 css:
+## 水平垂直居中:
 
 translate 修正偏差
 
@@ -142,7 +150,7 @@ css - Keep div height while the image is loading - Stack Overflow http://stackov
 - 没有图片素材时，添加占位图
 - 要不断地拆解问题，我要解决一个怎样的小问题
 
-## 换算问题？以宽度为基准缩放，字体也会缩放吗？
+## [换算]以宽度为基准缩放，字体也会缩放吗？
 
 ## 线性渐变
 
@@ -185,6 +193,7 @@ background-size: cover;
 ## 优化
 
 - 推荐使用 BEM 结构，能减少类查找，降低样式计算开销
+
   [缩小样式计算的范围并降低其复杂性  |  Web  |  Google Developers](https://developers.google.com/web/fundamentals/performance/rendering/reduce-the-scope-and-complexity-of-style-calculations)
 
 ## 变量
@@ -195,22 +204,6 @@ background-size: cover;
 
 [CSS 变量教程 - 阮一峰的网络日志](http://www.ruanyifeng.com/blog/2017/05/css-variables.html)
 [Everything you need to know about CSS Variables – freeCodeCamp](https://medium.freecodecamp.org/everything-you-need-to-know-about-css-variables-c74d922ea855)
-
-## Grid
-
-新单位 fr - A flexible length 可变长度，一份
-
-grid-column-end: -2; 计数是按边算
-
-grid-column-end: span 2; 相对值，占用两格
-
-grid-column: 4 / 6 缩写语法
-
-只指定头或尾时，只占一格
-
-grid-area: 1/2/4/6 区域简写，row / col
-
-不规则区域，可定义多个 grid-area 解决
 
 ## clip-path
 

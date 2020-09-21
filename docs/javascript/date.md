@@ -67,3 +67,7 @@ var myInterval = setInterval(function(){
     //执行页面倒计时的渲染
 }, 1000)
 ```
+
+## [替代方案 Moment.js | Docs](https://momentjs.com/docs/#/-project-status/)
+新项目不建议使用 moment，说明原因及介绍替代选择
+

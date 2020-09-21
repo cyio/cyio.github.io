@@ -5,6 +5,20 @@
 - grid-gap 是 column-gap 和 row-gap 的缩写
 - grid-column 是 grid-column-start 和 grid-column-end 的缩写，注意不包括 end
 
+新单位 fr - A flexible length 可变长度，一份
+
+grid-column-end: -2; 计数是按边算
+
+grid-column-end: span 2; 相对值，占用两格
+
+grid-column: 4 / 6 缩写语法
+
+只指定头或尾时，只占一格
+
+grid-area: 1/2/4/6 区域简写，row / col
+
+不规则区域，可定义多个 grid-area 解决
+
 ## 实现常见布局
 
 - 左右等分，适用商品列表展示
