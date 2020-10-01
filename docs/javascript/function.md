@@ -52,15 +52,33 @@ function tmp(...args) {
 tmp(1, 2)
 ```
 
-## 防抖和节流
+## 防抖和节流 dt
 > debounce/throttle
+
+```
+50ms
+1 - 10ms - 2 - 10ms - 3 - 10ms - 4 - 10ms - 5 - 10ms - 6
+debounce ---- 6 //  1 执行后不再点击(空闲)，执行 6，否则会延迟
+throttle 1 -- 6 //  1 执行后的后续点击，不影响 6 的执行
+```
 
 - 都是为了限制一定时间内执行频率，一般用于减少用户输入引起的函数调用次数
 - 从实现上思考，是要延迟、还是过滤
 - debounce 一般是用户输入，throttle 一般如 scroll 等浏览器事件
-- `_.debounce(fn, true) `过滤意外点击，而 throttle 后续事件还是会执行，m 秒内不超过 n 次
-- 提交按钮点击，希望过滤掉误点，只执行一次
+- `_.debounce(fn, true) `过滤意外点击，空闲 m 秒才执行一次，而 throttle 后续事件还是会执行，不会等空闲，而是保证一定频率，m 秒内不超过 n 次
+- 提交按钮点击，希望过滤掉误点(短时间内几次)，只执行一次，两个方法都能通过配置参数满足，但不准确符合，建议用一个开头标记解决。只有特定场景有明显区别，比如一直触发，是否需要执行
+- throttle 无论触发多频繁，都按照设定频率执行，resize
+
 拿这个例子，各点两次，观察区别 [Underscore.js throttle vs debounce example - JSFiddle - Code Playground](https://jsfiddle.net/missinglink/19e2r2we/)
+
+[js节流与防抖，防止重复提交、防止频繁重复点击_web_xyk的专栏-CSDN博客](https://blog.csdn.net/web_xyk/article/details/80165824)
+
+[lodash's debounce throttle different when submit button click](https://codepen.io/cyio/pen/VwaROLG?editors=1111)
+
+[Debounce vs Throttle: Definitive Visual Guide | Redd Developer](https://redd.one/blog/debounce-vs-throttle)
+
+react hook 中应用，注意不能在 hook 外使用，每次渲染会重生成
+[How to Use Debounce and Throttle in React and Abstract them into Hooks](https://www.freecodecamp.org/news/debounce-and-throttle-in-react-with-hooks/)
 
 1. 函数防抖是只有足够的空闲时间，才执行一次代码
    > bounce 是弹跳抖的意思，debounce 去抖动，平稳

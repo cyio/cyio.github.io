@@ -1,8 +1,9 @@
 # DOM
+[toc]
 
 ## 遍历
 - 关系：父子、相邻，首尾
-- 区分 element 和 node，node 包含了 textNode、commentNode、空
+- 区分 Element (Node) 和 Node，node 包含了 textNode、commentNode、空 等
 
     childNodes vs children(Element)
 
@@ -11,9 +12,11 @@
 ## 性能
 
 简述，为什么 DOM 操作影响性能？
-因为 NodeList 对象是动态的，每次访问 NodeList 对象，都会运行一次查询。
+因为某些情况 NodeList 对象是动态的，每次访问 NodeList 对象，都会运行一次查询。
 
 > 理解 DOM 的关键，就是理解 DOM 对性能的影响。DOM 操作往往是 JavaScript 程序中开销最大的部分，而因访问 NodeList 导致的问题为最多。NodeList 对象都是“动态的”，这就意味着每次访问 NodeList 对象，都会运行一次查询。所以应减少对 NodeList 的访问，对 DOM 的操作。
+
+https://developer.mozilla.org/en-US/docs/Web/API/NodeList
 
 ### 优化
 

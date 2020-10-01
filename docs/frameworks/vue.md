@@ -13,7 +13,9 @@
 
   - vue 双向绑定，react 单向
 
-    > 单向绑定使得数据流也是单向的，对于复杂应用来说，这是实施统一的状态管理（如 redux）的前提。双向绑定在一些需要实时反应用户输入的场合会非常方便（比如多级联动菜单）。但通常认为复杂应用中这种便利比不上引入状态管理带来的优势。注意，Vue 虽然通过 v-model 支持双向绑定，但是如果引入了类似 redux 的 vuex，就无法同时使用 v-model。参见[vuex/forms.md at master · vuejs/vuex](https://github.com/vuejs/vuex/blob/master/docs/zh-cn/forms.md)
+    > 单向绑定使得数据流也是单向的，对于复杂应用来说，这是实施统一的状态管理（如 redux）的前提。双向绑定在一些需要实时反应用户输入的场合
+    > 会非常方便（比如多级联动菜单）。但通常认为复杂应用中这种便利比不上引入状态管理带来的优势。注意，Vue 虽然通过 v-model 支持双向绑定，
+    > 但是如果引入了类似 redux 的 vuex，就无法同时使用 v-model。参见[vuex/forms.md at master · vuejs/vuex](https://github.com/vuejs/vuex/blob/master/docs/zh-cn/forms.md)
 
 [React 的单向数据流与 Vue 的双向绑定 - CSDN 博客](https://blog.csdn.net/qq_41206257/article/details/80992085)
 

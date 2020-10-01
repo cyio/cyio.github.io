@@ -124,13 +124,13 @@ ES5 用浅拷贝 + 递归解决
 ES6 `Object.assign`和`...`扩展符不会做深拷贝，如果属性里有对象或数组，拷贝的是引用。注意，第一层拷贝并不是引用
 
 ```js
-let obj = { a: 1 }
-let obj2 = { ...obj }
-console.log(obj === obj2)
+const one = { name: 'jack' }
+const two = { ...one }
+console.log(one === two)
 
-obj.x = { xx: 0 }
-obj2 = { ...obj }
-console.log(obj.x === obj2.x)
+one.child = { name: 'jordan' }
+const three = { ...one }
+console.log(one.child === three.child)
 ```
 
 `Object.assign`将多个对象复制到目标对象，与其说是复制，更像合并，如果有相同 key， 后边会覆盖前边
@@ -191,3 +191,4 @@ const dict = Object.create(null)
 ```
 
 [Single objects • JavaScript for impatient programmers](https://exploringjs.com/impatient-js/ch_single-objects.html#the-pitfalls-of-using-an-object-as-a-dictionary)
+[Please stop using classes in JavaScript | everyday.codes](https://everyday.codes/javascript/please-stop-using-classes-in-javascript/)

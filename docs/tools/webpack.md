@@ -172,3 +172,12 @@ module.exports = {
 
 ## hash 策略
 [webpack-文件指纹策略：chunkhash、contenthash和hash | 个人博客](https://jkfhto.github.io/2019-10-18/webpack/webpack-%E6%96%87%E4%BB%B6%E6%8C%87%E7%BA%B9%E7%AD%96%E7%95%A5%EF%BC%9Achunkhash%E3%80%81contenthash%E5%92%8Chash/)
+## 应用代码注入环境变量
+DefinePlugin
+```js
+  plugins: [
+    // 应用中需要的process.env变量，在此注入才能使用。
+    new webpack.DefinePlugin({
+      BUILD_ENV: JSON.stringify(process.env.BUILD_ENV),  // 编译环境（development/test/production）
+    }),
+```

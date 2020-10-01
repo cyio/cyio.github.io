@@ -1,4 +1,5 @@
 # NPM
+[toc]
 
 ## npm 创建和发布一个包的步骤
 
@@ -173,3 +174,20 @@ lockfile 与 `package.json`依赖不匹配时，会报错，而不是更新 lock
 ## 提示 gyp: No Xcode or CLT version detected
 
 [gyp: No Xcode or CLT version detected macOS Catalina | Anansewaa](https://medium.com/flawless-app-stories/gyp-no-xcode-or-clt-version-detected-macos-catalina-anansewaa-38b536389e8d)
+
+## 生产构建
+
+期望：只安装 dependencies，不安装 devDependencies 和 optionalDependencies
+
+我们一般不用 optionalDependencies
+
+```
+npm install --production
+# or
+export NODE_ENV=production
+```
+
+> With the --production flag (or when the NODE_ENV environment variable is set to production), npm will not install modules listed in devDependencies.
+
+https://docs.npmjs.com/cli/install
+

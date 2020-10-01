@@ -11,16 +11,18 @@
 - `*`相对于 async，`yield`相当于 await，最常配合 call/put 使用
 - model 相当于 vuex
 - effects
-
-| 库     | 异步操作    | 同步操作    |       |            |                    |
-| ------ | ----------- | ----------- | -     | -          | -                  |
-| dva    | effects     | reducers    | *     | yield call | [put, dispatch]{type, payload} |
-| vuex   | action      | mutation    | async | await      | FN                 |
-
 - put 相当于 dispatch，只是在 effect 中使用
 
 [使用 model · 语雀](https://www.yuque.com/ant-design/course/abl3ad)
 [redux与vuex学习比较 | 杜万福的博客](https://hotwhy.github.io/2018/07/14/redux%E4%B8%8Evuex%E5%AD%A6%E4%B9%A0%E6%AF%94%E8%BE%83/)
+
+## dav vs vuex
+
+| 库     | 异步操作    | 同步操作    |       |            |                                |
+| ------ | ----------- | ----------- | -     | -          | -                              |
+| redux  | action      | reducers    | *     | yield call | [put, dispatch]{type, payload} |
+| dva    | effects     | reducers    | *     | yield call | [put, dispatch]{type, payload} |
+| vuex   | action      | mutation    | async | await      | FN                             |
 
 
 ## effect 不能用 async

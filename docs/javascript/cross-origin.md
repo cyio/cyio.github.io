@@ -104,3 +104,12 @@ devServer: {
   [postMessage 可太有用了 - 掘金](https://juejin.im/post/5b8359f351882542ba1dcc31)
   [手记：iframe、postMessage 及其它跨域通信实践 - 作业部落 Cmd Markdown 编辑阅读器](https://www.zybuluo.com/EncyKe/note/516702)
   [Cross-window communication](https://javascript.info/cross-window-communication)
+
+扩散：页面通信还有哪些方法
+- storage event 作用于 localStorage/sessionStorage 共享的页面
+
+    ```js
+    let o = window.open('http://baidu.com')
+    o.focus()
+    ```
+    即使同源，并不能访问或修改 window 下的大部分变量

@@ -173,3 +173,5 @@ set ma (modifiable) / set noma
 " Plug 'tomasiser/vim-code-dark' " like vscode dark
 " Plug 'rakr/vim-one' " not work?
 ```
+
+## [用 Vim 编辑 Markdown 时直接粘贴图片 - 知乎](https://zhuanlan.zhihu.com/p/138060559)
