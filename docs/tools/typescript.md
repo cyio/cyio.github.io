@@ -17,6 +17,19 @@ vim 快速 fix，默认根据使用推测（即使推测不准，也省去一些
 
 Tuple 元组 有组织的数组
 
+08 Record & Dictionary & Many
+[TypeScript 高级技巧 - 掘金](https://juejin.im/post/6844903863791648782)
+
+[Adopting Typescript at Scale - Brie Bunge | JSConf Hawaii 2019 - YouTube](https://www.youtube.com/watch?v=P-J9Eg7hJwE)
+
+[ts-migrate/packages/ts-migrate at master · airbnb/ts-migrate](https://github.com/airbnb/ts-migrate/tree/master/packages/ts-migrate)
+
+[ts-migrate: A Tool for Migrating to TypeScript at Scale | by Sergii Rudenko | Airbnb Engineering & Data Science | Aug, 2020 | Medium](https://medium.com/airbnb-engineering/ts-migrate-a-tool-for-migrating-to-typescript-at-scale-cd23bfeb5cc)
+
+> TS的ROI（投入回报率）是勾型的。小型且不长久的项目慎入，越是需要多人合作和生命周期越长的项目，回报率越高
+
+[《TypeScript开发实战》总结 - 知乎](https://zhuanlan.zhihu.com/p/82567664)
+
 ## interface 和 type
 
 interface 适合开发库，便于扩展，写业务组件建议用 type
@@ -90,31 +103,24 @@ type $TSFixMe = any
 ```
 渐近`nocheck -> expect-error`
 
-## Object is possibly 'undefined'?
-
-  提示结尾的访问，可能取不到，需要使用`?`
-
 [解读 Errors | 深入理解 TypeScript](https://jkchao.github.io/typescript-book-chinese/error/interpreting.html#%25E7%25AE%2580%25E6%25B4%2581)
 
-## 对象访问下角标限制
+## case
+- JSX element type 'Element[]' is not a constructor function for JSX elements #33487
+
+    React Element 要求是对象，用 Fragment 包下
+
+- TS2322: Type 'Timeout' is not assignable to type 'number'” when running unit tests
+
+    使用 windows.setTimeout 解决
 
 - No index signature with a parameter of type 'string' was found on type 'xxx'
 
-[Index Signatures - TypeScript Deep Dive](https://basarat.gitbook.io/typescript/type-system/index-signatures)
+    对象访问下角标限制
 
-08 Record & Dictionary & Many
-[TypeScript 高级技巧 - 掘金](https://juejin.im/post/6844903863791648782)
+    [Index Signatures - TypeScript Deep Dive](https://basarat.gitbook.io/typescript/type-system/index-signatures)
 
-[Adopting Typescript at Scale - Brie Bunge | JSConf Hawaii 2019 - YouTube](https://www.youtube.com/watch?v=P-J9Eg7hJwE)
+- Object is possibly 'undefined'?
 
-[ts-migrate/packages/ts-migrate at master · airbnb/ts-migrate](https://github.com/airbnb/ts-migrate/tree/master/packages/ts-migrate)
-
-[ts-migrate: A Tool for Migrating to TypeScript at Scale | by Sergii Rudenko | Airbnb Engineering & Data Science | Aug, 2020 | Medium](https://medium.com/airbnb-engineering/ts-migrate-a-tool-for-migrating-to-typescript-at-scale-cd23bfeb5cc)
-
-> TS的ROI（投入回报率）是勾型的。小型且不长久的项目慎入，越是需要多人合作和生命周期越长的项目，回报率越高
-
-[《TypeScript开发实战》总结 - 知乎](https://zhuanlan.zhihu.com/p/82567664)
-
-- JSX element type 'Element[]' is not a constructor function for JSX elements #33487
-    React Element 要求是对象，用 Fragment 包下
+    提示结尾的访问，可能取不到，需要使用`?`
 

@@ -1,32 +1,42 @@
 # HTML
+[toc]
 
 - [HTML Standard](https://html.spec.whatwg.org/multipage/)
 
 - 如果在文档开始处没有发现文档类型声明，则所有浏览器都会默认开启严格模式
 
-## HTML 中外链脚本的下载与执行
+## 外链脚本的下载与执行
 
 DOM parser => JS engine => DOM parser
 
 ![i](https://html.spec.whatwg.org/images/asyncdefer.svg)
 
-- `<script>`下载和执行双阻塞，也就是同步的
-  默认情况下，HTML 自上向下解析，发现 script 标签，如果是外链脚本，则暂停 HTML 解析(阻塞)，去下载外链脚本，然后执行脚本，至此才会恢复解析 HTML。
+- `<script>`下载和执行双阻塞，是同步的
+
+    默认情况下，HTML 自上向下解析，发现 script 标签，如果是外链脚本，则暂停 HTML 解析(阻塞)，去下载外链脚本，然后执行脚本，至此才会恢复解析 HTML。
+
+    验证：script 阻塞，如果放在 body 前，一直 pending（可以写错域名方便测试），观察到 body 都出不来，不过浏览器有连接超时，最后页面会出来
+
 - async — Execute script when available, without blocking
-  异步下载，仅执行阻塞
-  HTML 解析过程中异步下载脚本，只在执行时暂停 HTML 解析。
+
+    异步下载，仅执行阻塞
+
+    HTML 解析过程中异步下载脚本，只在执行时暂停 HTML 解析。
+
 - defer — Defer script execution
-  异步下载，并延迟执行，完全不阻塞，且是按顺序执行，有依赖关系时可放心使用
-  与 asnyc 不同的是，在 HTML 解析完后再执行脚本
-  [HTML Standard](https://html.spec.whatwg.org/multipage/scripting.html)
-  [async vs defer attributes - Growing with the Web](http://www.growingwiththeweb.com/2014/02/async-vs-defer-attributes.html)
-- 目前大网站，有使用 async ，但没 defer，两者兼容性对低版本 IE 是个问题，因此 Web 端网站要求强兼容性的话就不要用了
-  [使用 defer 或 async 加载脚本 | levy](http://levy.work/2017-01-25-script-defer-and-async/)
-  [浏览器页面与 vue2.0 组件生命周期横向比较 - 掘金](https://juejin.im/post/5acb14f9f265da237719b50c)
-  [javascript - How to run VueJS code only after Vue is fully loaded and initialized? - Stack Overflow](https://stackoverflow.com/questions/43652265/how-to-run-vuejs-code-only-after-vue-is-fully-loaded-and-initialized/43656809)
-  [如何分析页面加载慢 - 简书](https://www.jianshu.com/p/24b93b13e5a9)
-  [HTTPS 之 TLS 性能调优 - cyfonly - 博客园](https://www.cnblogs.com/cyfonly/p/9061262.html)
-- script 阻塞，如果放在 body 前，一直 pending（可以写错域名方便测试），观察到 body 都出不来，不过浏览器有连接超时，最后页面会出来
+
+    异步下载，并延迟执行，完全不阻塞，且是按顺序执行，有依赖关系时可放心使用
+
+    与 asnyc 不同的是，在 HTML 解析完后再执行脚本
+
+    [scripting HTML Standard](https://html.spec.whatwg.org/multipage/scripting.html)
+
+    [async vs defer attributes - Growing with the Web](http://www.growingwiththeweb.com/2014/02/async-vs-defer-attributes.html)
+
+- 目前大网站，有使用 async ，但没 defer，两者兼容性对低版本 IE 是个问题(IE10 以下)，因此 Web 端网站要求强兼容性的话就不要用了
+
+    [使用 defer 或 async 加载脚本 | levy](http://levy.work/2017-01-25-script-defer-and-async/)
+
 - 与页面渲染相关，慎用 async，执行不可靠，可能晚于如 vue 的 mounted
 
 - src 必须存在，不能手动创建
@@ -112,6 +122,8 @@ DOM parser => JS engine => DOM parser
     #logo { position: absolute;left: 0;top: 45px;}
     ```
   - 使文字处于盒子的居中位置：文字行高与盒子的高度一致
+
+[html - How to Vertical align elements in a div? - Stack Overflow](https://stackoverflow.com/questions/79461/how-to-vertical-align-elements-in-a-div/84616#84616)
 
 - 居中对齐汇总
 
@@ -254,4 +266,31 @@ swiper 等三方依赖应该阻塞，new 时如果找不到，抛错会阻塞执
 
 ## dl dt dd
 定义列表， dd 会缩进两个字
+
+## script 位置
+head 底部 或 body 底部
+
+head 或 body，即使你放到 html 层， 浏览器也会将 script 移动到 head 或 body 内
+
+[javascript - difference between putting scripts in body or outside body - Stack Overflow](https://stackoverflow.com/questions/31867747/difference-between-putting-scripts-in-body-or-outside-body)
+
+## 页面事件
+
+| 比较 | DOMContentLoaded         | Load |
+|------|--------------------------|------|
+| 目标 | Document,不包括css/image | page |
+
+内联同步 JS 代码，可推迟 DOMContentLoaded 事件触发
+
+vue mounted 依赖 dom 挂载点，所以是在 DOMContentLoaded 发生后执行
+
+[浏览器页面与 vue2.0 组件生命周期横向比较 - 掘金](https://juejin.im/post/5acb14f9f265da237719b50c)
+
+[javascript - How to run VueJS code only after Vue is fully loaded and initialized? - Stack Overflow](https://stackoverflow.com/questions/43652265/how-to-run-vuejs-code-only-after-vue-is-fully-loaded-and-initialized/43656809)
+
+[如何分析页面加载慢 - 简书](https://www.jianshu.com/p/24b93b13e5a9)
+
+[HTTPS 之 TLS 性能调优 - cyfonly - 博客园](https://www.cnblogs.com/cyfonly/p/9061262.html)
+
+[Synchronous and asynchronous requests - Web APIs | MDN](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Synchronous_and_Asynchronous_Requests)
 

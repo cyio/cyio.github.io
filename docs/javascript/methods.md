@@ -1,4 +1,5 @@
 # 常用方法
+[toc]
 
 ## console
 
@@ -16,12 +17,12 @@
 // %s string
 // %d number
 console.log('this is %s %d', 'Jack', 20);
-VM146:2 this is Jack 20
+// this is Jack 20
 ```
 
 ## history
 
-不能查看用户浏览了哪些页面
+> 不能查看用户浏览了哪些页面
 
 ```js
 history.go(-1) // 向后跳转一页 等价于 history.forward()
@@ -127,74 +128,6 @@ let hr = dt.getHours() - dt.getTimezoneOffset() / 60
 dt.setUTCHours()
 ```
 
-## fetch
-
-[全面分析前端的网络请求方式](https://mp.weixin.qq.com/s?__biz=Mzg2NDAzMjE5NQ==&mid=2247484098&idx=1&sn=d9b077e093fef88febc36f87dfc15e8d&scene=21#wechat_redirect)
-
-- fetch 相对于旧的 XHR ，主要不同即使用`Promise`
-- 完整流程应该先检查状态码，与`callback`写法一致
-- 返回的是`stream`，因此用`json()`方法读取是异步的
-- 响应类型有三种，`basic cors opaque`，`cors`不设限制时跟`basic`一样
-
-```js
-fetch(apiUrl, {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json'
-  },
-  body: JSON.stringify({ q: 1 })
-}).then(async res => console.log(await res.json()))
-
-fetch('./api/some.json', { mode: 'cors' })
-  .then(function(response) {
-    if (response.status !== 200) {
-      console.log(
-        'Looks like there was a problem. Status Code: ' + response.status
-      )
-      return
-    }
-
-    // Examine the text in the response
-    response.json().then(function(data) {
-      console.log(data)
-    })
-  })
-  .catch(function(err) {
-    console.log('Fetch Error :-S', err)
-  })
-
-// 简化办支，是分离 status 和 json 等步骤，更关注结果
-function status(response) {
-  if (response.status >= 200 && response.status < 300) {
-    return Promise.resolve(response)
-  } else {
-    return Promise.reject(new Error(response.statusText))
-  }
-}
-
-function json(response) {
-  return response.json()
-}
-
-fetch('users.json')
-  .then(status)
-  .then(json)
-  .then(function(data) {
-    console.log('Request succeeded with JSON response', data)
-  })
-  .catch(function(error) {
-    console.log('Request failed', error)
-  })
-```
-
-简写
-
-```js
-fetch(url).then(res => res.json().then(console.table))
-```
-
-[Introduction to fetch()  |  Web  |  Google Developers](https://developers.google.com/web/updates/2015/03/introduction-to-fetch)
-
 ## location
 
 ```js
@@ -226,6 +159,30 @@ console.log(data.map(mapper).reduce(reducer, initial))
 [Simple implementation and explanation of Map Reduce using Javascript](https://gist.github.com/johnhenry/5487382)
 
 ## math
+
+- 取模/取余/取个位数 %
+- `Math.floor(x)`取小于或等于 x 的最大正整数，比如用来取十位数
+  - floor ceil 一个地板，一个天花板，一个往小取，一个往大取，正负规则一样
+  - `Math.trunc(x)`取整，ES6 新增，仅去掉小数部分
+- `Math.sqrt(4)` // square root of 4 is 2
+- `3.1415926.toFixed(2)` // 3.14 四舍五入，不传参数时表示 0，即去掉小数部分
+- 浮点数(float)计算不精确，可先转换成整数。应用，如价格计算，最好后端返回数据为分，前端更好处理
+
+    ```js
+    0.2 +
+      0.1(
+        // 0.30000000000000004
+        0.2 * 10 + 0.1 * 10
+      ) /
+        10
+    // 0.3
+    ```
+
+    浮点指的是带有小数的数值，浮点运算即是小数的四则运算
+    计算机里没有小数点，只能转换为类似科学计数法的表达方式，有精度限制
+
+    > 通常，取模运算也叫取余运算，它们返回结果都是余数.rem（取余）和 mod（取模）唯一的区别在于： 当 x 和 y 的正负号一样的时候，两个函数结果
+    > 是等同的；当 x 和 y 的符号不同时，rem 函数结果的符号和 x 的一样，而 mod 和 y 一样。
 
 ### 获取两个值之间的随机数/整数
 
@@ -286,29 +243,6 @@ function getRandomIntInclusive(min, max) {
 }
 ```
 
-- 取模/取余/取个位数 %
-- Math.floor(x) 取小于或等于 x 的最大正整数，比如用来取十位数
-  - floor ceil 一个地板，一个天花板，一个往小取，一个往大取，正负规则一样
-  - Math.trunc(x) 取整，ES6 新增，仅去掉小数部分
-- Math.sqrt(4) // square root of 4 is 2
-- 3.1415926.toFixed(2) // 3.14 四舍五入，不传参数是，表示 0，即去掉小数部分
-- 浮点数(float)计算不精确，可先转换成整数
-
-```js
-0.2 +
-  0.1(
-    // 0.30000000000000004
-    0.2 * 10 + 0.1 * 10
-  ) /
-    10
-// 0.3
-```
-
-浮点指的是带有小数的数值，浮点运算即是小数的四则运算
-计算机里没有小数点，只能转换为类似科学计数法的表达方式，有精度限制
-
-> 通常，取模运算也叫取余运算，它们返回结果都是余数.rem（取余）和 mod（取模）唯一的区别在于： 当 x 和 y 的正负号一样的时候，两个函数结果是等同的；当 x 和 y 的符号不同时，rem 函数结果的符号和 x 的一样，而 mod 和 y 一样。
-
 ## setTimeout(待执行函数, 毫秒)
 
 - 最好赋给变量
@@ -317,7 +251,7 @@ function getRandomIntInclusive(min, max) {
 ```js
 var up = setTimeout(update(), 0)
 function update() {
-    console.log('updated')
+  console.log('updated')
 }
 clearTimeout(up)
 

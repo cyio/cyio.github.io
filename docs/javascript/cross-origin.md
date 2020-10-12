@@ -1,4 +1,5 @@
 # 跨源（跨域）
+[toc]
 
 ## 定义
 
@@ -17,15 +18,66 @@ origin = protocol + domain + port
    Javascript 跨域访问解决方案 - 老唐 的专栏 - 博客频道 - CSDN.NET
    ajax 跨域问题解决方案 | w3cboy,最专业的前端开发博客
 
+## 分类
+
+1. 请求跨域 cors jsonp
+2. 页面跨域 postMessage document.domain
+
 ## JSONP
 
 由于同源策略的限制，`XmlHttpRequest`只允许请求当前源，`script`标签没有同源限制
+
+~~但是现在浏览器，默认会检查 MIME-type，如 script 请求 json 会被 CORB 拦截~~
 
 ```js
 import jsonp from 'jsonp-es6'
 ```
 
 [axios/COOKBOOK.md at master · mzabriskie/axios](https://github.com/mzabriskie/axios/blob/master/COOKBOOK.md#jsonp)
+[jsonp跨域资源引起CORB_记忆阁楼 - SegmentFault 思否](https://segmentfault.com/a/1190000018313378)
+[Fetch Standard CORB](https://fetch.spec.whatwg.org/#corb)
+
+jsonp 数据结构
+```
+jsonpcallback({
+  "id": 1,
+  "room": "main bedroom",
+  "items": [ "bed", "chest of drawers" ]
+});
+```
+服务端代码，返回的是一个函数调用，数据作为参数
+```java
+    //用回调函数名称包裹返回数据
+    String result = callback + "(" + jsonData + ")";
+    response.getWriter().write(result);
+```
+客户端代码，请求文件 MIME type 应该是 javascript
+```js
+function requestJSONP(url) {
+  // create script with passed in URL
+  var script = document.createElement('script');
+  script.src = url;
+  script.async = true;
+  
+  // after the script is loaded (and executed), remove it
+  script.onload = function () {
+    this.remove();
+  };
+  
+  // insert script tag into the DOM (append to <head>)
+  var head = document.getElementsByTagName('head')[0];
+  head.appendChild(script);
+}
+
+var url = "https://api.map.baidu.com/place/v2/search?query=ATM机&tag=银行&region=北京&output=json&ak=F552bedbee2ec8fa6bae7b7a08201&callback=callback";
+
+requestJSONP(url)
+
+var callback = function (data) {
+  var json = JSON.stringify(data);
+  console.log(json);
+};
+```
 
 ## CORS
 
@@ -54,11 +106,11 @@ import jsonp from 'jsonp-es6'
 
 [webpack-dev-server 代理解决 cookie 丢失问题 - 掘金](https://juejin.im/post/5a9e6592f265da23870e59eb)
 
-## 代理
+## proxy
 
 - `https://bird.ioliu.cn/v1/?url=`
 
-## React / Vue 设置代理（仅开发模式用）
+### React / Vue 设置代理（仅开发模式用）
 
 - `create-react-app`可在 package.json 中设置`proxy: "http://localhost:8080"`，要配合 fetch/ajax 使用
 - `vue-cli`创建的可在`config.js/index.js`中设置
@@ -105,7 +157,7 @@ devServer: {
   [手记：iframe、postMessage 及其它跨域通信实践 - 作业部落 Cmd Markdown 编辑阅读器](https://www.zybuluo.com/EncyKe/note/516702)
   [Cross-window communication](https://javascript.info/cross-window-communication)
 
-扩散：页面通信还有哪些方法
+发散：页面通信还有哪些方法
 - storage event 作用于 localStorage/sessionStorage 共享的页面
 
     ```js
@@ -113,3 +165,6 @@ devServer: {
     o.focus()
     ```
     即使同源，并不能访问或修改 window 下的大部分变量
+
+[Same-origin policy - Web security | MDN](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy)
+

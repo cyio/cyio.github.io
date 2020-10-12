@@ -32,7 +32,7 @@ Function.prototype.bind = function(oThis) {
   }
 
   var self = this
-  var args = [].slice.call(arguments, 1)
+  var args = [].slice.call(arguments, 1) // this 后续参数
   return function() {
     return self.apply( // 应该是 boundFunc 进行 apply，这里的 context 已经变成 global，所以要用 self
       oThis,

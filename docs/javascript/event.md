@@ -38,3 +38,9 @@
   2. 鼠标从 parent 可见区域移到 child 会触发
 
 [Element: mouseleave event - Web APIs | MDN](https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseleave_event)
+[EventListenerOptions/explainer.md at gh-pages · WICG/EventListenerOptions](https://github.com/WICG/EventListenerOptions/blob/gh-pages/explainer.md)
+
+## mouseenter vs mouseover
+- 如果目标包含子元素、且与子元素存在间距, over 会在经过间距时触发
+- enter 只关心目标整体，触发一次
+

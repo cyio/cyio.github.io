@@ -179,7 +179,7 @@ lockfile 与 `package.json`依赖不匹配时，会报错，而不是更新 lock
 
 期望：只安装 dependencies，不安装 devDependencies 和 optionalDependencies
 
-我们一般不用 optionalDependencies
+一般用不到 optionalDependencies
 
 ```
 npm install --production
@@ -191,3 +191,4 @@ export NODE_ENV=production
 
 https://docs.npmjs.com/cli/install
 
+[debug - npm](https://www.npmjs.com/package/debug)

@@ -70,3 +70,29 @@ destroyed () {
 
 [vuex 闲置状态重置方案 - 掘金](https://juejin.im/post/5a4c8da3f265da43085e6c64)
 
+## vuex
+
+- `store` 状态的容器，响应式，当其中状态变化时，相应组件高效更新。不能直接修改（赋值），只能显式地通过`mutations`中定义的方法`commit`
+- Mutations 正如其名，只是用来修改 state，只能是同步的纯函数
+  Mutations 本质上是一个事件系统，由事件名称和处理函数构成
+  Actions 通过 Mutations 来操作 state，使用灵活
+- 调用，简单在计算属性中返回即可
+- 优点，更明确地状态追踪
+
+## 计算缓存 vs Methods
+
+计算属性是基于它的依赖缓存，如果定义的不是响应式依赖，将不会更新
+而 method 在页面重新渲染时，总是会执行
+
+[计算属性 - vue.js](https://cn.vuejs.org/v2/guide/computed.html#%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7)
+
+## 变化检测
+
+要让新增加的值支持响应更新，需挂到 data 已存在的属性上，不支持添加新的根级响应式属性
+
+```js
+this.$set(this.someObject, 'b', 2)
+```
+
+[深入响应式原理 - vue.js](https://cn.vuejs.org/v2/guide/reactivity.html#%E5%A3%B0%E6%98%8E%E5%93%8D%E5%BA%94%E5%BC%8F%E5%B1%9E%E6%80%A7)
+

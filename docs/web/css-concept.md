@@ -1,6 +1,8 @@
 # CSS 概念
 
 [CSS Vocabulary](http://apps.workflower.fi/vocabs/css/en#attribute-selector)
+[CSS Box Alignment - CSS: Cascading Style Sheets | MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Alignment)
+[inline align baseline](https://codepen.io/cyio/pen/abZzWPo)
 
 ## 块级元素有哪些？行内元素有哪些？空(void)元素有那些？
 
@@ -131,3 +133,11 @@ font-size: 0;
 ## 参考
 
 [How To Learn CSS — Smashing Magazine](https://www.smashingmagazine.com/2019/01/how-to-learn-css/)
+
+## outline vs border
+写法类似
+
+outline 不占用布局，可能遮挡内容
+
+覆盖用`:focus`
+

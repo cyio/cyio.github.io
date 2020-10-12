@@ -1,4 +1,7 @@
-# 闭包（函数闭包）
+# 闭包
+[toc]
+
+> 函数闭包、词法闭包
 
 ## 通用定义
 
@@ -12,7 +15,9 @@
 
 ## JS 中定义
 
-闭包简单说，是指函数能访问所在(上下文)环境，而函数内部对外部环境来说不可见。（比较接近 MDN ，函数和它声明所在环境的结合）
+~~闭包简单说，是指函数能访问所在(上下文)环境，而函数内部对外部环境来说不可见。（比较接近 MDN ，函数和它声明所在环境的结合）~~
+
+闭包是一个函数与其本身所被定义的词法环境的结合。
 
 [[Environment]] 创建时确定
 
@@ -23,6 +28,12 @@
 > 避免在循环中创建函数，它可能只会带来无谓的计算，还会混淆。
 
 [Variable scope, closure](https://javascript.info/closure)
+[A re-introduction to JavaScript (JS tutorial) - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript)
+[高赞答案，解释、使用场景最清晰 function - How do JavaScript closures work? - Stack Overflow](https://stackoverflow.com/questions/111102/how-do-javascript-closures-work)
+
+hold
+
+close over 遮盖、封闭
 
 ```js
 // 写循环时的迭代变量，期望是在循环里的函数中保持，实际访问的是其最终值，如`i < 3`，终值是 3，不是内部的最大值 2
@@ -74,6 +85,10 @@ funcs.forEach(function(f) {
 ```
 
 [破解前端面试（80% 应聘者不及格系列）：从 闭包说起](https://zhuanlan.zhihu.com/p/25855075?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
+
+## 应用
+
+- react hooks return fn
 
 ## 内存管理
 
