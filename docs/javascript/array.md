@@ -9,12 +9,51 @@
 ## 查找
 
 ```js
-const names = ['David', 'Raymond']
-names.indexOf('David') // 返回 index，-1 时不存在
+const names = ['David', 'Raymond', 'John', 'David']
+names.indexOf('David') // number 返回第一个 index，-1 时不存在
 
-names.includes('David')
+names.includes('David') // boolean
 
-names.find(name => name !== 'Mike') // 符合条件的第一个，都不符合时返回 undefined
+names.find(name => name !== 'Mike') // 满足条件的第一个 value，都不满足时返回 undefined
+
+// filter 全部 find 出来，不过不能找出全部 index，filter 的 return 只会作为测试条件。只能写个循环处理
+
+const findAllIndex = (arr, name) => {
+  if (!arr.includes(name)) return []
+  const result = []
+  let remain = [...arr]
+  while(remain.includes(name)) {
+    let ind = remain.findIndex(name)
+    result.push(ind)
+    if (ind === remain.length - 1) break
+    remain = remain.slice(ind + 1)
+  }
+  return result
+}
+```
+
+```js
+(function(){
+const names = ['David', 'Raymond', 'John', 'David']
+
+const findAllIndex = (arr, target) => {
+  if (!arr.includes(target)) return []
+  const result = []
+  let remain = [...arr]
+  while(remain.includes(target)) {
+    let targetIndex = remain.indexOf(target)
+    result.push(result.length > 0 
+      ? targetIndex + result[result.length - 1] + 1 // 不做这一步，得到的是 remain 中的 index 位置
+      : targetIndex)
+    if (targetIndex === remain.length - 1) break // 不是必须，slice 超限后返回空数组
+    remain = remain.slice(targetIndex + 1)
+  }
+  return result
+}
+
+let r = findAllIndex(names, 'David') // expect [0, 3]
+console.log(r)
+})()
 ```
 
 ## 字符串表示
@@ -62,8 +101,8 @@ nums.splice(3, 0, 4, 5, 6) // print 1, 2, 3, 4, 5, 6 ...
 ### 当 replaceValue 是字符串时，美元符有特殊作用
 
 ```js
-// $$ 转义自身
 // $` 和 $' 分别表示searchValue之前和之后的内容`
+// $$ 转义自身
 
 'firefox'.replace('re', '$`') // "fififox"
 ```

@@ -14,7 +14,8 @@
 简述，为什么 DOM 操作影响性能？
 因为某些情况 NodeList 对象是动态的，每次访问 NodeList 对象，都会运行一次查询。
 
-> 理解 DOM 的关键，就是理解 DOM 对性能的影响。DOM 操作往往是 JavaScript 程序中开销最大的部分，而因访问 NodeList 导致的问题为最多。NodeList 对象都是“动态的”，这就意味着每次访问 NodeList 对象，都会运行一次查询。所以应减少对 NodeList 的访问，对 DOM 的操作。
+> 理解 DOM 的关键，就是理解 DOM 对性能的影响。DOM 操作往往是 JavaScript 程序中开销最大的部分，而因访问 NodeList 导致的问题
+> 为最多。NodeList 对象都是“动态的”，这就意味着每次访问 NodeList 对象，都会运行一次查询。所以应减少对 NodeList 的访问，对 DOM 的操作。
 
 https://developer.mozilla.org/en-US/docs/Web/API/NodeList
 
@@ -79,10 +80,15 @@ xpos = xpos + dist
 ## 重绘和回流
 
 重绘，样式变化，浏览器重新绘制样式
+paint 样式
 
 回流，尺寸、位置、属性变化，浏览器重新渲染部分或全部
+flow 布局
+性能影响更大
 
-### 计算样式
+[DOM Performance (Reflow & Repaint) (Summary)](https://gist.github.com/faressoft/36cdd64faae21ed22948b458e6bf04d5)
+
+### 样式计算
 
 - 50% 时间匹配选择器，引起页面或局部重新布局，reflow
 - 降低选择器的复杂性；使用以类为中心的方法，例如 BEM。选择器合并，少用选择规则

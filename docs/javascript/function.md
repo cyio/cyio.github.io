@@ -1,4 +1,5 @@
 # 函数
+[toc]
 
 ## 调用模式
 
@@ -52,6 +53,96 @@ function tmp(...args) {
 tmp(1, 2)
 ```
 
+## this 指向
+
+- 方法调用，`this`指向所属对象
+- 函数调用，`this`指向全局对象(事实上是上面的特例)
+
+    嵌套函数时，内部函数的`this` 依然指向全局对象（这是一个设计错误，理应指向外部函数的`this`），解决办法是在外部函数写`var that = this`，所以遇上嵌套函数就需要解决`this`指向，遇上是否需要解决`this`指向就看是不是嵌套函数
+
+- 构造器调用，`this`指向`new`出来的新对象
+
+- 函数总是返回一个值，如果没有指定返回值，则返回`undefined`
+  如果函数调用时在前面加上了`new`前缀，且返回值不是一个对象，则返回`this`(该新对象)
+
+### apply 和 call
+
+- apply 这个方法常常被用于转换参数形式以调用函数
+  - 每个函数都拥有`this`变量和`arguments`变量，正常来说，调用函数的时候要传递一些逗号分隔的参数，`this` 的取值是由调用的上下文决定的。
+  - `apply`方法可以直接显式的确定函数运行时的`this`和`arguments`
+- 函数的`call`和`apply`在使用上的最大差异便是一个在首参数后传入各个参数，一个是在首参数后传入一个包含所有参数的数组
+- 可用于实现继承
+
+```js
+var allNumbers = [23, 11, 34, 56]
+// Using the apply () method, we can pass the array of numbers:​
+console.log(Math.max.apply(null, allNumbers)) // 56
+// or es6
+console.log(Math.max(...allNumbers))
+```
+
+### bind
+
+`call apply bind`是相似的，`bind`是 ES5 增加的，可为函数调用固定`this`或参数
+
+不同点在于，bind 方法不会立即执行，而是返回一个改变了上下文 this 后的函数
+
+[实现 bind 方法，用于不支持 ES5 的浏览器](https://gist.github.com/cyio/bd17078f271eef9890d048d36ca4a0c4)
+[Function binding](https://javascript.info/bind)
+
+```js
+// Credit to Douglas Crockford for this bind method
+if (!Function.prototype.bind) {
+  // 如果不存在 bind 方法
+  Function.prototype.bind = function(oThis) {
+    if (typeof this !== 'function') {
+      // bind 方法的调用对象只能是函数，如果不是则抛出异常
+      // closest thing possible to the ECMAScript 5 internal IsCallable function​
+      throw new TypeError(
+        'Function.prototype.bind - what is trying to be bound is not callable'
+      )
+    }
+
+    var aArgs = Array.prototype.slice.call(arguments, 1), // 浅复制 bind 的参数，从第 2 个开始到结束 http://stackoverflow.com/a/26618338/5657916
+      fToBind = this,
+      fNOP = function() {}, // no operation 无操作函数
+      fBound = function() {
+        // 要返回的函数，用 apply 方法绑定 this
+        return fToBind.apply(
+          this instanceof fNOP && oThis // 待返回函数与构造函数原型是否一致，oThis 参数是否存在
+            ? this // 直接使用 bind 的调用对象
+            : oThis, // 使用指定 this
+          aArgs.concat(Array.prototype.slice.call(arguments))
+        ) // 合并两个方法的参数
+      } // var end
+
+    fNOP.prototype = this.prototype
+    fBound.prototype = new fNOP()
+
+    return fBound
+  }
+}
+```
+
+[JavaScript’s Apply, Call, and Bind Methods are Essential for JavaScript Professionals | JavaScript is Sexy](http://javascriptissexy.com/javascript-apply-call-and-bind-methods-are-essential-for-javascript-professionals/)
+
+bind 借用函数，比如类数组借用数组方法
+
+```js
+var mike = {
+  name: 'MIKE',
+  say: function() {
+    console.log(this.name)
+  }
+}
+
+var joy = {
+  name: 'JOY'
+}
+
+mike.say() // MIKE
+mike.say.bind(joy)() // JOY，this 指向被改成 joy
+```
 ## 防抖和节流 dt
 > debounce/throttle
 

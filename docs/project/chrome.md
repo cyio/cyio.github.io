@@ -10,6 +10,9 @@
 ```sh
 # mac
 open -a "Google Chrome 63" --args --profile-directory=Profile-v63
+
+# 恢复要指定 profile，否则用错
+open -a "Google Chrome" --args --profile-directory=Profile
 ```
 - 同时打开多个版本
 [Install multiple versions of Chrome on Mac](https://zhoukekestar.github.io/notes/2017/11/01/install-multi-chrome.html)
@@ -75,3 +78,10 @@ chrome://media-engagement/
 score 一栏
 
 catch 然后 mute play？
+
+## issue case
+
+- audio play click event bubble in chrome 69
+
+    解决，可以在 audio 父级阻断传播`onClick={(e: any) => e.stopPropagation()`
+

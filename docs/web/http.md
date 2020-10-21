@@ -99,7 +99,7 @@ pragma 〔计〕杂注,编译指示
 
 sessionStorage
 - 刷新或恢复页面（重新打开关闭的标签页）时，session 存在
-- 创建一个新的相同页面，会创建新的 session
+- 创建一个新的相同 URL 页面，会创建新的 session
 - 试验 https://codesandbox.io/s/992th?file=/src/index.js
 
 ## http 与 tcp 区别

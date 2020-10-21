@@ -1,8 +1,8 @@
 # CSS 概念
+[toc]
 
 [CSS Vocabulary](http://apps.workflower.fi/vocabs/css/en#attribute-selector)
 [CSS Box Alignment - CSS: Cascading Style Sheets | MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Alignment)
-[inline align baseline](https://codepen.io/cyio/pen/abZzWPo)
 
 ## 块级元素有哪些？行内元素有哪些？空(void)元素有那些？
 
@@ -78,19 +78,25 @@ float 定义了元素向哪个方向浮动，占据一定空间，其余内容�
 - 区分标准是，内容在渲染时是否要进行替换
 - `object-fit` 定义可替换元素如何填充容器
 
-## 外边距折叠
+## 外边距折叠（合并）
 
 BFC 的特性，不是缺陷
+
+- 相邻的兄弟姐妹元素（除非后者兄弟姐妹需要清除过去的浮动）
+- 块级父元素与其第一个/最后一个子元素
+- 空块元素
+
 [Mastering margin collapsing - CSS: Cascading Style Sheets | MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing)
 
 ## calc
 
 IE10+
+
 [css 兼容所有浏览器的宽度计算方法，非 calc - 个人文章 - SegmentFault 思否](https://segmentfault.com/a/1190000010806965)
 
 ## z-index
 
-定位元素（非 static）及其后代设置 stack level
+使用条件：定位元素（非 static）及其后代设置 stack level
 
 ## inline 元素(iframe/img)下面留白问题
 
@@ -118,6 +124,17 @@ font-size: 0;
 - vertical-align 百分比基于 line-height
 
 [Components AI — A new way to explore generative design systems](https://components.ai/box-shadows/)
+
+## inline element align in list layout
+
+问题：当列表元素有的包含文字，有的不包含文字时，对齐会有问题
+
+[inline align baseline](https://codepen.io/cyio/pen/abZzWPo)
+
+- 空的 inline 元素，基线是 margin-bottom
+- 非空有文字时，取最下面内容的 baseline
+- 用 inline 进行布局存在副作用，vertical-align 默认值为 baseline，不符合非文字类内容对齐要求，子元素类型有的为空，有的有文字时会发生不对齐
+baseline 行内元素的 baseline 与父元素的 baseline 对齐
 
 ## @import
 

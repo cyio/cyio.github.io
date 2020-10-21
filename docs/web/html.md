@@ -5,7 +5,7 @@
 
 - 如果在文档开始处没有发现文档类型声明，则所有浏览器都会默认开启严格模式
 
-## 外链脚本的下载与执行
+## 外链脚本下载与执行
 
 DOM parser => JS engine => DOM parser
 
@@ -262,7 +262,6 @@ swiper 等三方依赖应该阻塞，new 时如果找不到，抛错会阻塞执
 [HEAD - A free guide to <-head> elements](https://htmlhead.dev/)
 
 兼容性：firefox 不支持，会忽略退化
-
 
 ## dl dt dd
 定义列表， dd 会缩进两个字

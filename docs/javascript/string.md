@@ -1,4 +1,6 @@
 # 字符串
+[toc]
+
 ```js
 var stringValue = "Hello World";
 stringValue.length //  "11"
@@ -92,3 +94,8 @@ Object.assign([], string);
 // Result:
 // ['w', 'o', 'r', 'd']
 ```
+
+## replace
+- `$1` 仅第二参数为字符串时可用
+[js-replace的高阶用法,你知道吗 - 简书](https://www.jianshu.com/p/724e85c0941f)
+

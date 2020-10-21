@@ -168,12 +168,14 @@ async function printFiles() {
 
 ## 复杂异步依赖场景
 ```js
-  let finishLoading
+  let finishLoading // resolve fn
   const ready = new Promise(resolve => finishLoading = resolve)
-  ready.then(() => console.log('ready'))
+
   setTimeout(() => {
     finishLoading() // 可能在某些数据依赖请求完成后调用
   }, 3000)
+
+  ready.then(() => console.log('ready in future'))
 ```
 
 等待 state 更新的封装

@@ -1,4 +1,5 @@
 # ES6
+[toc]
 
 - 新特性：模块 | 类 | 解构赋值 | promise | 构造器 |Proxy | Reflect | 箭头函数 | 模板字符串
 - 防止重复声明：ES6 不允许在同一个作用域内用 let 或 const 重复声明同名变量。这对于防止在不同的 js 库中存在重复声明的函数表达式十分有帮助。
@@ -37,12 +38,18 @@
 ## map 映射
 
 - 如果 key 是复杂数据类型，需要保存起来，以便 map 操作
-    ```
+    ```js
     let key = [1]
-    ...
+
     map.get(key)
     map.delete(key)
     ```
+
+## Set
+
+- Set 对象允许你存储任何类型的唯一值，无论是原始值或者是对象引用。
+- 包括 null 等，用来做去重时，添加的值可能需要做类型判断
+- 特殊的对象，继承了对象的方法
 
 ## 类 class
 
@@ -206,7 +213,7 @@ button.addEventListener('click', function() {
 - this 继承 parent context
 - 不关心 this
 
-始终写上 return，方便增加语句、log
+tips: 始终写上 return，方便增加语句、log
 
 ```js
 let square = x => {
@@ -264,8 +271,4 @@ console.log(fn())
 ES6 不支持，用 flow，然后通过 babel plugin 移除
 [javascript - Babel: Function parameter types in ES6 - Stack Overflow](https://stackoverflow.com/questions/35916921/babel-function-parameter-types-in-es6)
 
-## Set
 
-- Set 对象允许你存储任何类型的唯一值，无论是原始值或者是对象引用。
-- 包括 null 等，用来做去重时，添加的值可能需要做类型判断
-- 特殊的对象，继承了对象的方法
