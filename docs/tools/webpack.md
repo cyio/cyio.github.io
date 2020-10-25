@@ -1,5 +1,7 @@
 # Webpack
 
+一站式解决了所有资源的依赖问题
+
 ## why
 * 传统 script 引入缺点
     - 全局污染
@@ -181,3 +183,4 @@ DefinePlugin
       BUILD_ENV: JSON.stringify(process.env.BUILD_ENV),  // 编译环境（development/test/production）
     }),
 ```
+

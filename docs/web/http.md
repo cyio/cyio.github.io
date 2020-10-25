@@ -1,14 +1,16 @@
 # HTTP
 [toc]
 
+名词： ETag 文件指纹，如 content hash
+
 ## 浏览器缓存
 
 - 强缓存，header -> max, cache，命中时不发网络请求
 - 协商缓存，header -> modifier，先发请求，命中 返回 304
 
-  `no-cache` = store + if change 如果存在合适的验证令牌(ETag)，发起请求，如果资源无变化，304，不下载
+  `no-cache` = store + if change 如果存在合适的验证令牌(ETag, )，发起请求，如果资源无变化，304，不下载
 
-  `no-store` 完全不存储
+  `no-store` 完全不存储，如私密文件
 
 - 刷新，会跳过强缓存，强制刷新，协商缓存也可跳过（协商缓存本身已经是一种避免内容不更新的策略，没必要跳过强刷）
 
@@ -20,19 +22,19 @@
 
 - 不设置
   - 跳转访问 size 列 显示 disk cache 或请求详情 General 显示 Status Code: 200 OK (from disk cache)
-  - 直接打开 chrome 会在请求头加上`max-age=0`，走协商缓存 显示 304，不需要再接收 body，节省一些带宽
+  - 直接打开资源链接，chrome 会在请求头加上`max-age=0`，走协商缓存 显示 304，不需要再接收响应体，节省一些带宽
   - 浏览器缓存策略有差异，所以不需要缓存时，最好显式指定
 
-## 共享代理缓存 VS 私人浏览器缓存
+- 共享代理缓存 VS 私人浏览器缓存
 
-共享缓存可以存在中间服务器上（只是个概念，如 cdn）
+    共享缓存可以存在中间服务器上（只是个概念，如 cdn）
 
-## 缓存最佳策略
+### 缓存最佳策略
 
-- For html files, use Cache-Control: no-cache, and Etag.
-- For js,css, and image files, set Cache-Control: public, max-age=31536000, no Etag, no Last-Modified settings.
+- For html files, use Cache-Control: no-cache, and Etag. 协商缓存
+- For js,css, and image files, set Cache-Control: public, max-age=31536000, no Etag, no Last-Modified settings. 强缓存，因为新资源 URL 一般有版本
 
-## 缓存有效期计算
+### 缓存有效期计算
 
 ```
 // freshnessLifetime
@@ -61,7 +63,7 @@ meta cache-control 不建议用，html4 标准，5 没有
 2. 双方协商生成”对话密钥”。
 3. 双方采用”对话密钥”进行加密通信
 
-- CORS 处理非简单请求会触发 options
+CORS 处理非简单请求（如 POST）会触发 options
 
   [减少 options 请求次数 和 数据量大时前端渲染的处理 - wanwan5856 的博客 - CSDN 博客](https://blog.csdn.net/wanwan5856/article/details/79592681)
 
@@ -121,3 +123,6 @@ sessionStorage
 
 递归查询-客户端查一次，迭代查询-客户端反复查
 [DNS 递归/迭代 原理 - kevin.Xiang - 博客园](https://www.cnblogs.com/xiangsikai/p/8438601.html)
+
+[第 8 题：说一下 Http 缓存策略，有什么区别，分别解决了什么问题 · Issue #14 · lgwebdream/FE-Interview](https://github.com/lgwebdream/FE-Interview/issues/14#issuecomment-647606369)
+

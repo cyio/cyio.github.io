@@ -63,6 +63,9 @@ var badd_the_handlers = function(nodes) {
 input = document.getElementsByTagName('input')
 badd_the_handlers(input)
 
+```
+
+```js
 // 另一个例子
 var funcs = []
 var rt = function(i) {
@@ -82,6 +85,24 @@ for (let i = 1; i < 10; i++) {
 funcs.forEach(function(f) {
   console.log(f()) // 将在打印10数字10次
 })
+```
+
+```js
+// #3
+var a = [];
+// const fn = (i) => { // lint 会避免同名
+//    return () => console.log(i)
+// }
+for (var i = 0; i < 10; i++) {
+  a[i] = function () {
+    console.log(i); // 定义时 capture 的是全局的 i，而 i 是变量，函数执行时 for 运算完成，i 是 10
+  };
+  // a[i] = fn(i)
+}
+
+i = 7
+a[6](); // 使用闭包后，返回的函数，直接访问参数 6，而不再是 i
+console.log(i)
 ```
 
 [破解前端面试（80% 应聘者不及格系列）：从 闭包说起](https://zhuanlan.zhihu.com/p/25855075?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)

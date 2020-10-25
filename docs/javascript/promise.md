@@ -1,6 +1,9 @@
 # Promise
 [toc]
 
+## 概念
+- 状态：pending fulfilled rejected
+
 题目：问数字打印顺序
 ```js
 console.log(1)
@@ -30,6 +33,8 @@ console.log(4)
 ## Promise.all
 
 在使用 promise.all 的时候要注意：业务上没有必然关联的请求比如联动组件这种，一定不要使用 promise.all，否则某个接口有问题，会导致其它正常的接口也拿不到数据
+
+实现：promise  + all resolve count
 
 ## async/await
 

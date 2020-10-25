@@ -101,7 +101,7 @@ v.addEventListener('loadedmetadata', e => {
 
 this.$refs.videoPlayer.player.play() // 播放
 
-// 注意，player 不能写成计算属性，也不要写成const，可能会被缓存，而导致切数据时指向还是旧的player
+// 注意，player 不能写成计算属性，也不要写成const，可能会被缓存，导致切数据时指向还是旧的player
 ```
 
 ## 全屏事件

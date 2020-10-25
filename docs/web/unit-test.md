@@ -1,4 +1,5 @@
 # 单元测试
+[toc]
 
 ## 关于
 ### why
@@ -22,11 +23,15 @@
 
 > 你应该瞄准以下金字塔，主要关注单元和集成测试，70/20/10
 
-> 单元测试是轻量级的，旨在单独检查系统的特定功能/组件 - 它们应该很快并且为您提供即时且非常具体的反馈 - 代码中的哪一行发生错误，出现了什么问题。
+> 单元测试是轻量级的，旨在单独检查系统的特定功能/组件 - 它们应该很快并且为您提供即时且非常具体的反馈 - 代码中的哪一行发生错误，出现了
+> 什么问题。
 
-> 另一方面，端到端测试工作更高层次 - 从用户的角度检查整个应用程序，所有移动部件协同工作。 当 e2e 测试失败没有给出关于出错的地方，导致失败的地点和原因的信息时，这种情况很常见。
+> 另一方面，端到端测试工作更高层次 - 从用户的角度检查整个应用程序，所有移动部件协同工作。 当 e2e 测试失败没有给出关于出错的地方，导致失败
+> 的地点和原因的信息时，这种情况很常见。
 
-> 一个标准的互联网应用产品的前端部分，我粗略估计大概有 20%的业务基础代码比较稳定，比如通用组件、通用算法和数据模块等，可以针对这些建立复杂一些的 API 和 GUI 测试用例来保证质量。剩下 80%的部分不是很稳定，每天都在迭代，针对他们维护 case 的成本非常高。目前业界中号称做了自动化测试的项目，也大多是在做那稳定的 20%。
+> 一个标准的互联网应用产品的前端部分，我粗略估计大概有 20%的业务基础代码比较稳定，比如通用组件、通用算法和数据模块等，可以针对这些建立
+> 复杂一些的 API 和 GUI 测试用例来保证质量。剩下 80%的部分不是很稳定，每天都在迭代，针对他们维护 case 的成本非常高。目前业界中号称做了
+> 自动化测试的项目，也大多是在做那稳定的 20%。
 
 > - Unit test: Test classes
 > - Integration test: Test component (class + template) using ComponentFixture
@@ -119,3 +124,4 @@ beforeAll((done /* call it or remove it*/) => {
 [setTimeout not triggering when unit testing · Issue #3211 · facebook/jest](https://github.com/facebook/jest/issues/3211#issuecomment-289276061)
 [到处都是测试 automate-everything/chapter6.md at master · azl397985856/automate-everything](https://github.com/azl397985856/automate-everything/blob/master/docs/chapter6.md)
 [Quick Content Testing using Snapshots in Vue.js](https://vuedose.tips/tips/quick-content-testing-using-snapshots-in-vue-js/)
+
