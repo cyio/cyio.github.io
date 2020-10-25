@@ -1,5 +1,5 @@
 # 异步
-[toc]
+[[toc]]
 
 ## Promise
 

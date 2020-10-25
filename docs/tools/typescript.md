@@ -1,6 +1,6 @@
 # Typescript
 
-[toc]
+[[toc]]
 
 > 为了说明静态类型化的好处，由于环境变量中的错字，我仅花了 30 分钟进行调试 - TJ
 > https://mobile.twitter.com/tjholowaychuk/status/1276470952059113473

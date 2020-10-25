@@ -1,5 +1,5 @@
 # CSS 实践
-[toc]
+[[[toc]]]
 
 ## 不使用 @import
 

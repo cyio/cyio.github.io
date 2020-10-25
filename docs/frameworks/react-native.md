@@ -1,6 +1,6 @@
 # React Native
 
-[toc]
+[[toc]]
 
 ## 布局及样式
 

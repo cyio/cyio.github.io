@@ -1,5 +1,5 @@
 # 常用方法
-[toc]
+[[toc]]
 
 ## console
 

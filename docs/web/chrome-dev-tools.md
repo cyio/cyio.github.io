@@ -1,5 +1,5 @@
 # Chrome-DevTools
-[toc]
+[[toc]]
 
 ## debug
 - 选项：恢复脚本执行，跳过下一个函数调用，进入函数，跳出当前函数

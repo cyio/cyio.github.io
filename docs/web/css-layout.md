@@ -1,5 +1,5 @@
 # CSS 布局
-[toc]
+[[toc]]
 
 [CSS layout - Learn web development | MDN](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout)
 

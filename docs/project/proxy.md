@@ -1,5 +1,5 @@
 # proxy
-[toc]
+[[toc]]
 ## browsersync
 ```sh
 $ browser-sync start --proxy 'localhost:1234' --files 'app'

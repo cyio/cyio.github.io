@@ -1,6 +1,6 @@
 # 数组 Array
 
-[toc]
+[[toc]]
 
 ## 独有 length 属性
 

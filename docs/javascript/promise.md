@@ -1,5 +1,7 @@
 # Promise
-[toc]
+[[toc]]
+
+采用promise可以解决异步编程的逻辑嵌套问题
 
 ## 概念
 - 状态：pending fulfilled rejected

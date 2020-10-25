@@ -1,5 +1,5 @@
 # CSS 概念
-[toc]
+[[toc]]
 
 [CSS Vocabulary](http://apps.workflower.fi/vocabs/css/en#attribute-selector)
 [CSS Box Alignment - CSS: Cascading Style Sheets | MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Alignment)

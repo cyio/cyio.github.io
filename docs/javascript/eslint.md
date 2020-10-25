@@ -1,5 +1,5 @@
 # ESLint
-[toc]
+[[toc]]
 
 `eslint --init` 默认推荐本地安装 ，全局无法使用
 

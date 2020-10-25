@@ -1,5 +1,5 @@
 # this
-[toc]
+[[toc]]
 
 ## basic
 

@@ -1,5 +1,5 @@
 # vue-router
-[toc]
+[[toc]]
 
 - 为什么优先使用 router-link，首要原因是，写一次，兼容 history 和 hash 模式
 - 跳转常规用法 `router-link.left(tag="div" to="/rule")`

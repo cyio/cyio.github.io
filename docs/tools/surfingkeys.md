@@ -1,6 +1,6 @@
 # Surfingkeys
 
-[toc]
+[[toc]]
 
 ## 快捷键
 

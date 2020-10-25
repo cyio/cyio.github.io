@@ -1,5 +1,5 @@
 # Vue
-[toc]
+[[toc]]
 
 ## 与 React 比较
 
