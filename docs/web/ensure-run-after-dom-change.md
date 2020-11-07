@@ -1,4 +1,6 @@
-```
+# 如何保证 DOM 更新后执行
+
+```js
 document.getElementById('msg').innerText = 'Hi!';
 setTimeout(() => {
   alert('Hi!');

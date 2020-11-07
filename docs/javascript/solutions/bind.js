@@ -1,3 +1,7 @@
+// bind 特性，首参新 this，后续参数可选
+// 1. FN.apply FN 怎么表示
+// 2. 参数合并
+// 3. this 区分
 // const test = (x) => x
 
 // Function.prototype.bind = (curThis) => {

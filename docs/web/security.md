@@ -6,7 +6,9 @@ crypto, TSL/SSL HTTPS XSS
 
 ## XSS 跨站脚本攻击
 在网页中植入恶意脚本
+
 解决方式：内容安全策略
+
 设置 header，做哈希验证
 ```
 content-security-policy: script-src 'sha256-wxWy1+9LmiuOeDwtQyZNmWpT0jqCUikqaqVlJdtdh/0='

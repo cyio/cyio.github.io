@@ -1,7 +1,7 @@
 # Promise
 [[toc]]
 
-采用promise可以解决异步编程的逻辑嵌套问题
+> 采用promise可以解决异步编程的逻辑嵌套问题
 
 ## 概念
 - 状态：pending fulfilled rejected
@@ -39,6 +39,7 @@ console.log(4)
 实现：promise  + all resolve count
 
 ## async/await
+> Sugar around a generator that yields promises wrapped in a function that calls spawn to consume and chain those promises.
 
 - async function 隐式返回 Promise，显式 return 的内容会包裹于 resolve，在 then 中可以取到
 - async 是 Generator 的语法糖和改进
@@ -194,4 +195,6 @@ async function printFiles() {
 
 ## race 方法
 兼容性：chrome 32+ 不支持 IE10
+
+异常：Uncaught (in promise)  catch 的过去时，在尾部 catch 即可
 

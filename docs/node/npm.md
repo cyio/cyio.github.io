@@ -185,6 +185,8 @@ lockfile 与 `package.json`依赖不匹配时，会报错，而不是更新 lock
 npm install --production
 # or
 export NODE_ENV=production
+
+npm install --no-optional
 ```
 
 > With the --production flag (or when the NODE_ENV environment variable is set to production), npm will not install modules listed in devDependencies.
@@ -192,3 +194,13 @@ export NODE_ENV=production
 https://docs.npmjs.com/cli/install
 
 [debug - npm](https://www.npmjs.com/package/debug)
+
+## 源使用优先级
+
+```
+npm install --registry=http://registry.npm.taobao.org
+  project config
+    metrics-registry
+```
+
+如果只是少量项目使用私有源，建议使用`project config`方式。万一私有源访问出现问题，减少影响。

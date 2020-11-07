@@ -210,7 +210,6 @@ state 每个组件私有
 
 - 跟踪更容易
 - 优势，帮助创建 pure components，变化时机 --> 确定重新渲染
-
 - 只有 render，不含私有数据(state)，写成函数组件更简单
 
   ```js
@@ -318,4 +317,7 @@ render return 里可直接定义变量`const ChapterName = <h2>{chapterName}</h2
 
 ## 组件演化
 ![image.png](http://ww1.sinaimg.cn/large/4e5d3ea7ly1gikjo188z2j21q80x8gs0.jpg)
+
+## PropTypes
+默认非必须，即允许 null / undefined
 
