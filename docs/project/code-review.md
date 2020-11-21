@@ -19,3 +19,4 @@
 [Code Review中的几个提示 | | 酷 壳 - CoolShell](https://coolshell.cn/articles/1302.html)
 [Effective Code Reviews](https://nyu-cds.github.io/effective-code-reviews/)
 [How to do a code review | eng-practices](https://google.github.io/eng-practices/review/reviewer/)
+[JavaScript best practices - W3C Wiki](https://www.w3.org/wiki/JavaScript_best_practices#Don.E2.80.99t_trust_any_data)

@@ -65,6 +65,8 @@ await fetch(url)
 vue render 错误，不好定位，可以定位查看编译后的代码
 
 ## code editor
-Control+M	跳转到匹配括号
+```
+Control+M 跳转到匹配括号
 Command+D 选中光标所在
 Command+U 上个位置
+```

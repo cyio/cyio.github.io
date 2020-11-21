@@ -1,3 +1,5 @@
+# promise.all
+
 1. 输入可迭代数组，返回有序 resolve values
 2. 全部并发完成 resolve
 3. 第一个错误发生时，reject

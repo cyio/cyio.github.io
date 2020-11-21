@@ -521,6 +521,10 @@ git 默认是 simple 与 upstream 差不多，区别是不允许不同名推，�
 git log --name-status
 ```
 
+## git push
+
+use “git push --force-with-lease” instead. It adds some safety in case a coworker pushed code you haven’t pulled
+
 ## 本地与远端不一致，重置到远端版本
 
 git pull after forced update
