@@ -13,9 +13,9 @@ Number({}) === NaN
 Number(true) === 1
 ```
 
-- 逻辑值
+## 逻辑值
 
-0、NaN 和空字符串("")视为 false，其余值视为 true
+0、NaN（Invalid Number）、空字符串（""）、null、undefined 视为 false，其余值视为 true
 
 ## 类型判断
 
@@ -50,4 +50,13 @@ const isObject = (arg) => Object.prototype.toString.call(arg) === '[object Objec
 ```js
 undefined == null // 两个值转换为 false，结果是 true
 ```
+
+原始类型，意味着不可变，相等性判断都可以用`===`，而对象可以修改
+null 空对象，是特殊原始类型，不能用 typeof 检测出
+BigInt
+
+[JavaScript data types and data structures - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures)
+
+Symbol 原子、唯一
+
 

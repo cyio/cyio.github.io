@@ -76,8 +76,6 @@ let obj_snapshot = JSON.parse(JSON.stringify(obj))
 
 如果只是想合并 `let merged = Object.assign({}, a, b)`
 
-[深拷贝的终极探索（99%的人都不知道） - 颜海镜 - SegmentFault 思否](https://segmentfault.com/a/1190000016672263)
-
 ### 场景应用
 - 修改对象时，是否会影响原对象，对象只有一层值类型时、不影响
 - Echarts 需要复制 JSON 配置到在线 Playground 调试，如何复制
@@ -91,8 +89,10 @@ useMemo 依赖无变化时，返回旧引用
 > “Memoization is an optimization technique used to primarily speed up programs by storing the results of expensive function calls and returning the cached results when the same inputs occur again.”
 
 手写题目：实现深拷贝
-  注意点：入参校验、对象判断、层次很深会栈溢出、循环引用、用 for in 遍历纯数据对象是合适的
+  注意点：入参校验、对象判断、层级很深会栈溢出、循环引用、用 for in 遍历纯数据对象是合适的。拷贝时可以用三元表达式
   第一次，isObject 判断后的赋值写错了
+
+[深拷贝的终极探索（99%的人都不知道） - 颜海镜 - SegmentFault 思否](https://segmentfault.com/a/1190000016672263)
 
 ## 字典
 

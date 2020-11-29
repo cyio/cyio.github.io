@@ -613,3 +613,7 @@ git log origin/master..HEAD --oneline --no-merges
 
 复杂的操作如 merge，GUI 能提供比命令行大得多的信息密度
 
+## 可选合并
+场景，重构等改动较大，要合入 master
+[git selective merge](https://gist.github.com/katylava/564416)
+

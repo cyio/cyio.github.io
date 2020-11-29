@@ -27,10 +27,10 @@ HTTP
 
 [HPACK: the silent killer (feature) of HTTP/2](https://blog.cloudflare.com/hpack-the-silent-killer-feature-of-http-2/)
 
-## 与 HTML 1.1 对比
+## 与 HTTP 1.1 对比
 |          | html1.x      | html2    |
 |----------|--------------|----------|
-| tcp      | 一个         | 复用     |
+| TCP      | 一个         | 复用     |
 | cookie   | 每个请求携带 | 一个连接 |
 | header   | 无压缩       | HPACK    |
 | 传输格式 | 文本         | 二进制分帧、多流 |

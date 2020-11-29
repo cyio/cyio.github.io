@@ -5,6 +5,7 @@
 - 相似的特征，归纳，递归步骤，常见嵌套循环，外循环递增，内循环递减
 - 边界条件
   [谈谈递归](http://io.upyun.com/2016/04/05/recursion/)
+- 递推公式 + 终止条件
 
 ```js
 // 实现对象深拷贝，考察点：isObject for-in 递归
@@ -32,7 +33,6 @@
     let result = {}
     for (let i in obj) {
       result[i] = isObject(obj[i]) ? deepClone(obj[i]) : obj[i]
-
     }
     return result
   }

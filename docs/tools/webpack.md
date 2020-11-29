@@ -184,3 +184,12 @@ DefinePlugin
     }),
 ```
 
+import 大小写 path 不一致警告
+[Webpack: "there are multiple modules with names that only differ in casing" but modules referenced are identical - Stack Overflow](https://stackoverflow.com/questions/47534267/webpack-there-are-multiple-modules-with-names-that-only-differ-in-casing-but)
+[case-sensitive-paths-webpack-plugin - npm](https://www.npmjs.com/package/case-sensitive-paths-webpack-plugin)
+
+```
+import PureStyleLib from '@/paper/components/Content/panel/StyleLib/PureStyleLib'
+```
+原因是 path 中的 Content 写错大小写。需要检查整个路径
+
