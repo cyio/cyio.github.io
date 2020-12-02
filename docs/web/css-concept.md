@@ -86,7 +86,11 @@ BFC 的特性，不是缺陷
 - 块级父元素与其第一个/最后一个子元素
 - 空块元素
 
+解决：
+- 尽量用同一方向 margin
+- 部分触发 BFC 的条件
 [Mastering margin collapsing - CSS: Cascading Style Sheets | MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing)
+[如何解决外边距叠加的问题？ - 知乎](https://www.zhihu.com/question/19823139)
 
 ## calc
 

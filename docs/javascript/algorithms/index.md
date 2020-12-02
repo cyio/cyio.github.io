@@ -56,7 +56,7 @@
 | 优化排序矩阵查找 | O(n)       |
 | 归并、快排       | O(n log n) |
 
-[Master theorem (analysis of algorithms) - Wikipedia](<https://en.wikipedia.org/wiki/Master_theorem_(analysis_of_algorithms)>)
+[Master theorem (analysis of algorithms) - Wikipedia](https://en.wikipedia.org/wiki/Master_theorem_(analysis_of_algorithms)
 
 ## 枚举
 

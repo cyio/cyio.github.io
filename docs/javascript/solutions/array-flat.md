@@ -27,7 +27,7 @@
   res 需要放在函数外面
   ```js
   const arr = [1,2, [3, [4]], 5]
-  let res = []
+  let res = [] // 需要定义在外面
   function flat(arr){
     for (let i of arr) {
       if (i instanceof Array) {
@@ -40,10 +40,12 @@
   flat(arr)
   console.log(res)
   ```
+
 4. reduce + 递归
+
   ```js
   const arr = [1, 2, [3, [4]], 5]
-  const flatten = arr=>{
+  const flatten = arr => {
     return arr.reduce((pre,cur)=>{
       return pre.concat(Array.isArray(cur) ? flatten(cur) : cur);
     }

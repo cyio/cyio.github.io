@@ -14,15 +14,10 @@
 
 ES6 共 7 个
 
-- 6 个原始类型`Undefined Null Number String Symbol Boolean`
-- 1 个引用类型`Object`
-- symbol ES6 新增，表示独一无二的值，由函数`Symbol()`产生， 可用于对象属性的标识符
+- 原始类型`Undefined Null Number String Symbol Boolean`
+- 引用类型`Object`
+- Symbol ES6 新增，表示独一无二的值，由函数`Symbol()`产生， 可用于对象属性的标识符
 - 7 个里没有数组
-- `typeof` 获取
-
-  ```js
-  typeof [] // 'object'
-  ```
 
 ## 逻辑值
 
@@ -408,7 +403,4 @@ JavaScript operator: Optional chaining operator (?.)
 [Babel · The compiler for next generation JavaScript](https://babeljs.io/repl)
 
 @vue/babel-preset-app 目前是接受 stage3 及以下
-
-题目: 原型上添加 sum 方法
-题目: 实现 promise.all
 

@@ -1,6 +1,6 @@
 // bind 特性，首参新 this，后续参数可选
 // 1. FN.apply FN 怎么表示
-// 2. 参数合并
+// 2. 参数合并 类数组处理
 // 3. this 区分
 // const test = (x) => x
 
@@ -31,7 +31,7 @@ user.say = () => console.log('changed')
 // [Function.prototype.bind() - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind)
 // 考虑到一般不会把 bind 和 new 在一起用、效率问题，建议用这个简短版本
 Function.prototype.bind = function(oThis) {
-  if (typeof this !== 'function') {
+  if (typeof this !== 'function') { // 可省略
     throw ('must be function')
   }
 
@@ -55,3 +55,4 @@ let user = {
 user.say = user.say.bind(user, 'morning')
 
 setTimeout(user.say, 100) // expect 'john'
+
