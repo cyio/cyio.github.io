@@ -1,5 +1,12 @@
 const path = require('path');
+const fs = require('fs');
 const glob = require('glob');
+
+const solutionsArr = fs
+  .readdirSync(path.resolve(__dirname, '../javascript/solutions'))
+  .filter(filename => filename.endsWith('.md'))
+  .map(filename => 'solutions/' + filename.slice(0, -3))
+  .sort()
 
 module.exports = {
   title: 'Oaker小站',
@@ -30,6 +37,7 @@ module.exports = {
       // { text: '主页', link: '/' },
       { text: 'Blog', link: '/' },
       { text: 'JS', link: '/javascript/concept' },
+      // { text: '题解', link: '/javascript/solutions/new.md' },
       { text: 'Web', link: '/web/html' },
       { text: '框架', link: '/frameworks/vue' },
       { text: 'Node', link: '/node/concept' },
@@ -73,16 +81,31 @@ function genSidebarConfig () {
       displayName: '工具',
       collapsable: false,
     },
+    // {
+    // name: 'javascript/solutions',
+    // displayName: '题解',
+    // collapsable: false,
+    // },
   ]
   navKeys.forEach(item => {
     sideBarData[`/${item.name}/`] = [
       {
         title: item.name,
+        // path: 'javascript/solutions/',
         collapsable: item.collapsable,
         children: getChildren(item.name)
       },
     ]
   })
+  sideBarData['/javascript/'].push(
+    {
+      title: '题解',
+      collapsable: false,
+      children: solutionsArr
+    }
+  )
+  // console.log(solutionsArr)
+  // console.log(sideBarData)
   return sideBarData
 }
 /*
@@ -99,6 +122,6 @@ function getChildren(dirName) {
       names.push(name)
     }
   })
-  // console.log('glob', names)
+  console.log('glob', names)
   return names
 }
