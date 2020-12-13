@@ -35,3 +35,15 @@
 ```
 
 [递归和动态规划 leetcode/dynamic-programming.md at master · azl397985856/leetcode](https://github.com/azl397985856/leetcode/blob/master/thinkings/dynamic-programming.md)
+
+## 过滤
+
+字符串过滤数字加反转，正则方法
+```js
+// 字符串可以配合 正则 g 标识，输出所有符合条件的值的数组
+let str = 'a1b2ccd'
+str.match(/[a-z]/g).reverse().join('')
+
+// or 更好访问捕获分组
+let array = [...str.matchAll(regexp)];
+```

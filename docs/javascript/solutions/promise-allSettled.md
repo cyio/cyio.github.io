@@ -1,3 +1,5 @@
+# promise.allSettled
+
 ```js
 function allSettled(iterable) {
   let result = []

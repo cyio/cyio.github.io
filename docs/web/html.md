@@ -172,7 +172,7 @@ DOM parser => JS engine => DOM parser
 
 正确的使用姿势：
 
-1. 对静态资源域名做手动 dns prefetching。
+1. 对静态资源域名（如果是单独域名）做手动 dns prefetching。
 2. 对 js 里会发起的跳转、请求做手动 dns prefetching。
 3. 不用对超链接做手动 dns prefetching，因为 chrome 会自动做 dns prefetching。
 4. 对重定向跳转的新域名做手动 dns prefetching，比如：页面上有个 A 域名的链接，但访问 A 会重定向到 B 域名的链接，那么在当前页对 B 域名做手动 dns prefetching 是有意义的。

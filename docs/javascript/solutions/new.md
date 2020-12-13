@@ -1,3 +1,4 @@
+# new
 
 ```js
 var o = new Foo();
@@ -11,6 +12,24 @@ o.__proto__ = Foo.prototype;
 var res = Foo.call(o);
 // 4. 返回处理
 res instanceof Object ? res : o;
+```
+
+手写
+```js
+function myNew(fn) {
+  let obj = new Object()
+  obj.__proto__ = fn.prototype
+  let fnRet = fn.call(obj)
+  return fnRet instanceof Object ? fnRet : obj
+}
+
+function hi() {
+  this.a = 'jack'
+  // return { b: 'd'}
+}
+
+let r = myNew(hi)
+console.log(r.a, r.b)
 ```
 
 考察构造函数原型继承

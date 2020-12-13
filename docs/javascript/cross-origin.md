@@ -153,11 +153,28 @@ devServer: {
 
 - html5 api，页面与 service worker 通信用的就是这个
 - 出于安全考虑，需要做 origin 判断
+- 窗口是 open/iframe 关系
+
   [postMessage 可太有用了 - 掘金](https://juejin.im/post/5b8359f351882542ba1dcc31)
+
   [手记：iframe、postMessage 及其它跨域通信实践 - 作业部落 Cmd Markdown 编辑阅读器](https://www.zybuluo.com/EncyKe/note/516702)
+
   [Cross-window communication](https://javascript.info/cross-window-communication)
 
-发散：页面通信还有哪些方法
+- 用法：
+
+  ```js
+  // 父
+  $iframeEl.contentWindow.postMessage()
+
+  // 子
+  window.parent.postMessage(res, "*");    
+
+  window.addEventListener("message", (event) => {})
+  ```
+  发送的数据对象会经过 structured clone algorithm ，递归 + 维护一份已访问对象引用 map，避免循环引用。
+
+## 发散：页面通信还有哪些方法
 - storage event 作用于 localStorage/sessionStorage 共享的页面
 
     ```js

@@ -80,6 +80,8 @@ float 定义了元素向哪个方向浮动，占据一定空间，其余内容�
 
 ## 外边距折叠（合并）
 
+垂直方向相邻盒 margin 合并成一个（不一定是同辈元素，不一定是相邻元素）
+
 BFC 的特性，不是缺陷
 
 - 相邻的兄弟姐妹元素（除非后者兄弟姐妹需要清除过去的浮动）
@@ -88,9 +90,15 @@ BFC 的特性，不是缺陷
 
 解决：
 - 尽量用同一方向 margin
-- 部分触发 BFC 的条件
+- 让元素产生新 BFC 或用 BFC 包住（部分触发 BFC 的条件）
+- 发生元素共同容器使用 flex（并不是在发生元素上设置）
 [Mastering margin collapsing - CSS: Cascading Style Sheets | MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing)
 [如何解决外边距叠加的问题？ - 知乎](https://www.zhihu.com/question/19823139)
+[margin collapse](https://codepen.io/cyio/pen/mdregqb)
+
+块级容器不一定是块级盒
+块级盒不一定是块级容器，如块级替换元素（display: block）和 flex 盒
+[CSS Display Module Level 3](https://www.w3.org/TR/css-display-3/#block-container)
 
 ## calc
 

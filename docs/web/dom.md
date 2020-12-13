@@ -7,7 +7,9 @@
 
     childNodes vs children(Element)
 
-- 集合，类数组`for of` `Array.from`
+- 集合，类数组
+
+  `for of` `Array.from`
 
 ## 性能
 
@@ -79,14 +81,17 @@ xpos = xpos + dist
 
 ## 重绘和回流
 
-重绘，样式变化，浏览器重新绘制样式
-paint 样式
+- 重绘，样式变化，浏览器重新绘制样式
 
-回流，尺寸、位置、属性变化，浏览器重新渲染部分或全部
-flow 布局
-性能影响更大
+  paint 样式
+
+- 回流，尺寸、位置、属性变化，浏览器重新渲染部分或全部
+
+  flow 布局 性能影响更大
 
 [DOM Performance (Reflow & Repaint) (Summary)](https://gist.github.com/faressoft/36cdd64faae21ed22948b458e6bf04d5)
+
+- 优化：合并更新
 
 ### 样式计算
 
@@ -116,12 +121,14 @@ vue - update
 
 - `createElement`
   ```html
-  const div = document.createElement('div') div.innerHTML = `
+  const div = document.createElement('div') 
+  div.innerHTML = `
   <div id="global-page-close" onclick="window.close()">
     <span></span>
     <span></span>
   </div>
-  ` document.body.appendChild(div)
+  ` 
+  document.body.appendChild(div)
   ```
 - `document.createDocumentFragment` 不支持 innerHTML
 

@@ -1,4 +1,5 @@
 # videojs
+[[toc]]
 
 [video.js/player-workflows.md at master · videojs/video.js · GitHub](https://github.com/videojs/video.js/blob/master/docs/guides/player-workflows.md#accesing-the-tech-on-the-player)
 
@@ -21,7 +22,18 @@ android / chrome 70 是不允许自动播放的，即使你用了 video.play() ,
 ## 3. 播放控制
 
 常用方法：`play|pause`
-常用事件：`loadstart 开始加载|loadedmetadata 元信息加载成功|loadeddata 首帧加载成功|canplay|canplaythrough|ended|timeupdate`
+
+常用事件：
+```
+loadstart 开始加载
+loadedmetadata 元信息加载成功
+loadeddata 首帧加载成功
+canplay
+canplaythrough
+ended
+timeupdate
+```
+
 ios 需要播放后才会触发`canplay`和`canplaythrough`
 
 ## 4. 隐藏播放控件
@@ -58,7 +70,9 @@ flv 需要引入
 2. 界面
 
   检测`duartionChange`事件，UI 有变化，不符合只看直播的期望
+
   videojs 在检测到直播流`duration < 0`才会切到`LIVE`样式，在`video-js`上添加`vjs-live`，新版还会加上`vjs-liveui`，新版有问题先不要用（安卓、seek）
+
   vjs-live-control 刚开始会隐藏，需要 hack 处理
   ```pug
   .video-js.vjs-live
@@ -195,7 +209,7 @@ background: #000;
 - 缓冲概率
 - 卡顿缓冲时长 = playing - waiting，忽略第一次 playing，如果大于一定值，收集网速信息，上报
 - 播放次数
-监控下载进度 video.duration video.buffered.end(0)
+- 下载进度 video.duration video.buffered.end(0)
 
 收集信息：
 - 视频地址
@@ -207,7 +221,9 @@ background: #000;
 ## 卸载和清除
 
 一旦加载，会一直拉取，需要特殊操作停止拉取
+
 需要两步，无法通过仅移除节点解决
+
 一个页面视频比较多时，会阻塞后面的
 
 ```js
@@ -294,7 +310,11 @@ videojs 7 集成 [http-streaming](https://github.com/videojs/http-streaming) 插
 ## 5-6 迁移
 
 - `src()`改为异步
-  `js player.src({type: 'video/mp4', src: 'foo.mp4'}); player.ready(player.play);`
+
+  ```js 
+  player.src({type: 'video/mp4', src: 'foo.mp4'});
+  player.ready(player.play);
+  ```
   [Video.js 6 Migration Guide · videojs/video.js Wiki](https://github.com/videojs/video.js/wiki/Video.js-6-Migration-Guide)
 
 ## 恢复播放
@@ -334,7 +354,7 @@ player.play()
 [视频云web播放器样式和组件自定义](http://vcloud.163.com/vcloud-sdk-manual/WebDemos/LivePlayer_Web/introToComponent.html)
 
 ## mp4
-moov 需要放在开头，来启用 faststart
+moov 需要放在开头，以启用 faststart
 
 判断 moov 位置，在第一行（说明在开头），还是第二行（说明在末尾）
 ```sh
@@ -352,7 +372,7 @@ ffmpeg -i input.mp4 -movflags faststart -acodec copy -vcodec copy output.mp4
 
 
 
-转码
+## 转码
 
 [ffmpeg - Fastest way to convert videos (batch or single)? - Ask Ubuntu](https://askubuntu.com/questions/352920/fastest-way-to-convert-videos-batch-or-single)
 [Encode/H.264 – FFmpeg](https://trac.ffmpeg.org/wiki/Encode/H.264)
@@ -371,10 +391,12 @@ ffmpeg -i input.mkv -c copy -c:v libx264 -vf scale=-2:720 output.mkv
 ```
 [ffmpeg 将1080P视频转换成720P_楚盟网](https://www.5yun.org/14696.html)
 
-估算网速
+## 估算网速
 1. 文件大小/下载所用时间
 2. 视频下载本身符合上条
+
 [How does YouTube detect connection speed without testing/using all speeds? - Web Applications Stack Exchange](https://webapps.stackexchange.com/questions/106358/how-does-youtube-detect-connection-speed-without-testing-using-all-speeds)
+
 [How to detect internet speed in JavaScript? - Stack Overflow](https://stackoverflow.com/questions/5529718/how-to-detect-internet-speed-in-javascript)
 
 DASH 第一个国际标准
@@ -443,3 +465,21 @@ https://github.com/videojs/http-streaming/blob/e50f4c93dc47cc9ce467aeff8ddd61e1e
 appendBuffer
 https://github.com/videojs/http-streaming/blob/ea3650a08de481ac01f5562e54278e736a852e5c/src/segment-loader.js#L1918
 
+
+是否存在有效 buffer 判断
+```js
+      for (let i = 0; i < buffered.length; i++) {
+        if (buffered.start(i) <= currentTime &&
+          currentTime < buffered.end(i) + SAFE_TIME_DELTA) {
+          extraBuffer = true;
+          break;
+        }
+      }
+```
+
+buffered 百分比计算，遍历 buffered 并累加 / duration
+```js
+export function bufferedPercent(buffered, duration) {
+```
+
+内置依赖 xhr 库 https://github.com/naugtur/xhr

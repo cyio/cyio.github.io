@@ -1,3 +1,5 @@
+# apply call
+
 ```js
 Function.prototype.mycall = function (context, ...argus) {
     if (typeof this !== 'function') {

@@ -1,3 +1,5 @@
+# count dom nodes
+
 ```js
 function countNodes(node) {
   //  计算自身

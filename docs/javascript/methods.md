@@ -186,18 +186,28 @@ console.log(data.map(mapper).reduce(reducer, initial))
 
 ### 获取两个值之间的随机数/整数
 
-- 原理：大于最小值数，但小于最大值，随机性
-- 实现：基数是最小值，相加值是最大值与最小值的差的随机缩放
+- 分析：
+  - 大于最小值数
+  - 但小于最大值
+  - 随机性
+- 实现：
+  - 基数是最小值
+  - `Math.random` 包括 0 但不包括 1
+  - 结果小数可以用 `floor` 或 `trunc`处理，但不能用 `ceil`，不满足小于最大值
 
 MDN random 上有，不要自己推了
 
 ```js
 // 获取随机数/整数
-function getRandom(min, max) {
+// > min  
+// min + x < max
+// x < max - min
+// x = Math.random * (max - min)
+function getRandomInt(min, max) {
   // return min + Math.random() * (max - min)
   return Math.floor(min + Math.random() * (max - min))
 }
-console.log(getRandom(2, 5))
+console.log(getRandomInt(2, 5))
 
 // 编写函数fn， 该函数有一个参数n（数字类型），返回值是一个数组，该数组内是n个随机不重复的整数，且整书取值范围是[2, 32]
 // 参数 n 不一定是整数

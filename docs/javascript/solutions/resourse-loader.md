@@ -1,3 +1,5 @@
+# 资源加载器
+
 ```js
 // source [Create a Basic Loader with JavaScript Promises](https://davidwalsh.name/javascript-loader)
 var load = (function() {

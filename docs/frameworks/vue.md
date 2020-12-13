@@ -21,6 +21,8 @@
 
 ## 双向绑定
 
+data -> Watcher -> compile
+
 采用数据劫持结合发布者-订阅者模式的方式，通过`Object.defineProperty()`来劫持各个数据属性的`setter/getter`，在数据变动时发布消息给订阅者，触发相应的监听回调。
 具体步骤：
 
@@ -42,10 +44,10 @@
 
 ### proxy 对比 defineProperty
 - 代理，而非劫持
-- 监听整个对象变化，不再是某个属性
+- 监听整个对象变化，不再是某个属性（性能）
 - 支持数组变更，不再 hack
 - 返回新对象，不再遍历修改
-- chrome 49+，不支持 IE
+- 兼容性：chrome 49+，不支持 IE
 
 [面试官: 实现双向绑定Proxy比defineproperty优劣如何? - 掘金](https://juejin.im/post/6844903601416978439)
 

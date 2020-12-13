@@ -24,7 +24,7 @@
 
 3. 递归
 
-  res 需要放在函数外面
+  res 需要放在函数外面，不是纯函数
   ```js
   const arr = [1,2, [3, [4]], 5]
   let res = [] // 需要定义在外面
@@ -46,7 +46,9 @@
   ```js
   const arr = [1, 2, [3, [4]], 5]
   const flatten = arr => {
-    return arr.reduce((pre,cur)=>{
+    return arr.reduce((pre, cur)=>{
+      // concat 可以接 value or array，在这里比解构 value 要套一层方便
+      // return [...pre, ...(Array.isArray(cur) ? flatten(cur) : [cur])]
       return pre.concat(Array.isArray(cur) ? flatten(cur) : cur);
     }
     , [])
