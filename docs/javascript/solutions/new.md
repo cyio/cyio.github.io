@@ -15,10 +15,12 @@ res instanceof Object ? res : o;
 ```
 
 手写
+
 ```js
 function myNew(fn) {
-  let obj = new Object()
-  obj.__proto__ = fn.prototype
+  // let obj = new Object()
+  // obj.__proto__ = fn.prototype
+  let obj = Object.create(fn.prototype)
   let fnRet = fn.call(obj)
   return fnRet instanceof Object ? fnRet : obj
 }
@@ -31,6 +33,16 @@ function hi() {
 let r = myNew(hi)
 console.log(r.a, r.b)
 ```
+
+create
+```js
+let a = {aa: 1}
+let b = Object.create(a)
+
+b.__proto__ === a // true
+```
+1. 对象有属性__proto__,指向该对象的构造函数的原型对象。
+2. 方法除了有属性__proto__,还有属性prototype，prototype指向该方法的原型对象。
 
 考察构造函数原型继承
 ```js

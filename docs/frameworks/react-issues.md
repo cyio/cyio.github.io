@@ -1174,3 +1174,26 @@ browser api 兼容性，需要请求权限
 
 import copy from 'copy-to-clipboard';
 
+## 半受控，props 变化，需要更新部分 state
+硬重置（不推荐、但可救急）
+```
+componentDidUpdate
+  this.setState({ ..._.cloneDeep(defaultStates) }, () => {
+```
+v15 componentWillReceiveProps or componentDidUpdate + setState
+v16 getDerivedStateFromProps
+
+反模式：受控与非受控混合
+
+官方建议：
+1. 完全受控，数据提升
+2. 完全不受控，用 key 控制更新
+
+## 缓存计算
+类 Vue computed，场景高开销计算，入参作为依赖，缓存最后一次计算值
+
+memoize-one
+[memoize-one在React中的应用](https://juejin.cn/post/6844903894061940750)
+
+拓展：斐波那契数列
+

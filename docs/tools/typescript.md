@@ -124,3 +124,14 @@ type $TSFixMe = any
 
     提示结尾的访问，可能取不到，需要使用`?`
 
+## 新特性
+unknown type 处理第三方库或 API 数据，表示需要检查数据有效性。如，接口字段有多种类型，null/[]
+
+```
+  readonly scores: readonly number[];
+```
+第一个表示不能熏赋值，第二个表示内部不可变
+
+const assertions 不可变数据结构
+
+[6 useful TypeScript 3 features you need to know | Building SPAs](https://www.carlrippon.com/6-useful-typescript-3-features-you-need-to-know/)

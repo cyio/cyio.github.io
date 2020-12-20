@@ -190,3 +190,9 @@ function getUrlExtension(url) {
 }
 ```
 [How to pull url file extension out of url string using javascript - Stack Overflow](https://stackoverflow.com/a/47767860/5657916)
+
+string trim
+```js
+let s = ' x y '
+s.replace(/^\s*|\s*$/g, '')
+```

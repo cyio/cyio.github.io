@@ -1,20 +1,24 @@
 # promise.allSettled
 
 ```js
+// values = [{ status: 'fulfilled', value: 22 }, { status: 'rejected', value: 'err msg' }]
 function allSettled(iterable) {
   let result = []
+  let count = 0
   const arr = Array.from(iterable)
   return new Promise(resolve => {
-    arr.forEach(item => {
+    arr.forEach((item, index) => {
       Promise.resolve(item)
         .then(res => {
-          result.push({ status: 'fulfilled', value: res })
+          result[index] = { status: 'fulfilled', value: res }
+          count += 1
           if (result.length === arr.length) {
             resolve(result)
           }
         })
         .catch(err => {
-          result.push({ status: 'rejected', value: err })
+          result[index] = { status: 'rejected', value: err }
+          count += 1
           if (result.length === arr.length) {
             resolve(result)
           }

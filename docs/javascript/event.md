@@ -46,3 +46,22 @@
 - 如果目标包含子元素、且与子元素存在间距, over 会在经过间距时触发
 - enter 只关心目标整体，触发一次
 
+## dispatchEvent
+
+- 兼容性很好
+- 自定义事件与原生事件同名时，都能接收到，但触发互不影响
+
+```js
+$0.addEventListener('hi', (e) => console.log(e))
+
+$0.dispatchEvent(new Event('hi'))
+
+// 支持传递自定义数据
+const event = new CustomEvent('build', { detail: elem.dataset.time });
+```
+
+```js
+  // event loop
+  // 同步任务 异步任务
+  // 主线程，事件队列（微任务，宏任务）
+```

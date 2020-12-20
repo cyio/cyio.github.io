@@ -58,7 +58,8 @@
   console.log(res)
   ```
 
-  5. toString，字符串转数字是否可靠，应该可靠
+5. toString，字符串转数字是否可靠，应该可靠
+
   ```js
   const arr = [0, 1, 2, [-3, [4]], 5]
   function flat(arr) {
@@ -66,5 +67,4 @@
   }
   console.log(flat(arr))
   ```
-
 [JavaScript专题之数组扁平化 · Issue #36 · mqyqingfeng/Blog](https://github.com/mqyqingfeng/Blog/issues/36)

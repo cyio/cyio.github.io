@@ -2,7 +2,7 @@
 
 节流
 ```js
-  function throttle(fn, wait) {
+  function throttle(fn, wait = 0) {
     let tId = null
     return function(){
       if (tId) return
@@ -13,7 +13,7 @@
         // 保持原函数 this 和 参数
         fn.apply(context, args)
         tId = null
-      })
+      }, wait)
     }
   }
 
@@ -24,7 +24,7 @@
 
 防抖
 ```js
-  function debounce(fn, wait) {
+  function debounce(fn, wait = 0) {
     let tId = null
     return function() {
       if (tId) {

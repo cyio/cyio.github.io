@@ -31,13 +31,14 @@ data -> Watcher -> compile
 
 第二步：compile 解析模板指令，将模板中的变量替换成数据，然后初始化渲染页面视图，并将每个指令对应的节点绑定更新函数，添加监听数据的订阅者，一旦数据有变动，收到通知，更新视图
 
-第三步：Watcher 订阅者是 Observer 和 Compile 之间通信的桥梁，主要做的事情是:
+第三步：Watcher 观赛者是 Observer 和 Compile 之间通信的桥梁，主要做的事情是:
 1、在自身实例化时往属性订阅器(dep)里面添加自己
 2、自身必须有一个 update()方法
 3、待属性变动 dep.notice() 通知时，能调用自身的 update() 方法，并触发 Compile 中绑定的回调，则功成身退。
 
 第四步：MVVM 作为数据绑定的入口，整合 Observer、Compile 和 Watcher 三者，通过 Observer 来监听自己的 model 数据变化，通过 Compile 来解析编译模板指令，最终利用 Watcher 搭起 Observer 和 Compile 之间的通信桥梁，达到数据变化 -> 视图更新；视图交互变化(input) -> 数据 model 变更的双向绑定效果。
 
+[深入响应式原理 — Vue.js](https://cn.vuejs.org/v2/guide/reactivity.html)
 [仿 Vue 极简双向绑定](https://codepen.io/cyio/pen/aaboyQ?editors=0010)
 [Vue.js 源码解析：深入响应式原理](http://www.infoq.com/cn/articles/Vue.js-code)
 [How I built my own vanilla JS alternative to Vue and React | Go Make Things](https://gomakethings.com/how-i-built-my-own-vanilla-js-alternative-to-vue-and-react/)
@@ -100,11 +101,11 @@ Understanding Components Communication in Vue 2.0 http://taha-sh.com/blog/unders
 - slot
   [Supported slot from Component's inside? · Issue #19 · vuejs/babel-plugin-transform-vue-jsx](https://github.com/vuejs/babel-plugin-transform-vue-jsx/issues/19#issuecomment-313997180)
 
-```
+```html
 <div class="modal-container">
-	{this.$slots.default.length
-		? this.$slots.default[0]
-		: <h1>Your content here</h1>}
+  {this.$slots.default.length
+    ? this.$slots.default[0]
+    : <h1>Your content here</h1>}
 </div>
 ```
 
@@ -347,6 +348,8 @@ Vue.prototype.$log = console.log
 
 ## eventBus 全局事件总线
 
+借用 Vue 内部实现了事件模型，其实也可以用第三方库
+
 ```js
 //文件->event-bus.js
 
@@ -445,3 +448,12 @@ import Foo from './Foo.vue' 改成 const Foo = () => import('./Foo.vue')
 [30 道 Vue 面试题（涵盖入门到精通，自测 Vue 掌握程度） - 哔哩哔哩](https://www.bilibili.com/read/cv3663235/)
 
 Props向下传递，事件向上传递
+
+## computed vs watch
+- 模板表达式不便于写复杂计算
+- 基于响应式依赖进行缓存，仅响应式依赖改变时才重新求值
+- 生成新值挂在 vm 上，而 watch 观测已存在的值
+- 依赖变化、且第一次访问时，计算新值，而 watch 数据变化就会执行？
+- watch 可执行异步、高性能开销、设置执行频率、设置中间状态
+[做面试的不倒翁：浅谈 Vue 中 computed 实现原理](https://juejin.cn/post/6844903678533451783)
+

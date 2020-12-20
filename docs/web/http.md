@@ -127,3 +127,4 @@ sessionStorage
 
 [第 8 题：说一下 Http 缓存策略，有什么区别，分别解决了什么问题 · Issue #14 · lgwebdream/FE-Interview](https://github.com/lgwebdream/FE-Interview/issues/14#issuecomment-647606369)
 
+[深入理解浏览器的缓存机制 - 简书](https://www.jianshu.com/p/54cc04190252)

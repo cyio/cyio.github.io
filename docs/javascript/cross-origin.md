@@ -20,8 +20,12 @@ origin = protocol + domain + port
 
 ## 分类
 
-1. 请求跨域 cors jsonp
-2. 页面跨域 postMessage document.domain
+1. 请求跨域 
+  a. cors
+  b. jsonp
+2. 页面跨域 
+  a. postMessage
+  b. document.domain（不推荐，标准已移除）
 
 ## JSONP
 
