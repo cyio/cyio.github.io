@@ -14,10 +14,12 @@
 ## 枚举
 
 - `Object.keys()`与`for-in`的输出顺序一致（会被重新排序），主要区别是后者还会返回原型链中属性（往往不是我们需要的）
+-  遍历对象 1. for in 2. for of Object.keys(obj)
+-  对象本身不是可迭代对象，原型上没有`Symbol(Symbol.iterator)`
 
 ```js
 for (myvar in obj) {
-  // 需确定是对象成员，还是来自原型链
+  // 只能是对象成员，排除原型链
   if (obj.hasOwnProperty(myvar)) {
     ...
   }

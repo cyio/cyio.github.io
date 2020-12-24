@@ -56,6 +56,8 @@
 - 简化构造函数创建
 - `super`(调用父类构造函数)不是必要的，什么情况下写呢？ 如果在`contrustor`中要用`this[props]`
 
+  表示继承的父类、可以传参、可以访问方法
+
 ```js
 class Animal {
   constructor() {

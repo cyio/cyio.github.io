@@ -324,4 +324,28 @@ render return 里可直接定义变量`const ChapterName = <h2>{chapterName}</h2
 ## Portal 
 仅影响 DOM 结构，不影响事件、生命周期、组件树
 
+## React.memo vs useMemo
+类型，顶层 api，hooks
+第二参数，比较函数（是否相等），依赖数组
+
+避免受
+```js
+const propsAreEqual = (prevProp: any, nextProp: any) => {
+  const result = JSON.stringify(prevProp) === JSON.stringify(nextProp);
+  return result;
+};
+
+React.memo(Comp, propsAreEqual);
+```
+
+useMemo 缓存计算值，仅依赖变化时重新计算
+
+## React diff 算法
+- 不同元素类型，旧元素卸载，挂载新元素
+- 相同类型的 DOM 元素，只更新属性
+- 相同类型的 Component 元素，更新 prop
+- DOM 子元素遍历比较，顺序发生变化会全部认为 diff，可用 key 显式指明是否是同一元素
+
+[Reconciliation – React](https://reactjs.org/docs/reconciliation.html)
+[React的思考（五）- Reconciliation - NO END FOR LEARNING](http://benweizhu.github.io/blog/2018/04/22/deep-thinking-in-react-5/)
 

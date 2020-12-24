@@ -617,3 +617,12 @@ git log origin/master..HEAD --oneline --no-merges
 场景，重构等改动较大，要合入 master
 [git selective merge](https://gist.github.com/katylava/564416)
 
+## 查看分支是否落后
+开始新迭代开发或上线前，都应该检查
+
+```sh
+git rev-list --left-right --count origin/master...test-branch
+```
+输出 0 2，表示 test-branch 相对于 master 落后 0 commit，领先 2 commit
+
+[github - git ahead/behind info between master and branch? - Stack Overflow](https://stackoverflow.com/questions/20433867/git-ahead-behind-info-between-master-and-branch)

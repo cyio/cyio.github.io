@@ -58,7 +58,6 @@ data -> Watcher -> compile
 - ~~ready -> mounted~~
 - 对 dom 没依赖的操作可放到 created 中，如数据请求
 - 学习框架，官方的 examples 一定要 clone 下来看源码，这是对框架特性最好的学习资料
-- 如果需要对纯 DOM 元素进行底层操作，就会用到自定义指令，可全局可局部
 - 要保证文档加载或更新后才执行，需 nextTick
 - transition 成组件，应用范围更广，类名变化
 - loader 升级 `npm install browser-sync postcss postcss-cssnext postcss-import postcss-nested postcss-pxtorem pug vux vuex weixin-js-sdk--save-dev --cache-min 0`
@@ -373,6 +372,7 @@ EventBus.$on('i-got-clicked', clickCount => {
 
 ## 生命周期
 
+- CMUD + before
 - 子组件后销毁，先挂载
 
 ## 热重载
@@ -456,4 +456,32 @@ Props向下传递，事件向上传递
 - 依赖变化、且第一次访问时，计算新值，而 watch 数据变化就会执行？
 - watch 可执行异步、高性能开销、设置执行频率、设置中间状态
 [做面试的不倒翁：浅谈 Vue 中 computed 实现原理](https://juejin.cn/post/6844903678533451783)
+
+## vnode
+虚拟节点（节点描述）
+
+## 指令
+- 作用：对 DOM 元素进行底层操作
+- 内置：v-model v-if v-show
+- 自定义：通过注册
+- 使用： `v-focus`
+- 钩子：bind inserted
+
+## 响应式
+问题表现：
+有时操作数组或对象后，视图没有更新
+
+原因：有些操作，Vue 检测不到变化
+
+变化检测：
+- 数组，通过方法操作如 push 可以检测，非方法不行，如索引赋、改长度
+- 对象，需要访问来触发 getter/setter，非访问不行，检测不了增、删
+
+解决：
+- Vue.set
+
+## 其它
+slot 分发内容，占位替换
+
+动态组件`:is`
 

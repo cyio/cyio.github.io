@@ -881,18 +881,24 @@ npx stylelint --help
 ```
 
 ## [React Hooks(四): immutable - 知乎](https://zhuanlan.zhihu.com/p/163590288)
+更新有两个阶段：1. render: compute diff 2. commit diff to real dom
+
+存在问题的是 1，执行计算开销
+[child overload render - CodeSandbox](https://codesandbox.io/s/child-overload-render-p5p6t)
+
+
 期望：
 - 值变化，引用变化
 - 值不变，引用不变
 问题：
+- !!!机制：父组件重渲染会递归重渲染所有子组件，即使子组件依赖的 props 没有变化
 - 性能：可避免的重渲染，有的子组件渲染开销很大
 - 行为：无用的副作用重执行，无限循环
-- 父组件重渲染会递归重渲染所有子组件
 - 需要重请求保持数据最新场景，而重渲染开销大，返回数据每次创建新对象
 - parse 会创建新对象
 - 对子组件来说，依赖的父组件应避免意外变化
-- 引用相等，但值发生了变化，UI 不更新
-- 深拷贝问题，包含对象值不变，但引用变了，
+- 引用相等，值发生了变化，UI 不更新
+- 深拷贝问题，包含对象值不变，引用变了，
 
 结论：
 1. React.memo 包裹组件， 适用 prop 仅原始类型，复杂类型，可以指定比较函数，只适用函数组件
@@ -1003,7 +1009,7 @@ https://github.com/alibaba/p3c/blob/master/Java%E5%BC%80%E5%8F%91%E6%89%8B%E5%86
 - 有时变更后，刷新很慢
 - 出现错误后，需要手动刷新
 
-## new
+## dan note
 react 中 props state 是不可变的（至少强烈建议如此）
 
 避免闭包的原因是很难思考一个值可以随着时间被改变
@@ -1196,4 +1202,17 @@ memoize-one
 [memoize-one在React中的应用](https://juejin.cn/post/6844903894061940750)
 
 拓展：斐波那契数列
+
+## ripple btn
+```
+demo a>text
+antd button>span text
+```
+多个 span 标签，导致事件 target 会变，当 target 为 span 时，计算坐标有误
+
+span antd 有设置 absolute
+
+## 跨组件引用可变对象
+- 多个修改源
+- 深层数据变了，引用没变
 

@@ -293,3 +293,7 @@ vue mounted 依赖 dom 挂载点，所以是在 DOMContentLoaded 发生后执行
 
 [Synchronous and asynchronous requests - Web APIs | MDN](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Synchronous_and_Asynchronous_Requests)
 
+## offsetParent
+offsetParent 最近定位祖先元素、body
+offsetLeft 相对于 offsetParent 偏移
+

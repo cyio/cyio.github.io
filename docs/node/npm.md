@@ -204,3 +204,11 @@ npm install --registry=http://registry.npm.taobao.org
 ```
 
 如果只是少量项目使用私有源，建议使用`project config`方式。万一私有源访问出现问题，减少影响。
+
+## 私有仓库
+两个以上项目共享常量数据、工具函数
+
+搭建： sinopia
+
+维护：公共包修改，需要提升版本号，需要在每个引用公共包的项目升级
+
