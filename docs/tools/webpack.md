@@ -215,3 +215,24 @@ import PureStyleLib from '@/paper/components/Content/panel/StyleLib/PureStyleLib
 ```
 
 原因是 path 中的 Content 写错大小写。需要检查整个路径
+
+## 插件
+cache-loader 读写磁盘开销、副作用，仓库已废弃、建议升 v5，默认开启
+
+尽量用 include 显示指定，按需添加
+
+[webpack5新特性一览 · Issue #48 · HolyZheng/holyZheng-blog](https://github.com/HolyZheng/holyZheng-blog/issues/48)
+
+
+
+```
+{
+  test: /\.less$/,
+  use: [
+    'style-loader',
+    'css-loader',
+    'less-loader'
+  ]
+}
+```
+use 下面的先执行，使用了 compose

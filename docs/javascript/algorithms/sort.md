@@ -1,8 +1,13 @@
 # 排序
+[toc]
 
 ## 冒泡排序
 
 相邻元素置换位置
+
+空间复杂度 O(n^2)
+
+优化点：有序数据可以标记判断，将时间降到 O(n)
 
 ```js
 // 了解原理后如何思考，从具体到抽象
@@ -10,9 +15,10 @@
 // 内循环，减掉已经排好的，当 i 为 1 时，j < arr.length - 1
 // 小于等于不动，大于时置换
 function bubbleSort(arr) {
-  var i, j
-  for (i = 0; i < arr.length - 1; i++) {
-    for (j = i + 1; j < arr.length; j++) {
+  let i, j
+  let n = arr.length
+  for (i = 0; i < n - 1; i++) {
+    for (j = i + 1; j < n; j++) {
       if (arr[i] > arr[j]) {
         var tmp = arr[j]
         arr[j] = arr[i]
@@ -56,6 +62,11 @@ console.log(result)
 ```
 
 ## 快速排序（快排）
+
+快速排序使用分治法（Divide and conquer）策略来把一个序列（list）分为较小和较大的2个子序列，然后递归地排序两个子序列。
+
+1. 找出基准值
+2. 递归形式：[...fn(left), pivot, ...fn(right)]
 
 ```js
 // 先考虑主要功能，再考虑边界情况

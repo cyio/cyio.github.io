@@ -5,6 +5,8 @@
 
 ## 概念
 - 状态：pending fulfilled rejected
+- 状态流转：pending 到后两者，到了后两者不再变
+- 必须有一个 then 异步执行方法，then 接受两个参数且必须返回一个promise
 
 题目：问数字打印顺序
 ```js
@@ -198,3 +200,4 @@ async function printFiles() {
 
 异常：Uncaught (in promise)  catch 的过去时，在尾部 catch 即可
 
+[今日头条: 介绍下Promise，内部实现(一面) · Issue #14 · frontend9/fe9-interview](https://github.com/frontend9/fe9-interview/issues/14)

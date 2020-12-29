@@ -58,6 +58,8 @@
 
 [Master theorem (analysis of algorithms) - Wikipedia](https://en.wikipedia.org/wiki/Master_theorem_(analysis_of_algorithms)
 
+`O(n log n)` 念倍？
+
 ## 枚举
 
 - 合理设置尝试范围，减少不必要尝试。例：完美立方 四重循环

@@ -8,7 +8,7 @@
 - 强缓存，header -> max, cache，命中时不发网络请求
 - 协商缓存，header -> modifier，先发请求，命中 返回 304
 
-  `no-cache` = store + if change 如果存在合适的验证令牌(ETag, )，发起请求，如果资源无变化，304，不下载
+  `no-cache` = store + if change 如果存在合适的验证令牌(ETag)，发起请求，如果资源无变化，304，不下载
 
   `no-store` 完全不存储，如私密文件
 
@@ -61,14 +61,28 @@ meta cache-control 不建议用，html4 标准，5 没有
 建立在 SSL/TLS 协议上，采用了公钥加密法，基本过程是：
 
 1. 客户端向服务器端索要并验证公钥。
-2. 双方协商生成”对话密钥”。
-3. 双方采用”对话密钥”进行加密通信
+2. 双方协商生成”会话密钥”。
+3. 双方采用”会话密钥”进行加密通信
+
+数据通信 对称加密
+签名 非对称加密
+
+SSL 握手
+s => send pubkey => c
+c => 生成对称加密 session key ，并用 pubkey 加密 => s 用私钥解密
+之后使用对称加密 key 数据传输
+
+[Does SSL and TLS use asymmetric encryption? - Quora](https://www.quora.com/Does-SSL-and-TLS-use-asymmetric-encryption)
+
+## CORS
 
 CORS 处理非简单请求（如 POST）会触发 options
 
+
+Access-Control-Max-Age 指定 prelight 请求缓存多长时间，这个时间内不再需要发
   [减少 options 请求次数 和 数据量大时前端渲染的处理 - wanwan5856 的博客 - CSDN 博客](https://blog.csdn.net/wanwan5856/article/details/79592681)
 
-简单请求的定义，来自 MDN，不是标准。简单请求要满足一系列条件，如仅使用 CORS 安全 请求头。而需求 prelight 的请求，意味着涉及用户数据
+简单请求的定义，来自 MDN，不是标准。简单请求要满足一系列条件，如仅使用 CORS 安全 请求头。而需要 prelight 的请求，意味着涉及用户数据
 
 ## 返回状态码
 
@@ -90,6 +104,11 @@ pragma 〔计〕杂注,编译指示
   `curl --header "Range: bytes=500-1000" https://raw.githubusercontent.com/Germey/LaravelGeetest/master/README.md`
 
 ## GET 与 POST 区别
+
+用途
+参数
+请求方式
+安全性
 
 对于 GET 方式的请求，浏览器会把 http header 和 data 一并发送出去，服务器响应 200（返回数据）； 而对于 POST，浏览器先发送 header，服务器响应 100 continue，浏览器再发送 data，服务器响应 200 ok（返回数据）。
 

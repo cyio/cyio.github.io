@@ -10,13 +10,16 @@ var o = new Object();
 o.__proto__ = Foo.prototype;
 // 3. 新对象作为 this，执行构造器函数
 var res = Foo.call(o);
-// 4. 返回处理
+// 4. 返回处理，如果构造函数返回了对象类型，包括二级类型
 res instanceof Object ? res : o;
 ```
 
 手写
 
 ```js
+// new Fn()
+// 0. input=fn, output=object  1. new obj 2. proto 3. new obj as this call 4. return
+
 function myNew(fn) {
   // let obj = new Object()
   // obj.__proto__ = fn.prototype

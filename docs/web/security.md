@@ -16,8 +16,14 @@ content-security-policy: script-src 'sha256-wxWy1+9LmiuOeDwtQyZNmWpT0jqCUikqaqVl
 避免使用`eval`
 
 ## CSRF 跨站请求伪造
-同源请求
+- 举例，合法调用接口设置 Gmail 转发，获取隐私邮件
+- 第三方域名页面，发起合法请求
 
+解决：
+- 同源检查 origin/referer
+- CSRF Token，如表单提交必须带上 token。原理是攻击者只带 cookie 无法请求成功
+
+[前端安全系列（二）：如何防止CSRF攻击？ - 美团技术团队](https://tech.meituan.com/2018/10/11/fe-security-csrf.html)
 ## 中间人攻击
 HTTPS
 

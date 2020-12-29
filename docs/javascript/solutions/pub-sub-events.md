@@ -29,7 +29,9 @@ class Event {
     let cbs = this.events[type]
     if (cbs) {
       let index = cbs.findIndex(i => i === cb)
-      cbs.splice(index, 1)
+      if (index > -1) {
+        cbs.splice(index, 1)
+      }
     }
   }
 

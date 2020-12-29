@@ -349,3 +349,8 @@ useMemo 缓存计算值，仅依赖变化时重新计算
 [Reconciliation – React](https://reactjs.org/docs/reconciliation.html)
 [React的思考（五）- Reconciliation - NO END FOR LEARNING](http://benweizhu.github.io/blog/2018/04/22/deep-thinking-in-react-5/)
 
+不可变数据优势 [入门教程: 认识 React – React](https://zh-hans.reactjs.org/tutorial/tutorial.html#why-immutability-is-important)
+- 易于实现复杂特性，如撤销和恢复
+
+## 懒加载
+React.lazy 配合 Suspense

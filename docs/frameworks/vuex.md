@@ -2,6 +2,8 @@
 
 解决组件间的数据共享
 
+- store: state getters mutations action module
+
 - 全局实例注入
 
 ```js

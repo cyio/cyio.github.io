@@ -143,3 +143,11 @@ child3.$dispatch('test')
     libraryTarget: 'umd'
   }
   ```
+
+## 路由懒加载
+Vue 异步组件，工厂函数 渲染时才触发
+
+代码分割
+```
+
+```

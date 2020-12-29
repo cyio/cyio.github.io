@@ -1216,3 +1216,8 @@ span antd 有设置 absolute
 - 多个修改源
 - 深层数据变了，引用没变
 
+## webpack 占用高
+在 MacOS Catalina 中，Vue 项目在运行 node run dev 时，webpack server 会调用 fsevents 模块进行监控文件变化。如果没有这个模块，就会一直遍历所有的文件。
+
+https://www.jianshu.com/p/f7769e01aa9c
+

@@ -31,7 +31,7 @@ data -> Watcher -> compile
 
 第二步：compile 解析模板指令，将模板中的变量替换成数据，然后初始化渲染页面视图，并将每个指令对应的节点绑定更新函数，添加监听数据的订阅者，一旦数据有变动，收到通知，更新视图
 
-第三步：Watcher 观赛者是 Observer 和 Compile 之间通信的桥梁，主要做的事情是:
+第三步：Watcher 侦听者是 Observer 和 Compile 之间通信的桥梁，主要做的事情是:
 1、在自身实例化时往属性订阅器(dep)里面添加自己
 2、自身必须有一个 update()方法
 3、待属性变动 dep.notice() 通知时，能调用自身的 update() 方法，并触发 Compile 中绑定的回调，则功成身退。
