@@ -26,6 +26,7 @@
 正则匹配，存在问题
 className 要求双引号，需要 replace 多次，并且先 replace 特例
 ```js
+  // not work
   function replaceTemplateStr(template, data) {
     return template.replace(`/\{\%(.*?)\%\}/g`, (match, key) => {
       return data[key]

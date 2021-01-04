@@ -420,17 +420,6 @@ process.nextTick(callback)
 const copies = callbacks.slice(0) // 复制一个数组，操作不会影响原数组
 ```
 
-## v-for key 是区分元素是否相同的依据
-
-一般来说，无状态的元素 props 值相同就是相同。此时 key 用 id 用 index 或者不用得到的表现相同，区别只是渲染时有些性能的差异。
-
-有状态的元素包含自己的状态，而 vue 并不知道子元素状态，此时需要用 key 区分。
-因为 vdom 渲染出来最后是和上次的 vdom 做 diff 的，如果 diff 出来只有 props 变化，那么就只会修改 props 。
-
-举个例子，比如你交换了 a[0] a[1]，他们都有自己的状态，而他们的 props 没有区别，那么 vue 就根本不会修改元素。但如果你给他们都设置了 id key，那么 vue 知道第一次渲染的 vdom 和 第二次 的 vdom key 发生了变化，从而会交换元素，即使其他属性根本没有发生变化
-
-使用 index 的缺点是，如果使用场景有插值，index 发生变化造成额外渲染
-
 ## 异步组件
 
 import Foo from './Foo.vue' 改成 const Foo = () => import('./Foo.vue')
@@ -484,4 +473,16 @@ Props向下传递，事件向上传递
 slot 分发内容，占位替换
 
 动态组件`:is`
+
+
+区分Vuex与props的使用边界
+Vuex 业务组件，集中管理
+props 公共组件，组件库
+
+路由ID变了，但组件没变？
+使用beforeRouteUpdate
+
+在v-if/v-if-else/v-else中使用key
+如果本不相同的元素被识别为相同，则会出现意料之外的副作用。
+
 

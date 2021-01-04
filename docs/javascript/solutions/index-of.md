@@ -1,5 +1,7 @@
 # indexOf
 
+查找字符串，不是查单个字母
+
 ```js
   // 'abbbc' 'bc'
   // str.match(regexp) return [] with property: index/input

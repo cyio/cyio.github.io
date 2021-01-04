@@ -1,6 +1,8 @@
 # 正则表达式
 
-[any86/any-rule: 🦕 常用正则大全, 支持web / vscode / idea / Alfred Workflow多平台](https://github.com/any86/any-rule)
+[toc]
+
+[any86/any-rule: 🦕 常用正则大全, 支持 web / vscode / idea / Alfred Workflow 多平台](https://github.com/any86/any-rule)
 
 > 学习目标：基础扎实，熟练运用
 > 积累一些练习题，隔段时间回忆考察
@@ -17,7 +19,40 @@ g 表示执行多次，符合匹配的可能有多个
 匹配子字符串，从 lastIndex 开始
 ```
 
-- match 和 exec 主要区别
+## match/exec/test
+
+> RegExp.prototype.test()
+> RegExp.prototype.exec()
+> String.prototype.match()
+
+查找第一个匹配索引，两个都可以，返回一致
+
+exec 不支持 g
+
+```js
+let s = 'abcab'
+s.match(/ab/g)
+// ["ab", "ab"]
+```
+
+RegExp 是有状态的 lastIndex 会更新
+
+```js
+  function indexOfAll(str, target) {
+    let res = []
+    let reg = new RegExp(target, 'g')
+    let d = reg.exec(str)
+    while(d && reg.lastIndex <= str.length) {
+      console.log(d)
+      res.push(d.index)
+      d = reg.exec(str)
+    }
+    console.log(res)
+    return res
+  }
+
+  matchAll('abcdbc', 'bc') // [1, 4]
+```
 
 ## 基础
 
@@ -139,13 +174,15 @@ console.log(result)
 
 ### 手机号
 
-[JS正则表达式完整教程（略长） - 掘金](https://juejin.im/post/5965943ff265da6c30653879)
+[JS 正则表达式完整教程（略长） - 掘金](https://juejin.im/post/5965943ff265da6c30653879)
 
 ### 汉字
+
 匹配
+
 ```js
-new RegExp("[\\u4E00-\\u9FFF]+","g");
-/.*[\u4e00-\u9fa5]+.*$/.test('ab我')
+new RegExp('[\\u4E00-\\u9FFF]+', 'g')
+;/.*[\u4e00-\u9fa5]+.*$/.test('ab我')
 ```
 
 [RegExr: Learn, Build, & Test RegEx](https://regexr.com/)
@@ -156,13 +193,13 @@ new RegExp("[\\u4E00-\\u9FFF]+","g");
 
 [Regulex：JavaScript Regular Expression Visualizer](https://jex.im/regulex)
 
-
 边界模式
 内容模式
 
 - 括号匹配
+
 ```js
-/\((.*?)\)/g
+;/\((.*?)\)/g
 // (a, bc) bdbdb (1, 2)
 ```
 
@@ -170,12 +207,14 @@ new RegExp("[\\u4E00-\\u9FFF]+","g");
 懒惰模式? 正则回溯
 独占模式+，不回溯
 
-过滤Emoji：
+过滤 Emoji：
+
 ```
 name = name.replace(/\uD83C[\uDF00-\uDFFF]|\uD83D[\uDC00-\uDE4F]/g, "");
 ```
 
 验证插件只支持正向 pattern
+
 ```
 const validStrPattern = /^[\u4e00-\u9fa5_a-zA-Z0-9- ]+$/
 ```
@@ -186,12 +225,19 @@ const validStrPattern = /^[\u4e00-\u9fa5_a-zA-Z0-9- ]+$/
 
 ```js
 function getUrlExtension(url) {
-  return url.split(/[#?]/)[0].split('.').pop().trim().toLowerCase();
+  return url
+    .split(/[#?]/)[0]
+    .split('.')
+    .pop()
+    .trim()
+    .toLowerCase()
 }
 ```
+
 [How to pull url file extension out of url string using javascript - Stack Overflow](https://stackoverflow.com/a/47767860/5657916)
 
 string trim
+
 ```js
 let s = ' x y '
 s.replace(/^\s*|\s*$/g, '')

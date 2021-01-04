@@ -18,6 +18,7 @@ class MyPromise {
 
       this.state = FULFILLED
       this.value = value
+
       this.onFulfilledCbs.forEach(cb => cb(this.value))
     }
 
@@ -26,6 +27,7 @@ class MyPromise {
 
       this.state = REJECTED
       this.reason = reason
+
       this.onRejectedCbs.forEach(cb => cb(this.value))
     }
 
@@ -41,11 +43,13 @@ class MyPromise {
       const fulfilledCb = value => {
         const _value =
           typeof onFulfilled === 'function' ? onFulfilled(value) : value
+
         resolve(_value) // 实现 then 的关键 1
       }
       const rejectedCb = reason => {
         const _reason =
           typeof onRejected === 'function' ? onRejected(reason) : reason
+
         reject(_reason)
       }
       if (this.state === FULFILLED) {

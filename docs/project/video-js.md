@@ -334,7 +334,7 @@ player.play()
 
 [Tutorial: components | Video.js Documentation](https://docs.videojs.com/tutorial-components.html#creating-a-component)
 
-## 伪全屏
+## 自定义全屏元素
 
 允许元素显示在视频上，卸载自带事件，给播放器和要前置元素的**公共容器**设置全屏
 
@@ -398,6 +398,8 @@ ffmpeg -i input.mkv -c copy -c:v libx264 -vf scale=-2:720 output.mkv
 [How does YouTube detect connection speed without testing/using all speeds? - Web Applications Stack Exchange](https://webapps.stackexchange.com/questions/106358/how-does-youtube-detect-connection-speed-without-testing-using-all-speeds)
 
 [How to detect internet speed in JavaScript? - Stack Overflow](https://stackoverflow.com/questions/5529718/how-to-detect-internet-speed-in-javascript)
+
+## DASH/HLS
 
 DASH 第一个国际标准
 

@@ -3,6 +3,21 @@
 
 [CSS layout - Learn web development | MDN](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout)
 
+## 左侧定宽，右侧自适应
+
+[左侧定宽，右侧自适应 flex](https://codepen.io/cyio/pen/mdrXQor)
+```
+	flex-grow: 1;
+```
+[左侧定宽，右侧自适应 position](https://codepen.io/cyio/pen/wvzyQLr)
+```
+	width: calc(100vw - 200px)
+```
+[左侧定宽，右侧自适应 grid](https://codepen.io/cyio/pen/KKgQbPB)
+```
+	grid-template-columns: 200px 1fr;
+```
+
 ## table 结构化内容
 
 - html 同样有表格标签，但不建议用，使用 css table 可以只使用需要的特性，灵活
@@ -25,7 +40,7 @@
 
 - 媒体查询，利用 table 属性，调整排序
 
-```
+```css
 /* 768px */
 @media only screen and (max-width:48em) {
    .boxes {

@@ -112,6 +112,11 @@ pragma 〔计〕杂注,编译指示
 
 对于 GET 方式的请求，浏览器会把 http header 和 data 一并发送出去，服务器响应 200（返回数据）； 而对于 POST，浏览器先发送 header，服务器响应 100 continue，浏览器再发送 data，服务器响应 200 ok（返回数据）。
 
+get 只读，cdn 缓存
+
+post 副作用，需要 web 服务器操作
+[post 相比get 有很多优点，为什么现在的HTTP通信中大多数请求还是使用get？ - 知乎](https://www.zhihu.com/question/31640769)
+
 ## 请描述 cookies、sessionStorage 和 localStorage 的区别?
 
 1. 存储方式：cookies 存储在 http 信息的实体中，http 每次请求都会携带 cookie, cookie 在浏览器和服务器间来回传递， 后两者仅在本地保存
@@ -147,3 +152,7 @@ sessionStorage
 [第 8 题：说一下 Http 缓存策略，有什么区别，分别解决了什么问题 · Issue #14 · lgwebdream/FE-Interview](https://github.com/lgwebdream/FE-Interview/issues/14#issuecomment-647606369)
 
 [深入理解浏览器的缓存机制 - 简书](https://www.jianshu.com/p/54cc04190252)
+
+## TCP
+
+- TCP 三次握手，建立连接前，确认双方收发能力

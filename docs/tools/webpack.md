@@ -40,6 +40,7 @@ var two = require('./File1.js')
 console.log(2 + two) // 4
 ```
 
+## 流程
 流程
 `code -> loaders -> plugins -> output`
 **loaders** 相当于其它工具中的 **tasks**
@@ -55,6 +56,11 @@ plugin 如何打包
 resolve 如何解析包
 
 [Advanced Webpack](https://presentations.survivejs.com/advanced-webpack/#/?k=edjsgp&_k=esekxp)
+
+### loader vs plugin
+loader 转换器，预处理源码
+
+plugin 处理 loader 处理不了的任何事
 
 ## 上手参考
 
@@ -223,8 +229,6 @@ cache-loader 读写磁盘开销、副作用，仓库已废弃、建议升 v5，�
 
 [webpack5新特性一览 · Issue #48 · HolyZheng/holyZheng-blog](https://github.com/HolyZheng/holyZheng-blog/issues/48)
 
-
-
 ```
 {
   test: /\.less$/,
@@ -236,3 +240,16 @@ cache-loader 读写磁盘开销、副作用，仓库已废弃、建议升 v5，�
 }
 ```
 use 下面的先执行，使用了 compose
+
+## node 进程 CPU 持续较高
+
+  watchOptions: {
+    poll: 5000,
+    ignored: ['node_modules']
+  }
+[TypeScript: Documentation - Configuring Watch](https://www.typescriptlang.org/docs/handbook/configuring-watch.html)
+
+[xcode - error: unknown type name 'uint64_t' on MacOS while installing libraries - Stack Overflow](https://stackoverflow.com/questions/62422627/error-unknown-type-name-uint64-t-on-macos-while-installing-libraries)
+
+原因：fsevents 本地编译失败，可能是升级过系统，编译依赖的某些库是旧的。表现很明显，但被忽略了，因为 webpack/ts-loader 会回退用轮询方式 watch files
+
