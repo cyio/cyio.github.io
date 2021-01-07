@@ -5,6 +5,36 @@
 
 ## 浏览器缓存
 
+```
+http cache 设计原则
+
+默认隐式，显式用 cache-control
+
+请求和响应，都能带指令，有冲突时，以更严格为准
+
+两种模型：
+过期模型，减少频繁请求网络往返
+	Expires
+	Cache-Control max-age 优先级高于上者
+验证模型，减少带宽开销
+	条件请求
+	Last-Modified 默认弱验证
+	Etag 默认强验证
+
+	建议同时提供 Etag 和 LM
+	前者文件一变就变，后者在发生有意义变化时变
+
+
+启发式过期，慎用，建议明确指定
+
+如何比对 ETag 和 LM，请求时带上之前的，即 If-xxx
+
+流程：是否命中强缓存 -> 是否命中协商缓存
+
+[HTTP/1.1: Caching in HTTP](https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html#sec13.1.5)
+
+```
+
 - 强缓存，header -> max, cache，命中时不发网络请求
 - 协商缓存，header -> modifier，先发请求，命中 返回 304
 
@@ -106,8 +136,8 @@ pragma 〔计〕杂注,编译指示
 ## GET 与 POST 区别
 
 用途
-参数
-请求方式
+参数形式
+编码
 安全性
 
 对于 GET 方式的请求，浏览器会把 http header 和 data 一并发送出去，服务器响应 200（返回数据）； 而对于 POST，浏览器先发送 header，服务器响应 100 continue，浏览器再发送 data，服务器响应 200 ok（返回数据）。
@@ -115,6 +145,10 @@ pragma 〔计〕杂注,编译指示
 get 只读，cdn 缓存
 
 post 副作用，需要 web 服务器操作
+
+100 continue 并非 post 必然使用，使用场景是 post/put，发送大量数据场景的请求优化
+
+[When curl sends 100-continue | Georg's Log](https://gms.tf/when-curl-sends-100-continue.html)
 [post 相比get 有很多优点，为什么现在的HTTP通信中大多数请求还是使用get？ - 知乎](https://www.zhihu.com/question/31640769)
 
 ## 请描述 cookies、sessionStorage 和 localStorage 的区别?

@@ -4,50 +4,50 @@
   // 手写组合式继承
 
   // ES5 寄生组合式继承
-  function Parent(name, age) {
+  function Super(name, age) {
     this.name = name
     this.age = age
     console.log('调用一次')
   }
-  Parent.prototype.say = function() {
+  Super.prototype.say = function() {
     console.log('I am ' + this.name)
   }
 
-  function Child(name, age, sex) {
-    Parent.call(this, name, age)
+  function Sub(name, age, sex) {
+    Super.call(this, name, age)
     this.sex = sex
   }
 
-  Child.prototype = Object.create(Parent.prototype) // 创建父类副本，替代创建父类实例，带来问题是，构造器指向了父类
-  Child.prototype.constructor = Child // 修正
+  Sub.prototype = Object.create(Super.prototype) // 创建父类副本，替代创建父类实例，带来问题是，构造器指向了父类
+  Sub.prototype.constructor = Sub // 修正
 
-  let ch = new Child('jack', 12, 1)
+  let ch = new Sub('jack', 12, 1)
   ch.say()
 ```
 
 
 ```js
   // ES5 原型链继承
-  function Parent(name, age) {
+  function Super(name, age) {
     this.name = name
     this.age = age
     console.log('调用一次')
   }
-  Parent.prototype.say = function() {
+  Super.prototype.say = function() {
     console.log('I am ' + this.name)
   }
 
-  function Child(name, age, sex) {
-//     Parent.call(this, name, age)
+  function Sub(name, age, sex) {
+//     Super.call(this, name, age)
     this.sex = sex
   }
 
-  Child.prototype = new Parent() // new 设置原型指向时，参数未知
+  Sub.prototype = new Super() // new 设置原型指向时，参数未知
 
-//   Child.prototype = Object.create(Parent.prototype)
-//   Child.prototype.constructor = Child
+//   Sub.prototype = Object.create(Super.prototype)
+//   Sub.prototype.constructor = Sub
 
-  let ch = new Child('jack', 12, 1)
+  let ch = new Sub('jack', 12, 1)
   ch.say()
   // I am undefined
 ```
@@ -57,26 +57,26 @@
 
   // ES5 原型链 + 借用构造函数继承
   // 父类构造函数在设置原型指向 new 时冗余执行一次
-  function Parent(name, age) {
+  function Super(name, age) {
     this.name = name
     this.age = age
     console.log('调用一次')
   }
-  Parent.prototype.say = function() {
+  Super.prototype.say = function() {
     console.log('I am ' + this.name)
   }
 
-  function Child(name, age, sex) {
-    Parent.call(this, name, age)
+  function Sub(name, age, sex) {
+    Super.call(this, name, age)
     this.sex = sex
   }
 
-  Child.prototype = new Parent() // new 设置原型指向时，参数未知
+  Sub.prototype = new Super() // new 设置原型指向时，参数未知
 
-//   Child.prototype = Object.create(Parent.prototype)
-//   Child.prototype.constructor = Child
+//   Sub.prototype = Object.create(Super.prototype)
+//   Sub.prototype.constructor = Sub
 
-  let ch = new Child('jack', 12, 1)
+  let ch = new Sub('jack', 12, 1)
   ch.say()
   // I am undefined
 ```
@@ -100,13 +100,15 @@
 1. 包含引用类型值的原型属性会被所有实例共享
 2. 不能向超类构造函数传参
 
+解决，借用构造器函数，在子类内部生成自己的属性，不同子类互不干扰
+
 ## 原型式继承
 Object.create()
 
 本质是浅复制
 
 ## 寄生式继承
-基于原型式继承，增加对象
+基于原型式继承，增强对象
 
 参考《高级程序设计》
 
@@ -118,3 +120,4 @@ Object.create()
 ```
 属性遮蔽、函数覆盖
 
+[JS | 前端进阶之道](https://yuchengkai.cn/docs/frontend/#%25E7%25BB%25A7%25E6%2589%25BF)

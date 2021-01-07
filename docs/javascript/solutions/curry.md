@@ -29,21 +29,22 @@ console.log(r)
 
 支持多参
 
+1. 分解为每两个参数合并
+2. 合并完成，即递归结束，调用真正函数计算结果
+
 ```js
   // 支持多参
   // 两个嵌套函数接收两个参数，递归合并参数
 
   function curry(func) {
-
     return function curried(...args) { // 一个可递归调用的函数，接第一个参数
-      console.log({ args })
+      // console.log({ args })
       if (args.length >= func.length) { // 合并后的参数，达到 func 参数数量
         return func.apply(this, args)
-      } else {
-        return function(...args2) { // 接第二参数
-          console.log({ args2 })
-          return curried.apply(this, args.concat(args2)) // 递归合并参数，concat 优点，可数组可单个值
-        }
+      }
+      return function(...args2) { // 接第二参数
+        // console.log({ args2 })
+        return curried.apply(this, args.concat(args2)) // 递归合并参数，concat 优点，可数组可单个值
       }
     }
   }

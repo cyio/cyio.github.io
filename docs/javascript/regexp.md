@@ -25,6 +25,9 @@ g 表示执行多次，符合匹配的可能有多个
 > RegExp.prototype.exec()
 > String.prototype.match()
 
+```js
+/bc/.exec('abc').index === 'abc'.match('bc').index
+```
 查找第一个匹配索引，两个都可以，返回一致
 
 exec 不支持 g

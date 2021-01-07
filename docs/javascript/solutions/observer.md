@@ -1,7 +1,7 @@
 # 观察者
 两个角色：
 1. 目标
-  - 维护观察者列表
+  - 维护观察者列表（收集依赖？）
   - 添加观察者
   - 通知观察者更新
 2. 观察者
@@ -51,3 +51,7 @@
   subject.addObserver(observer);
   subject.notify();
 ```
+
+扩展：Vue 中 Dep 为主，Watcher 为从
+[第 29 题：聊聊 Vue 的双向数据绑定，Model 如何改变 View，View 又是如何改变 Model 的 · Issue #34 · Advanced-Frontend/Daily-Interview-Question](https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/34#issuecomment-519823665)
+[渲染函数的观察者与进阶的数据响应系统 - Vue技术内幕](http://caibaojian.com/vue-design/art/8vue-reactive-dep-watch.html)

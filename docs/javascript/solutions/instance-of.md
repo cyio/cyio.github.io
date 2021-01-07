@@ -6,6 +6,8 @@
 
 原理：obj 的原型链上，是否存在 constructor 的 prototype
 
+注意点：不想污染 obj，用 Object.create
+
 ```js
   // walk obj __proto__ 
   function instanceOf(obj, fn) {

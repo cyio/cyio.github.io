@@ -1,6 +1,6 @@
 # 节流 防抖
 
-节流
+节流，正在执行，忽略
 ```js
   function throttle(fn, wait = 0) {
     let tId = null
@@ -22,7 +22,7 @@
   window.addEventListener('resize', throttle(() => console.log('resize'), 400))
 ```
 
-防抖
+防抖，上一个定时器还未执行，取消掉。重新计时
 ```js
   function debounce(fn, wait = 0) {
     let tId = null
@@ -30,6 +30,7 @@
       if (tId) {
         clearTimeout(tId)
       }
+
       const context = this
       const args = arguments
       tId = setTimeout(function() {

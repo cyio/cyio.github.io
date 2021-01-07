@@ -11,6 +11,7 @@
 核心：累计 resolve count，达到 all count 时 resolve
 
 ```js
+// Promise.myAll
 function myAll(arr) {
   return new Promise((resolve, reject) => 
     let values = []

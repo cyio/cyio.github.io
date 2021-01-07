@@ -13,6 +13,16 @@
     }
   }
 
+  // ES6
+  Function.prototype.myBind1 = function(...args) {
+    const fn = this
+    const oThis = args(0)
+    const oArgs = args.slice(1)
+    return function() {
+      fn.apply(oThis, [...oArgs, ...arguments])
+    }
+  }
+
   let user = {
     firstName: 'john',
     say(words, words2) {
