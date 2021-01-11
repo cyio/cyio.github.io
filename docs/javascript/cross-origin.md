@@ -18,6 +18,8 @@ origin = protocol + domain + port
    Javascript 跨域访问解决方案 - 老唐 的专栏 - 博客频道 - CSDN.NET
    ajax 跨域问题解决方案 | w3cboy,最专业的前端开发博客
 
+浏览器拦截只是页面拿不到数据，请求是正常收发的
+
 ## 分类
 
 1. 请求跨域 

@@ -451,7 +451,8 @@ Props向下传递，事件向上传递
 
 ## 指令
 - 作用：对 DOM 元素进行底层操作
-- 内置：v-model v-if v-show
+- 形式：`v-xx`，`v-for`是例外
+- 内置：v-model v-if v-show v-bind v-on v-html
 - 自定义：通过注册
 - 使用： `v-focus`
 - 钩子：bind inserted
@@ -491,4 +492,11 @@ props 公共组件，组件库
 
 父组件创建，子组件创建、挂载，父组件挂载
 
-
+## v-model 原理
+父组件传 prop
+```
+v -> m
+@input
+v <- m
+watch $emit
+```

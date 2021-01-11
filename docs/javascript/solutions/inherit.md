@@ -1,30 +1,5 @@
 # 继承
-
-```js
-  // 手写组合式继承
-
-  // ES5 寄生组合式继承
-  function Super(name, age) {
-    this.name = name
-    this.age = age
-    console.log('调用一次')
-  }
-  Super.prototype.say = function() {
-    console.log('I am ' + this.name)
-  }
-
-  function Sub(name, age, sex) {
-    Super.call(this, name, age)
-    this.sex = sex
-  }
-
-  Sub.prototype = Object.create(Super.prototype) // 创建父类副本，替代创建父类实例，带来问题是，构造器指向了父类
-  Sub.prototype.constructor = Sub // 修正
-
-  let ch = new Sub('jack', 12, 1)
-  ch.say()
-```
-
+[toc]
 
 ```js
   // ES5 原型链继承
@@ -48,7 +23,7 @@
 //   Sub.prototype.constructor = Sub
 
   let ch = new Sub('jack', 12, 1)
-  ch.say()
+  ch.say() // say 方法在原型链上
   // I am undefined
 ```
 
@@ -81,6 +56,30 @@
   // I am undefined
 ```
 
+```js
+  // ES5 寄生组合式继承
+  function Super(name, age) {
+    this.name = name
+    this.age = age
+    console.log('调用一次')
+  }
+  Super.prototype.say = function() {
+    console.log('I am ' + this.name)
+  }
+
+  function Sub(name, age, sex) {
+    Super.call(this, name, age)
+    this.sex = sex
+  }
+
+  Sub.prototype = Object.create(Super.prototype) // 创建父类副本，替代创建父类实例，带来问题是，构造器指向了父类
+  Sub.prototype.constructor = Sub // 修正
+
+  let ch = new Sub('jack', 12, 1)
+  ch.say()
+```
+
+
 ## 原型链
 构造函数、原型、实例的关系
 1. 每一个构造函数都有一个原型对象 fn.prototype = object
@@ -94,6 +93,12 @@
       --> chain
 ```
 
+## 原型链继承
+形式
+```
+Sub.prototype = new Super() // new 设置原型指向时，参数未知
+```
+
 原型链实现继承的本质是重写原型对象
 
 问题：
@@ -102,10 +107,19 @@
 
 解决，借用构造器函数，在子类内部生成自己的属性，不同子类互不干扰
 
+  Sub.prototype = new Super() // new 设置原型指向时，参数未知
 ## 原型式继承
 Object.create()
+相当于
+```js
+function object(o) {
+  function F(){} // 临时构造器函数
+  F.prototype = o
+  return new F()
+}
+```
 
-本质是浅复制
+本质是浅复制，依然存在引用污染问题
 
 ## 寄生式继承
 基于原型式继承，增强对象
@@ -121,3 +135,10 @@ Object.create()
 属性遮蔽、函数覆盖
 
 [JS | 前端进阶之道](https://yuchengkai.cn/docs/frontend/#%25E7%25BB%25A7%25E6%2589%25BF)
+
+## 组合继承
+原型链 + 借用构造函数
+
+最常用
+
+## 寄生组合式继承

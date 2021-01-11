@@ -217,3 +217,12 @@ babel 配置隐式 import css
 
 [Front-End Performance Checklist 2020 [PDF, Apple Pages, MS Word] — Smashing Magazine](https://www.smashingmagazine.com/2020/01/front-end-performance-checklist-2020-pdf-pages/)
 
+## FPS
+理想值 60
+
+收集 FPS list
+
+连续出现3个低于20的 FPS 即可认为网页存在卡顿。
+
+[如何监控网页的卡顿？ - 知乎](https://zhuanlan.zhihu.com/p/39292837)
+

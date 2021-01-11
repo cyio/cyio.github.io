@@ -86,7 +86,7 @@ float 定义了元素向哪个方向浮动，占据一定空间，其余内容�
 
 BFC 的特性，不是缺陷
 
-- 相邻的兄弟姐妹元素（除非后者兄弟姐妹需要清除过去的浮动）
+- 相邻的兄弟元素（除非后者兄弟需要清除过去的浮动）
 - 块级父元素与其第一个/最后一个子元素
 - 空块元素
 
@@ -98,8 +98,8 @@ BFC 的特性，不是缺陷
 [如何解决外边距叠加的问题？ - 知乎](https://www.zhihu.com/question/19823139)
 [margin collapse](https://codepen.io/cyio/pen/mdregqb)
 
-块级容器不一定是块级盒
-块级盒不一定是块级容器，如块级替换元素（display: block）和 flex 盒
+- 块级容器不一定是块级盒
+- 块级盒不一定是块级容器，如块级替换元素（display: block）和 flex 盒
 [CSS Display Module Level 3](https://www.w3.org/TR/css-display-3/#block-container)
 
 ## calc

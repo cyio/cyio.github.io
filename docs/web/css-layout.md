@@ -5,15 +5,15 @@
 
 ## 左侧定宽，右侧自适应
 
-[左侧定宽，右侧自适应 flex](https://codepen.io/cyio/pen/mdrXQor)
+[flex 左侧定宽，右侧自适应](https://codepen.io/cyio/pen/mdrXQor)
 ```
 	flex-grow: 1;
 ```
-[左侧定宽，右侧自适应 position](https://codepen.io/cyio/pen/wvzyQLr)
+[position 左侧定宽，右侧自适应](https://codepen.io/cyio/pen/wvzyQLr)
 ```
 	width: calc(100vw - 200px)
 ```
-[左侧定宽，右侧自适应 grid](https://codepen.io/cyio/pen/KKgQbPB)
+[grid 左侧定宽，右侧自适应](https://codepen.io/cyio/pen/KKgQbPB)
 ```
 	grid-template-columns: 200px 1fr;
 ```

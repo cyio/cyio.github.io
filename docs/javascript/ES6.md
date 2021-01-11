@@ -274,3 +274,15 @@ ES6 不支持，用 flow，然后通过 babel plugin 移除
 [javascript - Babel: Function parameter types in ES6 - Stack Overflow](https://stackoverflow.com/questions/35916921/babel-function-parameter-types-in-es6)
 
 
+## symbol
+解决对象 key 重复问题
+
+执行`Symbol()`返回，总是 uniq
+
+全局注册，用 for 查找
+
+不支持 new 调用
+```
+Symbol('a') === Symbol('a') // false
+Symbol.for('a') === Symbol.for('a') // true
+```
