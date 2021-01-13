@@ -91,7 +91,14 @@ xpos = xpos + dist
 
 [DOM Performance (Reflow & Repaint) (Summary)](https://gist.github.com/faressoft/36cdd64faae21ed22948b458e6bf04d5)
 
-- 优化：合并更新
+- 优化策略1：合并操作 class/documentFragment
+- 优化策略2：用重绘属性代替回流属性
+  - transform 代替 top/left
+  - opacity 替代 visibility
+- 多个 DOM 统一操作（虽然V8会有缓存优化）
+- 先将 DOM 离线，即display：none；修改后显示
+- 不要把 DOM 放在已给循环中作为循环变量
+- 不要使用 table
 
 ### 样式计算
 

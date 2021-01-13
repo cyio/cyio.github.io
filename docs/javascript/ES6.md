@@ -35,6 +35,13 @@
 [Javascript - ES6 实用技巧](https://github.com/TerryZ/js-develop-skill-summary/blob/master/javascript-es6.md)
 [在 ES6 中 改良的 5 个 JavaScript “缺陷” - WEB 前端 - 伯乐在线](http://web.jobbole.com/86210/)
 
+## var let const
+var 的问题，全局变量，变量提升，重复声明，重复赋值
+
+let const 支持块级作用域
+
+const 声明时必须赋值，不可重复声明
+
 ## map 映射
 
 - 如果 key 是复杂数据类型，需要保存起来，以便 map 操作

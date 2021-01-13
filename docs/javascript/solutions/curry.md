@@ -1,7 +1,7 @@
 # 柯里化
 
 转换函数，多个参数依次传入
-`fn(a, b, c) --> fn(a)(b)(c)`
+`fn(a)(b)(c) --> fn(a, b, c)`
 
 ```js
 const add = a => b => c => a + b + c
@@ -19,9 +19,7 @@ console.log(r)
     }
   }
 
-  function add(x, y) {
-    return x + y
-  }
+  const add = (x, y) => x + y
 
   let addTwo = curry(add, 2)
   console.log(addTwo(3))
@@ -39,7 +37,7 @@ console.log(r)
   function curry(func) {
     return function curried(...args) { // 一个可递归调用的函数，接第一个参数
       // console.log({ args })
-      if (args.length >= func.length) { // 合并后的参数，达到 func 参数数量
+      if (args.length === func.length) { // 合并后的参数，达到 func 参数数量
         return func.apply(this, args)
       }
       return function(...args2) { // 接第二参数

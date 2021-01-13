@@ -15,7 +15,7 @@ SyntaxError: export declarations may only appear at top level of a module
 
 ## require/import 区别
 出处：CommonJS/ES6
-require 轸出值拷贝，import 输出值引用
-require 运行时动态加载 import 静态编译
-import 严格模式
+require 输出 值拷贝，import 输出值引用
+require 运行时 动态加载 import 静态编译
+import 默认严格模式
 
