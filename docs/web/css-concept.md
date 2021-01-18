@@ -172,3 +172,11 @@ outline 不占用布局，可能遮挡内容
 
 覆盖用`:focus`
 
+
+transform 会为包括后代创建新的包含块，fixed 元素依据将变为包含块
+
+尺寸值，配合 width height
+fit-content 不超过 max-content
+max-content 实际内容 length
+min-content 文本能接受的最小宽度，空格换行
+

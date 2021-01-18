@@ -180,6 +180,12 @@ min-height: 480px;
 background: #000;
 ```
 
+https://codepen.io/ncerminara/pen/zbKAD
+
+http://stackoverflow.com/questions/25228056/responsive-iframe-using-bootstrap
+
+原理：
+容器设置相对定位，宽度100%，高度由 padding-bottom 设置，视频撑满容器，随容器伸缩
 [vue-video-player/01-video.vue at master · surmon-china/vue-video-player](https://github.com/surmon-china/vue-video-player/blob/master/examples/01-video.vue)
 
 ## 加密解密
@@ -485,3 +491,8 @@ export function bufferedPercent(buffered, duration) {
 ```
 
 内置依赖 xhr 库 https://github.com/naugtur/xhr
+
+写 CSS 类
+姓名 复姓 新姓缩写
+
+[视频直播的技术原理和实现思路方案整理 · Issue #61 · f2e-journey/xueqianban](https://github.com/f2e-journey/xueqianban/issues/61)

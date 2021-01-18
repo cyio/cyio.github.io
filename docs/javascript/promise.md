@@ -2,8 +2,10 @@
 [[toc]]
 
 > 采用promise可以解决异步编程的逻辑嵌套问题
+> cb => then chain
 
 ## 概念
+- 对外提供 then 函数，对内三个状态
 - 状态：pending fulfilled rejected
 - 状态流转：pending 到后两者，到了后两者不再变
 - 必须有一个 then 异步执行方法，then 接受两个参数且必须返回一个promise

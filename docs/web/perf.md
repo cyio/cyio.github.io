@@ -1,4 +1,16 @@
 # 性能
+[toc]
+
+## 方法论
+- 请求
+  - 并发
+  - 延迟 Script defer
+  - 预取
+  - head
+  - transfer gzipped
+  - body 压缩
+- 请求与渲染结合
+  - 非首屏图片懒加载 | 关键 CSS 拆分内联
 
 [性能为何至关重要  |  Web Fundamentals  |  Google Developers](https://developers.google.com/web/fundamentals/performance/why-performance-matters/?hl=zh-cn)
 
@@ -6,7 +18,7 @@
 
 [狙杀页面卡顿 —— Performance 指北 - 掘金](https://juejin.im/post/5b65105f5188251b134e9778)
 
-# 后台页面
+## 后台页面
 - 使用`visibilityChange`监听器避免在后台执行不必要的工作，如处理视图变化
 - `requestAnimationFrame` 批量更新，失焦时不会触发
 [Background Tabs in Chrome 57  |  Web  |  Google Developers](https://developers.google.com/web/updates/2017/03/background_tabs)
@@ -31,7 +43,7 @@ throttle expensive background timers disabled
 [The cost of JavaScript in 2019 · V8](https://v8.dev/blog/cost-of-javascript-2019)
 [页面加载性能优化 automate-everything/chapter4.md at master · azl397985856/automate-everything](https://github.com/azl397985856/automate-everything/blob/master/docs/chapter4.md)
 
-# lazy
+## lazy
 
 chrome 默认规则，按优先级加载，依然是尽快拉取
 chrome 76 支持浏览器原生懒加载，显式指定加载规则
@@ -43,14 +55,14 @@ chrome 76 支持浏览器原生懒加载，显式指定加载规则
 <iframe loading="lazy"></iframe>
 ```
 
-# 商业方案
+## 第三方方案
 [听云Browser・实时了解您网站的真实用户体验](https://www.tingyun.com/tingyun_browser.html)
 
 [测速 - 听云Network・国内领先的网站性能监测与优化产品](https://www.tingyun.com/tingyun_network.html)
 
 [Journey to the Content Mesh Part 4: Why Mobile Performance Is Crucial | GatsbyJS](https://www.gatsbyjs.org/blog/2018-10-16-why-mobile-performance-is-crucial/)
 
-# modern 构建
+## modern 构建
 构建两个版本，modern 降低体积，old 兼顾
 
 [Improving Browser Performance 10x - Universe Engineering](https://engineering.universe.com/improving-browser-performance-10x-f9551927dcff)

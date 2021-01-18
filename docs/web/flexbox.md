@@ -2,13 +2,19 @@
 
 [[toc]]
 
+## 问题
+
+1. 内容不足时想自适应撑满，怎么做
+2. 内容撑满时，子条目如何分配空间
+3. 如何实现子条目换行
+
 - `flex`块级元素，`inline-flex`行内元素
 - 由**伸缩容器**和**伸缩条目**构成，支持任意嵌套，内外互不干扰
 - `flex-grow`增长系数，`flex-shrink`收缩系数。总和不足 1 时，按 1 计算
 
-    场景：内容不足时想撑满，内容撑开时如何分配
+  场景：内容不足时想撑满，内容撑满时如何分配
 
-- 父元素设置`flex-wrap: wrap;`，配合某个子元素设置`flex-basis: 100%;`，可以实现后续内容换行排列
+- 父元素设置`flex-wrap: wrap;`，配合某个子条目设置`flex-basis: 100%;`，可以实现后续内容换行排列
 
 | justify-content | 两头间隔           |
 | --------------- | ------------------ |
@@ -24,10 +30,16 @@
 
 ```html
 <style>
-  section {display: flex;}
+  section {
+    display: flex;
+  }
   .left-side,
-  .right-side {width: 200px;}
-  .content {flex-grow: 1;}
+  .right-side {
+    width: 200px;
+  }
+  .content {
+    flex-grow: 1;
+  }
 </style>
 <section>
   <div class="left-side"></div>
@@ -41,6 +53,21 @@
 ```
 
 ```
+
+## flex 没有 justify-self
+
+比如，有三个元素，两个元素紧挨排列，第三个元素居右。首先不能用 justify-content
+
+```css
+.box  {
+  display; flex;
+}
+.push {
+  margin-left: auto;
+}
+```
+
+[Box alignment in Flexbox - CSS（层叠样式表） | MDN](https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Box_Alignment/Box_Alignment_in_Flexbox)
 
 ## 兼容性
 
@@ -60,19 +87,4 @@
 [gridtoflex.com](https://www.gridtoflex.com/)
 
 > chrome73,74 版本以后 flex 布局 Web 应用程序中的溢出将不再起作用，要在 flex 父元素，原来是 min-height: auto; 现在改为 min-height: 0;才可以
-
-## flex 没有 justify-self
-
-比如，有三个元素，两个元素紧挨排列，第三个元素居右。首先不能用 justify-content
-
-```css
-.box  {
-  display; flex;
-}
-.push {
-  margin-left: auto;
-}
-```
-
-[Box alignment in Flexbox - CSS（层叠样式表） | MDN](https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Box_Alignment/Box_Alignment_in_Flexbox)
 

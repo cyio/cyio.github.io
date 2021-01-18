@@ -1,9 +1,6 @@
 # Dom 事件
 [[toc]]
 
-[事件介绍 - 学习 Web 开发 | MDN](https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/Building_blocks/Events)
-[Jake Archibald: In The Loop - JSConf.Asia - YouTube](https://www.youtube.com/watch?v=cCOL7MC4Pl0&t=1521s)
-
 ## 基础
 - 现代浏览器默认冒泡，如果不希望这样，`e.stopPropagation()`
 - 默认不使用捕获，如果想捕获，`addEventListener()`第三个参数(useCapture)设为`true`

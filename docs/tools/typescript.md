@@ -135,3 +135,5 @@ unknown type 处理第三方库或 API 数据，表示需要检查数据有效�
 const assertions 不可变数据结构
 
 [6 useful TypeScript 3 features you need to know | Building SPAs](https://www.carlrippon.com/6-useful-typescript-3-features-you-need-to-know/)
+
+[一份不可多得的 TS 学习指南（1.8W字）](https://juejin.cn/post/6872111128135073806)
