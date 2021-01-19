@@ -1,6 +1,9 @@
 # Vue
 [[toc]]
 
+## MVVM
+Model-View-ViewModel
+
 ## 与 React 比较
 
 - 相同点：
@@ -11,7 +14,7 @@
     - 绑定的单双向：View 层与 Model 层之间的映射关系。
 - 不同点：
 
-  - vue 双向绑定，react 单向
+  - vue 双向绑定，react 单向绑定
 
     > 单向绑定使得数据流也是单向的，对于复杂应用来说，这是实施统一的状态管理（如 redux）的前提。双向绑定在一些需要实时反应用户输入的场合
     > 会非常方便（比如多级联动菜单）。但通常认为复杂应用中这种便利比不上引入状态管理带来的优势。注意，Vue 虽然通过 v-model 支持双向绑定，
@@ -76,21 +79,6 @@ js 原生通信机制，事件
 @click.native
 
 Understanding Components Communication in Vue 2.0 http://taha-sh.com/blog/understanding-components-communication-in-vue-20
-
-## 有待改进
-
-- router children 嵌套，不要全是一级，跳转传参可在 path:id 来配置
-- 测试数据，可写成模块
-  ```js
-  /**
-   * 创建临时数据
-   */
-  const setpromise = data => {
-    return new Promise((resolve, reject) => {
-      resolve(data)
-    })
-  }
-  ```
 
 ## Vue-JSX
 

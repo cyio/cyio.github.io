@@ -206,3 +206,17 @@ The quick answer, a partially defined path.
 ## 2.6 Vue.observable
 [Vue Template - CodeSandbox](https://codesandbox.io/s/k3kpqz2wz7?file=/src/store.js:24-62)
 
+## 有待改进
+
+- router children 嵌套，不要全是一级，跳转传参可在 path:id 来配置
+- 测试数据，可写成模块
+  ```js
+  /**
+   * 创建临时数据
+   */
+  const setpromise = data => {
+    return new Promise((resolve, reject) => {
+      resolve(data)
+    })
+  }
+  ```

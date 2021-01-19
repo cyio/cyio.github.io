@@ -21,10 +21,15 @@ var data = fs.readFileSync('/resource.json') //同步方法
 您必须知道的几个 Nodejs 编码习惯 · GitBook
 
 无法立即释放内存有两种情况，一是全局变量，一是闭包中间函数引用
+
 node 有固定的内存使用上限
+
 使用 Buffer 可以读取超过 V8 内存限制的大文件
+
 Buffer 对象，属于堆外内存，意指不受 V8 分配
+
 V8 的垃圾回收机制，把内存分为新生代和老生代
+
 新生代中的对象存活时间较短，而老生代中的对象存活时间较长或者为常驻对象
 
 ## path
@@ -94,4 +99,11 @@ Node.js 是单进程的，一般代码在主进程中运行，回调放在事件
 可以提高线程池的默认线程数，服务器可能会将线程分配到不同核心去处理
 
 [Node.js - Wikipedia](https://en.wikipedia.org/wiki/Node.js#Threading)
+
+## 高并发
+读写冲突十分严重，如何
+业务规则：流量摊匀
+前端：置灰，避免多次提交
+后端：同一个用户，限制次数，风控，滑块，拦截，黑名单
+[《吊打面试官》系列 Node.js 全栈秒杀系统 - 云+社区 - 腾讯云](https://cloud.tencent.com/developer/article/1638407)
 

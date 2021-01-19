@@ -58,6 +58,31 @@
   console.log(res)
   ```
 
+  支持深度
+  ```js
+  const arr = [1, 2, [3, [4], [[6]]], 5]
+  const flatten = (arr, limit = 1) => {
+    let level = 0
+    return arr.reduce((pre, cur) => {
+      let toConcat
+      if (Array.isArray(cur) && level < limit - 1) {
+        level += 1
+        toConcat = flatten(cur, limit)
+      } else {
+        toConcat = cur
+      }
+
+      return pre.concat(toConcat);
+    }
+    , [])
+  }
+  const res = flatten(arr, Infinity);
+
+  console.log(flatten(arr, Infinity), arr.flat(Infinity))
+  console.log(flatten(arr), arr.flat())
+  console.log(flatten(arr, 2), arr.flat(2))
+  ```
+
 5. toString，字符串转数字是否可靠，应该可靠
 
   ```js

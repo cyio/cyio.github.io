@@ -211,6 +211,7 @@ console.log(arr.sort((a, b) => a - b)) // 为什么这里不能写成 a > b，�
 
 // a > b 正确写法
 arr.sort((a, b) => {
+  // 默认升序，所以 a < b，a 在前
   if (a < b) return -1
   if (a > b) return 1 // 调换
   if (a === b) return 0
