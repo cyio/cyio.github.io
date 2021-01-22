@@ -396,13 +396,15 @@ EventBus.$on('i-got-clicked', clickCount => {
 
 - node 一次事件循环叫 tick
 - vue next DOM update cycle 用 promise/MutationObserver 微任务，如果没有可用的微任务特性，回退为宏任务，所以 vue 的 nextTick 是在 setTimeout 前执行
-- 比 setTimeout 执行更快
+- 比 setTimeout 执行更快，在浏览器 render 之前？
 
 ```
 process.nextTick(callback)
 ```
 
-[vue.js - What is nextTick or what does it do in VueJs - Stack Overflow](https://stackoverflow.com/questions/47634258/what-is-nexttick-or-what-does-it-do-in-vuejs)
+[vue.js - What is nextTick or what does it do in VueJs - Stack Overflow](https://stackoverflow.com/a/47636157/5657916)
+[Vue.nextTick 的原理和用途 - SegmentFault 思否](https://segmentfault.com/a/1190000012861862)
+[深入响应式原理 — Vue.js](https://cn.vuejs.org/v2/guide/reactivity.html#%25E5%25BC%2582%25E6%25AD%25A5%25E6%259B%25B4%25E6%2596%25B0%25E9%2598%259F%25E5%2588%2597)
 
 ```js
 const copies = callbacks.slice(0) // 复制一个数组，操作不会影响原数组

@@ -1,5 +1,8 @@
 # 节流 防抖
 
+- 如何判断正在执行 tId
+- apply 还是 call，arguments => apply
+
 节流，正在执行，忽略
 ```js
   function throttle(fn, wait = 0) {

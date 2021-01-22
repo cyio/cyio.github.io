@@ -3,13 +3,18 @@
 
 ## 冒泡排序
 
-相邻元素置换位置
+1. 相邻元素置换位置，从头到尾
+2. 然后从第二个元素开始，重复第一步
 
 空间复杂度 O(n^2)
 
 优化点：有序数据可以标记判断，将时间降到 O(n)
 
 ```js
+  // 1 4 5 2 3
+  // 1 4 2 5 3
+  // 1 2 4 3 5
+  // 1 2 3 4 5
 // 了解原理后如何思考，从具体到抽象
 // 内部是置换循环，外部是重复循环
 // 内循环，减掉已经排好的，当 i 为 1 时，j < arr.length - 1
@@ -17,7 +22,7 @@
 function bubbleSort(arr) {
   let i, j
   let n = arr.length
-  for (i = 0; i < n - 1; i++) {
+  for (i = 0; i < n - 1; i++) { // 注意边界处理
     for (j = i + 1; j < n; j++) {
       if (arr[i] > arr[j]) {
         var tmp = arr[j]
@@ -30,6 +35,48 @@ function bubbleSort(arr) {
 }
 let result = bubbleSort([0, 10, 1, 3, 5, 4])
 console.log(result)
+```
+字符串按长度排序
+```js
+  function strSort(arr) {
+    for (let i = 0; i < arr.length - 1; i++) {
+      for (let j = i + 1; j < arr.length; j++) {
+        // if (arr[i] > arr[j]) {
+        if (arr[i].length > arr[j].length) {
+          let tmp = arr[i]
+          arr[i] = arr[j]
+          arr[j] = tmp
+        }
+      }
+    }
+    return arr
+  }
+  console.log(strSort(['abcd', 'a', 'abc', 'abd']))
+  // expect: ["a", "ab", "abc", "abcd"]
+
+  // 快排 [...sort(left), mid, ...sort(right)]
+  function strSort(arr) {
+    if (arr.length <= 1) return arr
+
+    let left = []
+    let right = []
+    let midIndex = Math.floor(arr.length / 2)
+    let mid = arr[midIndex]
+
+
+    for (let i = 0; i < arr.length; i++) {
+      if (i === midIndex) continue
+      if (arr[i].length < mid.length) {
+//       if (arr[i] > mid) {
+        left.push(arr[i])
+      } else (
+        right.push(arr[i])
+      )
+    }
+    
+    return [...strSort(left), mid, ...strSort(right)]
+  }
+  console.log(strSort(['abcd', 'a', 'abc', 'abd']))
 ```
 
 ## 选择排序

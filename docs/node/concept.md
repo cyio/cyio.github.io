@@ -107,3 +107,6 @@ Node.js 是单进程的，一般代码在主进程中运行，回调放在事件
 后端：同一个用户，限制次数，风控，滑块，拦截，黑名单
 [《吊打面试官》系列 Node.js 全栈秒杀系统 - 云+社区 - 腾讯云](https://cloud.tencent.com/developer/article/1638407)
 
+子进程
+child_process
+cluster

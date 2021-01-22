@@ -22,6 +22,12 @@
 | space-around    | 有，但为半格       |
 | space-evenly    | 有，与其它间隔相等 |
 
+缩写 grow, shrink, basis
+
+```
+flex: 1
+```
+
 ## 解决如何灵活分配空间（传统布局问题）
 
 1. 多余空间的分配
