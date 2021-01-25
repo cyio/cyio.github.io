@@ -133,6 +133,19 @@ this.$refs.videoPlayer.player.on('fullscreenchange', e => {
 
 注意事件元素、方法，老版本 Chrome（如 63），Safari 等都需要前缀
 
+## 在视频全屏上层显示元素
+场景：上课场景的题板展示，全屏时显示休息提示
+
+- 自定义全屏元素
+  思路：
+    1. 卸载自带事件（视频上双击和点全屏按钮，文档可能找不到，通过捕获事件，查源码定位到）
+    2. 给播放器和要前置元素的**公共容器**设置全屏
+
+  [videojs replaceFullscreen](https://gist.github.com/cyio/a838a85a87c14257427babd3ecf828e6)
+
+- 如果只考虑 chrome，可以设置一个特别大的 z-index 
+  https://stackoverflow.com/a/16240314/5657916
+
 ## 错误处理
 
 ```js
@@ -340,21 +353,32 @@ player.play()
 
 [Tutorial: components | Video.js Documentation](https://docs.videojs.com/tutorial-components.html#creating-a-component)
 
-## 自定义全屏元素
-
-允许元素显示在视频上，卸载自带事件，给播放器和要前置元素的**公共容器**设置全屏
-
 ## timeupdate
 
 - 50ms - 250ms
 - 如果需要精确控制，可以使用`requestAnimationFrame`，并在里面检查`player.currentTime()`
 
-## 页面后台白屏
+## 页面失去响应（白屏）
 
-7.4，可长达 10 s
+问题表现：当页面在播放中，转入后台一段时间，再切回页面会白屏，需要长达 10 s 页面才能恢复可交互
+
+1. CPU 用量性能分析，与老页面对比
+2. 逐步停用后台任务、如定时器，排除业务代码所致
+3. 隔离 video demo 中稳定复现
+4. 查官方 issues
+5. 源码解决方式 加开关，一次只能运行一个任务
+
+原因：https://github.com/videojs/video.js/issues/5937#issuecomment-539442030
+
+setInterval 在后台一直执行，不断添加 rAF 回调，页面进入后台，rAF 只是暂停，并没有取消。当页面恢复前台时积累了大量待执行 rAF 回调，导致 CPU 飙升
+
+收获：
+- CPU 分析时，节流选低端设备，问题更明显
+- 恢复时结合 rAf 获取对应时刻动画状态，给用户一直在播放的感觉 https://www.zhihu.com/question/64422733/answer/222075042
 
 [High CPU usage after the player stays in background for a while · Issue #5937 · videojs/video.js](https://github.com/videojs/video.js/issues/5937)
 [高级播放器示例 - Video.js：播放器框架](https://videojs.com/advanced/#disneys-oceans)
+[js-leakage-patterns/requestAnimationFrame.md at master · zhansingsong/js-leakage-patterns](https://github.com/zhansingsong/js-leakage-patterns/blob/master/requestAnimationFrame/requestAnimationFrame.md)
 
 ## ref
 [视频云web播放器样式和组件自定义](http://vcloud.163.com/vcloud-sdk-manual/WebDemos/LivePlayer_Web/introToComponent.html)

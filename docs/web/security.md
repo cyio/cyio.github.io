@@ -34,3 +34,9 @@ HTTPS
 - 主动 script style iframe flash  拦截
 
 [什么是混合内容？  |  Web  |  Google Developers](https://developers.google.com/web/fundamentals/security/prevent-mixed-content/what-is-mixed-content)
+
+## cookie 相关
+
+- http only
+
+## 刷接口攻击

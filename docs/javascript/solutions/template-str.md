@@ -7,7 +7,7 @@
 // <div class="hd">123</div>
 ```
 
-- 用 key 拼接字符，准确 replace
+- 用 key 拼接字符，准确 replace，不需要用正则
 - str 是纯方法，不修改原字符串
 
 ```js

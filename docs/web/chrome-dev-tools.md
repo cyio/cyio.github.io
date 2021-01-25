@@ -44,6 +44,7 @@
 - XAR 导出 录制、然后网络上右键 
 
     [How to generate a HAR file in Chrome or Firefox - KB254 - In](https://www.inflectra.com/support/knowledgebase/kb254.aspx)
+- Replay XHR 重放请求，不必刷新页面
 
 ## playground
 可以巧用 snippets 作 playground，快速调试代码
