@@ -6,6 +6,8 @@ for in 可以遍历数组
 
 对象循环引用不处理，会导致栈溢出，解决是以 obj 为 key，newObj 为 value，保存到 map。遍历过直接返回
 
+循环引用是指引用自身？
+
 Map => WeakMap
 ```js
 // 实现对象深拷贝，考察点：isObject for-in 递归
@@ -34,11 +36,12 @@ Map => WeakMap
   function deepClone(data, map = new Map()) {
     let res = Array.isArray(data) ? [] : {}
     if (isObject(data)) {
-      if (map.get(data)) return map.get(data)
+      if (map.has(data)) return map.get(data)
       map.set(data, res)
     }
     for (let i in data) {
-      res[i] = Array.isArray(data[i]) || isObject(data[i]) ? deepClone(data[i], map) : data[i]
+      let cur = data[i]
+      res[i] = Array.isArray(cur) || isObject(cur) ? deepClone(cur, map) : cur
     }
     return res
   }

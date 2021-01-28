@@ -1,26 +1,28 @@
 # apply call
 
-核心，借用对象调用方法
+核心：
+1. 借用对象调用方法，将方法临时加到 context 上执行
+2. 执行，暂存结果
+3. 清理，删除临时对象方法
+4. 返回结果
 
-输出，执行结果
-
-结束后，删除对象方法
+ES6 简版 apply 与 call 相同
 
 ```js
-Function.prototype.myApply = function (context, ...argus) {
-    if (typeof this !== 'function') {
-        throw new TypeError('not funciton')
-    }
-    const fn = this
-    let result = null
- 
-    context = context || window
-    // argus = argus && argus[0] || []
-    context.fn = fn
-    result = context.fn(...argus)
-    delete context.fn
-     
-    return result
+Function.prototype.myApply = function(context, ...argus) {
+  if (typeof this !== 'function') {
+    throw new TypeError('not funciton')
+  }
+  const fn = this
+  let result = null
+
+  context = context || window
+  // argus = argus && argus[0] || []
+  context.fn = fn
+  result = context.fn(...argus)
+  delete context.fn
+
+  return result
 }
 
 // ES6 简版 apply 与 call 相同
@@ -43,56 +45,58 @@ user.say.apply(user1, ['morning'])
 ```
 
 call
+
 ```js
-  // fn.call(this, 1, 2, 3)
-  Function.prototype.myCall = function (oThis){
-    if (typeof this !== 'function') throw 'not a function'
-    
-    let ret
-    const context = oThis || window
-    const args = [...arguments].slice(1)
+// fn.call(this, 1, 2, 3)
+Function.prototype.myCall = function(oThis) {
+  if (typeof this !== 'function') throw 'not a function'
 
-    context.fn = this;
-    ret = context.fn(...args)
-    delete context.fn
+  let ret
+  const context = oThis || window
+  const args = [...arguments].slice(1)
 
-    return ret
-  }
+  context.fn = this
+  ret = context.fn(...args)
+  delete context.fn
 
-  // test
-  let o = {name: 'jack'}
-  function hi(a, b){
-    console.log(arguments)
-    return this.name + a + b
-  }
-  let r = hi.myCall(o, 1, 2)
-  let r1 = hi.call(o, 1, 2)
-  console.log(r, r1)
+  return ret
+}
+
+// test
+let o = { name: 'jack' }
+function hi(a, b) {
+  console.log(arguments)
+  return this.name + a + b
+}
+let r = hi.myCall(o, 1, 2)
+let r1 = hi.call(o, 1, 2)
+console.log(r, r1)
 ```
 
 apply
+
 ```js
-  // fn.apply(this, [1, 2])
-  Function.prototype.myApply = function (oThis){
-    if (typeof this !== 'function') throw 'not a function'
-    
-    let ret
-    const context = oThis || window
-    context.fn = this;
+// fn.apply(this, [1, 2])
+Function.prototype.myApply = function(oThis) {
+  if (typeof this !== 'function') throw 'not a function'
 
-    ret = context.fn(...(arguments[1] || []))
-    delete context.fn
+  let ret
+  const context = oThis || window
+  context.fn = this
 
-    return ret
-  }
+  ret = context.fn(...(arguments[1] || []))
+  delete context.fn
 
-  // test
-  let o = {name: 'jack'}
-  function hi(){
-    console.log(arguments)
-    return this.name
-  }
-  let r = hi.myApply(o, [1, 2])
-  let r1 = hi.apply(o, [1, 2])
-  console.log(r, r1)
+  return ret
+}
+
+// test
+let o = { name: 'jack' }
+function hi() {
+  console.log(arguments)
+  return this.name
+}
+let r = hi.myApply(o, [1, 2])
+let r1 = hi.apply(o, [1, 2])
+console.log(r, r1)
 ```

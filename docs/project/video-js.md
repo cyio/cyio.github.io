@@ -91,33 +91,6 @@ flv 需要引入
   [video.js / live.md at 6c644feaa0ccef6e5e88e8bf45dc9caa82a94503·videojs / video.js](https://github.com/videojs/video.js/blob/6c644feaa0ccef6e5e88e8bf45dc9caa82a94503/docs/guides/live.md#the-new-user-interface)
   [VideoJs Live streaming example](http://tests.nuevolab.com/videojs/tests/livestream)
 
-## ISSUES
-
-### 播放器按钮设置 fastclick 例外
-
-```js
-const buttons = window.document.querySelectorAll('.vjs-control-bar>button')
-this.setNeedsClick(buttons)
-```
-
-### iOS 下 currentTime 方法，需特殊处理才起作用，要先监听 loadedmetadata 事件
-
-```js
-const ctime = Storage.getItem('position-' + this.id) // 读取保存的播放位置
-
-// iOS下 currentTime 方法，需特殊处理才起作用，要先监听 loadedmetadata 事件
-let v = document.getElementsByTagName('video')[0]
-v.addEventListener('loadedmetadata', e => {
-  if (ctime) {
-    this.$refs.videoPlayer.player.currentTime(ctime)
-  }
-})
-
-this.$refs.videoPlayer.player.play() // 播放
-
-// 注意，player 不能写成计算属性，也不要写成const，可能会被缓存，导致切数据时指向还是旧的player
-```
-
 ## 全屏事件
 
 只有一个`fullscreenchange`事件，要配合`isFullscreen`方法
@@ -212,16 +185,20 @@ http://stackoverflow.com/questions/25228056/responsive-iframe-using-bootstrap
 比较：
 
 - MPS 私有加密 - 阿里私有服务
-  - 不支持 H5
+  - 不支持 H5（调研时）
   - 必须使用阿里 CDN
   - 安全性高
 - HLS 标准加密
+
   [hauk0101/video-hls-encrypt: 一个基于 hls 协议的视频加密 Demo](https://github.com/hauk0101/video-hls-encrypt)
+
   [视频加密*用户指南*媒体处理-阿里云](https://help.aliyun.com/document_detail/57113.html)
+
   [如何进行 HLS 的加密与播放 - 最佳实践| 阿里云](https://www.alibabacloud.com/help/zh/doc-detail/68565.htm)
+
   [腾讯云点播 - 视频防盗加密 - 使用总结 - 掘金](https://juejin.im/post/5c471a50f265da613a5452f6)
 
-## 监控上报
+## 关键指标监控上报
 
 - 播放成功率 - play/canplay event
 - 首次缓冲时间/加载延迟 = loadeddata - loadstart
@@ -234,6 +211,7 @@ http://stackoverflow.com/questions/25228056/responsive-iframe-using-bootstrap
 - 视频地址
 - 即时带宽
 
+[视频加载延迟、卡顿计算及上报](https://gist.github.com/cyio/13ff0ff11de9d5507958aea3343f3611)
 [前端视频质量监控 | DaraW | Code is Poetry](https://blog.daraw.cn/2018/09/07/video-quality-monitor/)
 [十亿级视频播放技术优化揭密 - 踏雪无痕 SS - 博客园](https://www.cnblogs.com/chenpingzhao/p/6850595.html)
 
@@ -269,7 +247,9 @@ oldVideo.load()
 清晰度：分为普清、高清、超清、原画和 4k，分别对应 360p、480p、720p、1080p 和以上
 
 使用这个支持 v6 的 fork 版本
+
 原插件只支持 v5，v6 变化较大，不要用 npm/cdn 版本，是旧的
+
 [neilhem/videojs-resolution-switcher: Resolution switcher adds the ability to select the video quality in video.js player.](https://github.com/neilhem/videojs-resolution-switcher)
 
 ## data-setup
@@ -322,10 +302,6 @@ oldVideo.load()
 
 videojs 7 集成 [http-streaming](https://github.com/videojs/http-streaming) 插件。如果不需要，使用 core.js
 
-## 异步加载脚本情况下显示 video 原生界面问题
-
-等 videojs 初始化后，再显示 dom
-
 ## 5-6 迁移
 
 - `src()`改为异步
@@ -358,28 +334,6 @@ player.play()
 - 50ms - 250ms
 - 如果需要精确控制，可以使用`requestAnimationFrame`，并在里面检查`player.currentTime()`
 
-## 页面失去响应（白屏）
-
-问题表现：当页面在播放中，转入后台一段时间，再切回页面会白屏，需要长达 10 s 页面才能恢复可交互
-
-1. CPU 用量性能分析，与老页面对比
-2. 逐步停用后台任务、如定时器，排除业务代码所致
-3. 隔离 video demo 中稳定复现
-4. 查官方 issues
-5. 源码解决方式 加开关，一次只能运行一个任务
-
-原因：https://github.com/videojs/video.js/issues/5937#issuecomment-539442030
-
-setInterval 在后台一直执行，不断添加 rAF 回调，页面进入后台，rAF 只是暂停，并没有取消。当页面恢复前台时积累了大量待执行 rAF 回调，导致 CPU 飙升
-
-收获：
-- CPU 分析时，节流选低端设备，问题更明显
-- 恢复时结合 rAf 获取对应时刻动画状态，给用户一直在播放的感觉 https://www.zhihu.com/question/64422733/answer/222075042
-
-[High CPU usage after the player stays in background for a while · Issue #5937 · videojs/video.js](https://github.com/videojs/video.js/issues/5937)
-[高级播放器示例 - Video.js：播放器框架](https://videojs.com/advanced/#disneys-oceans)
-[js-leakage-patterns/requestAnimationFrame.md at master · zhansingsong/js-leakage-patterns](https://github.com/zhansingsong/js-leakage-patterns/blob/master/requestAnimationFrame/requestAnimationFrame.md)
-
 ## ref
 [视频云web播放器样式和组件自定义](http://vcloud.163.com/vcloud-sdk-manual/WebDemos/LivePlayer_Web/introToComponent.html)
 
@@ -399,8 +353,6 @@ ffmpeg -v trace -i file.mp4 2>&1 | grep -e type:\'mdat\' -e type:\'moov\'
 ```sh
 ffmpeg -i input.mp4 -movflags faststart -acodec copy -vcodec copy output.mp4
 ```
-
-
 
 ## 转码
 
@@ -488,15 +440,18 @@ click，需要排除 dbclick，用户是在点击播放还是暂停
 ```
 
 ## 源码
-worker? 字幕合成等
-https://github.com/videojs/http-streaming/blob/af5b4eee6605feb3a927efee1234f0ca49c32e72/src/media-segment-request.js#L472
+### player.js
 
-concatSegments
-https://github.com/videojs/http-streaming/blob/e50f4c93dc47cc9ce467aeff8ddd61e1ef9e7814/src/util/segment.js#L43
+TECH_EVENTS_RETRIGGER 注释描述各个事件作用 很清晰
 
-appendBuffer
-https://github.com/videojs/http-streaming/blob/ea3650a08de481ac01f5562e54278e736a852e5c/src/segment-loader.js#L1918
+### video.js
+function videojs
+  如果 player 实例存在，直接返回
+  否则返回 new PlayerComponent
+方法属性方式扩展功能
 
+### component.js
+Component UI 基础类
 
 是否存在有效 buffer 判断
 ```js
@@ -520,3 +475,39 @@ export function bufferedPercent(buffered, duration) {
 姓名 复姓 新姓缩写
 
 [视频直播的技术原理和实现思路方案整理 · Issue #61 · f2e-journey/xueqianban](https://github.com/f2e-journey/xueqianban/issues/61)
+
+### load-progress-bar.js
+
+进度条百分比计算 
+```
+      const percent = percentify(bufferedEnd, duration);
+```
+
+私有变量，下划线改放在后面
+
+缓冲小区间展示 for buffered
+
+估算网速，可以计算从时间 a 到时间 b 的 buffered 总时长变化 @todo
+
+进度条更新，需要一直更新渲染，使用 rAF
+
+### fullscreen-api.js
+适配器模式
+
+1. 不同浏览器 api 字典
+2. 检测当前浏览器支持哪个 api 集合`if (apiMap[i][1] in document) {` 
+3. 适配成标准 api 语法 `FullscreenApi[specApi[i]] = browserApi[i];`
+4. 挂在 Player 类上
+
+优点：统一，test mock 不用再写一遍
+
+### 其它
+
+worker? 字幕合成等
+https://github.com/videojs/http-streaming/blob/af5b4eee6605feb3a927efee1234f0ca49c32e72/src/media-segment-request.js#L472
+
+concatSegments
+https://github.com/videojs/http-streaming/blob/e50f4c93dc47cc9ce467aeff8ddd61e1ef9e7814/src/util/segment.js#L43
+
+appendBuffer
+https://github.com/videojs/http-streaming/blob/ea3650a08de481ac01f5562e54278e736a852e5c/src/segment-loader.js#L1918

@@ -1,10 +1,55 @@
 # Promise
 
+- 内部定义一个状态，两上个值，两个数组
+- 提供两个方法设置状态、并依次执行回调数组
+- 两个方法传给外部的 fn
+- then 后者依赖前者返回值
+
+简版：
+- 只考虑 resolve
+```js
+// let task = new Promise(rFn)
+// task.then(res => {})
+function Promise(fn) {
+  this.state = 'pending'
+  this.value = null
+  this.cbs = []
+
+  const resolve = value => {
+    this.value = value
+    this.state = 'fullfilled'
+    this.cbs.forEach(cb => cb(this.value))
+  }
+
+  fn(resolve)
+}
+
+Promise.prototype.then = function (cb) {
+  return new Promise(resolve => {
+    const _cb = value => {
+      const ret = cb(value) // 获取返回值，向后传递
+      resolve(ret)
+    }
+    if (this.state === 'fulfilled') {
+      _cb(this.value)
+    } else if (this.state === 'pending') {
+      this.cbs.push(_cb)
+    }
+  })
+}
+
+// test
+let sleep = ms => new Promise(r => setTimeout(() => r('sleep done'), ms))
+let d = sleep(2000)
+  .then(v => { console.log(1, v); return v + ' from 1'})
+  .then(d => console.log(2, d))
+```
+
 ```js
 const PENDING = 'pending'
 const FULFILLED = 'fullfilled'
 const REJECTED = 'rejected'
-class MyPromise {
+class Promise {
   constructor(executor) {
     this.state = PENDING
     this.value = null
@@ -39,7 +84,7 @@ class MyPromise {
   }
 
   then(onFulfilled, onRejected) {
-    return new MyPromise((resolve, reject) => {
+    return new Promise((resolve, reject) => {
       const fulfilledCb = value => {
         const _value =
           typeof onFulfilled === 'function' ? onFulfilled(value) : value
@@ -65,8 +110,8 @@ class MyPromise {
 }
 
 // test
-let sleep = ms => new MyPromise(r => setTimeout(() => r('sleep done'), ms))
+let sleep = ms => new Promise(r => setTimeout(() => r('sleep done'), ms))
 let d = sleep(2000)
-  .then(v => console.log(1, v))
+  .then(v => { console.log(1, v); return v + ' from 1'})
   .then(d => console.log(2, d))
 ```

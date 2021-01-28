@@ -96,46 +96,47 @@ class Scheduler {
     this.quene = tasks
     this.limit = limit
     this.doingNum = 0
+    this.index = 0
   }
 
   start() {
-    this.runNext()
+    this.next()
   }
 
-  startP(arr) {
-    for (let i = 0; i < this.limit; i++) {
-      this.runP(arr)
+  startP(tasks) {
+    this.doingNum = 0
+    for(let i = 0; i < limit; i++) {
+      nextP(tasks)
     }
   }
 
-  runP(arr) {
-    if (arr.length && this.doingNum < this.limit) {
-      this.doingNum += 1
-      arr.shift().then(() => {
-        this.doingNum -= 1
-        this.runP()
-      })
-    } else {
-      this.runNext()
+  nextP(tasks) {
+    if (tasks.length <= 0) {
+      next()
+      return
+    }
+    if (this.doingNum < this.limit) {
+      this.doingNum++
+      Promise.resolve(tasks.shift()).then(() => {
+        this.doingNum--
+        this.nextP(tasks)
+      }) 
     }
   }
 
-  runNext() {
-    if (this.quene.length) {
-      let cur = this.quene.shift()
-      if (Array.isArray(cur) && cur.length) {
-        if (this.doingNum > 0) {
-          this.doingNum = 0
-        }
-        this.startP(cur)
-      } else {
-        cur.then(() => {
-          this.runNext()
-        })
-      }
-    } else {
+  next() {
+    if (this.index >= this.length) {
       console.log('done')
+      return
     }
+    const task = this.tasks[this.index]
+    if (Array.isArray(task)) {
+      startP(task)
+      return
+    }
+    Promise.resolve(task).then(() => {
+      this.index++
+      this.next()
+    })
   }
-}
 ```

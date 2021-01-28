@@ -1,6 +1,8 @@
 # Promise
 [[toc]]
 
+Type: Object
+
 > 采用promise可以解决异步编程的逻辑嵌套问题
 > cb => then chain
 
@@ -9,6 +11,7 @@
 - 状态：pending fulfilled rejected
 - 状态流转：pending 到后两者，到了后两者不再变
 - 必须有一个 then 异步执行方法，then 接受两个参数且必须返回一个promise
+- 值的代理
 
 题目：问数字打印顺序
 ```js
@@ -203,3 +206,16 @@ async function printFiles() {
 异常：Uncaught (in promise)  catch 的过去时，在尾部 catch 即可
 
 [今日头条: 介绍下Promise，内部实现(一面) · Issue #14 · frontend9/fe9-interview](https://github.com/frontend9/fe9-interview/issues/14)
+
+[高级异步模式 - Promise 单例](https://mp.weixin.qq.com/s/WOPY0OCJX8upEcMHm6F5Xw)
+[高级 Promise 模式 - Promise缓存](https://mp.weixin.qq.com/s/-NIAl9MZ1VaAZWLTL4H7LA)
+
+返回 Promise，而非 await 的结果
+
+lodash memory 简化使用
+
+## finally
+不支持任何入参
+
+Chrome 63+
+

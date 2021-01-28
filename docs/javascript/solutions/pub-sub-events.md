@@ -6,6 +6,8 @@
 
 发布者与订阅者，松耦合
 
+once 执行后即 off 掉
+
 ```js
 // const e = new Event()
 // e.on('hi', (payload) => console.log('click', payload))
@@ -15,7 +17,11 @@ class Event {
   events = {} // { type: [] }
 
   on(type, cb) {
-    ;(this.events[type] || (this.events[type] = [])).push(cb)
+    if (!this.events[type]) {
+      this.events[type] = []
+    }
+    this.events[type].push(cb)
+    // ;(this.events[type] || (this.events[type] = [])).push(cb)
   }
 
   emit(type, payload) {
@@ -41,7 +47,11 @@ class Event {
       self.off(type, onceCb) // 里边不能直接用 this
       cb.apply(self, arguments)
     }
-    ;(this.events[type] || (this.events[type] = [])).push(onceCb)
+    if (!this.events[type]) {
+      this.events[type] = []
+    }
+    this.events[type].push(onceCb)
+    // ;(this.events[type] || (this.events[type] = [])).push(onceCb)
   }
 }
 

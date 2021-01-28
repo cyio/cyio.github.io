@@ -2,6 +2,7 @@
 
 - 如何判断正在执行 tId
 - apply 还是 call，arguments => apply
+- 注意，内部用匿名函数即可，并不需要递归
 
 节流，正在执行，忽略
 ```js
