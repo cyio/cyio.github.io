@@ -135,10 +135,10 @@ pragma 〔计〕杂注,编译指示
 
 ## GET 与 POST 区别
 
-用途
-参数形式
-编码
-安全性
+- 用途
+- 参数形式
+- 编码
+- 安全性
 
 对于 GET 方式的请求，浏览器会把 http header 和 data 一并发送出去，服务器响应 200（返回数据）； 而对于 POST，浏览器先发送 header，服务器响应 100 continue，浏览器再发送 data，服务器响应 200 ok（返回数据）。
 
@@ -189,4 +189,31 @@ sessionStorage
 
 ## TCP
 
-- TCP 三次握手，建立连接前，确认双方收发能力
+TCP 三次握手，建立可靠连接，双边要同步(SYN)和确认(ACK)
+```
+C -> SYN -> S
+C <- SYN-ACK <- S
+C -> ACK -> S
+```
+序列号和确认号的使用允许双方检测丢失或乱序的数据片段
+
+https://www.google.com/search?q=tcp+handshake&oq=tcp+handshake&aqs=chrome..69i57.6609j0j7&sourceid=chrome&ie=UTF-8
+
+四次挥手 Finish
+```
+C -> FIN -> S
+C <- ACK <- S
+C <- keep send and FIN <- S
+C -> ACK -> S
+```
+[TCP 4-times close - The Wireshark Wiki](https://wiki.wireshark.org/TCP%25204-times%2520close)
+
+## Etag 和 Last-Modified 区别，使用场景
+- 优先级
+- 准确性、及时性
+- 场景
+
+> Etag nginx 是基于 Last-Modified 和 Content-Length 计算，更新更及时？
+
+## Expires和Cache-Control
+Expires 要求客户端和服务端的时钟严格同步。 HTTP1.1 引入 Cache-Control来克服Expires头的限制。如果max-age和Expires同时出现，则 max-age 有更高的优先级。

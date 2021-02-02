@@ -23,6 +23,17 @@
 
 变种，输入整形数字，输出字符串
 
+```js
+  function revert(num) {
+    let str = String(num)
+    if (str.length <= 1) return str
+    return str.slice(-1) + revert(str.slice(0, str.length - 1))
+  }
+
+  let r = revert('4321')
+  console.log(r)
+```
+
 [第 99 题：编程算法题 · Issue #153 · Advanced-Frontend/Daily-Interview-Question](https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/153#issuecomment-508535870)
 
 递归实现 sum

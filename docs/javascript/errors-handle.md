@@ -87,3 +87,9 @@ Capturing Events - Docs https://docs.sentry.io/error-reporting/capturing/?platfo
     
     window.addEventListener('unhandledrejection', event => {
 ```
+
+## 1px gif
+1. 没有跨域问题，一般这种上报数据，代码要写通用的；（排除ajax）
+2. 不会阻塞页面加载，影响用户的体验，只要new Image对象就好了；（排除JS/CSS文件资源方式上报）
+3. 在所有图片中，体积最小；（比较PNG/JPG）
+

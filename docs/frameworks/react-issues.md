@@ -1341,5 +1341,5 @@ https://www.jianshu.com/p/f7769e01aa9c
   }, [curQuery, pagination])
 ```
 
-
-
+## URL hash 变化，如何更新页面
+[javascript - React doesn't reload component data on route param change or query change - Stack Overflow](https://stackoverflow.com/questions/48139281/react-doesnt-reload-component-data-on-route-param-change-or-query-change)

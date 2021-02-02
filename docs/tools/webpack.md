@@ -27,19 +27,6 @@ webpack-dev-server --progress --colors
     - 异步加载
     - 处理静态资源如CSS/images
 
-## 什么是 CommonJS 模块
-
-每个文件有独立的域，通过导出使之能被引入
-
-```js
-// File1.js
-module.export = 2
-
-// File2.js
-var two = require('./File1.js')
-console.log(2 + two) // 4
-```
-
 ## 流程
 流程
 `code -> loaders -> plugins -> output`
@@ -174,6 +161,15 @@ module.exports = {
 [SplitChunksPlugin - 默认设置](https://webpack.js.org/plugins/split-chunks-plugin/#optimization-splitchunks)
 
 ## 构建性能
+
+方法论：
+- 多线程 thread-loader 请仅在耗时的 loader 上使用
+- 缓存 构建
+- 移除无用代码 tree-shaking 移除未引用代码，依赖 ES6 模块语法
+- 并行压缩
+
+loader、plugin 耗时分析 SpeedMeasurePlugin
+[探索webpack构建速度提升方法和优化策略](https://juejin.cn/post/6844904084781154318)
 
 ### noParse
 

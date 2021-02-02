@@ -208,3 +208,19 @@ background-size: cover;
 ## clip-path
 
 [Clippy — CSS clip-path maker](https://bennettfeely.com/clippy/)
+
+## 
+ios safari 100 vh 计算会包括导航底栏，解决
+```css
+  min-height: 100vh;
+  /* mobile viewport bug */
+  min-height: -webkit-fill-available;
+```
+[4 things in web development I've learned in 2020, so far - DEV Community](https://dev.to/cydstumpel/4-things-in-web-development-i-ve-learned-in-2020-so-far-3cg)
+
+[CSS3四个自适应关键字——fill-available、max-content、min-content、fit-content - 小火柴的蓝色理想 - 博客园](https://www.cnblogs.com/xiaohuochai/p/7210540.html)
+
+相当于 fit-content ?
+
+https://caniuse.com/?search=fill-available
+

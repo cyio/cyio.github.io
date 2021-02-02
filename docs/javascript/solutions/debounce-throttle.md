@@ -11,19 +11,22 @@
     return function(){
       if (tId) return
 
-      const context = this
-      const args = arguments
-      tId = setTimeout(function(){
+      // const context = this
+      // const args = arguments
+      // tId = setTimeout(function(){
+      tId = setTimeout(() => {
         // 保持原函数 this 和 参数
-        fn.apply(context, args)
+        // fn.apply(context, args)
+        fn.apply(this, arguments)
         tId = null
       }, wait)
     }
   }
 
   // test 对比才能看出效果
+  let fn = throttle((a) => console.log('resize', a), 400)
   window.addEventListener('resize', () => console.log('1'))
-  window.addEventListener('resize', throttle(() => console.log('resize'), 400))
+  window.addEventListener('resize', () => { fn('thro arg') })
 ```
 
 防抖，上一个定时器还未执行，取消掉。重新计时
@@ -35,10 +38,11 @@
         clearTimeout(tId)
       }
 
-      const context = this
-      const args = arguments
-      tId = setTimeout(function() {
-        fn.apply(context, args)
+      // const context = this
+      // const args = arguments
+      // tId = setTimeout(function() {
+      tId = setTimeout(() => {
+        fn.apply(this, arguments)
       }, wait)
     }
   }

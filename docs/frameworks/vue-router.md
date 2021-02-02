@@ -1,6 +1,18 @@
 # vue-router
 [[toc]]
 
+## 路由原理
+hash / history
+
+差异：
+- URL 显示，改变范围，历史记录显示
+- 刷新问题
+- 兼容性
+
+[深入理解前端中的 hash 和 history 路由 - 知乎](https://zhuanlan.zhihu.com/p/130995492)
+
+## basic
+
 - 为什么优先使用 router-link，首要原因是，写一次，兼容 history 和 hash 模式
 - 跳转常规用法 `router-link.left(tag="div" to="/rule")`
 - 模板中返回 `.left(@click="$router.go(-1)")`

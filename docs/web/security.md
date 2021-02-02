@@ -47,10 +47,17 @@ X-Frame-Options 防止页面被嵌入恶意利用
 
 ## cookie 相关
 
-- HttpOnly 只能发请求携带，禁用 JS 读取。服务端设置`Set-Cookie`，减轻 XSS 攻击
+- HttpOnly 限制 cookie 只能发请求携带，禁用 JS 读取。服务端设置`Set-Cookie`，减轻 XSS 攻击
 - SameSite 减轻 CSRF 攻击
-- 会话 cookie，页面关闭时移除
+- 会话 cookie（默认），页面关闭时移除
 - 常驻 cookie
 
 ## Crypto
 敏感数据加密保存
+
+## 中间人攻击
+
+[中间人攻击 - 维基百科，自由的百科全书](https://zh.wikipedia.org/wiki/%25E4%25B8%25AD%25E9%2597%25B4%25E4%25BA%25BA%25E6%2594%25BB%25E5%2587%25BB)
+
+证书校验
+

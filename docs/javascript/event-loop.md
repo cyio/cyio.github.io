@@ -1,7 +1,9 @@
 # 事件循环
 
 [HTML Standard](https://html.spec.whatwg.org/multipage/webappapis.html#event-loops)
+分类：
 
+流程：
 1. 执行同步代码，这属于宏任务
 2. 执行栈为空，查询是否有微任务需要执行
 3. 执行所有微任务

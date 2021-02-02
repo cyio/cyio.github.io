@@ -32,7 +32,8 @@ Tuple 元组 有组织的数组
 
 ## interface 和 type
 
-interface 适合开发库，便于扩展，写业务组件建议用 type
+- 过去区别大，现在区别很小，都可以扩展
+- interface 适合开发库，便于扩展，写业务组件建议用 type
 
 ```js
 interface Props {

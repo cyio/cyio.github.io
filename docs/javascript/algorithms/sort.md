@@ -8,7 +8,7 @@
 
 空间复杂度 O(n^2)
 
-优化点：有序数据可以标记判断，将时间降到 O(n)
+优化：有序数据可以标记判断，将时间降到 O(n)
 
 ```js
   // 1 4 5 2 3
@@ -35,6 +35,28 @@ function bubbleSort(arr) {
 }
 let result = bubbleSort([0, 10, 1, 3, 5, 4])
 console.log(result)
+
+
+// 优化
+function bubbleSort(arr) {
+  let i, j
+  let n = arr.length
+  let isSorted = true // flag
+  for (i = 0; i < n - 1; i++) { // 注意边界处理
+    for (j = i + 1; j < n; j++) {
+      if (arr[i] > arr[j]) {
+        var tmp = arr[j]
+        arr[j] = arr[i]
+        arr[i] = tmp
+        isSorted = false
+      }
+    }
+    if (isSorted) {
+      break
+    }
+  }
+  return arr
+}
 ```
 字符串按长度排序
 ```js
@@ -144,23 +166,26 @@ console.log(quickSort(arr))
 
 ## 插入排序
 
+描述：
+1. 往前数牌，不断比较移动元素，找到最终插入位置时插入
+2. 下一个数
+
 ```js
 // 将值在数组前插入
 // 移除某个位置的值
 function insertionSort(arr) {
-  let i, j
-  for (i = 0; i < arr.length - 1; i++) {
-    for (j = i + 1; j < arr.length; j++) {
-      if (arr[j] < arr[i]) {
-        arr.splice(i, 0, arr[j])
-        arr.splice(j + 1, 1)
-        break
-      }
+  for (let i = 0; i < arr.length; i++){
+    let j = i
+    let cur = arr[i]
+    while(j > 0 && arr[j - 1] > cur) {
+      arr[j] = arr[j - 1]
+      j--
     }
+    arr[j] = cur
   }
   return arr
 }
 let result = insertionSort([3, 5, 2, 11, 1, 2, 'abc', 'zfd', 'sad', 'eng'])
 console.log(result)
 ```
-
+[前端开发必会的JS算法之插入排序-码云笔记](https://www.mybj123.com/4925.html)

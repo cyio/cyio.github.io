@@ -79,7 +79,7 @@ srcset/sizes
 
 传统方法 scroll 性能不好
 
-IntersectionObserver 交叉观察者接口，异步，空闲时执行
+### IntersectionObserver 交叉观察者接口，异步，空闲时执行
 
 Chrome 51+，不支持 IE，兼容性很好
 
@@ -91,6 +91,8 @@ Chrome 51+，不支持 IE，兼容性很好
 缺点：依赖 JS 才能正确设置 src，Chrome 原生的好处
 
 [Tips for rolling your own lazy loading | CSS-Tricks](https://css-tricks.com/tips-for-rolling-your-own-lazy-loading/)
+
+示例 [Interaction observer example](https://codepen.io/Sidstumple/pen/WNwvYZR?editors=1010)
 
 ## webp
 

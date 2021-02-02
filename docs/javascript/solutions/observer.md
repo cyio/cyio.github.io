@@ -1,12 +1,13 @@
 # 观察者
 两个角色：
-1. 目标
+1. 目标（被观察者）
   - 维护观察者列表（收集依赖？）
   - 添加观察者
   - 通知观察者更新
 2. 观察者
+  - 允许传入业务回调
   - 提供 update 方法供目标调用
-  - update 内为业务逻辑
+  - update 内执行业务回调
 
 ```js
   //   const observerCallback = function() {
@@ -33,7 +34,7 @@
       this.list = []
     }
 
-    addObserver() {
+    addObserver(observer) {
       this.list.push(observer)
     }
 

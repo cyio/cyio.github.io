@@ -344,3 +344,7 @@ console.log(arr)
 
 - 代码简短，用 for 配合 break
 - 代码较长，建议定义变量标记
+
+## 副作用方法
+splice | sort | reverse
+

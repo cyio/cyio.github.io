@@ -41,6 +41,7 @@ Map => WeakMap
     }
     for (let i in data) {
       let cur = data[i]
+      // res[i] = Array.isArray(cur) || isObject(cur) ? deepClone(cur, map) : cur
       res[i] = Array.isArray(cur) || isObject(cur) ? deepClone(cur, map) : cur
     }
     return res

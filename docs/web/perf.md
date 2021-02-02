@@ -238,3 +238,10 @@ babel 配置隐式 import css
 
 [如何监控网页的卡顿？ - 知乎](https://zhuanlan.zhihu.com/p/39292837)
 
+
+```js
+let hasFocus = document.hasFocus();
+removeEventListener('focus', focusListener);
+removeEventListener('blur', blurListener);
+```
+https://github.com/GoogleChromeLabs/squoosh/blob/dev/src/shared/prerendered-app/Intro/blob-anim/index.ts#L337

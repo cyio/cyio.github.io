@@ -57,6 +57,8 @@ RegExp 是有状态的 lastIndex 会更新
   matchAll('abcdbc', 'bc') // [1, 4]
 ```
 
+match 如果找不到，返回 null
+
 ## 基础
 
 ### 创建方式

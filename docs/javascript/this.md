@@ -49,3 +49,20 @@
 > this的值在函数被调用的时候才会指定
 > 顶级的非方法式调用会将 this视为window
 
+
+## 易错题
+```js
+  var name = 'mike'
+  var people = {
+    name: 'jordan',
+    say: function (){
+      console.log(this.name)
+    }
+  }
+  function d(i) {
+    return i()
+  }
+
+  d(people.say) // mike
+  // 参数，按值传递，复制过来一个函数，与原对象无关系
+```
