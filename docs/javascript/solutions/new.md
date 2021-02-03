@@ -8,7 +8,7 @@ var o = new Foo();
 var o = new Object();
 // 2. 原型链继承
 o.__proto__ = Foo.prototype;
-// 3. 新对象作为 this，执行构造器函数
+// 3. 执行构造器函数，新对象作为 this
 var res = Foo.call(o);
 // 4. 返回处理，如果构造函数返回了对象类型，包括二级类型
 res instanceof Object ? res : o;

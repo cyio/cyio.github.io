@@ -180,3 +180,16 @@ airbnb 是 unix
 ```jsx
 <div className="foo" onClick={() => {}} role="button" />
 ```
+
+## import 不存在（比如删了）
+
+eslint recommend / react 规则集里没有，需要安装 eslint-plugin-import，或者在文件头设置`@ts-check`
+
+[javascript - how can I get warnings when importing modules that don't exist - Stack Overflow](https://stackoverflow.com/questions/46775309/how-can-i-get-warnings-when-importing-modules-that-dont-exist)
+[eslint-plugin-import/named.md at f2db74a347a030c15a387826500cdc98203eac1e · benmosher/eslint-plugin-import](https://github.com/benmosher/eslint-plugin-import/blob/HEAD/docs/rules/named.md)
+
+## alias path es/ts 无法识别
+需要手动在对应配置添加
+
+[webpack小记——alias与eslint](https://juejin.cn/post/6844903832888033288)
+

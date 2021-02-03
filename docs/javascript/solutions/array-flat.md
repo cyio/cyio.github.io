@@ -113,3 +113,4 @@ console.log(flat(arr))
 ```
 
 [JavaScript 专题之数组扁平化 · Issue #36 · mqyqingfeng/Blog](https://github.com/mqyqingfeng/Blog/issues/36)
+[面试官连环追问：数组拍平（扁平化） flat 方法实现](https://juejin.cn/post/6844904025993773063#heading-10)

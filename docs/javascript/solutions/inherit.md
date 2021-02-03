@@ -95,7 +95,7 @@
 
 ## 原型链继承
 形式
-```
+```js
 Sub.prototype = new Super() // new 设置原型指向时，参数未知
 ```
 
@@ -153,3 +153,12 @@ function object(o) {
 
 解决组合继承调用两次问题
 
+```js
+function inheritPrototype(sub, parent) {
+  const obj = Object.create(parent.prototype); // 创建父类原型的副本
+  obj.constructor = sub; // 将副本的构造函数指向子类
+  sub.prototype = ob; // 将该副本赋值给子类的原型
+}
+```
+
+[JavaScript 七大继承全解析](https://juejin.cn/post/6844903816798666760)
