@@ -17,5 +17,8 @@ SyntaxError: export declarations may only appear at top level of a module
 出处：CommonJS/ES6
 require 输出 值拷贝，import 输出值引用
 require 运行时 动态加载 import 静态编译
+require 同步（设计为引本地文件） import 异步（浏览器、网络请求）
 import 默认严格模式
+
+
 

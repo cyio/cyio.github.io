@@ -3,7 +3,7 @@ name: github pages
 on:
   push:
     branches:
-      - dev
+      - dev # 监听分支
 
 jobs:
   deploy:
@@ -31,4 +31,5 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./docs/.vuepress/dist
+          publish_dir: ./docs/.vuepress/dist # 打包生成目录
+          # publish_branch: gh-pages # 推送分支

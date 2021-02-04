@@ -1,17 +1,18 @@
 ```pug
-.tabs
-  .tab__item(
-    v-for="tabItem in tabOptions"
-    :class="{ 'is-active': activeTab === tabItem.key }"
-    @click="activeTab = tabItem.key") {{tabItem.title}}
-    .tab__bottom-bar
-.ajz-tab__pane(
-  v-for="(item, index) in tabOptions"
-  :class="item.class"
-  :key='item.name'
-  v-if="activeTab === index"
-)
-  component(:is="item.component")
+template
+  .ui-tabs
+    .tab__item(
+      v-for="tabItem in tabOptions"
+      :class="{ 'is-active': activeTab === tabItem.key }"
+      @click="activeTab = tabItem.key") {{tabItem.title}}
+      .tab__bottom-bar
+  .ui-tab__pane(
+    v-for="(item, index) in tabOptions"
+    :class="item.class"
+    :key='item.name'
+    v-if="activeTab === index"
+  )
+    component(:is="item.component")
 ```
 ```js
       activeTab: 'A',

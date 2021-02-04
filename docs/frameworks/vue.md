@@ -13,14 +13,21 @@ Model-View-ViewModel
     - 绑定的单双向：View 层与 Model 层之间的映射关系。
   - 组件化开发
 - 不同点：
-
+  - vue 拥抱经典 Web，react 完全用 JS
+  - 获知变化：vue 自动，收集依赖、精确更新，默认优化，react 显式 setState，递归更新
   - vue 双向绑定，react 单向绑定
+  - 生态，RN，Weex
 
     > 单向绑定使得数据流也是单向的，对于复杂应用来说，这是实施统一的状态管理（如 redux）的前提。双向绑定在一些需要实时反应用户输入的场合
     > 会非常方便（比如多级联动菜单）。但通常认为复杂应用中这种便利比不上引入状态管理带来的优势。注意，Vue 虽然通过 v-model 支持双向绑定，
     > 但是如果引入了类似 redux 的 vuex，就无法同时使用 v-model。参见[vuex/forms.md at master · vuejs/vuex](https://github.com/vuejs/vuex/blob/master/docs/zh-cn/forms.md)
+    > 通常一个绑定一个数据就需要一个Watcher，一但我们的绑定细粒度过高就会产生大量的Watcher,这会带来内存以及依赖追踪的开销
+
+[对比其他框架 — Vue.js](https://cn.vuejs.org/v2/guide/comparison.html#React)
 
 [React 的单向数据流与 Vue 的双向绑定 - CSDN 博客](https://blog.csdn.net/qq_41206257/article/details/80992085)
+
+[你是如何理解Vue的响应式系统的 - 来亦何哀 - 博客园](https://www.cnblogs.com/wangxi01/p/11589938.html)
 
 ## 双向绑定
 
@@ -373,7 +380,7 @@ EventBus.$on('i-got-clicked', clickCount => {
 
 > 因此每个实例可以维护一份被返回对象的独立的拷贝
 
-- 实例并不一定需要，官方示例、源码是可以写对象的
+- 实例并不一定需要，官方示例、源码是可以写对象的（Vue 3 已不支持）
 - 组件是可复用的 Vue 实例，组件涉及**数据隔离**必须
 
 ## watch
@@ -492,6 +499,8 @@ v <- m
 watch $emit
 ```
 ## key 的作用
+> 提示 diff 算法跟踪节点，何时重用、修补、重新排序、重新创建
+
 - 默认就地更新，只适用于不依赖子组件状态或临时 DOM 状态
 - 提示
 - 希望重用和排序
@@ -525,11 +534,39 @@ watch $emit
 
 [[Vue][面试]你了解哪些vue性能优化的方法_你好，欢迎光临！-CSDN博客_vue性能优化面试](https://blog.csdn.net/u010622874/article/details/108057235)
 [[Vue][面试]你知道Vue中key的作用和工作原理吗？说说你对它的理解。_你好，欢迎光临！-CSDN博客_vue中key的作用和原理](https://blog.csdn.net/u010622874/article/details/108057074)
-[[Vue][面试]v-if和v-for哪个优先级更高？如果两个同时出现，应该怎么优化得到更好的性能？_你好，欢迎光临！-CSDN博客](https://blog.csdn.net/u010622874/article/details/108056895)
 
 ## 异步更新队列
 1. 组件级 watcher
 2，存入队列，nextTick 时执行
 2. 用户定义的 nextTick cb 放在最后
+
+
+## Vue 3 迁移指南
+[介绍 | Vue.js](https://v3.cn.vuejs.org/guide/migration/introduction.html#%25E6%25A6%2582%25E8%25A7%2588)
+
+### v-model 支持多个
+
+https://v3.cn.vuejs.org/guide/migration/v-model.html#_3-x-%E8%AF%AD%E6%B3%95
+
+### v-if v-for 同时应用
+2.x for 优先
+3.x if 优先
+
+官方建议 1. 避免同层使用，易混淆 template ? 2. 过滤，用计算属性
+https://v3.cn.vuejs.org/guide/migration/v-if-v-for.html#%E4%BB%8B%E7%BB%8D
+
+[[Vue][面试]v-if和v-for哪个优先级更高？如果两个同时出现，应该怎么优化得到更好的性能？_你好，欢迎光临！-CSDN博客](https://blog.csdn.net/u010622874/article/details/108056895)
+
+[Rewrite in Vite](https://antfu.me/posts/rewrite-in-vite)
+
+> 双向绑定是对表单来说的，表单的双向绑定，说到底不过是 value 的单向绑定 + onChange 事件侦听的一个语法糖
+> 单向数据流核心是在于避免组件的自身(未来可复用)状态设计，它强调把 state hoist 出来进行集中管理。
+
+> React setState 引起局部重新刷新。为了达到更好的性能，React 暴漏给开发者 shouldComponentUpdate 这个生命周期 hook，来避免不需要的重新渲染(相比之下，Vue 由于采用依赖追踪，默认就是优化状态：你动了多少数据，就触发多少更新，不多也不少，而 React 对数据变化毫无感知，它就提供 React.createElement 调用已生成 virtual dom)。
+
+setState 修改了数据，但这个数据被哪些地方依赖，React 并不知道
+
+react 递归更新，还有 diff 把关，并不一定重渲染 ODM
+
 
 
