@@ -249,3 +249,17 @@ use 下面的先执行，使用了 compose
 
 原因：fsevents 本地编译失败，可能是升级过系统，编译依赖的某些库是旧的。表现很明显，但被忽略了，因为 webpack/ts-loader 会回退用轮询方式 watch files
 
+## 按需加载
+`import { xx } from yy`
+这么写，理论上会全局引入 yy
+
+tree-shaking 依赖 ES6 导入导出以精确分析，但有些老库是 ES5 写的
+
+用 babel 转换插件，写法不变，插件进行替换
+
+lodash 支持按方法手动按需引入，但导入比较多时，要写很多行，繁琐
+
+antd 默认对 JS 部分，用 babel plugin 转换成按需引入写法。如果全局引入，会在控制台给出警告。
+
+[快速上手 - Ant Design](https://3x.ant.design/docs/react/getting-started-cn#%25E6%258C%2589%25E9%259C%2580%25E5%258A%25A0%25E8%25BD%25BD)
+

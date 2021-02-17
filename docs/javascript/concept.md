@@ -404,3 +404,24 @@ JavaScript operator: Optional chaining operator (?.)
 
 @vue/babel-preset-app 目前是接受 stage3 及以下
 
+## 赋值问题
+```js
+var a = {n: 1}
+var b = a
+a.x = a = {n: 2}
+
+console.log(a, a.x, b)
+```
+
+```js
+let x = [1, 2, 3]; 
+let y = x; 
+let z = [4, 5, 6]; 
+y[0] = 10; 
+y = z; 
+z[1] = 20; 
+x[2] = z = 30; 
+console.log(x, y, z)
+```
+混淆点：y 等于最终的 z 吗？不，已经生成了不同的 z
+

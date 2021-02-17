@@ -1,0 +1,51 @@
+<html>
+  <head></head>
+  <body>
+    <div>
+      <span>f</span>
+      <span>o</span>
+      <span>o</span>
+    </div>
+  </body>
+  <script>
+    // 题目：统计DOM节点总数及深度 https://codepen.io/cyio/pen/XWNmQWo?editors=1000
+    // 关键 api： children type:HTMLCollection，而 type:childels，elList 会包括文本节点
+    // 如果只需要计数，可以用 el.childElementCount
+    let data = {
+      totalElementsCount: 0,
+      maxDOMTreeDepth: 0,
+      maxChildrenCount: 0
+    }
+    function countEls(el) {
+      //  计算自身
+      let count = 1
+      //  let count = el.childElementCount
+      //  判断是否存在子节点
+      let { children } = el
+      // if (children && children.length) { // 没有子节点，会是 []
+      //  对子节点进行递归统计
+      data.maxChildrenCount = Math.max(data.maxChildrenCount, children.length)
+      for (child of children) {
+        if (child.nodeName !== 'SCRIPT') { // 排除这个脚本
+          // console.log(child)
+          count += countEls(child)
+        }
+      }
+      return count
+    }
+
+    // 深度遍历？
+    function computeDepth(el, depth = 0) {
+      data.maxDOMTreeDepth = Math.max(data.maxDOMTreeDepth, depth)
+      // console.log(el+' '+depth);
+      console.log(el.children)
+      for (let i = 0; i < el.children.length; i++) {
+        computeDepth(el.children[i], depth + 1);
+      }
+    }
+
+    data.totalElementsCount = countEls(document)
+    computeDepth(document)
+    console.log({ data })
+  </script>
+</html>

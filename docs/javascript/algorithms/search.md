@@ -45,3 +45,6 @@ let result = binarySearch([1, 2, 3, 4, 6], 0, 4, 6)
 console.log(result)
 ```
 [写对二分查找不能靠模板，需要理解加练习 （附练习题，持续更新） - 搜索插入位置 - 力扣（LeetCode）](https://leetcode-cn.com/problems/search-insert-position/solution/te-bie-hao-yong-de-er-fen-cha-fa-fa-mo-ban-python-/)
+
+开闭区间，闭区间表示包含
+

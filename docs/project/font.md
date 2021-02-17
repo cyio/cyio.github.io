@@ -42,3 +42,4 @@
 自托管
 [KyleAMathews/typefaces: NPM packages for Open Source typefaces](https://github.com/KyleAMathews/typefaces)
 
+中文字体压缩的那些事 – 涂雨期的博客 https://hsingko.github.io/post/compress_webfont/

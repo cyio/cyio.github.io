@@ -163,6 +163,9 @@ sessionStorage
 - 创建一个新的相同 URL 页面，会创建新的 session
 - 试验 https://codesandbox.io/s/992th?file=/src/index.js
 
+sessionStorage, localStorage 存储 size 限制 5MB，各浏览器一致，同步执行，可阻塞主线程
+[Storage for the web](https://web.dev/storage-for-the-web/#check)
+
 ## http 与 tcp 区别
 
 - tcp 是传输层，http 是跑在 tcp 上的应用层协议

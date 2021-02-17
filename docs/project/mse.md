@@ -39,3 +39,5 @@ fetchAB(assetURL, function(buf) {
 
 [Media Source API - Web APIs | MDN](https://developer.mozilla.org/en-US/docs/Web/API/Media_Source_Extensions_API#media_source_extensions_concepts_and_usage)
 [Ddmo](https://nickdesaulniers.github.io/netfix/demo/bufferAll.html)
+
+[「媒体源扩展(Media Source Extensions)」是什么，有什么应用场景？ - 知乎](https://www.zhihu.com/question/314810515/answer/618143543)

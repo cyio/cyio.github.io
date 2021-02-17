@@ -1,6 +1,7 @@
 # count dom nodes
 
 ```js
+// 包括文本节点
 function countNodes(node) {
   //  计算自身
   let count = 1

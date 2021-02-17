@@ -25,6 +25,8 @@ Model-View-ViewModel
 
 [对比其他框架 — Vue.js](https://cn.vuejs.org/v2/guide/comparison.html#React)
 
+[前端：Vue和React的优点分别是什么？两者的最核心差异对比是什么？ - 51CTO.COM](https://developer.51cto.com/art/201907/599732.htm)
+
 [React 的单向数据流与 Vue 的双向绑定 - CSDN 博客](https://blog.csdn.net/qq_41206257/article/details/80992085)
 
 [你是如何理解Vue的响应式系统的 - 来亦何哀 - 博客园](https://www.cnblogs.com/wangxi01/p/11589938.html)
@@ -420,7 +422,11 @@ const copies = callbacks.slice(0) // 复制一个数组，操作不会影响原�
 
 ## 异步组件
 
-import Foo from './Foo.vue' 改成 const Foo = () => import('./Foo.vue')
+```js
+import Foo from './Foo.vue' 
+// after
+const Foo = () => import('./Foo.vue')
+```
 
 ## mock
 1. vue cli3 在 devServer 中添加 before 
@@ -568,5 +574,30 @@ setState 修改了数据，但这个数据被哪些地方依赖，React 并不�
 
 react 递归更新，还有 diff 把关，并不一定重渲染 ODM
 
+> React JSX 过度的灵活性导致运行时可以用于优化的信息不足
 
+## 简单状态管理
+- 状态提升
+- 易于跟踪变化 debug
+[状态管理 — Vue.js](https://cn.vuejs.org/v2/guide/state-management.html#%25E7%25AE%2580%25E5%258D%2595%25E7%258A%25B6%25E6%2580%2581%25E7%25AE%25A1%25E7%2590%2586%25E8%25B5%25B7%25E6%25AD%25A5%25E4%25BD%25BF%25E7%2594%25A8)
 
+## 源码
+从正式发布的第一个版本读 0.01-0.03
+
+### v0.7.0 最低版本？
+```js
+new Vue(options)
+  function ViewModel(options)
+    new Compiler(this, options)
+```
+this 表示 vm instance,
+
+核心流程在 compiler.js
+
+Compiler 构造函数，原型扩展方法
+
+有很多连续赋值
+
+初始化元素：setupElement 确定 el，深拷贝 template 并返回 el
+
+partial 类似 slot？
