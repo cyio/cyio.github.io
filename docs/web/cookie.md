@@ -74,6 +74,12 @@ var c_value = escape(value) + ((exdays == null) ? "" : "; expires=" + exdate.toU
 意思是对接受的请求，不会存 cookie，我们可以自己封装利用 storage 存起来模拟
 [微信小程序 cookie-session 问题 | 等英博客](https://www.waitig.com/%25E5%25BE%25AE%25E4%25BF%25A1%25E5%25B0%258F%25E7%25A8%258B%25E5%25BA%258Fcookie-session%25E9%2597%25AE%25E9%25A2%2598.html)
 
+## 基于 token 的认证方式更好
+
+cookie 与 token 方式，根本区别，存储位置，前者需要服务器存 session、客户端存 session id，后者算法生成 token，仅客户端保存（JWT）
+
+无状态、性能更好（带宽、服务器解密即可，不必存 session）、通用性（小程序、oAuth）
+
 ## 参考
 
 [Cookie -- 前端视角 - hf872914334 的博客 - CSDN 博客](https://blog.csdn.net/hf872914334/article/details/78979007)

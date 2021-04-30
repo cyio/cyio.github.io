@@ -33,6 +33,35 @@ android 有的应用如 youtube/playstore 不走系统代理
 # 本地静态 server
 # 规则：自定义域名或URL<空格>本地目录路径 （以下示例请替换为自己本地的写法）
 my.demo/bw/ file:///Users/kaiye/Projects/Demo/002-black-white/
+
+# 返回内容替换
+``rule
+aaa: bbb
+``
+^www.xx.app/chunk-vendors.*.js resReplace://{rule}
+
+# 对某些域名不拦截
+/xx.xx.com/ disable://intercept
+
+# 任意域名绑定到本地任意服务
+https://my.demo/ 127.0.0.1:8080
+
+# 重写该域名的后端接口路径到线上服务地址
+https://my.demo/api/ https://backend.example.com/api/
+
+# 或直接转发到局域网某台机器的具体端口
+https://my.demo/api2/ http://127.0.0.1:3000
+
+# 把https请求转成http
+https://www.test.com http://www.test.com
+
+# 把根路径的请求转发到指定的ip和端口
+/^https?:\/\/www\.test\.com(:\d*)?\/?(\?|$)/ 192.168.30.118:8877
+
+# 处理后缀为gif|jpg|jpeg|png|bmp|swf|ico|js|css|html的请求
+/^https?:\/\/www\.test\.com(:\d*)?\/[^?]*\.(gif|jpg|jpeg|png|bmp|swf|ico|js|css|html)(\?|$)/i 127.0.0.1:8080
+
 ```
+
 [使用whistle模拟cgi接口异常：错误码、502、慢网速、超时 - 猫哥_kaiye - 博客园](https://www.cnblogs.com/kaiye/p/10137592.html)
 [使用 whistle 替代本地 nginx/webpack 服务 - 猫哥_kaiye - 博客园](https://www.cnblogs.com/kaiye/p/9628692.html)

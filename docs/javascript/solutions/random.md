@@ -1,5 +1,14 @@
 # 随机 去重
 
+生成给定区间的随机数
+```js
+  // 2 5
+  function random(lower, higher) {
+    // return lower + Math.floor(Math.random * (higher - lower))  // 左闭右开
+    return lower + Math.floor(Math.random * (higher - lower + 1)) // 左闭右闭
+  }
+```
+
 随机生成一个 0 ~ 99 的数，或者数组长度为 n 的随机索引
 
 随机生成 1-5 整数

@@ -23,3 +23,22 @@ import { throttle } from 'lodash-es';
 
 ## throttle
 throttle 包装了 debounce，仅设置不同，是否首次执行
+
+isObjectLike 相比 isObject 多了数组
+
+isEqual 深比较
+isEmpty 空对象
+has 对象有某个属性
+get 访问对象、可设默认值
+sortBy 集合、对象
+union 多数组唯一值
+uniq 去重
+difference 差集
+intersection 交集
+times 循环几次
+random 在指定范围内获取一个随机值
+omit 去掉对象的某些属性
+pick 挑选生成新对象，与 omit 相反
+sample 随机选择
+
+[Lodash: 10 Javascript Utility Functions That You Should Probably Stop Rewriting | Colin Toh](https://colintoh.com/blog/lodash-10-javascript-utility-functions-stop-rewriting)
