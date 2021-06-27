@@ -1,6 +1,16 @@
 # 性能
 [toc]
 
+[前端监控体系搭建 | 被删的前端游乐场](https://godbasin.github.io/front-end-playground/front-end-basic/deep-learning/monitor-and-report.html#%25E6%2595%25B0%25E6%258D%25AE%25E6%2594%25B6%25E9%259B%2586)
+
+## Guidelines
+1. 审计页面
+2. 使用报告找出优化点
+3. 一次改变一个点
+4. 每次改变后审计，观察效果
+
+[Improving Load Performance - Chrome DevTools 101 - YouTube](https://www.youtube.com/watch?v=5fLW5Q5ODiE)
+
 ## 方法论
 - 请求
   - 并发

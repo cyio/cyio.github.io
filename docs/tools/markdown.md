@@ -93,3 +93,6 @@ Here's a horizontal rule:
 code block
 with no highlighting
 ```
+
+[Using Markdown in Vim](https://vim.works/2019/03/16/using-markdown-in-vim/)
+
