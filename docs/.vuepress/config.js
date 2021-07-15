@@ -1,4 +1,5 @@
-const path = require('path');
+// const { path } = require('@vuepress/utils')
+const path = require('path')
 const fs = require('fs');
 const glob = require('glob');
 
@@ -17,11 +18,22 @@ module.exports = {
     ['meta', { name: 'theme-color', content: '#0089a7' }],
     ['link', { rel: 'apple-touch-icon', sizes: '180x180', href: '/favicon.ico' }],
   ],
-  plugins: {
-    '@vuepress/pwa': {
+  plugins: [
+    ['@vuepress/pwa', {
       serviceWorker: true,
       updatePopup: true
-    }
+    }],
+    // ['@vuepress/register-components', {
+        // componentsDir: path.resolve(__dirname, './components'),
+        // // components: {
+          // // BlogIndex: path.resolve(__dirname, './components/BlogIndex.vue'),
+          // // Footer: path.resolve(__dirname, './components/Footer.vue'),
+        // // },
+    // }]
+  ],
+  bundler: '@vuepress/vite',
+  bundlerConfig: {
+    // vite bundler options
   },
   themeConfig: {
     serviceWorker: {
@@ -122,6 +134,6 @@ function getChildren(dirName) {
       names.push(name)
     }
   })
-  console.log('glob', names)
+  // console.log('glob', names)
   return names
 }
