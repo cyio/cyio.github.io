@@ -17,6 +17,9 @@
 
 ## 复杂度
 
+![jIGhf.png (835×579)](https://i.stack.imgur.com/jIGhf.png)
+[algorithm - What does O(log n) mean exactly? - Stack Overflow](https://stackoverflow.com/questions/2307283/what-does-olog-n-mean-exactly)
+
 - 评估算法优劣，反映运行时间或占用存储空间随输入规模增长而增长的量级
 - 空间复杂度： 衡量运行时存储空间的占用，一般用大写 S(pace)
   - 内存有限制，需要选择更少内存方案
@@ -56,9 +59,9 @@
 | 优化排序矩阵查找 | O(n)       |
 | 归并、快排       | O(n log n) |
 
-[Master theorem (analysis of algorithms) - Wikipedia](https://en.wikipedia.org/wiki/Master_theorem_(analysis_of_algorithms)
+[Master theorem (analysis of algorithms) - Wikipedia](https://en.wikipedia.org/wiki/Master_theorem_analysis_of_algorithms)
 
-`O(n log n)` 念倍？
+`O(n log n)` 念什么？
 
 `2^n`和`n^2`，谁大，指数 n > 2，随着 n 变大，前者会远大于后者
 ```

@@ -1279,7 +1279,9 @@ react wrapper 引入问题
 
 browser api 兼容性，需要请求权限
 
+```
 import copy from 'copy-to-clipboard';
+```
 
 ## 半受控，props 变化，需要更新部分 state
 

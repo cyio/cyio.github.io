@@ -82,3 +82,4 @@ typings/
 docs/.vuepress/dist
 dist
 .DS_Store
+.temp
