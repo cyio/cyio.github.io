@@ -40,7 +40,8 @@
 ```js
   const sum = arr => {
     if (arr.length === 0) return 0
-    return arr.pop() + sum(arr)
+    // return arr.pop() + sum(arr) // 会修改原数组
+    return arr[0] + sum(arr.slice(1))
   }
   console.log(sum([1, 3, 5]))
 ```

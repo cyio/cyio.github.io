@@ -141,6 +141,8 @@ console.log(result)
 // 先考虑主要功能，再考虑边界情况
 // 注意最后数组合并用了递归，结束条件是传入的数组只剩下一个值
 // 是否假定了数组没有重复项，如果有重复项如何处理
+// 方法1：将 pivot 从中间取出，与剩余比较
+// 方法2：将 pivot 从开头pop，与剩余比较
 function quickSort(arr) {
   if (arr.length <= 1) return arr
 

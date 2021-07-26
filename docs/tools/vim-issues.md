@@ -117,23 +117,6 @@ set ma (modifiable) / set noma
 1. `<leader>e` 执行 AsyncRun
 2. `:cw` 打开 QuickFix 窗口
 
-## 终端
-
-```
-`:term`
-`<c-w>N` 在终端进入 normal 模式，按 i 恢复输入模式
-`<c-w>.` 向终端发送`<c-w>`
-`<c-w><c-c>` 强制结束终端
-`<c-w>:` ex 输入
-`<c-w>"{reg}` 粘贴寄存器
-
-`:1sp` 只给 1 高度，不适用，终端输出不总是更新在可视区域
-```
-
-使用好处：只占用 Vim 内窗口，可以作为 buffer 存在，不一定占用可视窗口
-
-`:term npm start` 用 vim-term 插件，更好些？只需要启一个进程，能看到输出，退出窗口即杀掉进程
-
 ## vim-vue 插件卡顿
 
 原因分析：并不仅仅是多语言语法高亮问题导致
@@ -175,3 +158,6 @@ then remove the offending patterns
 
 ## [用 Vim 编辑 Markdown 时直接粘贴图片 - 知乎](https://zhuanlan.zhihu.com/p/138060559)
 
+## 模式
+
+- 多用 buffers，替代 Tab/Window

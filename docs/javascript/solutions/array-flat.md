@@ -34,18 +34,21 @@ res 需要放在函数外面，不是纯函数
 
 ```js
 const arr = [1, 2, [3, [4]], 5]
-let res = [] // 需要定义在外面
 function flat(arr) {
-  for (let i of arr) {
-    if (i instanceof Array) {
-      flat(i)
-    } else {
-      res.push(i)
+  let res = []
+  function inner(arr) {
+    for (let i of arr) {
+      if (i instanceof Array) {
+        inner(i)
+      } else {
+        res.push(i)
+      }
     }
   }
+  inner(arr)
+  return res
 }
 flat(arr)
-console.log(res)
 ```
 
 4. reduce + 递归

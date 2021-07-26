@@ -1,5 +1,5 @@
 # Vim
-${toc}
+[toc]
 
 > - 编辑器之争，出一些新编辑器，如 vscode 看到很多人安利，其实你不要动，那个是给大多数不会 vim 的开发人员使用的。
 > - 在各种编辑器里尝试 vim 插件，最后都会回来，为什么？并不是因为 vim 自身，而是因为 vim 作为整个开发环境的一个组件，vim 与 tmux 等工具组合，
@@ -16,6 +16,10 @@ ${toc}
 ## 基础
 
 ### 玩转帮助
+
+[Vim Cheat Sheet - 中文](https://vim.rtorr.com/lang/zh_cn/)
+ 
+[Vim Cheat Sheet & Quick Reference](https://quickref.me/vim)
 
 [How to find vimdoc help : vim](https://www.reddit.com/r/vim/comments/2eb82s/how_to_find_vimdoc_help/)
 - `:help help-summary`
@@ -247,6 +251,23 @@ buffer 可以开很多，不关心空间安排
 
 vim-rest-console
 
+### 终端
+
+```
+`:term`
+`<c-w>N` 在终端进入 normal 模式，按 i 恢复输入模式
+`<c-w>.` 向终端发送`<c-w>`
+`<c-w><c-c>` 强制结束终端
+`<c-w>:` ex 输入
+`<c-w>"{reg}` 粘贴寄存器
+
+`:1sp` 只给 1 高度，不适用，终端输出不总是更新在可视区域
+```
+
+使用好处：只占用 Vim 内窗口，可以作为 buffer 存在，不一定占用可视窗口
+
+`:term npm start` 用 vim-term 插件，更好些？只需要启一个进程，能看到输出，退出窗口即杀掉进程
+
 ## vimscript
 
 - 每天使用的命令就是，进一步学习可增强
@@ -314,4 +335,5 @@ vim-rest-console
 您可以使用:scriptnames找出来源的插件。
 
 我会禁用所有插件，然后逐个重新启用它们，直到问题重新出现
+
 

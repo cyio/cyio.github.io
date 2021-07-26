@@ -2,6 +2,17 @@
 
 [[toc]]
 
+## 功能
+
+```
+这里主要列举几个Vimium没有的功能 
+     1. sg/sb -> 搜索选中文本 
+     2. I -> 内嵌vim editor可用来编辑input/textarea/select 
+     3. sm -> markdown 预览与vim 编辑 
+     4. Ctrl-Alt-d 流程图预览与vim 编辑 
+     5. yg 截屏 yG 截长页 yS 截滚动div的屏 yS截出来的默认设置完整按键。
+```
+
 ## 快捷键
 
 - 是否在当前页启用切换 `alt-s`
