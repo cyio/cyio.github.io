@@ -45,6 +45,24 @@ console.log(4)
 
 实现：promise  + all resolve count
 
+替代方案：
+```js
+let aReady = false
+let bReady = false
+
+function aCB () {
+  if (bReady) {
+    do()
+  }
+}
+
+function bCB () {
+  if (aReady) {
+    do()
+  }
+}
+```
+
 ## async/await
 > Sugar around a generator that yields promises wrapped in a function that calls spawn to consume and chain those promises.
 

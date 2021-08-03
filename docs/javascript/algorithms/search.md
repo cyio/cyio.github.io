@@ -48,3 +48,4 @@ console.log(result)
 
 开闭区间，闭区间表示包含
 
+[LeetCode 力扣官方题解 | 278. 第一个错误的版本 - 知乎](https://zhuanlan.zhihu.com/p/392460531)

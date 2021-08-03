@@ -23,3 +23,11 @@
 > x-www-form-urlencoded vs multipart/form-data
 
 3. Both content types are used while sending form data as a POST request. 4) The x-www-form-urlencoded is used more generally to send text data to the server while multipart/form-data is used to send binary data, most notably for uploading files to the server.
+
+## hoppscotch 原 postwoman
+
+如何解决 CORS
+1. page 与 extension 通信 hoppscotch-extension
+2. 使用官方提供的 proxy server 中转
+
+环境变量用途，baseUrl、测试代码
