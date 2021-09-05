@@ -511,3 +511,6 @@ https://github.com/videojs/http-streaming/blob/e50f4c93dc47cc9ce467aeff8ddd61e1e
 
 appendBuffer
 https://github.com/videojs/http-streaming/blob/ea3650a08de481ac01f5562e54278e736a852e5c/src/segment-loader.js#L1918
+
+[What I’ve Learned From Working With HTML5 Video Over A Month | by Onur Şuyalçınkaya | Yemeksepeti Teknoloji | Medium](https://medium.com/yemeksepeti-teknoloji/what-ive-learned-from-working-with-html5-video-over-a-month-485c5d5c2045)
+[HTML Standard](https://html.spec.whatwg.org/multipage/media.html#ready-states)

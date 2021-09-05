@@ -8,10 +8,20 @@
 - scope 值可编辑，不用离开 DevTools 就能看修正效果
 - 监视表达式，观察值的变化
 - 保存看效果
-- 断点类型，最常用的是代码行，还有事件侦听器、异常等
+### 断点类型，最常用的是代码行，还有事件侦听器、异常等
 
+  常用功能：
+  - 跳过行（步进）
+  - 跳入函数
+  - 跳出函数
+  - 继续到此（右键）
+    ![image.png](http://ww1.sinaimg.cn/mw690/4e5d3ea7ly1gu3r6h0a0tj20ph0bugsl.jpg)
+
+[Debugging in the browser](https://javascript.info/debugging-chrome)
+[JavaScript debugging reference - Chrome Developers](https://developer.chrome.com/docs/devtools/javascript/reference/)
 [Chrome设置断点的各种姿势, js断点调试心得, Chrome DevTools 中调试 JavaScript 入门 - Just Code](https://justcode.ikeepstudying.com/2018/09/chrome%25E8%25AE%25BE%25E7%25BD%25AE%25E6%2596%25AD%25E7%2582%25B9%25E7%259A%2584%25E5%2590%2584%25E7%25A7%258D%25E5%25A7%25BF%25E5%258A%25BF-js%25E6%2596%25AD%25E7%2582%25B9%25E8%25B0%2583%25E8%25AF%2595%25E5%25BF%2583%25E5%25BE%2597-chrome-devtools-%25E4%25B8%25AD%25E8%25B0%2583%25E8%25AF%2595-javascrip/)
 [使用断点暂停代码  |  Tools for Web Developers  |  Google Developers](https://developers.google.com/web/tools/chrome-devtools/javascript/breakpoints?hl=zh-cn#exceptions)
+
 
 ## console
 - console 中打印出 fetch 内容

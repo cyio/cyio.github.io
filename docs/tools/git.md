@@ -626,3 +626,8 @@ git rev-list --left-right --count origin/master...test-branch
 输出 0 2，表示 test-branch 相对于 master 落后 0 commit，领先 2 commit
 
 [github - git ahead/behind info between master and branch? - Stack Overflow](https://stackoverflow.com/questions/20433867/git-ahead-behind-info-between-master-and-branch)
+
+## 巨石仓库
+```sh
+git clone --depth 1 --no-single-branch
+```
