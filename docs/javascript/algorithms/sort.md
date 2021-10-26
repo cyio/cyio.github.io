@@ -191,3 +191,9 @@ let result = insertionSort([3, 5, 2, 11, 1, 2, 'abc', 'zfd', 'sad', 'eng'])
 console.log(result)
 ```
 [前端开发必会的JS算法之插入排序-码云笔记](https://www.mybj123.com/4925.html)
+
+## 快速选择
+分区函数，返回 index
+发现小于 k element，与当前区间交换
+[Quick Sort and Quick Select - YouTube](https://youtu.be/v-1EGgaTFuw?t=1221)
+

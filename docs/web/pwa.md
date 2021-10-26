@@ -35,3 +35,22 @@ Trusted Web Activity
 两个生态： 开放、封闭
 
 > 传统的 HttpCache，让资源在缓存时性能会很好，而 PWA 是让资源非常可靠地缓存起来，让页面性能一直都很好。
+
+## 激活问题
+默认、等待激活，需要等页面关闭，这么设计原因是渐近式
+
+[How to immediately activate a service worker with vanilla JS | Go Make Things](https://gomakethings.com/how-to-immediately-activate-a-service-worker-with-vanilla-js/)
+[vue.js - How to do skipwaiting with register-service-worker in vue app? - Stack Overflow](https://stackoverflow.com/a/56569087/5657916)
+```js
+// vue.config.js
+    pwa: {
+        ...
+        workboxPluginMode: 'GenerateSW',
+        workboxOptions: {
+            skipWaiting: true
+        }
+    },
+```
+
+[用 Vue 做 PWA （三）：理解生命周期 - AC Dustbin](https://allanchain.github.io/blog/post/vue-pwa-3/)
+[VueJs PWA: Notify User about the App Update | skipWaiting ~ 360learntocode](https://www.360learntocode.com/2020/12/vuejs-pwa-notify-user-of-app-update.html)
