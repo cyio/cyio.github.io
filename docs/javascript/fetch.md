@@ -79,9 +79,16 @@ export function fetchRetry(url, options, n = 3) {
 }
 ```
 
+## timeout
+
+XMLHttpRequest / axios 默认 0，表示禁用
+
+fetch 不支持， 可以用 race 模拟
+
+[HTTP request timeouts in JavaScript](https://shuheikagawa.com/blog/2017/05/13/http-request-timeouts-in-javascript/)
+
 ## 参考
 
 [Introduction to fetch()  |  Web  |  Google Developers](https://developers.google.com/web/updates/2015/03/introduction-to-fetch)
 
 [全面分析前端的网络请求方式](https://mp.weixin.qq.com/s?__biz=Mzg2NDAzMjE5NQ==&mid=2247484098&idx=1&sn=d9b077e093fef88febc36f87dfc15e8d&scene=21#wechat_redirect)
-

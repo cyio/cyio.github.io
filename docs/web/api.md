@@ -31,3 +31,7 @@
 2. 使用官方提供的 proxy server 中转
 
 环境变量用途，baseUrl、测试代码
+
+## 字段复制方法（考虑兼容性，写成 utils 复用）
+1. 支持能力检测 navigator.clipboard 存在
+2. 优先用 [Clipboard API](https://codepen.io/bellangerq/pen/VBqOPG) 不支持 IE，Chrome62+3. 回退：document.execCommand （标准已废弃，老浏览器可以用）

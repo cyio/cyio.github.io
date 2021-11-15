@@ -439,16 +439,56 @@ click，需要排除 dbclick，用户是在点击播放还是暂停
     // })
 ```
 
+写 CSS 类
+姓名 复姓 新姓缩写
+
+[视频直播的技术原理和实现思路方案整理 · Issue #61 · f2e-journey/xueqianban](https://github.com/f2e-journey/xueqianban/issues/61)
+
 ## 源码
+
+https://github.com/videojs/video.js/tree/main/src/js
+
+### index.js
+导入 videojs/hls，然后导出
+
+### video.js
+核心模块
+
+```js
+function videojs(id, options, ready) {
+
+```
+如果 player 实例存在，直接返回
+
+否则返回 new PlayerComponent 实际得到 player 组件，这个组件在 player.js 中注册`Component.registerComponent('Player', Player);`
+
+方法属性方式，扩展功能
+
 ### player.js
 
 TECH_EVENTS_RETRIGGER 注释描述各个事件作用 很清晰
 
-### video.js
-function videojs
-  如果 player 实例存在，直接返回
-  否则返回 new PlayerComponent
-方法属性方式扩展功能
+### tech.js
+
+播放所使用技术，主要用的是 html5
+
+tech 与 source 结合
+
+技术顺序
+    使用哪个技术来播放，按 tech 数组顺序查找
+
+IE10 不支持原生 HLS/MSE，可官方插件 flash tech 支持 HLS
+
+html5.js wrapper
+    tech.js
+        component
+
+https://github.com/videojs/video.js/blob/main/docs/guides/tech.md
+
+扩展示例：https://github.dev/mister-ben/videojs-flvjs/blob/master/src/plugin.js 继承、修改了
+html5.js
+
+> video.js 和 flv.js 都是 Apache 2.0，可以闭源使用，需要说明
 
 ### component.js
 Component UI 基础类
@@ -470,11 +510,6 @@ export function bufferedPercent(buffered, duration) {
 ```
 
 内置依赖 xhr 库 https://github.com/naugtur/xhr
-
-写 CSS 类
-姓名 复姓 新姓缩写
-
-[视频直播的技术原理和实现思路方案整理 · Issue #61 · f2e-journey/xueqianban](https://github.com/f2e-journey/xueqianban/issues/61)
 
 ### load-progress-bar.js
 

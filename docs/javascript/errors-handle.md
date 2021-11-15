@@ -93,3 +93,8 @@ Capturing Events - Docs https://docs.sentry.io/error-reporting/capturing/?platfo
 2. 不会阻塞页面加载，影响用户的体验，只要new Image对象就好了；（排除JS/CSS文件资源方式上报）
 3. 在所有图片中，体积最小；（比较PNG/JPG）
 
+## cdn 脚本错误
+脚本由于跨域的问题，错误监控拿到的错误信息里面只有Script Error
+
+What the heck is "Script error"? | Product Blog • Sentry https://blog.sentry.io/2016/05/17/what-is-script-error
+https://html.spec.whatwg.org/multipage/scripting.html#attr-script-crossorigin
