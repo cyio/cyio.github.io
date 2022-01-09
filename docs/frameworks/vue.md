@@ -1,4 +1,5 @@
 # Vue
+
 [[toc]]
 
 ## MVVM
@@ -468,7 +469,7 @@ Props向下传递，事件向上传递
 原因：有些操作，Vue 检测不到变化
 
 变化检测：
-- 数组，通过方法操作如 push 可以检测，非方法不行，如索引赋、改长度
+- 数组，通过方法操作如 push 可以检测，非方法不行，如索引赋值、改长度
 - 对象，需要访问来触发 getter/setter，非访问不行，检测不了增、删
 
 解决：
@@ -601,3 +602,22 @@ Compiler 构造函数，原型扩展方法
 初始化元素：setupElement 确定 el，深拷贝 template 并返回 el
 
 partial 类似 slot？
+
+
+
+## 全局组件、插件
+
+全局注册组件 `Vue.component('组件名1',xxx)`
+
+plugin 需要写个 install 方法，内部还是用 组件注册，好处是可以支持更多处理
+
+## 无渲染组件
+- 模板灵活性、逻辑共享
+- 优于 mixin
+
+如果您发现自己正在编写一个内部包含特定逻辑的组件，但希望该组件的用户可以为其编写任何自定义 HTML 并使用此逻辑，那么无渲染组件可能是您的解决方案之一。
+
+[理解 Vue 中的无渲染组件](https://www.telerik.com/blogs/understanding-renderless-components-vue)
+[Reactive Slot Scope - CodeSandbox](https://codesandbox.io/s/81j57m2lk9?file=/src/App.vue)
+[Vue3 Composition API如何替换Vue Mixins - 掘金](https://juejin.cn/post/6844904136065056781)
+

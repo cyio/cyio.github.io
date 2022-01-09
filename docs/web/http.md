@@ -5,7 +5,6 @@
 
 ## 浏览器缓存
 
-```
 http cache 设计原则
 
 默认隐式，显式用 cache-control
@@ -13,10 +12,10 @@ http cache 设计原则
 请求和响应，都能带指令，有冲突时，以更严格为准
 
 两种模型：
-过期模型，减少频繁请求网络往返
+1. 过期模型，减少频繁请求网络往返
 	Expires
 	Cache-Control max-age 优先级高于上者
-验证模型，减少带宽开销
+2. 验证模型，减少带宽开销
 	条件请求
 	Last-Modified 默认弱验证
 	Etag 默认强验证
@@ -33,10 +32,8 @@ http cache 设计原则
 
 [HTTP/1.1: Caching in HTTP](https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html#sec13.1.5)
 
-```
-
-- 强缓存，header -> max, cache，命中时不发网络请求
-- 协商缓存，header -> modifier，先发请求，命中 返回 304
+- 强缓存`header -> max, cache`命中时不发网络请求
+- 协商缓存`header -> modifier`先发请求，命中 返回 304
 
   `no-cache` = store + if change 如果存在合适的验证令牌(ETag)，发起请求，如果资源无变化，304，不下载
 
@@ -220,3 +217,6 @@ C -> ACK -> S
 
 ## Expires和Cache-Control
 Expires 要求客户端和服务端的时钟严格同步。 HTTP1.1 引入 Cache-Control来克服Expires头的限制。如果max-age和Expires同时出现，则 max-age 有更高的优先级。
+
+Last-Modified 与 Etag 对比，精确度、分布式部署一致性、性能消耗、优先级
+[通过 Node.js 小示例学习浏览器缓存策略](https://mp.weixin.qq.com/s?__biz=MzA4ODUzNTE2Nw==&mid=2451060772&idx=3&sn=3ee0c658dd84a6e481bb3cc14e502a04&chksm=87c42134b0b3a822122a78b3bb676d122c0fbcd280dc9facd0c19e7cbe4b638ab09b283c590d#rd)

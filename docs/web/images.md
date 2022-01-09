@@ -77,6 +77,8 @@ srcset/sizes
 
 > chrome 原生已支持
 
+默认已经按优先级加载。使用 lazy 可以节省资源
+
 传统方法 scroll 性能不好
 
 ### IntersectionObserver 交叉观察者接口，异步，空闲时执行

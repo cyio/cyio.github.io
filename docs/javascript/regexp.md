@@ -247,3 +247,4 @@ string trim
 let s = ' x y '
 s.replace(/^\s*|\s*$/g, '')
 ```
+[就因为这三个知识点，我彻底学废了“正则表达式”](https://mp.weixin.qq.com/s?__biz=MzAxODE2MjM1MA==&mid=2651593792&idx=1&sn=3e7135683cad3910ac6381fe8e72729f&chksm=8022cb81b75542976b677380f91ac8562ac16ebefcefb82cda9c0474670cd5e534b574bc1c42#rd)

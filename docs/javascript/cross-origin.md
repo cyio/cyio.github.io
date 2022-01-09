@@ -191,3 +191,5 @@ devServer: {
 
 [Same-origin policy - Web security | MDN](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy)
 
+[How to win at CORS - JakeArchibald.com](https://jakearchibald.com/2021/cors/)
+

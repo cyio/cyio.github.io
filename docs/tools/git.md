@@ -631,3 +631,11 @@ git rev-list --left-right --count origin/master...test-branch
 ```sh
 git clone --depth 1 --no-single-branch
 ```
+
+## 多个工作区
+- 可以避免来回 stash，污染工作区，丢失变更
+- 避免克隆多个相同仓库
+
+[Git屠龙技：使用Git Worktree并行开发测试 - 知乎](https://zhuanlan.zhihu.com/p/92906230)
+[Git Worktree的使用 - 张小凯的博客](https://jasonkayzk.github.io/2020/05/03/Git-Worktree%25E7%259A%2584%25E4%25BD%25BF%25E7%2594%25A8/)
+
