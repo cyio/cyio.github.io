@@ -152,7 +152,7 @@ function quickSort(arr) {
   // for (let i = 0; i < arr.length - 1; i++) {
   // 改进，不要依赖最后一个值，注意 pivot 表示基准值，还需要提前算下 privotIndex
   let pivotIndex = Math.floor(arr.length / 2)
-  let pivot = arr.splice(pivotIndex, 1)[0]
+  let pivot = arr.splice(pivotIndex, 1)[0] // splice 返回的是数组
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] < pivot) {
       left.push(arr[i])
