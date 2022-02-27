@@ -348,3 +348,5 @@ console.log(arr)
 ## 副作用方法
 splice | sort | reverse
 
+## 源码及实现
+

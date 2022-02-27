@@ -1,5 +1,7 @@
 # 函数合成
 
+将多个函数合成一个函数
+
 简单示例，只合成两个
 ```js
 const toUpperCase = function(x) { return x.toUpperCase(); };

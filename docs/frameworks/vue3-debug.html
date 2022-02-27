@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <div>
+    <div>test demo {{msg}}</div>
+    <div>test demo {{msgMore}}</div>
+  </div>
+</div>
+<script src="../dist/vue.global.js"></script>
+<script>
+  Vue.createApp({
+    setup() {
+      const msg = Vue.ref('Hello')
+      const msgMore = Vue.computed(() => msg.value+' world')
+      return {
+        msg,
+        msgMore
+      }
+    }
+  }).mount('#app')
+</script>
+</body>
+</html>

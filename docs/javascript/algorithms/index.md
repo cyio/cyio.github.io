@@ -15,6 +15,8 @@
 
   [VisuAlgo - 数据结构和算法动态可视化 (Chinese)](https://visualgo.net/zh)
 
+![mindmap](https://camo.githubusercontent.com/7a1f227eb672dfeb7ad558b44471c2ebea0a191594b34fa9f17775945518c678/687474703a2f2f7265736f757263652e6d757969792e636e2f696d6167652f32303230303631363030303630342e706e67)
+
 ## 复杂度
 
 ![jIGhf.png (835×579)](https://i.stack.imgur.com/jIGhf.png)
@@ -95,13 +97,17 @@
 
   有序 比较中点 范围减半
 
-  O(log n)
-
-
 ## 模式识别
 一旦涉及出现次数，需要用到 hash
 
 构造子串，hash 存下标
 
 涉及子串，考虑滑动窗口
+
+
+深度优先：递归 + 回溯
+
+广度优先：队列 + 追加，解决从 A 到 B 路径查找，循环检测
+
+图：点 + 边，树是一种特殊的图
 

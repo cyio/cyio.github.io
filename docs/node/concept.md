@@ -110,3 +110,6 @@ Node.js 是单进程的，一般代码在主进程中运行，回调放在事件
 子进程
 child_process
 cluster
+
+## 用途
+一切非 CPU 密集型

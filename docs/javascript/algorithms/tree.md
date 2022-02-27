@@ -1,11 +1,17 @@
 # 树
+[toc]
 
 ## 遍历
-前序(preorder) root -> left -> right
-中序(inorder) left -> root -> right
-后序(postorder) left -> right -> root
-层次(level) level 0 -> level 1
-对称
+
+- 前序(preorder) root -> left -> right
+- 中序(inorder) left -> root -> right
+- 后序(postorder) left -> right -> root
+- 层次(level) level 0 -> level 1
+- 对称
+
+前、中、后判断依据是 root 在排序中位置
+
+核心：递归
 
 ```js
 class Node {

@@ -212,3 +212,10 @@ npm install --registry=http://registry.npm.taobao.org
 
 维护：公共包修改，需要提升版本号，需要在每个引用公共包的项目升级
 
+## 发布测试包
+
+通过打 tag 方式发布的包，需要指定版本才能安装
+```sh
+npm publish --tag alpha
+npm publish --tag beta
+```
