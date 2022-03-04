@@ -1,9 +1,21 @@
 # Vuex
 [toc]
 
-解决组件间的数据共享
+定位：解决组件间的数据共享
+
+## 基础
 
 - store: state getters mutations action module
+- `store` 状态的容器，响应式，当其中状态变化时，相应组件高效更新。不能直接修改（赋值），只能显式地通过`mutations`中定义的方法`commit`
+- Mutations 正如其名，只是用来修改 state，只能是同步的纯函数
+  Mutations 本质上是一个事件系统，由事件名称和处理函数构成
+  Actions 通过 Mutations 来操作 state，使用灵活
+- 调用，简单在计算属性中返回即可
+- 优点，更明确地状态追踪
+
+## 数据流动过程
+
+![vuex.png (701×551)](https://vuex.vuejs.org/vuex.png)
 
 - 全局实例注入
 
@@ -26,7 +38,7 @@ new Vue({
     }),
 ```
 
-## 何时使用 Vuex
+## 何时使用
 
 - 先不要用，需要时切换
 - 数据需要在多处(如 view 之间)使用？ 官方文档，多个实例间共享
@@ -72,15 +84,6 @@ destroyed () {
 ```
 
 [vuex 闲置状态重置方案 - 掘金](https://juejin.im/post/5a4c8da3f265da43085e6c64)
-
-## vuex
-
-- `store` 状态的容器，响应式，当其中状态变化时，相应组件高效更新。不能直接修改（赋值），只能显式地通过`mutations`中定义的方法`commit`
-- Mutations 正如其名，只是用来修改 state，只能是同步的纯函数
-  Mutations 本质上是一个事件系统，由事件名称和处理函数构成
-  Actions 通过 Mutations 来操作 state，使用灵活
-- 调用，简单在计算属性中返回即可
-- 优点，更明确地状态追踪
 
 ## 计算缓存 vs Methods
 

@@ -282,14 +282,17 @@ ES6 不支持，用 flow，然后通过 babel plugin 移除
 
 
 ## symbol
-解决对象 key 重复问题
+对象 key 允许 string or symbol 两种类型
 
-执行`Symbol()`返回，总是 uniq
+执行`Symbol()`返回，总是 uniq 标识
 
-全局注册，用 for 查找
+使用场景：为其它来源的对象，安全的添加属性
 
 不支持 new 调用
+
+全局注册，用 for 查找
 ```
 Symbol('a') === Symbol('a') // false
 Symbol.for('a') === Symbol.for('a') // true
 ```
+https://javascript.info/symbol

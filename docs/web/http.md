@@ -220,3 +220,13 @@ Expires 要求客户端和服务端的时钟严格同步。 HTTP1.1 引入 Cache
 
 Last-Modified 与 Etag 对比，精确度、分布式部署一致性、性能消耗、优先级
 [通过 Node.js 小示例学习浏览器缓存策略](https://mp.weixin.qq.com/s?__biz=MzA4ODUzNTE2Nw==&mid=2451060772&idx=3&sn=3ee0c658dd84a6e481bb3cc14e502a04&chksm=87c42134b0b3a822122a78b3bb676d122c0fbcd280dc9facd0c19e7cbe4b638ab09b283c590d#rd)
+
+## 幂等性
+什么是幂等？一个操作如果具有任意多次执行所产生的影响均与一次执行的影响相同，我们就称之为幂等。
+
+POST 不满足，多次调用创建多个
+
+GET/PUT/DELETE 满足
+
+幂等设计的作用是，允许客户端多次重试，而不产生意外副作用
+

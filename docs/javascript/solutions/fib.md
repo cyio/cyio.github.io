@@ -15,3 +15,11 @@
    }
    console.log(fib(5))
 ```
+
+```js
+var climbStairs = function(n) {
+  // 递归会超时
+  if (n <= 2) return n
+  return climbStairs(n - 1) + climbStairs(n - 2)
+};
+```

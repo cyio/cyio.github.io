@@ -1,10 +1,10 @@
 # 数组扁平化
 
-1. flat
+## 1. flat
 
 flat 指定深度递归合并，默认深度 1，无限深度 Infinite
 
-2. JSON 转换 + 正则
+## 2. JSON 转换 + 正则
 
 思路：JSON 序列化，字符串替换中括号，再与中括号拼接，复原
 1. 序列化 `"[1,2,[3,[4]]]"`
@@ -28,7 +28,7 @@ function flat(arr) {
 console.log(flat(arr))
 ```
 
-3. 递归
+## 3. 递归
 
 res 需要放在函数外面，不是纯函数
 
@@ -41,7 +41,7 @@ function flat(arr) {
       if (i instanceof Array) {
         inner(i)
       } else {
-        res.push(i)
+        res.push(i) // 基础部分
       }
     }
   }
@@ -51,13 +51,13 @@ function flat(arr) {
 flat(arr)
 ```
 
-4. reduce + 递归
+## 4. reduce + 递归
 
 ```js
 const arr = [1, 2, [3, [4]], 5]
 const flatten = arr => {
   return arr.reduce((pre, cur) => {
-    // concat 可以接 value or array，在这里比解构 value 要套一层方便
+    // concat 可以接 value or array，在这里比解构 value 套一层方便
     // return [...pre, ...(Array.isArray(cur) ? flatten(cur) : [cur])]
     return pre.concat(Array.isArray(cur) ? flatten(cur) : cur)
   }, [])
@@ -67,7 +67,7 @@ const res = flatten(arr)
 console.log(res)
 ```
 
-支持深度
+扩展支持深度
 
 concat 会解一层，所以 level = 1 时，不需要走递归
 ```js
@@ -102,7 +102,7 @@ console.log(flatten(arr), arr.flat())
 console.log(flatten(arr, 2), arr.flat(2))
 ```
 
-5. toString，字符串转数字是否可靠，应该可靠
+## 5. toString，字符串转数字是否可靠，应该可靠
 
 ```js
 const arr = [0, 1, 2, [-3, [4]], 5]

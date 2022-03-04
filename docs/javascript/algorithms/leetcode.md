@@ -77,6 +77,21 @@
 
 ## 1143. 最长公共子序列
 
-二维 dp
+dp 使用二维数组记录结果
+
+边界，一侧为空字串
+
+[演示、公式](https://alchemist-al.com/algorithms/longest-common-subsequence)
+
+dp 方程
+```js
+if (a === b) {
+  table[row][col] = table[row - 1][col - 1] + 1;
+} else {
+  table[row][col] = Math.max(table[row][col - 1], table[row - 1][col]);
+}
+```
+
 ![4e5d3ea7ly1gyr42umo68j20av06ytbt.jpg (391×250)](http://ww1.sinaimg.cn/large/4e5d3ea7ly1gyr42umo68j20av06ytbt.jpg)
 
+关联题目：583. 两个字符串的删除操作

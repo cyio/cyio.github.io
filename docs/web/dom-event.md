@@ -2,14 +2,16 @@
 [[toc]]
 
 ## 基础
+- 事件阶段(eventPhase )：捕获 -> (到达)目标 -> 冒泡
 - 现代浏览器默认冒泡，如果不希望这样，`e.stopPropagation()`
 - 默认不使用捕获，如果想捕获，`addEventListener()`第三个参数(useCapture)设为`true`
-- 历史，IE 实现成冒泡，NetScape 实现成捕获，后期浏览器都支持了这两种事件机制
 - 冒泡允许我们利用事件委托，避免在每个子节点单独设置事件监听器
-- 事件阶段(eventPhase )：捕获 -> (到达)目标 -> 冒泡
-- propagation 传播，传播路径，停止传播
-- preventDefault 取消事件
-- CustomEvent carry data
+    ```
+    propagation 传播，传播路径，停止传播
+    preventDefault 取消事件
+    CustomEvent carry data
+    ```
+    > 历史，IE 实现成冒泡，NetScape 实现成捕获，后期浏览器都支持了这两种事件机制
 
 [UI Events](https://www.w3.org/TR/DOM-Level-3-Events/#event-flow)
 
