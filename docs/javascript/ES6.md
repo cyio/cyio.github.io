@@ -61,7 +61,9 @@ const 声明时必须赋值，不可重复声明
 ## 类 class
 
 - 简化构造函数创建
-- `super`(调用父类构造函数)不是必要的，什么情况下写呢？ 如果在`contrustor`中要用`this[props]`
+- `super`(调用父类构造函数)不是必要的，什么情况下写呢？
+
+  如果在`contrustor`中要用`this[props]`
 
   表示继承的父类、可以传参、可以访问方法
 
@@ -78,7 +80,7 @@ let animal = new Animal()
 animal.says('hello') // animal says hello
 class Cat extends Animal {
   constructor() {
-    super() // 下面使用了 this，如果不写 super 的会，ReferenceError: Must call super constructor in derived class before accessing 'this' or returning from derived constructor
+    super() // 下面使用了 this，如果不写 super 的话会，ReferenceError: Must call super constructor in derived class before accessing 'this' or returning from derived constructor
     // super 不是必要的，什么情况下写呢？ 如果在 contrustor 中要用 this.props
     this.type = 'cat'
   }
@@ -296,3 +298,14 @@ Symbol('a') === Symbol('a') // false
 Symbol.for('a') === Symbol.for('a') // true
 ```
 https://javascript.info/symbol
+
+## 尾调用优化
+
+尾调用：指某个函数的最后一步是调用另一个函数，不做其他操作
+
+优化：只保留内层函数的调用记录
+
+ES6+ 对引擎要求，原因：实现概率 + 性能
+
+[JS尾调用优化](https://ifront.net/article/89421bc6cc90f43fbc27117674d9ea1e)
+

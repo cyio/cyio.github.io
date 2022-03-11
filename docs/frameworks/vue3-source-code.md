@@ -1,4 +1,4 @@
-## Vue 3 源码学习
+# Vue 3 源码学习
 [toc]
 
 ## 调试
@@ -76,8 +76,7 @@ app
 
 ## core api - runtime
 
-packages/runtime-core/src/index.ts
-最常用方法、API 导出清单
+`packages/runtime-core/src/index.ts`负责将最常用方法、API 导出
 
 defineComponent 类型 util
 
@@ -88,6 +87,7 @@ v-if/v-for 视为 block，可能动态变更
 ## reactive
 ![reactive 工作流程](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/c884b48e88a643e2b695b3587224b51d~tplv-k3u1fbpfcp-watermark.awebp)
 
+文件结构
 ```
 └── src
     ├── baseHandlers.ts // 基本类型的处理器
@@ -103,6 +103,7 @@ v-if/v-for 视为 block，可能动态变更
     └── ref.ts // Proxy 处理不了值类型的响应，Ref 来处理
 ```
 
+ref 实现
 ```
 ref( 默认深拷贝
   createRef(
@@ -123,17 +124,10 @@ effect 作为 reactive 的核心，主要负责监听响应式数据的变化，
 
 > Vue 最独特的特性之一，是其非侵入性的响应性系统。数据模型是被代理的 JavaScript 对象。
 
-原始类型响应式解决方案，转换成对象，`.value`，模板访问时自动解套
-
-直接解构响应对象，解构出的值会丢失响应性
-```
-let { author, title } = book
-// fix
-let { author, title } = toRefs(book)
-```
+原始类型响应式解决方案，转换成对象，增加`.value`，模板访问时自动解套
 
 targetMap 记录 target object/property 和 effect 关系，二层数据结构：
-```
+```js
 weakmap = {
     targetObject: map = {
         targetProperty: dep<effect array>
@@ -141,12 +135,13 @@ weakmap = {
 }
 ```
 
-effectStack push -> run -> pop
+effectStack `push -> run -> pop`
+
 activeEffect 当前运行的 effect
 
 记录依赖关系时，查询 activeEffect
 
-setupResult setup return 的对象
+setupResult 是 setup return 的对象
 
 ## 讨论点
 
@@ -156,8 +151,9 @@ setupResult setup return 的对象
 
 新的 API 理论上会降低代码质量的最低门槛
 
-setup 合成生成物，供外部访问 https://stackoverflow.com/a/58500917
+setup 作用是为了合成生成物，供外部访问 https://stackoverflow.com/a/58500917
 
 ## 参考
 [深入响应性原理 | Vue.js](https://v3.cn.vuejs.org/guide/reactivity.html#%25E4%25BB%2580%25E4%25B9%2588%25E6%2598%25AF%25E5%2593%258D%25E5%25BA%2594%25E6%2580%25A7)
 [推荐 7 个 Vue2、Vue3 源码解密分析的重磅开源项目 👍 - SegmentFault 思否](https://segmentfault.com/a/1190000039691166)
+
