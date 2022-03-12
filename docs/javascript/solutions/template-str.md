@@ -13,6 +13,7 @@
 ```js
 function tpl(template, data) {
   let str = template
+  // 用 for - in 写起来更简单
   Object.keys(data).forEach(key => {
     str = str.replace(
       `{%${key}%}`,
@@ -29,6 +30,7 @@ console.log(r)
 ```
 
 正则匹配，存在问题
+
 className 要求双引号，需要 replace 多次，并且先 replace 特例
 
 ```js

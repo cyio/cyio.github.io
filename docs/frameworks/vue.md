@@ -4,6 +4,14 @@
 
 ## MVVM
 Model-View-ViewModel
+![1643060c121f7361~tplv-t2oaga2asx-zoom-in-crop-mark:1304:0:0:0.awebp (685×362)](https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2018/6/24/1643060c121f7361~tplv-t2oaga2asx-zoom-in-crop-mark:1304:0:0:0.awebp)
+[Vue.js中的MVVM - 掘金](https://juejin.cn/post/6844903624405942286)
+
+- 脏检查机制
+- 数据劫持
+- 代理
+
+就前端而言，Model 往往来自后端接口，View 由 DOM 实现，VM 主要是 Vue
 
 ## 与 React 比较 3+1
 
@@ -31,6 +39,12 @@ Model-View-ViewModel
 [React 的单向数据流与 Vue 的双向绑定 - CSDN 博客](https://blog.csdn.net/qq_41206257/article/details/80992085)
 
 [你是如何理解Vue的响应式系统的 - 来亦何哀 - 博客园](https://www.cnblogs.com/wangxi01/p/11589938.html)
+
+## 模板渲染
+
+template parse => AST optimize => render function
+
+[Vue模板渲染.jpeg](https://s7.51cto.com/images/blog/202107/28/2cad620ea480705e43575145b49af26b.jpeg)
 
 ## 双向绑定
 
@@ -462,7 +476,7 @@ Props向下传递，事件向上传递
 - 使用： `v-focus`
 - 钩子：bind inserted
 
-## 响应式
+## 响应式问题
 问题表现：
 有时操作数组或对象后，视图没有更新
 
@@ -602,8 +616,6 @@ Compiler 构造函数，原型扩展方法
 初始化元素：setupElement 确定 el，深拷贝 template 并返回 el
 
 partial 类似 slot？
-
-
 
 ## 全局组件、插件
 

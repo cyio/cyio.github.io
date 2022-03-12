@@ -255,3 +255,10 @@ removeEventListener('focus', focusListener);
 removeEventListener('blur', blurListener);
 ```
 https://github.com/GoogleChromeLabs/squoosh/blob/dev/src/shared/prerendered-app/Intro/blob-anim/index.ts#L337
+
+## 指标
+- 白屏 第一个字幕 performance
+- 首屏 dom 稳定 MutationObserver
+  - body
+  - 层级稳定
+

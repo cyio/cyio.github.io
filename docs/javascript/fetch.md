@@ -87,6 +87,13 @@ fetch 不支持， 可以用 race 模拟
 
 [HTTP request timeouts in JavaScript](https://shuheikagawa.com/blog/2017/05/13/http-request-timeouts-in-javascript/)
 
+## fetch 与 Axios 比较
+
+1. 双重 promise，一重 网络，一重 body 加载，比如大文件
+2. 超时，axios 是选项，fetch 用 AbortController
+3. 兼容性, axios 使用 XHR
+4. 拦截器，axios
+
 ## 参考
 
 [Introduction to fetch()  |  Web  |  Google Developers](https://developers.google.com/web/updates/2015/03/introduction-to-fetch)
