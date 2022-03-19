@@ -10,9 +10,6 @@
 - 不是太好用 [WebSequenceDiagrams - Draw UML sequence diagrams online in seconds](https://www.websequencediagrams.com/)
 - mermaid typora
 
-## 工具
-Access-Control-Allow-Origin 
-
 ## Think
 
 画图很麻烦
@@ -44,4 +41,19 @@ mermaid 自己看没问题，有些问题需要规避
 
 
 [使用draw.io绘制简洁大方的流程图 - 开发工具 - 掘金](https://juejin.im/entry/5acc5205f265da2391487073)
+
+## draw.io
+
+高级图形：flow|tree|mindmap
+
+自动添加并连接到已选中图形
+1. 选中图形
+2. 按住 alt，同时点击待添加图形
+![image.png](http://ww1.sinaimg.cn/mw690/4e5d3ea7ly1h0fjgqljw7j20z80g2aeg.jpg)
+
+全选，样式里设置 sketch，设置框架主题
+
+右键批量选择线条或是图形
+
+style -> 复制样式、粘贴样式
 

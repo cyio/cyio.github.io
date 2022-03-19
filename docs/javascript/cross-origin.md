@@ -22,12 +22,15 @@ origin = protocol + domain + port
 
 ## 分类
 
-1. 请求跨域 
-  a. cors
-  b. jsonp
-2. 页面跨域 
-  a. postMessage
-  b. document.domain（不推荐，标准已移除）
+1. 请求跨域 Client-Server
+
+    - jsonp
+    - cors
+
+2. 页面跨域 Page-Page
+
+    - postMessage
+    - document.domain（不推荐，标准已移除）
 
 ## JSONP
 
@@ -112,11 +115,7 @@ var callback = function (data) {
 
 [webpack-dev-server 代理解决 cookie 丢失问题 - 掘金](https://juejin.im/post/5a9e6592f265da23870e59eb)
 
-## proxy
-
-- `https://bird.ioliu.cn/v1/?url=`
-
-### React / Vue 设置代理（仅开发模式用）
+## React / Vue 设置代理（仅开发模式用）
 
 - `create-react-app`可在 package.json 中设置`proxy: "http://localhost:8080"`，要配合 fetch/ajax 使用
 - `vue-cli`创建的可在`config.js/index.js`中设置

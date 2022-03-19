@@ -65,3 +65,8 @@ https://www.test.com http://www.test.com
 
 [使用whistle模拟cgi接口异常：错误码、502、慢网速、超时 - 猫哥_kaiye - 博客园](https://www.cnblogs.com/kaiye/p/10137592.html)
 [使用 whistle 替代本地 nginx/webpack 服务 - 猫哥_kaiye - 博客园](https://www.cnblogs.com/kaiye/p/9628692.html)
+
+## api
+
+- `https://bird.ioliu.cn/v1/?url=`
+

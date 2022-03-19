@@ -5,22 +5,50 @@
 - 防止重复声明：ES6 不允许在同一个作用域内用 let 或 const 重复声明同名变量。这对于防止在不同的 js 库中存在重复声明的函数表达式十分有帮助。
 - 不再需要仅为了声明变量，而使用立即执行函数以避免全局污染，用大括号配合`let/const`即可
 - rest 参数，更便利访问函数参数
-- let/var 全局声明有区别：var 存在 window 对象中，而 let 存在声明式环境中（看不到），不影响 window.xxx 的使用，但 var xxx 不行
-    ```js
-    var mine = 4
-    # undefined
-    window.mine
-    # 4
-    mine
-    # 4
 
-    let my = 3
-    # undefined
-    window.my
-    # undefined
-    my
-    # 3
-    ```
+[Javascript - ES6 实用技巧](https://github.com/TerryZ/js-develop-skill-summary/blob/master/javascript-es6.md)
+[在 ES6 中 改良的 5 个 JavaScript “缺陷” - WEB 前端 - 伯乐在线](http://web.jobbole.com/86210/)
+
+## var let const
+var 的问题：变量全局化，变量提升，重复声明，重复赋值
+
+let const 支持块级作用域
+
+const 声明时必须赋值，不可重复声明
+
+### let/var 全局声明有区别
+
+var 存在 window 对象中，而 let 存在声明式环境中（看不到），不影响 window.xxx 的使用，但 var xxx 不行
+
+```js
+var mine = 4
+// undefined
+window.mine
+// 4
+mine
+// 4
+
+let my = 3
+// undefined
+window.my
+// undefined
+my
+// 3
+
+// var 变量提升
+var myname = "极客时间"
+function showName(){
+  console.log(myname); // undefined
+  if (0){
+   var myname = "极客邦" // 声明在函数内提升，但赋值未进行
+  }
+  console.log(myname); // undefined
+}
+showName()
+```
+[块级作用域：var缺陷以及为什么要引入let和const | 浏览器工作原理与实践](https://blog.poetries.top/browser-working-principle/guide/part2/lesson09.html#_1-%25E5%258F%2598%25E9%2587%258F%25E5%25AE%25B9%25E6%2598%2593%25E5%259C%25A8%25E4%25B8%258D%25E8%25A2%25AB%25E5%25AF%259F%25E8%25A7%2589%25E7%259A%2584%25E6%2583%2585%25E5%2586%25B5%25E4%25B8%258B%25E8%25A2%25AB%25E8%25A6%2586%25E7%259B%2596%25E6%258E%2589)
+
+tips:
 - let 最好放在 block 最上面，防止过早访问引起抛错
 - 显式地声明块级变量，建议把 let 与大括号放在一行
 
@@ -31,16 +59,6 @@
       c
   }
   ```
-
-[Javascript - ES6 实用技巧](https://github.com/TerryZ/js-develop-skill-summary/blob/master/javascript-es6.md)
-[在 ES6 中 改良的 5 个 JavaScript “缺陷” - WEB 前端 - 伯乐在线](http://web.jobbole.com/86210/)
-
-## var let const
-var 的问题，全局变量，变量提升，重复声明，重复赋值
-
-let const 支持块级作用域
-
-const 声明时必须赋值，不可重复声明
 
 ## map 映射
 
@@ -235,8 +253,6 @@ let square = x => {
 
 ## 模板字面量
 
-- 不支持纯字符串
-
 ```js
 var who = 'world'
 var str = `Hello ${who}`
@@ -244,9 +260,9 @@ var str = `Hello ${who}`
 
 ## for-of 循环
 
-- 20 年前，for i++
-- ES5， forEach
-- ES6， for-of
+- 最早，for
+- ES5，forEach
+- ES6，for-of
   - 支持类数组，字符串，Set，Map
   - 相比于 forEach 支持搭配 break return
   - for-in 为普通对象设计，不适用数组
@@ -280,10 +296,12 @@ console.log(fn())
 ## 参数类型
 
 ES6 不支持，用 flow，然后通过 babel plugin 移除
+
 [javascript - Babel: Function parameter types in ES6 - Stack Overflow](https://stackoverflow.com/questions/35916921/babel-function-parameter-types-in-es6)
 
 
 ## symbol
+
 对象 key 允许 string or symbol 两种类型
 
 执行`Symbol()`返回，总是 uniq 标识
@@ -301,7 +319,7 @@ https://javascript.info/symbol
 
 ## 尾调用优化
 
-尾调用：指某个函数的最后一步是调用另一个函数，不做其他操作
+尾调用，定义：指某个函数的最后一步是调用另一个函数，不做其他操作
 
 优化：只保留内层函数的调用记录
 

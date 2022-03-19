@@ -1,5 +1,27 @@
 ## Vue 源码学习
+[toc]
 
+## 源码
+从正式发布的第一个版本读 0.01-0.03
+
+> v0.7.0 最低版本
+
+```js
+new Vue(options)
+  function ViewModel(options)
+    new Compiler(this, options)
+```
+this 表示 vm instance,
+
+核心流程在 compiler.js
+
+Compiler 构造函数，原型扩展方法
+
+有很多连续赋值
+
+初始化元素：setupElement 确定 el，深拷贝 template 并返回 el
+
+partial 类似 slot？
 ## 学习方法
 
 源码断点
@@ -127,3 +149,5 @@ flushSchedulerQueue
 
 一个页面有多个组件，数据变化了，要通知哪个组件更新？挂载某个组件时，作为此时唯一 watcher，访问到某个属性，则将 watcher 添加对属性订阅者
 
+![异步渲染原理](http://ww1.sinaimg.cn/large/4e5d3ea7ly1h0cm1rqqz6j20f009wmys.jpg)
+![响应式原理](http://ww1.sinaimg.cn/large/4e5d3ea7ly1h0cm3a0b3vj20eh0h8mzl.jpg)

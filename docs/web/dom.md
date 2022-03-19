@@ -148,3 +148,28 @@ vue - update
 参考：
 [Plain JavaScript - Functions and Helpers](https://plainjs.com/javascript/)
 [DOM Enlightenment - Exploring the relationship between JavaScript and the modern HTML DOM](http://domenlightenment.com/)
+
+## 页面加载过程(输入 url 到加载出页面)
+
+a. 请求过程：
+
+    1. [URL=>DNS=>IP] 浏览器根据 DNS 服务器解析得到域名的 IP 地址
+    2. [Client-Req-Server] 向这个 IP 的机器发送 HTTP 请求
+    3. [Server-Res] 服务器收到、处理并返回 HTTP 请求
+    4. [Res] 浏览器得到返回内容
+
+b. 渲染过程：
+
+    1. [DOM树] 根据 HTML 结构生成 DOM 树
+    2. [CSSOM] 根据 CSS 生成 CSSOM
+    3. [渲染树] 将 DOM 和 CSSOM 整合形成 RenderTree
+    4. [绘制] 根据 RenderTree 开始渲染和展示
+    5. [链接] 加载执行外链资源
+
+DOM 树 和 渲染树 的区别：
+    DOM 树与 HTMl 标签一一对应，而渲染树不包含 head 和隐藏元素 display none
+
+CSS 不会阻塞 DOM 的解析，但会阻塞后续 DOM 渲染
+
+[浏览器的渲染过程，DOM 树和渲染树的区别？_Fairy的博客-CSDN博客](https://blog.csdn.net/Gbing1228/article/details/103575756)
+

@@ -262,3 +262,4 @@ https://github.com/GoogleChromeLabs/squoosh/blob/dev/src/shared/prerendered-app/
   - body
   - 层级稳定
 
+[前端监控 SDK 的一些技术要点原理分析 - 知乎](https://zhuanlan.zhihu.com/p/420330110)

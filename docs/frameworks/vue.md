@@ -5,13 +5,14 @@
 ## MVVM
 Model-View-ViewModel
 ![1643060c121f7361~tplv-t2oaga2asx-zoom-in-crop-mark:1304:0:0:0.awebp (685×362)](https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2018/6/24/1643060c121f7361~tplv-t2oaga2asx-zoom-in-crop-mark:1304:0:0:0.awebp)
+
 [Vue.js中的MVVM - 掘金](https://juejin.cn/post/6844903624405942286)
 
 - 脏检查机制
 - 数据劫持
 - 代理
 
-就前端而言，Model 往往来自后端接口，View 由 DOM 实现，VM 主要是 Vue
+就前端而言，Model 往往来自后端接口，View 由 DOM 实现，VM 主要是 Vue/React
 
 ## 与 React 比较 3+1
 
@@ -595,27 +596,6 @@ react 递归更新，还有 diff 把关，并不一定重渲染 ODM
 - 状态提升
 - 易于跟踪变化 debug
 [状态管理 — Vue.js](https://cn.vuejs.org/v2/guide/state-management.html#%25E7%25AE%2580%25E5%258D%2595%25E7%258A%25B6%25E6%2580%2581%25E7%25AE%25A1%25E7%2590%2586%25E8%25B5%25B7%25E6%25AD%25A5%25E4%25BD%25BF%25E7%2594%25A8)
-
-## 源码
-从正式发布的第一个版本读 0.01-0.03
-
-### v0.7.0 最低版本？
-```js
-new Vue(options)
-  function ViewModel(options)
-    new Compiler(this, options)
-```
-this 表示 vm instance,
-
-核心流程在 compiler.js
-
-Compiler 构造函数，原型扩展方法
-
-有很多连续赋值
-
-初始化元素：setupElement 确定 el，深拷贝 template 并返回 el
-
-partial 类似 slot？
 
 ## 全局组件、插件
 

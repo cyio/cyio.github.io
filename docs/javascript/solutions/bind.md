@@ -1,5 +1,9 @@
 # bind
 
+bind 是后加的，可用以前有的特性 apply 来实现
+
+考虑参数获取与合并
+
 ```js
   // fn.bind(this, 1, 2)
   // new fn
@@ -13,7 +17,7 @@
     }
   }
 
-  // ES6
+  // ES6 - Better
   Function.prototype.myBind1 = function(...args) {
     const fn = this
     const oThis = args(0)

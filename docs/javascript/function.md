@@ -54,6 +54,8 @@ tmp(1, 2)
 
 ## this 指向
 
+> 统一理解成指向所属对象，function 所属对象是全局 window，被 new 调用时，所属对象是新对象
+
 - 方法调用，`this`指向所属对象
 - 函数调用，`this`指向全局对象(事实上是上面的特例)
 
@@ -63,6 +65,8 @@ tmp(1, 2)
 
 - 函数总是返回一个值，如果没有指定返回值，则返回`undefined`
   如果函数调用时在前面加上了`new`前缀，且返回值不是一个对象，则返回`this`(该新对象)
+
+## 修改 this 和参数
 
 ### apply 和 call
 
@@ -80,7 +84,7 @@ console.log(Math.max.apply(null, allNumbers)) // 56
 console.log(Math.max(...allNumbers))
 ```
 
-### bind
+### bind 固定 this
 
 `call apply bind`是相似的，`bind`是 ES5 增加的，可为函数调用固定`this`或参数
 
