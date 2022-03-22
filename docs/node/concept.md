@@ -1,5 +1,5 @@
 # concept
-[toc]
+[[toc]]
 
 ## 流 stream
 
