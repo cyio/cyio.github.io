@@ -5,7 +5,7 @@
 3. 第一个错误发生时，reject
 
 注意点：
-- 入参仅要求可遍历，不一定是异步 Promise，所以需要包起来
+- 输入出仅要求可遍历，不一定是异步 Promise，所以需要包起来
 - 不能用 push 方式，values 要求能按原顺序取出
 
 核心：累计 resolve count，达到 all count 时 resolve
@@ -13,7 +13,7 @@
 ```js
 // Promise.myAll
 function myAll(arr) {
-  return new Promise((resolve, reject) => 
+  return new Promise((resolve, reject) => {
     let values = []
     let resolveCount = 0 // 并发请求填充 values，不能用 length，只能单独 count
     for (let i = 0; i < arr.length; i++) {
@@ -24,8 +24,8 @@ function myAll(arr) {
           if (resolveCount === arr.length) {
             resolve(values)
           }
-        })
-        .catch(e => reject(e))
+        }, reject)
+        // .catch(e => reject(e))
     }
   })
 }

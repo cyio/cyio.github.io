@@ -1,7 +1,9 @@
 # Promise
 
-- 内部定义一个状态，两上个值，两个数组
-- 提供两个方法设置状态、并依次执行回调数组
+![image.png](http://ww1.sinaimg.cn/large/4e5d3ea7ly1h0hx0nue24j224s17gq8q.jpg)
+
+- 内部定义一个状态，两上值，两个数组
+- 提供两个方法设置状态、并依次执行回调数组/链式
 - 两个方法传给外部的 fn
 - then 后者依赖前者返回值
 
@@ -10,7 +12,7 @@
 ```js
 // let task = new Promise(rFn)
 // task.then(res => {})
-function Promise(fn) {
+function Promise(exe) {
   this.state = 'pending'
   this.value = null
   this.cbs = []
@@ -21,20 +23,25 @@ function Promise(fn) {
     this.cbs.forEach(cb => cb(this.value))
   }
 
-  fn(resolve)
+  // 省略 reject
+
+  exe(resolve, )
 }
 
 Promise.prototype.then = function (cb) {
   return new Promise(resolve => {
     const _cb = value => {
       const ret = cb(value) // 获取返回值，向后传递
-      resolve(ret)
+      resolve(ret) // 链式关键
     }
+    // 省略 reject cb
+
     if (this.state === 'fulfilled') {
       _cb(this.value)
     } else if (this.state === 'pending') {
       this.cbs.push(_cb)
     }
+    // 省略 reject 分支
   })
 }
 

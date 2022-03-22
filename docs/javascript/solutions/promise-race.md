@@ -16,7 +16,8 @@
   Promise.myRace = function(arr){
     return new Promise((resolve, reject) => {
       arr.forEach(item => {
-        item.then(resolve, reject)
+        // 实现结构与 all 相似，区别是没有条件限制
+        Promise(item).then(resolve, reject)
       })
     })
   }

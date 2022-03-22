@@ -1,9 +1,12 @@
 # Promise
 [[toc]]
 
+![image.png](http://ww1.sinaimg.cn/large/4e5d3ea7ly1h0hvynxp8oj20nz0b0767.jpg)
+
 Type: Object
 
 > 采用promise可以解决异步编程的逻辑嵌套问题
+
 > cb => then chain
 
 ## 概念
@@ -41,7 +44,9 @@ console.log(4)
 
 ## Promise.all
 
-在使用 promise.all 的时候要注意：业务上没有必然关联的请求比如联动组件这种，一定不要使用 promise.all，否则某个接口有问题，会导致其它正常的接口也拿不到数据
+使用场景：有必然关联的接口
+
+> 在使用 promise.all 的时候要注意：业务上没有必然关联的请求比如联动组件这种，一定不要使用 promise.all，否则某个接口有问题，会导致其它正常的接口也拿不到数据
 
 实现：promise  + all resolve count
 
@@ -221,19 +226,19 @@ async function printFiles() {
 ## race 方法
 兼容性：chrome 32+ 不支持 IE10
 
+## finally
+不支持任何入参
+
+Chrome 63+
+
+## 其他
 异常：Uncaught (in promise)  catch 的过去时，在尾部 catch 即可
 
 [今日头条: 介绍下Promise，内部实现(一面) · Issue #14 · frontend9/fe9-interview](https://github.com/frontend9/fe9-interview/issues/14)
-
 [高级异步模式 - Promise 单例](https://mp.weixin.qq.com/s/WOPY0OCJX8upEcMHm6F5Xw)
 [高级 Promise 模式 - Promise缓存](https://mp.weixin.qq.com/s/-NIAl9MZ1VaAZWLTL4H7LA)
 
 返回 Promise，而非 await 的结果
 
 lodash memory 简化使用
-
-## finally
-不支持任何入参
-
-Chrome 63+
 
