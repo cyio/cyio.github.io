@@ -6,8 +6,15 @@ const glob = require('glob');
 const solutionsArr = fs
   .readdirSync(path.resolve(__dirname, '../javascript/solutions'))
   .filter(filename => filename.endsWith('.md'))
-  .map(filename => 'solutions/' + filename.slice(0, -3))
+  .map(filename => 'solutions/' + filename)
   .sort()
+
+// const tmp = fs
+//   .readdirSync(path.resolve(__dirname, '../blog/'))
+//   .filter(filename => filename.endsWith('.md'))
+//   .map(filename => 'blog/' + filename)
+//   // .sort()
+// console.log(tmp)
 
 module.exports = {
   title: 'Oaker小站',
@@ -33,27 +40,31 @@ module.exports = {
   ],
   bundler: '@vuepress/vite',
   bundlerConfig: {
-    // vite bundler options
-  },
-  themeConfig: {
-    serviceWorker: {
+    // vite bundler options }, themeConfig: { serviceWorker: {
       lastUpdated: '最后更新',
       updatePopup: true,
       updatePopup: { 
          message: "有新内容可用", 
          buttonText: "更新" 
       }
-    },
-    evergreen: true,
-    nav: [
-      // { text: '主页', link: '/' },
-      { text: 'Blog', link: '/' },
-      { text: 'JS', link: '/javascript/concept' },
+  },
+  evergreen: true,
+  themeConfig: {
+    // navbar: [
+    //   {
+    //     text: 'Foo',
+    //     link: '/foo/',
+    //   },
+    // ],
+    navbar: [
+      { text: '主页', link: '/' },
+      // { text: 'Blog', link: '/' },
+      { text: 'JS', link: '/javascript/concept.html' },
       // { text: '题解', link: '/javascript/solutions/new.md' },
-      { text: 'Web', link: '/web/html' },
-      { text: '框架', link: '/frameworks/vue' },
-      { text: 'Node', link: '/node/concept' },
-      { text: '工具', link: '/tools/markdown' },
+      { text: 'Web', link: '/web/html.html' },
+      { text: '框架', link: '/frameworks/vue.html' },
+      { text: 'Node', link: '/node/concept.html' },
+      { text: '工具', link: '/tools/markdown.html' },
       { text: 'Github', link: 'https://github.com/cyio' },
       // { text: '项目', link: '/projects/' },
       // { text: '未分类', link: '/uncategorized/' },
@@ -129,7 +140,7 @@ function getChildren(dirName) {
   let names = []
   let globPath = path.resolve(`./docs/${dirName}/*.md`)
   glob.sync(globPath).forEach(file => {
-    const name = path.parse(file).name
+    const name = path.parse(file).base
     if (name.indexOf('README') < 0) {
       names.push(name)
     }
