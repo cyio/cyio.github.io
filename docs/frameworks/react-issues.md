@@ -494,10 +494,12 @@ UserLayout 就是上方有个 logo、下方留空，如给登录使用
 ## umi 简化数据流方案
 
 [@umijs/plugin-model](https://umijs.org/zh-CN/plugins/plugin-model)
+```
 页面 pattern model/\*_/_ 或 \*.model.ts
 pages/user/counter.model.js
 pages/user/models/counter.js
 useModel('user.counter')
+```
 
 namespace 小写命名，跟其它类型变量区分
 
@@ -551,7 +553,7 @@ function 没有导出
 
 ## Error: Too many re-renders. React limits the number of renders to prevent an infinite loop.
 
-onClick={setSideIndex(index)}
+`onClick={setSideIndex(index)}`
 
 ## 自定义表单控件
 

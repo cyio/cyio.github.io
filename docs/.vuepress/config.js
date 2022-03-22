@@ -31,6 +31,19 @@ module.exports = {
       serviceWorker: true,
       updatePopup: true
     }],
+    // [
+    //   '@vuepress/plugin-search',
+    //   {
+    //     locales: {
+    //       '/': {
+    //         placeholder: 'Search',
+    //       },
+    //       '/zh/': {
+    //         placeholder: '搜索',
+    //       },
+    //     },
+    //   },
+    // ],
     // ['@vuepress/register-components', {
         // componentsDir: path.resolve(__dirname, './components'),
         // // components: {
