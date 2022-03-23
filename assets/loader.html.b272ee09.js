@@ -1,0 +1,1 @@
+const e={key:"v-6ad43f17",path:"/project/loader.html",title:"手动载入脚本和样式",lang:"en-US",frontmatter:{},excerpt:"",headers:[],filePathRelative:"project/loader.md",git:{updatedTime:1647996709e3,contributors:[]}};export{e as data};

@@ -1,0 +1,1 @@
+const e={key:"v-49d1599c",path:"/project/vue-multiple-pages.html",title:"Vue 多页",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"打包优化",slug:"打包优化",children:[]},{level:2,title:"路由",slug:"路由",children:[]}],filePathRelative:"project/vue-multiple-pages.md",git:{updatedTime:1647996709e3,contributors:[]}};export{e as data};

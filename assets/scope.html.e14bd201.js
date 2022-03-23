@@ -1,0 +1,1 @@
+const e={key:"v-48216b8e",path:"/javascript/scope.html",title:"作用域",lang:"en-US",frontmatter:{},excerpt:"",headers:[],filePathRelative:"javascript/scope.md",git:{updatedTime:1647996709e3,contributors:[]}};export{e as data};

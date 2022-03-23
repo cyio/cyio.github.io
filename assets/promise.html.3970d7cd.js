@@ -1,0 +1,1 @@
+const t={key:"v-7b8b997c",path:"/javascript/solutions/promise.html",title:"Promise",lang:"en-US",frontmatter:{},excerpt:"",headers:[],filePathRelative:"javascript/solutions/promise.md",git:{updatedTime:1647996709e3,contributors:[]}};export{t as data};

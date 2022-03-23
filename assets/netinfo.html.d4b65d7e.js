@@ -1,0 +1,1 @@
+const e={key:"v-7bc6807c",path:"/web/netinfo.html",title:"netinfo",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"网络质量",slug:"网络质量",children:[]}],filePathRelative:"web/netinfo.md",git:{updatedTime:1647996709e3,contributors:[]}};export{e as data};

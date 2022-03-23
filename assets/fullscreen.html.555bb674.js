@@ -1,0 +1,1 @@
+const e={key:"v-2a4b4822",path:"/project/fullscreen.html",title:"全屏",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"在全屏元素上层显示",slug:"在全屏元素上层显示",children:[]},{level:2,title:"z-index需要设置position才能生效",slug:"z-index需要设置position才能生效",children:[]}],filePathRelative:"project/fullscreen.md",git:{updatedTime:1647996709e3,contributors:[]}};export{e as data};

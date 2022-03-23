@@ -1,0 +1,1 @@
+const t={key:"v-386102c4",path:"/javascript/solutions/bind.html",title:"bind",lang:"en-US",frontmatter:{},excerpt:"",headers:[],filePathRelative:"javascript/solutions/bind.md",git:{updatedTime:1647996709e3,contributors:[]}};export{t as data};

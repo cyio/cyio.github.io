@@ -1,0 +1,1 @@
+const e={key:"v-4f4ed726",path:"/project/anchors-jump.html",title:"锚点跳转",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"scrollIntoView",slug:"scrollintoview",children:[]},{level:2,title:"如何为滚动添加平滑动画",slug:"如何为滚动添加平滑动画",children:[]}],filePathRelative:"project/anchors-jump.md",git:{updatedTime:1647996709e3,contributors:[]}};export{e as data};

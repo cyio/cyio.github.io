@@ -1,0 +1,1 @@
+import{o as a,c as r,F as e,a as n,b as s}from"./app.31fc93bc.js";const l={},p=n("h1",{id:"kmp",tabindex:"-1"},[n("a",{class:"header-anchor",href:"#kmp","aria-hidden":"true"},"#"),s(" KMP")],-1),t=n("p",null,"字符串搜索",-1),c=n("p",null,"暴力求解每次匹配失败都会使得主串的指针回溯，而KMP算法则不会使得主串指针回溯",-1);l.render=function(n,s){return a(),r(e,null,[p,t,c],64)};export default l;

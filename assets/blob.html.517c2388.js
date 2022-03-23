@@ -1,0 +1,1 @@
+const e={key:"v-44672c08",path:"/web/blob.html",title:"blob",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"mp4 直接转成 blob 可以吗？",slug:"mp4-直接转成-blob-可以吗",children:[]}],filePathRelative:"web/blob.md",git:{updatedTime:1647996709e3,contributors:[]}};export{e as data};

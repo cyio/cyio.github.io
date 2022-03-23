@@ -1,0 +1,1 @@
+const e={key:"v-24f95459",path:"/tools/prettier.html",title:"prettier",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"ignore",slug:"ignore",children:[]}],filePathRelative:"tools/prettier.md",git:{updatedTime:1647996709e3,contributors:[]}};export{e as data};

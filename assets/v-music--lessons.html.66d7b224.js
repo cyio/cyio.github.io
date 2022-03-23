@@ -1,0 +1,1 @@
+const e={key:"v-8487a846",path:"/project/v-music--lessons.html",title:"",lang:"en-US",frontmatter:{},excerpt:"",headers:[],filePathRelative:"project/v-music--lessons.md",git:{updatedTime:1647996709e3,contributors:[]}};export{e as data};

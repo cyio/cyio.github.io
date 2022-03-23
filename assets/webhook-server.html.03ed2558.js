@@ -1,0 +1,1 @@
+import{o as l,c as n,F as o,a as s,b as u}from"./app.31fc93bc.js";const a={},c=s("p",null,"不要从别的项目拷贝过来，就以为能直接运行 端口是否占用了",-1),e=s("ol",null,[s("li",null,"sudo chmod +x *.sh 否则无法执行"),s("li",null,[s("code",null,"node webpack.js"),u("能跑起吗，")])],-1);a.render=function(s,u){return l(),n(o,null,[c,e],64)};export default a;

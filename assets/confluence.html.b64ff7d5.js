@@ -1,0 +1,1 @@
+const e={key:"v-02237dd2",path:"/project/confluence.html",title:"Confluence",lang:"en-US",frontmatter:{},excerpt:"",headers:[],filePathRelative:"project/confluence.md",git:{updatedTime:1647996709e3,contributors:[]}};export{e as data};

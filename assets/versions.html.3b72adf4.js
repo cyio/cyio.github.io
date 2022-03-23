@@ -1,0 +1,1 @@
+const e={key:"v-774e388a",path:"/node/versions.html",title:"版本",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"v10",slug:"v10",children:[]}],filePathRelative:"node/versions.md",git:{updatedTime:1647996709e3,contributors:[]}};export{e as data};

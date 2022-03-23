@@ -1,0 +1,1 @@
+const e={key:"v-1a4aef50",path:"/javascript/solutions/promise-race.html",title:"promise.race",lang:"en-US",frontmatter:{},excerpt:"",headers:[],filePathRelative:"javascript/solutions/promise-race.md",git:{updatedTime:1647996709e3,contributors:[]}};export{e as data};

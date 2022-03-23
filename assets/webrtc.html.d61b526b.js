@@ -1,0 +1,1 @@
+const e={key:"v-9d950fd0",path:"/web/webrtc.html",title:"webrtc",lang:"en-US",frontmatter:{},excerpt:"",headers:[],filePathRelative:"web/webrtc.md",git:{updatedTime:1647996709e3,contributors:[]}};export{e as data};

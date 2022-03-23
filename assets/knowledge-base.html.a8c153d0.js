@@ -1,0 +1,1 @@
+const e={key:"v-3d0bd876",path:"/web/knowledge-base.html",title:"知识体系",lang:"en-US",frontmatter:{},excerpt:"",headers:[],filePathRelative:"web/knowledge-base.md",git:{updatedTime:1647996709e3,contributors:[]}};export{e as data};

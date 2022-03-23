@@ -1,0 +1,1 @@
+const e={key:"v-1751ede3",path:"/project/vercel.html",title:"Vercel",lang:"en-US",frontmatter:{},excerpt:"",headers:[],filePathRelative:"project/vercel.md",git:{updatedTime:1647996709e3,contributors:[]}};export{e as data};

@@ -1,0 +1,1 @@
+const e={key:"v-ca8ff072",path:"/javascript/number.html",title:"Number",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"浮点数计算",slug:"浮点数计算",children:[{level:3,title:"价格场景",slug:"价格场景",children:[]}]}],filePathRelative:"javascript/number.md",git:{updatedTime:1647996709e3,contributors:[]}};export{e as data};

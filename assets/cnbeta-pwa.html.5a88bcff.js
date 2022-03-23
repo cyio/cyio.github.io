@@ -1,0 +1,1 @@
+const e={key:"v-10685efc",path:"/project/cnbeta-pwa.html",title:"",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"数据爬取",slug:"数据爬取",children:[]}],filePathRelative:"project/cnbeta-pwa.md",git:{updatedTime:1647996709e3,contributors:[]}};export{e as data};
