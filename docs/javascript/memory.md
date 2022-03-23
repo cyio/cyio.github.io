@@ -7,7 +7,6 @@ stack     heap
 fn/local  obj/global
 ```
 
-
 栈空间，用完回收，连续存储，先进后出 
 
 堆空间有老生代、新生代

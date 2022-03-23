@@ -79,6 +79,7 @@ module.exports = {
       { text: '框架', link: '/frameworks/vue.html' },
       { text: 'Node', link: '/node/concept.html' },
       { text: '工具', link: '/tools/markdown.html' },
+      { text: '题解', link: '/javascript/solutions/fib.html' },
       { text: 'Github', link: 'https://github.com/cyio' },
       // { text: '项目', link: '/projects/' },
       // { text: '未分类', link: '/uncategorized/' },
@@ -96,7 +97,7 @@ function genSidebarConfig () {
     {
       name: 'javascript',
       displayName: 'JS',
-      collapsable: false,
+      collapsable: true,
     },
     {
       name: 'web',
@@ -118,29 +119,29 @@ function genSidebarConfig () {
       displayName: '工具',
       collapsable: false,
     },
-    // {
-    // name: 'javascript/solutions',
-    // displayName: '题解',
-    // collapsable: false,
-    // },
+    {
+      name: 'javascript/solutions',
+      displayName: '题解',
+      collapsable: false,
+    },
   ]
   navKeys.forEach(item => {
     sideBarData[`/${item.name}/`] = [
       {
-        title: item.name,
+        text: item.name,
         // path: 'javascript/solutions/',
         collapsable: item.collapsable,
         children: getChildren(item.name)
       },
     ]
   })
-  sideBarData['/javascript/'].push(
-    {
-      title: '题解',
-      collapsable: false,
-      children: solutionsArr
-    }
-  )
+  // sideBarData['/javascript/'].push(
+  //   {
+  //     title: '题解',
+  //     collapsable: true,
+  //     children: solutionsArr
+  //   }
+  // )
   // console.log(solutionsArr)
   // console.log(sideBarData)
   return sideBarData

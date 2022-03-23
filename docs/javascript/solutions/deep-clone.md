@@ -56,14 +56,4 @@ Map => WeakMap
   console.log('array deepClone', a1.b.d === a3.b.d)    // expect false
 ```
 
-## why WeakMap
-
-Map 由两个数组实现，[keys] [values]
-
-两个问题：
-1. set 和 search 是 O(n)
-2. 内存泄漏，数组会无限期维护引用，阻止垃圾回收
-
-解决：弱引用，没有引用时，可被垃圾回收
-[WeakMap - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap)
 [如何写出一个惊艳面试官的深拷贝?](https://juejin.cn/post/6844903929705136141)
