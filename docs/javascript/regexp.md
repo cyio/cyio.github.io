@@ -1,6 +1,6 @@
 # 正则表达式
 
-[toc]
+[[toc]]
 
 [any86/any-rule: 🦕 常用正则大全, 支持 web / vscode / idea / Alfred Workflow 多平台](https://github.com/any86/any-rule)
 

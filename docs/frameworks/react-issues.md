@@ -547,7 +547,7 @@ getValueFromEvent = { normFile }
 
 function 没有导出
 
-## 使用 upload 组件上传图片提示：Uncaught Error: must set key for <rc-animate> children
+## 使用 upload 组件上传图片提示：Uncaught Error: must set key for \<rc-animate\> children
 
 没有设置 uid
 
@@ -1077,7 +1077,7 @@ makeCancelable 为 promise 添加伪取消功能 [isMounted is an Antipattern �
 
 2.【强制】前后端数据列表相关的接口返回，如果为空，则返回空数组[]或空集合{}。说明：此条约定有利于数据层面上的协作更加高效，减少前端很多琐碎的 null 判断。
 
-https://github.com/alibaba/p3c/blob/master/Java%E5%BC%80%E5%8F%91%E6%89%8B%E5%86%8C%EF%BC%88%E5%B5%A9%E5%B1%B1%E7%89%88%EF%BC%89.pdf
+alibaba Java开发手册（嵩山版）.pdf
 
 ## map key
 

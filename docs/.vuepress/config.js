@@ -84,7 +84,7 @@ module.exports = {
       // { text: '未分类', link: '/uncategorized/' },
       // { text: '关于', link: '/about' },
     ],
-    sidebarDepth: 2,
+    sidebarDepth: 0,
     // sidebar: 'auto',
     sidebar: genSidebarConfig()
   },

@@ -225,7 +225,7 @@ render() {
 
 - 需要自己实现视频控制
   [Video player with controllers using React Native – cubbuk – Medium](https://medium.com/@cubbuk/video-player-with-controllers-using-react-native-72e35d7ab469)
-  [inProgress-team/react-native-youtube: A <YouTube/> component for React Native.](https://github.com/inProgress-team/react-native-youtube)
+  [inProgress-team/react-native-youtube: A \<YouTube/>\ component for React Native.](https://github.com/inProgress-team/react-native-youtube)
 - 加载视频时热更新可能会卡住，回到桌面，再打开一般就会好
 - 改端口涉及到 debug，需要改 AppDelegate.m，主项目最好别改，如果要修改参考
   [Intro to Debugging React Native (iOS and Android) - Differential](https://differential.com/insights/intro-to-debugging-react-native-ios-and-android/)

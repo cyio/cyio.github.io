@@ -1,5 +1,5 @@
 # Vue 3 源码学习
-[toc]
+[[toc]]
 
 ## 调试
 git clone git@github.com:vuejs/core.git vue3-core
