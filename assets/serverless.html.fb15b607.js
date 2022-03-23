@@ -1,0 +1,1 @@
+const e={key:"v-3f150624",path:"/project/serverless.html",title:"serverless",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"不适合场景",slug:"不适合场景",children:[]}],filePathRelative:"project/serverless.md",git:{updatedTime:1648046068e3,contributors:[]}};export{e as data};

@@ -1,0 +1,1 @@
+const e={key:"v-79fe2ed9",path:"/javascript/algorithms/tree.html",title:"树",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"遍历",slug:"遍历",children:[]}],filePathRelative:"javascript/algorithms/tree.md",git:{updatedTime:1648046068e3,contributors:[]}};export{e as data};

@@ -1,1 +1,0 @@
-const e={key:"v-31ad1f9e",path:"/web/process.html",title:"流程",lang:"en-US",frontmatter:{},excerpt:"",headers:[],filePathRelative:"web/process.md",git:{updatedTime:1647996709e3,contributors:[]}};export{e as data};

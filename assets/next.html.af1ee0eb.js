@@ -1,0 +1,1 @@
+const e={key:"v-2f55e6e5",path:"/frameworks/next.html",title:"Next",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"now 发布工具",slug:"now-发布工具",children:[]}],filePathRelative:"frameworks/next.md",git:{updatedTime:1648046068e3,contributors:[]}};export{e as data};

@@ -1,1 +1,0 @@
-const e={key:"v-3ed0e3f1",path:"/javascript/solutions/promise-allSettled.html",title:"promise.allSettled",lang:"en-US",frontmatter:{},excerpt:"",headers:[],filePathRelative:"javascript/solutions/promise-allSettled.md",git:{updatedTime:1647996709e3,contributors:[]}};export{e as data};

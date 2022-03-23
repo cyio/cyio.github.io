@@ -1,0 +1,1 @@
+const e={key:"v-f2d96b0a",path:"/web/css-loading.html",title:"CSS Loading",lang:"en-US",frontmatter:{},excerpt:"",headers:[],filePathRelative:"web/css-loading.md",git:{updatedTime:1648046068e3,contributors:[]}};export{e as data};

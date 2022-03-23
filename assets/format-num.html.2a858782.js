@@ -1,1 +1,0 @@
-const t={key:"v-3475bc8b",path:"/javascript/solutions/format-num.html",title:"数字格式化",lang:"en-US",frontmatter:{},excerpt:"",headers:[],filePathRelative:"javascript/solutions/format-num.md",git:{updatedTime:1647996709e3,contributors:[]}};export{t as data};

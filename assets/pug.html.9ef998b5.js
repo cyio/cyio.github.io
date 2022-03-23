@@ -1,0 +1,1 @@
+const t={key:"v-6a1e6804",path:"/tools/pug.html",title:"Pug",lang:"en-US",frontmatter:{},excerpt:"",headers:[],filePathRelative:"tools/pug.md",git:{updatedTime:1648046068e3,contributors:[]}};export{t as data};

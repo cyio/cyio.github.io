@@ -1,0 +1,1 @@
+const e={key:"v-581a395e",path:"/project/agile-development.html",title:"敏捷软件开发",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"测试用例评审",slug:"测试用例评审",children:[]},{level:2,title:"代码评审",slug:"代码评审",children:[]}],filePathRelative:"project/agile-development.md",git:{updatedTime:1648046068e3,contributors:[]}};export{e as data};

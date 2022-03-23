@@ -1,0 +1,1 @@
+const e={key:"v-18ab85e4",path:"/tools/web-editor-playground.html",title:"在线编辑器",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"codepen",slug:"codepen",children:[]}],filePathRelative:"tools/web-editor-playground.md",git:{updatedTime:1648046068e3,contributors:[]}};export{e as data};

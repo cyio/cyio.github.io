@@ -1,1 +1,0 @@
-const t={key:"v-62ca9b52",path:"/javascript/this.html",title:"this",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"basic",slug:"basic",children:[]},{level:2,title:"this 继承",slug:"this-继承",children:[]},{level:2,title:"易错题",slug:"易错题",children:[]}],filePathRelative:"javascript/this.md",git:{updatedTime:1647996709e3,contributors:[]}};export{t as data};

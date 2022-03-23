@@ -1,0 +1,1 @@
+const e={key:"v-8f5d6772",path:"/web/pseudo-elements.html",title:"伪元素",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"常见的应用场景",slug:"常见的应用场景",children:[]},{level:2,title:"兼容性",slug:"兼容性",children:[]},{level:2,title:"参考",slug:"参考",children:[]}],filePathRelative:"web/pseudo-elements.md",git:{updatedTime:1648046068e3,contributors:[]}};export{e as data};

@@ -1,0 +1,1 @@
+const e={key:"v-63153b54",path:"/project/habit.html",title:"",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"同步不要太频繁",slug:"同步不要太频繁",children:[]},{level:2,title:"文档记录",slug:"文档记录",children:[]},{level:2,title:"markdown 排版",slug:"markdown-排版",children:[]}],filePathRelative:"project/habit.md",git:{updatedTime:1648046068e3,contributors:[]}};export{e as data};

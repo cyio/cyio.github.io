@@ -1,1 +1,0 @@
-const e={key:"v-3cd9989b",path:"/javascript/solutions/promise-order.html",title:"Promise 执行顺序",lang:"en-US",frontmatter:{},excerpt:"",headers:[],filePathRelative:"javascript/solutions/promise-order.md",git:{updatedTime:1647996709e3,contributors:[]}};export{e as data};

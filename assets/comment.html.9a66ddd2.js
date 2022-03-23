@@ -1,0 +1,1 @@
+const e={key:"v-2b6e74a4",path:"/web/comment.html",title:"更好的注释",lang:"en-US",frontmatter:{},excerpt:"",headers:[],filePathRelative:"web/comment.md",git:{updatedTime:1648046068e3,contributors:[]}};export{e as data};

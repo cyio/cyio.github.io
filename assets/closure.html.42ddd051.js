@@ -1,0 +1,1 @@
+const t={key:"v-85270748",path:"/javascript/solutions/closure.html",title:"闭包",lang:"en-US",frontmatter:{},excerpt:"",headers:[],filePathRelative:"javascript/solutions/closure.md",git:{updatedTime:1648046068e3,contributors:[]}};export{t as data};

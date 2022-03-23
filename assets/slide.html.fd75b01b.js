@@ -1,1 +1,0 @@
-const e={key:"v-13838592",path:"/project/slide.html",title:"slide",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"Speaker Notes",slug:"speaker-notes",children:[]}],filePathRelative:"project/slide.md",git:{updatedTime:1647996709e3,contributors:[]}};export{e as data};

@@ -1,0 +1,1 @@
+const t={key:"v-c8b1a954",path:"/project/mongodb.html",title:"mongodb",lang:"en-US",frontmatter:{},excerpt:"",headers:[],filePathRelative:"project/mongodb.md",git:{updatedTime:1648046068e3,contributors:[]}};export{t as data};

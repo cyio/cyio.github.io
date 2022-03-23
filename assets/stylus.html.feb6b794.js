@@ -1,1 +1,0 @@
-const t={key:"v-8fde9890",path:"/project/stylus.html",title:"",lang:"en-US",frontmatter:{},excerpt:"",headers:[],filePathRelative:"project/stylus.md",git:{updatedTime:1647996709e3,contributors:[]}};export{t as data};

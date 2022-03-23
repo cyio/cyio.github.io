@@ -1,1 +1,0 @@
-const t={key:"v-a7ac964e",path:"/javascript/ES6-proxy.html",title:"Proxy",lang:"en-US",frontmatter:{},excerpt:"",headers:[],filePathRelative:"javascript/ES6-proxy.md",git:{updatedTime:1647996709e3,contributors:[]}};export{t as data};

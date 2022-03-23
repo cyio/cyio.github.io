@@ -1,0 +1,1 @@
+const e={key:"v-96804bb6",path:"/project/code-comments-guide.html",title:"",lang:"en-US",frontmatter:{},excerpt:"",headers:[],filePathRelative:"project/code-comments-guide.md",git:{updatedTime:1648046068e3,contributors:[]}};export{e as data};

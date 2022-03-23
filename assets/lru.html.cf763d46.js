@@ -1,1 +1,0 @@
-const t={key:"v-5bf36b30",path:"/javascript/solutions/lru.html",title:"LRU 缓存算法 - 近期最少使用算法",lang:"en-US",frontmatter:{},excerpt:"",headers:[],filePathRelative:"javascript/solutions/lru.md",git:{updatedTime:1647996709e3,contributors:[]}};export{t as data};

@@ -1,0 +1,1 @@
+const e={key:"v-100409f1",path:"/javascript/solutions/promise-quene.html",title:"Promise 串行",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"1. 迭代",slug:"_1-迭代",children:[]},{level:2,title:"2. 借用 reduce",slug:"_2-借用-reduce",children:[]}],filePathRelative:"javascript/solutions/promise-quene.md",git:{updatedTime:1648046068e3,contributors:[]}};export{e as data};

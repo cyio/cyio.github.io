@@ -1,0 +1,1 @@
+const t={key:"v-7318d916",path:"/javascript/solutions/compose-html.html",title:"函数合成",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"写法 1",slug:"写法-1",children:[]},{level:2,title:"写法 2",slug:"写法-2",children:[]}],filePathRelative:"javascript/solutions/compose-html.md",git:{updatedTime:1648046068e3,contributors:[]}};export{t as data};

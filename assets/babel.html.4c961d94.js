@@ -1,1 +1,0 @@
-const e={key:"v-af3277fa",path:"/web/babel.html",title:"babel",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"polyfill",slug:"polyfill",children:[]}],filePathRelative:"web/babel.md",git:{updatedTime:1647996709e3,contributors:[]}};export{e as data};

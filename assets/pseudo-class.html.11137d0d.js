@@ -1,1 +1,0 @@
-const e={key:"v-849c8308",path:"/web/pseudo-class.html",title:"伪类",lang:"en-US",frontmatter:{},excerpt:"",headers:[],filePathRelative:"web/pseudo-class.md",git:{updatedTime:1647996709e3,contributors:[]}};export{e as data};

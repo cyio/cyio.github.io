@@ -1,1 +1,0 @@
-const e={key:"v-4932bee0",path:"/project/github-gitee-gist.html",title:"",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"Postman 使用注意",slug:"postman-使用注意",children:[]},{level:2,title:"github 与 gitee 授权有区别",slug:"github-与-gitee-授权有区别",children:[]}],filePathRelative:"project/github-gitee-gist.md",git:{updatedTime:1647996709e3,contributors:[]}};export{e as data};

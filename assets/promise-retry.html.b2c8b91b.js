@@ -1,1 +1,0 @@
-const t={key:"v-681bf4fe",path:"/javascript/solutions/promise-retry.html",title:"扩展实现 Promise.retry",lang:"en-US",frontmatter:{},excerpt:"",headers:[],filePathRelative:"javascript/solutions/promise-retry.md",git:{updatedTime:1647996709e3,contributors:[]}};export{t as data};

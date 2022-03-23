@@ -1,1 +1,0 @@
-const e={key:"v-4055cb06",path:"/javascript/solutions/create-chinese-num.html",title:"数字转中文",lang:"en-US",frontmatter:{},excerpt:"",headers:[],filePathRelative:"javascript/solutions/create-chinese-num.md",git:{updatedTime:1647996709e3,contributors:[]}};export{e as data};

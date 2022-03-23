@@ -1,1 +1,0 @@
-import{r as a,o as r,c as e,a as o,F as n,b as s}from"./app.31fc93bc.js";const t={},c=o("h1",{id:"blog",tabindex:"-1"},[o("a",{class:"header-anchor",href:"#blog","aria-hidden":"true"},"#"),s(" Blog")],-1);t.render=function(s,t){const d=a("BlogIndex");return r(),e(n,null,[c,o(d)],64)};export default t;

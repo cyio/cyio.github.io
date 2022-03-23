@@ -1,1 +1,0 @@
-const e={key:"v-6c740320",path:"/node/env.html",title:"env",lang:"en-US",frontmatter:{},excerpt:"",headers:[],filePathRelative:"node/env.md",git:{updatedTime:1647996709e3,contributors:[]}};export{e as data};

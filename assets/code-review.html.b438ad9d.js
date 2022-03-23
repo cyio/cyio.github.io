@@ -1,0 +1,1 @@
+const e={key:"v-687f28d0",path:"/project/code-review.html",title:"code-review",lang:"en-US",frontmatter:{},excerpt:"",headers:[],filePathRelative:"project/code-review.md",git:{updatedTime:1648046068e3,contributors:[]}};export{e as data};

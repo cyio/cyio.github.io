@@ -1,0 +1,1 @@
+const t={key:"v-7f602708",path:"/project/refactor.html",title:"重构",lang:"en-US",frontmatter:{},excerpt:"",headers:[],filePathRelative:"project/refactor.md",git:{updatedTime:1648046068e3,contributors:[]}};export{t as data};

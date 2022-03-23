@@ -1,0 +1,1 @@
+const t={key:"v-a6fc4530",path:"/tools/storybook.html",title:"storybook",lang:"en-US",frontmatter:{},excerpt:"",headers:[],filePathRelative:"tools/storybook.md",git:{updatedTime:1648046068e3,contributors:[]}};export{t as data};

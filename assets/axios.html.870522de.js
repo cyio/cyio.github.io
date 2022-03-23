@@ -1,1 +1,0 @@
-const t={key:"v-15c44fd0",path:"/tools/axios.html",title:"Axios",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"源码",slug:"源码",children:[]}],filePathRelative:"tools/axios.md",git:{updatedTime:1647996709e3,contributors:[]}};export{t as data};

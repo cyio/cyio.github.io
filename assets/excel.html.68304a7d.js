@@ -1,1 +1,0 @@
-const e={key:"v-5ab2ca2f",path:"/tools/excel.html",title:"Excel",lang:"en-US",frontmatter:{},excerpt:"",headers:[],filePathRelative:"tools/excel.md",git:{updatedTime:1647996709e3,contributors:[]}};export{e as data};

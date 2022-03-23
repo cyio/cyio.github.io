@@ -1,1 +1,0 @@
-const e={key:"v-1b098144",path:"/web/web-pay.html",title:"网页支付",lang:"en-US",frontmatter:{},excerpt:"",headers:[],filePathRelative:"web/web-pay.md",git:{updatedTime:1647996709e3,contributors:[]}};export{e as data};

@@ -1,0 +1,1 @@
+const e={key:"v-176a3f5c",path:"/project/video-knowledge.html",title:"视频知识",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"视频直播",slug:"视频直播",children:[]}],filePathRelative:"project/video-knowledge.md",git:{updatedTime:1648046068e3,contributors:[]}};export{e as data};
