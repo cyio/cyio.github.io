@@ -20,7 +20,7 @@ function Promise(exe) {
   const resolve = value => {
     this.value = value
     this.state = 'fullfilled'
-    this.cbs.forEach(cb => cb(this.value))
+    this.cbs.forEach(cb => cb(value))
   }
 
   // 省略 reject

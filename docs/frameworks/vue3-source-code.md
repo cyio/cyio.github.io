@@ -151,7 +151,9 @@ setupResult 是 setup return 的对象
 
 新的 API 理论上会降低代码质量的最低门槛
 
-setup 作用是为了合成生成物，供外部访问 https://stackoverflow.com/a/58500917
+setup 作用是为了合成生成物，供外部访问
+
+[vue.js - When to use setup() hook of Vue Composition API - Stack Overflow](https://stackoverflow.com/a/58500917) 
 
 ## 参考
 [深入响应性原理 | Vue.js](https://v3.cn.vuejs.org/guide/reactivity.html#%25E4%25BB%2580%25E4%25B9%2588%25E6%2598%25AF%25E5%2593%258D%25E5%25BA%2594%25E6%2580%25A7)

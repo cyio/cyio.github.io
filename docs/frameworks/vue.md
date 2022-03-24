@@ -613,3 +613,6 @@ plugin 需要写个 install 方法，内部还是用 组件注册，好处是可
 [Reactive Slot Scope - CodeSandbox](https://codesandbox.io/s/81j57m2lk9?file=/src/App.vue)
 [Vue3 Composition API如何替换Vue Mixins - 掘金](https://juejin.cn/post/6844904136065056781)
 
+## provide/inject
+组件层级深时，父组件向后代传 prop 麻烦，怎么解决？
+

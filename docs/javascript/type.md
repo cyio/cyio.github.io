@@ -52,7 +52,9 @@ undefined == null // 两个值转换为 false，结果是 true
 ```
 
 原始类型，意味着不可变，相等性判断都可以用`===`，而对象可以修改
+
 null 空对象，是特殊原始类型，不能用 typeof 检测出
+
 BigInt
 
 [JavaScript data types and data structures - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures)

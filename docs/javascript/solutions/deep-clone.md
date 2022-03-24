@@ -1,6 +1,6 @@
 # 深拷贝
 
-优化点：利用 proxy 监听数据变化，仅对变化的属性进行深拷贝（immer）
+优化点：利用 proxy 监听数据变化，仅对变化的属性进行深拷贝（immer，增量）
 
 for in 可以遍历数组
 
@@ -35,6 +35,7 @@ Map => WeakMap
   }
   function deepClone(data, map = new Map()) {
     let res = Array.isArray(data) ? [] : {}
+    // 处理循环引用
     if (isObject(data)) {
       if (map.has(data)) return map.get(data)
       map.set(data, res)
@@ -42,7 +43,9 @@ Map => WeakMap
     for (let i in data) {
       let cur = data[i]
       // res[i] = Array.isArray(cur) || isObject(cur) ? deepClone(cur, map) : cur
-      res[i] = Array.isArray(cur) || isObject(cur) ? deepClone(cur, map) : cur
+      res[i] = Array.isArray(cur) || isObject(cur)
+          ? deepClone(cur, map) 
+          : cur
     }
     return res
   }
