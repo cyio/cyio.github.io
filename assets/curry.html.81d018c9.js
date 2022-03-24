@@ -1,1 +1,0 @@
-const t={key:"v-7e7fb510",path:"/javascript/solutions/curry.html",title:"柯里化",lang:"en-US",frontmatter:{},excerpt:"",headers:[],filePathRelative:"javascript/solutions/curry.md",git:{updatedTime:1648046068e3,contributors:[]}};export{t as data};

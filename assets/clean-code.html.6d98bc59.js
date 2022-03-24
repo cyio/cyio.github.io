@@ -1,0 +1,1 @@
+const e={key:"v-86526b0e",path:"/project/clean-code.html",title:"clean code",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"编程的智慧",slug:"编程的智慧",children:[]},{level:2,title:"other",slug:"other",children:[]}],filePathRelative:"project/clean-code.md",git:{updatedTime:164812384e4,contributors:[]}};export{e as data};

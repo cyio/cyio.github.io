@@ -1,0 +1,1 @@
+const e={key:"v-7020582e",path:"/project/mse.html",title:"MSE api",lang:"en-US",frontmatter:{},excerpt:"",headers:[],filePathRelative:"project/mse.md",git:{updatedTime:164812384e4,contributors:[]}};export{e as data};

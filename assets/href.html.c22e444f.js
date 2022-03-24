@@ -1,1 +1,0 @@
-const e={key:"v-231de53a",path:"/web/href.html",title:"Anchor",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"download",slug:"download",children:[]}],filePathRelative:"web/href.md",git:{updatedTime:1648046068e3,contributors:[]}};export{e as data};

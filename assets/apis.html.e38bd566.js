@@ -1,1 +1,0 @@
-const e={key:"v-51529191",path:"/project/apis.html",title:"",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"设计原则",slug:"设计原则",children:[]},{level:2,title:"资源",slug:"资源",children:[]}],filePathRelative:"project/apis.md",git:{updatedTime:1648046068e3,contributors:[]}};export{e as data};

@@ -1,1 +1,0 @@
-const e={key:"v-3b86ae80",path:"/frameworks/swiper.html",title:"Swiper",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"兼容性",slug:"兼容性",children:[]},{level:2,title:"常用选项",slug:"常用选项",children:[]},{level:2,title:"在 SPA 中使用中使用",slug:"在-spa-中使用中使用",children:[]}],filePathRelative:"frameworks/swiper.md",git:{updatedTime:1648046068e3,contributors:[]}};export{e as data};

@@ -1,0 +1,1 @@
+const e={key:"v-2ae43232",path:"/project/localforage.html",title:"",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"扩展 localStorage",slug:"扩展-localstorage",children:[]}],filePathRelative:"project/localforage.md",git:{updatedTime:164812384e4,contributors:[]}};export{e as data};

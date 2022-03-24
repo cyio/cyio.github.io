@@ -1,1 +1,0 @@
-const t={key:"v-84d8f48a",path:"/project/print.html",title:"打印",lang:"en-US",frontmatter:{},excerpt:"",headers:[],filePathRelative:"project/print.md",git:{updatedTime:1648046068e3,contributors:[]}};export{t as data};

@@ -1,0 +1,1 @@
+const e={key:"v-67f872ab",path:"/project/web-load.html",title:"页面加载顺序",lang:"en-US",frontmatter:{},excerpt:"",headers:[],filePathRelative:"project/web-load.md",git:{updatedTime:164812384e4,contributors:[]}};export{e as data};

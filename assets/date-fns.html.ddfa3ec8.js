@@ -1,1 +1,0 @@
-const e={key:"v-f73e3028",path:"/frameworks/date-fns.html",title:"date-fns",lang:"en-US",frontmatter:{},excerpt:"",headers:[],filePathRelative:"frameworks/date-fns.md",git:{updatedTime:1648046068e3,contributors:[]}};export{e as data};

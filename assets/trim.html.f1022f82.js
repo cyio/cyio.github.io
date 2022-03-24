@@ -1,1 +1,0 @@
-const t={key:"v-0333544e",path:"/javascript/solutions/trim.html",title:"trim",lang:"en-US",frontmatter:{},excerpt:"",headers:[],filePathRelative:"javascript/solutions/trim.md",git:{updatedTime:1648046068e3,contributors:[]}};export{t as data};

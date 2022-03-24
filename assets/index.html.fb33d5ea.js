@@ -1,0 +1,1 @@
+const t={key:"v-290d75de",path:"/javascript/solutions/",title:"题解",lang:"en-US",frontmatter:{},excerpt:"",headers:[],filePathRelative:"javascript/solutions/README.md",git:{updatedTime:164812384e4,contributors:[]}};export{t as data};

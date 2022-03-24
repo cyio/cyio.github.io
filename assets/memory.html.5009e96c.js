@@ -1,0 +1,1 @@
+const e={key:"v-79630de2",path:"/javascript/memory.html",title:"内存管理",lang:"en-US",frontmatter:{},excerpt:"",headers:[],filePathRelative:"javascript/memory.md",git:{updatedTime:164812384e4,contributors:[]}};export{e as data};

@@ -1,0 +1,1 @@
+const t={key:"v-d53085a8",path:"/javascript/solutions/Singleton.html",title:"单例",lang:"en-US",frontmatter:{},excerpt:"",headers:[],filePathRelative:"javascript/solutions/Singleton.md",git:{updatedTime:164812384e4,contributors:[]}};export{t as data};

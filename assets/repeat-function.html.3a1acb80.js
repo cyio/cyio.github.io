@@ -1,1 +1,0 @@
-const t={key:"v-6de5822d",path:"/javascript/solutions/repeat-function.html",title:"repeat function",lang:"en-US",frontmatter:{},excerpt:"",headers:[],filePathRelative:"javascript/solutions/repeat-function.md",git:{updatedTime:1648046068e3,contributors:[]}};export{t as data};

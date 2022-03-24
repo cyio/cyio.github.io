@@ -1,1 +1,0 @@
-import{o as l,c as r,a as t}from"./app.09b8f80a.js";const e={},n=t("li",null,'软链接方式，会有依赖问题 Error: Couldn\'t find preset "react-native" relative to directory',-1),o=t("li",null,"若直接在依赖目录下处理，有误删除问题",-1),a=t("li",null,"解决是引用为本地路径",-1);e.render=function(t,e){return l(),r("ol",null,[n,o,a])};export default e;

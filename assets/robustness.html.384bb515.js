@@ -1,0 +1,1 @@
+const e={key:"v-c201277c",path:"/project/robustness.html",title:"健状性",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"需要安全取出值，避免影响主要功能",slug:"需要安全取出值-避免影响主要功能",children:[]}],filePathRelative:"project/robustness.md",git:{updatedTime:164812384e4,contributors:[]}};export{e as data};

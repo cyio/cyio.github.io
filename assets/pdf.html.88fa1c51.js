@@ -1,1 +1,0 @@
-const e={key:"v-01109e0a",path:"/web/pdf.html",title:"pdf",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"页面内嵌",slug:"页面内嵌",children:[]}],filePathRelative:"web/pdf.md",git:{updatedTime:1648046068e3,contributors:[]}};export{e as data};

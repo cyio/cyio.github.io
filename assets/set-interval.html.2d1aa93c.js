@@ -1,0 +1,1 @@
+const t={key:"v-3638aa2a",path:"/javascript/solutions/set-interval.html",title:"setInterval",lang:"en-US",frontmatter:{},excerpt:"",headers:[],filePathRelative:"javascript/solutions/set-interval.md",git:{updatedTime:164812384e4,contributors:[]}};export{t as data};

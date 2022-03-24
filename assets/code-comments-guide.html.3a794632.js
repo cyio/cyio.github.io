@@ -1,0 +1,1 @@
+import{r,o as e,c as o,a as n,b as a}from"./app.26466922.js";const t={},s={href:"http://usejsdoc.org/#JSDoc3_Tag_Dictionary",target:"_blank",rel:"noopener noreferrer"},c=a("Use JSDoc: Index");t.render=function(a,t){const p=r("OutboundLink");return e(),o("p",null,[n("a",s,[c,n(p)])])};export default t;

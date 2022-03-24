@@ -1,1 +1,0 @@
-const e={key:"v-46611e9a",path:"/project/proxy.html",title:"proxy",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"browsersync",slug:"browsersync",children:[]},{level:2,title:"whistle",slug:"whistle",children:[]},{level:2,title:"api",slug:"api",children:[]}],filePathRelative:"project/proxy.md",git:{updatedTime:1648046068e3,contributors:[]}};export{e as data};

@@ -1,0 +1,1 @@
+const t={key:"v-ddd57b54",path:"/javascript/solutions/for-each.html",title:"forEach",lang:"en-US",frontmatter:{},excerpt:"",headers:[],filePathRelative:"javascript/solutions/for-each.md",git:{updatedTime:164812384e4,contributors:[]}};export{t as data};

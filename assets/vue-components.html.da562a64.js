@@ -1,0 +1,1 @@
+const e={key:"v-e63020ca",path:"/frameworks/vue-components.html",title:"vue-components",lang:"en-US",frontmatter:{},excerpt:"",headers:[],filePathRelative:"frameworks/vue-components.md",git:{updatedTime:164812384e4,contributors:[]}};export{e as data};

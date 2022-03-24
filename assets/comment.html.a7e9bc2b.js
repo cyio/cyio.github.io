@@ -1,1 +1,0 @@
-import{o as a,c as l,F as n,a as r,b as e}from"./app.09b8f80a.js";const s={},u=r("h1",{id:"更好的注释",tabindex:"-1"},[r("a",{class:"header-anchor",href:"#更好的注释","aria-hidden":"true"},"#"),e(" 更好的注释")],-1),i=r("ul",null,[r("li",null,"意图非常清楚的代码原则上不需要注释，多余的注释反而会造成维护性问题"),r("li",null,"通过函数抽取 + 命名，避免添加注释")],-1);s.render=function(r,e){return a(),l(n,null,[u,i],64)};export default s;

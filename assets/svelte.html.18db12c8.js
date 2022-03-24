@@ -1,1 +1,0 @@
-const e={key:"v-00ab40dd",path:"/frameworks/svelte.html",title:"Svelte",lang:"en-US",frontmatter:{},excerpt:"",headers:[],filePathRelative:"frameworks/svelte.md",git:{updatedTime:1648046068e3,contributors:[]}};export{e as data};

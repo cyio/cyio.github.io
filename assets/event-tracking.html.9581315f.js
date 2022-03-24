@@ -1,0 +1,1 @@
+const t={key:"v-177b2400",path:"/project/event-tracking.html",title:"埋点",lang:"en-US",frontmatter:{},excerpt:"",headers:[],filePathRelative:"project/event-tracking.md",git:{updatedTime:164812384e4,contributors:[]}};export{t as data};

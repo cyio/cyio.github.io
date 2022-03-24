@@ -1,0 +1,1 @@
+const e={key:"v-a94050fa",path:"/node/deno.html",title:"Deno",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"typescript",slug:"typescript",children:[]}],filePathRelative:"node/deno.md",git:{updatedTime:164812384e4,contributors:[]}};export{e as data};

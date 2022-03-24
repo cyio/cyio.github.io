@@ -1,0 +1,1 @@
+const t={key:"v-341558f5",path:"/project/video-autoplay.html",title:"浏览器自动播放政策",lang:"en-US",frontmatter:{},excerpt:"",headers:[],filePathRelative:"project/video-autoplay.md",git:{updatedTime:164812384e4,contributors:[]}};export{t as data};

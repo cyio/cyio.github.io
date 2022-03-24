@@ -1,0 +1,1 @@
+const t={key:"v-9e3ad5b0",path:"/javascript/math.html",title:"math",lang:"en-US",frontmatter:{},excerpt:"",headers:[],filePathRelative:"javascript/math.md",git:{updatedTime:164812384e4,contributors:[]}};export{t as data};

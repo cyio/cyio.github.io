@@ -1,1 +1,0 @@
-const e={key:"v-6db152eb",path:"/project/Framework7/article-card.html",title:"",lang:"en-US",frontmatter:{},excerpt:"",headers:[],filePathRelative:"project/Framework7/article-card.md",git:{updatedTime:1648046068e3,contributors:[]}};export{e as data};

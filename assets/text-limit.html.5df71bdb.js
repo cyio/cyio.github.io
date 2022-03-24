@@ -1,0 +1,1 @@
+const t={key:"v-2d9ab6e2",path:"/project/text-limit.html",title:"文本输入限制",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"div edit content",slug:"div-edit-content",children:[]}],filePathRelative:"project/text-limit.md",git:{updatedTime:164812384e4,contributors:[]}};export{t as data};

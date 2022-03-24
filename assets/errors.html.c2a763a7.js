@@ -1,0 +1,1 @@
+import{o as a,c as l,F as e,a as n,b as r}from"./app.26466922.js";const o={},s=n("h1",{id:"错题集",tabindex:"-1"},[n("a",{class:"header-anchor",href:"#错题集","aria-hidden":"true"},"#"),r(" 错题集")],-1),u=n("ul",null,[n("li",null,"变量书写不一致，前项目复制过来一堆，应该先做清理"),n("li",null,"没有优先查官方文档，迷信google 看别人怎么解决")],-1);o.render=function(n,r){return a(),l(e,null,[s,u],64)};export default o;

@@ -1,0 +1,1 @@
+const t={key:"v-d4adc03c",path:"/web/http3.html",title:"http3",lang:"en-US",frontmatter:{},excerpt:"",headers:[],filePathRelative:"web/http3.md",git:{updatedTime:164812384e4,contributors:[]}};export{t as data};

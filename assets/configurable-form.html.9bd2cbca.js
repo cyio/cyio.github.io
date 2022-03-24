@@ -1,0 +1,1 @@
+const e={key:"v-1493abd5",path:"/web/configurable-form.html",title:"使用 Vue.js 构造可配置化表单",lang:"en-US",frontmatter:{},excerpt:"",headers:[],filePathRelative:"web/configurable-form.md",git:{updatedTime:164812384e4,contributors:[]}};export{e as data};

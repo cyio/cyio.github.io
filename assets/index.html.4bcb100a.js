@@ -1,1 +1,0 @@
-const e={key:"v-e02a086e",path:"/javascript/",title:"目录",lang:"en-US",frontmatter:{},excerpt:"",headers:[],filePathRelative:"javascript/README.md",git:{updatedTime:1648046068e3,contributors:[]}};export{e as data};

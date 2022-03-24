@@ -1,1 +1,0 @@
-const e={key:"v-c95a0368",path:"/web/css-preprocessor.html",title:"CSS 预处理器",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:3,title:"内置函数",slug:"内置函数",children:[]},{level:2,title:"工具比较",slug:"工具比较",children:[]},{level:2,title:"BEM",slug:"bem",children:[]}],filePathRelative:"web/css-preprocessor.md",git:{updatedTime:1648046068e3,contributors:[]}};export{e as data};

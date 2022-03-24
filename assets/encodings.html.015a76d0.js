@@ -1,0 +1,1 @@
+const t={key:"v-2da35b62",path:"/javascript/encodings.html",title:"字符编码",lang:"en-US",frontmatter:{},excerpt:"",headers:[],filePathRelative:"javascript/encodings.md",git:{updatedTime:164812384e4,contributors:[]}};export{t as data};

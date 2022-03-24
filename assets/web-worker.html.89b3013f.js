@@ -1,0 +1,1 @@
+const e={key:"v-409dc439",path:"/javascript/web-worker.html",title:"web-worker",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"错误处理",slug:"错误处理",children:[]}],filePathRelative:"javascript/web-worker.md",git:{updatedTime:164812384e4,contributors:[]}};export{e as data};

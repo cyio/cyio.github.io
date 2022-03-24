@@ -1,0 +1,1 @@
+const e={key:"v-3d4673a2",path:"/web/encode.html",title:"页面编码",lang:"en-US",frontmatter:{},excerpt:"",headers:[],filePathRelative:"web/encode.md",git:{updatedTime:164812384e4,contributors:[]}};export{e as data};

@@ -1,0 +1,1 @@
+const t={key:"v-1ea9d16c",path:"/frameworks/bootstrap.html",title:"Bootstrap",lang:"en-US",frontmatter:{},excerpt:"",headers:[],filePathRelative:"frameworks/bootstrap.md",git:{updatedTime:164812384e4,contributors:[]}};export{t as data};

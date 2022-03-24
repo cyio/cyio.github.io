@@ -1,0 +1,1 @@
+const t={key:"v-207265ba",path:"/code-patterns/link.html",title:"a 禁用",lang:"en-US",frontmatter:{},excerpt:"",headers:[],filePathRelative:"code-patterns/link.md",git:{updatedTime:164812384e4,contributors:[]}};export{t as data};

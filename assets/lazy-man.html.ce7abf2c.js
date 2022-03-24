@@ -1,0 +1,1 @@
+const t={key:"v-0d2c0e4c",path:"/javascript/solutions/lazy-man.html",title:"lazyman",lang:"en-US",frontmatter:{},excerpt:"",headers:[],filePathRelative:"javascript/solutions/lazy-man.md",git:{updatedTime:164812384e4,contributors:[]}};export{t as data};

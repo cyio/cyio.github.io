@@ -1,1 +1,0 @@
-const e={key:"v-145ac574",path:"/blog/",title:"Blog",lang:"en-US",frontmatter:{blog_index:!0},excerpt:"",headers:[],filePathRelative:"blog/README.md",git:{updatedTime:1648046068e3,contributors:[]}};export{e as data};

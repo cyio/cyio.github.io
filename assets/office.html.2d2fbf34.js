@@ -1,1 +1,0 @@
-const e={key:"v-7a494b90",path:"/tools/office.html",title:"Office",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"Google 本地扩展",slug:"google-本地扩展",children:[]}],filePathRelative:"tools/office.md",git:{updatedTime:1648046068e3,contributors:[]}};export{e as data};

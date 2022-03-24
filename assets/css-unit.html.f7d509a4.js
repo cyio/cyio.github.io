@@ -1,1 +1,0 @@
-const e={key:"v-5b356137",path:"/web/css-unit.html",title:"CSS unit",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"rem",slug:"rem",children:[{level:3,title:"缺点",slug:"缺点",children:[]}]}],filePathRelative:"web/css-unit.md",git:{updatedTime:1648046068e3,contributors:[]}};export{e as data};

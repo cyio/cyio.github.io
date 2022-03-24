@@ -1,0 +1,1 @@
+const t={key:"v-2b3ed1e1",path:"/javascript/animations.html",title:"动画",lang:"en-US",frontmatter:{},excerpt:"",headers:[],filePathRelative:"javascript/animations.md",git:{updatedTime:164812384e4,contributors:[]}};export{t as data};

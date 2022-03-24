@@ -1,0 +1,1 @@
+const e={key:"v-7e285493",path:"/node/gulp.html",title:"gulp",lang:"en-US",frontmatter:{},excerpt:"",headers:[],filePathRelative:"node/gulp.md",git:{updatedTime:164812384e4,contributors:[]}};export{e as data};
