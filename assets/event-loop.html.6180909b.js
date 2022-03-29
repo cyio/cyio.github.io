@@ -1,0 +1,1 @@
+const e={key:"v-28703659",path:"/javascript/event-loop.html",title:"事件循环",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"常见误解",slug:"常见误解",children:[]}],filePathRelative:"javascript/event-loop.md",git:{updatedTime:1648512282e3,contributors:[]}};export{e as data};

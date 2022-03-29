@@ -1,0 +1,1 @@
+const e={key:"v-93a90ee0",path:"/node/node-cli.html",title:"node-cli",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"消息格式化",slug:"消息格式化",children:[]}],filePathRelative:"node/node-cli.md",git:{updatedTime:1648512282e3,contributors:[]}};export{e as data};

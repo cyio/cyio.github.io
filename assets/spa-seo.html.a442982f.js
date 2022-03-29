@@ -1,0 +1,1 @@
+const e={key:"v-4a13c854",path:"/project/spa-seo.html",title:"spa seo",lang:"en-US",frontmatter:{},excerpt:"",headers:[],filePathRelative:"project/spa-seo.md",git:{updatedTime:1648512282e3,contributors:[]}};export{e as data};

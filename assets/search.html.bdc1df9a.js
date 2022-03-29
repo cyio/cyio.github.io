@@ -1,1 +1,0 @@
-const e={key:"v-488c98e2",path:"/javascript/algorithms/search.html",title:"查找",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"二分查找",slug:"二分查找",children:[]}],filePathRelative:"javascript/algorithms/search.md",git:{updatedTime:164812384e4,contributors:[]}};export{e as data};

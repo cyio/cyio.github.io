@@ -1,0 +1,1 @@
+const t={key:"v-2855e268",path:"/project/v-transit.html",title:"v-transit",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"拆解",slug:"拆解",children:[]}],filePathRelative:"project/v-transit.md",git:{updatedTime:1648512282e3,contributors:[]}};export{t as data};

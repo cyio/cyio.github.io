@@ -1,1 +1,0 @@
-const t={key:"v-5d79a7f4",path:"/javascript/data-structures/stack.html",title:"stack",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"应用",slug:"应用",children:[]}],filePathRelative:"javascript/data-structures/stack.md",git:{updatedTime:164812384e4,contributors:[]}};export{t as data};

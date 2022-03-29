@@ -1,1 +1,0 @@
-const e={key:"v-44656e69",path:"/project/gitee-api.html",title:"",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"坑",slug:"坑",children:[]}],filePathRelative:"project/gitee-api.md",git:{updatedTime:164812384e4,contributors:[]}};export{e as data};

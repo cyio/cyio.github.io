@@ -1,0 +1,1 @@
+const t={key:"v-1ad8d32a",path:"/tools/gitbook.html",title:"gitbook",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"Gitbook存在的问题",slug:"gitbook存在的问题",children:[]}],filePathRelative:"tools/gitbook.md",git:{updatedTime:1648512282e3,contributors:[]}};export{t as data};

@@ -1,1 +1,0 @@
-const e={key:"v-525bec7d",path:"/node/express.html",title:"express",lang:"en-US",frontmatter:{},excerpt:"",headers:[],filePathRelative:"node/express.md",git:{updatedTime:164812384e4,contributors:[]}};export{e as data};

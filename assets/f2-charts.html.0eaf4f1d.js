@@ -1,1 +1,0 @@
-const t={key:"v-fc2f4de0",path:"/tools/f2-charts.html",title:"f2-charts",lang:"en-US",frontmatter:{},excerpt:"",headers:[],filePathRelative:"tools/f2-charts.md",git:{updatedTime:164812384e4,contributors:[]}};export{t as data};

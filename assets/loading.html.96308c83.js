@@ -1,1 +1,0 @@
-const e={key:"v-0f0414f1",path:"/web/loading.html",title:"loading",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"dva-loading",slug:"dva-loading",children:[]}],filePathRelative:"web/loading.md",git:{updatedTime:164812384e4,contributors:[]}};export{e as data};

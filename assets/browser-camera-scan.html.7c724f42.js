@@ -1,1 +1,0 @@
-const e={key:"v-0a191df0",path:"/project/browser-camera-scan.html",title:"",lang:"en-US",frontmatter:{},excerpt:"",headers:[],filePathRelative:"project/browser-camera-scan.md",git:{updatedTime:164812384e4,contributors:[]}};export{e as data};

@@ -1,1 +1,0 @@
-const e={key:"v-719f83f6",path:"/tools/revealjs.html",title:"revealjs",lang:"en-US",frontmatter:{},excerpt:"",headers:[],filePathRelative:"tools/revealjs.md",git:{updatedTime:164812384e4,contributors:[]}};export{e as data};

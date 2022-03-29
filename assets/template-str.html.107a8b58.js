@@ -1,1 +1,0 @@
-const t={key:"v-0e5b1b1d",path:"/javascript/solutions/template-str.html",title:"替换模板字符",lang:"en-US",frontmatter:{},excerpt:"",headers:[],filePathRelative:"javascript/solutions/template-str.md",git:{updatedTime:164812384e4,contributors:[]}};export{t as data};

@@ -1,1 +1,0 @@
-const e={key:"v-2775f068",path:"/node/npm-modules.html",title:"npm 实用模块",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"events",slug:"events",children:[]},{level:2,title:"cheerio",slug:"cheerio",children:[]}],filePathRelative:"node/npm-modules.md",git:{updatedTime:164812384e4,contributors:[]}};export{e as data};

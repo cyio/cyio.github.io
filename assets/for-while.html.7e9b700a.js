@@ -1,1 +1,0 @@
-const e={key:"v-f649a856",path:"/javascript/for-while.html",title:"循环",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"应用",slug:"应用",children:[]}],filePathRelative:"javascript/for-while.md",git:{updatedTime:164812384e4,contributors:[]}};export{e as data};

@@ -1,1 +1,0 @@
-const t={key:"v-10d28ad7",path:"/tools/zsh.html",title:"Zsh",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"快捷键",slug:"快捷键",children:[{level:3,title:"git",slug:"git",children:[]}]}],filePathRelative:"tools/zsh.md",git:{updatedTime:164812384e4,contributors:[]}};export{t as data};

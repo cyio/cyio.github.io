@@ -1,1 +1,0 @@
-const e={key:"v-b7c8a3ca",path:"/project/vue-web.html",title:"官网",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"实现",slug:"实现",children:[]},{level:2,title:"问题",slug:"问题",children:[]}],filePathRelative:"project/vue-web.md",git:{updatedTime:164812384e4,contributors:[]}};export{e as data};

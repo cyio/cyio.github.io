@@ -1,1 +1,0 @@
-const t={key:"v-17fb5234",path:"/project/mqtt.html",title:"MQTT",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"两种连接方式",slug:"两种连接方式",children:[]}],filePathRelative:"project/mqtt.md",git:{updatedTime:164812384e4,contributors:[]}};export{t as data};

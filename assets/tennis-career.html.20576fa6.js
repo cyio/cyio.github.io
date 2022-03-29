@@ -1,0 +1,1 @@
+const e={key:"v-497b6698",path:"/project/tennis-career.html",title:"",lang:"en-US",frontmatter:{},excerpt:"",headers:[],filePathRelative:"project/tennis-career.md",git:{updatedTime:1648512282e3,contributors:[]}};export{e as data};

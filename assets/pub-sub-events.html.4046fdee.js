@@ -1,0 +1,1 @@
+const t={key:"v-7d13fc36",path:"/javascript/solutions/pub-sub-events.html",title:"发布-订阅",lang:"en-US",frontmatter:{},excerpt:"",headers:[],filePathRelative:"javascript/solutions/pub-sub-events.md",git:{updatedTime:1648512282e3,contributors:[]}};export{t as data};

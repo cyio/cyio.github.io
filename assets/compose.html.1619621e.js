@@ -1,1 +1,0 @@
-const e={key:"v-b742de60",path:"/javascript/compose.html",title:"函数合成",lang:"en-US",frontmatter:{},excerpt:"",headers:[],filePathRelative:"javascript/compose.md",git:{updatedTime:164812384e4,contributors:[]}};export{e as data};

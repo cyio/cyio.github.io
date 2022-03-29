@@ -1,1 +1,0 @@
-const t={key:"v-0198436e",path:"/javascript/solutions/index-of.html",title:"indexOf",lang:"en-US",frontmatter:{},excerpt:"",headers:[],filePathRelative:"javascript/solutions/index-of.md",git:{updatedTime:164812384e4,contributors:[]}};export{t as data};

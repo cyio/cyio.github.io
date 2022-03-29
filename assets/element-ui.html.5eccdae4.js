@@ -1,0 +1,1 @@
+const e={key:"v-321732d3",path:"/frameworks/element-ui.html",title:"element-ui",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"简单扩展",slug:"简单扩展",children:[]},{level:2,title:"表单组件",slug:"表单组件",children:[]}],filePathRelative:"frameworks/element-ui.md",git:{updatedTime:1648512282e3,contributors:[]}};export{e as data};

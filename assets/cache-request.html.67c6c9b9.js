@@ -1,1 +1,0 @@
-const e={key:"v-83e47b1a",path:"/javascript/solutions/cache-request.html",title:"缓存请求",lang:"en-US",frontmatter:{},excerpt:"",headers:[],filePathRelative:"javascript/solutions/cache-request.md",git:{updatedTime:164812384e4,contributors:[]}};export{e as data};

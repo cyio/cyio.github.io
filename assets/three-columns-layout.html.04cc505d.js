@@ -1,0 +1,1 @@
+const t={key:"v-57a60f32",path:"/javascript/solutions/three-columns-layout.html",title:"三列布局",lang:"en-US",frontmatter:{},excerpt:"",headers:[],filePathRelative:"javascript/solutions/three-columns-layout.md",git:{updatedTime:1648512282e3,contributors:[]}};export{t as data};

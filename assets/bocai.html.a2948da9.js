@@ -1,0 +1,1 @@
+const t={key:"v-7304aaaa",path:"/project/bocai.html",title:"",lang:"en-US",frontmatter:{},excerpt:"",headers:[],filePathRelative:"project/bocai.md",git:{updatedTime:1648512282e3,contributors:[]}};export{t as data};

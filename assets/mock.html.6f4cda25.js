@@ -1,1 +1,0 @@
-const e={key:"v-6f8c4e3b",path:"/web/mock.html",title:"Mock",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"方案",slug:"方案",children:[]}],filePathRelative:"web/mock.md",git:{updatedTime:164812384e4,contributors:[]}};export{e as data};

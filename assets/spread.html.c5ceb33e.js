@@ -1,1 +1,0 @@
-const e={key:"v-22a925be",path:"/code-patterns/spread.html",title:"扩展符",lang:"en-US",frontmatter:{},excerpt:"",headers:[],filePathRelative:"code-patterns/spread.md",git:{updatedTime:164812384e4,contributors:[]}};export{e as data};

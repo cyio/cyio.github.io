@@ -1,1 +1,0 @@
-const e={key:"v-eadfc676",path:"/node/http-server.html",title:"http-server",lang:"en-US",frontmatter:{},excerpt:"",headers:[],filePathRelative:"node/http-server.md",git:{updatedTime:164812384e4,contributors:[]}};export{e as data};

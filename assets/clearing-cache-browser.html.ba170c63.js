@@ -1,0 +1,1 @@
+import{o as a,c as e,F as r,a as o,b as t}from"./app.0e74f851.js";const n={},l=o("h2",{id:"location-reload-true",tabindex:"-1"},[o("a",{class:"header-anchor",href:"#location-reload-true","aria-hidden":"true"},"#"),t(" location.reload(true)")],-1),d=o("p",null,"总是从服务器取 如果是子资源，Chrome 总是走缓存",-1);n.render=function(o,t){return a(),e(r,null,[l,d],64)};export default n;

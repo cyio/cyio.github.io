@@ -1,1 +1,0 @@
-const e={key:"v-b9abbe3e",path:"/web/jsMagic-course.html",title:"Babel Node && Npm",lang:"en-US",frontmatter:{},excerpt:"",headers:[],filePathRelative:"web/jsMagic-course.md",git:{updatedTime:164812384e4,contributors:[]}};export{e as data};

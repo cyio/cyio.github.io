@@ -1,1 +1,0 @@
-const t={key:"v-2929a851",path:"/javascript/solutions/equal-split-list.html",title:"平分数组",lang:"en-US",frontmatter:{},excerpt:"",headers:[],filePathRelative:"javascript/solutions/equal-split-list.md",git:{updatedTime:164812384e4,contributors:[]}};export{t as data};

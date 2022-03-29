@@ -1,0 +1,1 @@
+const t={key:"v-663b1418",path:"/javascript/solutions/fib.html",title:"fib",lang:"en-US",frontmatter:{},excerpt:"",headers:[],filePathRelative:"javascript/solutions/fib.md",git:{updatedTime:1648512282e3,contributors:[]}};export{t as data};

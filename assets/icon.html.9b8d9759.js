@@ -1,1 +1,0 @@
-const e={key:"v-3c382a9e",path:"/project/icon.html",title:"icon",lang:"en-US",frontmatter:{},excerpt:"",headers:[],filePathRelative:"project/icon.md",git:{updatedTime:164812384e4,contributors:[]}};export{e as data};

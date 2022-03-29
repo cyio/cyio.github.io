@@ -1,1 +1,0 @@
-const t={key:"v-7d6a2d4d",path:"/project/ui-kit.html",title:"UI-KIT",lang:"en-US",frontmatter:{},excerpt:"",headers:[],filePathRelative:"project/ui-kit.md",git:{updatedTime:164812384e4,contributors:[]}};export{t as data};

@@ -1,1 +1,0 @@
-import{r as a,o as r,c as e,a as n,b as t}from"./app.26466922.js";const o={},s={href:"https://juejin.im/post/5bbafd78f265da0ad947e6ba",target:"_blank",rel:"noopener noreferrer"},p=t("8102年如何写一个现代的JavaScript库 - 掘金");o.render=function(t,o){const f=a("OutboundLink");return r(),e("p",null,[n("a",s,[p,n(f)])])};export default o;

@@ -1,0 +1,1 @@
+const t={key:"v-ee14bed6",path:"/blog/learn-bootstrap-nav-design.html",title:"学习Bootstrap风格的导航切换设计",lang:"en-US",frontmatter:{title:"学习Bootstrap风格的导航切换设计",date:"2015-08-04T00:00:00.000Z",description:null},excerpt:"",headers:[],filePathRelative:"blog/learn-bootstrap-nav-design.md",git:{updatedTime:1648512282e3,contributors:[]}};export{t as data};

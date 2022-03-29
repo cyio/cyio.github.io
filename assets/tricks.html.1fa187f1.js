@@ -1,1 +1,0 @@
-const t={key:"v-ddbcdc20",path:"/javascript/tricks.html",title:"技巧",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"从 Object 构建 URL querystring",slug:"从-object-构建-url-querystring",children:[]}],filePathRelative:"javascript/tricks.md",git:{updatedTime:164812384e4,contributors:[]}};export{t as data};

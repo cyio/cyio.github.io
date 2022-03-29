@@ -1,0 +1,1 @@
+const t={key:"v-555c7210",path:"/tools/visbug.html",title:"Visbug",lang:"en-US",frontmatter:{},excerpt:"",headers:[],filePathRelative:"tools/visbug.md",git:{updatedTime:1648512282e3,contributors:[]}};export{t as data};

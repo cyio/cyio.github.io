@@ -1,1 +1,0 @@
-const e={key:"v-756a50f4",path:"/javascript/pseudo-code.html",title:"伪代码",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"参考",slug:"参考",children:[]}],filePathRelative:"javascript/pseudo-code.md",git:{updatedTime:164812384e4,contributors:[]}};export{e as data};

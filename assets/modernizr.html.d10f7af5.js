@@ -1,1 +1,0 @@
-const e={key:"v-180e3c26",path:"/project/modernizr.html",title:"",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"webpack 引入",slug:"webpack-引入",children:[]}],filePathRelative:"project/modernizr.md",git:{updatedTime:164812384e4,contributors:[]}};export{e as data};

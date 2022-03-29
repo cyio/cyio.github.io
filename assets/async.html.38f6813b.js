@@ -1,1 +1,0 @@
-const e={key:"v-00d40066",path:"/javascript/async.html",title:"异步",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"Promise",slug:"promise",children:[{level:3,title:"参考",slug:"参考",children:[]}]}],filePathRelative:"javascript/async.md",git:{updatedTime:164812384e4,contributors:[]}};export{e as data};

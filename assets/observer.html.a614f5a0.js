@@ -1,1 +1,0 @@
-const t={key:"v-1c6fc6a5",path:"/javascript/solutions/observer.html",title:"观察者",lang:"en-US",frontmatter:{},excerpt:"",headers:[],filePathRelative:"javascript/solutions/observer.md",git:{updatedTime:164812384e4,contributors:[]}};export{t as data};

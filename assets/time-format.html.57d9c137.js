@@ -1,1 +1,0 @@
-const t={key:"v-2d1ef172",path:"/code-patterns/time-format.html",title:"dayjs",lang:"en-US",frontmatter:{},excerpt:"",headers:[],filePathRelative:"code-patterns/time-format.md",git:{updatedTime:164812384e4,contributors:[]}};export{t as data};

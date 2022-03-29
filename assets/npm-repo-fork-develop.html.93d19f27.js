@@ -1,1 +1,0 @@
-const e={key:"v-65748686",path:"/project/npm-repo-fork-develop.html",title:"",lang:"en-US",frontmatter:{},excerpt:"",headers:[],filePathRelative:"project/npm-repo-fork-develop.md",git:{updatedTime:164812384e4,contributors:[]}};export{e as data};

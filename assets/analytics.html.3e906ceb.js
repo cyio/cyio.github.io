@@ -1,0 +1,1 @@
+const e={key:"v-121825fc",path:"/project/analytics.html",title:"分析",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"数据收集",slug:"数据收集",children:[]},{level:2,title:"指标",slug:"指标",children:[]},{level:2,title:"sendbeacon",slug:"sendbeacon",children:[]}],filePathRelative:"project/analytics.md",git:{updatedTime:1648512282e3,contributors:[]}};export{e as data};

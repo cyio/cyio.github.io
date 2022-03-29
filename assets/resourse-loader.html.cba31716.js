@@ -1,1 +1,0 @@
-const e={key:"v-a1ca6b96",path:"/javascript/solutions/resourse-loader.html",title:"资源加载器",lang:"en-US",frontmatter:{},excerpt:"",headers:[],filePathRelative:"javascript/solutions/resourse-loader.md",git:{updatedTime:164812384e4,contributors:[]}};export{e as data};

@@ -1,0 +1,1 @@
+const e={key:"v-d4182902",path:"/javascript/solutions/deep-clone.html",title:"深拷贝",lang:"en-US",frontmatter:{},excerpt:"",headers:[],filePathRelative:"javascript/solutions/deep-clone.md",git:{updatedTime:1648512282e3,contributors:[]}};export{e as data};
