@@ -16,7 +16,7 @@
 
 原因：二进制 + 64 位双精度
 
-0.1 的二进制表示，是无限循环的长度
+0.1 的二进制表示，是无限循环的长度，而存储有限
 
 [JavaScript小数精度问题 - Web前端工程师面试题讲解 - YouTube](https://www.youtube.com/watch?v=cI0XQkC9AOc)
 
