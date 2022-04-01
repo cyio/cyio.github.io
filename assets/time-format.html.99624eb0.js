@@ -1,1 +1,0 @@
-import{o as a,c as e,a as r,b as s}from"./app.0e74f851.js";const d={},n={id:"dayjs",tabindex:"-1"},t=r("a",{class:"header-anchor",href:"#dayjs","aria-hidden":"true"},"#",-1),o=s(" dayjs");d.render=function(r,s){return a(),e("h1",n,[t,o])};export default d;

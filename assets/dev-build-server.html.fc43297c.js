@@ -1,1 +1,0 @@
-const e={key:"v-3ac56f12",path:"/tools/dev-build-server.html",title:"本地开发、构建 Server",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"servor",slug:"servor",children:[]},{level:2,title:"ES dev server",slug:"es-dev-server",children:[]}],filePathRelative:"tools/dev-build-server.md",git:{updatedTime:1648512282e3,contributors:[]}};export{e as data};

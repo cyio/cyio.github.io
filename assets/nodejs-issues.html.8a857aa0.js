@@ -1,1 +1,0 @@
-const e={key:"v-0361e471",path:"/node/nodejs-issues.html",title:"nodejs-issues",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"request 默认 encoding 为 string",slug:"request-默认-encoding-为-string",children:[]}],filePathRelative:"node/nodejs-issues.md",git:{updatedTime:1648512282e3,contributors:[]}};export{e as data};

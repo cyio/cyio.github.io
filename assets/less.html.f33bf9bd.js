@@ -1,1 +1,0 @@
-const e={key:"v-2886978c",path:"/web/less.html",title:"Less",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"复用场景",slug:"复用场景",children:[]},{level:2,title:"简单的代码复用、继承",slug:"简单的代码复用、继承",children:[]},{level:2,title:"extend 扩展",slug:"extend-扩展",children:[]}],filePathRelative:"web/less.md",git:{updatedTime:1648512282e3,contributors:[]}};export{e as data};

@@ -1,1 +1,0 @@
-const t={key:"v-7ad254a0",path:"/tools/sketch.html",title:"sketch",lang:"en-US",frontmatter:{},excerpt:"",headers:[],filePathRelative:"tools/sketch.md",git:{updatedTime:1648512282e3,contributors:[]}};export{t as data};

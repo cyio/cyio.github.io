@@ -1,1 +1,0 @@
-const e={key:"v-477bdf26",path:"/project/iframe.html",title:"iframe",lang:"en-US",frontmatter:{},excerpt:"",headers:[],filePathRelative:"project/iframe.md",git:{updatedTime:1648512282e3,contributors:[]}};export{e as data};

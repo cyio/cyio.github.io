@@ -1,1 +1,0 @@
-const e={key:"v-17b79006",path:"/web/download.html",title:"",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"FileSaver",slug:"filesaver",children:[]},{level:2,title:"大文件下载暂停",slug:"大文件下载暂停",children:[]}],filePathRelative:"web/download.md",git:{updatedTime:1648512282e3,contributors:[]}};export{e as data};

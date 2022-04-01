@@ -1,1 +1,0 @@
-const t={key:"v-06af53b2",path:"/project/okr.html",title:"OKR",lang:"en-US",frontmatter:{},excerpt:"",headers:[],filePathRelative:"project/okr.md",git:{updatedTime:1648512282e3,contributors:[]}};export{t as data};

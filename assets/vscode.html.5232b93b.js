@@ -1,1 +1,0 @@
-const e={key:"v-48b62e3c",path:"/tools/vscode.html",title:"VSCode",lang:"en-US",frontmatter:{},excerpt:"",headers:[],filePathRelative:"tools/vscode.md",git:{updatedTime:1648512282e3,contributors:[]}};export{e as data};

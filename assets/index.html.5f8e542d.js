@@ -1,1 +1,0 @@
-import{o as a,c as e,a as r,b as n}from"./app.0e74f851.js";const s={},t={id:"目录",tabindex:"-1"},d=r("a",{class:"header-anchor",href:"#目录","aria-hidden":"true"},"#",-1),o=n(" 目录");s.render=function(r,n){return a(),e("h1",t,[d,o])};export default s;

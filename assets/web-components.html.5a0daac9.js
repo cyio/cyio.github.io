@@ -1,1 +1,0 @@
-const e={key:"v-6e184e94",path:"/web/web-components.html",title:"web components",lang:"en-US",frontmatter:{},excerpt:"",headers:[],filePathRelative:"web/web-components.md",git:{updatedTime:1648512282e3,contributors:[]}};export{e as data};

@@ -1,1 +1,0 @@
-const e={key:"v-38c0556b",path:"/blog/marquee.html",title:"跑马灯效果",lang:"en-US",frontmatter:{title:"跑马灯效果",date:"2016-12-12T00:00:00.000Z",description:null},excerpt:"",headers:[],filePathRelative:"blog/marquee.md",git:{updatedTime:1648512282e3,contributors:[]}};export{e as data};

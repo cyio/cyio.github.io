@@ -1,1 +1,0 @@
-import{o as a,c as r,F as e,a as n,b as l}from"./app.0e74f851.js";const s={},t=n("h1",{id:"重构",tabindex:"-1"},[n("a",{class:"header-anchor",href:"#重构","aria-hidden":"true"},"#"),l(" 重构")],-1),u=n("ul",null,[n("li",null,"嵌套的条件分支难以阅读和维护，解决方法是：外层 if 表达示反转，进入条件分支后立即 return 退出")],-1);s.render=function(n,l){return a(),r(e,null,[t,u],64)};export default s;

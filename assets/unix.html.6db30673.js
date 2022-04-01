@@ -1,1 +1,0 @@
-const e={key:"v-668e1df8",path:"/tools/unix.html",title:"unix",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"help",slug:"help",children:[]}],filePathRelative:"tools/unix.md",git:{updatedTime:1648512282e3,contributors:[]}};export{e as data};

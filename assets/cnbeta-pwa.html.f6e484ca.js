@@ -1,1 +1,0 @@
-import{o as a,c as e,F as r,a as t,b as n}from"./app.0e74f851.js";const l={},s=t("h2",{id:"数据爬取",tabindex:"-1"},[t("a",{class:"header-anchor",href:"#数据爬取","aria-hidden":"true"},"#"),n(" 数据爬取")],-1),u=t("ul",null,[t("li",null,"图片获取 403，暂时是线上部署 https，将图片链接全部替换为 http 正常")],-1);l.render=function(t,n){return a(),e(r,null,[s,u],64)};export default l;

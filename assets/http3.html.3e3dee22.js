@@ -1,1 +1,0 @@
-import{o as a,c as t,F as e,a as r,b as n}from"./app.0e74f851.js";const p={},s=r("h1",{id:"http3",tabindex:"-1"},[r("a",{class:"header-anchor",href:"#http3","aria-hidden":"true"},"#"),n(" http3")],-1),h=r("p",null,"弃用 TCP，改用基于 UDP 的 QUIC 协议",-1),l=r("p",null,"解决丢包阻塞",-1);p.render=function(r,n){return a(),t(e,null,[s,h,l],64)};export default p;

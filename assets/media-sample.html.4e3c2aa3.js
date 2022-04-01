@@ -1,1 +1,0 @@
-import{r as e,o as n,c as r,a,b as o}from"./app.0e74f851.js";const t={},i={href:"https://www.learningcontainer.com/sample-audio-file/#Sample_Mp3_file",target:"_blank",rel:"noopener noreferrer"},l=o("3+ New Sample audio file for Testing - Learning Container");t.render=function(o,t){const p=e("OutboundLink");return n(),r("p",null,[a("a",i,[l,a(p)])])};export default t;

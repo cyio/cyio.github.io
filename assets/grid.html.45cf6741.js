@@ -1,1 +1,0 @@
-const e={key:"v-5f08b1ff",path:"/web/grid.html",title:"Grid",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"基础",slug:"基础",children:[]},{level:2,title:"实现常见布局",slug:"实现常见布局",children:[]}],filePathRelative:"web/grid.md",git:{updatedTime:1648512282e3,contributors:[]}};export{e as data};

@@ -1,1 +1,0 @@
-const e={key:"v-72a1a2c0",path:"/web/cdn.html",title:"CDN",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"使用场景",slug:"使用场景",children:[]},{level:2,title:"原理",slug:"原理",children:[]}],filePathRelative:"web/cdn.md",git:{updatedTime:1648512282e3,contributors:[]}};export{e as data};

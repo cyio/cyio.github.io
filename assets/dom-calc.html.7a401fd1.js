@@ -1,1 +1,0 @@
-const e={key:"v-7c06db85",path:"/web/dom-calc.html",title:"DOM 计算",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"坐标、距离",slug:"坐标、距离",children:[]},{level:2,title:"getBoundingClientRect和getClientRects异同",slug:"getboundingclientrect和getclientrects异同",children:[]}],filePathRelative:"web/dom-calc.md",git:{updatedTime:1648512282e3,contributors:[]}};export{e as data};

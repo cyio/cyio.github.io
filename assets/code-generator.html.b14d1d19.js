@@ -1,1 +1,0 @@
-const e={key:"v-61cf0ab9",path:"/tools/code-generator.html",title:"代码生成器",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"css 三角形",slug:"css-三角形",children:[]}],filePathRelative:"tools/code-generator.md",git:{updatedTime:1648512282e3,contributors:[]}};export{e as data};

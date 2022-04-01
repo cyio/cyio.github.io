@@ -1,1 +1,0 @@
-const e={key:"v-2d1c3601",path:"/project/setinterval-clear.html",title:"定时器清理",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"why",slug:"why",children:[]},{level:2,title:"如何清理",slug:"如何清理",children:[]},{level:2,title:"定位",slug:"定位",children:[]}],filePathRelative:"project/setinterval-clear.md",git:{updatedTime:1648512282e3,contributors:[]}};export{e as data};

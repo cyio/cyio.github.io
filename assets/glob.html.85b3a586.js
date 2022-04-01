@@ -1,1 +1,0 @@
-const e={key:"v-5e0c99cd",path:"/node/glob.html",title:"glob",lang:"en-US",frontmatter:{},excerpt:"",headers:[],filePathRelative:"node/glob.md",git:{updatedTime:1648512282e3,contributors:[]}};export{e as data};

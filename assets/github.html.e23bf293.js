@@ -1,1 +1,0 @@
-const t={key:"v-c7599572",path:"/project/github.html",title:"github",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"actions",slug:"actions",children:[]},{level:2,title:"部署",slug:"部署",children:[]}],filePathRelative:"project/github.md",git:{updatedTime:1648512282e3,contributors:[]}};export{t as data};
