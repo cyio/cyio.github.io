@@ -32,18 +32,43 @@ module.exports = {
       updatePopup: true
     }],
     // [
-    //   '@vuepress/plugin-search',
+    //   '@vuepress/docsearch',
     //   {
+    //     apiKey: '1e4d7677e49297ea22a22f954927061e',
+    //     indexName: 'oaker',
     //     locales: {
     //       '/': {
-    //         placeholder: 'Search',
+    //         placeholder: 'Search Documentation',
+    //         translations: {
+    //           button: {
+    //             buttonText: 'Search Documentation',
+    //           },
+    //         },
     //       },
     //       '/zh/': {
-    //         placeholder: '搜索',
+    //         placeholder: '搜索文档',
+    //         translations: {
+    //           button: {
+    //             buttonText: '搜索文档',
+    //           },
+    //         },
     //       },
     //     },
     //   },
     // ],
+    [
+      '@vuepress/plugin-search',
+      {
+        locales: {
+          '/': {
+            placeholder: 'Search',
+          },
+          '/zh/': {
+            placeholder: '搜索',
+          },
+        },
+      },
+    ],
     // ['@vuepress/register-components', {
         // componentsDir: path.resolve(__dirname, './components'),
         // // components: {

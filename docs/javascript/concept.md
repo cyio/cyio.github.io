@@ -363,31 +363,6 @@ Boolean(0) // false
 Boolean(-1) // true
 ```
 
-## 微任务
-
-题目：说出执行顺序
-```js
-process.nextTick(() => console.log(5))
-
-Promise.resolve().then(() => console.log(1))
-
-;(async () => console.log(2))()
-
-;(() => console.log(3))()
-
-setTimeout(() => console.log(4))
-
-// 2 3 5 1 4
-```
-
-- L0: nextTick 无论放哪，都会在同步代码和任务间执行
-- L1：安排微任务。 完成所有同步 JS 后执行，类型与 L0 相同，排队
-- L2：IIFE 后执行。 它是一个异步功能，但仍然同步执行（没有等待！），没有用 return
-- L3：一个 IIFE，同步。
-- L4：一个任务，所以它将在微任务之后运行。 所以 2-3-5-1-4
-
-**同步代码 -> 微任务 promise -> 任务 setTimeout**
-
 ## 解释型语言 VS 编译语言
 
 解释型语言 动态变量类型 隐式解析

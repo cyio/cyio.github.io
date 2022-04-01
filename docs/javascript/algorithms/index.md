@@ -71,6 +71,8 @@
 10 * 10 = 100
 ```
 
+array 转 set，需要遍历，时间复杂度 O(n) [javascript - Time complexity (Big-O) of converting an array to a Set - Stack Overflow](https://stackoverflow.com/questions/63543514/time-complexity-big-o-of-converting-an-array-to-a-set)
+
 ## 枚举
 
 - 合理设置尝试范围，减少不必要尝试。例：完美立方 四重循环
