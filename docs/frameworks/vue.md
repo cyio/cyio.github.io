@@ -71,14 +71,6 @@ data -> Watcher -> compile
 [Vue.js 源码解析：深入响应式原理](http://www.infoq.com/cn/articles/Vue.js-code)
 [How I built my own vanilla JS alternative to Vue and React | Go Make Things](https://gomakethings.com/how-i-built-my-own-vanilla-js-alternative-to-vue-and-react/)
 
-### proxy 对比 defineProperty
-- 代理，而非劫持
-- 监听整个对象变化，不再是某个属性（性能）
-- 支持数组变更，不再 hack
-- 返回新对象，不再遍历修改
-- 兼容性：chrome 49+，不支持 IE
-
-[面试官: 实现双向绑定Proxy比defineproperty优劣如何? - 掘金](https://juejin.im/post/6844903601416978439)
 
 ## Vue 2
 
@@ -484,11 +476,12 @@ Props向下传递，事件向上传递
 原因：有些操作，Vue 检测不到变化
 
 变化检测：
-- 数组，通过方法操作如 push 可以检测，非方法不行，如索引赋值、改长度
-- 对象，需要访问来触发 getter/setter，非访问不行，检测不了增、删
+- 对象，需要访问来触发 getter/setter，不支持增、删操作的响应（没有机会 defineProperty 4x
+）
+- 数组，通过方法操作如 push 可以检测，不支持索引赋值、改长度的响应（无方法可重写）
 
 解决：
-- Vue.set
+- Vue.set 或 $set
 
 ## 其它
 slot 分发内容，占位替换
@@ -616,3 +609,7 @@ plugin 需要写个 install 方法，内部还是用 组件注册，好处是可
 ## provide/inject
 组件层级深时，父组件向后代传 prop 麻烦，怎么解决？
 
+## 数组和对象 prop，可被子组件修改
+增加 ESLint 规则应对
+
+[如何避免 Vue 的漏洞破坏单向数据流 - 首席CTO笔记](https://www.shouxicto.com/article/1562.html)

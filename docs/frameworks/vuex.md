@@ -15,7 +15,10 @@
 
 ## 数据流动过程
 
+> 5步：dispatch 派发 -> action 动作 -> mutations 修改 -> state 状态 -> comp 组件
+
 ![vuex.png (701×551)](https://vuex.vuejs.org/vuex.png)
+
 
 - 全局实例注入
 

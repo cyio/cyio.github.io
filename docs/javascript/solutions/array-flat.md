@@ -4,6 +4,8 @@
 
 flat 指定深度递归合并，默认深度 1，无限深度 Infinite
 
+flat(0) 不做处理
+
 ## 2. JSON 转换 + 正则
 
 思路：JSON 序列化，字符串替换中括号，再与中括号拼接，复原
@@ -117,3 +119,30 @@ console.log(flat(arr))
 
 [JavaScript 专题之数组扁平化 · Issue #36 · mqyqingfeng/Blog](https://github.com/mqyqingfeng/Blog/issues/36)
 [面试官连环追问：数组拍平（扁平化） flat 方法实现](https://juejin.cn/post/6844904025993773063#heading-10)
+
+
+## 拓展：多维数组最大深度
+```js
+let d = [1, [2, [3, [4]]], [2]]
+
+function depth(arr) {
+  let ans = 0
+  function inner(arr, count = 0) {
+    for (let i = 0; i < arr.length; i++) {
+      let item = arr[i]
+      if (Array.isArray(item)) {
+        count++
+        inner(item, count)
+      } else {
+        ans = Math.max(count, ans)
+      }
+    }  
+  }
+  inner(arr)
+  // console.log(depths)
+  return ans
+}
+
+let e = depth(d)
+console.log(e)
+```

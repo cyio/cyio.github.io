@@ -2,7 +2,7 @@
 
 题目不关心返回
 
-## 1. 迭代
+## 1. 迭代 for-of + await
 ```js
 async function runPromiseByQueue(tasks) {
   for (let task of tasks) {

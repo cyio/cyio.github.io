@@ -169,7 +169,7 @@ b. 渲染过程：
 DOM 树 和 渲染树 的区别：
     DOM 树与 HTMl 标签一一对应，而渲染树不包含 head 和隐藏元素 display none
 
-CSS 不会阻塞 DOM 的解析，但会阻塞后续 DOM 渲染
+CSS 加载不会阻塞 DOM 的解析（并行各自解析），但会阻塞后续 DOM 渲染（防止样式闪烁）
 
 [浏览器的渲染过程，DOM 树和渲染树的区别？_Fairy的博客-CSDN博客](https://blog.csdn.net/Gbing1228/article/details/103575756)
 

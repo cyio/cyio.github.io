@@ -113,3 +113,10 @@ cluster
 
 ## 用途
 一切非 CPU 密集型
+
+## 架构
+
+![image.png](http://ww1.sinaimg.cn/large/4e5d3ea7ly1h0wwwoavtbj212c0f70y1.jpg)
+![u1O2O.png (1077×420)](https://i.stack.imgur.com/u1O2O.png)
+[javascript - Which is correct Node.js architecture? - Stack Overflow](https://stackoverflow.com/questions/36766696/which-is-correct-node-js-architecture)
+![1*evOcy9n3vslkDt0Mj8mBYw.jpeg (1024×468)](https://miro.medium.com/max/1400/1*evOcy9n3vslkDt0Mj8mBYw.jpeg)

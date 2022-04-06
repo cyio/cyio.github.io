@@ -54,3 +54,10 @@ Trusted Web Activity
 
 [用 Vue 做 PWA （三）：理解生命周期 - AC Dustbin](https://allanchain.github.io/blog/post/vue-pwa-3/)
 [VueJs PWA: Notify User about the App Update | skipWaiting ~ 360learntocode](https://www.360learntocode.com/2020/12/vuejs-pwa-notify-user-of-app-update.html)
+
+## 离线包怎么更新？怎么知道需要打开哪个离线包？
+
+后台更新：每次进入一个新页面，异步检查配置文件，是否需要更新。
+
+通过版本号。
+

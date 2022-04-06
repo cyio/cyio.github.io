@@ -1,5 +1,27 @@
 # 事件循环
 
+同步和异步任务分别进入不同的执行环境，同步的进入主线程，即主执行栈，异步的进入 Event Queue 。主线程内的任务执行完毕为空，会去 Event Queue 读取对应的任务，推入主线程执行。 上述过程的不断重复就是我们说的 Event Loop (事件循环)。
+
+## 为什么用单线程
+
+JavaScript 是用于实现网页交互逻辑的，涉及到 dom 操作，如果多个线程同时操作需要做同步互斥的处理，为了简化就设计成了单线程
+
+单线程由于存在阻塞问题，因此需要调度机制来解决
+
+## 支持异步
+
+## 支持优先级（高优插入）
+
+[浏览器和 Node.js 的 EventLoop 为什么这么设计？ - 首席CTO笔记](https://www.shouxicto.com/article/3012.html)
+
+## Nodejs
+
+高性能需求，更复杂
+
+宏任务分为 6 种，Timer 优先
+
+微任务分为 nextTick 和其它微任务，nextTick 优先
+
 [HTML Standard](https://html.spec.whatwg.org/multipage/webappapis.html#event-loops)
 ```
 线程
@@ -122,3 +144,22 @@ setTimeout(() => console.log(4))
 
 [Jake Archibald: In The Loop - JSConf.Asia - YouTube](https://www.youtube.com/watch?v=cCOL7MC4Pl0&t=1521s)  
 [第 25 题：浏览器和 Node 事件循环的区别 · Issue #26 · Advanced-Frontend/Daily-Interview-Question · GitHub](https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/26)
+
+
+
+```js
+Promise.resolve().then(() => console.log(1))
+
+;(async () => {
+ await console.log(6)
+ return console.log(2)
+})()
+
+;(() => console.log(3))()
+
+setTimeout(() => console.log(4))
+
+process.nextTick(() => console.log(5))
+
+// 6 3 5 1 2 4
+```

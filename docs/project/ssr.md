@@ -13,5 +13,10 @@ SSR 的 HTML 是
 - 解决了首屏白屏问题以及 SEO 问题
 - 后续访问用客户端渲染
 
+
+## SSR 对性能优化的提升在哪里
+
+预渲染，提升首屏
+
 [有必要使用服务器端渲染(SSR)吗？ - 知乎](https://www.zhihu.com/question/308792091/answer/575636896)
 [官网预渲染方案-有道云笔记](https://note.youdao.com/ynoteshare1/index.html?id=9174b59418d987cd810dc058a7b6a121&type=note)

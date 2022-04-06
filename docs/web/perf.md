@@ -263,3 +263,10 @@ https://github.com/GoogleChromeLabs/squoosh/blob/dev/src/shared/prerendered-app/
   - 层级稳定
 
 [前端监控 SDK 的一些技术要点原理分析 - 知乎](https://zhuanlan.zhihu.com/p/420330110)
+
+## 如何让页面加载更快
+
+源码：代码分割，摇树
+工程化：压缩、资源优化
+网络：缓存、CDN
+

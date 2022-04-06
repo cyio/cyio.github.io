@@ -2,17 +2,22 @@
 
 ![image.png](http://ww1.sinaimg.cn/large/4e5d3ea7ly1h0hx0nue24j224s17gq8q.jpg)
 
+  实现原理：3 个状 2 个 结果处理函数 1 个对外方法
+
 - 内部定义一个状态，两上值，两个数组
 - 提供两个方法设置状态、并依次执行回调数组/链式
 - 两个方法传给外部的 fn
 - then 后者依赖前者返回值
+
+考察点：
+- 如何实现 then 链式调用：回调数组，执行时机
 
 简版：
 - 只考虑 resolve
 ```js
 // let task = new Promise(rFn)
 // task.then(res => {})
-function Promise(exe) {
+function myPromise(exe) {
   this.state = 'pending'
   this.value = null
   this.cbs = []
@@ -28,7 +33,7 @@ function Promise(exe) {
   exe(resolve, )
 }
 
-Promise.prototype.then = function (cb) {
+myPromise.prototype.then = function (cb) {
   return new Promise(resolve => {
     const _cb = value => {
       const ret = cb(value) // 获取返回值，向后传递
@@ -46,7 +51,7 @@ Promise.prototype.then = function (cb) {
 }
 
 // test
-let sleep = ms => new Promise(r => setTimeout(() => r('sleep done'), ms))
+let sleep = ms => new myPromise(r => setTimeout(() => r('sleep done'), ms))
 let d = sleep(2000)
   .then(v => { console.log(1, v); return v + ' from 1'})
   .then(d => console.log(2, d))
@@ -80,7 +85,7 @@ class Promise {
       this.state = REJECTED
       this.reason = reason
 
-      this.onRejectedCbs.forEach(cb => cb(this.value))
+      this.onRejectedCbs.forEach(cb => cb(this.reason))
     }
 
     try {
