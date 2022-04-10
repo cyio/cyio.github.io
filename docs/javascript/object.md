@@ -13,8 +13,13 @@
 
 ## 枚举
 
-- `Object.keys()`与`for-in`的输出顺序一致（会被重新排序），主要区别是后者还会返回原型链中属性（往往不是我们需要的）
--  遍历对象 1. for in 2. for of Object.keys(obj)
+-  遍历对象
+
+    1. `for in`
+    2. `for of Object.keys(obj)`
+    3. `while(key = keys.shift())`
+
+- `Object.keys()`与`for-in`的输出顺序一致（会被重新排序），主要区别是后者还会返回原型链中继承对象属性（仅显式继承），一般使用不需要考虑。`for...in`不应该用于迭代一个关注索引顺序的 Array
 -  对象本身不是可迭代对象，原型上没有`Symbol(Symbol.iterator)`
 
 ```js

@@ -84,3 +84,4 @@ dist
 .DS_Store
 .temp
 docs/tmp.*
+.vscode
