@@ -1,0 +1,1 @@
+const e={key:"v-79630de2",path:"/javascript/memory.html",title:"\u5185\u5B58\u7BA1\u7406",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"\u5185\u5B58\u6CC4\u6F0F",slug:"\u5185\u5B58\u6CC4\u6F0F",children:[]}],git:{updatedTime:1649556562e3,contributors:[{name:"cyio",email:"icaner@qq.com",commits:1}]},filePathRelative:"javascript/memory.md"};export{e as data};

@@ -1,4 +1,0 @@
-import{_ as s,r as n,o as r,c as t,a as e,b as c,F as o,e as l,d as i}from"./app.49e30594.js";const d={},p=l(`<h1 id="class" tabindex="-1"><a class="header-anchor" href="#class" aria-hidden="true">#</a> class</h1><p>\u5B50\u7C7B\u6CA1\u6709\u5199 constructor\uFF0C\u4F1A\u9690\u5F0F\u7EE7\u627F\u8D85\u7C7B</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>  constructor(...args) {
-    super(...args);
-  }
-</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div>`,3),_={href:"https://javascript.info/class-inheritance",target:"_blank",rel:"noopener noreferrer"},u=i("Class inheritance");function h(m,b){const a=n("ExternalLinkIcon");return r(),t(o,null,[p,e("p",null,[e("a",_,[u,c(a)])])],64)}var x=s(d,[["render",h],["__file","class.html.vue"]]);export{x as default};
