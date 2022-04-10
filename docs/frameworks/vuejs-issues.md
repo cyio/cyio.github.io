@@ -103,20 +103,24 @@ const newObj = { ...vueObj }
 `$ vue-cli-service serve --max_old_space_size=4096`
 正确方式：
 
-1. [yarn serve - JavaScript heap out of memory crash · Issue #1453 · vuejs/vue-cli](https://github.com/vuejs/vue-cli/issues/1453#issuecomment-430969846)
-   `node --max_old_space_size=4096 node_modules/@vue/cli-service/bin/vue-cli-service.js serve --open`
+1. 参数应该指定给 node：`node --max_old_space_size=4096 node_modules/@vue/cli-service/bin/vue-cli-service.js serve --open`
+
+    [yarn serve - JavaScript heap out of memory crash · Issue #1453 · vuejs/vue-cli](https://github.com/vuejs/vue-cli/issues/1453#issuecomment-430969846)
+   
 2. [fix: increase Node memory limit to workaround webpack crash, fix #1453 · octref/vue-cli@bb98ef0](https://github.com/octref/vue-cli/commit/bb98ef08874bf07b9a510b23f8d6f94c0afaf01c)
-   相关 Issue：
-   [Process out of memory - Webpack · Issue #1914 · webpack/webpack](https://github.com/webpack/webpack/issues/1914#issuecomment-392660230)
+   
+    相关 Issue：
+    [Process out of memory - Webpack · Issue #1914 · webpack/webpack](https://github.com/webpack/webpack/issues/1914#issuecomment-392660230)
 
 ## 编译慢问题
 
 [feat(compiler): Use a single compiler for multiple plugin instances by jantimon · Pull Request #967 · jantimon/html-webpack-plugin](https://github.com/jantimon/html-webpack-plugin/pull/967)
+
 [Multiple entry points -> multiple html outputs webpack rebuild very slow · Issue #724 · jantimon/html-webpack-plugin](https://github.com/jantimon/html-webpack-plugin/issues/724#issuecomment-419885840)
 
-```
+```sh
 npm install html-webpack-plugin@4.0.0-alpha.2
-或者
+# 或者
 cd node_modules
 git clone https://github.com/jantimon/html-webpack-plugin.git
 git checkout feature/cache-file-timestamps

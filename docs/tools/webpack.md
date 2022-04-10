@@ -263,3 +263,14 @@ antd 默认对 JS 部分，用 babel plugin 转换成按需引入写法。如果
 
 [快速上手 - Ant Design](https://3x.ant.design/docs/react/getting-started-cn#%25E6%258C%2589%25E9%259C%2580%25E5%258A%25A0%25E8%25BD%25BD)
 
+## 打包分析
+```
+  chainWebpack: config => {
+    if (process.env.npm_config_report) {
+      config
+        .plugin('webpack-bundle-analyzer')
+        .use(require('webpack-bundle-analyzer').BundleAnalyzerPlugin);
+    }
+
+    "analyz": "npm_config_report=true npm run build",
+```

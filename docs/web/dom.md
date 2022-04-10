@@ -81,22 +81,27 @@ xpos = xpos + dist
 
 ## 重绘和回流
 
-- 重绘，样式变化，浏览器重新绘制样式
+### 重绘
 
-  paint 样式
+样式变化，浏览器重新绘制样式
 
-- 回流，尺寸、位置、属性变化，浏览器重新渲染部分或全部
+> paint 样式
 
-  flow 布局 性能影响更大
+### 回流
+
+尺寸、位置、属性变化，浏览器重新渲染部分或全部
+
+> flow 布局 性能影响更大
 
 [DOM Performance (Reflow & Repaint) (Summary)](https://gist.github.com/faressoft/36cdd64faae21ed22948b458e6bf04d5)
 
-- 优化策略1：合并操作 class/documentFragment
-- 优化策略2：用重绘属性代替回流属性
+### 优化
+- 合并操作 class/documentFragment
+- 用重绘属性代替回流属性
   - transform 代替 top/left
   - opacity 替代 visibility
 - 多个 DOM 统一操作（虽然V8会有缓存优化）
-- 先将 DOM 离线，即display：none；修改后显示
+- 先将 DOM 离线，即`display：none`；修改后显示
 - 不要把 DOM 放在已给循环中作为循环变量
 - 不要使用 table
 
@@ -143,7 +148,7 @@ vue - update
 
 ## DOM 选择
 
-![节点关系示意图](http://eloquentjavascript.net/img/html-links.svg)
+![节点关系示意图](https://eloquentjavascript.net/img/html-links.svg)
 
 参考：
 [Plain JavaScript - Functions and Helpers](https://plainjs.com/javascript/)

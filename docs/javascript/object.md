@@ -3,7 +3,7 @@
 
 ## 定义
 
-- `{ key: value }` {任意字符串: 任意值}
+- `{ key: value }` {String/Symbol: 任意值}
 
   对象是属性的容器，其中每个属性都拥有名字和值。属性名可以是包括空字符串在内的任意字符串，属性值可以是任意值
 
@@ -103,7 +103,7 @@ useMemo 依赖无变化时，返回旧引用
 
 ## 字典
 
-尽量用 Map，其次用`Object.create`
+尽量用 Map，其次用 `Object.create`
 
 ```
 const dict = Object.create(null)

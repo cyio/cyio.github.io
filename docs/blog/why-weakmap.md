@@ -5,7 +5,8 @@
 ![vue build error](https://user-images.githubusercontent.com/3146103/159602294-3f150d61-e768-4765-8eb8-860fb48f7006.png)
 
 ## map 的实现与问题
-Map 由两个数组实现，[keys] [values]，支持遍历
+
+Map 由两个数组实现，[keys] [values]，支持遍历。key 支持任意类型。
 
 理想情况，当`obj = null`时，我们希望 obj 占用空间能被自动回收
 
@@ -16,6 +17,7 @@ Map 由两个数组实现，[keys] [values]，支持遍历
 解决：使用弱引用，没有引用时，可被垃圾回收
 
 ## 与 map 不同点
+
 1. weakmap 的 key 只能是 object，如果使用原始类型，会抛错。原因可能是它的存在只是为了补充 map
 2. 由于弱引用，无法保证 key 存在，不支持遍历相关方法
 
