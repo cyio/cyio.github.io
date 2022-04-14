@@ -1,1 +1,0 @@
-const e={key:"v-3bea6a9f",path:"/web/table.html",title:"table",lang:"en-US",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1649594775e3,contributors:[{name:"cyio",email:"icaner@qq.com",commits:1}]},filePathRelative:"web/table.md"};export{e as data};
