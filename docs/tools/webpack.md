@@ -8,11 +8,11 @@
   - 全局污染
   - 顺序难保证
 
-- 在大型 SPA 里面，如果全部打包成一个文件会导致文件过大，首屏加载速度受影响（code splitting）
+- 文件过大：在大型 SPA 里面，如果全部打包成一个文件会导致文件过大，首屏加载速度受影响（code splitting）
 
 ## 安装
 
-```bash
+```sh
 npm install webpack-dev-server -g
 webpack-dev-server --progress --colors
 ```

@@ -193,3 +193,13 @@ eslint recommend / react 规则集里没有，需要安装 eslint-plugin-import�
 
 [webpack小记——alias与eslint](https://juejin.cn/post/6844903832888033288)
 
+## eslint 和 prettier 冲突
+
+使用 prettier 最好禁用 eslint 中代码格式化相关的规则
+安装 eslint-config-prettier
+
+另一种做法是 prettier-eslint，先 prettier 然后 eslint fix，两者兼顾
+
+disable missing space before function parentheses · Issue #44 · prettier/eslint-plugin-prettier https://github.com/prettier/eslint-plugin-prettier/issues/44#issuecomment-323657069
+
+暂时禁用 prettier 保存时运行

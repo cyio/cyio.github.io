@@ -514,14 +514,17 @@ v <- m
 watch $emit
 ```
 ## key 的作用
-> 提示 diff 算法跟踪节点，何时重用、修补、重新排序、重新创建
 
-- 默认就地更新，只适用于不依赖子组件状态或临时 DOM 状态
-- 提示
-- 希望重用和排序
+默认策略是就地更新（遍历、依次创建），在发生排序、增删时，不会重用节点。如果有增删、排序需求时，建议带上 key，提高性能。移动节点，而非创建节点，创建节点的开销可能很大。
+
+识别节点的一个通用机制，提示 diff 算法跟踪节点，何时重用、修补、重新排序、重新创建
+
+> 为了给 Vue 一个提示，以便它能跟踪每个节点的身份，从而重用和重新排序现有元素
+
 [列表渲染 — Vue.js](https://cn.vuejs.org/v2/guide/list.html#%25E7%25BB%25B4%25E6%258A%25A4%25E7%258A%25B6%25E6%2580%2581)
 
 更新 id 导致 key 变化，重渲染，解决：`this.$vnode.key = newId;`
+
 [Patching the Vue.js Virtual DOM: The need, the explanation and the solution | by Michael Gallagher | DailyJS | Medium](https://medium.com/dailyjs/patching-the-vue-js-virtual-dom-the-need-the-explanation-and-the-solution-ba18e4ae385b)
 
 ## diff 算法

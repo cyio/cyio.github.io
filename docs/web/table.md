@@ -1,5 +1,19 @@
 # table
 
+表格布局，默认由内容决定
+设为 fixed ，指定宽度，往往同时要设定 overflow: hidden 防止溢出
+table-layout 
+
+边框类型，默认是分开 seprate
+设为 collapse，塌陷合并
+border-collapse
+
+相邻单元格的边框间的距离（仅用于“边框分离”模式）
+border-spacing: 10px
+所以如果是合并模式，设为0可能是没有意义的
+
+## 模板
+
 ```pug
 table.table
   tbody
@@ -27,3 +41,4 @@ table {
 
 [table demo](https://codepen.io/cyio/pen/vvYrVL)
 [CSS Styling Tables](https://www.w3schools.com/css/css_table.asp)
+
