@@ -64,3 +64,7 @@ const event = new CustomEvent('build', { detail: elem.dataset.time });
   // 同步任务 异步任务
   // 主线程，事件队列（微任务，宏任务）
 ```
+
+parse HTML => DOMContentLoaded event => loads resources => load event
+
+[javascript - window.onload vs document.onload - Stack Overflow](https://stackoverflow.com/questions/588040/window-onload-vs-document-onload)
