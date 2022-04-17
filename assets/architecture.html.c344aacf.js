@@ -1,0 +1,1 @@
+const t={key:"v-0b5915d2",path:"/project/architecture.html",title:"\u67B6\u6784",lang:"en-US",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1650204864e3,contributors:[{name:"cyio",email:"icaner@qq.com",commits:1}]},filePathRelative:"project/architecture.md"};export{t as data};

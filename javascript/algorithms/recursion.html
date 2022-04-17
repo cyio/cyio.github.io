@@ -23,7 +23,7 @@
 			}
     </script>
     <link rel="icon" href="/favicon.ico"><link rel="manifest" href="/manifest.json"><meta name="theme-color" content="#0089a7"><meta name="referrer" content="no-referrer"><link rel="apple-touch-icon" sizes="180x180" href="/favicon.ico"><title>递归 | Oaker小站</title><meta name="description" content="Just playing around">
-    <link rel="modulepreload" href="/assets/app.d9b75b9c.js"><link rel="modulepreload" href="/assets/recursion.html.0807f52d.js"><link rel="modulepreload" href="/assets/recursion.html.3d1a2cd7.js">
+    <link rel="modulepreload" href="/assets/app.48236148.js"><link rel="modulepreload" href="/assets/recursion.html.7c1aabef.js"><link rel="modulepreload" href="/assets/recursion.html.4256e8f3.js">
     <link rel="stylesheet" href="/assets/style.28f5ce32.css">
   </head>
   <body>
@@ -45,6 +45,6 @@ f(2) = 2
 f(1) = 1
 f(0) = 0 // 无意义
 </code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h2 id="堆栈溢出" tabindex="-1"><a class="header-anchor" href="#堆栈溢出" aria-hidden="true">#</a> 堆栈溢出</h2><blockquote><p>函数调用会使用栈来保存临时变量。每调用一个函数，都会将临时变量封装为栈帧压 入内存栈，等函数执行完成返回时，才出栈。系统栈或者虚拟机栈空间一般都不大。如果 递归求解的数据规模很大，调用层次很深，一直压入栈，就会有堆栈溢出的风险。 出自：10 | 递归：如何用三行代码找到“最终推荐人”？</p></blockquote><p>应对：限制递归深度</p><h2 id="优化" tabindex="-1"><a class="header-anchor" href="#优化" aria-hidden="true">#</a> 优化</h2><p>重复计算：memo</p><p>转为非递归，本质并没有变</p><p>记忆化递归，时间由 O(n^2) 降到 O(n)</p><p>滚动数组，可以将空间由 O(n) 降到 O(1)</p><h2 id="调试" tabindex="-1"><a class="header-anchor" href="#调试" aria-hidden="true">#</a> 调试</h2><ol><li><p>打印日志发现，递归值。</p></li><li><p>结合条件断点进行调试。</p></li></ol><p>代入较小的数枚举验证</p><!--]--></div><footer class="page-meta"><!----><div class="meta-item last-updated"><span class="meta-item-label">Last Updated: </span><!----></div><div class="meta-item contributors"><span class="meta-item-label">Contributors: </span><span class="meta-item-info"><!--[--><!--[--><span class="contributor" title="email: icaner@qq.com">cyio</span><!----><!--]--><!--]--></span></div></footer><!----><!--[--><!--]--></main><!--]--></div><!----><!--]--></div>
-    <script type="module" src="/assets/app.d9b75b9c.js" defer></script>
+    <script type="module" src="/assets/app.48236148.js" defer></script>
   </body>
 </html>

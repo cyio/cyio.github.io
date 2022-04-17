@@ -1,4 +1,0 @@
-import{_ as e,e as a}from"./app.d9b75b9c.js";const n={},t=a(`<h1 id="math" tabindex="-1"><a class="header-anchor" href="#math" aria-hidden="true">#</a> math</h1><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>power \u5E42\u3001\u6570\u5B66\u6B21\u65B9
-base \u57FA\u6570
-exponent \u6307\u6570
-</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><blockquote><p>\u4EFB\u4F55\u96640\u4EE5\u5916\u7684\u6570\u76840\u6B21\u65B9\u90FD\u662F1 \u3002\u59823\u76840\u6B21\u65B9\u662F1\uFF0C-1\u76840\u6B21\u65B9\u4E5F\u662F1\uFF0C0\u76840\u6B21\u65B9\u6CA1\u6709\u610F\u4E49</p></blockquote>`,3);function s(r,c){return t}var l=e(n,[["render",s],["__file","math.html.vue"]]);export{l as default};
