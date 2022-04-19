@@ -399,12 +399,13 @@ EventBus.$on('i-got-clicked', clickCount => {
 - array 不需要 deep
 - 可以 watch 一个 function
 - 容易滥用，watch 不应该用于改变其他状态，而只应该用于产生不触及状态的副作用
-- 开始时执行一次 `immediate: true`
+- 开始时执行一次 `immediate: true`。场景：组件卸载而再次创建，数据存在 vuex 未变化
 - object 属性必须在 data 对象上存在才能让 Vue 转换它(getter/setter)，这样才能让它是响应的。
 - 重新赋值可触发
 - 只 watch 需要的，否则可能有性能开销问题
 - `app.$watch`需要手动注销
 - 可以 watch array of objects?
+- 
 
 [Vue.js 中 watch 的高级用法 - 掘金](https://juejin.im/post/5ae91fa76fb9a07aa7677543)
 [How to Watch Deep Data Structures in Vue (Arrays and Objects) - Michael Thiessen](https://michaelnthiessen.com/how-to-watch-nested-data-vue)

@@ -1,7 +1,8 @@
-// 输出全部解，不重复
+// 输出全部解，不重复，输入数据无序且存在重复
 function twoSum(nums, sum) {
   nums.sort((x, y) => x - y)
   let ans = []
+  let uniqMap = new Map()
   for (let i = 0; i < nums.length; i++) {
     let other = sum - nums[i]
     let j = i + 1
@@ -11,7 +12,10 @@ function twoSum(nums, sum) {
       } else if (nums[j] < other) {
         j++
       } else {
-        ans.push([nums[i], nums[j]])
+        if (!uniqMap.has(nums[i])) {
+          ans.push([nums[i], nums[j]])
+          uniqMap.set(nums[i])
+        }
         break
       }
     }
@@ -20,5 +24,5 @@ function twoSum(nums, sum) {
   return ans
 }
 
-let d = twoSum([1, 2, 3, 2], 4)
+let d = twoSum([1, 2, 3, 2, 2], 4)
 console.log(d)
