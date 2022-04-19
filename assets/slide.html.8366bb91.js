@@ -1,0 +1,1 @@
+const e={key:"v-13838592",path:"/project/slide.html",title:"slide",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"Speaker Notes",slug:"speaker-notes",children:[]}],git:{updatedTime:1650379948e3,contributors:[{name:"cyio",email:"icaner@qq.com",commits:1}]},filePathRelative:"project/slide.md"};export{e as data};
