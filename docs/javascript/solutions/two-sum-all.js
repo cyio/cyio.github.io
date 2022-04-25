@@ -1,10 +1,11 @@
 // 要求输出全部解
 
-let arr = [1, 2, 3, 4, 7, 8, 9], sum = 10
+let arr = [1, 2, 2, 3, 4, 7, 8, 9], sum = 10
 
 // 不重复
 
 // 1 -
+// 2 -
 // 2 -
 // 3 -
 // 4 -
@@ -38,6 +39,9 @@ function twoSum2(arr, sum) {
     if (add === sum) {
       ans.push([arr[l], arr[r]])
       l++
+      if (arr[l] === arr[l - 1]) {
+        l++
+      }
     } else if (add < sum) {
       l++
     } else {

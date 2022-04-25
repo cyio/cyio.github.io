@@ -52,7 +52,7 @@ requestAnimationFrame(() => {
 [ Axel Rauschmayer 在 Twitter: "document.getElementById('msg').innerText = 'Hi!'; setTimeout(() =&gt; { alert('Hi!'); }, 0); What’s a safe way to ensure alert() always runs *after* the DOM change is displayed? – Timeouts &gt; 10 work (in Chrome), but that seems arbitrary. – Or something other than setTimeout()?" / Twitter](https://mobile.twitter.com/rauschma/status/1288868746682081285)
 
 
-阻塞渲染
+阻塞渲染 while/promise
 ```
 // 1.
 $0.addEventListener('click', () => { while (true) {} })

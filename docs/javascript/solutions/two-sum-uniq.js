@@ -1,4 +1,5 @@
 // 输出全部解，不重复，输入数据无序且存在重复
+// 时间 O(n ^ 2)
 function twoSum(nums, sum) {
   nums.sort((x, y) => x - y)
   let ans = []

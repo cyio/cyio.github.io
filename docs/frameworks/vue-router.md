@@ -5,8 +5,10 @@
 hash / history
 
 差异：
-- URL 显示，改变范围，历史记录显示
-- 刷新问题
+- 表现：URL 显示，改变范围，历史记录显示
+- 行为：
+- 原理：[event] hashchange popstate
+- history 刷新会发请求，依赖 server 支持
 - 兼容性
 
 [深入理解前端中的 hash 和 history 路由 - 知乎](https://zhuanlan.zhihu.com/p/130995492)

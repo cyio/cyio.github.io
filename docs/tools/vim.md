@@ -340,3 +340,6 @@ vim-rest-console
 我会禁用所有插件，然后逐个重新启用它们，直到问题重新出现
 
 
+## 参考
+
+[从VSCode到Vim到……两个都用？ | ddadaal.me](https://ddadaal.me/articles/from-vscode-to-vim-to-both)
