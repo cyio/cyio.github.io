@@ -1,0 +1,1 @@
+const e={key:"v-afe03436",path:"/project/clearing-cache-browser.html",title:"",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"location.reload(true)",slug:"location-reload-true",children:[]}],git:{updatedTime:1651878129e3,contributors:[{name:"cyio",email:"icaner@qq.com",commits:1}]},filePathRelative:"project/clearing-cache-browser.md"};export{e as data};

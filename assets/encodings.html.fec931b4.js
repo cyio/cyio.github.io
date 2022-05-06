@@ -1,1 +1,0 @@
-const t={key:"v-2da35b62",path:"/javascript/encodings.html",title:"\u5B57\u7B26\u7F16\u7801",lang:"en-US",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1650899709e3,contributors:[{name:"cyio",email:"icaner@qq.com",commits:1}]},filePathRelative:"javascript/encodings.md"};export{t as data};
