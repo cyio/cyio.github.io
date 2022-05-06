@@ -160,8 +160,8 @@
 
 ### tab 标签页
 
-- `leader tn`打开新标签页
-- `gt`
+- `leader t`打开新标签页
+- `gt gT`
 - `num g t`切换到某个标签页
 - `ctrl-w shift-t`移动当前窗口到新标签页，替代方法`:tabedit %<cr>`
 
@@ -170,9 +170,9 @@
 
 tab 缺点：无法模糊匹配跳转，超过 8 个就挤了
 
-tab 少用？有别于传统编辑器
-window 比较、参考
-buffer 可以开很多，不关心空间安排
+tab 工作区，有别于传统编辑器。最多开两个
+  window 容器，用于比较、参考
+    buffer 文件代理，可以开很多，不关心空间安排
 
 [vi - Why do Vim experts prefer buffers over tabs? - Stack Overflow](https://stackoverflow.com/questions/26708822/why-do-vim-experts-prefer-buffers-over-tabs/26710166#26710166)
 
@@ -335,10 +335,18 @@ vim-rest-console
 [Recommendations - #vim on freenode](https://www.vi-improved.org/recommendations/)
 
 ## debug
+
 您可以使用:scriptnames找出来源的插件。
 
 我会禁用所有插件，然后逐个重新启用它们，直到问题重新出现
 
+## session
+
+```sh
+mksession! filename
+source filename
+v -S filename
+```
 
 ## 参考
 

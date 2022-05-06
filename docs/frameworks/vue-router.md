@@ -40,6 +40,15 @@ hash / history
 有两种，分隔点是导航是否完成
 
 1. 未完成 `beforeRouteEnter (to, from, next)`中的`next`之前
+
+```js
+fetch().then(res => {
+  next(async vm => {
+    vm.post = await res.json()
+    vm.hideLoading()
+  })
+})
+```
 2. 已完成 `created`或`beforeRouteEnter (to, from, next)`中的`next`里面
    使用后者的情况是，我们需要用到`to from`，比如数据获取需要参数`to.params.id`，需要知道来源页面
    然后在`next`中使用`vm`来代表实例

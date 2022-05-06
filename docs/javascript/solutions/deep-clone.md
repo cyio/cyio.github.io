@@ -65,3 +65,6 @@ Map => WeakMap
 ```
 
 [如何写出一个惊艳面试官的深拷贝?](https://juejin.cn/post/6844903929705136141)
+
+structuredClone：navive api, chrome99+
+![image.png](http://ww1.sinaimg.cn/large/4e5d3ea7ly1h1qa6yfkagj21uo1uotr7.jpg)
