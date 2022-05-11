@@ -10,6 +10,19 @@
 
 - 文件过大：在大型 SPA 里面，如果全部打包成一个文件会导致文件过大，首屏加载速度受影响（code splitting）
 
+## 原理
+
+![500836392-2f1c793a45cbc79e_fix732 (732×399)](https://image-static.segmentfault.com/500/836/500836392-2f1c793a45cbc79e_fix732)
+
+[90行代码实现模块打包器 - SegmentFault 思否](https://segmentfault.com/a/1190000040655590)
+
+[BetaSu/minipack: 📦 现代JS模块打包器的简易实现、详细教学](https://github.com/BetaSu/minipack)
+
+1. 输入 entry.js 输出`IIFE(modules)` 
+2. 使用 babel 分析并记录`import`依赖，有序队列
+3. 使用 babel 转换成 cjs
+4. 写入 html
+
 ## 安装
 
 ```sh
@@ -264,7 +277,7 @@ antd 默认对 JS 部分，用 babel plugin 转换成按需引入写法。如果
 [快速上手 - Ant Design](https://3x.ant.design/docs/react/getting-started-cn#%25E6%258C%2589%25E9%259C%2580%25E5%258A%25A0%25E8%25BD%25BD)
 
 ## 打包分析
-```
+```js
   chainWebpack: config => {
     if (process.env.npm_config_report) {
       config
