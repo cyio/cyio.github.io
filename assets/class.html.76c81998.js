@@ -1,1 +1,0 @@
-const a={key:"v-423856ea",path:"/javascript/class.html",title:"class",lang:"en-US",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:165228201e4,contributors:[{name:"cyio",email:"icaner@qq.com",commits:1}]},filePathRelative:"javascript/class.md"};export{a as data};
