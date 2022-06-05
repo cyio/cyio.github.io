@@ -18,8 +18,8 @@
 
 [BetaSu/minipack: 📦 现代JS模块打包器的简易实现、详细教学](https://github.com/BetaSu/minipack)
 
-1. 输入 entry.js 输出`IIFE(modules)` 
-2. 使用 babel 分析并记录`import`依赖，有序队列
+1. 输入 entry.js 输出自执行函数 `IIFE(modules)` 
+2. 使用 babel 解析 AST 并记录`import`依赖，有序队列
 3. 使用 babel 转换成 cjs
 4. 写入 html
 

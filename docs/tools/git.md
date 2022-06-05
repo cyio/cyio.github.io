@@ -627,15 +627,47 @@ git rev-list --left-right --count origin/master...test-branch
 
 [github - git ahead/behind info between master and branch? - Stack Overflow](https://stackoverflow.com/questions/20433867/git-ahead-behind-info-between-master-and-branch)
 
-## 巨石仓库
+## 巨石仓库拉取
+
 ```sh
 git clone --depth 1 --no-single-branch
 ```
 
 ## 多个工作区
+
+用途：
+1. 多个独立工作区（hotfix/PR reivew/运行并行环境）
+2. 目录对比
+
+优点：
 - 可以避免来回 stash，污染工作区，丢失变更
-- 避免克隆多个相同仓库
+- 避免 clone 多个相同仓库
+- switch branch 需要 IDE 做很多切换索引工作
+
+限制：一个目录一个分支，如果想在一个目录切换不同分支，需要删除 worktree。
+
+```sh
+git worktree add master ../prod-work
+git worktree add -b hotfix ../hotfix-1
+
+git worktree remove ../work-1 --force
+
+# 添加worktree
+  git worktree add [-f] [--checkout -b <new-branch>] <path> <commit-ish>
+# 列出所有worktree
+  git worktree list [--porcelain]
+# worktree上锁
+  git worktree lock [--reason <string> <worktree>]
+# worktree解锁
+  git worktree unlock <worktree>
+# 移动worktree到其他目录
+  git worktree move <worktree> <new-path>
+# 清除那些检出目录已经被删除的worktree
+  git worktree prune -n --expire <expire>
+# 删除worktree, 同时删除检出目录
+  git worktree remove -f <worktree>
+```
 
 [Git屠龙技：使用Git Worktree并行开发测试 - 知乎](https://zhuanlan.zhihu.com/p/92906230)
-[Git Worktree的使用 - 张小凯的博客](https://jasonkayzk.github.io/2020/05/03/Git-Worktree%25E7%259A%2584%25E4%25BD%25BF%25E7%2594%25A8/)
+[Git Worktree的使用 - 张小凯的博客](https://jasonkayzk.github.io/2020/05/03/Git-Worktree%E7%9A%84%E4%BD%BF%E7%94%A8/)
 

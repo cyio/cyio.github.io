@@ -351,3 +351,5 @@ v -S filename
 ## 参考
 
 [从VSCode到Vim到……两个都用？ | ddadaal.me](https://ddadaal.me/articles/from-vscode-to-vim-to-both)
+[wsdjeg/vim-galore-zh_cn: Vim 从入门到精通](https://github.com/wsdjeg/vim-galore-zh_cn)
+
