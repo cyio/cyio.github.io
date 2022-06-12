@@ -1,1 +1,0 @@
-const e={key:"v-1493abd5",path:"/web/configurable-form.html",title:"\u4F7F\u7528 Vue.js \u6784\u9020\u53EF\u914D\u7F6E\u5316\u8868\u5355",lang:"en-US",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1655000278e3,contributors:[{name:"cyio",email:"icaner@qq.com",commits:1}]},filePathRelative:"web/configurable-form.md"};export{e as data};

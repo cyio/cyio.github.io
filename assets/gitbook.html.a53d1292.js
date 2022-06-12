@@ -1,1 +1,0 @@
-const t={key:"v-1ad8d32a",path:"/tools/gitbook.html",title:"gitbook",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"Gitbook\u5B58\u5728\u7684\u95EE\u9898",slug:"gitbook\u5B58\u5728\u7684\u95EE\u9898",children:[]}],git:{updatedTime:1655000278e3,contributors:[{name:"cyio",email:"icaner@qq.com",commits:1}]},filePathRelative:"tools/gitbook.md"};export{t as data};
