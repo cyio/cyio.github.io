@@ -94,5 +94,8 @@ code block
 with no highlighting
 ```
 
+```js
+const a = 1
+```
 [Using Markdown in Vim](https://vim.works/2019/03/16/using-markdown-in-vim/)
 

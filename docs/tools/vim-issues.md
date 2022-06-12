@@ -161,3 +161,9 @@ then remove the offending patterns
 ## 模式
 
 - 多用 buffers，替代 Tab/Window
+
+## 不保存退出
+
+1. 按键太难记
+2. kill tmux window，reopen
+

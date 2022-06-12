@@ -1,4 +1,5 @@
 # Tmux
+[toc]
 
 [tmux(1) - OpenBSD manual pages](http://man.openbsd.org/OpenBSD-current/man1/tmux.1)
 
@@ -56,21 +57,6 @@ tmux kill-session -t [ID]
 `prefix ctrl r`
 ```
 
-## 大屏访问小屏时，修正窗口尺寸
-
-```
-在大屏的 tmux 中
-prefix - D
-detach 掉时间较旧的
-
-或者
-tmux list-client
-tmux detach-client -s 0
-
-或者 detach 掉除当前外的所有
-tmux detach -a
-```
-
 ## 插件
 
 安装插件管理器
@@ -89,3 +75,33 @@ tmux source ~/.tmux.conf
 
 快速创建 session `prefix - C`
 杀掉建 session `prefix - X`
+
+## issues
+
+### 大屏访问小屏时，修正窗口尺寸
+
+```
+在大屏的 tmux 中
+prefix - D
+detach 掉时间较旧的
+
+或者
+tmux list-client
+tmux detach-client -s 0
+
+或者 detach 掉除当前外的所有
+tmux detach -a
+```
+
+### kill session
+
+1. 切换到窗口列表
+2. 焦点移动到要杀掉的 session
+3. 依次按下`q` `y` `enter`
+
+### 窗口意外退出
+
+是因为触发终端退出
+
+[shell - How can I prevent tmux exiting with Ctrl-d? - Super User](https://superuser.com/questions/479600/how-can-i-prevent-tmux-exiting-with-ctrl-d)
+

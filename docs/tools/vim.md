@@ -336,7 +336,7 @@ vim-rest-console
 
 ## debug
 
-您可以使用:scriptnames找出来源的插件。
+您可以使用`:scriptnames`找出来源的插件。
 
 我会禁用所有插件，然后逐个重新启用它们，直到问题重新出现
 
@@ -346,6 +346,12 @@ vim-rest-console
 mksession! filename
 source filename
 v -S filename
+```
+
+## theme debug
+
+```
+:colo THEME_NAME
 ```
 
 ## 参考
