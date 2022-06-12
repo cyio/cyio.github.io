@@ -41,14 +41,16 @@ DOM parser => JS engine => DOM parser
 
 - src 必须存在，不能手动创建
 
-## 三者依赖、阻塞关系
+## HTML/CSS/JS 依赖、阻塞关系
 
-HTML 解析成 DOM，逐步解析
+HTML 解析成 DOM，逐行解析
 CSS 解析成 CSSOM
 
 最初设计，JS 加载和执行，能阻塞 DOM 解析，原因是 JS 可改变 DOM。
 
 样式在上，脚本在下
+
+css加载不会阻塞DOM树的解析，但会阻塞 DOM 渲染和后续 JS 的执行
 
 ![blocking-bold@2x-1-500x162.png (500×162)](https://hacks.mozilla.org/files/2017/09/blocking-bold@2x-1-500x162.png)
 

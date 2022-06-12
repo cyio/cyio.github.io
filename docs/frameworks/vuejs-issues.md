@@ -224,3 +224,9 @@ The quick answer, a partially defined path.
     })
   }
   ```
+
+## scoped + 深度影响子组件样式
+```
+/deep/
+```
+

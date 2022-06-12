@@ -2,7 +2,7 @@
 
 主进程和渲染器进程
 web页面运行在渲染进程
-与浏览器区别，页面可访问底层
+与浏览器区别，页面可访问底层（通过主进程）
 GUI 操作，必须与主进程通讯
 
 - require 时需要引 remote [javascript - How to fix BrowserWindow is not a constructor error when creating child window in Electron renderer process - Stack Overflow](https://stackoverflow.com/questions/45639628/how-to-fix-browserwindow-is-not-a-constructor-error-when-creating-child-window-i)
@@ -39,3 +39,38 @@ win.close()
 - 推荐使用 preload按
 [安全性，原生能力和你的责任 | Electron ](https://electronjs.org/docs/tutorial/security#2-do-not-enable-nodejs-integration-for-remote-content)
 [Electron 深度实践总结 | 欧长坤的博客](https://changkun.us/archives/2017/03/217/)
+
+## 进程通信 IPC
+
+send 不需要回复，场景：计数、数据更新
+
+invoke 执行方法（便利），promise 场景：获取 electron 设置
+
+postMessage 消息通道，与 Web 中的等价
+场景：消息保证、即使监听器还未注册，主进程作为中间人、连接两个渲染进程
+
+webview document.title/executeJavaScript 
+
+remote 模块，模拟本地调用，废弃，推荐 invoke
+
+[Electron进程通信 - 知乎](https://zhuanlan.zhihu.com/p/453287153)
+[前端不懂进程通信？看完这篇就懂了 - 掘金](https://juejin.cn/post/6988484297485189127)
+
+## asar 归档
+
+- 只读、随机访问（虚拟文件夹）
+- 用 JSON 存储信息，易于实现解析器
+- 规避文件路径太长（win）
+- 减少文件数，加快安装
+
+[快应用开发工具之 asar](https://quickapp.vivo.com.cn/quickapp-ide-asar/)
+
+## 热更新
+
+方案：asar（主进程） + update.zip(渲染进程)
+
+需要拆项目
+
+- 降低迭代成本（分发带宽？）
+- 提升
+

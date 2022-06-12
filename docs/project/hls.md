@@ -100,3 +100,9 @@ ffmpeg -allowed_extensions ALL -i stream.m3u8 -c copy new.mp4
 https://github.com/videojs/http-streaming#cacheencryptionkeys
 [While doing HLS AES 128 playback, the player request key file for every chunk. · Issue #367 · videojs/http-streaming](https://github.com/videojs/http-streaming/issues/367#issuecomment-482603212)
 
+## safari hls support
+h264: fMP4/TS
+h265: fMP4
+> 1.5. The container format for HEVC video MUST be fMP4.
+
+

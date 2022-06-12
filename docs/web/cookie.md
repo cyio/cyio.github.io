@@ -86,6 +86,16 @@ cookie 与 token 方式，根本区别，存储位置，前者需要服务器存
 
 无状态、性能更好（带宽、服务器解密即可，不必存 session）、通用性（小程序、oAuth）
 
+## 签名-验证是否被修改过
+
+```js
+res.cookie('name', 'value', {signed: true})
+```
+
+类似 hash，支持重新计算校验
+
+[node.js - What are "signed" cookies in connect/expressjs? - Stack Overflow](https://stackoverflow.com/questions/11897965/what-are-signed-cookies-in-connect-expressjs)
+
 ## 参考
 
 [Cookie -- 前端视角 - hf872914334 的博客 - CSDN 博客](https://blog.csdn.net/hf872914334/article/details/78979007)
