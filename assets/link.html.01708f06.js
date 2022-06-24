@@ -1,6 +1,0 @@
-import{_ as n,e as s}from"./app.ba01d3f8.js";const a={},e=s(`<h1 id="a-\u7981\u7528" tabindex="-1"><a class="header-anchor" href="#a-\u7981\u7528" aria-hidden="true">#</a> a \u7981\u7528</h1><p>\u7EAF CSS \u5B9E\u73B0</p><div class="language-css ext-css line-numbers-mode"><pre class="language-css"><code><span class="token selector">a.disabled</span> <span class="token punctuation">{</span>
-  <span class="token property">pointer-events</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
-  <span class="token property">cursor</span><span class="token punctuation">:</span> default<span class="token punctuation">;</span>
-  <span class="token property">color</span><span class="token punctuation">:</span> #afafac<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div>`,3);function p(t,c){return e}var o=n(a,[["render",p],["__file","link.html.vue"]]);export{o as default};

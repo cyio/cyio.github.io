@@ -1,1 +1,0 @@
-const e={key:"v-2995d774",path:"/web/websocket.html",title:"websocket",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"\u6D4B\u8BD5",slug:"\u6D4B\u8BD5",children:[]}],git:{updatedTime:1655036527e3,contributors:[{name:"cyio",email:"icaner@qq.com",commits:1}]},filePathRelative:"web/websocket.md"};export{e as data};
