@@ -105,3 +105,7 @@ tmux detach -a
 
 [shell - How can I prevent tmux exiting with Ctrl-d? - Super User](https://superuser.com/questions/479600/how-can-i-prevent-tmux-exiting-with-ctrl-d)
 
+### debug
+
+`tmux -v` 启动，当前目录生成日志
+

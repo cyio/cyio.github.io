@@ -81,3 +81,6 @@ Control+M 跳转到匹配括号
 Command+D 选中光标所在
 Command+U 上个位置
 ```
+
+[js逆向技巧分享 - 知乎](https://zhuanlan.zhihu.com/p/108207751)
+
