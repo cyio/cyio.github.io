@@ -114,6 +114,11 @@ module.exports = {
     // sidebar: 'auto',
     sidebar: genSidebarConfig()
   },
+  markdown: {
+    code: {
+      lineNumbers: 20
+    }
+  }
 }
 
 function genSidebarConfig () {

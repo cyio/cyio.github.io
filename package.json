@@ -2,7 +2,8 @@
   "scripts": {
     "start": "npm run docs:dev",
     "docs:dev": "vuepress dev docs --port 8090",
-    "docs:build": "vuepress build docs"
+    "docs:build": "vuepress build docs",
+    "dev": "npm run docs:dev"
   },
   "devDependencies": {
     "@vue/component-compiler-utils": "^3.3.0",
