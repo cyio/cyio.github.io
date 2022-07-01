@@ -1,0 +1,1 @@
+const e={key:"v-18ab85e4",path:"/tools/web-editor-playground.html",title:"\u5728\u7EBF\u7F16\u8F91\u5668",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"codepen",slug:"codepen",children:[]}],git:{updatedTime:1656686144e3,contributors:[{name:"cyio",email:"icaner@qq.com",commits:1}]},filePathRelative:"tools/web-editor-playground.md"};export{e as data};
