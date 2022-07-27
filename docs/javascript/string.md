@@ -99,3 +99,10 @@ Object.assign([], string);
 - `$1` 仅第二参数为字符串时可用
 [js-replace的高阶用法,你知道吗 - 简书](https://www.jianshu.com/p/724e85c0941f)
 
+## length
+汉字取 length 不准确
+
+ES6 可用`Array.from().length`解决
+
+[javascript语言中的字符编码 - 知乎](https://zhuanlan.zhihu.com/p/536017344)
+

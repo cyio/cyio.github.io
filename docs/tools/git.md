@@ -576,8 +576,11 @@ git diff branch1 branch2 --stat
 - 修改单个提交，以在事后很久修改更改。
 ```
 brew install interactive-rebase-tool
+
+git rebase -i UNTIL-SOME-COMMIT-ID
 ```
 [Git Interactive Rebase, Squash, Amend and Other Ways of Rewriting History](https://thoughtbot.com/blog/git-interactive-rebase-squash-amend-rewriting-history)
+
 [gold-miner/keeping-git-commit-history-clean.md at master · xitu/gold-miner](https://github.com/xitu/gold-miner/blob/master/TODO1/keeping-git-commit-history-clean.md)
 
 ## filemode change
