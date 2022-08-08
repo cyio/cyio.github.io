@@ -1,0 +1,37 @@
+import{_ as n,e as s}from"./app.75b00e2a.js";const a={},p=s(`<h1 id="fib" tabindex="-1"><a class="header-anchor" href="#fib" aria-hidden="true">#</a> fib</h1><ol><li>\u8FED\u4EE3/\u52A8\u6001\u89C4\u5212\uFF0C\u7A7A\u95F4\u6362\u65F6\u95F4</li></ol><div class="language-javascript ext-js"><pre class="language-javascript"><code>  <span class="token comment">// 0, 1, 2, 3, 5</span>
+  <span class="token comment">// 1, 2, 3, 4, 5</span>
+   <span class="token keyword">function</span> <span class="token function">fib</span><span class="token punctuation">(</span><span class="token parameter">n</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+     <span class="token keyword">const</span> arr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Array</span><span class="token punctuation">(</span>n <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">fill</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">)</span>
+     arr<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span>
+     arr<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span>
+     <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> arr<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span> <span class="token comment">// \u6CE8\u610F\u5FAA\u73AF\u8D77\u70B9</span>
+       arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> arr<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">+</span> arr<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">2</span><span class="token punctuation">]</span>
+     <span class="token punctuation">}</span>
+     <span class="token keyword">return</span> arr<span class="token punctuation">[</span>n<span class="token punctuation">]</span>
+   <span class="token punctuation">}</span>
+   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">fib</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre></div><ol start="2"><li>\u7701\u7A7A\u95F4\u4F18\u5316</li><li>\u9012\u5F52\u4F1A\u8D85\u65F6\uFF0C\u9700\u8981\u505A\u5C3E\u9012\u5F52\u4F18\u5316</li></ol><p>\u9012\u5F52\uFF0C\u6570\u636E\u4E0D\u5927\u65F6\u53EF\u7528\uFF0C\u4EE3\u7801\u7B80\u6D01\u76F4\u89C2</p><div class="language-javascript ext-js"><pre class="language-javascript"><code><span class="token keyword">var</span> <span class="token function-variable function">climbStairs</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">n</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// \u9012\u5F52\u4F1A\u8D85\u65F6</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">&lt;=</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token keyword">return</span> n
+  <span class="token keyword">return</span> <span class="token function">climbStairs</span><span class="token punctuation">(</span>n <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token function">climbStairs</span><span class="token punctuation">(</span>n <span class="token operator">-</span> <span class="token number">2</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><p>\u5C3E\u9012\u5F52\u4F18\u5316\uFF0C\u6548\u7387\u9AD8\uFF0C\u727A\u7272\u53EF\u8BFB\u6027</p><div class="language-javascript ext-js"><pre class="language-javascript"><code><span class="token comment">// \u672C\u8D28\uFF0C\u4F9D\u7136\u662F 3 \u4E2A\u53D8\u91CF</span>
+<span class="token comment">// n \u9012\u51CF\uFF0C\u76F8\u5F53\u4E8E\u5FAA\u73AF\u63A7\u5236</span>
+<span class="token comment">// n1 \u548C n2\uFF0C\u5373\u6570\u5217\u4E2D\u4E24\u4E2A\u6EDA\u52A8\u503C\uFF0C\u5982\u7B2C\u4E00\u6B21\u8FED\u4EE3\u521D\u59CB\u503C 0, 1\uFF0C\u7B2C\u4E8C\u6B21\u8FED\u4EE3 1, 0 + 1\uFF0C\u7B2C\u4E09\u6B21\u8FED\u4EE3 1, 1 + 1</span>
+<span class="token keyword">function</span> <span class="token function">fib</span><span class="token punctuation">(</span><span class="token parameter">n<span class="token punctuation">,</span> n1 <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> n2 <span class="token operator">=</span> <span class="token number">1</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">return</span> n1 <span class="token comment">// \u6CE8\u610F\u8FD9\u91CC\u8FD4\u56DE\u4E0D\u662F n\uFF0C\u800C\u662F n1</span>
+
+  <span class="token keyword">return</span> <span class="token function">fib</span><span class="token punctuation">(</span>n <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">,</span> n2<span class="token punctuation">,</span> n1 <span class="token operator">+</span> n2<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">fib</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 0, 1, 1, 2, 3, 5</span>
+<span class="token comment">// \u8FD0\u884C\u8FC7\u7A0B</span>
+<span class="token comment">// 5 0 1</span>
+<span class="token comment">// 4 1 1</span>
+<span class="token comment">// 3 1 2</span>
+<span class="token comment">// 2 2 3</span>
+<span class="token comment">// 1 3 5</span>
+<span class="token comment">// 0 5 8</span>
+</code></pre></div>`,8);function t(o,e){return p}var l=n(a,[["render",t],["__file","fib.html.vue"]]);export{l as default};
