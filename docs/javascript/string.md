@@ -99,6 +99,15 @@ Object.assign([], string);
 - `$1` 仅第二参数为字符串时可用
 [js-replace的高阶用法,你知道吗 - 简书](https://www.jianshu.com/p/724e85c0941f)
 
+当 replaceValue 是字符串时，美元符有特殊作用
+
+```js
+// $` 和 $' 分别表示searchValue之前和之后的内容`
+// $$ 转义自身
+
+'firefox'.replace('re', '$`') // "fififox"
+```
+
 ## length
 汉字取 length 不准确
 

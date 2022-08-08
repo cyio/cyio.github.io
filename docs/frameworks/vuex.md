@@ -105,3 +105,22 @@ this.$set(this.someObject, 'b', 2)
 
 [深入响应式原理 - vue.js](https://cn.vuejs.org/v2/guide/reactivity.html#%E5%A3%B0%E6%98%8E%E5%93%8D%E5%BA%94%E5%BC%8F%E5%B1%9E%E6%80%A7)
 
+### vuex 数组拷贝
+
+```js
+computed: {
+  league () {
+    return store.state.league
+  },
+  filterItems () {
+    let items = this.league.filter(league => league.matches.filter(this.filterMatch).length > 0)
+    // deep clone vuex array
+    items = items.map((b, idx) => Object.assign({ index: idx }, b))
+    return items.map((item, index) => {
+      item.matches = item.matches.filter(this.filterMatch)
+      return item
+    })
+  }
+},
+```
+
