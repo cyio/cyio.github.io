@@ -57,3 +57,8 @@ mermaid 自己看没问题，有些问题需要规避
 
 style -> 复制样式、粘贴样式
 
+[我的绘图工具箱 · 构建我的被动收入](https://www.bmpi.dev/self/my-drawing-toolbox/)
+
+白板
+[Excalidraw | Hand-drawn look & feel • Collaborative • Secure](https://excalidraw.com/)
+

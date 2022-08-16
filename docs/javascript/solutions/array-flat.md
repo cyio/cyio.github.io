@@ -122,6 +122,9 @@ console.log(flat(arr))
 
 
 ## 拓展：多维数组最大深度
+
+递归调用，可以用参数保存值
+
 ```js
 let d = [1, [2, [3, [4]]], [2]]
 
@@ -134,6 +137,7 @@ function depth(arr) {
         count++
         inner(item, count)
       } else {
+        // 递归终止条件：遇到不是数组
         ans = Math.max(count, ans)
       }
     }  

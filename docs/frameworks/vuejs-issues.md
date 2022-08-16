@@ -230,3 +230,85 @@ The quick answer, a partially defined path.
 /deep/
 ```
 
+## 组件切换数据问题 v-if 和 v-show
+
+如果用`v-show`的话，`mounted`只执行一次，如果希望组件显示时执行，简单解决是改用`v-if`，比较复杂的方法如下：
+[vue.js - Trigger code on component v-show=true - Stack Overflow](https://stackoverflow.com/questions/42813594/trigger-code-on-component-v-show-true)
+
+## 大小写
+
+html 属性为何用短杠，因大小写不敏感，大写也会转换成小写
+
+[Prop — Vue.js](https://cn.vuejs.org/v2/guide/components-props.html#Prop-%25E7%259A%2584%25E5%25A4%25A7%25E5%25B0%258F%25E5%2586%2599-camelCase-vs-kebab-case)
+
+## prop 如何接受进行多种类型校验
+
+```
+validator: prop => typeof prop === 'number' || prop === null,
+```
+
+## debug 模板
+
+```js
+Vue.prototype.$log = console.log
+
+{
+  {
+    $log(messaage)
+  }
+}
+
+{
+  {
+    ;(function() {
+      debugger
+    })
+  }
+}
+```
+
+[Debugging Templates in Vue.js](https://vuedose.tips/tips/debugging-templates-in-vue-js/)
+
+## mock
+1. vue cli3 在 devServer 中添加 before 
+2. 添加自定义响应返回代码
+3. mockjs 增强 mock 能力，可选
+[Vue CLI 3 + webpack + Mockjs实现本地数据模拟 - 简书](https://www.jianshu.com/p/fea615354d10)
+[Mock Data | vue-element-admin](https://panjiachen.github.io/vue-element-admin-site/zh/guide/essentials/mock-api.html#mockjs)
+[javascript - Node.js - SyntaxError: Unexpected token import - Stack Overflow](https://stackoverflow.com/questions/39436322/node-js-syntaxerror-unexpected-token-import)
+[Mock 数据](https://umijs.org/zh-CN/docs/mock)
+[@babel/register · Babel](https://babeljs.io/docs/en/next/babel-register.html)
+[UMI mock 开发中遇到的问题，已经处理的，在这里记录一下。给朋友们一个参考 · Issue #246 · umijs/umi](https://github.com/umijs/umi/issues/246#issuecomment-375225156)
+[30 道 Vue 面试题（涵盖入门到精通，自测 Vue 掌握程度） - 哔哩哔哩](https://www.bilibili.com/read/cv3663235/)
+
+## Vue 3 迁移指南
+[介绍 | Vue.js](https://v3.cn.vuejs.org/guide/migration/introduction.html#%25E6%25A6%2582%25E8%25A7%2588)
+
+### v-model 支持多个
+
+https://v3.cn.vuejs.org/guide/migration/v-model.html#_3-x-%E8%AF%AD%E6%B3%95
+
+## 其它
+slot 分发内容，占位替换
+
+动态组件`:is`
+
+
+区分Vuex与props的使用边界
+Vuex 业务组件，集中管理
+props 公共组件，组件库
+
+路由ID变了，但组件没变？
+使用beforeRouteUpdate
+
+在v-if/v-if-else/v-else中使用key
+如果本不相同的元素被识别为相同，则会出现意料之外的副作用。
+
+## 异步组件
+
+```js
+import Foo from './Foo.vue' 
+// after
+const Foo = () => import('./Foo.vue')
+```
+
