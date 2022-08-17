@@ -287,3 +287,10 @@ antd 默认对 JS 部分，用 babel plugin 转换成按需引入写法。如果
 
     "analyz": "npm_config_report=true npm run build",
 ```
+
+## Compiler 与 compilation
+
+引擎与一次编译
+
+> The Compiler module of webpack is the main engine that creates a compilation instance with all the options passed through webpack CLI or webpack api or webpack configuration file.
+

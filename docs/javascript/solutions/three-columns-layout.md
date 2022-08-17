@@ -21,3 +21,9 @@
 }
 ```
 [three column layout - flex](https://codepen.io/cyio/pen/wvzzzdQ)
+
+`flex: 1`是缩写，相当于 flex-grow
+
+3 个值缩写，第一个值固定为 grow
+
+第二个值，无单位为 shrink，有单位为 basis

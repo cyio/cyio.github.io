@@ -59,7 +59,27 @@
 [SVG 高性能优化清单 - 前端 - 掘金](https://juejin.im/entry/59bf203b6fb9a00a496e51c8)
 
 ## 改变颜色
-[使用CSS添加SVG背景色](https://edwardvoon.github.io/2018/09/29/Colorizing%2520SVG%2520Backgrounds/)
+
+1. 使用 inline svg in html
+
+做点：最简单
+缺点：需要写 HTML code
+兼容性：IE9+
+
+```scss
+.foo {
+    &:hover {
+        color: #0065DD;
+        cursor: pointer;
+        svg path {
+            fill: currentcolor;
+            // stoke: currentcolor;
+        }
+    }
+}
+```
+
+2. svg loader 
 
 ## 基础
 

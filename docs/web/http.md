@@ -148,6 +148,16 @@ post 副作用，需要 web 服务器操作
 [When curl sends 100-continue | Georg's Log](https://gms.tf/when-curl-sends-100-continue.html)
 [post 相比get 有很多优点，为什么现在的HTTP通信中大多数请求还是使用get？ - 知乎](https://www.zhihu.com/question/31640769)
 
+### get url 长度限制
+
+服务器截断 8kb
+IE 2kb
+chrome 2MB
+firefox 不限制
+
+实测，超过 10kb 可正常请求，地址栏显示省略号
+超过 25kb 请求异常
+
 ## 请描述 cookies、sessionStorage 和 localStorage 的区别?
 
 1. 存储方式：cookies 存储在 http 信息的实体中，http 每次请求都会携带 cookie, cookie 在浏览器和服务器间来回传递， 后两者仅在本地保存
