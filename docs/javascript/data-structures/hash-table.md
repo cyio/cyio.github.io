@@ -3,7 +3,7 @@
 
 - 键与值存在映射关系
 - 映射函数称做哈希函数
-- 好处，查找快
+- 时间效率非常高，插入、删除、查找操作的时间复杂度都是 O(1)
 
 [Algorithms in JavaScript: Hash Tables - JavaScript in Plain English - Medium](https://medium.com/javascript-in-plain-english/algorithm-in-javascript-hash-table-7b0464d2b81b)
 

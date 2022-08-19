@@ -1,7 +1,12 @@
 # 递归
 [[toc]]
 
-## 概念
+## 为什么
+
+1. 结构清晰，可读性强
+2. 问题可分解成相同结构的小问题时，利用递归可高效解决问题
+
+## 是什么
 
 ![image.png](http://tva1.sinaimg.cn/large/4e5d3ea7ly1gywlbbqi6aj20im07uq39.jpg)
 - 递归由基本部分和递归部分组成，基础部分直接定义（即不用递归就能求解），递归部分可以通过参数减小转换为基础部分，递归部分的每一次应用都更接近基础部分，最后一次应用基础部分。
@@ -16,12 +21,13 @@
   f(n) = f(n - 1) + 1
   ```
 
-## 斐波那契数列
+## 例子
+### 斐波那契数列
 [509. 斐波那契数 - 力扣（LeetCode）](https://leetcode-cn.com/problems/fibonacci-number/)
 
 初始值是 0 1 或 1 1
 
-## 数据按序请求
+### 数据按序请求
 
 数组+Finally+递归
 ```js
@@ -39,13 +45,13 @@ var ids = [34112, 98325, 68125]
 
 [我接触过的前端数据结构与算法-前端开发博客](http://caibaojian.com/data-structures-and-algorithms.html)
 
-## 爬楼梯
+### 爬楼梯
 
 走法分两种，即第一步走 1 个台阶或 2 个台阶
 
 n 个台阶走法，转化为减掉最后一步的台阶走法之和
 
-```
+```js
 f(n) = f(n-1) + f(n-2)
 
 f(2) = 2
@@ -53,11 +59,29 @@ f(1) = 1
 f(0) = 0 // 无意义
 ```
 
-## 堆栈溢出
-> 函数调用会使用栈来保存临时变量。每调用一个函数，都会将临时变量封装为栈帧压
-> 入内存栈，等函数执行完成返回时，才出栈。系统栈或者虚拟机栈空间一般都不大。如果
-> 递归求解的数据规模很大，调用层次很深，一直压入栈，就会有堆栈溢出的风险。
-> 出自：10 | 递归：如何用三行代码找到“最终推荐人”？
+### DOM树查找
+
+```js
+// 实现一个 document.getElementById 功能
+function getElementById(node, id){
+    if(!node) return null;
+    if(node.id === id) return node;
+    for(var i = 0; i < node.childNodes.length; i++){
+        var found = getElementById(node.childNodes[i], id);
+        if(found) return found;
+    }
+    return null;
+}
+getElementById(document, "d-cal");
+```
+
+## 缺点
+
+1. 堆栈溢出
+2. 效率，不及非递归实现
+
+>
+在程序执行中，递归是利用堆栈来实现的。每当进入一个函数调用，栈就会增加一层栈帧（存放临时变量），每次函数返回，栈就会减少一层栈帧。而栈不是无限大的，当递归层数过多时，就会造成 栈溢出 的后果。
 
 应对：限制递归深度
 

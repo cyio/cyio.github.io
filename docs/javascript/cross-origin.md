@@ -22,12 +22,12 @@ origin = protocol + domain + port
 
 ## 分类
 
-1. 请求跨域 Client-Server
+### 请求跨域 Client-Server
 
     - jsonp
     - cors
 
-2. 页面跨域 Page-Page
+### 页面跨域 Page-Page
 
     - postMessage
     - document.domain（不推荐，标准已移除）
@@ -115,7 +115,41 @@ var callback = function (data) {
 
 [webpack-dev-server 代理解决 cookie 丢失问题 - 掘金](https://juejin.im/post/5a9e6592f265da23870e59eb)
 
-## React / Vue 设置代理（仅开发模式用）
+## postMessage
+
+- html5 api，页面与 service worker 通信用的就是这个
+- 出于安全考虑，需要做 origin 判断
+- 窗口是 open/iframe 关系
+
+  [postMessage 可太有用了 - 掘金](https://juejin.im/post/5b8359f351882542ba1dcc31)
+
+  [手记：iframe、postMessage 及其它跨域通信实践 - 作业部落 Cmd Markdown 编辑阅读器](https://www.zybuluo.com/EncyKe/note/516702)
+
+  [Cross-window communication](https://javascript.info/cross-window-communication)
+
+- 用法：
+
+  ```js
+  // 父
+  $iframeEl.contentWindow.postMessage()
+
+  // 子
+  window.parent.postMessage(res, "*");    
+
+  window.addEventListener("message", (event) => {})
+  ```
+  发送的数据对象会经过 structured clone algorithm ，递归 + 维护一份已访问对象引用 map，避免循环引用。
+
+## 发散：页面通信还有哪些方法
+- storage event 作用于 localStorage/sessionStorage 共享的页面
+
+    ```js
+    let o = window.open('http://baidu.com')
+    o.focus()
+    ```
+    即使同源，并不能访问或修改 window 下的大部分变量
+
+## 开发模式代理设置
 
 - `create-react-app`可在 package.json 中设置`proxy: "http://localhost:8080"`，要配合 fetch/ajax 使用
 - `vue-cli`创建的可在`config.js/index.js`中设置
@@ -153,40 +187,6 @@ devServer: {
 [使用 vue-axios 和 vue-resource 解决 vue 中调用网易云接口跨域的问题 - 个人文章 - SegmentFault](https://segmentfault.com/a/1190000011072725)
 [前端跨域问题及解决方案 · Issue #2 · wengjq/Blog](https://github.com/wengjq/Blog/issues/2)
 [由同源策略到前端跨域 | louis blog](http://louiszhai.github.io/2016/01/11/cross-domain/)
-
-## postMessage
-
-- html5 api，页面与 service worker 通信用的就是这个
-- 出于安全考虑，需要做 origin 判断
-- 窗口是 open/iframe 关系
-
-  [postMessage 可太有用了 - 掘金](https://juejin.im/post/5b8359f351882542ba1dcc31)
-
-  [手记：iframe、postMessage 及其它跨域通信实践 - 作业部落 Cmd Markdown 编辑阅读器](https://www.zybuluo.com/EncyKe/note/516702)
-
-  [Cross-window communication](https://javascript.info/cross-window-communication)
-
-- 用法：
-
-  ```js
-  // 父
-  $iframeEl.contentWindow.postMessage()
-
-  // 子
-  window.parent.postMessage(res, "*");    
-
-  window.addEventListener("message", (event) => {})
-  ```
-  发送的数据对象会经过 structured clone algorithm ，递归 + 维护一份已访问对象引用 map，避免循环引用。
-
-## 发散：页面通信还有哪些方法
-- storage event 作用于 localStorage/sessionStorage 共享的页面
-
-    ```js
-    let o = window.open('http://baidu.com')
-    o.focus()
-    ```
-    即使同源，并不能访问或修改 window 下的大部分变量
 
 [Same-origin policy - Web security | MDN](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy)
 
