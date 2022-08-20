@@ -104,6 +104,7 @@ module.exports = {
       { text: '框架', link: '/frameworks/vue.html' },
       { text: 'Node', link: '/node/concept.html' },
       { text: '工具', link: '/tools/markdown.html' },
+      { text: '算法', link: '/javascript/algorithms/index.html' },
       { text: '题解', link: '/javascript/solutions/fib.html' },
       { text: 'Github', link: 'https://github.com/cyio' },
       // { text: '项目', link: '/projects/' },
@@ -150,6 +151,11 @@ function genSidebarConfig () {
       collapsable: false,
     },
     {
+      name: 'javascript/algorithms',
+      displayName: '算法',
+      collapsable: false,
+    },
+    {
       name: 'javascript/solutions',
       displayName: '题解',
       collapsable: false,
@@ -157,23 +163,29 @@ function genSidebarConfig () {
   ]
   navKeys.forEach(item => {
     sideBarData[`/${item.name}/`] = [
-      {
-        text: item.name,
-        // path: 'javascript/solutions/',
-        collapsable: item.collapsable,
-        children: getChildren(item.name)
-      },
+      // {
+        // text: item.name,
+        // // path: 'javascript/solutions/',
+        // collapsable: item.collapsable,
+        // children: getChildren(item.name)
+      // },
+      ...getChildren(item.name)
     ]
   })
   // sideBarData['/javascript/'].push(
-  //   {
-  //     title: '题解',
-  //     collapsable: true,
-  //     children: solutionsArr
-  //   }
+    // {
+      // title: '算法',
+      // collapsable: true,
+      // children: ['algorithms/index.md']
+    // },
+    // {
+      // title: '题解',
+      // collapsable: true,
+      // children: ['javascript/solutions/index.md']
+    // },
   // )
   // console.log(solutionsArr)
-  // console.log(sideBarData)
+  // console.log(sideBarData['/javascript/'])
   return sideBarData
 }
 /*
