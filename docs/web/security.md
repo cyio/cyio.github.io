@@ -85,3 +85,12 @@ X-Frame-Options 防止页面被嵌入恶意利用
 
 [web-develop/大话WEB安全.md at master · SFLAQiu/web-develop](https://github.com/SFLAQiu/web-develop/blob/master/%25E5%25A4%25A7%25E8%25AF%259DWEB%25E5%25AE%2589%25E5%2585%25A8.md)
 
+2022 Frontend security in 1 tweet:
+
+1. Use HTTPs
+2. Server render
+3. Store JWT/token in 'secure', 'samesite', 'httponly' cookie (prevent XSS).
+4. Declare content security policy (prevent XSS)
+5. Regen cookies when user auths (prevent session fixation)
+6. Set short cookie lifetime
+

@@ -1,6 +1,17 @@
 # Git
 [[toc]]
 
+## 项目最佳实践
+
+简单来说，就这七点：
+1. 使用 git rebase 让提交记录更加清晰可读
+2. 使用  git reflog + git reset 跳到任意 commit
+3. 使用 git cherry-pick 获取指定的 commit 
+4. 使用 git commit --amend 更改提交内容
+5. 使用 git revert 回滚某次的提交 
+6. 使用 git stash 来暂存文件 
+7. 配置 git alias 提升工作效率
+
 [Learn Git Branching](https://learngitbranching.js.org/?demo=&locale=zh_CN)
 
 ## commit 提交规范

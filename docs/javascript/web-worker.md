@@ -1,6 +1,21 @@
 # web-worker
+[toc]
 
+> 主线程应当一心一意的执行你的代码，任何在 关键渲染路径 中 不必要的脚本都应当被迁移到 Web Worker 中。
+
+## 适用场景
+
+非核心工作：
+- 请求类：缓存、预请求
+- 计算类：加密、计算 MD5
+- 数据处理：排序、查找
+- 预渲染：canvas
+
+## 使用
 - 支持内联创建 blob url
+
+简化使用
+[GoogleChromeLabs/comlink: Comlink makes WebWorkers enjoyable.](https://github.com/GoogleChromeLabs/comlink)
 
 ## 错误处理
 
@@ -14,19 +29,7 @@ worker.addEventListener('error', function (event) {
 
 [2021 Web Worker 现状 - 知乎](https://zhuanlan.zhihu.com/p/393428948)
 
-简化使用
-[GoogleChromeLabs/comlink: Comlink makes WebWorkers enjoyable.](https://github.com/GoogleChromeLabs/comlink)
-
 [michaeltreat/Web-Worker-Demo: JavaScript with more than one thread? WebWorkers!](https://github.com/michaeltreat/Web-Worker-Demo)
-
-> 主线程应当一心一意的执行你的代码，任何在 关键渲染路径 中 不必要的脚本都应当被迁移到 Web Worker 中。
-
-非核心工作：
-- 请求类：缓存、预请求
-- 计算类：加密、计算 MD5
-- 数据处理：排序、查找
-- 预渲染：canvas
-
 
 [How Partytown's Sync Communication Works - DEV Community](https://dev.to/adamdbradley/how-partytown-s-sync-communication-works-4244)
 

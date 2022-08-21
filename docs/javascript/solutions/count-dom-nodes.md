@@ -1,4 +1,4 @@
-# count dom nodes
+# 计算页面 DOM 节点数量
 
 ```js
 // 包括文本节点
