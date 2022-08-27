@@ -29,6 +29,9 @@ var climbStairs = function(n) {
 ```
 
 尾递归优化，效率高，牺牲可读性
+
+尾调用 （tail call），应用在递归，叫尾递归
+
 ```js
 // 本质，依然是 3 个变量
 // n 递减，相当于循环控制
@@ -36,7 +39,7 @@ var climbStairs = function(n) {
 function fib(n, n1 = 0, n2 = 1) {
   if (n === 0) return n1 // 注意这里返回不是 n，而是 n1
 
-  return fib(n - 1, n2, n1 + n2)
+  return fib(n - 1, n2, n1 + n2) // 尾位置
 }
 
 console.log(fib(5))

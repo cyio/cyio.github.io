@@ -1,4 +1,5 @@
 # Cookie
+[toc]
 
 ## 使用场景
 
@@ -15,7 +16,18 @@
 - 两层，前后端 cookie 有效期可能不一致
 - 前端 cookie 检查优先
 
+## 有效期
+
+默认 session 级
+
+```js
+document.cookie = `KEY=${123};path=/;domain=.baidu.com`;
+```
+
+需要在相应域名的页面或接口下才能读取到
+
 ## 封装
+
 
 ```js
 // 获取cookie、

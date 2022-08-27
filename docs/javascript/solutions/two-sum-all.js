@@ -55,3 +55,8 @@ function twoSum2(arr, sum) {
 console.log(twoSum(arr, sum))
 console.log(twoSum2(arr, sum))
 
+// 变种，输出解的数量
+// 顺序不同，[1, 2] [2, 1]
+// 枚举，减少枚举时间，比如较大的数在前，j < i, 结果 * 2
+// 进一步，map 保存枚举值，直接查询 j
+// https://oi-wiki.org/basic/enumerate/ 例题

@@ -194,7 +194,17 @@ console.log(result)
 [前端开发必会的JS算法之插入排序-码云笔记](https://www.mybj123.com/4925.html)
 
 ## 快速选择
-分区函数，返回 index
-发现小于 k element，与当前区间交换
-[Quick Sort and Quick Select - YouTube](https://youtu.be/v-1EGgaTFuw?t=1221)
 
+分区函数，返回 index
+
+发现小于 k element，与当前区间交换
+
+快速选择一般是以原地算法的方式实现，除了选出第k小的元素，数据也得到了部分地排序。
+
+```
+i   1 3 5 9 4 6
+t 5
+        i   j           // 1 3 4 9 5 6
+```
+[Quick Sort and Quick Select - YouTube](https://youtu.be/v-1EGgaTFuw?t=1221)
+https://leetcode.cn/problems/kth-largest-element-in-an-array/solution/javascriptsi-chong-fang-shi-jie-topkwen-ti-by-user/

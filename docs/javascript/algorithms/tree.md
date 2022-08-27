@@ -3,15 +3,19 @@
 
 ## 遍历
 
-- 前序(preorder) root -> left -> right
-- 中序(inorder) left -> root -> right
-- 后序(postorder) left -> right -> root
+- 前序(preorder) node -> left -> right
+- 中序(inorder) left -> node -> right
+- 后序(postorder) left -> right -> node
 - 层次(level) level 0 -> level 1
 - 对称
 
-前、中、后判断依据是 root 在排序中位置
+前、中、后判断依据是 node 访问时机
 
 核心：递归
+
+空间，O(n), n 为树高度，运算中递归栈高度
+
+时间，O(n)，n 为节点数量
 
 ```js
 class Node {

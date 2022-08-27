@@ -36,9 +36,9 @@ const c1 = props => <h1 {...props}>hello</h1>
 ## Virtual DOM
 
 - 两个前提：JS 高效，DOM 操作慢
-- 生成虚拟 ODM 树，对比虚拟 DOM 树，用最少的操作更新视图
+- 生成虚拟 DOM 树，更新时对比，用最少的操作更新视图
 
-## Issues
+## state
 
 - state 计算依赖，依赖值
 
