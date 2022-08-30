@@ -9,7 +9,7 @@ crypto, TSL/SSL HTTPS XSS
 危害：获取用户 cookie
 
 解决方式：
-- HttpOnly，无法通过 JS 获取 Cookie
+- HttpOnly，无法通过 JS 读、改、删 Cookie
 - CSP 内容安全策略
 
 设置 header，做哈希验证

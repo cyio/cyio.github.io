@@ -108,6 +108,8 @@ res.cookie('name', 'value', {signed: true})
 
 [node.js - What are "signed" cookies in connect/expressjs? - Stack Overflow](https://stackoverflow.com/questions/11897965/what-are-signed-cookies-in-connect-expressjs)
 
+## httponly
+
 ## 参考
 
 [Cookie -- 前端视角 - hf872914334 的博客 - CSDN 博客](https://blog.csdn.net/hf872914334/article/details/78979007)
