@@ -1,0 +1,4 @@
+import{_ as r,r as a,o as n,c as o,a as e,b as c,F as l,d as s}from"./app.51f45081.js";const _={},u=e("h1",{id:"vuepress",tabindex:"-1"},[e("a",{class:"header-anchor",href:"#vuepress","aria-hidden":"true"},"#"),s(" VuePress")],-1),d=e("ul",null,[e("li",null,"\u67D0\u4E2A\u9875\u9762\u4E0D\u663E\u793A\u4FA7\u8FB9\u680F")],-1),p=e("div",{class:"language-text ext-text"},[e("pre",{class:"language-text"},[e("code",null,`---
+sidebar: false
+---
+`)])],-1),i=s("\u914D\u7F6E\u53C2\u8003 "),h={href:"https://github.com/vuejs/vuepress/tree/master/packages/docs/docs/.vuepress",target:"_blank",rel:"noopener noreferrer"},v=s("vuepress/packages/docs/docs/.vuepress at master \xB7 vuejs/vuepress");function m(f,x){const t=a("ExternalLinkIcon");return n(),o(l,null,[u,d,p,e("p",null,[i,e("a",h,[v,c(t)])])],64)}var k=r(_,[["render",m],["__file","vuepress.html.vue"]]);export{k as default};

@@ -1,0 +1,1 @@
+const t={key:"v-5bf36b30",path:"/javascript/solutions/lru.html",title:"LRU \u7F13\u5B58\u7B97\u6CD5 - \u8FD1\u671F\u6700\u5C11\u4F7F\u7528\u7B97\u6CD5",lang:"en-US",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1662160519e3,contributors:[{name:"cyio",email:"icaner@qq.com",commits:1}]},filePathRelative:"javascript/solutions/lru.md"};export{t as data};
