@@ -3,42 +3,44 @@
 
 ![image.png](http://ww1.sinaimg.cn/large/4e5d3ea7ly1h0hvynxp8oj20nz0b0767.jpg)
 
-Type: Object
+> 采用 promise 可以解决异步编程的逻辑嵌套问题
 
-> 采用promise可以解决异步编程的逻辑嵌套问题
+> Type: Object
 
 > cb => then chain
 
 ## 概念
 - 对外提供 then 函数，对内三个状态
 - 状态：pending fulfilled rejected
-- 状态流转：pending 到后两者，到了后两者不再变
+- 状态流转：从 pending 到后两者，到了后两者不再变
 - 必须有一个 then 异步执行方法，then 接受两个参数且必须返回一个promise
 - 值的代理
 
+## 考察
 题目：问数字打印顺序
 ```js
-console.log(1)
 new Promise(function(resolve, reject) {
+  console.log(2)
   reject(true)
   window.setTimeout(function() {
+    console.log(3)
     resolve(false)
   }, 0)
 }).then(
   function() {
-    console.log(3)
+    console.log(4)
   },
   function() {
-    console.log(3)
+    console.log(5)
   }
 )
-console.log(4)
-// 1 4 3
+
+console.log(6)
+// 2 6 5 3
 ```
 考察：
 - Promise 构造函数是同步执行的（故封装时用 return），then/catch 中的函数是异步执行的。
 - Promise 能 reject 又 resolve 吗，实验不能
-
 
 [unhandled promise rejection - 不忘初心，上下求索。](https://liyaoli.com/2017-06-26/unhandled-promise-rejection.html)
 

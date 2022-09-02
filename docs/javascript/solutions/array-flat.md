@@ -57,14 +57,14 @@ flat(arr)
 
 ```js
 const arr = [1, 2, [3, [4]], 5]
-const flatten = arr => {
+const flat = arr => {
   return arr.reduce((pre, cur) => {
     // concat 可以接 value or array，在这里比解构 value 套一层方便
-    // return [...pre, ...(Array.isArray(cur) ? flatten(cur) : [cur])]
-    return pre.concat(Array.isArray(cur) ? flatten(cur) : cur)
+    // return [...pre, ...(Array.isArray(cur) ? flat(cur) : [cur])]
+    return pre.concat(Array.isArray(cur) ? flat(cur) : cur)
   }, [])
 }
-const res = flatten(arr)
+const res = flat(arr)
 
 console.log(res)
 ```
@@ -74,21 +74,26 @@ console.log(res)
 concat 会解一层，所以 level = 1 时，不需要走递归
 ```js
 const arr = [1, 2, [3, [4], [[6]]], 5]
-function flatten(arr, level = 1) {
-  return arr.reduce((pre, cur) => {
-    const toConcat = Array.isArray(cur) && level > 1 
-      ? flatten(cur, (level -= 1)) 
-      : cur
-    return pre.concat(toConcat)
-  }, [])
+function flat(arr, level = 1) {
+    return arr.reduce((pre, cur) => {
+        return pre.concat(
+            Array.isArray(cur) && level > 1
+                ? flat(cur, level -= 1)
+                : cur
+        )
+    }, [])
 }
-//   const flatten = (arr, limit = 1) => {
+
+// concat 会解一层
+let d = [1, 2].concat([3])
+console.log(d === [1, 2, 3])
+//   const flat = (arr, limit = 1) => {
 //     let level = 0
 //     return arr.reduce((pre, cur) => {
 //       let toConcat
 //       if (Array.isArray(cur) && level < limit - 1) {
 //         level += 1
-//         toConcat = flatten(cur, limit)
+//         toConcat = flat(cur, limit)
 //       } else {
 //         toConcat = cur
 //       }
@@ -97,11 +102,11 @@ function flatten(arr, level = 1) {
 //     }
 //     , [])
 //   }
-const res = flatten(arr, Infinity)
+const res = flat(arr, Infinity)
 
-console.log(flatten(arr, Infinity), arr.flat(Infinity))
-console.log(flatten(arr), arr.flat())
-console.log(flatten(arr, 2), arr.flat(2))
+console.log(flat(arr, Infinity), arr.flat(Infinity))
+console.log(flat(arr), arr.flat())
+console.log(flat(arr, 2), arr.flat(2))
 ```
 
 ## 5. toString，字符串转数字是否可靠，应该可靠

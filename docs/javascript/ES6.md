@@ -22,25 +22,23 @@ var 存在 window 对象中，而 let 存在声明式环境中（看不到），
 
 ```js
 var mine = 4
-// undefined
 window.mine
 // 4
 mine
 // 4
 
 let my = 3
-// undefined
 window.my
 // undefined
 my
 // 3
 
 // var 变量提升
-var myname = "极客时间"
+var myname = "apple"
 function showName(){
   console.log(myname); // undefined
   if (0){
-   var myname = "极客邦" // 声明在函数内提升，但赋值未进行
+   var myname = "banana" // 声明在函数内提升，但赋值未执行
   }
   console.log(myname); // undefined
 }
@@ -60,7 +58,7 @@ tips:
   }
   ```
 
-## map 映射
+## Map
 
 - 如果 key 是复杂数据类型，需要保存起来，以便 map 操作
     ```js

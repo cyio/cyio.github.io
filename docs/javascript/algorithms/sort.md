@@ -208,3 +208,31 @@ t 5
 ```
 [Quick Sort and Quick Select - YouTube](https://youtu.be/v-1EGgaTFuw?t=1221)
 https://leetcode.cn/problems/kth-largest-element-in-an-array/solution/javascriptsi-chong-fang-shi-jie-topkwen-ti-by-user/
+
+## 归并
+
+```js
+function merge(left, right){
+  var result = [];
+  while(left.length > 0 && right.length > 0){
+    if(left[0] < right[0]){
+      result.push(left.shift());
+    }else{
+      result.push(right.shift());
+    }
+  }
+  return result.concat(left, right);
+}
+
+function mergeSort(arr){
+  if(arr.length <=1) return arr;
+  var middle = Math.floor(arr.length / 2);
+  var left = arr.slice(0, middle);
+  var right = arr.slice(middle);
+  return merge(mergeSort(left), mergeSort(right));
+}
+
+let arr = [32, 12, 56, 78, 76, 45, 36] 
+let d = mergeSort(arr)
+console.log(d)
+```

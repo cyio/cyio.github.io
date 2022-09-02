@@ -24,7 +24,7 @@ mermaid 自己看没问题，有些问题需要规避
 [Online FlowChart & Diagrams Editor - Mermaid Live Editor](https://mermaidjs.github.io/mermaid-live-editor/#/edit/eyJjb2RlIjoiZ3JhcGggVERcbkFbQ2hyaXN0bWFzXSAtLT58R2V0IG1vbmV5fCBCKEdvIHNob3BwaW5nKVxuQiAtLT4gQ3tMZXQgbWUgdGhpbmt9XG5DIC0tPnxPbmV8IERbTGFwdG9wXVxuQyAtLT58VHdvfCBFW2lQaG9uZV1cbkMgLS0-fFRocmVlfCBGW2ZhOmZhLWNhciBDYXJdXG4iLCJtZXJtYWlkIjp7InRoZW1lIjoiZGVmYXVsdCJ9fQ)
 [Markdown 流程图 flowchart.js - JavaScript - 123si 博客](https://www.123si.org/javascript/article/markdown-flow-chart-flowchart-js/)
 
-带拼写提示，[Chart Mage - Draw sequence diagrams and flowcharts at lightning speed.](http://chartmage.com/index.html)
+时序图+流程图，带拼写提示 [Chart Mage - Draw sequence diagrams and flowcharts at lightning speed.](http://chartmage.com/index.html)
 
 ## 技巧
 
