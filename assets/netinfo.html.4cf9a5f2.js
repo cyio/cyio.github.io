@@ -1,0 +1,1 @@
+const e={key:"v-7bc6807c",path:"/web/netinfo.html",title:"netinfo",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"\u7F51\u7EDC\u8D28\u91CF",slug:"\u7F51\u7EDC\u8D28\u91CF",children:[]}],git:{updatedTime:1662335451e3,contributors:[{name:"cyio",email:"icaner@qq.com",commits:1}]},filePathRelative:"web/netinfo.md"};export{e as data};
