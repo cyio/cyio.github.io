@@ -319,9 +319,13 @@ https://javascript.info/symbol
 
 尾调用，定义：指某个函数的最后一步是调用另一个函数，不做其他操作
 
-优化：只保留内层函数的调用记录
+优化：只保留内层函数的调用记录，在尾调用之后，程序不需要在堆栈中保留任何有关调用函数的信息
 
 ES6+ 对引擎要求，原因：实现概率 + 性能
 
-[JS尾调用优化](https://ifront.net/article/89421bc6cc90f43fbc27117674d9ea1e)
+仅严格模式可用
 
+堆栈空间要求从 O(n) 减少到 O(1)
+
+[JS尾调用优化](https://ifront.net/article/89421bc6cc90f43fbc27117674d9ea1e)
+[什么是尾递归](https://stackoverflow.com/a/33930)

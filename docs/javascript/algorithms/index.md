@@ -37,6 +37,8 @@
 
 ### 贪心
 
+每次操作局部最优，以达成全局最优
+
 ### 回溯 
 > backtracking
 
@@ -78,6 +80,12 @@
 [VisuAlgo - 数据结构和算法动态可视化 (Chinese)](https://visualgo.net/zh)
 
 ![mindmap](https://camo.githubusercontent.com/7a1f227eb672dfeb7ad558b44471c2ebea0a191594b34fa9f17775945518c678/687474703a2f2f7265736f757263652e6d757969792e636e2f696d6167652f32303230303631363030303630342e706e67)
+
+### 跳指针问题
+比如要求原地修改数组
+
+1. 倒序
+2. 快慢指针
 
 ## 复杂度
 

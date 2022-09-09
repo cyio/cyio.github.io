@@ -3,11 +3,18 @@
 
 ## 遍历
 
-- 前序(preorder) node -> left -> right
-- 中序(inorder) left -> node -> right
-- 后序(postorder) left -> right -> node
-- 层次(level) level 0 -> level 1
+深度优先:
+
+- 前序(preorder) 根 -> 子树 node -> left -> right 自上而下
+- 中序(inorder) 左（右）子树 -> 根 -> 右（左）子树 left -> node -> right
+- 后序(postorder) 子树 -> 根 left -> right -> node 自下而上
+
+广度优先:
+- 层次(level) level 0 -> level 1 队列
+
 - 对称
+
+https://zh.m.wikipedia.org/zh-hans/%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86
 
 前、中、后判断依据是 node 访问时机
 

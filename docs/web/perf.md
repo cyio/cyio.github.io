@@ -256,13 +256,29 @@ removeEventListener('blur', blurListener);
 ```
 https://github.com/GoogleChromeLabs/squoosh/blob/dev/src/shared/prerendered-app/Intro/blob-anim/index.ts#L337
 
+
+[前端监控 SDK 的一些技术要点原理分析 - 知乎](https://zhuanlan.zhihu.com/p/420330110)
+
 ## 指标
-- 白屏 第一个字幕 performance
-- 首屏 dom 稳定 MutationObserver
+
+起始时间，是导航开始时间
+
+## 白屏
+定义：渲染出第一个字 performance
+
+白屏原因，表现在 SPA 单页应用上，包体积过大，请求、解析耗时长（默认 html 一个 app 标签，等 JS 加载后 mount）
+
+优化思路
+1. `app`标签增加 loading 动画，基本没有白屏了
+2. 请求：大包拆分，按需加载
+3. 解析：SSR/SSG
+
+## 首屏
+dom 稳定 MutationObserver
   - body
   - 层级稳定
 
-[前端监控 SDK 的一些技术要点原理分析 - 知乎](https://zhuanlan.zhihu.com/p/420330110)
+window.onload or mounted
 
 ## 如何让页面加载更快
 

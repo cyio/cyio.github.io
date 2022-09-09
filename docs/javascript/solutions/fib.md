@@ -23,8 +23,14 @@
 ```js
 var climbStairs = function(n) {
   // 递归会超时
-  if (n <= 2) return n
-  return climbStairs(n - 1) + climbStairs(n - 2)
+  if (n === 1 || n === 2) return n
+  return climbStairs(n - 1) + climbStairs(n - 2) // 做了运算，不是尾调用
+};
+
+// 尾递归版本
+var climbStairs = function(n, n1 = 1, n2 = 1) {
+    if (n === 1) return n1
+    return climbStairs(n - 1, n1 + n2, n1)
 };
 ```
 
@@ -39,7 +45,7 @@ var climbStairs = function(n) {
 function fib(n, n1 = 0, n2 = 1) {
   if (n === 0) return n1 // 注意这里返回不是 n，而是 n1
 
-  return fib(n - 1, n2, n1 + n2) // 尾位置
+  return fib(n - 1, n2, n1 + n2) // 尾位置，运算转移到函数入参
 }
 
 console.log(fib(5))
