@@ -21,6 +21,9 @@
 
 ![v2-c3c69d4a03f76d7adc60d6225e605bc3_720w.png (720×323)](https://pic4.zhimg.com/80/v2-c3c69d4a03f76d7adc60d6225e605bc3_720w.png)
 
+[初探 MicroApp，一个极致简洁的微前端框架 - 腾讯云开发者社区-腾讯云](https://cloud.tencent.com/developer/article/1967842)
+
+qiankun 侵入性强，沙箱坑较多
 
 1. 架构是系统实现的蓝图
 2. 架构是沟通协作的基础

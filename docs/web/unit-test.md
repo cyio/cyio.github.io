@@ -43,6 +43,10 @@
 
 ## Jest
 
+[揭秘 jest 覆盖率检测的实现原理 - 知乎](https://www.zhihu.com/zvideo/1507719804290600960)
+
+实现原理：插桩
+
 ### eslint
 在 `.eslintrc.js` 增加
 ```

@@ -1,6 +1,8 @@
 # 设计模式
 [[toc]]
 
+[设计模式目录：22种设计模式](https://refactoringguru.cn/design-patterns/catalog)
+
 ## 设计原则
 
 > 软件模式的产生是因为变化的东西太多，为减轻人类的负担， 将一些不变的东西先用模式固化，这样让人类可以更加集中精力对付变化的东西，所以
@@ -239,3 +241,4 @@ flyweight
   查一下代理模式的常用场景，具体优点
 
 [前端的设计模式系列-基本原则 | 前端的设计模式系列](https://pattern.windliang.wang/posts/%25E5%2589%258D%25E7%25AB%25AF%25E7%259A%2584%25E8%25AE%25BE%25E8%25AE%25A1%25E6%25A8%25A1%25E5%25BC%258F%25E7%25B3%25BB%25E5%2588%2597-%25E5%259F%25BA%25E6%259C%25AC%25E5%258E%259F%25E5%2588%2599.html)
+[Patterns.dev - Modern Web App Design Patterns](https://www.patterns.dev/)
