@@ -38,7 +38,7 @@ var myname = "apple"
 function showName(){
   console.log(myname); // undefined
   if (0){
-   var myname = "banana" // 声明在函数内提升，但赋值未执行
+   var myname = "banana" // 声明在函数内提升，但赋值未进行
   }
   console.log(myname); // undefined
 }
