@@ -9,21 +9,9 @@
 - 工程 巨石应用
 - 产品 组合
 
-微服务（后端）延伸
-
-- 技术栈无关性
-- 开发、发布及部署独立
-- 应用隔离
-
 ![0c84fbd3fd7840a590a3a6228efb6f96.png (1080×860)](https://ucc.alicdn.com/pic/developer-ecology/0c84fbd3fd7840a590a3a6228efb6f96.png)
 
-[标准微前端架构在蚂蚁的落地实践-阿里云开发者社区](https://developer.aliyun.com/article/742576)
-
 ![v2-c3c69d4a03f76d7adc60d6225e605bc3_720w.png (720×323)](https://pic4.zhimg.com/80/v2-c3c69d4a03f76d7adc60d6225e605bc3_720w.png)
-
-[初探 MicroApp，一个极致简洁的微前端框架 - 腾讯云开发者社区-腾讯云](https://cloud.tencent.com/developer/article/1967842)
-
-qiankun 侵入性强，沙箱坑较多
 
 1. 架构是系统实现的蓝图
 2. 架构是沟通协作的基础

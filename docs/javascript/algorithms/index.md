@@ -147,3 +147,11 @@ array 转 set，需要遍历，时间复杂度 O(n) [javascript - Time complexit
 
 [changgyhub/leetcode_101: LeetCode 101：和你一起你轻松刷题（C++）](https://github.com/changgyhub/leetcode_101)
 
+## 前端应用
+
+- 你熟知的 DOM 树、AST 树、以及 Vue、React 的 Virtual DOM 都是树。
+- React Hooks 的本质是数组，React Fiber 是基于链表实现的。
+- HTTP 缓存响应消息 和 Vue 的 keep-alive 都用到了 LRU 算法。
+- 浏览器前进后退功能通过栈实现。
+- TCP 连接实现多路复用时借助了epoll，而决定 epoll 高效的原因：数据结构采用了红黑树和队列。
+
