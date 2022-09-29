@@ -2,6 +2,8 @@
 [[toc]]
 
 ## 源码
+https://vscode.dev/github/vuejs/vue
+
 从正式发布的第一个版本读 0.01-0.03
 
 > v0.7.0 最低版本
@@ -151,3 +153,10 @@ flushSchedulerQueue
 
 ![异步渲染原理](http://ww1.sinaimg.cn/large/4e5d3ea7ly1h0cm1rqqz6j20f009wmys.jpg)
 ![响应式原理](http://ww1.sinaimg.cn/large/4e5d3ea7ly1h0cm3a0b3vj20eh0h8mzl.jpg)
+
+## staticRenderFns
+字符串数组，render 时将静态节点（后续不再更新）存起来，执行转成函数
+
+渲染优化
+
+

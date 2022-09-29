@@ -1,6 +1,8 @@
 # Vue 3 源码学习
 [[toc]]
 
+在线源码 https://vscode.dev/github/vuejs/core
+
 ## 调试
 git clone git@github.com:vuejs/core.git vue3-core
 
@@ -159,3 +161,22 @@ setup 作用是为了合成生成物，供外部访问
 [深入响应性原理 | Vue.js](https://v3.cn.vuejs.org/guide/reactivity.html#%25E4%25BB%2580%25E4%25B9%2588%25E6%2598%25AF%25E5%2593%258D%25E5%25BA%2594%25E6%2580%25A7)
 [推荐 7 个 Vue2、Vue3 源码解密分析的重磅开源项目 👍 - SegmentFault 思否](https://segmentfault.com/a/1190000039691166)
 
+## shapeFlag
+
+## h & render
+h 函数作用 createVNode
+
+```
+render(h(xx), container)
+```
+[vue3有了解过吗？能说说跟vue2的区别吗？vue3和vue2区别详解 - 知乎](https://zhuanlan.zhihu.com/p/526776679)
+
+## 虚拟 DOM 编译时优化
+
+纯运行时 => 编译时
+
+- 静态提升
+- 更新类型标记
+- 树结构打平
+
+https://cn.vuejs.org/guide/extras/rendering-mechanism.html#compiler-informed-virtual-dom
