@@ -146,14 +146,23 @@ export { default as React } from 'react'
 
 ## 箭头函数
 
+> 箭头函数要实现类似纯函数的效果，必须剔除外部状态。所以当你定义一个箭头函数，在普通函数里常见的this、arguments、caller是统统没有的。
+> 没有自己的this，arguments，super或new.target， 没有prototype属性。箭头函数表达式更适用于那些本来需要匿名函数的地方，并且它不能用作构造函数。
+> 引入箭头函数有两个方面的作用：更简短的函数并且不绑定this。
+
+
 - 当使用箭头函数创建普通对象时，你总是需要将对象包裹在小括号里
 - 没有`arguments`，可以使用`...args`
-- 自身没有 this
+- 不要在最外层或多层嵌套环境下使用箭头函数，涉及 this 操作时，影响作用域识别
 
 ```js
 // 为与你玩耍的每一个小狗创建一个新的空对象
 var chewToys = puppies.map(puppy => {}) // 这样写会报Bug！
 var chewToys = puppies.map(puppy => ({})) //
+
+// 属性解构
+['1', '22'].map(({'length': len}) => len)
+// [1, 2]
 ```
 
 - 箭头函数和普通函数的区别

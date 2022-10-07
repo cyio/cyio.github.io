@@ -131,29 +131,30 @@ EventBus.$on('i-got-clicked', clickCount => {
 
 > vnode 虚拟节点（节点描述）
 
-比较新旧 vnode 决定如何更新真实 DOM
+比较新旧 vnode 以决定如何更新真实 DOM
 
-同层比较，深度优先
+算法：同层比较，深度优先
 
-- 节点比较
-- 不同，替换，插入新 vnode，移除旧 vnode
-- 相同，子节点比较
-  1. 子节点均是文本，更新文本
-  2. 同时有子节点 updateChildren
-     - 首先假设头尾节点可能相同做4次比对尝试，如果没有找到相同节点才按照通用方式遍历查找，查找结束再按情况处理剩下的节点
-     - 借助 key 通常可以非常精确找到相同节点，因此整个 patch 过程非常高效
-  3. 仅新 vnode 有子节点，创建
-  4. 仅旧 vnode 有子节点，删除
+1. 节点比较
+  2. 不同，替换，插入新 vnode，移除旧 vnode
+  3. 相同，子节点比较
+    1. 子节点均是文本，更新文本
+    2. 同时有子节点 updateChildren
+       - 首先假设头尾节点可能相同做4次比对尝试，如果没有找到相同节点才按照通用方式遍历查找，查找结束再按情况处理剩下的节点
+       - 借助 key 通常可以非常精确找到相同节点，因此整个 patch 过程非常高效
+    3. 仅新 vnode 有子节点，创建
+    4. 仅旧 vnode 有子节点，删除
 
 [【一】2020大厂前端面试题大汇总之Vue专题 - YouTube](https://www.youtube.com/watch?v=ApNCeWNBVrk)
 
 [Vue.js VirtualDOM diff 算法_哔哩哔哩 (゜-゜)つロ 干杯~-bilibili](https://www.bilibili.com/video/BV1Ph41117hq?from=search&seid=10938259853265619770)
+
 [[Vue][面试]你怎么理解vue中的diff算法？_你好，欢迎光临！-CSDN博客](https://blog.csdn.net/u010622874/article/details/108057093)
 
-
-> diff算法就是进行虚拟节点对比，并返回一个patch对象，用来存储两个节点不同的地方，最后用patch记录的消息去局部更新Dom。
+> diff 算法就是进行虚拟节点对比，并返回一个 patch 对象，用来存储两个节点不同的地方，最后用 patch 记录的消息去局部更新 Dom。
 
 [[Vue][面试]你了解哪些vue性能优化的方法_你好，欢迎光临！-CSDN博客_vue性能优化面试](https://blog.csdn.net/u010622874/article/details/108057235)
+
 [[Vue][面试]你知道Vue中key的作用和工作原理吗？说说你对它的理解。_你好，欢迎光临！-CSDN博客_vue中key的作用和原理](https://blog.csdn.net/u010622874/article/details/108057074)
 
 ## 异步更新队列
@@ -284,7 +285,7 @@ https://v3.cn.vuejs.org/guide/migration/v-if-v-for.html#%E4%BB%8B%E7%BB%8D
 
 setState 修改了数据，但这个数据被哪些地方依赖，React 并不知道
 
-react 递归更新，还有 diff 把关，并不一定重渲染 ODM
+react 递归更新，还有 diff 把关（JS 运行），并不一定重渲染 ODM
 
 > React JSX 过度的灵活性导致运行时可以用于优化的信息不足
 

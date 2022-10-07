@@ -180,3 +180,14 @@ render(h(xx), container)
 - 树结构打平
 
 https://cn.vuejs.org/guide/extras/rendering-mechanism.html#compiler-informed-virtual-dom
+
+## Fragments
+不占位置，只渲染 children
+```
+ <fragment >
+   <ChildA / >
+   <ChildB / >
+   <ChildC / >
+ </fragment>
+```
+[Fragments in Vue.js - LogRocket Blog](https://blog.logrocket.com/fragments-in-vue-js/)

@@ -18,7 +18,7 @@ vim 快速 fix，默认根据使用推测（即使推测不准，也省去一些
 Tuple 元组 有组织的数组
 
 08 Record & Dictionary & Many
-[TypeScript 高级技巧 - 掘金](https://juejin.im/post/6844903863791648782)
+G
 
 [Adopting Typescript at Scale - Brie Bunge | JSConf Hawaii 2019 - YouTube](https://www.youtube.com/watch?v=P-J9Eg7hJwE)
 
@@ -138,3 +138,36 @@ const assertions 不可变数据结构
 [6 useful TypeScript 3 features you need to know | Building SPAs](https://www.carlrippon.com/6-useful-typescript-3-features-you-need-to-know/)
 
 [一份不可多得的 TS 学习指南（1.8W字）](https://juejin.cn/post/6872111128135073806)
+
+## getter 和 setter 作用
+
+- 实现只读私有变量,不提供 setter
+- 条件返回
+- 钩子，自定义逻辑
+- 参数校验
+- 便于 TS 推导
+
+[TypeScript 高级技巧 - 掘金](https://juejin.im/post/6844903863791648782)
+
+private 是 ts 关键字
+
+```js
+class Animal {
+    private _name = 'ppp'
+
+    get name() {
+        return this._name
+    }
+
+    set name(val: string) {
+        this._name = val
+    }
+}
+
+let pig = new Animal()
+pig.name
+pig.name = 'jack'
+```
+> 子组件需要的参数声明也不具有强制性，参考 React 组件参数传递是具有强约束力并且能静态检测，目前 Vue 仍然是在运行时抛出
+
+

@@ -2,6 +2,11 @@
 
 ## seo
 
+原则：
+- 营销页面 -> 静态
+- App（需要登录） -> Vue
+- 少数既需要 SPA 强交互性，又对 SEO 和首屏速度有刚性需求 -> SSR
+
 - prerender-spa-plugin
 
 prerender-spa-plugin 预渲染插件的使用说明 - 个人文章 - SegmentFault

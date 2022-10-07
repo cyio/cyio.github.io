@@ -10,7 +10,7 @@
 
 - 组件化，解决协作，复用问题
 
-  - VirtualDOM：JS 版的 DOM ，高效渲染 DOM ，允许 diff ，允许服务端渲染
+  - VirtualDOM：JS 版的 DOM ，高效渲染 DOM（diff） ，允许服务端渲染
   - diff 两个 VirtualDOM 树
   - 改变节点类型，会略过 diff
 
