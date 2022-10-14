@@ -1,1 +1,0 @@
-const e={key:"v-2f55e6e5",path:"/frameworks/next.html",title:"Next",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"now \u53D1\u5E03\u5DE5\u5177",slug:"now-\u53D1\u5E03\u5DE5\u5177",children:[]}],git:{updatedTime:1665151542e3,contributors:[{name:"cyio",email:"icaner@qq.com",commits:1}]},filePathRelative:"frameworks/next.md"};export{e as data};

@@ -1,0 +1,1 @@
+const t={key:"v-c7599572",path:"/project/github.html",title:"github",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"actions",slug:"actions",children:[]},{level:2,title:"\u90E8\u7F72",slug:"\u90E8\u7F72",children:[]}],git:{updatedTime:1665742833e3,contributors:[{name:"cyio",email:"icaner@qq.com",commits:1}]},filePathRelative:"project/github.md"};export{t as data};

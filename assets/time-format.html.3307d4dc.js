@@ -1,0 +1,1 @@
+import{_ as e,o as t,c as a,a as s,d as o}from"./app.dd5e604d.js";const r={},c={id:"dayjs",tabindex:"-1"},_=s("a",{class:"header-anchor",href:"#dayjs","aria-hidden":"true"},"#",-1),d=o(" dayjs"),n=[_,d];function i(h,m){return t(),a("h1",c,n)}var l=e(r,[["render",i],["__file","time-format.html.vue"]]);export{l as default};
