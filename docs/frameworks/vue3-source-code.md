@@ -191,3 +191,8 @@ https://cn.vuejs.org/guide/extras/rendering-mechanism.html#compiler-informed-vir
  </fragment>
 ```
 [Fragments in Vue.js - LogRocket Blog](https://blog.logrocket.com/fragments-in-vue-js/)
+
+## defineComponent
+
+defineComponent 本身的功能很简单，但是最主要的功能是为了 ts 下的类型推导。
+

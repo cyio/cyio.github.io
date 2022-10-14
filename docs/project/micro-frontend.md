@@ -14,7 +14,12 @@ qiankun 侵入性强，沙箱坑较多
 
 ## 自定义元素
 
+[Custom elements](https://javascript.info/custom-elements)
+
+浏览器原生支持的组件
+
 connectedCallback 挂载
+
 attributeChangedCallback & attributeChangedCallback 观察属性变化，回调，数据驱动调用
 
 用 polyfill 可支持所有浏览器
