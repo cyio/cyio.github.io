@@ -22,6 +22,6 @@ console.log(proxy3.message2); // world
 ```
 
 使用场景：
-
-- 数据校验 set
+ 
+- set 时做数据校验 
 - key 不存在时，提供默认值

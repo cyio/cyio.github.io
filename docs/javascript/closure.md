@@ -13,6 +13,23 @@
 
 [Closure (computer programming) - Wikipedia](https://en.wikipedia.org/wiki/Closure_(computer_programming))
 
+## 示例
+```js
+function makeCounter() {
+  let count = 0
+  function push() {
+    count++
+    return count
+  }
+  return push
+}
+
+let x = makeCounter()
+x()
+x()
+x() // 3
+```
+
 ## JS 中定义
 
 ~~闭包简单说，是指函数能访问所在(上下文)环境，而函数内部对外部环境来说不可见。（比较接近 MDN ，函数和它声明所在环境的结合）~~

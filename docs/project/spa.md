@@ -3,7 +3,7 @@
 ## 根据场景对 seo 需求做技术选型
 
 1. 营销页面，SEO 强需求 -> 静态
-2. App（需要登录），SEO 弱需求 -> Vue/React
+2. App、后台系统（需要登录），SEO 弱需求 -> Vue/React
 3. 少数既需要 SPA 强交互性，又对 SEO 和首屏速度有刚性需求 -> SSR
 
 ## Vue SEO 设置

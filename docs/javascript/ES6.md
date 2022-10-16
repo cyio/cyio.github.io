@@ -163,6 +163,9 @@ var chewToys = puppies.map(puppy => ({})) //
 // 属性解构
 ['1', '22'].map(({'length': len}) => len)
 // [1, 2]
+
+['1', '22'].reduce((pre, {length}) => pre + length, 0)
+// 3
 ```
 
 - 箭头函数和普通函数的区别
@@ -274,7 +277,7 @@ var str = `Hello ${who}`
   - 相比于 forEach 支持搭配 break return
   - for-in 为普通对象设计，不适用数组
   - 遍历对象用 for-in，或 Object.keys()
-  - Array.from(obj.keys(), fn) 转换类数组
+  - `Array.from(obj.keys(), fn)` 转换类数组
 
 ```js
 // 计算一些数字的均值

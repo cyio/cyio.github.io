@@ -1,0 +1,204 @@
+{
+  "main": {
+    "id": "9d739b4f3f220a55",
+    "type": "split",
+    "children": [
+      {
+        "id": "92bff51a89ef0232",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "28de6678e1fb5078",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "project/github.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "df96c8a6ac0bebee",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "tools/vagrant.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "a3dfca33978b18b1",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "project/electron.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "e3a1dcbaf5067c8a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "javascript/ES6.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "4030513836377ddd",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "project/bug.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ],
+        "currentTab": 4
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "4dbad3a6d2da34a4",
+    "type": "split",
+    "children": [
+      {
+        "id": "f2861a6d7ad0fdbd",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "031869918caf9466",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "2909e3cde8554c46",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "tag:#231f20",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "66d83c6f7735e36b",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200
+  },
+  "right": {
+    "id": "71f0b16b5fcd0106",
+    "type": "split",
+    "children": [
+      {
+        "id": "8f5a72fa9aee751c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e427e2f518f60941",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "project/bug.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "ea8eba5e0121b410",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "project/bug.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "25da9dd84af52190",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "76590cf9b19fc12c",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "project/bug.md"
+              }
+            }
+          }
+        ],
+        "currentTab": 3
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "ribbon": {
+    "mostRecentAction": ""
+  },
+  "active": "4030513836377ddd",
+  "lastOpenFiles": [
+    "web/e2e-test.md",
+    "javascript/service-worker.md",
+    "project/spa.md",
+    "web/pwa.md",
+    "project/bug.md",
+    "javascript/ES6.md",
+    "server/serverless.md",
+    "server/nginx.md",
+    "server/vps-init.md",
+    "project/electron.md"
+  ]
+}

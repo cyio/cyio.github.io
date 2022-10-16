@@ -1,4 +1,5 @@
 # electron
+## 进程
 
 主进程和渲染器进程
 web页面运行在渲染进程
@@ -11,14 +12,6 @@ GUI 操作，必须与主进程通讯
 
 [The Secret of Good Electron Apps](https://jlongster.com/secret-of-good-electron-apps)
 
-## issues
-系统差异，windows 无法 open？
-
-[javascript - how to open new window in place of current window in Electron - Stack Overflow](https://stackoverflow.com/questions/36072035/how-to-open-new-window-in-place-of-current-window-in-electron/38043021)
-[Electron简单笔记 - 小翼的前端天地](https://www.my-fe.pub/post/electron-note.html)
-[electron.WebContents.on JavaScript and Node.js code examples | Codota](https://www.codota.com/code/javascript/functions/electron/WebContents/on)
-[node.js - Remove menubar from Electron app - Stack Overflow](https://stackoverflow.com/questions/39091964/remove-menubar-from-electron-app)
-[Atom Electron - Close the window with javascript - Stack Overflow](https://stackoverflow.com/questions/31171597/atom-electron-close-the-window-with-javascript)
 
 ## 调试
 最好打开开发工具，`CTRL-ALT-T`
@@ -74,3 +67,12 @@ remote 模块，模拟本地调用，废弃，推荐 invoke
 - 降低迭代成本（分发带宽？）
 - 提升
 
+
+## issues
+系统差异，windows 无法 open？
+
+[javascript - how to open new window in place of current window in Electron - Stack Overflow](https://stackoverflow.com/questions/36072035/how-to-open-new-window-in-place-of-current-window-in-electron/38043021)
+[Electron简单笔记 - 小翼的前端天地](https://www.my-fe.pub/post/electron-note.html)
+[electron.WebContents.on JavaScript and Node.js code examples | Codota](https://www.codota.com/code/javascript/functions/electron/WebContents/on)
+[node.js - Remove menubar from Electron app - Stack Overflow](https://stackoverflow.com/questions/39091964/remove-menubar-from-electron-app)
+[Atom Electron - Close the window with javascript - Stack Overflow](https://stackoverflow.com/questions/31171597/atom-electron-close-the-window-with-javascript)

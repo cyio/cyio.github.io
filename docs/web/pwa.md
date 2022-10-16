@@ -61,3 +61,18 @@ Trusted Web Activity
 
 通过版本号。
 
+* 网页中的主题色设置`<meta name="theme-color" content="#2196F3">`，优先于 manifest.json 中的设置`"theme_color": "#2196F3"`
+[使用Service Worker做一个PWA离线网页应用 – 人人网FED博客](https://fed.renren.com/2017/10/04/service-worker/)
+
+## 缓存策略
+监听 fetch 事件
+
+1. 缓存优先——首先查看缓存，当缓存失效时再去访问网络。这一策略适用于资源文件，如字体、样式、图片等
+
+2. 网络优先：首先查看网络，当网络失败时应用本地缓存。这一策略适合实时数据，比如获取天气信息的 AJAX 请求。这样每次页面刷新都可以获得最新的天气信息，当离线时会降级到使用本地缓存。并给出离线的提示。
+
+[百度搜索对PWA的探索和初步实践](http://www.infoq.com/cn/articles/exploration-and-practice-of-baidu-search-for-pwa)
+
+## Issues
+
+离线后只能从入口访问？不能从子页面

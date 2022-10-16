@@ -16,6 +16,7 @@ import { throttle } from 'lodash-es';
 
   methods: {
     throttledMethod: _.throttle(() => {
+	  // 在 vue 中找不到 this ?
       console.log('I get fired every two seconds!')
     }, 2000)
   }
@@ -42,3 +43,6 @@ pick 挑选生成新对象，与 omit 相反
 sample 随机选择
 
 [Lodash: 10 Javascript Utility Functions That You Should Probably Stop Rewriting | Colin Toh](https://colintoh.com/blog/lodash-10-javascript-utility-functions-stop-rewriting)
+
+## 使用
+

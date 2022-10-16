@@ -59,3 +59,9 @@ Cypress 下一代 web 测试框架
 [E2E 测试之 Cypress - 知乎](https://zhuanlan.zhihu.com/p/32666685)
 
 按 Vue 推荐走
+
+## 冒烟
+
+研发应该进行冒烟测试，测试主要功能是否能正常运行，如果不通过就要打回，关键功能，关键 bug，是否值得进行下一步
+
+minishow； show 给 PM（截屏，或者视频）和 QA（现场）
