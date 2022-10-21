@@ -74,14 +74,25 @@ create diff patch
 
 isDef isUndef helper 是否定义
 
-observer defineReactive 封装了 Object.defineProperty
+## observe
+注意，是个动词
+响应式原理的入口，根据数据类型处理观察逻辑
+
+Observer 类中的 defineReactive 方法封装了 Object.defineProperty
 对象属性观察者，收集依赖、派发更新
 
 数据是被观察者，setter 订阅的 watcher 触发 update
 
 Dep 是对 Watcher 的管理
 
+walk/observeArray
+
+https://www.how-to-vue.com/vue/reactivity/observer.html#the-observe-method
+
 初始化、更新两个阶段，diff patch 发生在更新时
+
+##  Watcher
+用于执行更新渲染。该组件将有一个渲染观察器。我们常说的collection依赖就是collection watcher
 
 Watcher负责收集依赖，清除依赖和通知依赖
 
@@ -126,6 +137,8 @@ data
             id
             subs
 
+## dep
+
 Dep.target 目标 watcher，单例，是一时间只能执行一个
 watcher 是什么
 
@@ -160,3 +173,8 @@ flushSchedulerQueue
 渲染优化
 
 
+Dep 和 Observer 的关系是 Observer 监听整个数据，遍历数据的每个属性，给每个属性绑定 defineReactive 方法，劫持 getter 和 setter，getter 时将依赖（dep.depend）插入 Dep 类，通知所有watcher s 在 setter 时更新（dep.notify）
+
+[vue源码解读（一）Observer/Dep/Watcher是如何实现数据绑定的 - moon3 - 博客园](https://www.cnblogs.com/moon3/p/12200807.html)
+
+[Touch and take you to understand Vue's responsive principle_javascript_EUV-DevPress官方社区](https://devpress.csdn.net/vue/62fa39157e6682346618e060.html)

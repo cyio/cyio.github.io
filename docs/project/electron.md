@@ -1,4 +1,9 @@
 # electron
+
+Electron == CEF + Node.js
+
+CEF： Chromium 嵌入式框架
+
 ## 进程
 
 主进程和渲染器进程
@@ -58,6 +63,36 @@ remote 模块，模拟本地调用，废弃，推荐 invoke
 
 [快应用开发工具之 asar](https://quickapp.vivo.com.cn/quickapp-ide-asar/)
 
+## 拖拽下载
+
+event.sender.startDrag
+https://www.electronjs.org/zh/docs/latest/api/web-contents#contentsstartdragitem
+https://www.electronjs.org/zh/docs/latest/tutorial/native-file-drag-drop
+
+不能监听系统事件，只适合本地文件拖拽
+
+原因：
+1. 无法拿到目标路径
+2. 拖拽到系统本地，走了系统行为（下载文件 URL 到临时目录，再拷贝到目标文件夹）
+3. 文件夹没有 URL，无法下载
+https://github.com/liupan1890/aliyunpan/issues/576
+参考 vscode，只支持单文件，但这只是本地间
+https://github.com/electron/electron/issues/7118#issuecomment-483681104
+https://cloud.tencent.com/developer/article/1562722
+
+[weekly/59.精读《如何利用 Nodejs 监听文件夹》.md at master · ascoders/weekly](https://github.com/ascoders/weekly/blob/master/%25E5%2589%258D%25E6%25B2%25BF%25E6%258A%2580%25E6%259C%25AF/59.%25E7%25B2%25BE%25E8%25AF%25BB%25E3%2580%258A%25E5%25A6%2582%25E4%25BD%2595%25E5%2588%25A9%25E7%2594%25A8%2520Nodejs%2520%25E7%259B%2591%25E5%2590%25AC%25E6%2596%2587%25E4%25BB%25B6%25E5%25A4%25B9%25E3%2580%258B.md)
+
+[electron 拖拽未下载文件到本地功能实现 - 掘金](https://juejin.cn/post/7095557874658574373#heading-1)
+[Electron桌面端拖拽下载的实现 | 新时代农民工的日常](https://pinkcle.com/electron/dragdrop.html)
+
+替代方案：监听系统文件夹变化，局限是适合有限监听的文件夹
+主要风险：权限、兼容性
+
+vscode 窗口内部拖拽实现，由于 startDrag 不支持内部，改用 e.dataTransfer.setData
+https://github.com/electron/electron/issues/7118#issuecomment-483681104
+
+[Simple drag and drop function in Electron - Moment For Technology](https://www.mo4tech.com/simple-drag-and-drop-function-in-electron.html)
+
 ## 热更新
 
 方案：asar（主进程） + update.zip(渲染进程)
@@ -67,10 +102,40 @@ remote 模块，模拟本地调用，废弃，推荐 invoke
 - 降低迭代成本（分发带宽？）
 - 提升
 
+## webview vs browserview
+
+最大的区别在于 browserview 托管于 main process 而不是 renderer。这非常类似于 Chrome 中对页面的处理方式，因此可以获得很高的页面响应速度。
 
 ## issues
-系统差异，windows 无法 open？
 
+- 系统差异，windows 无法 open？
+
+###  白屏
+
+windows 兼容性，如 windows server。解决：追加 --no-sandbox 或 打包 32 位版本
+
+Win7+，不支持 arm
+
+MacOS 10.10+
+
+[javascript - What is minimum system requirements to run electron apps? - Stack Overflow](https://stackoverflow.com/questions/36306450/what-is-minimum-system-requirements-to-run-electron-apps)
+事件: 'render-process-gone’  判断 reason
+
+[https://www.electronjs.org/zh/docs/latest/api/app#%E4%BA%8B%E4%BB%B6-render-process-gone](https://www.electronjs.org/zh/docs/latest/api/app#%E4%BA%8B%E4%BB%B6-render-process-gone)
+
+增加消息提示，让用户重新打开
+
+[【Electron】vue+electron白屏问题的解决方案 - 掘金]([https://juejin.cn/post/7136124646079856671](https://juejin.cn/post/7136124646079856671))
+
+### webview 窗口打开慢
+
+1. 后台预热，隐藏窗口，定位到屏幕之外 + skipTaskBar任务栏不可见
+2. 窗口池，复用
+3. 常驻，通用类窗口，如通知、图片查看器
+
+分享这半年的 Electron 应用开发和优化经验 - 掘金 [https://juejin.cn/post/6844904029231775758](https://juejin.cn/post/6844904029231775758)
+
+## 参考
 [javascript - how to open new window in place of current window in Electron - Stack Overflow](https://stackoverflow.com/questions/36072035/how-to-open-new-window-in-place-of-current-window-in-electron/38043021)
 [Electron简单笔记 - 小翼的前端天地](https://www.my-fe.pub/post/electron-note.html)
 [electron.WebContents.on JavaScript and Node.js code examples | Codota](https://www.codota.com/code/javascript/functions/electron/WebContents/on)
