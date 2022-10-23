@@ -1,0 +1,8 @@
+import{_ as n,e as s}from"./app.5165540b.js";const a={},t=s(`<h1 id="trim" tabindex="-1"><a class="header-anchor" href="#trim" aria-hidden="true">#</a> trim</h1><p>\u6B63\u5219\u8868\u8FBE\u5F0F-\u5B9E\u73B0 trim(str)\u65B9\u6CD5\uFF0C\u8FC7\u6EE4\u5B57\u7B26\u4E32\u9996\u5C3E\u7A7A\u767D</p><div class="language-javascript ext-js"><pre class="language-javascript"><code><span class="token keyword">function</span> <span class="token function">trim</span><span class="token punctuation">(</span><span class="token parameter">str</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> reg <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">^\\s+|\\s+$</span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span>
+
+  str <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span>reg<span class="token punctuation">,</span> <span class="token string">&#39;&#39;</span><span class="token punctuation">)</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token function">trim</span><span class="token punctuation">(</span><span class="token string">&#39; abc123   &#39;</span><span class="token punctuation">)</span>
+</code></pre></div>`,3);function e(p,c){return t}var r=n(a,[["render",e],["__file","trim.html.vue"]]);export{r as default};

@@ -1,0 +1,1 @@
+const e={key:"v-4494529a",path:"/javascript/service-worker.html",title:"Service Worker",lang:"en-US",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1666533154e3,contributors:[{name:"cyio",email:"icaner@qq.com",commits:1}]},filePathRelative:"javascript/service-worker.md"};export{e as data};

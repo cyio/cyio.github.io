@@ -1,0 +1,1 @@
+const e={key:"v-1787ec4a",path:"/project/request-loading.html",title:"",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"\u8F6C\u5708\u6216\u8FDB\u5EA6",slug:"\u8F6C\u5708\u6216\u8FDB\u5EA6",children:[]}],git:{updatedTime:1666533154e3,contributors:[{name:"cyio",email:"icaner@qq.com",commits:1}]},filePathRelative:"project/request-loading.md"};export{e as data};
