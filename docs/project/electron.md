@@ -6,13 +6,11 @@ CEF： Chromium 嵌入式框架
 
 ## 进程
 
-主进程和渲染器进程
-web页面运行在渲染进程
-与浏览器区别，页面可访问底层（通过主进程）
-GUI 操作，必须与主进程通讯
-
+- 2 个进程：主进程和渲染器进程
+- web页面运行在渲染进程
+- 与浏览器区别，页面可访问底层（通过主进程）
+- GUI 操作，必须与主进程通讯
 - require 时需要引 remote [javascript - How to fix BrowserWindow is not a constructor error when creating child window in Electron renderer process - Stack Overflow](https://stackoverflow.com/questions/45639628/how-to-fix-browserwindow-is-not-a-constructor-error-when-creating-child-window-i)
-
 - nodeIntegration 5.0 起默认为 false
 
 [The Secret of Good Electron Apps](https://jlongster.com/secret-of-good-electron-apps)
@@ -141,3 +139,5 @@ MacOS 10.10+
 [electron.WebContents.on JavaScript and Node.js code examples | Codota](https://www.codota.com/code/javascript/functions/electron/WebContents/on)
 [node.js - Remove menubar from Electron app - Stack Overflow](https://stackoverflow.com/questions/39091964/remove-menubar-from-electron-app)
 [Atom Electron - Close the window with javascript - Stack Overflow](https://stackoverflow.com/questions/31171597/atom-electron-close-the-window-with-javascript)
+
+[cawa-93/vite-electron-builder: Secure boilerplate for Electron app based on Vite. TypeScript + Vue/React/Angular/Svelte/Vanilla](https://github.com/cawa-93/vite-electron-builder)

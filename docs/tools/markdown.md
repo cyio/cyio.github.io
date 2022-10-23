@@ -5,7 +5,6 @@
 - 代码直接缩进，不用标记包围也行，如果需要发表，再作处理，如需要高亮
 - 引用是内联式标记，要有换行
 - 使用 4 个空格缩进，尤其是在用嵌套列表时
-- test
 
 [Write better Markdown - BrettTerpstra.com](https://brettterpstra.com/2015/08/24/write-better-markdown/)
 

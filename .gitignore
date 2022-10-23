@@ -85,3 +85,4 @@ dist
 .temp
 docs/tmp.*
 .vscode
+docs/.obsidian
