@@ -1,4 +1,4 @@
-# new
+## new
 
 ```js
 var o = new Foo();
@@ -10,7 +10,7 @@ var o = new Object();
 o.__proto__ = Foo.prototype;
 // 3. 执行构造器函数，新对象作为 this
 var res = Foo.call(o);
-// 4. 返回处理，如果构造函数返回了对象类型，包括二级类型
+// 4. 返回新对象，如果构造函数返回了对象类型，包括二级类型
 res instanceof Object ? res : o;
 ```
 
@@ -21,11 +21,11 @@ res instanceof Object ? res : o;
 // 0. input=fn, output=object  1. new obj 2. proto 3. new obj as this call 4. return
 
 function myNew(fn) {
-  // let obj = new Object()
-  // obj.__proto__ = fn.prototype
-  let obj = Object.create(fn.prototype)
-  let fnRet = fn.call(obj)
-  return fnRet instanceof Object ? fnRet : obj
+  let obj = new Object()
+  obj.__proto__ = fn.prototype
+  // let obj = Object.create(fn.prototype)
+  let ret = fn.call(obj)
+  return ret instanceof Object ? ret : obj
 }
 
 function hi() {
@@ -37,15 +37,21 @@ let r = myNew(hi)
 console.log(r.a, r.b)
 ```
 
-create
+## Object.create
 ```js
 let a = {aa: 1}
 let b = Object.create(a)
 
 b.__proto__ === a // true
+
+function create(o) {
+	function F(){}
+	F.prototype = o
+	return new F()
+}
 ```
-1. 对象有属性__proto__,指向该对象的构造函数的原型对象。
-2. 方法除了有属性__proto__,还有属性prototype，prototype指向该方法的原型对象。
+1. Object 有属性__proto__，指向该对象的构造函数的原型对象。
+2. Function 除了有属性__proto__，还有属性prototype，prototype 指向该方法的原型对象。
 
 考察构造函数原型继承
 ```js

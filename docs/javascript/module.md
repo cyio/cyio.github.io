@@ -6,6 +6,10 @@
 
 [Modules, introduction](https://javascript.info/modules-intro)
 
+## require.js
+
+require.js 的核心原理是通过动态创建 script 脚本来异步引入模块，然后对每个脚本的 load 事件进行监听，如果每个脚本都加载完成了，再调用回调函数。
+
 ## require/import 区别
 - 出处：CommonJS/ES6
 - require 输出 值拷贝，import 输出值引用

@@ -49,6 +49,7 @@ https://github.dev/tangbc/vue-virtual-scroll-list
 
 [javascript - 面试题：渲染十万条数据解决方案_个人文章 - SegmentFault 思否](https://segmentfault.com/a/1190000041415120)
 
+[面试题：渲染十万条数据解决方案 | Azhubaby Blog](https://blog.azhubaby.com/2022/02/09/2022-02-09-%25E6%25B8%25B2%25E6%259F%2593%25E5%258D%2581%25E4%25B8%2587%25E6%259D%25A1%25E6%2595%25B0%25E6%258D%25AE%25E8%25A7%25A3%25E5%2586%25B3%25E6%2596%25B9%25E6%25A1%2588/)
 ## 懒加载
 
 触底加载，一直追加，较常用

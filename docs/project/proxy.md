@@ -61,7 +61,16 @@ https://www.test.com http://www.test.com
 # 处理后缀为gif|jpg|jpeg|png|bmp|swf|ico|js|css|html的请求
 /^https?:\/\/www\.test\.com(:\d*)?\/[^?]*\.(gif|jpg|jpeg|png|bmp|swf|ico|js|css|html)(\?|$)/i 127.0.0.1:8080
 
+
 ```
+
+追加 sourcemap
+````
+``` sourceMappingURL
+//# sourceMappingURL=http://127.0.0.1:8080${url.path.replace(/yo\/static\/js\/(.*)\.js/ig,static/js/$1.js.map)}
+```
+^https://test.wawa.li.com/yo/static/js/*.js jsAppend://`{sourceMappingURL}`
+````
 
 [使用whistle模拟cgi接口异常：错误码、502、慢网速、超时 - 猫哥_kaiye - 博客园](https://www.cnblogs.com/kaiye/p/10137592.html)
 [使用 whistle 替代本地 nginx/webpack 服务 - 猫哥_kaiye - 博客园](https://www.cnblogs.com/kaiye/p/9628692.html)

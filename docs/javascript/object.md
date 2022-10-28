@@ -116,3 +116,14 @@ const dict = Object.create(null)
 
 [Single objects • JavaScript for impatient programmers](https://exploringjs.com/impatient-js/ch_single-objects.html#the-pitfalls-of-using-an-object-as-a-dictionary)
 [Please stop using classes in JavaScript | everyday.codes](https://everyday.codes/javascript/please-stop-using-classes-in-javascript/)
+
+## new 与 Object.create
+
+创建 object，默认会从 Object.prototype 继承方法和属性，除非显式声明 Object.create(null)
+
+{} 等价于 Object.create(Object.prototype)
+
+纯数据场景，希望纯粹，Object.create(null) 没有任何继承
+
+[javascript - Is creating JS object with Object.create(null) the same as {}? - Stack Overflow](https://stackoverflow.com/questions/15518328/is-creating-js-object-with-object-createnull-the-same-as)
+[Object.create | 五年前端三年面试](https://fe.azhubaby.com/JavaScript/Object.create.html)
