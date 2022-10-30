@@ -69,7 +69,7 @@ const res = flat(arr)
 console.log(res)
 ```
 
-扩展支持深度
+## 5. 支持深度
 
 concat 会解一层，所以 level = 1 时，不需要走递归
 ```js
@@ -109,7 +109,7 @@ console.log(flat(arr), arr.flat())
 console.log(flat(arr, 2), arr.flat(2))
 ```
 
-## 5. toString，字符串转数字是否可靠，应该可靠
+## 6. toString，字符串转数字是否可靠，应该可靠
 
 ```js
 const arr = [0, 1, 2, [-3, [4]], 5]

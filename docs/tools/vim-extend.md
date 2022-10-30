@@ -282,7 +282,9 @@ Gmove 处理了 buffer，避免返回时修改原文件
 - 拓展，如何删除两边空格，`ds<space><space>`
 - 小写 s 表示不同行，同行使用大写 S
 - 查看帮助：`h surr<tab>`
+
 ## ctrlsf
+
 搜索、查看、编辑
 
 GLOB search

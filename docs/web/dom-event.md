@@ -14,6 +14,7 @@
     > 历史，IE 实现成冒泡，NetScape 实现成捕获，后期浏览器都支持了这两种事件机制
 
 [UI Events](https://www.w3.org/TR/DOM-Level-3-Events/#event-flow)
+[测试事件阻断](https://codepen.io/cyio/pen/BaVozgb)
 
 ## 事件委托（代理）
 

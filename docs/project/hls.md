@@ -105,4 +105,10 @@ h264: fMP4/TS
 h265: fMP4
 > 1.5. The container format for HEVC video MUST be fMP4.
 
+在线测试 hevc
+https://bitmovin.com/demos/stream-test?format=hls&manifest=https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel-hevc.ism/.m3u8
 
+> 我们的实现是纯硬解，无软解部分，也就是说没有什么版权风险，毕竟解码能力是操作系统提供的，硬件已经交过专利费了。
+[8K HDR!｜为 Chromium 实现 HEVC 硬解 - 原理/实测指南 - 知乎](https://zhuanlan.zhihu.com/p/541082191)
+[【专访】 Chrome HEVC 硬解背后的字节开源贡献者 - 知乎](https://zhuanlan.zhihu.com/p/577394651)
+[enable-chromium-hevc-hardware-decoding/README.zh_CN.md at main · StaZhu/enable-chromium-hevc-hardware-decoding](https://github.com/StaZhu/enable-chromium-hevc-hardware-decoding/blob/main/README.zh_CN.md)
