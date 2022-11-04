@@ -499,6 +499,9 @@ const toggle = {
 
 [Vue 文档中几个易忽视部分的剖析 - 掘金](https://juejin.im/post/5ab3924b6fb9a028db589b57)
 
+mixin 私有属性方法，命名推荐添加`$_mixinName_methodName` 前缀
+[【译】VueJS 最佳实践 · Issue #69 · amandakelake/blog](https://github.com/amandakelake/blog/issues/69)
+
 ## 动态样式
 
 可以绑定计算属性
@@ -533,4 +536,18 @@ const toggle = {
 无状态，可以无 script，props.itemClick 与上级通信
 
 [Vue Template - CodeSandbox](https://codesandbox.io/s/rwxp7pnklo)
+
+## 滚动记忆
+
+scrollBehavior
+
+每个页面都会自动在history.state对象中存储一个对应的key值，`
+
+便利用这个特性实现了页面后退时，数据和滚动条还原，
+
+不过目前只是实现了页面的顶级组件还原，
+
+如果需要对顶级组件下的子组件实现数据还原，`
+
+可以利用$options._scopeId来实现。
 

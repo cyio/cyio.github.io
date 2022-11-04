@@ -341,3 +341,18 @@ ES6+ 对引擎要求，原因：实现概率 + 性能
 
 [JS尾调用优化](https://ifront.net/article/89421bc6cc90f43fbc27117674d9ea1e)
 [什么是尾递归](https://stackoverflow.com/a/33930)
+
+## 临时性死区
+```javascript
+let x = "outer value";
+
+(function() {
+  // 隐式提升 let x
+  // Start TDZ for x.
+  console.log(x); // 由于内部声明提升，优先访问内部定义。这里提升引用不存在
+  let x = "inner value"; // Declaration ends TDZ for x. 
+}());
+```
+
+[javascript - What is the temporal dead zone? - Stack Overflow](https://stackoverflow.com/questions/33198849/what-is-the-temporal-dead-zone)
+[20220113-暂时性死区 - 知乎](https://zhuanlan.zhihu.com/p/554566105)

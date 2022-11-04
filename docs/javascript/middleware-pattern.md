@@ -7,22 +7,25 @@
 
 每一个切面是一个中间件
 
+一般用在数据请求流程中间
+
 https://segmentfault.com/a/1190000023684453
 
 ## 好处
 
 > The best feature of middleware is that it's composable in a chain. You can use multiple independent third-party middleware in a single project.
 
-组合性、拓展性
+可组合性、拓展性
 
 单个中间件应该足够简单，职责单一
 
-## 前端如何正确使用中间件？
+## 与 helper 区别
 
-每个中间件可以实现：
-1) 实现独立的某个逻辑
-2) 控制后续的流程是否执行（权限、路由拦截、条件请求）
-3) 中间件前置、或后置逻辑
+> ExpressJS is based on a pattern in which an incoming request is examined and possibly modified by a series of "middleware" objects. Every single enabled middleware receives every single incoming request. Sometimes they ignore the request, sometimes they add information to it for subsequent middleware objects, and sometimes they perform discreet actions like logging. Often they perform security functions such as checking where the incoming request is going and killing it if the user isn't sufficiently authorized.
+
+> A helper function often has nothing specifically to do with ExpressJS - it's just a function that exists to provide a place for common operations performed by otherwise unrelated objects to exist, to avoid these unrelated objects repeatedly re-implementing the same code.
+
+[Difference between middlewares and helpers? : node](https://www.reddit.com/r/node/comments/wgnyb8/difference_between_middlewares_and_helpers/)
 
 ## 弊端：
 - API 难理解，需要理解中件间运作机制和其他中间件
@@ -31,7 +34,14 @@ https://segmentfault.com/a/1190000023684453
 解决：
 类似 egg 把业务逻辑做成 controller，背后是 koa 中件间，API 美化
 
-## 客户端应用：
+## 前端如何正确使用中间件？
+
+每个中间件可以实现：
+1) 实现独立的某个逻辑
+2) 控制后续的流程是否执行（权限、路由拦截、条件请求）
+3) 中间件前置、或后置逻辑
+
+## 客户端应用
 
 - 中间件上下文不明确
 - 中间件操作其它数据
@@ -61,8 +71,13 @@ https://oychao.github.io/2019/04/08/javascript/38_middleware_pattern/
 
 eggjs 插件和中间件的区别是，中间件一定是处理请求相关上下文的，但是插件不一定
 
-## 应用例子
-koa 请求加 header，token 校验，日志，异常处理，压缩，body 解析
+## 应用场景
+
+分为：
+1. 服务端框架：express/koa
+2. 前端库：数据管理(redux)、数据请求(axios 插件)
+
+Koa 请求加 header，token 校验，日志，异常处理，压缩，body 解析
 
 Koa 的中间件栈以类似栈的方式流动，允许您在下游执行操作，然后过滤和操作上游响应。
 

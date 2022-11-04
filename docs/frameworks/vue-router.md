@@ -13,7 +13,7 @@ hash / history
 
 [深入理解前端中的 hash 和 history 路由 - 知乎](https://zhuanlan.zhihu.com/p/130995492)
 
-## basic
+## 基础
 
 - 为什么优先使用 router-link，首要原因是，写一次，兼容 history 和 hash 模式
 - 跳转常规用法 `router-link.left(tag="div" to="/rule")`
@@ -176,3 +176,78 @@ Vue 异步组件，工厂函数 渲染时才触发
 ```
 
 [vue-router原理及其核心功能实现](https://juejin.cn/post/6844904169954869262)
+
+## 如何注入 vue
+
+## route 和 router 的区别
+
+route 是信息，router 是实例（提供方法）
+
+[2022前端面试系列——Vue面试题_51CTO博客_前端面试题2022vue](https://blog.51cto.com/u_14627797/5429177)
+
+
+## 源码
+
+https://github.dev/vuejs/vue-router
+关键代码：install.js router.js
+
+在路径变化时修改响应式数据的值触发页面重新渲染
+
+[超燃｜从0到1手把手带你实现一款Vue-Router - 知乎](https://zhuanlan.zhihu.com/p/453957632)
+
+在 mixin - beforeCreate 中，执行 init
+```js
+        // 当根组件挂载 _router 时候 我们在根组件上定义了一个_route响应式属性 初始值为 this._router.history.current
+        Vue.util.defineReactive(this, '_route', this._router.history.current);
+```
+
+init 方法核心逻辑
+```js
+  // 定义初始化路由方法
+  // init方法会接受 根组件实例
+  init(app) {
+    this.app = app;
+    const history = this.history;
+
+    // 路由变化监听函数
+    const setupListeners = () => {
+      history.setupListeners();
+    };
+
+    // 初始化时 首先根据当前页面路径渲染一次页面
+    history.transitionTo(history.getCurrentLocation(), setupListeners);
+
+    // 额外定义history.listen方法 传入一个callback
+    // 在每次BaseHistory中的current属性改变时 传入最新的值 从而更新 app._route
+    // _route 变化触发组件重新渲染？
+    history.listen((route) => {
+      app._route = route;
+    });
+  }
+   
+   // ...
+}
+// ...
+```
+访问 alias
+```js
+export default function install(Vue) {
+   //...
+   
+  // 定义原型$router对象
+  Object.defineProperty(Vue.prototype, '$router', {
+    get() {
+      return this._rootRouter._router;
+    },
+  });
+
+  // 定义原型$route对象
+  Object.defineProperty(Vue.prototype, '$route', {
+    get() {
+      return this._rootRouter._route;
+    },
+  });
+  
+  // ...
+}
+```

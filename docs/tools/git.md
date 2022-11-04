@@ -649,6 +649,8 @@ git clone --depth 1 --no-single-branch
 
 ## 多个工作区
 
+> 基于文件夹
+
 用途：
 1. 多个独立工作区（hotfix/PR reivew/运行并行环境）
 2. 目录对比
@@ -658,7 +660,7 @@ git clone --depth 1 --no-single-branch
 - 避免 clone 多个相同仓库
 - switch branch 需要 IDE 做很多切换索引工作
 
-限制：一个目录一个分支，如果想在一个目录切换不同分支，需要删除 worktree。
+限制：一个文件夹一个分支，如果想在一个文件夹切换不同分支，需要删除 worktree。
 
 ```sh
 git worktree add master ../prod-work
