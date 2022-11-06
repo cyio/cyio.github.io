@@ -19,46 +19,6 @@ g 表示执行多次，符合匹配的可能有多个
 匹配子字符串，从 lastIndex 开始
 ```
 
-## match/exec/test
-
-> RegExp.prototype.test()
-> RegExp.prototype.exec()
-> String.prototype.match()
-
-```js
-/bc/.exec('abc').index === 'abc'.match('bc').index
-```
-查找第一个匹配索引，两个都可以，返回一致
-
-exec 不支持 g
-
-```js
-let s = 'abcab'
-s.match(/ab/g)
-// ["ab", "ab"]
-```
-
-RegExp 是有状态的 lastIndex 会更新
-
-```js
-  function indexOfAll(str, target) {
-    let res = []
-    let reg = new RegExp(target, 'g')
-    let d = reg.exec(str)
-    while(d && reg.lastIndex <= str.length) {
-      console.log(d)
-      res.push(d.index)
-      d = reg.exec(str)
-    }
-    console.log(res)
-    return res
-  }
-
-  matchAll('abcdbc', 'bc') // [1, 4]
-```
-
-match 如果找不到，返回 null
-
 ## 基础
 
 ### 创建方式
@@ -101,15 +61,12 @@ n 进制，即逢 n 进一位，如二进制，逢 2 变 10，逢 4 变 100。�
 
 ## 常用匹配
 
-图片后缀
-
-```
+```js
+// 图片后缀
 const s = 'afafad/a.jpg|233' // 路径末尾有多余字符，需要去掉
 s.match(/(.+?).(jpe?g|png|webp)/g)
 // return ["afafad/a.jpg"]
 ```
-
-## 常用正则
 
 ```js
 // 多个字符串或关系
@@ -150,7 +107,7 @@ console.log(result)
 
 ```
 
-## 构造正则步骤
+## 构造步骤
 
 1. 加载一些合法和不合法的样例数据
 2. 写一个正则匹配所有合法的数据
@@ -248,3 +205,51 @@ let s = ' x y '
 s.replace(/^\s*|\s*$/g, '')
 ```
 [就因为这三个知识点，我彻底学废了“正则表达式”](https://mp.weixin.qq.com/s?__biz=MzAxODE2MjM1MA==&mid=2651593792&idx=1&sn=3e7135683cad3910ac6381fe8e72729f&chksm=8022cb81b75542976b677380f91ac8562ac16ebefcefb82cda9c0474670cd5e534b574bc1c42#rd)
+
+## match/exec/test 区分
+
+> RegExp.prototype.test()
+> RegExp.prototype.exec()
+> String.prototype.match()
+
+match 的 String 的原型方法
+
+```js
+/bc/.exec('abc').index === 'abc'.match('bc').index
+// 1
+```
+查找第一个匹配索引，两个都可以，返回一致
+
+![image.png](http://ww1.sinaimg.cn/large/4e5d3ea7ly1h7s9j85iu1j20bd036gm1.jpg)
+
+match 如果找不到，返回 null
+
+exec 不支持 g，即多次查找
+
+```js
+let s = 'abcab'
+s.match(/ab/g)
+// ["ab", "ab"]
+
+/ab/.exec(s)
+```
+
+RegExp 是有状态的，lastIndex 会更新
+
+```js
+  function indexOfAll(str, target) {
+    let res = []
+    let reg = new RegExp(target, 'g')
+    let d = reg.exec(str)
+    while(d && reg.lastIndex <= str.length) {
+      console.log(d)
+      res.push(d.index)
+      d = reg.exec(str)
+    }
+    console.log(res)
+    return res
+  }
+
+  matchAll('abcdbc', 'bc') // [1, 4]
+```
+

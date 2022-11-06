@@ -29,3 +29,8 @@ Tailwind CSS
 1. 预打包依赖，一个依赖一个请求
 2. etag & 304
 3. 代码分割，ES module 同时支持 dev & prod
+
+## 依赖预构建
+原因
+1. 兼容性，cjs/umd 转为 esm
+2. 性能，减少请求数

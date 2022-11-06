@@ -1,6 +1,9 @@
 # NPM
 [[toc]]
 
+## 安装机制
+![[Pasted image 20221103214318.png]]
+
 ## npm 创建和发布一个包的步骤
 
 ```bash
@@ -219,3 +222,14 @@ npm install --registry=http://registry.npm.taobao.org
 npm publish --tag alpha
 npm publish --tag beta
 ```
+
+## npm link 本地调试验证
+
+
+![image.png](http://ww1.sinaimg.cn/large/4e5d3ea7ly1h7sa1306ylj20jy0603zg.jpg)
+
+## 配置优先级
+![[Pasted image 20221103215444.png]]
+
+![image.png](http://ww1.sinaimg.cn/large/4e5d3ea7ly1h7sa87na1cj20a705t74u.jpg)
+![image.png](http://ww1.sinaimg.cn/large/4e5d3ea7ly1h7sa8vt64nj20lx06h75m.jpg)
