@@ -1,0 +1,6 @@
+import{_ as n,e as a}from"./app.b7977623.js";const s={},t=a(`<p>\u63CF\u8FF0\uFF1A\u61D2\u52A0\u8F7D\u4E0D\u89E6\u53D1</p><p>\u89E3\u51B3\uFF1A\u5728\u5782\u76F4\u65B9\u5411\u6EDA\u52A81px</p><div class="language-javascript ext-js"><pre class="language-javascript"><code>    <span class="token function">lazyloadFix</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        window<span class="token punctuation">.</span><span class="token function">scrollBy</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">400</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+</code></pre></div>`,3);function p(o,c){return t}var u=n(s,[["render",p],["__file","lazy-load-bug.html.vue"]]);export{u as default};
