@@ -4,10 +4,8 @@
 
 ```js
 function trim(str) {
-  var reg = /^\s+|\s+$/g
-
-  str = str.replace(reg, '')
-  console.log(str)
+  return str.replace(/^\s+|$\s+/g, '')
 }
-trim(' abc123   ')
+let r = trim(' abc123   ')
+console.log(r)
 ```

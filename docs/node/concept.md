@@ -3,13 +3,22 @@
 
 ## 架构
 
+libuv - 跨平台异步 IO 库（事件循环，网络，IO，子进程，线程池）
+V8
+第三方库
+
 ![image.png](https://ww1.sinaimg.cn/large/4e5d3ea7ly1h0wwwoavtbj212c0f70y1.jpg)
 ![u1O2O.png (1077×420)](https://i.stack.imgur.com/u1O2O.png)
 [javascript - Which is correct Node.js architecture? - Stack Overflow](https://stackoverflow.com/questions/36766696/which-is-correct-node-js-architecture)
 ![1*evOcy9n3vslkDt0Mj8mBYw.jpeg (1024×468)](https://miro.medium.com/max/1400/1*evOcy9n3vslkDt0Mj8mBYw.jpeg)
 
 
-您必须知道的几个 Nodejs 编码习惯 · GitBook
+## libuv
+
+用 C 编写
+
+## V8
+C++，可以独立运行，或嵌入 C++ 应用
 
 ## path
 

@@ -17,7 +17,7 @@ function tpl(template, data) {
   Object.keys(data).forEach(key => {
     str = str.replace(
       `{%${key}%}`,
-      key === 'className' ? `"${data[key]}"` : data[key]
+      key === 'className' ? `"${data[key]}"` : data[key] // 属性值需要加引号
     )
   })
   return str
