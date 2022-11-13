@@ -1,6 +1,6 @@
 # vite
 
-ES6 module + rollup-based fro production
+ES6 module + rollup-based for production
 
 浏览器原生支持，实现无刷更新。
 
@@ -8,14 +8,13 @@ ES6 module + rollup-based fro production
 
 [博客重构于Vite - 程沛权 - 养了三只猫](https://chengpeiquan.com/article/rewrite-in-vite.html)
 
-Tailwind CSS
-
-- 需要 CSS 基础，编写体验与写 CSS 加补全类似
-- postcss 替代 sass/less
-
 静态资源处理，借助 npm & CDN
 
 旧页面 301 重定向到新页面
+
+## 与 webpack 比较
+
+定位不同，vite 是上层工具链，依赖 rollup，而 webpack 与 rollup 对标
 
 ## ES module based dev server VS Bundle based dev server
 

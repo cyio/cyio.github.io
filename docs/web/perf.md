@@ -286,3 +286,10 @@ window.onload or mounted
 工程化：压缩、资源优化
 网络：缓存、CDN
 
+## 平均帧率
+
+Frame Timing API
+[【前端性能】Web 动画帧率（FPS）计算_51CTO博客_动画常用帧率](https://blog.51cto.com/zhangchiworkos/2712114)
+firefox 自带？
+[Using the Frame Timing API](https://contest-server.cs.uchicago.edu/ref/JavaScript/developer.mozilla.org/en-US/docs/Web/API/Frame_Timing_API/Using_the_Frame_Timing_API.html)
+

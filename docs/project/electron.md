@@ -4,6 +4,8 @@ Electron == CEF + Node.js
 
 CEF： Chromium 嵌入式框架
 
+![v2-f85361afb9a037b24b279c9a87d6635e_r.jpg (490×454)](https://pic3.zhimg.com/v2-f85361afb9a037b24b279c9a87d6635e_r.jpg)
+
 ## 进程
 
 - 2 个进程：主进程和渲染器进程

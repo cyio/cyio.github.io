@@ -84,3 +84,7 @@ Command+U 上个位置
 
 [js逆向技巧分享 - 知乎](https://zhuanlan.zhihu.com/p/108207751)
 
+## 强制刷新
+1. 浏览器发请求设置 no-cache
+2. 清除本地缓存，再请求
+
