@@ -1,1 +1,0 @@
-const e={key:"v-1751ede3",path:"/project/vercel.html",title:"Vercel",lang:"en-US",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:166774426e4,contributors:[{name:"cyio",email:"icaner@qq.com",commits:1}]},filePathRelative:"project/vercel.md"};export{e as data};

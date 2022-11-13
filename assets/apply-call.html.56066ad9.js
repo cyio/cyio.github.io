@@ -1,0 +1,1 @@
+const a={key:"v-70cf5004",path:"/javascript/solutions/apply-call.html",title:"apply call",lang:"en-US",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1668346201e3,contributors:[{name:"cyio",email:"icaner@qq.com",commits:1}]},filePathRelative:"javascript/solutions/apply-call.md"};export{a as data};
