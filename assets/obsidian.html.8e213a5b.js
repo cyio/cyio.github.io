@@ -1,0 +1,1 @@
+const t={key:"v-4202a291",path:"/tools/obsidian.html",title:"",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"TDOO",slug:"tdoo",children:[]}],git:{updatedTime:1668852932e3,contributors:[{name:"cyio",email:"icaner@qq.com",commits:1}]},filePathRelative:"tools/obsidian.md"};export{t as data};
