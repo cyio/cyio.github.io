@@ -641,11 +641,6 @@ git rev-list --left-right --count origin/master...test-branch
 
 [github - git ahead/behind info between master and branch? - Stack Overflow](https://stackoverflow.com/questions/20433867/git-ahead-behind-info-between-master-and-branch)
 
-## 巨石仓库拉取
-
-```sh
-git clone --depth 1 --no-single-branch
-```
 
 ## 多个工作区
 
@@ -687,3 +682,13 @@ git worktree remove ../work-1 --force
 [Git屠龙技：使用Git Worktree并行开发测试 - 知乎](https://zhuanlan.zhihu.com/p/92906230)
 [Git Worktree的使用 - 张小凯的博客](https://jasonkayzk.github.io/2020/05/03/Git-Worktree%E7%9A%84%E4%BD%BF%E7%94%A8/)
 
+
+## issues
+
+## 超大仓库拉取
+
+```sh
+	git clone --branch dev --depth 1 --no-single-branch
+```
+
+默认是`single-branch`，但一般希望都拉下来，需要指定`--no-single-branch`

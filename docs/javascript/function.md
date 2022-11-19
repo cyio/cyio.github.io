@@ -84,6 +84,8 @@ console.log(Math.max.apply(null, allNumbers)) // 56
 console.log(Math.max(...allNumbers))
 ```
 
+  - apply 传入的不是数组，而是一个类数组对象，即：有下标并且有 length 属性的对象
+
 ### bind 固定 this
 
 `call apply bind`是相似的，`bind`是 ES5 增加的，可为函数调用固定`this`或参数

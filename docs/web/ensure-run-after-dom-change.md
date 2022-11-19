@@ -34,7 +34,7 @@ elem.innerText = 'Hi 2' // o2
 3. rAF 可以
 
 event loop: 
-规范/chrome:         rAF -> style -> layout -> paint
+规范/chrome:               rAF -> style -> layout -> paint
 老版 Edge 和 Safari： style -> layout -> paint -> rAF
 
 所以第一个 rAF 执行其实是和附近的代码在一个 task 里

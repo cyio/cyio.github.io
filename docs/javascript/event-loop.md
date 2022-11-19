@@ -1,4 +1,8 @@
-# 事件循环
+  - JS 引擎是单线程的
+  - Event Loop 是 javascript 的执行机制
+  - 微任务优于宏任务先执行
+
+## 事件循环
 
 同步和异步任务分别进入不同的执行环境，同步的进入主线程，即主执行栈，异步的进入 Event Queue 。主线程内的任务执行完毕为空，会去 Event Queue 读取对应的任务，推入主线程执行。 上述过程的不断重复就是我们说的 Event Loop (事件循环)。
 
@@ -131,6 +135,8 @@ setTimeout(() => console.log(4))
 - L4：一个任务，所以它将在微任务之后运行。 所以 2-3-5-1-4
 
 **同步代码 -> node nextTick -> 微任务 promise -> 任务 setTimeout**
+
+## requestAnimationFrame
 
 ## 常见误解
 1. 任务队列用了 quene？

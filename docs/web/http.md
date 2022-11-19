@@ -227,11 +227,16 @@ C -> ACK -> S
 
 > Etag nginx 是基于 Last-Modified 和 Content-Length 计算，更新更及时？
 
-## Expires和Cache-Control
+## Expires 和 Cache-Control
 Expires 要求客户端和服务端的时钟严格同步。 HTTP1.1 引入 Cache-Control来克服Expires头的限制。如果max-age和Expires同时出现，则 max-age 有更高的优先级。
 
 Last-Modified 与 Etag 对比，精确度、分布式部署一致性、性能消耗、优先级
 [通过 Node.js 小示例学习浏览器缓存策略](https://mp.weixin.qq.com/s?__biz=MzA4ODUzNTE2Nw==&mid=2451060772&idx=3&sn=3ee0c658dd84a6e481bb3cc14e502a04&chksm=87c42134b0b3a822122a78b3bb676d122c0fbcd280dc9facd0c19e7cbe4b638ab09b283c590d#rd)
+
+## 加密
+
+HTTPS是对称加密还是非对称加密
+    HTTPS 在**内容传输**的加密上使用的是对称加密，非对称加密只作用在**证书验证**阶段。
 
 ## 幂等性
 什么是幂等？一个操作如果具有任意多次执行所产生的影响均与一次执行的影响相同，我们就称之为幂等。
