@@ -1,9 +1,6 @@
 # 算法
 [[toc]]
 
-https://playcode.io/javascript 
-有客户端
-
 ## 算法方法/思想
 
 ### 枚举

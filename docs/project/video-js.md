@@ -549,3 +549,4 @@ https://github.com/videojs/http-streaming/blob/ea3650a08de481ac01f5562e54278e736
 
 [What I’ve Learned From Working With HTML5 Video Over A Month | by Onur Şuyalçınkaya | Yemeksepeti Teknoloji | Medium](https://medium.com/yemeksepeti-teknoloji/what-ive-learned-from-working-with-html5-video-over-a-month-485c5d5c2045)
 [HTML Standard](https://html.spec.whatwg.org/multipage/media.html#ready-states)
+[YUV色彩空间 · FFmpeg原理](https://ffmpeg.xianwaizhiyin.net/base-knowledge/raw-yuv.html)
