@@ -33,7 +33,10 @@ G
 ## interface 和 type
 
 - 过去区别大，现在区别很小，都可以扩展
+- interface 开放，可以覆盖，type 封闭，不能多次声明
 - interface 适合开发库，便于扩展，写业务组件建议用 type
+
+https://www.typescriptlang.org/play#example/types-vs-interfaces
 
 ```js
 interface Props {

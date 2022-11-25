@@ -30,3 +30,6 @@
     // similar behavior as clicking on a link
     window.location.href = "http://stackoverflow.com";
     ```
+
+[iframe 错误检测及优化方案 - 简书](https://www.jianshu.com/p/b09333442ded)
+

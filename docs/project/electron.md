@@ -141,6 +141,13 @@ MacOS 10.10+
 
 分享这半年的 Electron 应用开发和优化经验 - 掘金 [https://juejin.cn/post/6844904029231775758](https://juejin.cn/post/6844904029231775758)
 
+## 异常捕获封装
+
+1. render
+2. main
+
+https://github.dev/sindresorhus/electron-unhandled/blob/a302ae5367af900872d889cdb47fe26907fa47fe/index.js#L123
+
 ## 参考
 [javascript - how to open new window in place of current window in Electron - Stack Overflow](https://stackoverflow.com/questions/36072035/how-to-open-new-window-in-place-of-current-window-in-electron/38043021)
 [Electron简单笔记 - 小翼的前端天地](https://www.my-fe.pub/post/electron-note.html)
