@@ -1,0 +1,1 @@
+const e={key:"v-3bea6a9f",path:"/web/table.html",title:"table",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"\u6A21\u677F",slug:"\u6A21\u677F",children:[]}],git:{updatedTime:1669380021e3,contributors:[{name:"cyio",email:"icaner@qq.com",commits:1}]},filePathRelative:"web/table.md"};export{e as data};
