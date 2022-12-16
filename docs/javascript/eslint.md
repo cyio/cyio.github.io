@@ -203,3 +203,12 @@ eslint recommend / react 规则集里没有，需要安装 eslint-plugin-import�
 disable missing space before function parentheses · Issue #44 · prettier/eslint-plugin-prettier https://github.com/prettier/eslint-plugin-prettier/issues/44#issuecomment-323657069
 
 暂时禁用 prettier 保存时运行
+
+## vscode 简单格式化需求，用 eslint 插件
+
+Setting -> formatter
+
+[antfu/eslint-config: Anthony's ESLint config presets](https://github.com/antfu/eslint-config)
+
+为什么不用 prettier，有很多预设规则，适应有成本
+

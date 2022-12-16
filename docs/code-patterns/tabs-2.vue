@@ -1,6 +1,5 @@
-```html
 <template>
-    <div class="space-admin">
+    <div class="container">
         <div class="ui-tabs">
             <div class="tab__item"
                 v-for="tabItem in tabOptions"
@@ -12,32 +11,51 @@
             <div class="tab__bottom-bar"></div>
             </div>
         </div>
-        <div class="ui-tab__pane" v-for="(item, index) in tabOptions" :class="item.class" :key="item.name" v-if="activeTab === index">
-            <component :is="item.component"></component>
+        <div class="ui-tab__pane">
+            <component :is="currentTabData.component"></component>
         </div>
     </div>
 </template>
-```
 
-```js
-      activeTab: 'A',
-      tabOptions: [
-        {
-          key: 'A',
-          title: 'aaa',
-          component: 'AAA',
-        },
-        {
-          key: 'B',
-          title: 'bbb',
-        },
-      ]
-```
-
-```scss
+<script>
+export default {
+    components: {
+    },
+    mixins: [],
+    data: () => ({
+        activeTab: 'A',
+        tabOptions: [
+            {
+                key: 'A',
+                title: '空间上限',
+                component: 'A',
+            },
+            {
+                key: 'B',
+                title: '空间权限',
+                component: 'B',
+            },
+        ]
+    }),
+    methods: {
+    },
+    computed: {
+        currentTabData() {
+            return this.tabOptions.find(i => i.key === this.activeTab)
+        }
+    },
+    watch: {
+    },
+    created() {
+    }
+};
+</script>
+<style lang="scss">
 $--color-primary: #FF0520;
 
-  .tabs {
+.container {
+
+  .ui-tabs {
     display: flex;
     background: #fff;
     .tab__item {
@@ -73,4 +91,6 @@ $--color-primary: #FF0520;
       }
     }
   }
-```
+
+}
+</style>

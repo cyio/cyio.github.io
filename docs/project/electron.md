@@ -148,6 +148,12 @@ MacOS 10.10+
 
 https://github.dev/sindresorhus/electron-unhandled/blob/a302ae5367af900872d889cdb47fe26907fa47fe/index.js#L123
 
+## 打包
+
+https://www.electronjs.org/docs/latest/tutorial/tutorial-packaging
+
+测试 electron v21 空项目 dmg 220Mb
+
 ## 参考
 [javascript - how to open new window in place of current window in Electron - Stack Overflow](https://stackoverflow.com/questions/36072035/how-to-open-new-window-in-place-of-current-window-in-electron/38043021)
 [Electron简单笔记 - 小翼的前端天地](https://www.my-fe.pub/post/electron-note.html)

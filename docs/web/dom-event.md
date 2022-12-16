@@ -71,4 +71,7 @@ parse HTML => DOMContentLoaded event => loads resources => load event
 [javascript - window.onload vs document.onload - Stack Overflow](https://stackoverflow.com/questions/588040/window-onload-vs-document-onload)
 
 ## target 与 currentTarget 区别
+
+target 是事件触发者，currentTarget 是事件接收者
+
 [What is the difference between Target and currentTarget in the event context?](https://www.jstips.co/en/javascript/difference-between-target-and-currentTarget/)
