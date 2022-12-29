@@ -7,7 +7,7 @@ libuv - 跨平台异步 IO 库（事件循环，网络，IO，子进程，线程
 V8
 第三方库
 
-![image.png](https://ww1.sinaimg.cn/large/4e5d3ea7ly1h0wwwoavtbj212c0f70y1.jpg)
+![[Pasted image 20221226095240.png]]
 ![u1O2O.png (1077×420)](https://i.stack.imgur.com/u1O2O.png)
 [javascript - Which is correct Node.js architecture? - Stack Overflow](https://stackoverflow.com/questions/36766696/which-is-correct-node-js-architecture)
 ![1*evOcy9n3vslkDt0Mj8mBYw.jpeg (1024×468)](https://miro.medium.com/max/1400/1*evOcy9n3vslkDt0Mj8mBYw.jpeg)
@@ -18,7 +18,7 @@ V8
 用 C 编写
 
 ## V8
-C++，可以独立运行，或嵌入 C++ 应用
+C++实现，可以独立运行，或嵌入 C++ 应用
 
 ## path
 
@@ -57,8 +57,8 @@ rs.on('end', () => {
   - 内存不会自动回收
 
 ## 问题
-1. 单线程异步的Node.js不代表不会阻塞，在主线程做过多的任务可能会导致主线程的卡死，影响整个程序的性能，所以我们要非常小心的处理大量的循环，字符串拼接和浮
-2. 点运算等cpu密集型任务，合理的利用各种技术把任务丢给子线程或子进程去完成，保持Node.js主线程的畅通。
+
+单线程异步的Node.js不代表不会阻塞，在主线程做过多的任务可能会导致主线程的卡死，影响整个程序的性能，所以我们要非常小心的处理大量的循环，字符串拼接和浮点运算等cpu密集型任务，合理的利用各种技术把任务丢给子线程或子进程去完成，保持Node.js主线程的畅通。
 
 ## 单线程
 [Node.js的线程和进程详解 - 知乎](https://zhuanlan.zhihu.com/p/30743785)
@@ -105,6 +105,7 @@ var data = fs.readFileSync('/resource.json') //同步方法
 ```
 
 为什么是流的设计，什么叫 I/O 非阻塞:
+
 > 在很多其他编程语言里，就是这么用的。这样做的好处，就是直观，便于人类直线思考。坏处就是，数据（流）大时，必然需要长时间执行，直接 阻
 > 塞 进程，整个程序只好停下来等着，这就是 I/O 阻塞 。
 > Node.js 因为用了回调 ，js 代码所在的（主）线程会把一切 回调 扔给后台的线程池去处理，而自己一步到底，所以叫 I/O 非阻塞 。 再直白一些，流

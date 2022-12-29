@@ -68,7 +68,7 @@ redux-thunk 中间件
 ## redux dev tool
 
 - diff 数据项变化
-![image.png](http://ww1.sinaimg.cn/large/4e5d3ea7gy1gj1qyi2thdj20q90d0tat.jpg)
+![image.png](https://img.cnb.workers.dev/?url=http://ww2.sinaimg.cn/large/4e5d3ea7gy1gj1qyi2thdj20q90d0tat.jpg)
 
 - trace 定位 action 触发位置
 

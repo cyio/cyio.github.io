@@ -220,7 +220,7 @@ match 的 String 的原型方法
 ```
 查找第一个匹配索引，两个都可以，返回一致
 
-![image.png](http://ww1.sinaimg.cn/large/4e5d3ea7ly1h7s9j85iu1j20bd036gm1.jpg)
+![image.png](https://img.cnb.workers.dev/?url=http://ww2.sinaimg.cn/large/4e5d3ea7ly1h7s9j85iu1j20bd036gm1.jpg)
 
 match 如果找不到，返回 null
 

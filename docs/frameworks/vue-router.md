@@ -87,7 +87,7 @@ fetch().then(res => {
 
 - 组件通信-通俗
 
-![![img](http://ww4.sinaimg.cn/large/4e5d3ea7jw1f2lxrgfi2lj20gj0p042z.jpg)组件通信-通俗](http://ww4.sinaimg.cn/large/4e5d3ea7jw1f2lxrgfi2lj20gj0p042z.jpg)
+![![img](https://img.cnb.workers.dev/?url=http://ww2.sinaimg.cn/large/4e5d3ea7jw1f2lxrgfi2lj20gj0p042z.jpg)组件通信-通俗](https://img.cnb.workers.dev/?url=http://ww2.sinaimg.cn/large/4e5d3ea7jw1f2lxrgfi2lj20gj0p042z.jpg)
 
 [稀土掘金：Vue 组件化开发实践](http://gold.xitu.io/entry/55f77eb460b28e6a6f0f4f86)
 

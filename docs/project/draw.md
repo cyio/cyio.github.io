@@ -49,7 +49,7 @@ mermaid 自己看没问题，有些问题需要规避
 自动添加并连接到已选中图形
 1. 选中图形
 2. 按住 alt，同时点击待添加图形
-![image.png](http://ww1.sinaimg.cn/mw690/4e5d3ea7ly1h0fjgqljw7j20z80g2aeg.jpg)
+![image.png](https://img.cnb.workers.dev/?url=http://ww2.sinaimg.cn/mw690/4e5d3ea7ly1h0fjgqljw7j20z80g2aeg.jpg)
 
 全选，样式里设置 sketch，设置框架主题
 

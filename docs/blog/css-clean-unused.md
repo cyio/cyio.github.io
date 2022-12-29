@@ -18,12 +18,12 @@ description:
 - 通常项目有多个页面（比如webapp），那就要对所有页面交互操作一遍，再看 unusedCSS 的检测结果。
 1. 如图，点`Set Domain`，对当前网站分析。
    
-   ![](http://ww2.sinaimg.cn/large/4e5d3ea7jw1eywn7dx80uj209q06dgly.jpg) 
+   ![](https://img.cnb.workers.dev/?url=http://ww2.sinaimg.cn/large/4e5d3ea7jw1eywn7dx80uj209q06dgly.jpg) 
 2. 随便点空白地方，等扩展界面关掉再次打开，界面显示扩展已开启，有三个按钮，点第二个查看分析结果。
    
-   ![](http://ww4.sinaimg.cn/large/4e5d3ea7jw1eywn87jhioj209m061wet.jpg)
+   ![](https://img.cnb.workers.dev/?url=http://ww2.sinaimg.cn/large/4e5d3ea7jw1eywn87jhioj209m061wet.jpg)
 3. 结果页，主要是看后两项，未使用和重复项，结合这两项数据，逐条清理。
-   ![](http://ww4.sinaimg.cn/large/4e5d3ea7jw1eywn9gfkynj20mg0ag40w.jpg)
+   ![](https://img.cnb.workers.dev/?url=http://ww2.sinaimg.cn/large/4e5d3ea7jw1eywn9gfkynj20mg0ag40w.jpg)
 ### 总结
 
 清理无效CSS，需要花一点时间手动剔除（无法自动化），有些代码只在某种特殊状态下才用到（如 media query），这些代码就要跳过了。清理过程中，要做好测试，防止误伤。

@@ -18,7 +18,7 @@
 
 Tips：PS自带功能“将图层导出到文件”的脚本也不错，用前把待导出图片最好放到一个新画布
 
-![](http://ww4.sinaimg.cn/large/4e5d3ea7jw1ex0m7pll8jj20vu0p5guz.jpg)
+![](https://img.cnb.workers.dev/?url=http://ww2.sinaimg.cn/large/4e5d3ea7jw1ex0m7pll8jj20vu0p5guz.jpg)
 ## 切片
 - 裁剪 --> 切片
 - 可对切片设置属性

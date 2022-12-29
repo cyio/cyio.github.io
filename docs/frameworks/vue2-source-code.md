@@ -164,8 +164,8 @@ flushSchedulerQueue
 
 一个页面有多个组件，数据变化了，要通知哪个组件更新？挂载某个组件时，作为此时唯一 watcher，访问到某个属性，则将 watcher 添加对属性订阅者
 
-![异步渲染原理](http://ww1.sinaimg.cn/large/4e5d3ea7ly1h0cm1rqqz6j20f009wmys.jpg)
-![响应式原理](http://ww1.sinaimg.cn/large/4e5d3ea7ly1h0cm3a0b3vj20eh0h8mzl.jpg)
+![异步渲染原理](https://img.cnb.workers.dev/?url=http://ww2.sinaimg.cn/large/4e5d3ea7ly1h0cm1rqqz6j20f009wmys.jpg)
+![响应式原理](https://img.cnb.workers.dev/?url=http://ww2.sinaimg.cn/large/4e5d3ea7ly1h0cm3a0b3vj20eh0h8mzl.jpg)
 
 ## staticRenderFns
 字符串数组，render 时将静态节点（后续不再更新）存起来，执行转成函数
