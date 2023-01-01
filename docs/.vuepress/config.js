@@ -1,4 +1,3 @@
-// const { path } = require('@vuepress/utils')
 const path = require('path')
 const fs = require('fs');
 const glob = require('glob');
@@ -89,16 +88,10 @@ module.exports = {
   },
   evergreen: true,
   themeConfig: {
-    // navbar: [
-    //   {
-    //     text: 'Foo',
-    //     link: '/foo/',
-    //   },
-    // ],
     navbar: [
       { text: '主页', link: '/' },
       // { text: 'Blog', link: '/' },
-      { text: 'JS', link: '/javascript/concept.html' },
+      { text: 'JavaScript', link: '/javascript/concept.html' },
       // { text: '题解', link: '/javascript/solutions/new.md' },
       { text: 'Web', link: '/web/html.html' },
       { text: '框架', link: '/frameworks/vue.html' },
@@ -111,8 +104,7 @@ module.exports = {
       // { text: '未分类', link: '/uncategorized/' },
       // { text: '关于', link: '/about' },
     ],
-    sidebarDepth: 0,
-    // sidebar: 'auto',
+    sidebarDepth: 2, // default 2
     sidebar: genSidebarConfig()
   },
   markdown: {
@@ -127,7 +119,7 @@ function genSidebarConfig () {
   let navKeys = [
     {
       name: 'javascript',
-      displayName: 'JS',
+      displayName: 'JavaScript',
       collapsable: true,
     },
     {
@@ -163,27 +155,14 @@ function genSidebarConfig () {
   ]
   navKeys.forEach(item => {
     sideBarData[`/${item.name}/`] = [
-      // {
-        // text: item.name,
-        // // path: 'javascript/solutions/',
-        // collapsable: item.collapsable,
-        // children: getChildren(item.name)
-      // },
-      ...getChildren(item.name)
+      {
+        text: item.displayName,
+        collapsible: item.collapsable,
+        children: getChildren(item.name)
+      },
+      // ...getChildren(item.name)
     ]
   })
-  // sideBarData['/javascript/'].push(
-    // {
-      // title: '算法',
-      // collapsable: true,
-      // children: ['algorithms/index.md']
-    // },
-    // {
-      // title: '题解',
-      // collapsable: true,
-      // children: ['javascript/solutions/index.md']
-    // },
-  // )
   // console.log(solutionsArr)
   // console.log(sideBarData['/javascript/'])
   return sideBarData

@@ -1,0 +1,27 @@
+// @import "~prismjs/themes/prism.css"
+
+.table-of-contents {
+  color: #444;
+  position: fixed;
+  right: 0;
+  max-width: 300px;
+  padding-right: 20px;
+  max-height: 70%;
+  overflow: scroll;
+
+  a {
+    font-weight: 400;
+    color: #444;
+    font-size: 13px;
+  }
+}
+
+.page {
+  padding-right: 230px;
+}
+
+@media screen and (max-width: 1300px) {
+  .table-of-contents {
+    display: none;
+  }
+}
