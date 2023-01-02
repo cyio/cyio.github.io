@@ -174,7 +174,7 @@ function genSidebarConfig () {
  * return Arrary
  */
 function getChildren(dirName) {
-  console.time('glob')
+  // console.time('glob')
   let names = []
   let globPath = path.resolve(`./docs/${dirName}/*.md`)
   glob.sync(globPath).forEach(file => {
@@ -193,6 +193,6 @@ function getChildren(dirName) {
       names.push(name)
     }
   })
-  console.timeEnd('glob')
+  // console.timeEnd('glob')
   return names
 }

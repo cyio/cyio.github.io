@@ -4,10 +4,10 @@ CSR 纯 JS 渲染，易于跨终端
 SSR 改善所有指标，但会增加开发调试成本（服务器渲染交互）
 SSG 只适合静态内容
 ISG 增量生成，解决 SSG 问题，但带来其他问题，如定位和缓存
-![](../assets/Pasted%20image%2020221228093741.png)
+![Pasted image 20221228093741.png](http://tvax1.sinaimg.cn/large/4e5d3ea7gy1h9plzy33baj21c00r8qsc.jpg)
 
-![](../assets/Pasted%20image%2020221227094939.png)
-![](../assets/Pasted%20image%2020221227095117.png)
+![Pasted image 20221227094939.png](http://tvax1.sinaimg.cn/large/4e5d3ea7gy1h9pm0f6relj20og0b8wlf.jpg)
+![Pasted image 20221227095117.png](http://tvax1.sinaimg.cn/large/4e5d3ea7gy1h9pm102k1gj23js298npd.jpg)
 
 # SSR
 

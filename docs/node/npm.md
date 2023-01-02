@@ -2,7 +2,7 @@
 [[toc]]
 
 ## 安装机制
-![](../assets/Pasted%20image%2020221103214318.png)
+![Pasted image 20221103214318.png](http://tvax1.sinaimg.cn/large/4e5d3ea7gy1h9ply62zinj20p90cgq7n.jpg)
 
 ## npm 创建和发布一个包的步骤
 
@@ -229,7 +229,7 @@ npm publish --tag beta
 ![image.png](https://img.cnb.workers.dev/?url=http://ww2.sinaimg.cn/large/4e5d3ea7ly1h7sa1306ylj20jy0603zg.jpg)
 
 ## 配置优先级
-![](../assets/Pasted%20image%2020221103215444.png)
+![Pasted image 20221103215444.png](http://tvax1.sinaimg.cn/large/4e5d3ea7gy1h9plyvby0qj20qd06fwfw.jpg)
 
 ![image.png](https://img.cnb.workers.dev/?url=http://ww2.sinaimg.cn/large/4e5d3ea7ly1h7sa87na1cj20a705t74u.jpg)
 ![image.png](https://img.cnb.workers.dev/?url=http://ww2.sinaimg.cn/large/4e5d3ea7ly1h7sa8vt64nj20lx06h75m.jpg)
