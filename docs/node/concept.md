@@ -7,7 +7,7 @@ libuv - 跨平台异步 IO 库（事件循环，网络，IO，子进程，线程
 V8
 第三方库
 
-![[Pasted image 20221226095240.png]]
+![](../assets/Pasted%20image%2020221226095240.png)
 ![u1O2O.png (1077×420)](https://i.stack.imgur.com/u1O2O.png)
 [javascript - Which is correct Node.js architecture? - Stack Overflow](https://stackoverflow.com/questions/36766696/which-is-correct-node-js-architecture)
 ![1*evOcy9n3vslkDt0Mj8mBYw.jpeg (1024×468)](https://miro.medium.com/max/1400/1*evOcy9n3vslkDt0Mj8mBYw.jpeg)

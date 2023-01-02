@@ -1,6 +1,7 @@
 const path = require('path')
 const fs = require('fs');
 const glob = require('glob');
+// const util = require('./util')
 
 const solutionsArr = fs
   .readdirSync(path.resolve(__dirname, '../javascript/solutions'))
@@ -173,14 +174,25 @@ function genSidebarConfig () {
  * return Arrary
  */
 function getChildren(dirName) {
+  console.time('glob')
   let names = []
   let globPath = path.resolve(`./docs/${dirName}/*.md`)
   glob.sync(globPath).forEach(file => {
     const name = path.parse(file).base
     if (name.indexOf('README') < 0) {
+      // 解析 heading
+      // const firstHeading = util.getFirstHeading(name)
+      // if (!firstHeading) {
+      //   names.push({
+      //     text: name.split('.')[0],
+      //     link: name
+      //   })
+      // } else {
+      //   names.push(name)
+      // }
       names.push(name)
     }
   })
-  // console.log('glob', names)
+  console.timeEnd('glob')
   return names
 }

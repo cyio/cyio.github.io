@@ -167,3 +167,5 @@ then remove the offending patterns
 1. 按键太难记
 2. kill tmux window，reopen
 
+## 替换转义
+用 # 代替 / 这样避免路径中的 / 需要转义

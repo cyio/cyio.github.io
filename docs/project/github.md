@@ -26,3 +26,9 @@ echo GIST_ONLY_TOKEN > ~/.gist
 gist file.diff
 gist -p file.diff
 ```
+
+## hub cli
+```sh
+# 在本地项目下运行
+hub create
+```
