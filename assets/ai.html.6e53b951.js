@@ -1,1 +1,0 @@
-const t={key:"v-6bac19b8",path:"/tools/ai.html",title:"AI \u5DE5\u5177",lang:"en-US",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1672666782e3,contributors:[{name:"cyio",email:"icaner@qq.com",commits:1}]},filePathRelative:"tools/ai.md"};export{t as data};
