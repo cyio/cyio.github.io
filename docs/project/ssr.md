@@ -1,13 +1,24 @@
-## 对比
 
-CSR 纯 JS 渲染，易于跨终端
-SSR 改善所有指标，但会增加开发调试成本（服务器渲染交互）
-SSG 只适合静态内容
-ISG 增量生成，解决 SSG 问题，但带来其他问题，如定位和缓存
-![Pasted image 20221228093741.png](http://tvax1.sinaimg.cn/large/4e5d3ea7gy1h9plzy33baj21c00r8qsc.jpg)
+## why
 
-![Pasted image 20221227094939.png](http://tvax1.sinaimg.cn/large/4e5d3ea7gy1h9pm0f6relj20og0b8wlf.jpg)
-![Pasted image 20221227095117.png](http://tvax1.sinaimg.cn/large/4e5d3ea7gy1h9pm102k1gj23js298npd.jpg)
+SPA 客户端渲染依赖框架（vue/router/vuex），需要等框架加载完
+
+## what
+
+
+| 简称 | 类型               | 优点          | 缺点                             | 适用场景       |
+| ---- | ------------------ | ------------- |:-------------------------------- | -------------- |
+| CSR  | 纯 JS 渲染         | 易于跨终端    |       首屏渲染慢，SEO不友好                         | 不需要登录     |
+| SSR  | 服务端渲染（即时，返回动态 HTML) | 改善所有指标  | 需要服务器即时处理，增加开发调试成本（服务器渲染交互 |     SEO、首屏有强需求           |
+| SSG  | 服务端预渲染(返回静态 HTML)       |   静态服务器即可            |                                  | 只适合静态内容 |
+| ISG  | 服务端增量生成           | 解决 SSG 问题 | 带来其他问题，如问题定位和缓存   |                |
+
+
+
+![Pasted image 20221228093741.png](https://img.cnb.workers.dev/?url=http://tvax1.sinaimg.cn/large/4e5d3ea7gy1h9plzy33baj21c00r8qsc.jpg)
+
+![Pasted image 20221227094939.png](https://img.cnb.workers.dev/?url=http://tvax1.sinaimg.cn/large/4e5d3ea7gy1h9pm0f6relj20og0b8wlf.jpg)
+![Pasted image 20221227095117.png](https://img.cnb.workers.dev/?url=http://tvax1.sinaimg.cn/large/4e5d3ea7gy1h9pm102k1gj23js298npd.jpg)
 
 # SSR
 
@@ -48,10 +59,6 @@ SSR 的 HTML
 
 [官网预渲染方案-有道云笔记](https://note.youdao.com/ynoteshare1/index.html?id=9174b59418d987cd810dc058a7b6a121&type=note)
 
-## Vue 注意点
-
-[Vue 3 的服务端与异步数据获取 - V2EX](https://www.v2ex.com/t/845794)
-
 ## SSG（预渲染）
 
 好处：
@@ -80,3 +87,8 @@ SSG 可以放在 CDN，构建时即确定渲染
 1. 将 pages 的文件编译
 2. 编译时根据文件结构顺便把路由配置表生成
 3. 请求时根据请求路径去路由表查询结果，最后根据路由动态加载相应的页面文件。
+
+## issues
+
+[Vue 3 的服务端与异步数据获取 - V2EX](https://www.v2ex.com/t/845794)
+
