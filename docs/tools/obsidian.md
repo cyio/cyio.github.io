@@ -35,3 +35,7 @@ plugin:
 未来可以考虑用脚本批量备份到网盘。
 
 tvax1.sinaimg.com、tvax2.sinaimg.com、tvax3.sinaimg.com、tvax4.sinaimg.com
+
+附件不要有空格，使用插件批量改名
+
+https://github.com/dy-sh/obsidian-unique-attachments

@@ -16,12 +16,16 @@
   }
 }
 
-.page {
-  padding-right: 230px;
+.table-of-contents {
+  display: none;
 }
 
-@media screen and (max-width: 1300px) {
+@media screen and (min-width: 1300px) {
+  .page {
+    padding-right: 230px;
+  }
+  
   .table-of-contents {
-    display: none;
+    display: block;
   }
 }

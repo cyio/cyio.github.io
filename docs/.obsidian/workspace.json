@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "511e482b87a3d9f3",
+        "id": "58ec6a6058b54363",
         "type": "tabs",
         "children": [
           {
-            "id": "9dd91bd75a0c903b",
+            "id": "60b237d6bbb36413",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -44,7 +44,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tvax1.sinaimg.cn",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -114,18 +114,10 @@
             }
           },
           {
-            "id": "cfc18da524f073d1",
+            "id": "34eafa64e765dbfe",
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
-            }
-          },
-          {
-            "id": "a273498990e31d46",
-            "type": "leaf",
-            "state": {
-              "type": "advanced-tables-toolbar",
               "state": {}
             }
           }
@@ -148,17 +140,17 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "9dd91bd75a0c903b",
+  "active": "60b237d6bbb36413",
   "lastOpenFiles": [
-    "project/ssr.md",
-    "node/npm.md",
+    "blog/why-weakmap.md",
+    "books/如何停止胡思乱想.md",
+    "books/清醒思考的艺术.md",
+    "economics/concept.md",
+    "books/原则.md",
     "node/concept.md",
-    "project/electron.md",
-    "tools/obsidian.md",
-    "tools/photoshop.md",
-    "tools/markdown.md",
-    "web/http3.md",
-    "web/http2.md",
-    "web/images.md"
+    "to-learn.canvas",
+    "web3/solidity.md",
+    "web3/index.md",
+    "uncategorized/cplusplus.md"
   ]
 }
