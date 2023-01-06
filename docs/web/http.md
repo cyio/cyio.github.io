@@ -252,3 +252,13 @@ GET/PUT/DELETE 满足
 304 命中协商缓存，客户端取本地缓存
 
 403 Forbidden 服务端有能力处理，客户端 IP 被封禁
+
+## form-urlencoded
+
+axios 默认将 JS 对象序列化成 JSON，保留原数据类型
+
+form-urlencoded 将所有属性转成字符串，以单一块放到 body 中发出（与 body 搭配使用）
+
+https://axios-http.com/docs/urlencoded
+
+http get 也支持携带 body，各工具也支持，看请求是否携带 data 或 body 字样

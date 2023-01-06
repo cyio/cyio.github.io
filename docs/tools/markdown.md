@@ -10,19 +10,26 @@
 
 ## GFM
 
-```
-- [x] @mentions, #refs, [links](), **formatting**, and <del>tags</del> supported
+
+- [ ] @mentions, #refs, [links](), **formatting**, and <del>tags</del> supported
 
 First Header | Second Header
 ------------ | -------------
 Content from cell 1 | Content from cell 2
 Content in the first column | Content in the second column
-```
+
 
 ```diff
 - dontDoThisThing()
 + doThisInstead()
 ```
+
+## 辅助工具
+
+表格生成，支持粘贴 xls/csv 内容（菜单 File-Paste） [Markdown Tables generator - TablesGenerator.com](https://www.tablesgenerator.com/markdown_tables)
+
+markdown 与其他格式互转 [Markdown 表格 编辑和生成器 - 在线表格转换工具](https://tableconvert.com/zh-cn/markdown-generator)
+
 
 ## Vim 配合
 

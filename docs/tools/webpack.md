@@ -138,6 +138,23 @@ module.exports = {
 
 ## 构建性能
 
+[构建性能 | webpack 中文文档](https://webpack.docschina.org/guides/build-performance/)
+
+官方文档针对生产和开发环境有分别叙述
+
+### 开发环境
+
+- 是否是增量编译
+- 是否利用了内存
+
+
+渐近升级到 rust 实现的工具：
+- babel + Terser -> swc
+- js -> esbuild
+- webpack -> rollup
+
+https://nextjs.org/blog/next-11-1#adopting-rust-based-swc
+
 方法论：
 - 多线程 thread-loader 请仅在耗时的 loader 上使用
 - 缓存 构建

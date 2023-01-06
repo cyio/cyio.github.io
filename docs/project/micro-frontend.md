@@ -32,3 +32,10 @@ SSI 服务端渲染包含，比较老的技术
 [微前端——将微服务理念扩展到前端开发](https://micro-frontends.org/)
 
 [微前端方案 qiankun 只是更完善的 single-spa - 知乎](https://zhuanlan.zhihu.com/p/571794756)
+
+## 跨域共享数据（替代cookie）
+
+cookie 不支持跨域
+postmessage + localstorage
+
+安全生，被 JS 读取，比如第三方广告、统计
