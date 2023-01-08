@@ -27,6 +27,9 @@ plugin:
 - tasks
 - obsidian-task
 
+- [ ] 12334 📅 2023-01-09 
+- [ ] today 📅 2023-01-07 
+
 ## 文件外链
 
 图片 assets，默认路径规则是尽可能短，会导致其他预览软件无法解析。应该使用相对路径
@@ -39,3 +42,11 @@ tvax1.sinaimg.com、tvax2.sinaimg.com、tvax3.sinaimg.com、tvax4.sinaimg.com
 附件不要有空格，使用插件批量改名
 
 https://github.com/dy-sh/obsidian-unique-attachments
+
+
+[达里尔·曼宁 | 我的 GTD 设置](https://daryl.wakatara.com/my-obsidian-gtd-setup/)
+
+- all in one
+- 更容易结合代码
+- 自己掌控，容易迁移和重构
+
