@@ -50,3 +50,4 @@ https://github.com/dy-sh/obsidian-unique-attachments
 - 更容易结合代码
 - 自己掌控，容易迁移和重构
 
+[玩转 Obsidian 03：间歇式日记 - 少数派](https://sspai.com/post/63674)

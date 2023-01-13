@@ -1,5 +1,8 @@
 # AI 工具
 
+[Examples - OpenAI API](https://beta.openai.com/examples)
+
+[Code completion - OpenAI API](https://beta.openai.com/docs/guides/code/introduction)
 
 [You.com | The AI Search Engine You Control](https://you.com/)  综合网站，需要代理
 

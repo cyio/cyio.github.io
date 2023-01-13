@@ -46,12 +46,11 @@ win.close()
 - 本地存储
 - 主进程中转（因为两个进程平行，只能通过父级通信）
 
-send 不需要回复，场景：计数、数据更新
+send 不需要回复。场景：计数、数据更新
 
-invoke 执行方法（便利），promise 场景：获取 electron 设置
+invoke 执行方法（便利），promise 。场景：获取 electron 设置
 
-postMessage 消息通道，与 Web 中的等价
-场景：消息保证、即使监听器还未注册，主进程作为中间人、连接两个渲染进程
+postMessage 消息通道，与 Web 中的等价。场景：消息保证、即使监听器还未注册，主进程作为中间人、连接两个渲染进程
 
 webview document.title/executeJavaScript 
 

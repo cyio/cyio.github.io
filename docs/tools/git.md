@@ -694,3 +694,9 @@ git worktree remove ../work-1 --force
 ```
 
 默认是`single-branch`，但一般希望都拉下来，需要指定`--no-single-branch`
+
+## 本地变更忽略
+
+```sh
+git update-index --assume-unchanged YOUR_FILE_OR_DIRECTORY
+```
