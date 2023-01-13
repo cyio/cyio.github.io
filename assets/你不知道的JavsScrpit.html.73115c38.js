@@ -1,0 +1,1 @@
+const t={key:"v-a3719138",path:"/books/%E4%BD%A0%E4%B8%8D%E7%9F%A5%E9%81%93%E7%9A%84JavsScrpit.html",title:"\u5FAE\u6027\u80FD",lang:"en-US",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1673613705e3,contributors:[{name:"cyio",email:"icaner@qq.com",commits:1}]},filePathRelative:"books/\u4F60\u4E0D\u77E5\u9053\u7684JavsScrpit.md"};export{t as data};
