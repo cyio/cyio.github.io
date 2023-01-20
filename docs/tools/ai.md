@@ -1,5 +1,7 @@
 # AI 工具
 
+https://beta.openai.com/codex-javascript-sandbox
+
 [Examples - OpenAI API](https://beta.openai.com/examples)
 
 [Code completion - OpenAI API](https://beta.openai.com/docs/guides/code/introduction)
@@ -40,3 +42,12 @@ list the unusual words
 
 语法分析
 do grammatical analysis with last content
+
+替代信息流应用，比如可以针对知识库做摘要
+[使用 OpenAI 和 ChatGPT 构建应用程序 | Swizec出纳员](https://swizec.com/blog/building-apps-with-openai-and-chatgpt/)
+
+
+AI can help you write better: Use these 3 free AI websites:
+1. Write blogs, emails, and social posts [http://You.com/write](https://t.co/G9sXPvDT3A) 
+2. Write faster, sound smarter [http://HyperWriteAI.com](https://t.co/0CcOpNHlU5) 
+3. Your content creation superpower [http://Writerly.AI](https://t.co/gy2ynF4InE)
