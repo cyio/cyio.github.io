@@ -15,7 +15,7 @@
   - 跳入函数
   - 跳出函数
   - 继续到此（右键）
-    ![image.png](https://img.cnb.workers.dev/?url=http://ww2.sinaimg.cn/mw690/4e5d3ea7ly1gu3r6h0a0tj20ph0bugsl.jpg)
+    ![image.png](https://img.oaker.bid/?url=http://ww2.sinaimg.cn/mw690/4e5d3ea7ly1gu3r6h0a0tj20ph0bugsl.jpg)
 
 [Debugging in the browser](https://javascript.info/debugging-chrome)
 [JavaScript debugging reference - Chrome Developers](https://developer.chrome.com/docs/devtools/javascript/reference/)

@@ -1,7 +1,7 @@
 # Promise
 [[toc]]
 
-![image.png](https://img.cnb.workers.dev/?url=http://ww2.sinaimg.cn/large/4e5d3ea7ly1h0hvynxp8oj20nz0b0767.jpg)
+![image.png](https://img.oaker.bid/?url=http://ww2.sinaimg.cn/large/4e5d3ea7ly1h0hvynxp8oj20nz0b0767.jpg)
 
 > 采用 promise 可以解决异步编程的逻辑嵌套问题
 

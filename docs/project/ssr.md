@@ -15,10 +15,10 @@ SPA 客户端渲染依赖框架（vue/router/vuex），需要等框架加载完
 
 
 
-![Pasted image 20221228093741.png](https://img.cnb.workers.dev/?url=http://tvax1.sinaimg.cn/large/4e5d3ea7gy1h9plzy33baj21c00r8qsc.jpg)
+![Pasted image 20221228093741.png](https://img.oaker.bid/?url=http://tvax1.sinaimg.cn/large/4e5d3ea7gy1h9plzy33baj21c00r8qsc.jpg)
 
-![Pasted image 20221227094939.png](https://img.cnb.workers.dev/?url=http://tvax1.sinaimg.cn/large/4e5d3ea7gy1h9pm0f6relj20og0b8wlf.jpg)
-![Pasted image 20221227095117.png](https://img.cnb.workers.dev/?url=http://tvax1.sinaimg.cn/large/4e5d3ea7gy1h9pm102k1gj23js298npd.jpg)
+![Pasted image 20221227094939.png](https://img.oaker.bid/?url=http://tvax1.sinaimg.cn/large/4e5d3ea7gy1h9pm0f6relj20og0b8wlf.jpg)
+![Pasted image 20221227095117.png](https://img.oaker.bid/?url=http://tvax1.sinaimg.cn/large/4e5d3ea7gy1h9pm102k1gj23js298npd.jpg)
 
 # SSR
 

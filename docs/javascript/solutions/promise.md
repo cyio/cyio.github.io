@@ -1,6 +1,6 @@
 # Promise
 
-![image.png](https://img.cnb.workers.dev/?url=http://ww2.sinaimg.cn/large/4e5d3ea7ly1h0hx0nue24j224s17gq8q.jpg)
+![image.png](https://img.oaker.bid/?url=http://ww2.sinaimg.cn/large/4e5d3ea7ly1h0hx0nue24j224s17gq8q.jpg)
 
   实现原理：3 个状 2 个 结果处理函数 1 个对外方法
 

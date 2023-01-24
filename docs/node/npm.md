@@ -2,7 +2,7 @@
 [[toc]]
 
 ## 安装机制
-![Pasted image 20221103214318.png](https://img.cnb.workers.dev/?url=http://tvax1.sinaimg.cn/large/4e5d3ea7gy1h9ply62zinj20p90cgq7n.jpg)
+![Pasted image 20221103214318.png](https://img.oaker.bid/?url=http://tvax1.sinaimg.cn/large/4e5d3ea7gy1h9ply62zinj20p90cgq7n.jpg)
 
 ## npm 创建和发布一个包的步骤
 
@@ -226,13 +226,13 @@ npm publish --tag beta
 ## npm link 本地调试验证
 
 
-![image.png](https://img.cnb.workers.dev/?url=http://ww2.sinaimg.cn/large/4e5d3ea7ly1h7sa1306ylj20jy0603zg.jpg)
+![image.png](https://img.oaker.bid/?url=http://ww2.sinaimg.cn/large/4e5d3ea7ly1h7sa1306ylj20jy0603zg.jpg)
 
 ## 配置优先级
-![Pasted image 20221103215444.png](https://img.cnb.workers.dev/?url=http://tvax1.sinaimg.cn/large/4e5d3ea7gy1h9plyvby0qj20qd06fwfw.jpg)
+![Pasted image 20221103215444.png](https://img.oaker.bid/?url=http://tvax1.sinaimg.cn/large/4e5d3ea7gy1h9plyvby0qj20qd06fwfw.jpg)
 
-![image.png](https://img.cnb.workers.dev/?url=http://ww2.sinaimg.cn/large/4e5d3ea7ly1h7sa87na1cj20a705t74u.jpg)
-![image.png](https://img.cnb.workers.dev/?url=http://ww2.sinaimg.cn/large/4e5d3ea7ly1h7sa8vt64nj20lx06h75m.jpg)
+![image.png](https://img.oaker.bid/?url=http://ww2.sinaimg.cn/large/4e5d3ea7ly1h7sa87na1cj20a705t74u.jpg)
+![image.png](https://img.oaker.bid/?url=http://ww2.sinaimg.cn/large/4e5d3ea7ly1h7sa8vt64nj20lx06h75m.jpg)
 
 ## lockfileversion 2 vs 1
 ```

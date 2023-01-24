@@ -316,7 +316,7 @@ render return 里可直接定义变量`const ChapterName = <h2>{chapterName}</h2
 - 注意，执行操作要有条件，避免死循环
 
 ## 组件演化
-![image.png](https://img.cnb.workers.dev/?url=http://ww2.sinaimg.cn/large/4e5d3ea7ly1gikjo188z2j21q80x8gs0.jpg)
+![image.png](https://img.oaker.bid/?url=http://ww2.sinaimg.cn/large/4e5d3ea7ly1gikjo188z2j21q80x8gs0.jpg)
 
 ## PropTypes
 默认非必须，即允许 null / undefined

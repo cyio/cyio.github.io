@@ -33,7 +33,7 @@ div.loading
 ```
 定制F7组件按钮宽度
 
-![](https://img.cnb.workers.dev/?url=http://ww2.sinaimg.cn/large/4e5d3ea7jw1eyq637pr8sj209x0bgmyj.jpg)
+![](https://img.oaker.bid/?url=http://ww2.sinaimg.cn/large/4e5d3ea7jw1eyq637pr8sj209x0bgmyj.jpg)
 
 屏蔽原生键盘弹出，比如使用了日历组件
 ```css

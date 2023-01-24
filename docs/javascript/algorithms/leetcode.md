@@ -95,7 +95,7 @@ if (a === b) {
 }
 ```
 
-![4e5d3ea7ly1gyr42umo68j20av06ytbt.jpg (391×250)](https://img.cnb.workers.dev/?url=http://ww2.sinaimg.cn/large/4e5d3ea7ly1gyr42umo68j20av06ytbt.jpg)
+![4e5d3ea7ly1gyr42umo68j20av06ytbt.jpg (391×250)](https://img.oaker.bid/?url=http://ww2.sinaimg.cn/large/4e5d3ea7ly1gyr42umo68j20av06ytbt.jpg)
 
 关联题目：583. 两个字符串的删除操作
 

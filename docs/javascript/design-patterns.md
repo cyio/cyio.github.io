@@ -9,7 +9,7 @@
 > 在软 件中大量反复使用模式（我个人认为这样的软件就叫框架软件了，比如 Ｊ２ＥＥ），不但没阻碍软 件的发展，反而是推动了软件的发展．因为其
 > 他使用这套软件的人就可以将更多精力集中在 对付那些无法用模式的应用上来．
 
-![image.png](https://img.cnb.workers.dev/?url=http://ww2.sinaimg.cn/large/4e5d3ea7ly1h0fkali93yj20f80jmn2b.jpg)
+![image.png](https://img.oaker.bid/?url=http://ww2.sinaimg.cn/large/4e5d3ea7ly1h0fkali93yj20f80jmn2b.jpg)
 
 基于六大设计原则:
   - Single 单一职责  如写函数、职责过多

@@ -1,6 +1,6 @@
 [you-dont-need/You-Dont-Need-Momentjs: List of date-fns or native functions which you can use to replace moment.js + ESLint Plugin](https://github.com/you-dont-need/You-Dont-Need-Momentjs)
 
-![网络对比](https://img.cnb.workers.dev/?url=http://ww2.sinaimg.cn/large/4e5d3ea7ly1fxz75sebbjj20gp033t94.jpg)
+![网络对比](https://img.oaker.bid/?url=http://ww2.sinaimg.cn/large/4e5d3ea7ly1fxz75sebbjj20gp033t94.jpg)
 
 ## 相对 moment 差异点
 * 语言按需引入

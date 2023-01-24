@@ -61,7 +61,7 @@ description: 本文从零开始，探究两个布局实现过程。
 在第三步时，不使用相对定位，而是给 main 添加一个子块 main-wrapper，并设定左右 margin 修正其显示。这样做，不会改变其父容器 main 的宽度和右边界，也就不会影响两个侧栏的定位。[demo](http://jsbin.com/gexazij/6/edit?html,css,output)
 这就是**双飞燕布局**，它不需要再对侧栏进行二次的相对定位。圣杯的两个杯柄变成了自由的燕子翅膀。
 
-![双飞燕布局](https://img.cnb.workers.dev/?url=http://ww2.sinaimg.cn/large/4e5d3ea7gw1eu8p0vwc9uj20lx06jgmj.jpg)
+![双飞燕布局](https://img.oaker.bid/?url=http://ww2.sinaimg.cn/large/4e5d3ea7gw1eu8p0vwc9uj20lx06jgmj.jpg)
 
 对调 extra 和 main-wrap，[demo](http://jsbin.com/gexazij/7/edit?html,css,output)
 
@@ -94,7 +94,7 @@ description: 本文从零开始，探究两个布局实现过程。
 
 最后，自由自在地布局，而不用调整 HTML
 
-![](https://img.cnb.workers.dev/?url=http://ww2.sinaimg.cn/large/4e5d3ea7gw1eur05432k7j20qm0izjst.jpg)
+![](https://img.oaker.bid/?url=http://ww2.sinaimg.cn/large/4e5d3ea7gw1eur05432k7j20qm0izjst.jpg)
 
 两栏实例：[两栏布局，左侧定宽，右侧伸缩](http://codepen.io/cyio/pen/OWPXro)
 
