@@ -1,1 +1,0 @@
-const e={key:"v-f439f8d8",path:"/server/php.html",title:"",lang:"en-US",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1674187007e3,contributors:[{name:"cyio",email:"icaner@qq.com",commits:1}]},filePathRelative:"server/php.md"};export{e as data};
