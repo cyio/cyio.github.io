@@ -11,7 +11,7 @@
 ## GFM
 
 
-- [ ] @mentions, #refs, [links](), **formatting**, and <del>tags</del> supported
+- [x] @mentions, #refs, [links](), **formatting**, and <del>tags</del> supported
 
 First Header | Second Header
 ------------ | -------------

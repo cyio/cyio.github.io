@@ -99,3 +99,11 @@ zt // 将光标所在行放置到屏幕项端
 ### 不匹配都删掉
 `:g!/pattern/d`
 
+
+## 创建指定名称文件
+
+```
+autocmd BufNewFile life/* execute 'file' fnameescape(strftime("%Y-%m-%d.md"))
+
+exe 'e ./life/'.strftime("%F.md")
+```
