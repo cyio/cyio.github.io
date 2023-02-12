@@ -88,3 +88,22 @@ Command+U 上个位置
 1. 浏览器发请求设置 no-cache
 2. 清除本地缓存，再请求
 
+
+## 程序执行
+![image.png](https://img.oaker.bid/?url=http://tvax1.sinaimg.cn/mw690/4e5d3ea7ly1hau3xikctbj20nz0olagw.jpg)
+
+有名函数
+
+Function Call 宏任务
+Microtasks 微任务
+![image.png](https://img.oaker.bid/?url=http://tvax1.sinaimg.cn/mw690/4e5d3ea7ly1hau4oxee3ij20ob059myo.jpg)
+
+MutationObserver 也是微任务
+
+![image.png](https://img.oaker.bid/?url=http://tvax1.sinaimg.cn/large/4e5d3ea7ly1hau4qrn83pj21p40a2jvo.jpg)
+
+rAF 是宏任务
+
+![image.png](https://img.oaker.bid/?url=http://tvax1.sinaimg.cn/mw690/4e5d3ea7ly1hau4rsncukj21h209m79r.jpg)
+
+[面试必问的异步顺序问题，用 Performance 轻松理清 - 知乎](https://zhuanlan.zhihu.com/p/603691968)
