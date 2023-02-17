@@ -1,0 +1,1 @@
+const e={key:"v-6e184e94",path:"/web/web-components.html",title:"web components",lang:"en-US",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1676638267e3,contributors:[{name:"gongyi01",email:"gongyi01@baidu.com",commits:1}]},filePathRelative:"web/web-components.md"};export{e as data};
