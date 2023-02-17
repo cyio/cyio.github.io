@@ -305,6 +305,22 @@ setState 更新回调
 
 render return 里可直接定义变量`const ChapterName = <h2>{chapterName}</h2>;`
 
+![image.png](http://tva1.sinaimg.cn/mw690/4e5d3ea7ly1hax0i773vcj20vm0l415n.jpg)
+
+### useEffect 滥用
+
+最好的答案就在 React 官方文档内。我们团队把它浓缩成了几个简单的规则：
+
+1.  尽量不用 useEffect。
+    
+2.  若是组件内部状态（useState/useMemo/useCallback）监听，若非必要，禁止使用useEffect/useLayoutEffect触发副作用，推荐放到onClick这类事件回调中触发副作用。
+    
+3.  必须使用lint生成hooks的依赖项，否则需要加注释说明。
+    
+4.  useEffect 中若使用了资源类操作（接口请求、订阅/事件、localStorage存储等），则务必返回销毁函数。
+    
+5.  什么时候会用到 useEffect？需要对外部状态有相互影响的逻辑（副作用），才有必要放到useEffect/useLayoutEffect 中。
+
 ## 生命周期
 
 [React lifecycle methods diagram](https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/)

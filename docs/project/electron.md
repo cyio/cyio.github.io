@@ -163,3 +163,5 @@ https://www.electronjs.org/docs/latest/tutorial/tutorial-packaging
 [Atom Electron - Close the window with javascript - Stack Overflow](https://stackoverflow.com/questions/31171597/atom-electron-close-the-window-with-javascript)
 
 [cawa-93/vite-electron-builder: Secure boilerplate for Electron app based on Vite. TypeScript + Vue/React/Angular/Svelte/Vanilla](https://github.com/cawa-93/vite-electron-builder)
+
+[electron多进程方案解决界面卡顿 - 掘金](https://juejin.cn/post/6999257401522126856)
