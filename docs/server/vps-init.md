@@ -79,5 +79,8 @@ sudo ufw app list
 
 
 > 这是因为glibc设置问题，在/etc/locale.gen中去掉zh_CN.UTF-8的注释，再运行locale-gen即可。
+
+```
 sudo vim /etc/locale.gen
 sudo locale-gen
+```

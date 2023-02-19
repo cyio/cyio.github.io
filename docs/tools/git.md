@@ -135,7 +135,7 @@ git stash apply stash@{n}
 4.  有冲突的话，解决冲突并提交
 5.  最后，推送 `git push`
 
-## HTTPS 与 SSH
+## HTTPS 方式 clone
 
 - 用 HTTPS 操作必须要提供账号密码，如果是自己的电脑，应避免用这种方式
 - 缓解方法是让 git 记忆密码，默认时间比较短 `git config --global credential.helper cache`
@@ -434,9 +434,6 @@ git config  user.name "suzie"
 [Multiple SSH keys for different github accounts](https://gist.github.com/jexchan/2351996)
 [如何在一台电脑上使用两个 git@osc 的账号进行操作](http://m.oschina.net/blog/220158)
 
-## debug
-
-`ssh -vv "your githost"`为什么要用这个，因为参数`-T`，即使返回成功，配置也可能不行（push 时还会问账密）
 
 ## 文件大小写重命名
 

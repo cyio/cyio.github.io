@@ -1,5 +1,7 @@
 # AI 工具
 
+[ChatGPT Cheat Sheet & Quick Reference](https://quickref.me/chatgpt)
+
 https://beta.openai.com/codex-javascript-sandbox
 
 [Examples - OpenAI API](https://beta.openai.com/examples)
