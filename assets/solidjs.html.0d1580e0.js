@@ -1,0 +1,1 @@
+const e={key:"v-1eb65ab4",path:"/frameworks/solidjs.html",title:"SolidJS",lang:"en-US",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1676817273e3,contributors:[{name:"cyio",email:"icaner@qq.com",commits:1}]},filePathRelative:"frameworks/solidjs.md"};export{e as data};

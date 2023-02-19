@@ -1,1 +1,0 @@
-const e={key:"v-180e3c26",path:"/project/modernizr.html",title:"",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"webpack \u5F15\u5165",slug:"webpack-\u5F15\u5165",children:[]}],git:{updatedTime:1676638267e3,contributors:[{name:"gongyi01",email:"gongyi01@baidu.com",commits:1}]},filePathRelative:"project/modernizr.md"};export{e as data};

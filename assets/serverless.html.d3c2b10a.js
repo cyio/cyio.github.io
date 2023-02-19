@@ -1,0 +1,1 @@
+const e={key:"v-3d1c8a6a",path:"/server/serverless.html",title:"serverless",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"\u4E0D\u9002\u5408\u573A\u666F",slug:"\u4E0D\u9002\u5408\u573A\u666F",children:[]}],git:{updatedTime:1676817273e3,contributors:[{name:"cyio",email:"icaner@qq.com",commits:1}]},filePathRelative:"server/serverless.md"};export{e as data};
