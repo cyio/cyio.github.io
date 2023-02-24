@@ -2,22 +2,10 @@
 
 [[toc]]
 
-[any86/any-rule: 🦕 常用正则大全, 支持 web / vscode / idea / Alfred Workflow 多平台](https://github.com/any86/any-rule)
-
 > 学习目标：基础扎实，熟练运用
 > 积累一些练习题，隔段时间回忆考察
 
-只能处理字符串，不能处理语法分析（语法表达示）
-
-```js
-var re = /hello src=(.+) yes/; // 创建正则表达式对象，这里不是字符串
-var str = "hello src=value yes";
-re.exec(str); // 返回结果数组或null，如果只需要知道 true 或 false，用 test 或 String.search/indexOf
-alert(RegExp.$1); //获取第一个分组匹配
-
-g 表示执行多次，符合匹配的可能有多个
-匹配子字符串，从 lastIndex 开始
-```
+只能处理字符串，不能做语法分析（语法表达式）
 
 ## 基础
 
@@ -147,14 +135,6 @@ new RegExp('[\\u4E00-\\u9FFF]+', 'g')
 ;/.*[\u4e00-\u9fa5]+.*$/.test('ab我')
 ```
 
-[RegExr: Learn, Build, & Test RegEx](https://regexr.com/)
-
-[社区规则集 RegexHQ](https://github.com/regexhq)
-
-[JS 正则表达式完整教程（略长） - 掘金](https://juejin.im/post/5965943ff265da6c30653879)
-
-[Regulex：JavaScript Regular Expression Visualizer](https://jex.im/regulex)
-
 边界模式
 内容模式
 
@@ -215,7 +195,9 @@ s.replace(/^\s*|\s*$/g, '')
 match 的 String 的原型方法
 
 ```js
-/bc/.exec('abc').index === 'abc'.match('bc').index
+// 查找位置的等价表达
+/bc/.exec('abc').index
+'abc'.match('bc').index
 // 1
 ```
 查找第一个匹配索引，两个都可以，返回一致
@@ -253,3 +235,24 @@ RegExp 是有状态的，lastIndex 会更新
   matchAll('abcdbc', 'bc') // [1, 4]
 ```
 
+```js
+var re = /hello src=(.+) yes/; // 创建正则表达式对象，这里不是字符串
+var str = "hello src=value yes";
+re.exec(str); // 返回结果数组或null，如果只需要知道 true 或 false，用 test 或 String.search/indexOf
+alert(RegExp.$1); //获取第一个分组匹配
+
+g 表示执行多次，符合匹配的可能有多个
+匹配子字符串，从 lastIndex 开始
+```
+
+## 在线工具
+
+[RegExr: Learn, Build, & Test RegEx](https://regexr.com/)
+
+[社区规则集 RegexHQ](https://github.com/regexhq)
+
+[JS 正则表达式完整教程（略长） - 掘金](https://juejin.im/post/5965943ff265da6c30653879)
+
+[Regulex：JavaScript Regular Expression Visualizer](https://jex.im/regulex)
+
+[any86/any-rule: 🦕 常用正则大全, 支持 web / vscode / idea / Alfred Workflow 多平台](https://github.com/any86/any-rule)
