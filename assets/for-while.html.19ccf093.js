@@ -1,0 +1,1 @@
+const e={key:"v-f649a856",path:"/javascript/for-while.html",title:"\u5FAA\u73AF",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"\u5E94\u7528",slug:"\u5E94\u7528",children:[]}],git:{updatedTime:167724603e4,contributors:[{name:"gongyi01",email:"gongyi01@baidu.com",commits:1}]},filePathRelative:"javascript/for-while.md"};export{e as data};

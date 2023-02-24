@@ -1,0 +1,1 @@
+const e={key:"v-77b9060a",path:"/economics/concept.html",title:"",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"\u590F\u666E\u6BD4",slug:"\u590F\u666E\u6BD4",children:[]}],git:{updatedTime:167724603e4,contributors:[{name:"gongyi01",email:"gongyi01@baidu.com",commits:1}]},filePathRelative:"economics/concept.md"};export{e as data};
