@@ -34,3 +34,4 @@ copy 事件只是文字
 
 [选择本地视频，自动生成缩略图 canvas](https://codepen.io/cyio/pen/QWNvvjX?editors=1011)
 
+[浅谈 Canvas 渲染引擎 - 知乎](https://zhuanlan.zhihu.com/p/608415829)

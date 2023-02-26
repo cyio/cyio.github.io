@@ -156,6 +156,8 @@ var data = fs.readFileSync('/resource.json') //同步方法
 > 因此，Node.js 里没有简单拷贝的概念，或者说拷贝其实可以通过流来简单实现。
 
 
+## interview
+
 1.  什么是 Node.js？它的特点和优势是什么？
 2.  如何在 Node.js 中处理异步编程？请谈谈你对回调函数、Promise、async/await 的理解和应用场景。
 3.  什么是事件循环？它在 Node.js 中起到了什么作用？

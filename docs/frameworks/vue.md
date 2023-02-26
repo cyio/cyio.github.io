@@ -564,9 +564,13 @@ scrollBehavior
 
 可以利用$options._scopeId来实现。
 
-## 运行时与完整版差异
+## 运行时版与完整版差异
 
-使用 vue-cli 预构建将 template 转换为 render function，生产环境用的是 runtime
+是否包含模板编译器 template compiler
+
+运行时版仅支持 render function
+
+~~[[使用 vue-cli 预构建将 template 转换为 render function，生产环境用的是 runtime]]~~
 
 [vue.js - What exactly is Vue's runtime-only build and how does it differ from compiler build? - Stack Overflow](https://stackoverflow.com/questions/66393740/what-exactly-is-vues-runtime-only-build-and-how-does-it-differ-from-compiler-bu)
 

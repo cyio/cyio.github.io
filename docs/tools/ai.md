@@ -1,5 +1,7 @@
 # AI 工具
 
+[Phind: AI search engine for developers.](https://phind.com/)
+
 [ChatGPT Cheat Sheet & Quick Reference](https://quickref.me/chatgpt)
 
 https://beta.openai.com/codex-javascript-sandbox

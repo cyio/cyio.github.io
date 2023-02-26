@@ -29,6 +29,10 @@ const c1 = props => <h1 {...props}>hello</h1>
 
   用 stateless 组件来负责显示，class 组件来负责状态和逻辑
 
+## 是什么
+
+最简单的理解，一个组件的[渲染函数](https://www.zhihu.com/search?q=%E6%B8%B2%E6%9F%93%E5%87%BD%E6%95%B0&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22%3A%22answer%22%2C%22sourceId%22%3A111370024%7D)就是一个基于 state 和 props 的[纯函数](https://www.zhihu.com/search?q=%E7%BA%AF%E5%87%BD%E6%95%B0&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22%3A%22answer%22%2C%22sourceId%22%3A111370024%7D)，state 是自己的，props 是外面来的，任何东西变了就重新渲染一遍，
+
 ## 学习参考
 
 [5 Steps for Learning React Application Development - Telerik Developer Network](http://developer.telerik.com/featured/5-steps-for-learning-react-application-development/)
