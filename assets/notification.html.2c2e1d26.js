@@ -1,1 +1,0 @@
-const t={key:"v-771f077a",path:"/web/notification.html",title:"web notification",lang:"en-US",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:167724603e4,contributors:[{name:"gongyi01",email:"gongyi01@baidu.com",commits:1}]},filePathRelative:"web/notification.md"};export{t as data};
