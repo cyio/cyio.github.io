@@ -1,5 +1,9 @@
 # Next
 
+`Next.js` 是一个 React 应用程序的服务端渲染框架、全栈框架
+
+## hello world
+
 pages -> next -> next build -> next start(prod)
 ```
 mkdir hello-next
@@ -19,14 +23,7 @@ import Link from 'next/link'
 
 pages 目录最关键，不可变，考虑全放到 pages 目录下
 
-## now 发布工具
-不需要本地依赖，就是给线上的配置
-```
-  "scripts": {
-    "start": "micro index"
-  },
-  "dependencies": {
-    "micro": "latest"
-  }
 
-```
+## nest 区别
+
+`Nest.js` 是一个基于 Node.js 平台的开发框架，类似 eggjs

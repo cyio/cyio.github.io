@@ -153,6 +153,8 @@ https://www.electronjs.org/docs/latest/tutorial/tutorial-packaging
 
 测试 electron v21 空项目 dmg 220Mb
 
+[macOS 提示：“应用程序” 已损坏，无法打开的解决方法总结 - sysin | SYStem INside | 软件与技术分享](https://sysin.org/blog/macos-if-crashes-when-opening/)
+
 ## electron-forge cli
 
 ## 参考

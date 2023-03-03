@@ -1,10 +1,9 @@
 # iframe
 
-- 父为 HTTPS，子必须为 HTTPS
+- 协议必须相同：父为 HTTPS，子必须为 HTTPS
 - iframe 可能设置防盗链，访问报 403，需要添加泛域名
-- 嵌套第三方页面时简便测试，在现成页面插入 DOM
-- `iframe.contentDocument`从开始到页面载入，会变化，需要监听`onload`，跨域 iframe 没有`DOMContentLoaded`，同域通过轮询可尽快查到`contentDocument`出现
-- iframe 全屏
+
+## iframe 全屏
   - 嵌套内容需要指定设置允许全屏
   - 如果有多层嵌套，都需要设置
   ```
@@ -18,7 +17,7 @@
 
 [Fallback for Blocked iframes: A (Crude) Solution With Vue.js - DZone Web Dev](https://dzone.com/articles/fallback-for-blocked-iframes-a-crude-solution-with)
 
-- 判断当前页是否是iframe
+## 判断当前页是否是iframe
     ```js
     // 判断当前页是否是iframe
     self == window.top
@@ -33,3 +32,14 @@
 
 [iframe 错误检测及优化方案 - 简书](https://www.jianshu.com/p/b09333442ded)
 
+## iframe 异常检测
+
+跨域时，父页面无法监听
+
+## iframe 是否加载完成
+
+`iframe.contentDocument`从开始到页面载入，会变化，需要监听`onload`，跨域 iframe 没有`DOMContentLoaded`，同域通过轮询可尽快查到`contentDocument`出现
+
+## 调试
+
+嵌套第三方页面时简便测试，在现成页面插入 DOM

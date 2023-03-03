@@ -2,6 +2,8 @@
 
 [[toc]]
 
+TypeScript 是一种由微软开发的静态类型语言，它是 JavaScript 的超集。与 JavaScript 不同的是，TypeScript 强制要求变量、函数和对象属性等具有明确的类型，并在编译时检查这些类型，以帮助开发人员在代码编写阶段就发现潜在的问题。
+
 > 为了说明静态类型化的好处，由于环境变量中的错字，我仅花了 30 分钟进行调试 - TJ
 > https://mobile.twitter.com/tjholowaychuk/status/1276470952059113473
 
@@ -30,7 +32,21 @@ G
 
 [《TypeScript开发实战》总结 - 知乎](https://zhuanlan.zhihu.com/p/82567664)
 
+## 类型注解
+
+类型注解用于明确变量、函数和对象属性等的类型。在 TypeScript 中，可以使用冒号语法指定类型，例如：
+
+```ts
+let myString: string = "Hello, TypeScript!";
+function addNumbers(a: number, b: number): number {
+  return a + b;
+}
+
+```
+
 ## interface 和 type
+
+interface 描述对象，定义接口
 
 - 过去区别大，现在区别很小，都可以扩展
 - interface 开放，可以覆盖，type 封闭，不能多次声明
@@ -78,6 +94,8 @@ type TAB = A & {
 
 ## 泛型
 
+泛型可以让代码更具有通用性。在 TypeScript 中，可以使用尖括号语法指定泛型类型，例如：
+
 适用多个类型，保证返回类型一致
 
 ```js
@@ -87,6 +105,7 @@ function identity<T>(arg: T): T {
 }
 // 使用
 let output = identity < string > 'myString' // type of output will be 'string'
+let output1 = identity < string > 23 // type of output will be 'string'
 ```
 
 React.FC 有泛型接口
@@ -109,6 +128,82 @@ type $TSFixMe = any
 
 [解读 Errors | 深入理解 TypeScript](https://jkchao.github.io/typescript-book-chinese/error/interpreting.html#%25E7%25AE%2580%25E6%25B4%2581)
 
+## 枚举
+
+枚举可以为一组数值赋予有意义的名称。在 TypeScript 中，可以使用 enum 关键字定义枚举，例如：
+
+```ts
+enum Color {
+  Red,
+  Green,
+  Blue
+}
+
+let myColor = Color.Red;
+console.log(myColor); // 输出 0
+```
+
+## 类
+
+类可以用于创建面向对象的代码。在 TypeScript 中，可以使用 class 关键字定义类，例如：
+
+```TS
+class Person {
+  name: string;
+  age: number;
+
+  constructor(name: string, age: number) {
+    this.name = name;
+    this.age = age;
+  }
+
+  greet() {
+    console.log(`Hello, ${this.name}! You are ${this.age} years old.`);
+  }
+}
+
+let myPerson = new Person("Alice", 30);
+myPerson.greet();
+
+```
+
+
+## 命名空间
+
+命名空间可以用于组织代码并避免全局命名空间冲突。在 TypeScript 中，可以使用 namespace 关键字定义命名空间，例如：
+
+```TS
+namespace MyNamespace {
+  export function greet(name: string) {
+    console.log(`Hello, ${name}!`);
+  }
+}
+
+MyNamespace.greet("Alice");
+
+```
+
+
+## 装饰器
+
+装饰器可以用于修改类、方法或属性的行为。在 TypeScript 中，可以使用 @ 符号指定装饰器，例如：
+
+```TS
+function log(target: any, propertyKey: string, descriptor: PropertyDescriptor) {
+  const originalMethod = descriptor.value;
+  descriptor.value = function(...args: any[]) {
+    console.log(`Calling ${propertyKey} with arguments ${JSON.stringify(args)}`);
+    const result = originalMethod.apply(this, args);
+    console.log(`Result: ${JSON.stringify(result)}`);
+    return result;
+  };
+}
+
+class MyClass {
+  @log
+  add(a: number, b: number
+
+```
 ## case
 - JSX element type 'Element[]' is not a constructor function for JSX elements #33487
 
@@ -174,3 +269,24 @@ pig.name = 'jack'
 > 子组件需要的参数声明也不具有强制性，参考 React 组件参数传递是具有强约束力并且能静态检测，目前 Vue 仍然是在运行时抛出
 
 
+## interview
+
+1.  TypeScript 是什么？它与 JavaScript 有什么不同？
+    
+2.  TypeScript 中的类型注解有什么作用？如何使用类型注解？
+    
+3.  TypeScript 中的泛型有什么作用？如何使用泛型？
+    
+4.  TypeScript 中的接口有什么作用？如何使用接口？
+    
+5.  TypeScript 中的枚举有什么作用？如何使用枚举？
+    
+6.  TypeScript 中的类有什么作用？如何使用类？
+    
+7.  TypeScript 中的命名空间有什么作用？如何使用命名空间？
+    
+8.  TypeScript 中的装饰器有什么作用？如何使用装饰器？
+    
+9.  TypeScript 如何与常见的 JavaScript 框架和库配合使用？
+    
+10.  TypeScript 中的类型断言有什么作用？如何使用类型断言？
