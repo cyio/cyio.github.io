@@ -262,6 +262,22 @@ state 需要定义的最少数据
 [Hooks are coming to Vue.js version 3.0 - LogRocket Blog](https://blog.logrocket.com/hooks-are-coming-to-vue/)
 [useHooks~小窍门 - 知乎](https://zhuanlan.zhihu.com/p/66170210)
 
+### 批判
+
+观点：可组合性优于继承
+
+当我们对复杂系统进行抽象时，我们并没有消除复杂性，而是移动了它。
+
+尝试在组件的顶层进行状态更新将导致无限循环。状态更新重新运行组件。这并不意味着 DOM 更新，但它确实意味着另一个状态更新将触发另一个重新运行，这将触发一个状态更新，该状态更新将触发重新运行等等。
+
+当您开始使用 React Context 并开始在父组件中发出更新信号时，事情会变得更加复杂。渲染级联。也许一个组件获取一些数据，一些组件重新安装，然后您再次运行状态更新，延迟了几秒钟。
+
+VDOM 防止无关的 DOM 更新，而不是状态计算。
+
+考虑迁移成本，依然是现实工作选择
+
+[React Is Holding Me Hostage --- React 挟持了我](https://emnudge.dev/blog/react-hostage#memoization)
+
 ### useState
 
 use 设置对象或数组时替换， 有别于 class 合并

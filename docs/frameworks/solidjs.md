@@ -108,3 +108,5 @@ export function createSignal(value) {
 -   React 属于应用级框架
 -   Vue 属于组件级框架
 -   Svelte 属于元素级框架
+
+https://github.com/cyio/reactive-framework
