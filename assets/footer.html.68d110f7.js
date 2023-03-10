@@ -1,0 +1,1 @@
+const e={key:"v-f16e22e2",path:"/project/footer.html",title:"footer",lang:"en-US",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1678409233e3,contributors:[{name:"gongyi01",email:"gongyi01@baidu.com",commits:1}]},filePathRelative:"project/footer.md"};export{e as data};
