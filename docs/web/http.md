@@ -85,6 +85,31 @@ meta cache-control 不建议用，html4 标准，5 没有
 
 [http - How do we control web page caching, across all browsers? - Stack Overflow](https://stackoverflow.com/questions/49547/how-do-we-control-web-page-caching-across-all-browsers)
 
+
+### 内存缓存
+
+根据 HTTP 缓存控制头的设置，JavaScript 资源可以在浏览器内存缓存中存储的时间不同。如果资源的缓存策略设置为“no-cache”或“no-store”，则浏览器不会将资源缓存在内存中。如果资源的缓存策略设置为“max-age”或“expires”，则资源可以在浏览器内存缓存中存储一段时间，通常为几分钟到几个小时。
+
+HTTP 响应头中的 age 和 max-age 是用于控制缓存的两个参数，它们有以下区别：
+
+```
+age: 11430
+alt-svc: quic="218.68.136.42:443"; ma=300; v="44,43,39"
+content-encoding: br
+content-md5: K4R9wAwG1m3bEjwhE8eZuQ==
+content-type: application/javascript
+date: Tue, 07 Mar 2023 10:23:00 GMT
+etag: "2b847dc00c06d66ddb123c2113c799b9"
+expires: Fri, 10 Mar 2023 07:06:09 GMT
+last-modified: Tue, 07 Mar 2023 07:06:04 GMT
+```
+
+以上信息中有 expires 字段，标记 3 天后失效？
+
+age：表示 HTTP 响应从服务器发送到客户端的时间，即响应的年龄。当客户端收到响应后，会计算出 age 参数值，并与 max-age 进行比较，用于判断响应是否过期。
+
+max-age：表示 HTTP 响应的最大缓存时间（以秒为单位），即客户端可以在这段时间内使用缓存的响应，而不需要向服务器发送新的请求。当客户端请求某个资源时，会先检查缓存中是否存在该资源，并计算出它的 age 值。如果 age 的值小于 max-age，则客户端可以使用缓存的响应，否则需要向服务器发送新的请求。
+
 ## HTTPS
 
 建立在 SSL/TLS 协议上，采用了公钥加密法，基本过程是：

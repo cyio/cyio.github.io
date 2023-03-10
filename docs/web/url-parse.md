@@ -26,8 +26,14 @@ const queryParams = qs.parse(query);
 console.log(queryParams.id);
 ```
 
-## qs
+## node: qs
+ 
 ```js
 const queryParams = qs.parse(query);
 console.log(queryParams.id);
 ```
+
+## npm: query-string
+
+新版本不兼容 IE
+

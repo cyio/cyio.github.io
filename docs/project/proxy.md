@@ -79,3 +79,10 @@ https://www.test.com http://www.test.com
 
 - `https://bird.ioliu.cn/v1/?url=`
 
+
+## 反向代理与正向代理区别
+
+正向代理设置在客户端，服务器不知道真实用户的IP地址
+
+反向代理设置在服务器，客户端不知道真实服务器地址
+
