@@ -3,11 +3,13 @@
 
 ## 是什么
 
+> 命名来源，网络节点
+
 跨平台 JS 运行时，异步事件驱动
 
-设计目标：建立可扩展网络应用
+设计目标：建立可扩展 Web 应用服务
 
-背景：传统基于线程的网络处理效率相对较低（阻塞），而且很难使用（死锁）
+背景：传统基于(多)线程的网络处理效率相对较低（阻塞），而且很难使用（死锁）
 
 几乎没有函数直接操作 IO，避免阻塞
 
@@ -20,6 +22,22 @@
 > Node.js 是一个基于 V8 的服务器端运行环境，它的主要优势在于采用了异步非阻塞 I/O 和单线程模型，使得它能够高效地处理大量并发请求，同时还具有轻量级、高效和模块化的特点，适用于构建各种类型的 Web 应用和网络工具。同时，它拥有庞大的社区生态和第三方模块支持，能够帮助开发者快速搭建应用。
 
 [About | Node.js](https://nodejs.org/en/about/)
+
+Node.js 采用了事件驱动和回调函数两种模型的结合，既可以高效地处理大量并发连接和 I/O 操作，又可以进行异步编程，使得程序的性能和可维护性都得到了提高。
+
+ I/O 操作，例如读取文件、发送网络请求
+
+CPU Work + I/O Work
+
+```js
+let nums = 2
+for (let i of nums) {
+	// cypto compute 串行时间开销 CPU Work 阻塞
+	// http request 并行时间开销，I/O 不阻塞
+}
+```
+
+[The Node.js Event Loop: Not So Single Threaded - YouTube](https://www.youtube.com/watch?v=zphcsoSJMvM)
 
 ## Node.js 和 Java 的对比
 
@@ -56,36 +74,6 @@ V8
 ## V8
 C++，可以独立运行，或嵌入 C++ 应用
 
-## path
-
-- `path.join`正确使用路径分隔符连接
-- `path.resolve(from..., to)`把相对路径转换为绝对路径，类似 cd，多个参数是跳转关系
-- `path.relative(from, to)` 获取两路径之间的相对关系
-- `path.normalize(path)` 转换`\/ ..`
-
-## stream/buffer/string
-
-无论是处理文件，还是请求远程资源，处理的就是数据流
-
-```js
-var fs = require('fs')
-
-var rs = fs.createReadStream('tmp.js')
-var chunks = [],
-  size = 0
-
-rs.on('data', chunk => {
-  chunks.push(chunk)
-  size += chunk.length
-})
-
-rs.on('end', () => {
-  var data = Buffer.concat(chunks, size)
-  var str = data.toString('utf8')
-  console.log(str)
-})
-```
-
 ## 优化
 
 - 避免使用全局变量
@@ -96,9 +84,9 @@ rs.on('end', () => {
 
 什么是阻塞：JS 的执行需要等待非 JS 操作完成
 
-在Node.js中，由于CPU密集型而不是等待非JavaScript操作(如I/O)而表现出较差的性能的JavaScript通常不被称为阻塞。Node.js标准库中使用libuv的同步方法是最常用的阻塞操作。本地模块也可能有阻塞方法。
+在 Node.js 中，由于 CPU 密集型而不是等待非 JavaScript 操作（如 I/O）而表现出较差的性能的 JavaScript 通常不被称为阻塞。Node.js 标准库中使用 libuv 的同步方法是最常用的阻塞操作。本地模块也可能有阻塞方法。
 
-单线程异步的Node.js不代表不会阻塞，在主线程做过多的任务可能会导致主线程的卡死，影响整个程序的性能，所以我们要非常小心的处理大量的循环，字符串拼接和浮点运算等cpu密集型任务，合理的利用各种技术把任务丢给子线程或子进程去完成，保持Node.js主线程的畅通。
+单线程异步的 Node.js 不代表不会阻塞，在主线程做过多的任务可能会导致主线程的卡死，影响整个程序的性能，所以我们要非常小心地处理大量的循环、字符串拼接和浮点运算等 CPU 密集型任务，合理地利用各种技术把任务丢给子线程或子进程去完成，保持 Node.js 主线程的畅通。
 
 [Overview of Blocking vs Non-Blocking | Node.js](https://nodejs.org/en/docs/guides/blocking-vs-non-blocking/)
 
@@ -156,6 +144,36 @@ var data = fs.readFileSync('/resource.json') //同步方法
 > 因此，Node.js 里没有简单拷贝的概念，或者说拷贝其实可以通过流来简单实现。
 
 
+## path
+
+- `path.join`正确使用路径分隔符连接
+- `path.resolve(from..., to)`把相对路径转换为绝对路径，类似 cd，多个参数是跳转关系
+- `path.relative(from, to)` 获取两路径之间的相对关系
+- `path.normalize(path)` 转换`\/ ..`
+
+## stream/buffer/string
+
+无论是处理文件，还是请求远程资源，处理的就是数据流
+
+```js
+var fs = require('fs')
+
+var rs = fs.createReadStream('tmp.js')
+var chunks = [],
+  size = 0
+
+rs.on('data', chunk => {
+  chunks.push(chunk)
+  size += chunk.length
+})
+
+rs.on('end', () => {
+  var data = Buffer.concat(chunks, size)
+  var str = data.toString('utf8')
+  console.log(str)
+})
+```
+
 ## interview
 
 1.  什么是 Node.js？它的特点和优势是什么？
@@ -168,3 +186,5 @@ var data = fs.readFileSync('/resource.json') //同步方法
 8.  请谈谈你对 Express 框架的理解和应用场景。
 9.  请谈谈你对 WebSocket 的理解和应用场景，以及如何在 Node.js 中使用 WebSocket。
 10.  如何进行 Node.js 应用的部署和运维？请谈谈你对部署和运维的经验和理解。
+
+

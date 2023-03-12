@@ -143,3 +143,5 @@ WHERE salary > (
 需要注意的是，在使用嵌套语句时，内部的 SELECT 语句必须返回一个结果集，否则外部的 SELECT 语句将无法使用它。另外，由于嵌套语句可能会增加查询的复杂性，因此在实际使用时需要仔细考虑其效率和可维护性。
 
 ## 练习问题
+
+![Fqtj56saAAYq24V.jpg (1029×1200)](https://pbs.twimg.com/media/Fqtj56saAAYq24V.jpg)
