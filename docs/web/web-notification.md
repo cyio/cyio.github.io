@@ -1,4 +1,4 @@
-# web notification
+# Web消息通知
 
 必备条件：
 - HTTPS

@@ -144,6 +144,12 @@ var data = fs.readFileSync('/resource.json') //同步方法
 > 因此，Node.js 里没有简单拷贝的概念，或者说拷贝其实可以通过流来简单实现。
 
 
+## net
+
+基于 TCP 协议
+
+用于进程间通信和网络通信
+
 ## path
 
 - `path.join`正确使用路径分隔符连接

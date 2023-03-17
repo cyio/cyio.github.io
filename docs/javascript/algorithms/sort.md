@@ -209,15 +209,28 @@ t 5
 [Quick Sort and Quick Select - YouTube](https://youtu.be/v-1EGgaTFuw?t=1221)
 https://leetcode.cn/problems/kth-largest-element-in-an-array/solution/javascriptsi-chong-fang-shi-jie-topkwen-ti-by-user/
 
-## 归并
+## 归并排序
+
+```text
+递推公式：
+merge_sort(p…r) = merge(merge_sort(p…q), merge_sort(q+1…r))
+
+终止条件：
+p >= r 不用再继续分解
+```
+
+1. 分组
+2. 合并：如何合并两个有序数组（leetcode 88 是要求原地修改）
+
+[排序算法之——归并排序和快速排序 - 知乎](https://zhuanlan.zhihu.com/p/95080265)
 
 ```js
 function merge(left, right){
-  var result = [];
+  const result = [];
   while(left.length > 0 && right.length > 0){
-    if(left[0] < right[0]){
+    if (left[0] < right[0]) {
       result.push(left.shift());
-    }else{
+    } else {
       result.push(right.shift());
     }
   }
@@ -229,7 +242,9 @@ function mergeSort(arr){
   var middle = Math.floor(arr.length / 2);
   var left = arr.slice(0, middle);
   var right = arr.slice(middle);
-  return merge(mergeSort(left), mergeSort(right));
+  let ret = merge(mergeSort(left), mergeSort(right));
+  console.log(ret)
+  return ret
 }
 
 let arr = [32, 12, 56, 78, 76, 45, 36] 

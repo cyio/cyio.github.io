@@ -158,6 +158,14 @@ FMP 布局树，布局对象，最大之后的绘制，可见区域 页面高度
 > First meaningful paint = Paint that follows biggest layout change
 > Biggest layout change means layout with the largest number of LayoutObjectsThatHadNeverHadLayout. In Figure 1, the biggest layout change is at 1.86s, so the next paint (1.907s) is the first meaningful paint.
 
+## FCP
+
+首次内容绘制 (FCP) 是测量[感知加载速度](https://web.dev/user-centric-performance-metrics/#types-of-metrics)的一个以用户为中心的重要指标，因为该项指标会在用户首次在屏幕上看到任何内容时，在页面加载时间轴中标记出相应的点，迅捷的 FCP 有助于让用户确信某些事情正在[进行](https://web.dev/user-centric-performance-metrics/#questions)。
+
+PWA 一般 150-200ms，没有网络开销，加载本地资源、执行JS、渲染
+
+SSR 页面，有网络开销，即使流式加载，理论也会增加 200ms（ping 耗时+服务器处理时间），但由于服务器预渲染比客户端快很多，
+
 ## TTFB
 
 首字节时间(TTFB)用于测量服务器的响应能力。是从客户端发起 HTTP 请求到客户端浏览器收到资源的第一个字节所经历的时间。由 socket 连接时间、发送 HTTP 请求所需时间、收到页面第一个字节所需时间组成。

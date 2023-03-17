@@ -4,6 +4,7 @@
 crypto, TSL/SSL HTTPS XSS
 
 ## XSS 跨站脚本攻击
+
 在网页中植入恶意脚本，输入源有脚本参数、表单提交
 
 危害：获取用户 cookie
@@ -22,7 +23,15 @@ Self-XSS 欺骗用户在控制台运行恶意代码
 
 谷歌翻译的做法，在控制台显示信息警告用户
 
-转义为实体字符，正则替换
+**转义为实体字符**，正则替换
+
+vue 使用 he 库  (for “HTML entities”)
+
+常规变量、属性，vue 会转义，但 v-html 需要使用者自己保证，避免使用
+
+> 最基本的规则就是只要你允许执行未经无害化处理的、用户提供的内容 (无论是 HTML、JavaScript 还是 CSS)，你就可能面临攻击。
+
+[安全 | Vue.js](https://cn.vuejs.org/guide/best-practices/security.html#potential-dangers)
 
 ### DOM 型 XSS（前端关注）
 
