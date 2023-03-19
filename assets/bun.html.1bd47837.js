@@ -1,0 +1,3 @@
+import{_ as n,o as t,c as o,F as l,a as e}from"./app.3569b8c9.js";const s={},a=e("p",null,"\u4E3B\u6253\u6027\u80FD\uFF0C\u517C\u5BB9 node/npm \u751F\u6001",-1),c=e("p",null,"\u6BD4\u5982\u670D\u52A1\u5668\u8BF7\u6C42\u6570\u3001\u5185\u5B58\u5360\u7528",-1),_=e("p",null,"\u672C\u5730\u6709\u5F88\u591A node tooling \u4F7F\u7528\u9700\u6C42\uFF0C\u5982\u679C\u80FD\u5927\u5E45\u8282\u7701\u5185\u5B58\uFF0C\u4E5F\u5F88\u6709\u610F\u4E49",-1),r=e("div",{class:"language-text ext-text"},[e("pre",{class:"language-text"},[e("code",null,`bunx # replace npx
+bun run dev
+`)])],-1);function u(d,p){return t(),o(l,null,[a,c,_,r],64)}var x=n(s,[["render",u],["__file","bun.html.vue"]]);export{x as default};
