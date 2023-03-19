@@ -682,6 +682,19 @@ git worktree remove ../work-1 --force
 [Git Worktree的使用 - 张小凯的博客](https://jasonkayzk.github.io/2020/05/03/Git-Worktree%E7%9A%84%E4%BD%BF%E7%94%A8/)
 
 
+## subtree
+
+Git subtree 是 Git 的一个工具，它可以将一个 Git 仓库作为子目录添加到另一个 Git 仓库中。Git subtree 的主要使用场景包括：
+
+1.  将一个 Git 仓库作为子项目添加到另一个 Git 仓库中，以便管理多个相关但独立的代码库。
+    
+2.  将一个 Git 仓库的某个子目录作为独立的 Git 仓库进行管理。
+    
+3.  将一个 Git 仓库的某个子目录作为一个库在其他项目中使用。
+    
+
+相比于 monorepo，Git subtree 可以更加灵活地管理多个代码库，而且每个代码库都可以独立维护和部署。但是，对于大型项目来说，使用 monorepo 可能更加方便，因为它可以统一管理所有代码，避免代码重复和版本冲突。因此，具体选择哪种方案需要根据项目的实际情况来决定。
+
 ## issues
 
 ## 超大仓库拉取

@@ -394,3 +394,13 @@ React.lazy 配合 Suspense
 ## setState 何时同步、何时异步
 
 与 Vue 原理一样，由于是状态驱动视图，如果 state 短时间内频繁设置，是否要立刻响应渲染呢？当然不是，所以要在一次同步代码执行完、合并更新，在 React 中是等父子组件的内置事件监听器中的 setState 全部执行完。
+
+## nextjs
+
+React 服务器组件也是如此。人们听到“服务器”并假设是 Node.js。但 RSC 可以在构建期间运行。事实上，在 Next 13 App Router 中它是*默认值*。如果你在 RSC 中获取（）某些东西，它将*在构建时*，除非你选择动态渲染。
+
+我们看到的转变（是的，正在努力实现）并不是从“编写 SPA”到“不编写 SPA”。它是从“被锁定在 SPA 中”（以后很难添加内置时间或服务器端集成）到“使用对每个页面有意义的任何模式”。hybrid era.
+
+这是一种转变，但主要是一种心理转变。
+
+[Next.js SPA example with dynamic client-only routing and static hosting](https://gist.github.com/gaearon/9d6b8eddc7f5e647a054d7b333434ef6)

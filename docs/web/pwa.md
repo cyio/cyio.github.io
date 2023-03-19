@@ -108,6 +108,22 @@ self.addEventListener('fetch', function(event) {
  解决：
 Switched to localStorage instead of sessionStorage when "standalone" and persist a custom history stack to restore deep links 
 
+## vite-plugin-pwa
+
+vite-plugin-pwa 的原理就是通过 Vite 的插件机制，自动生成 PWA 所需的 Service Worker 和 Web App Manifest 文件，并将其注入到 HTML 文件中，从而实现 PWA 的离线访问和快速加载。
+
+- [x] 用本地环境起 vite 项目，看产出物
+
+## 调试
+
+开启日志
+
+[https://developer.chrome.com/docs/workbox/troubleshooting-and-logging/#without-a-bundler](https://developer.chrome.com/docs/workbox/troubleshooting-and-logging/#without-a-bundler)
+
+webpack 生成配置方法
+
+https://developer.chrome.com/docs/workbox/reference/workbox-webpack-plugin/#type-GenerateSW
+
 ## 参考
 
 [饿了么的 PWA 升级实践 - 黄玄的博客 | Hux Blog](https://huangxuan.me/2017/07/12/upgrading-eleme-to-pwa/#%25E5%25A4%259A%25E9%25A1%25B5%25E5%25BA%2594%25E7%2594%25A8vuepwa)

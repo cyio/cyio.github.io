@@ -50,3 +50,6 @@
 
 建议在 permision 中使用 `activeTab`，可跨域访问当前打开的页面域名，减少审核难度
 
+declarativeNetRequest 使用，id 需要有变量，回调仅是设置成功，不支持过滤 url
+
+https://github.com/ray-lothian/Block-Site/blob/31026cd63e162ec61de4c3a5704bdb7fec2b8530/v3/contextmenu.js#L116

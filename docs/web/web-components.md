@@ -36,3 +36,6 @@ Lit 社区使用活跃
 
 
 [你不知道的 Web Components - 现状](https://www.albertaz.com/blog/web-components-ststus)
+
+- [ ] learn
+https://open-wc.org/guides/developing-components/getting-started/
