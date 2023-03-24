@@ -45,3 +45,17 @@ Server-sent events（SSE）是一种基于Web的技术，已经被广泛应用�
 
 SSE 封装
 https://github.com/yetone/openai-translator/blob/63e0564679d9dbad37e187aa9b995304337728ce/src/content_script/utils.ts#L69
+
+
+## Event Stream
+
+WebSockets或Server-Sent Events（SSE）
+
+chrome dev tools apparently only works with the native EventSource
+
+## stream fetch
+
+chromium105+
+
+https://glitch.com/~fetch-request-stream
+[Streaming requests with the fetch API - Chrome Developers](https://developer.chrome.com/articles/fetch-streaming-requests/#streaming-request-bodies)

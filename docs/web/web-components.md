@@ -2,8 +2,7 @@
 
 适用场景
 
-> 自定义元素的主要好处是，它们可以在使用任何框架，甚至是在不使用框架的场景下使用。当你面向的最终用户可能使用了不同的前端技术栈，或是当你希望将最终的应用与它使用的组件实现细节解耦时，它们会是理想的选择。
-
+自定义元素的主要好处是，它们可以在使用任何框架，甚至是在不使用框架的场景下使用。当你面向的最终用户可能使用了不同的前端技术栈，或是当你希望将最终的应用与它使用的组件实现细节解耦时，它们会是理想的选择。
 
 ## Web Components vs. Vue 组件
 
@@ -32,6 +31,18 @@ Lit 社区使用活跃
 
 ## 调试工具
 
+- star 少，测试多次无法载入
+
+在线编辑器：[litts-lfg641eq by anonymous - WebComponents.dev](https://studio.webcomponents.dev/edit/ZaQSyzVvpjrnLVz4EDrd/src/index.ts?p=website)
+
+## 开发服务
+
+
+## 组件库
+
+企业级，jQuery
+[UI5 Web Components](https://sap.github.io/ui5-webcomponents/)
+
 ## 主流框架支持
 
 
@@ -39,3 +50,14 @@ Lit 社区使用活跃
 
 - [ ] learn
 https://open-wc.org/guides/developing-components/getting-started/
+
+- class 组件写法，易熟悉
+- 单文件组件、应用，html\css 需要高亮插件
+- no build
+- 组件库成熟度不够
+- 与框架互补
+
+
+Vendor lock-in
+
+[Will Web Components Replace Frontend Frameworks?](https://web-highlights.com/blog/will-web-components-replace-frontend-frameworks-they-are-built-to-solve-different-problems/)
