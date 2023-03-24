@@ -1,1 +1,0 @@
-import{_ as e,o as r,c as a}from"./app.3569b8c9.js";const c={};function t(n,o){return r(),a("p",null,"file api \u6700\u7A33\u5B9A\uFF0C\u4E0E\u539F\u751F\u4E00\u81F4 getUserMedia/Stream API \u73B0\u5728\u517C\u5BB9\u6027\u4E5F\u5F88\u597D")}var _=e(c,[["render",t],["__file","browser-camera-scan.html.vue"]]);export{_ as default};
