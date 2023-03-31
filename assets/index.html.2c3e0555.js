@@ -1,0 +1,1 @@
+import{_ as o,r as t,o as n,c as r,a,b as c,d as s}from"./app.d608c804.js";const _={},l={href:"https://www.zhihu.com/people/oaker/posts",target:"_blank",rel:"noopener noreferrer"},p=s("\u77E5\u4E4E\u4E13\u680F");function d(i,f){const e=t("ExternalLinkIcon");return n(),r("p",null,[a("a",l,[p,c(e)])])}var m=o(_,[["render",d],["__file","index.html.vue"]]);export{m as default};
