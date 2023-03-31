@@ -358,6 +358,9 @@ render return 里可直接定义变量`const ChapterName = <h2>{chapterName}</h2
 默认非必须，即允许 null / undefined
 
 ## Portal 
+
+脱离父组件的渲染，不受父级布局影响，常用于模态对话框、悬浮菜单
+
 仅影响 DOM 结构，不影响事件、生命周期、组件树
 
 ## React.memo vs useMemo

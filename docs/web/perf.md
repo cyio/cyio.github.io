@@ -272,7 +272,11 @@ https://github.com/GoogleChromeLabs/squoosh/blob/dev/src/shared/prerendered-app/
 起始时间，是导航开始时间
 
 ## 白屏
-定义：渲染出第一个字 performance
+
+定义：渲染出第一个字
+
+计算：
+- 白屏结束时间：head最底部
 
 白屏原因，表现在 SPA 单页应用上，包体积过大，请求、解析耗时长（默认 html 一个 app 标签，等 JS 加载后 mount）
 
@@ -282,6 +286,9 @@ https://github.com/GoogleChromeLabs/squoosh/blob/dev/src/shared/prerendered-app/
 3. 解析：SSR/SSG
 
 ## 首屏
+
+计算：首屏线（第一屏内容底部在HTML文档的什么位置）
+
 dom 稳定 MutationObserver
   - body
   - 层级稳定

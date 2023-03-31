@@ -157,6 +157,39 @@ https://www.electronjs.org/docs/latest/tutorial/tutorial-packaging
 
 ## electron-forge cli
 
+
+## webview
+
+
+Preload scripts 类似 chrome 扩展的 content scripts
+
+主进程是 nodejs 环境，有完全系统访问权
+
+渲染进程运行页面，安全原因默认不能运行 nodejs
+
+官方 contextBridge，显式声明暴露的能力 
+
+使用executeJavaScript方法可以在主进程中向webview注入方法，使用preload脚本可以在渲染进程中向webview注入方法。
+
+进程间通信：[Using Preload Scripts | Electron](https://www.electronjs.org/docs/latest/tutorial/tutorial-preload#communicating-between-processes)
+
+[node.js - Electron Preload vs Electron Main - Stack Overflow](https://stackoverflow.com/questions/71791530/electron-preload-vs-electron-main)
+
+第三方依赖 bug https://github.com/electron/forge/issues/2931#issuecomment-1306377240
+
+[解决electron嵌入webview显示空白无法使用_electron webview 不显示_谢泽的网络日志的博客-CSDN博客](https://blog.csdn.net/a0405221/article/details/120928463)
+
+[electron中与webview的通讯-Web前端(W3Cways.com) - Web前端学习之路](https://www.w3cways.com/2459.html)
+
+为 webview 注入方法，原理：
+[Context Isolation | Electron](https://www.electronjs.org/docs/latest/tutorial/context-isolation#before-context-isolation-disabled)
+
+如果contextIsolation为false，那么web页面中的JS可以影响Electron内部渲染时的JS代码和预加载脚本执行。比如先入侵 web 加入恶意脚本，再传递到 preload node 环境。**远程代码执行漏洞（RCE）**
+
+[挖洞经验 | 综合三个Bug实现Discord桌面应用RCE漏洞 - FreeBuf网络安全行业门户](https://www.freebuf.com/articles/web/252806.html)
+
+
+
 ## 参考
 [javascript - how to open new window in place of current window in Electron - Stack Overflow](https://stackoverflow.com/questions/36072035/how-to-open-new-window-in-place-of-current-window-in-electron/38043021)
 [Electron简单笔记 - 小翼的前端天地](https://www.my-fe.pub/post/electron-note.html)

@@ -2,6 +2,10 @@
 
 `Next.js` 是一个 React 应用程序的服务端渲染框架、全栈框架
 
+集成 css module
+
+服务商级别的优化和便利
+
 ## hello world
 
 pages -> next -> next build -> next start(prod)

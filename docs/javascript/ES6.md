@@ -312,6 +312,8 @@ ES6 不支持，用 flow，然后通过 babel plugin 移除
 
 ## symbol
 
+表示独一无二的值，由函数`Symbol()`产生， 可用于对象属性的标识符
+
 对象 key 允许 string or symbol 两种类型
 
 执行`Symbol()`返回，总是 uniq 标识
