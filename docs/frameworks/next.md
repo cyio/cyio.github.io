@@ -31,3 +31,8 @@ pages 目录最关键，不可变，考虑全放到 pages 目录下
 ## nest 区别
 
 `Nest.js` 是一个基于 Node.js 平台的开发框架，类似 eggjs
+
+
+## fast refresh
+
+与 HMR 类似？
