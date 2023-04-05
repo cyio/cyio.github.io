@@ -31,7 +31,7 @@
 1. 给`Math.max`方法传入太大的数组，会导致超时，解决技巧，遍历时更新最小值
 2. 从第 2 个价格开始才能计算价格差，初始化最小价格为第一个价格
 
-![image.png](http://tva1.sinaimg.cn/large/4e5d3ea7ly1h5rzgs19a2j214i0cwk04.jpg)
+![image.png](https://img.oaker.bid/?url=http://tva1.sinaimg.cn/large/4e5d3ea7ly1h5rzgs19a2j214i0cwk04.jpg)
 
 ## 3. 无重复字符的最长子串
 

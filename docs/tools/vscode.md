@@ -14,6 +14,22 @@
 
 – `^-` 光标点跳回
 
+## vscode terminal
+
+- 窗口最大化
+- 支持 GPU 加速
+- 支持光标定位
+- 支持拆分
+- 支持配置任务
+	- 切换窗口  `shift-cmd-[`
+- 替换当前 code，会提示保存
+```
+code -g filepath // go to some file 在当前窗口打开
+code -r .
+```
+- 不支持切换 split window，用 tmux
+- 状态保持，比如常用目录，增加 alias 快速进入
+
 ## issues
 
 [解决VScode 与 Linux Rime 中州韵输入法 CTRL+~ 热键冲突_Spaceack的博客-CSDN博客](https://blog.csdn.net/a541972321/article/details/112864684)

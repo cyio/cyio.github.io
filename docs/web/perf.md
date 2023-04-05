@@ -308,3 +308,8 @@ Frame Timing API
 firefox 自带？
 [Using the Frame Timing API](https://contest-server.cs.uchicago.edu/ref/JavaScript/developer.mozilla.org/en-US/docs/Web/API/Frame_Timing_API/Using_the_Frame_Timing_API.html)
 
+## quicklink
+
+闲置时拉取视口内链接资源，可快速接入
+
+https://github.com/GoogleChromeLabs/quicklink

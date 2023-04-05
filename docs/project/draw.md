@@ -9,6 +9,8 @@
 ## 时序图
 - 不是太好用 [WebSequenceDiagrams - Draw UML sequence diagrams online in seconds](https://www.websequencediagrams.com/)
 - mermaid typora
+- github 支持
+- gpt 生成
 
 ## Think
 

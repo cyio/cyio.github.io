@@ -25,4 +25,20 @@ server.on('error', e => {
 
 - [HTTP 传输解析 | Node.js](https://nodejs.org/zh-cn/docs/guides/anatomy-of-an-http-transaction/)
 
+## live-server
 `npx live-server`
+
+长期
+```
+npm install -g live-server
+```
+
+支持配置化支行
+
+原理：
+- 建立 websocket 连接，html 注入脚本
+- css 可以免 reload，局部更新
+
+https://github.com/tapio/live-server/issues/208#issuecomment-733510202
+
+vue 作者建议用  cdn alias，构建后保证可用 https://github.com/vitejs/vite/issues/2483#issuecomment-799527624

@@ -28,6 +28,12 @@ let { author, title } = toRefs(book)
 
 官方把资源投向将部分特性下发到 vue 2
 
+## vue2 特性差异
+
+不支持的：
+- filter
+- v-once
+
 ## 应用场景
 
 - 新项目、内部项目，不需要支持 IE11，使用 Vue 3
@@ -46,6 +52,7 @@ https://vuejs.org/guide/extras/composition-api-faq.html#can-i-use-both-apis-toge
 Options API 不会放弃和移除，适合小项目
 
 ## 对比 Vue2
+
 https://vue3js.cn/interview/vue/vue3_vue2.html
 
 VUE3主要在哪些方面做了性能提升？https://www.jianshu.com/p/ab6741d8ee1c
@@ -63,3 +70,10 @@ VUE3主要在哪些方面做了性能提升？https://www.jianshu.com/p/ab6741d8
 - 兼容性：chrome 49+，不支持 IE
 
 [面试官: 实现双向绑定Proxy比defineproperty优劣如何? - 掘金](https://juejin.im/post/6844903601416978439)
+
+
+## doc bot
+
+支持中文
+
+https://chatthing.ai/bots/a2625c1a-8012-42dc-b87d-10e3f0196306/

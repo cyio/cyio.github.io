@@ -23,7 +23,7 @@
 
 最近十年，日本继续走向全球化，但经济却内卷化；全球经济效仿日本，亦日益内卷化。
 
-![42B98C76-FE93-47B2-90BD-087AAC3ED03E.jpg](http://tva1.sinaimg.cn/mw690/4e5d3ea7ly1hbk2bt3evij20k00a0weo.jpg)
+![42B98C76-FE93-47B2-90BD-087AAC3ED03E.jpg](https://img.oaker.bid/?url=http://tva1.sinaimg.cn/mw690/4e5d3ea7ly1hbk2bt3evij20k00a0weo.jpg)
 
 22年来最大加息，到底啥是美联储缩表？_手机新浪网 [https://finance.sina.cn/2022-05-05/detail-imcwiwst5681670.d.html](https://finance.sina.cn/2022-05-05/detail-imcwiwst5681670.d.html)
 

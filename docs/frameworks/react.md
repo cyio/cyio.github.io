@@ -325,7 +325,7 @@ setState 更新回调
 
 render return 里可直接定义变量`const ChapterName = <h2>{chapterName}</h2>;`
 
-![image.png](http://tva1.sinaimg.cn/mw690/4e5d3ea7ly1hax0i773vcj20vm0l415n.jpg)
+![image.png](https://img.oaker.bid/?url=http://tva1.sinaimg.cn/mw690/4e5d3ea7ly1hax0i773vcj20vm0l415n.jpg)
 
 ### useEffect 滥用
 
@@ -407,3 +407,5 @@ React 服务器组件也是如此。人们听到“服务器”并假设是 Node
 这是一种转变，但主要是一种心理转变。
 
 [Next.js SPA example with dynamic client-only routing and static hosting](https://gist.github.com/gaearon/9d6b8eddc7f5e647a054d7b333434ef6)
+
+[Map of React API - JulesBlom.com](https://julesblom.com/writing/map-of-react-api)

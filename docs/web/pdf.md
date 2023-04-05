@@ -67,3 +67,7 @@
 
 [pdfjs viewer 开发小结 - 网易云 - 博客园](https://www.cnblogs.com/163yun/p/9811569.html)
 
+
+## # 文件解析
+
+[document.ai/pdf.md at main · GanymedeNil/document.ai · GitHub](https://github.com/GanymedeNil/document.ai/blob/main/docs/pdf.md)

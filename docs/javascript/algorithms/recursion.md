@@ -8,7 +8,7 @@
 
 ## 是什么
 
-![image.png](http://tva1.sinaimg.cn/large/4e5d3ea7ly1gywlbbqi6aj20im07uq39.jpg)
+![image.png](https://img.oaker.bid/?url=http://tva1.sinaimg.cn/large/4e5d3ea7ly1gywlbbqi6aj20im07uq39.jpg)
 - 递归由基本部分和递归部分组成，基础部分直接定义（即不用递归就能求解），递归部分可以通过参数减小转换为基础部分，递归部分的每一次应用都更接近基础部分，最后一次应用基础部分。
 - 一种循环形式，在函数定义内调用自身
 - 相似的特征，归纳，递归步骤，常见嵌套循环，外循环递增，内循环递减

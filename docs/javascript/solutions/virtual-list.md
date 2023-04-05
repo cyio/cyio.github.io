@@ -30,7 +30,7 @@ h(type, attrs, children) 函数第三个参数是 children
 
 item 用 _ResizeObserver_ 观测自身，触发 resized 事件
 
-![image.png](http://tva1.sinaimg.cn/large/4e5d3ea7ly1h7cmoka817j215e15sne6.jpg)
+![image.png](https://img.oaker.bid/?url=http://tva1.sinaimg.cn/large/4e5d3ea7ly1h7cmoka817j215e15sne6.jpg)
 
 virtual-list-item，virtual-list-slot 多组件用 mixin 
 
@@ -40,7 +40,7 @@ Virtual 类，虚拟列表核心计算
 
 updateRange 更新 start/end，触发时机？head/footer resized？
 
-![image.png](http://tva1.sinaimg.cn/large/4e5d3ea7ly1h7co3h80vnj20nq0ben0f.jpg)
+![image.png](https://img.oaker.bid/?url=http://tva1.sinaimg.cn/large/4e5d3ea7ly1h7co3h80vnj20nq0ben0f.jpg)
 
 
 https://github.dev/tangbc/vue-virtual-scroll-list

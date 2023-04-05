@@ -103,3 +103,9 @@ X-Frame-Options 防止页面被嵌入恶意利用
 5. Regen cookies when user auths (prevent session fixation)
 6. Set short cookie lifetime
 
+
+## 速查
+
+[HTML5 Security - OWASP Cheat Sheet Series](https://cheatsheetseries.owasp.org/cheatsheets/HTML5_Security_Cheat_Sheet.html#sandboxed-frames)
+
+[Cross Site Scripting Prevention - OWASP Cheat Sheet Series](https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html)
