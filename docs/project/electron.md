@@ -188,7 +188,13 @@ Preload scripts 类似 chrome 扩展的 content scripts
 
 [挖洞经验 | 综合三个Bug实现Discord桌面应用RCE漏洞 - FreeBuf网络安全行业门户](https://www.freebuf.com/articles/web/252806.html)
 
+## 版本
 
+Electron 22, which contains Chromium 108, will thus be the last supported version.
+
+In line with Chromium's deprecation policy, _Electron_ will end support of _Windows 7_, Windows 8 and Windows 8.1 beginning in _Electron_ 23.
+
+不再收到更新支持，有可能能运行？
 
 ## 参考
 [javascript - how to open new window in place of current window in Electron - Stack Overflow](https://stackoverflow.com/questions/36072035/how-to-open-new-window-in-place-of-current-window-in-electron/38043021)
@@ -200,3 +206,5 @@ Preload scripts 类似 chrome 扩展的 content scripts
 [cawa-93/vite-electron-builder: Secure boilerplate for Electron app based on Vite. TypeScript + Vue/React/Angular/Svelte/Vanilla](https://github.com/cawa-93/vite-electron-builder)
 
 [electron多进程方案解决界面卡顿 - 掘金](https://juejin.cn/post/6999257401522126856)
+
+https://blackglory.me/notes/electron

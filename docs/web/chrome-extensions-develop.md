@@ -53,3 +53,13 @@
 declarativeNetRequest 使用，id 需要有变量，回调仅是设置成功，不支持过滤 url
 
 https://github.com/ray-lothian/Block-Site/blob/31026cd63e162ec61de4c3a5704bdb7fec2b8530/v3/contextmenu.js#L116
+
+
+## starter template
+
+https://github.com/xiaoluoboding/chrome-ext-mv3-starter
+
+https://github.com/antfu/vitesse-webext 这个主分支是 v2 的，子分支有 v3 版本，不确定可用程度
+
+
+- [ ] 调研 https://windicss.org/integrations/vite.html https://windicss.org/guide/migration.html

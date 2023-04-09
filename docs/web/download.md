@@ -19,3 +19,12 @@
 - blob
 - range
 
+
+
+我们基于 Range 实现了文件的分片下载，浏览器通过 ArrayBuffer 接收。
+
+ArrayBuffer 只读，想要操作要通过 Uint8Array 来合并，之后再转为 ArrayBuffer。
+
+这样就可以通过 URL.createObjectURL 设置为 img 的 src 或者通过 a 标签的 download 属性实现下载了。
+
+[基于 HTTP Range 实现文件分片并发下载！ - 知乎](https://zhuanlan.zhihu.com/p/620113538)
