@@ -154,6 +154,7 @@ fallback () payable external {
 is 关键字
 
 ## 存储位置
+
 Storage 链上
 Memory 程序运行中
 Calldata 有入参的函数

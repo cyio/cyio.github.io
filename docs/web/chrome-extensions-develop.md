@@ -1,3 +1,4 @@
+
 # Chrome 扩展开发
 [[toc]]
 
@@ -62,4 +63,5 @@ https://github.com/xiaoluoboding/chrome-ext-mv3-starter
 https://github.com/antfu/vitesse-webext 这个主分支是 v2 的，子分支有 v3 版本，不确定可用程度
 
 
-- [ ] 调研 https://windicss.org/integrations/vite.html https://windicss.org/guide/migration.html
+- [x] 调研 https://windicss.org/integrations/vite.html https://windicss.org/guide/migration.html
+windicss更快、兼容性更好，但最后更新是 2022.05

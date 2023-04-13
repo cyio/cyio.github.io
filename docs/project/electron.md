@@ -6,6 +6,32 @@ CEF： Chromium 嵌入式框架
 
 ![v2-f85361afb9a037b24b279c9a87d6635e_r.jpg (490×454)](https://pic3.zhimg.com/v2-f85361afb9a037b24b279c9a87d6635e_r.jpg)
 
+## CEF： Chromium 嵌入式框架
+
+CEF专注于促进第三方应用程序中的嵌入式浏览器用例
+
+C++ 实现
+
+> CEF支持广泛的编程语言和操作系统，可以轻松地集成到新的和现有的应用程序中。它的设计从头到尾兼顾了性能和易用性。基本框架包括通过本机库公开的C和c++编程接口，本机库将主机应用程序与Chromium和Blink实现细节隔离开来。它提供了浏览器和主机应用程序之间的紧密集成，包括对自定义插件、协议、JavaScript对象和JavaScript扩展的支持。主机应用程序可以选择性地控制资源加载、导航、上下文菜单、打印等，同时利用谷歌Chrome Web浏览器中提供的相同性能和HTML5技术。
+
+底层是 Google 公司带头的开源社区
+
+https://github.com/chromiumembedded/cef
+
+组件：
+- 动态库（各平台）
+- 支持文件
+- 资源
+- 可执行 client
+
+架构
+- CEF使用多个进程。主要的应用程序进程称为“浏览器”进程。将为渲染器、插件、GPU等创建子进程。
+- 在Windows和Linux上，相同的可执行文件可以用于主进程和子进程。在OS X上，你需要为子进程创建一个单独的可执行文件和应用程序包。
+- CEF中的大多数进程都有多个线程。CEF为在这些不同的线程之间提交任务提供了函数和接口。
+- 一些回调和函数只能在特定进程或特定线程上使用。在第一次开始使用新的回调函数或函数之前，请确保阅读API头中的源代码注释。
+
+https://blog.scottlogic.com/2023/02/01/webview2-electron-challengers-and-slightly-lighter-desktop-web-applications.html
+
 ## 进程
 
 - 2 个进程：主进程和渲染器进程

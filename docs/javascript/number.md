@@ -69,3 +69,14 @@ function subtract(n, m) {
   return (Number.parseInt(n * 100, 10) - Number.parseInt(m * 100, 10)) / 100
 }
 ```
+
+
+> 因为JavaScript是"弱类型"语言，但在小数点运算时，JavaScript将隐式的采取[IEEE754二进制浮点运算](https://link.zhihu.com/?target=https%3A//www.h-schmidt.net/FloatConverter/IEEE754.html)。而不是我们想象中的十进制运算。而十进制和二进制转换时，就可能出现精度丢失的问题。
+
+> 因为JS的精度丢失问题历史，所以通常JS中最佳实践中，不推荐大家用JS进行浮点运算，例如货币，交易相关。如果无法避免的计算场景，通常推荐先将数字转换成整数，例如￥10.00元，变成￥1000分，进行计算。 另外也可以通过比较两个浮点数差值的绝对值，是否超过误差精度。
+
+业务（money）推进技术，十进制主要因为金融和货币系统在用。
+
+js是弱类型动态语言，本身并不适合做cpu密集型计算。
+
+[JavaScript著名面试题: 0.1 + 0.2 !== 0.3，即将成为过去 - 知乎](https://zhuanlan.zhihu.com/p/225490777)

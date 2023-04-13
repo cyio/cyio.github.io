@@ -64,3 +64,7 @@
 
 [javascript - Compiling ES6 and VUE JS not working in IE 11 - Stack Overflow](https://stackoverflow.com/questions/52881807/compiling-es6-and-vue-js-not-working-in-ie-11)
 [浏览器兼容性 | Vue CLI](https://cli.vuejs.org/zh/guide/browser-compatibility.html#browserslist)
+
+## 数据统计
+
+尊敬的百度统计用户您好，系统环境报告即将下线

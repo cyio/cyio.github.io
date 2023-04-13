@@ -710,3 +710,9 @@ Git subtree 是 Git 的一个工具，它可以将一个 Git 仓库作为子目�
 ```sh
 git update-index --assume-unchanged YOUR_FILE_OR_DIRECTORY
 ```
+
+
+## 解压子目录
+
+git filter-branch with --subdirectory-filter
+https://jeffkreeftmeijer.com/git-extract/
