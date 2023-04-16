@@ -59,3 +59,7 @@ chromium105+
 
 https://glitch.com/~fetch-request-stream
 [Streaming requests with the fetch API - Chrome Developers](https://developer.chrome.com/articles/fetch-streaming-requests/#streaming-request-bodies)
+
+
+[Consume Web streams from OpenAI using vanilla JavaScript - NO DEPENDENCIES! - YouTube](https://www.youtube.com/watch?v=o1yKuH86_So)
+https://umaar.com/dev-tips/269-web-streams-openai/

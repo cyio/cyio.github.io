@@ -54,3 +54,19 @@ https://stackoverflow.com/a/60946721
 
 axios 自身不支持
 https://github.com/axios/axios/issues/320
+
+
+      fetch(site.url, {
+        headers: {
+          'Accept-Charset': 'utf-8'
+        }
+      })
+        .then(response => response.text())
+        .then(data => {
+          // 处理数据
+          this.parseSiteHtml(site, data)
+        });
+
+## 替代
+
+https://github.com/developit/redaxios
