@@ -19,3 +19,18 @@
 - 移除了`__dirname`和`__filename`
 
   https://stackoverflow.com/questions/46745014/alternative-for-dirname-in-node-when-using-the-experimental-modules-flag
+
+## v18
+
+全局 fetch
+
+
+## 升级
+
+Maintenance 维护期后，不再有安全更新，无法快速修复漏洞
+
+LTS	当前活跃维护的稳定版本
+
+Current 最新版本，可能不稳定
+
+https://github.com/nodejs/Release

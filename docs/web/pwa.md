@@ -88,6 +88,12 @@ self.addEventListener('fetch', function(event) {
 
 [百度搜索对PWA的探索和初步实践](http://www.infoq.com/cn/articles/exploration-and-practice-of-baidu-search-for-pwa)
 
+### cache-first
+
+https://pwa-demo.glitch.me/
+
+https://developer.chrome.com/docs/workbox/caching-strategies-overview/
+
 ## 结合业务
 
 - 体验接近离线应用，提高 xx 率
@@ -123,6 +129,31 @@ vite-plugin-pwa 的原理就是通过 Vite 的插件机制，自动生成 PWA �
 webpack 生成配置方法
 
 https://developer.chrome.com/docs/workbox/reference/workbox-webpack-plugin/#type-GenerateSW
+
+## workbox v6 核心方法
+
+1.  precaching：用于在 Service Worker 安装期间缓存静态资源的方法，可以通过配置文件来指定要缓存的文件。【首屏依赖文件，一次性，更新文件，缓存即失效？】
+    
+2.  routing：用于在 Service Worker 运行期间拦截网络请求并返回缓存响应的方法。可以根据请求的 URL、请求方法和其他条件来匹配请求。【非首屏依赖文件，动态的，资源会很多】
+    
+3.  strategies：用于定义缓存策略的方法。Workbox 提供了几种常见的缓存策略，如 Cache First、Network First、Stale While Revalidate 等。
+    
+4.  expiration：用于设置缓存的过期时间的方法。可以根据时间或缓存条目数量来设置过期时间。
+    
+5.  background sync：用于在离线状态下将数据保存到后台，直到网络恢复时再进行同步的方法。【比如文档场景】
+    
+6.  workbox-window：用于在 Web 应用程序中获取 Service Worker 注册对象、访问缓存和发送消息的方法。
+
+
+## api
+
+### precacheAndRoute
+
+revision 为 null，表示根据 URL 来，最佳实践是
+1. html 用  revision，由 hash 生成，因为不能改名
+2. 其他资源用 hash url
+
+https://developer.chrome.com/docs/workbox/modules/workbox-precaching/
 
 ## 参考
 

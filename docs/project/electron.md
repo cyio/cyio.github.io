@@ -82,6 +82,12 @@ webview document.title/executeJavaScript
 
 remote 模块，模拟本地调用，废弃，推荐 invoke
 
+electron 的 IPC 基于 chromium 的 IPC？
+
+MessagePort对象可以在渲染器或主进程中创建，并使用ipcRenderer.postMessage和WebContents.postMessage方法来回传递。请注意，通常的IPC方法（如send和invoke）不能用于传输MessagePorts，只有postMessage方法可以传输MessagePorts。
+
+https://www.electronjs.org/docs/latest/tutorial/message-ports/
+
 [Electron进程通信 - 知乎](https://zhuanlan.zhihu.com/p/453287153)
 [前端不懂进程通信？看完这篇就懂了 - 掘金](https://juejin.cn/post/6988484297485189127)
 
@@ -222,6 +228,9 @@ In line with Chromium's deprecation policy, _Electron_ will end support of _W
 
 不再收到更新支持，有可能能运行？
 
+## 安全
+
+
 ## 参考
 [javascript - how to open new window in place of current window in Electron - Stack Overflow](https://stackoverflow.com/questions/36072035/how-to-open-new-window-in-place-of-current-window-in-electron/38043021)
 [Electron简单笔记 - 小翼的前端天地](https://www.my-fe.pub/post/electron-note.html)
@@ -234,3 +243,25 @@ In line with Chromium's deprecation policy, _Electron_ will end support of _W
 [electron多进程方案解决界面卡顿 - 掘金](https://juejin.cn/post/6999257401522126856)
 
 https://blackglory.me/notes/electron
+
+
+## 性能
+
+1. 延迟 require（IO、递归引用）
+2. V8 Snapshot，预处理 JS
+[How to make your Electron app launch 1,000ms faster | by Takuya Matsuyama | Dev as Life](https://blog.inkdrop.app/how-to-make-your-electron-app-launch-1000ms-faster-32ce1e0bb52c)
+
+
+## node-ffi & napi
+
+> 外部函数接口
+
+node-ffi 和 napi 都是 Node.js 中用于访问本地代码的工具，但它们有不同的设计目的和使用场景。
+
+node-ffi 是一个 Node.js 模块，它允许你调用本地动态链接库中的函数，而无需编写 C++ 绑定代码。node-ffi 的主要设计目的是为了让 Node.js 开发者能够方便地访问本地系统功能，例如操作系统 API、硬件驱动程序等。使用 node-ffi，你可以在 Node.js 中轻松地调用 C 语言编写的动态链接库，而无需编写任何 C++ 绑定代码。
+
+而 napi 是 Node.js 提供的一组 API，它允许开发者编写可跨平台、可移植的 C++ 扩展，并且这些扩展可以在不同版本的 Node.js 上运行。napi 的主要设计目的是为了让开发者能够编写高效、可靠的 Node.js 扩展，而不必考虑不同版本的 Node.js 之间的差异。使用 napi，你可以更轻松地编写跨平台的 Node.js 扩展，并且这些扩展可以在多个版本的 Node.js 上运行。
+
+因此，node-ffi 和 napi 在设计目的和使用场景上存在差异。如果你需要快速访问本地系统功能，那么 node-ffi 是一个很好的选择；如果你需要编写可跨平台的高效 Node.js 扩展，那么 napi 是更好的选择。
+
+https://nodejs.org/api/n-api.html#node-api

@@ -91,3 +91,23 @@ console.log(foo.c)
 ```
 [Inheritance and the prototype chain - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain)
 [new operator - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/new)
+
+## 改造 Person 使其在非new调用时抛出错误
+
+可以通过修改 Person 类的构造函数实现
+
+以下是一个可能的实现：
+
+```javascript
+class Person {
+  constructor(name, age) {
+    if (!(this instanceof Person)) {
+      throw new Error('Person must be called with new');
+    }
+    this.name = name;
+    this.age = age;
+  }
+}
+```
+
+这里使用了 instanceof 运算符来判断 this 是否是 Person 的实例。如果不是，则说明没有使用 new 关键字创建对象，应该抛出错误。如果是，则正常执行构造函数的逻辑。

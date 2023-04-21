@@ -109,3 +109,12 @@ X-Frame-Options 防止页面被嵌入恶意利用
 [HTML5 Security - OWASP Cheat Sheet Series](https://cheatsheetseries.owasp.org/cheatsheets/HTML5_Security_Cheat_Sheet.html#sandboxed-frames)
 
 [Cross Site Scripting Prevention - OWASP Cheat Sheet Series](https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html)
+
+
+## 源码混淆
+
+源码混淆可以极大的降低你的源码的可读性和可调试性，同时也会在不同程度上带来性能损耗，这也是为什么几乎所有现代前端开发框架（的脚手架）都不直接提供源码混淆的支持，需要开发者自己安排混淆插件。
+
+Facebook完全是依靠服务端的逻辑来防范这些攻击的，几乎不会投入资源去做客户端的加密混淆这种工作。
+
+electron的这套运行逻辑注定其安全性极差，无论你搞再多混淆还是其他花样，你给v8解析的时候你不能让v8不认识，也就是说必定可以搞到源码。 理论上你只要找到v8解析js的函数，在里面下断就可以dump出所有源码，如果觉得这种方法麻烦，现在网上有开源的解包项目，可以直接解包，修改源码再打包。
