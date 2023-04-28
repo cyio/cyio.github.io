@@ -107,17 +107,18 @@ this.$refs.videoPlayer.player.on('fullscreenchange', e => {
 注意事件元素、方法，老版本 Chrome（如 63），Safari 等都需要前缀
 
 ## 在视频全屏上层显示元素
+
 场景：上课场景的题板展示，全屏时显示休息提示
 
-- 自定义全屏元素
+方案1：自定义全屏元素
   思路：
     1. 卸载自带事件（视频上双击和点全屏按钮，文档可能找不到，通过捕获事件，查源码定位到）
     2. 给播放器和要前置元素的**公共容器**设置全屏
 
   [videojs replaceFullscreen](https://gist.github.com/cyio/a838a85a87c14257427babd3ecf828e6)
+  todo：参考 http://jsfiddle.net/carmijoon/pZbkX/ 补个 Demo
 
-- 如果只考虑 chrome，可以设置一个特别大的 z-index 
-  https://stackoverflow.com/a/16240314/5657916
+~~方案2-失效：(如果只考虑 chrome，可以设置一个特别大的 z-index)[https://stackoverflow.com/a/16240314/5657916]~~  
 
 ## 错误处理
 
@@ -443,109 +444,6 @@ click，需要排除 dbclick，用户是在点击播放还是暂停
 姓名 复姓 新姓缩写
 
 [视频直播的技术原理和实现思路方案整理 · Issue #61 · f2e-journey/xueqianban](https://github.com/f2e-journey/xueqianban/issues/61)
-
-## 源码
-
-https://github.com/videojs/video.js/tree/main/src/js
-
-### index.js
-导入 videojs/hls，然后导出
-
-### video.js
-核心模块
-
-```js
-function videojs(id, options, ready) {
-
-```
-如果 player 实例存在，直接返回
-
-否则返回 new PlayerComponent 实际得到 player 组件，这个组件在 player.js 中注册`Component.registerComponent('Player', Player);`
-
-方法属性方式，扩展功能
-
-### player.js
-
-TECH_EVENTS_RETRIGGER 注释描述各个事件作用 很清晰
-
-### tech.js
-
-播放所使用技术，主要用的是 html5
-
-tech 与 source 结合
-
-技术顺序
-    使用哪个技术来播放，按 tech 数组顺序查找
-
-IE10 不支持原生 HLS/MSE，可官方插件 flash tech 支持 HLS
-
-html5.js wrapper
-    tech.js
-        component
-
-https://github.com/videojs/video.js/blob/main/docs/guides/tech.md
-
-扩展示例：https://github.dev/mister-ben/videojs-flvjs/blob/master/src/plugin.js 继承、修改了
-html5.js
-
-> video.js 和 flv.js 都是 Apache 2.0，可以闭源使用，需要说明
-
-### component.js
-Component UI 基础类
-
-是否存在有效 buffer 判断
-```js
-      for (let i = 0; i < buffered.length; i++) {
-        if (buffered.start(i) <= currentTime &&
-          currentTime < buffered.end(i) + SAFE_TIME_DELTA) {
-          extraBuffer = true;
-          break;
-        }
-      }
-```
-
-buffered 百分比计算，遍历 buffered 并累加 / duration
-```js
-export function bufferedPercent(buffered, duration) {
-```
-
-内置依赖 xhr 库 https://github.com/naugtur/xhr
-
-### load-progress-bar.js
-
-进度条百分比计算 
-```
-      const percent = percentify(bufferedEnd, duration);
-```
-
-私有变量，下划线改放在后面
-
-缓冲小区间展示 for buffered
-
-估算网速，可以计算从时间 a 到时间 b 的 buffered 总时长变化 @todo
-
-进度条更新，需要一直更新渲染，使用 rAF
-
-### fullscreen-api.js
-适配器模式
-
-1. 不同浏览器 api 字典
-2. 检测当前浏览器支持哪个 api 集合`if (apiMap[i][1] in document) {` 
-3. 适配成标准 api 语法 `FullscreenApi[specApi[i]] = browserApi[i];`
-4. 挂在 Player 类上
-
-优点：统一，test mock 不用再写一遍
-
-### 其它
-
-worker? 字幕合成等
-https://github.com/videojs/http-streaming/blob/af5b4eee6605feb3a927efee1234f0ca49c32e72/src/media-segment-request.js#L472
-
-concatSegments
-https://github.com/videojs/http-streaming/blob/e50f4c93dc47cc9ce467aeff8ddd61e1ef9e7814/src/util/segment.js#L43
-
-appendBuffer
-https://github.com/videojs/http-streaming/blob/ea3650a08de481ac01f5562e54278e736a852e5c/src/segment-loader.js#L1918
 
 [What I’ve Learned From Working With HTML5 Video Over A Month | by Onur Şuyalçınkaya | Yemeksepeti Teknoloji | Medium](https://medium.com/yemeksepeti-teknoloji/what-ive-learned-from-working-with-html5-video-over-a-month-485c5d5c2045)
 [HTML Standard](https://html.spec.whatwg.org/multipage/media.html#ready-states)

@@ -358,3 +358,12 @@ let x = "outer value";
 
 [javascript - What is the temporal dead zone? - Stack Overflow](https://stackoverflow.com/questions/33198849/what-is-the-temporal-dead-zone)
 [20220113-暂时性死区 - 知乎](https://zhuanlan.zhihu.com/p/554566105)
+
+## 可选链语法
+
+在不确定一个对象是否存在的情况下，安全地访问该对象的属性或方法
+
+Node v14及以上支持
+Chromium 80及以上
+
+electron v11.3  = node 14 + Chromium 87

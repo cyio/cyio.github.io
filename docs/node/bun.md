@@ -9,3 +9,8 @@ bunx # replace npx
 bun run dev
 ```
 
+ Bun 没有自己实现 JavaScript 解释器, 用的是 WebKit 的 JavaScriptCore 
+
+而 JavaScriptCore 热身速度比 V8 更快, 完全热身之后两边不见得谁更有优势
+
+[https://twitter.com/jarredsumner/status/1499225725492076544 13](https://twitter.com/jarredsumner/status/1499225725492076544)

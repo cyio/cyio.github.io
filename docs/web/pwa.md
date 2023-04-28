@@ -1,9 +1,22 @@
 # PWA
 
+mindmap
+[Workbox](https://coggle.it/diagram/6109693379b5ae0d4624e204/t/workbox/b21a0641a233cb06251d9972b69a0a8fbe51141690d060a8432389edf8080da0)
+
 ## 可安装
 `manifest.json`
 
-## SW
+## service-workers
+
+- [ ] https://web.dev/learn/pwa/service-workers/#lifecycle
+
+### 生命周期
+
+- 注册，页面触发
+- 安装，后台静默
+- 激活，下次访问，需要所有 tab 关闭
+
+> 当更新你的 Service Worker 时，不要重命名它。甚至不要在文件名中添加文件哈希。否则，浏览器将永远无法获取你的 Service Worker 的新版本！
 
 - 需要缓存资源
     - 应用核心 JS CSS
@@ -154,6 +167,9 @@ revision 为 null，表示根据 URL 来，最佳实践是
 2. 其他资源用 hash url
 
 https://developer.chrome.com/docs/workbox/modules/workbox-precaching/
+
+## 官方示例
+
 
 ## 参考
 

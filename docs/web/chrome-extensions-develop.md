@@ -65,3 +65,7 @@ https://github.com/antfu/vitesse-webext 这个主分支是 v2 的，子分支有
 
 - [x] 调研 https://windicss.org/integrations/vite.html https://windicss.org/guide/migration.html
 windicss更快、兼容性更好，但最后更新是 2022.05
+
+## 设置实现及同步
+
+- [ ] 调研主流插件实现

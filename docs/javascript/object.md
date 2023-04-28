@@ -127,3 +127,38 @@ const dict = Object.create(null)
 
 [javascript - Is creating JS object with Object.create(null) the same as {}? - Stack Overflow](https://stackoverflow.com/questions/15518328/is-creating-js-object-with-object-createnull-the-same-as)
 [Object.create | 五年前端三年面试](https://fe.azhubaby.com/JavaScript/Object.create.html)
+
+## Object.keys 能保证顺序吗
+
+不一定。根据 ECMAScript 标准，`Object.keys` 方法返回对象自身可枚举属性的名称，但并不保证属性名称的顺序。具体顺序可能因 JavaScript 引擎实现而异。如果需要保证属性顺序，可以考虑使用数组或者 Map 数据结构。
+
+## v8 环境下的 Object.keys 能保证顺序吗
+
+在 V8 引擎下，`Object.keys` 返回对象属性名称的顺序是按照以下规则进行的：
+
+1.  首先返回所有数值键（即属性名可以被转换成数字的键）按照数值大小升序排列的结果。
+2.  然后返回所有字符串键按照被添加的顺序排列的结果。
+3.  最后返回所有 Symbol 类型的键按照被添加的顺序排列的结果。
+
+如果属性名是通过其他方式添加的，比如使用`Object.defineProperty()`方法或者直接赋值，那么`Object.keys()`方法返回的顺序是不可预测的。
+
+参考：[ECMAScript® 2018 Language Specification](https://262.ecma-international.org/9.0/#sec-ordinaryownpropertykeys)
+https://262.ecma-international.org/9.0/#sec-ordinaryownpropertykeys
+
+```js
+// ECMA-262, 5th ed., 15.2.3.14
+Object.keys = function keys(object) {
+  if (object === null || object === undefined) {
+    throw new TypeError('Cannot convert undefined or null to object');
+  }
+  var result = [];
+  var obj = Object(object);
+  for (var key in obj) {
+    if (Object.prototype.hasOwnProperty.call(obj, key)) {
+      result.push(key);
+    }
+  }
+  return result;
+};
+
+```

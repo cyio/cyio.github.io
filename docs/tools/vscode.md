@@ -1,13 +1,13 @@
 # VSCode
 
 - `cmd-space @` 智能感知
-- `cmd-shift @` symboal jump 查找函数有用
+- `cmd-shift o` symboal jump 查找函数有用，比如定位 methods
 - `cmd + p` 输入 # 进入工作目录符号搜索模式，后面输入你需要搜索的函数名，输入 @ 只搜索当前 tab
 - `c-k c-m` keybindding map
 - `c-k c-o` fold all `c-k c-j` unfold all
 - json to api
 - `>` 命令，如切换 terminal
-- 后退/前进 `^-` `^shift-`
+- 后退/前进 `^-` / `^shift-`   控制类，所以 prefix 是 ctrl
 - http 
 [VSCode 小鸡汤 第01期 - REST Client 简单好用的接口测试辅助工具 - - SegmentFault 思否](https://segmentfault.com/a/1190000018091951)
 保存位置？不是很方便
@@ -21,7 +21,7 @@
 - 支持光标定位
 - 支持拆分
 - 支持配置任务
-	- 切换窗口  `shift-cmd-[`
+- 切换窗口  `shift-cmd-[`
 - 替换当前 code，会提示保存
 ```
 code -g filepath // go to some file 在当前窗口打开
@@ -33,3 +33,31 @@ code -r .
 ## issues
 
 [解决VScode 与 Linux Rime 中州韵输入法 CTRL+~ 热键冲突_Spaceack的博客-CSDN博客](https://blog.csdn.net/a541972321/article/details/112864684)
+
+## git
+
+源代码控制”图标（Ctrl + Shift + G）
+
+## debugger
+
+1. 标记断点，比如函数 return 位置（可替代 console.log）
+2. F5 开始，shift-F5 停止，ctrl-F5 只运行
+
+F5有些慢，推荐 watch 自动运行
+npx nodemon tmp.js
+
+debug console 无法展开对象
+
+```sh
+// node
+file="~/Projects/Personal/learn/tmp.js" && code "$file" && npx nodemon --delay 0ms "$file"
+
+
+// deno fast & json fold
+// 问题：deno 不能识别 ~ 目录？
+file="~/Projects/Personal/learn/tmp.ts" && code "$file" && deno run --watch "$file"
+
+// 优化版，使用临时目录，自动创建文件，有意义的 alias
+alias play='file="/tmp/play.ts" && touch "$file" && code "$file" && deno run --watch "$file"'
+```
+
