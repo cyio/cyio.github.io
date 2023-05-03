@@ -313,3 +313,5 @@ firefox 自带？
 闲置时拉取视口内链接资源，可快速接入
 
 https://github.com/GoogleChromeLabs/quicklink
+
+## lighthouse treemap

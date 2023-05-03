@@ -294,7 +294,7 @@ Pointer events to the rescue!
 
 trick 第二参数不变，只执行一次
 
-配合第二参数、返回函数，相当于三个生命周期
+配合第二参数、返回函数，相当于三个生命周期【挂载、更新、销毁】
 
 ## 数据联动
 
@@ -363,9 +363,9 @@ useEffect 应该什么都不返回，而 async 隐式返回 promise
 
 useEffect 每次渲染（DOM 更新）完执行 effect fn
 
-> 不用再去考虑“挂载”还是“更新”。React 保证了每次运行 effect 的同时，DOM 都已经更新完毕
+> 【合并】不用再去考虑“挂载”还是“更新”。React 保证了每次运行 effect 的同时，DOM 都已经更新完毕
 
-生命周期对应 useEffect 用法：
+	生命周期对应 useEffect 用法：
 
 - componentDidMount []
 - componentDidUpdate [states.count | props.count] 仅变化时调用，减少不必要执行
