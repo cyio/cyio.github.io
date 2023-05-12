@@ -116,6 +116,11 @@ git 钩子自动部署
 3.  如何在 Next.js 中实现动态路由（Dynamic Routing）？有哪些注意点？
 4.  如何在 Next.js 中实现代码分割（Code Splitting）？有哪些常见的代码分割策略？
 
+### 多服务器
+
+build id 是随机的，多个不同的构建会导致缓存失效。解决方案是定制 buid id 方法，比如使用 git commit id
+
+[How To Deploy Next.js on Multiple Servers | Level Up Coding](https://levelup.gitconnected.com/how-to-deploy-next-js-on-multiple-servers-3b493d4ce0e9)
 
 ## 数据获取
 
@@ -137,3 +142,8 @@ umi
 适合大厂吗？
 
 [我看Next.js：一个更现代的海王](https://mp.weixin.qq.com/s/5Ir7EoHLo37bs6W5WNa-Tw)
+
+
+## prisma
+
+[[prisma]]

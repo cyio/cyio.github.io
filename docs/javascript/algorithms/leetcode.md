@@ -103,3 +103,37 @@ if (a === b) {
 
 1. 暴力 O n^3
 2. 双指针 如何做到不重复（有序 + 有两个数字不重复，第三个数字一定不重复，不会出现 [1, 2]，[2, 1]，每个数字开头的解要穷举）
+
+```
+function threeSum(nums, target = 0) {
+    // let res = []
+    let res: number[][] = []
+    nums.sort((a, b) => a - b)
+    for (let i = 0; i < nums.length; i++) {
+        if (i > 0 && nums[i] === nums[i - 1]) continue
+        let l = i + 1
+        let r = nums.length - 1
+        while(l < r) {
+            let other = target - nums[i]
+            let sum = nums[l] + nums[r]
+            if (sum > other) r--
+            if (sum < other) l++
+            if (sum === other) {
+                res.push([nums[i], nums[l], nums[r]])
+                if (l < r && nums[l + 1] === nums[l]) { // 下一个值与当前值相同时，多跳一步
+                    l+=2
+                } else {
+                    l++
+                }
+            }
+        }
+    }
+
+    return res
+}
+
+
+
+console.log(threeSum([-1, -2, 2, -2, 0, 4, 1]))
+console.log(threeSum([0, 0, 0, 0]))
+```
