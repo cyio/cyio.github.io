@@ -290,3 +290,7 @@ pig.name = 'jack'
 9.  TypeScript 如何与常见的 JavaScript 框架和库配合使用？
     
 10.  TypeScript 中的类型断言有什么作用？如何使用类型断言？
+
+## 适合场景
+
+[你为什么不使用 TypeScript？ - 知乎](https://www.zhihu.com/question/273619114/answer/1907885114)

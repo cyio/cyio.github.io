@@ -61,3 +61,6 @@ file="~/Projects/Personal/learn/tmp.ts" && code "$file" && deno run --watch "$fi
 alias play='file="/tmp/play.ts" && touch "$file" && code "$file" && deno run --watch "$file"'
 ```
 
+## ssh
+
+好用，执行命令 connect host，然后就像本地一样，可访问文件目录，也可用终端跳转
