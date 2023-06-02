@@ -234,7 +234,7 @@ const copies = callbacks.slice(0) // 复制一个数组，操作不会影响原�
 - watch 可执行异步、高性能开销、设置执行频率、设置中间状态
 [做面试的不倒翁：浅谈 Vue 中 computed 实现原理](https://juejin.cn/post/6844903678533451783)
 
-## 指令
+## 自定义指令
 
 自定义指令主要是为了重用涉及普通元素的底层 DOM 访问的逻辑。
 
@@ -251,6 +251,8 @@ const copies = callbacks.slice(0) // 复制一个数组，操作不会影响原�
 parentElement.contains(childElement)
 ```
 https://github.com/cyio/chatgpt-vue/blob/main/script.js#L215
+
+[[vue-自定义指令]]
 
 ## 操作数组或对象后，视图没有更新
 
@@ -578,9 +580,9 @@ scrollBehavior
 
 是否包含模板编译器 template compiler
 
-运行时版仅支持 render function
+运行时版仅支持 render function，适合有构建步骤，然后产出用 runtime，减小体积
 
-~~[[使用 vue-cli 预构建将 template 转换为 render function，生产环境用的是 runtime]]~~
+> 使用 vue-cli 预构建将 template 转换为 render function，生产环境用的是 runtime
 
 [vue.js - What exactly is Vue's runtime-only build and how does it differ from compiler build? - Stack Overflow](https://stackoverflow.com/questions/66393740/what-exactly-is-vues-runtime-only-build-and-how-does-it-differ-from-compiler-bu)
 

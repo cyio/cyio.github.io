@@ -5,6 +5,14 @@
 - 替代一部分设计师工作-出设计稿
 - 替代一部分前端工作-还原设计稿
 
+## 优劣
+
+- 不用给 class 起名，同时避免全局污染
+
+## 原理
+
+> tailwind 本质上就是一个 postcss 插件，通过 AST 来分析 css 代码，对 css 做增删改，并且可以通过 extractor 提取 js、html 中的 class，之后基于这些来生成最终的 css 代码。
+
 ## 单位
 
 默认 0.25rem == 4px，桌面端 x4 就好了
@@ -79,6 +87,5 @@ live 看效果
 右上角 Tidy 格式化整体
 
 https://play.tailwindcss.com/
-
 
 https://ui.shadcn.com/

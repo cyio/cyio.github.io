@@ -79,3 +79,14 @@ xml 是原始格式
 白板
 [Excalidraw | Hand-drawn look & feel • Collaborative • Secure](https://excalidraw.com/)
 
+## 架构图
+
+- 思考：业务关系，分层
+- 自下而上：支撑，抽象
+- 布局：左右，左右下
+- 步骤：
+		1. 分层
+		2. 分模块
+		3. 填功能
+
+[如何用语雀画板，轻松画出架构图？ - 语雀的个人空间 - OSCHINA - 中文开源技术交流社区](https://my.oschina.net/yuque/blog/5517347)

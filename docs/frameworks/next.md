@@ -116,6 +116,10 @@ git 钩子自动部署
 3.  如何在 Next.js 中实现动态路由（Dynamic Routing）？有哪些注意点？
 4.  如何在 Next.js 中实现代码分割（Code Splitting）？有哪些常见的代码分割策略？
 
+## 部署到 cloudflare
+
+https://github.com/cloudflare/next-on-pages 基于已有项目执行
+
 ### 多服务器
 
 build id 是随机的，多个不同的构建会导致缓存失效。解决方案是定制 buid id 方法，比如使用 git commit id
@@ -142,6 +146,13 @@ umi
 适合大厂吗？
 
 [我看Next.js：一个更现代的海王](https://mp.weixin.qq.com/s/5Ir7EoHLo37bs6W5WNa-Tw)
+
+	Next.js 的事情相当复杂。开发服务器做了太多事情。复杂度转移，开发简单，部署迁移复杂。
+可迁移性不确定、支持度不确定。平台捆绑。
+
+[Want Next.js at the edge? Just use Vercel | Not a blog](https://zhuhaow.me/want-nextjs-at-edge-just-use-vercel/)
+
+https://www.v2ex.com/t/938396
 
 
 ## prisma

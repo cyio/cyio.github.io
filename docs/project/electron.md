@@ -60,7 +60,7 @@ win.close()
 [Electron 应用架构 | Electron 进程通讯](https://electronjs.org/docs/tutorial/application-architecture#%25E9%25A2%2598%25E5%25A4%2596%25E8%25AF%259D%25EF%25BC%259A%25E8%25BF%259B%25E7%25A8%258B%25E9%2597%25B4%25E9%2580%259A%25E8%25AE%25AF)
 [Electron 常见问题 (FAQ) | Electron 如何在两个网页间共享数据](https://electronjs.org/docs/faq#%25E5%25A6%2582%25E4%25BD%2595%25E5%259C%25A8%25E4%25B8%25A4%25E4%25B8%25AA%25E7%25BD%2591%25E9%25A1%25B5%25E9%2597%25B4%25E5%2585%25B1%25E4%25BA%25AB%25E6%2595%25B0%25E6%258D%25AE%25EF%25BC%259F)
 
-- 推荐使用 preload按
+- 推荐使用 preload
 [安全性，原生能力和你的责任 | Electron ](https://electronjs.org/docs/tutorial/security#2-do-not-enable-nodejs-integration-for-remote-content)
 [Electron 深度实践总结 | 欧长坤的博客](https://changkun.us/archives/2017/03/217/)
 
@@ -217,6 +217,8 @@ Preload scripts 类似 chrome 扩展的 content scripts
 [Context Isolation | Electron](https://www.electronjs.org/docs/latest/tutorial/context-isolation#before-context-isolation-disabled)
 
 如果contextIsolation为false，那么web页面中的JS可以影响Electron内部渲染时的JS代码和预加载脚本执行。比如先入侵 web 加入恶意脚本，再传递到 preload node 环境。**远程代码执行漏洞（RCE）**
+
+contextIsolation 环境上下文隔离开关，是在 Electron 5.0 版本中引入的，默认值是 false。从 12.0 版本开始，默认值变为 true
 
 [挖洞经验 | 综合三个Bug实现Discord桌面应用RCE漏洞 - FreeBuf网络安全行业门户](https://www.freebuf.com/articles/web/252806.html)
 
