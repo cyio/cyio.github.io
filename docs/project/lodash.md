@@ -46,3 +46,5 @@ sample 随机选择
 
 ## 使用
 
+- `import {cloneDeep} from 'lodash'` 是导入整个 lodash 库，并从中提取 `cloneDeep` 方法；
+- `import cloneDeep from 'lodash/cloneDeep'` 是直接从 lodash 库中导入 `cloneDeep` 方法。

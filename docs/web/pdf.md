@@ -71,3 +71,5 @@
 ## # 文件解析
 
 [document.ai/pdf.md at main · GanymedeNil/document.ai · GitHub](https://github.com/GanymedeNil/document.ai/blob/main/docs/pdf.md)
+
+[解锁 PDF 文件：使用 JavaScript 和 Canvas 渲染 PDF 内容 - 知乎](https://zhuanlan.zhihu.com/p/631442533)
