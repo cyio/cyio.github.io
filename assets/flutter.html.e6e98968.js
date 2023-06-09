@@ -1,0 +1,1 @@
+const t={key:"v-3755e0be",path:"/frameworks/flutter.html",title:"Flutter",lang:"en-US",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1686317036e3,contributors:[{name:"gongyi01",email:"gongyi01@baidu.com",commits:1}]},filePathRelative:"frameworks/flutter.md"};export{t as data};

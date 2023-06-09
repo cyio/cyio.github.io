@@ -1,0 +1,1 @@
+const t={key:"v-6bac19b8",path:"/tools/ai.html",title:"AI \u5DE5\u5177",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:3,title:"\u82F1\u8BED\u5B66\u4E60",slug:"\u82F1\u8BED\u5B66\u4E60",children:[]}],git:{updatedTime:1686317036e3,contributors:[{name:"gongyi01",email:"gongyi01@baidu.com",commits:1}]},filePathRelative:"tools/ai.md"};export{t as data};
