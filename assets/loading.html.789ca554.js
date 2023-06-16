@@ -1,0 +1,1 @@
+const e={key:"v-0f0414f1",path:"/web/loading.html",title:"loading",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"dva-loading",slug:"dva-loading",children:[]}],git:{updatedTime:1686911278e3,contributors:[{name:"gongyi01",email:"gongyi01@baidu.com",commits:1}]},filePathRelative:"web/loading.md"};export{e as data};
