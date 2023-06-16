@@ -130,7 +130,7 @@ https://github.com/electron/electron/issues/7118#issuecomment-483681104
 
 [Simple drag and drop function in Electron - Moment For Technology](https://www.mo4tech.com/simple-drag-and-drop-function-in-electron.html)
 
-## 热更新
+## 生产包热更新
 
 方案：asar（主进程） + update.zip(渲染进程)
 

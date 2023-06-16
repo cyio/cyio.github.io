@@ -52,6 +52,14 @@ resolve 如何解析包
 
 [webpack-文件指纹策略：chunkhash、contenthash 和 hash | 个人博客](https://jkfhto.github.io/2019-10-18/webpack/webpack-%E6%96%87%E4%BB%B6%E6%8C%87%E7%BA%B9%E7%AD%96%E7%95%A5%EF%BC%9Achunkhash%E3%80%81contenthash%E5%92%8Chash/)
 
+### HMR
+
+原子模块替换，避免整页刷新
+
+Webpack HMR runtime负责监视文件变化、与Webpack建立连接、接收更新的模块信息，并通过热替换机制将这些更新应用到运行中的应用程序中，从而实现在开发过程中的即时反馈和模块热更新。
+
+HMR 原理 [https://stackoverflow.com/a/24587740/5657916](https://stackoverflow.com/a/24587740/5657916)
+
 ## loader
 
 - file-loader 将资源复制过去，然后返回资源路径，一般是图片文件，那别的格式如 mp3 文件怎么办？加到正则即可
