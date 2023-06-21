@@ -64,3 +64,9 @@ alias play='file="/tmp/play.ts" && touch "$file" && code "$file" && deno run --w
 ## ssh
 
 好用，执行命令 connect host，然后就像本地一样，可访问文件目录，也可用终端跳转
+
+## trouble shooting
+
+终端无法启动
+搜 - open log - select window type
+[Terminal Issues · microsoft/vscode Wiki](https://github.com/microsoft/vscode/wiki/Terminal-Issues#enabling-trace-logging)

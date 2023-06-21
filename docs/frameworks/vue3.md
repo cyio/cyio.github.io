@@ -77,3 +77,18 @@ VUE3主要在哪些方面做了性能提升？https://www.jianshu.com/p/ab6741d8
 支持中文
 
 https://chatthing.ai/bots/a2625c1a-8012-42dc-b87d-10e3f0196306/
+
+## API 风格
+
+**选项式 API 是在组合式 API 的基础上实现的**
+
+选项式 API：组件实例 为中心，面向对象，对初学者更友好
+
+组合式 API：函数作用域内定义响应式状态变量，并将从多个函数中得到的状态组合起来处理复杂问题。更灵活，对响应系统理解要求更高，组织和重用能力更强大
+
+[简介 | Vue.js](https://cn.vuejs.org/guide/introduction.html#api-styles)
+
+考虑 react 心智迁移，用组合式
+
+混用示例：[组合式函数 | Vue.js](https://cn.vuejs.org/guide/reusability/composables.html#using-composables-in-options-api)
+和 mixin、无渲染组件、React hooks 的对比
