@@ -267,3 +267,11 @@ node-ffi 是一个 Node.js 模块，它允许你调用本地动态链接库中�
 因此，node-ffi 和 napi 在设计目的和使用场景上存在差异。如果你需要快速访问本地系统功能，那么 node-ffi 是一个很好的选择；如果你需要编写可跨平台的高效 Node.js 扩展，那么 napi 是更好的选择。
 
 https://nodejs.org/api/n-api.html#node-api
+
+## koffi
+
+在Koffi中，指针是一个变量，它保存了另一个变量或对象的内存地址。"koffi.decode()"函数允许你访问特定内存地址上存储的数据，并将其解释为JS函数。
+
+如果您要在JS环境中使用"koffi.decode()"函数来获取JS函数，可能是为了与Koffi代码进行交互，或者将Koffi代码嵌入到现有的JS应用程序中。这样可以利用Koffi的特性和功能，并与现有的JS代码进行集成。
+
+https://koffi.dev/functions?highlight=decode

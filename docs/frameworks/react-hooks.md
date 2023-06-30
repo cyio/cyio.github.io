@@ -1,5 +1,5 @@
 
-## hooks
+# hooks
 
 - hooks 是一种在函数式组件内使用 state 逻辑，消除写 classes 的必要。
 - vue 可以结合 mixin 来写无状态的函数式组件。mixin 的缺点是无法消费或使用另一个 mixin。导致链式逻辑难以实现。
@@ -8,7 +8,7 @@
 [Hooks are coming to Vue.js version 3.0 - LogRocket Blog](https://blog.logrocket.com/hooks-are-coming-to-vue/)
 [useHooks~小窍门 - 知乎](https://zhuanlan.zhihu.com/p/66170210)
 
-### useState
+## useState
 
 use 设置对象或数组时替换， 有别于 class 合并
 
@@ -33,7 +33,15 @@ use 设置对象或数组时替换， 有别于 class 合并
         setList(list.slice().sort((a, b) => a - b));
 ```
 
-### useEffect
+### 原理
+
+为函数添加状态，当状态更新时，重新渲染
+
+re-render通常发生在宏任务中
+
+在React中，每次重新渲染组件都会执行函数组件的整个代码块，因此我们需要避免在函数组件中进行昂贵的计算或者网络请求等操作，以免影响性能。
+
+## useEffect
 
 - async 要用 IIFE 包起来
 - 组件渲染后执行，不阻塞绘制。`componentDidMount` and `componentDidUpdate`是同步
@@ -71,8 +79,7 @@ render return 里可直接定义变量`const ChapterName = <h2>{chapterName}</h2
     
 5.  什么时候会用到 useEffect？需要对外部状态有相互影响的逻辑（副作用），才有必要放到useEffect/useLayoutEffect 中。
 
-
-### 批判
+## 批判
 
 观点：可组合性优于继承
 

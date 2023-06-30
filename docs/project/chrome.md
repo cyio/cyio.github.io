@@ -25,6 +25,14 @@ open -a "Google Chrome" --args --profile-directory=Profile
 - 集成编码 H264/MP4 版本下载
   [Download latest stable Chromium binaries (64-bit and 32-bit)](https://chromium.woolyss.com/)
 
+### 新下载工具
+
+https://developer.chrome.com/blog/chrome-for-testing/
+
+```sh
+npx @puppeteer/browsers install chrome@116.0.5793.0
+```
+
 ## flash 支持
 - chrome 71 开始，每次启动浏览器，每次访问需要Flash的网站时，您都必须单击“单击以启用Adobe Flash Player”按钮，然后单击浏览器左上角的“允许”按钮以启用该内容，等页面刷新后才能访问 flash 内容。
 - 2020 年底，adobe 将停止 flash 更新，主流浏览器将彻底移除 flash 支持

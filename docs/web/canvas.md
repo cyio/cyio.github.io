@@ -31,7 +31,16 @@ ctx.closePath()
 [blob - Copy image to clipboard using JavaScript - Stack Overflow](https://stackoverflow.com/questions/60400589/copy-image-to-clipboard-using-javascript)
 copy 事件只是文字
 
-
+canvas drawImage
 [选择本地视频，自动生成缩略图 canvas](https://codepen.io/cyio/pen/QWNvvjX?editors=1011)
 
 [浅谈 Canvas 渲染引擎 - 知乎](https://zhuanlan.zhihu.com/p/608415829)
+
+## fabric.js
+
+canvas 原生 API 是命令式的
+[Introduction to Fabric.js. Part 1. — Fabric.js Javascript Canvas Library](http://fabricjs.com/fabric-intro-part-1#why_fabric)
+
+## PixiJS
+
+复用 WebGL，回退 canvas

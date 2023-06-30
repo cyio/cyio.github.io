@@ -71,6 +71,6 @@ getComputedStyle
 
 保证渲染间隔 rAF
 
-![image.png](https://ww1.sinaimg.cn/large/4e5d3ea7ly1h1asipl6u4j20x50gon1r.jpg)
+![image.png](https://img.oaker.bid/?url=https://ww1.sinaimg.cn/large/4e5d3ea7ly1h1asipl6u4j20x50gon1r.jpg)
 
 [Jake Archibald: “In The Loop” — Taking a close look into the browser’s Event Loop – Bram.us](https://www.bram.us/2018/02/09/jake-archibald-in-the-loop-taking-a-close-look-into-the-browsers-event-loop/)

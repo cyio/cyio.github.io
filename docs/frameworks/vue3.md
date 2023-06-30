@@ -92,3 +92,20 @@ https://chatthing.ai/bots/a2625c1a-8012-42dc-b87d-10e3f0196306/
 
 混用示例：[组合式函数 | Vue.js](https://cn.vuejs.org/guide/reusability/composables.html#using-composables-in-options-api)
 和 mixin、无渲染组件、React hooks 的对比
+
+## 代码组织
+
+> 面条式代码更容易出现
+> 
+> **尤雨溪**：新的API理论上会降低代码质量的最低门槛，也可以提升代码质量的最高上限
+
+- 以状态为中心，按功能或职责拆分 hooks
+- 入口文件尽量只做组装和应用级生命周期的事情
+- 不考虑复用性，也可以 useFunction 写在一个文件中
+
+合适时机再去重构？
+
+
+[更灵活的代码组织 - 组合式 API 常见问答 | Vue.js](https://cn.vuejs.org/guide/extras/composition-api-faq.html#more-flexible-code-organization)
+
+官方示例：比如文件浏览器，useCreateFolder  data 声明、计算属性聚合在一个函数中
