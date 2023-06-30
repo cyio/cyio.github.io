@@ -1,0 +1,1 @@
+const e={key:"v-a447db66",path:"/project/antd.html",title:"antd",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"model",slug:"model",children:[]},{level:2,title:"form",slug:"form",children:[]}],git:{updatedTime:1688125534e3,contributors:[{name:"gongyi01",email:"gongyi01@baidu.com",commits:1}]},filePathRelative:"project/antd.md"};export{e as data};
