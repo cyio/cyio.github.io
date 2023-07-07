@@ -107,3 +107,23 @@ rAF 是宏任务
 ![image.png](https://img.oaker.bid/?url=http://tvax1.sinaimg.cn/mw690/4e5d3ea7ly1hau4rsncukj21h209m79r.jpg)
 
 [面试必问的异步顺序问题，用 Performance 轻松理清 - 知乎](https://zhuanlan.zhihu.com/p/603691968)
+
+## perf
+
+![image.png](https://img.oaker.bid/?url=http://tva1.sinaimg.cn/large/4e5d3ea7gy1hfoat98ujcj21vg0natv9.jpg)
+
+![image.png](https://img.oaker.bid/?url=http://tva1.sinaimg.cn/large/4e5d3ea7gy1hfoavgmqi2j210i0ps7hz.jpg)
+
+![image.png](https://img.oaker.bid/?url=http://tva1.sinaimg.cn/large/4e5d3ea7gy1hfob0t8j6rj21080q07hl.jpg)
+
+当访问元素的offsetTop属性时，浏览器会进行重排操作。因为offsetTop属性表示元素相对于其offsetParent元素的上边距的像素值，所以在获取offsetTop值之前，浏览器需要确定元素的位置和大小，从而触发重排操作。因此，多次访问m.offsetTop会导致多次重排操作，影响性能。
+
+当 JavaScript 运行时，前一帧中的所有旧布局值都是已知的，可供您查询。因此在帧的开头纯粹的查询没有问题，如果有其它样式修改、再查询，浏览器必须重排布局，以回答最新值。
+
+Now, in order to answer the height question, the browser must _first_ apply the style change (because of adding the `super-big` class), and _then_ run layout. Only then will it be able to return the correct height. This is unnecessary and potentially expensive work.
+
+[Analyze runtime performance - Chrome Developers](https://developer.chrome.com/docs/devtools/performance/#bonus_analyze_the_optimized_version)
+
+main 中竖向，是调用栈
+
+元素越多，CPU 调低，问题越明显 

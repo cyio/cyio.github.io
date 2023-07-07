@@ -248,7 +248,8 @@ babel 配置隐式 import css
 [Front-End Performance Checklist 2020 [PDF, Apple Pages, MS Word] — Smashing Magazine](https://www.smashingmagazine.com/2020/01/front-end-performance-checklist-2020-pdf-pages/)
 
 ## FPS
-理想值 60
+基础值 24，低于时，感觉卡顿
+理想值 60，最佳状态，更流畅
 
 收集 FPS list
 

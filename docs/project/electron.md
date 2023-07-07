@@ -275,3 +275,9 @@ https://nodejs.org/api/n-api.html#node-api
 如果您要在JS环境中使用"koffi.decode()"函数来获取JS函数，可能是为了与Koffi代码进行交互，或者将Koffi代码嵌入到现有的JS应用程序中。这样可以利用Koffi的特性和功能，并与现有的JS代码进行集成。
 
 https://koffi.dev/functions?highlight=decode
+
+## QT
+
+Qt是一个跨平台的C++应用程序开发框架，它提供了丰富的功能和高性能。Qt应用程序通常被编译为本地机器码，因此在性能方面表现较好。Qt还有一个轻量级的版本Qt Quick，它使用QML语言来构建用户界面，可以实现更快的渲染和动画效果。
+
+由于 Chromium 需要同时运行JavaScript和渲染网页，Electron应用程序的性能可能相对较低，尤其是在处理大量数据或运行复杂计算时。

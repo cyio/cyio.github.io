@@ -39,13 +39,11 @@ mkdir pages
 import Link from 'next/link'
 ```
 
-pages 目录最关键，不可变，考虑全放到 pages 目录下
-
+pages 目录最关键，不可变
 
 ## 与 Nest.js 区别
 
 `Nest.js` 是一个基于 Node.js 平台的开发框架，类似 eggjs
-
 
 ## fast refresh
 
@@ -55,8 +53,7 @@ pages 目录最关键，不可变，考虑全放到 pages 目录下
 
 5000个模块，intel 编译 5-10s，m1 2-4s，快一倍
 
-
-React 服务器组件也是如此。人们听到“服务器”并假设是 Node.js。但 RSC 可以在构建期间运行。事实上，在 Next 13 App Router 中它是*默认值*。如果你在 RSC 中获取（）某些东西，它将*在构建时*，除非你选择动态渲染。
+React 服务器组件也是如此。人们听到“服务器”并假设是 Node.js。但 RSC 可以在构建期间运行。事实上，在 Next 13 App Router 中它是*默认值*。如果你在 RSC 中获取某些东西，它将*在构建时*，除非你选择动态渲染。
 
 我们看到的转变（是的，正在努力实现）并不是从“编写 SPA”到“不编写 SPA”。它是从“被锁定在 SPA 中”（以后很难添加内置时间或服务器端集成）到“使用对每个页面有意义的任何模式”。hybrid era.
 
@@ -116,7 +113,7 @@ git 钩子自动部署
 3.  如何在 Next.js 中实现动态路由（Dynamic Routing）？有哪些注意点？
 4.  如何在 Next.js 中实现代码分割（Code Splitting）？有哪些常见的代码分割策略？
 
-## 部署到 cloudflare
+### 部署到 cloudflare
 
 https://github.com/cloudflare/next-on-pages 基于已有项目执行
 
@@ -130,7 +127,8 @@ build id 是随机的，多个不同的构建会导致缓存失效。解决方�
 
 getStaticProps 构建时预渲染，不怎么变的数据。框架勾子，拿到的数据，以 prop 传递给组件
 getServerSideProps 实时更新
-getStaticPaths 动态路由
+getStaticPaths
+> 在构建时，Next.js将使用getStaticPaths返回的参数值来生成静态页面。对于每个参数值，Next.js将调用getStaticProps函数，获取该参数的静态数据，并将其传递给页面组件作为props。
 
 ![640 (1080×538)](https://mmbiz.qpic.cn/mmbiz_png/ZCdKIQujeZya9N0I4XCYSNLb8bVXoCicArsOTUhGto6QmADytvuZL2R0y7Wpbd4EHH2GblTVVWxWuHkZoibPljrQ/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1)
 
