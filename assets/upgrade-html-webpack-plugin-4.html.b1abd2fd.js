@@ -1,1 +1,0 @@
-const e={key:"v-6f14aebd",path:"/project/upgrade-html-webpack-plugin-4.html",title:"upgrade",lang:"en-US",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1688125534e3,contributors:[{name:"gongyi01",email:"gongyi01@baidu.com",commits:1}]},filePathRelative:"project/upgrade-html-webpack-plugin-4.md"};export{e as data};
