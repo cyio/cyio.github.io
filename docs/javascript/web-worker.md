@@ -1,5 +1,7 @@
-# web-worker
+# WebWorkers
 [toc]
+
+创建线程池，复用多核能力加速计算
 
 > 主线程应当一心一意的执行你的代码，任何在 关键渲染路径 中 不必要的脚本都应当被迁移到 Web Worker 中。
 
@@ -12,6 +14,7 @@
 - 预渲染：canvas
 
 ## 使用
+
 - 支持内联创建 blob url
 
 简化使用
@@ -36,3 +39,5 @@ worker.addEventListener('error', function (event) {
 [我们是如何利用 Qwik 和 Partytown 削减掉 页面中 99% 的 JavaScript 的 - 知乎](https://zhuanlan.zhihu.com/p/445122206)
 
 [Mental model - Qwik](https://qwik.builder.io/guide/mental-model)
+
+## 即使一个 worker 线程也可以利用多核处理器加速

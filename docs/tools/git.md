@@ -716,3 +716,14 @@ git update-index --assume-unchanged YOUR_FILE_OR_DIRECTORY
 
 git filter-branch with --subdirectory-filter
 https://jeffkreeftmeijer.com/git-extract/
+
+
+## LFS
+
+```
+// 追踪大文件
+git lfs track "<file_pattern>"
+
+// 还原大文件
+git lfs pull
+```
