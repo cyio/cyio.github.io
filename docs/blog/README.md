@@ -1,5 +1,5 @@
 ---
-blog_index: true
+blog_ignore: true
 ---
 
 # Blog

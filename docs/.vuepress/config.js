@@ -1,6 +1,8 @@
 const path = require('path')
 const fs = require('fs');
 const glob = require('glob');
+const { defineUserConfig } = require('vuepress')
+const { usePagesPlugin } = require('vuepress-plugin-use-pages')
 // const util = require('./util')
 
 const solutionsArr = fs
@@ -16,7 +18,7 @@ const solutionsArr = fs
 //   // .sort()
 // console.log(tmp)
 
-module.exports = {
+module.exports = defineUserConfig({
   title: 'Oaker小站',
   description: 'Just playing around',
   head: [
@@ -31,6 +33,9 @@ module.exports = {
       serviceWorker: true,
       updatePopup: true
     }],
+    usePagesPlugin({
+      startsWith: '/blog/',
+    }),
     // [
     //   '@vuepress/docsearch',
     //   {
@@ -91,7 +96,7 @@ module.exports = {
   themeConfig: {
     navbar: [
       { text: '主页', link: '/' },
-      // { text: 'Blog', link: '/' },
+      { text: 'Blog', link: '/blog/index.html' },
       { text: 'JavaScript', link: '/javascript/concept.html' },
       // { text: '题解', link: '/javascript/solutions/new.md' },
       { text: 'Web', link: '/web/html.html' },
@@ -113,7 +118,7 @@ module.exports = {
       lineNumbers: 20
     }
   }
-}
+})
 
 function genSidebarConfig () {
   let sideBarData = {}

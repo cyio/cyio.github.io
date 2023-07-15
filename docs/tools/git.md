@@ -727,3 +727,8 @@ git lfs track "<file_pattern>"
 // 还原大文件
 git lfs pull
 ```
+
+## 撤销指定文件夹
+
+git config --global alias.undo restore -smain -SW -- This way, you can just do: git undo routes/doc
+
