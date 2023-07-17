@@ -1,0 +1,5 @@
+import{_ as e,e as a}from"./app.229c92e1.js";const t={},s=a(`<h1 id="revealjs" tabindex="-1"><a class="header-anchor" href="#revealjs" aria-hidden="true">#</a> revealjs</h1><div class="language-bash ext-sh"><pre class="language-bash"><code><span class="token function">yarn</span> global <span class="token function">add</span> reveal-md
+
+reveal-md mdFilePath -w
+</code></pre></div><ul><li>\u4E00\u7EA7\u9875\u9762\u53EF\u4EE5\u8BA4\u4E3A\u662F\u4E0D\u540C\u7AE0\u8282, \u5B50\u9875\u9762\u53EF\u4EE5\u8BA4\u4E3A\u662F\u540C\u4E00\u7AE0\u8282\u7684\u4E0D\u540C\u5C0F\u8282</li><li>\u7528---\u533A\u5206\u4E00\u7EA7\u9875\u9762, \u7528--\u533A\u5206\u5B50\u9875\u9762, \u6CE8\u610F\u8FD9\u4E24\u4E2A\u7B26\u53F7\u4E0A\u4E0B\u90FD\u9700\u8981\u7A7A\u884C</li></ul><p>\u63A7\u5236\u56FE\u7247\u5927\u5C0F</p><div class="language-text ext-text"><pre class="language-text"><code>![Alt text](./images/clear_cache.png) &lt;!-- .element: style=&quot;width: 500px;&quot; --&gt;
+</code></pre></div>`,5);function l(n,r){return s}var d=e(t,[["render",l],["__file","revealjs.html.vue"]]);export{d as default};

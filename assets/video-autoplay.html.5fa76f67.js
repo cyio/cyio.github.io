@@ -1,1 +1,0 @@
-const t={key:"v-341558f5",path:"/project/video-autoplay.html",title:"\u6D4F\u89C8\u5668\u81EA\u52A8\u64AD\u653E\u653F\u7B56",lang:"en-US",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1689328179e3,contributors:[{name:"gongyi01",email:"gongyi01@baidu.com",commits:1}]},filePathRelative:"project/video-autoplay.md"};export{t as data};
