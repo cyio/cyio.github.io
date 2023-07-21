@@ -1,1 +1,0 @@
-const t={key:"v-ca469736",path:"/javascript/solutions/dom-list-max-depth.html",title:"",lang:"en-US",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1689405294e3,contributors:[{name:"cyio",email:"icaner@qq.com",commits:1}]},filePathRelative:"javascript/solutions/dom-list-max-depth.md"};export{t as data};
