@@ -66,5 +66,11 @@ setTimeout(() => {
   cacheRequest('v1').then(r => console.log(r))
 }, 500)
 console.log(cache)
-request('v2').then(r => console.log(r))
+request('v1').then(r => console.log(r))
+
+// output
+// { v1: 1689565577795 }
+// { v1: 1689565577795 }
+// { v1: 1689565577796 }
+// { v1: 1689565577795 }
 ```

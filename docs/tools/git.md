@@ -732,3 +732,16 @@ git lfs pull
 
 git config --global alias.undo restore -smain -SW -- This way, you can just do: git undo routes/doc
 
+## 并行开发分支的合并
+
+合并时机：先行分支合并到 master，然后其他分支同步
+
+为什么不能提前？
+1. 先行分支还在改动
+2. 先行分支可能有接口依赖，尚未上线
+
+代价：人工解决冲突，可能需要二次开发，并验证双方功能正常
+
+项目周期长，改动多，长时间未合入主分支，合并复杂度会上升
+
+怎么合：建立三方分支

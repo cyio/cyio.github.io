@@ -11,7 +11,7 @@
 - 请求类：缓存、预请求
 - 计算类：加密、计算 MD5
 - 数据处理：排序、查找
-- 预渲染：canvas
+- 预渲染：canvas（new OffscreenCanvas）
 
 ## 使用
 

@@ -27,7 +27,7 @@
 ;['foo', 'bar', 'baz'].filter(RegExp.prototype.test.bind(/a/)) // ["bar", "baz"]
 ```
 
-- 用`+`号把字符串转成数值
+- 用`+`号把字符串转成数值（JS 特有，不建议使用）
 
 ```js
 var string = '500'

@@ -1,5 +1,5 @@
 # Tips and Tricks
-${toc}
+[[toc]]
 
 ### cheatsheet
 

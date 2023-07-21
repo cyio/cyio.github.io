@@ -1,7 +1,6 @@
 # VSCode
 
-- `cmd-space @` 智能感知
-- `cmd-shift o` symboal jump 查找函数有用，比如定位 methods
+- `cmd-space @` 或 `cmd-shift o`智能感知，symboal jump 查找函数有用，比如定位 methods 勾子
 - `cmd + p` 输入 # 进入工作目录符号搜索模式，后面输入你需要搜索的函数名，输入 @ 只搜索当前 tab
 - `c-k c-m` keybindding map
 - `c-k c-o` fold all `c-k c-j` unfold all

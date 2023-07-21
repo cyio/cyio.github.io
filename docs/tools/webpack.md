@@ -84,6 +84,8 @@ cache-loader 读写磁盘开销、副作用，仓库已废弃、建议升 v5，�
 ```
 use 下面的先执行，使用了 compose
 
+[add filelist plugin · cyio/learn-webpack@4bb4ba2](https://github.com/cyio/learn-webpack/commit/4bb4ba2cdfff892f80a96f5f0532937d15895ab6)
+
 ## loader 与 plugin 区别
 
 1. 工作阶段不一样，先后关系

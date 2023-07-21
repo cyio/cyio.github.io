@@ -89,8 +89,6 @@ const c1 = props => <h1 {...props}>hello</h1>
 
 JSX的基本原理是将类似HTML的标记转换为JavaScript对象
 
-
-
 ### 创建和使用组件
 
 ```js
@@ -330,3 +328,16 @@ React.lazy 配合 Suspense
 1. 服务端渲染
 2. 分块传输
 3. 前端渲染，浏览器原生的流解析器
+
+## tic-tac-toe 井字游戏
+
+规则：玩家交替出子，连成直线算赢家，平局
+
+学到什么：
+- 组件拆成三层（Game 历史记录-> Board 游戏逻辑-> Square）分别有不同职责
+- 如果 JSX 要写很多逻辑，可以拆成一个方法，比如 `list  = history.map(x => <div>x</div>)`
+- 什么情况下用 state，什么情况下用普通变量：判断规则，仅用户操作涉及的改变用 state
+- 数据结构设计（棋局、历史记录）
+- 计算有效直线算法：穷举所有解，用二维数组表示，遍历是否存在满足条件
+- 为什么数据不可变，要 slice 一份
+[react-tic-tac-toe - CodeSandbox](https://codesandbox.io/s/react-tic-tac-toe-3mqsqt?file=/App.js)

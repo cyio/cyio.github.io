@@ -29,12 +29,13 @@ const createNode = text => {
 }
 const setMsg = msg => msg
 
-// 新函数
+// 新函数，从后往前
 const pringMsg = compose(
   write,
   createNode,
   setMsg
 )
 
+// 变量
 pringMsg('Hello1')
 ```

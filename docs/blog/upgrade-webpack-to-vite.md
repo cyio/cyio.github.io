@@ -10,7 +10,7 @@
 `npx @originjs/webpack-to-vite buzz-bit`
 
 脚本，会复制一个项目，执行生成 vite config 等动作
-	![Pasted image 20221231113919.png](http://ww1.sinaimg.cn/large/4e5d3ea7ly1h9p5h8wfdxj20ip0d642v.jpg)
+	![Pasted image 20221231113919.png](https://img.oaker.bid/?url=http://ww1.sinaimg.cn/large/4e5d3ea7ly1h9p5h8wfdxj20ip0d642v.jpg)
 
 2. 上一步操作后，还有不少问题需要手动修改
 	1. 页面白屏，检查 index.html 加载路径及文件内容
