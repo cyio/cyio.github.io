@@ -94,6 +94,20 @@ catch 然后 mute play？
 
     解决，可以在 audio 父级阻断传播`onClick={(e: any) => e.stopPropagation()`
 
-## chromium 多进程架构
+## Chromium 多进程架构
+
+历史背景，单进程，易受插件影响
+
+Browser - 浏览器进程
+	Renderer - 渲染器进程
+	RenderFrame - 渲染帧 Document
+
+- 渲染器进程共享（如同源打开）
+- 崩溃检测
+- 沙盒安全控制
+- 内存返还（类似操作系统，后台释放）
+- 额外进程类型：GPU、网络、存储
+
+![arch.png (700×649)](https://www.chromium.org/developers/design-documents/multi-process-architecture/arch.png)
 
 [Multi-process Architecture](https://www.chromium.org/developers/design-documents/multi-process-architecture/)

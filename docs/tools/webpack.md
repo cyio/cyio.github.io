@@ -109,6 +109,8 @@ common 共用
 
 [How to Reduce Your Vue.JS Bundle Size With Webpack](https://www.jenniferbland.com/how-to-reduce-your-vue-js-bundle-size-with-webpack/)
 
+思路：应用打成一个 JS 文件，包体太大，所以需要拆分，拆分原则，第三方、共用、页面
+
 ## 分包 - 提取公共模块
 
 - why:

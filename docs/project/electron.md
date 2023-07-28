@@ -139,6 +139,10 @@ https://github.com/electron/electron/issues/7118#issuecomment-483681104
 - 降低迭代成本（分发带宽？）
 - 提升
 
+## webview 
+
+默认没有网络缓存？
+
 ## webview vs browserview
 
 最大的区别在于 browserview 托管于 main process 而不是 renderer。这非常类似于 Chrome 中对页面的处理方式，因此可以获得很高的页面响应速度。
@@ -287,3 +291,4 @@ https://koffi.dev/functions?highlight=decode
 Qt是一个跨平台的C++应用程序开发框架，它提供了丰富的功能和高性能。Qt应用程序通常被编译为本地机器码，因此在性能方面表现较好。Qt还有一个轻量级的版本Qt Quick，它使用QML语言来构建用户界面，可以实现更快的渲染和动画效果。
 
 由于 Chromium 需要同时运行JavaScript和渲染网页，Electron应用程序的性能可能相对较低，尤其是在处理大量数据或运行复杂计算时。
+

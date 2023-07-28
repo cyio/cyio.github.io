@@ -313,6 +313,10 @@ useMemo 缓存计算值，仅依赖变化时重新计算
 
 React.lazy 配合 Suspense
 
+suspense 暂停、未确定
+
+- [ ] [React18 并发原理 | promise96319](https://www.qinguanghui.com/articles/react-concurrency#_6-%25E5%25B0%258F%25E7%25BB%2593)
+
 ## setState 何时同步、何时异步
 
 与 Vue 原理一样，由于是状态驱动视图，如果 state 短时间内频繁设置，是否要立刻响应渲染呢？当然不是，所以要在一次同步代码执行完、合并更新，在 React 中是等父子组件的内置事件监听器中的 setState 全部执行完。
