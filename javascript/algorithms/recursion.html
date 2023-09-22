@@ -23,7 +23,7 @@
 			}
     </script>
     <link rel="icon" href="/favicon.ico"><link rel="manifest" href="/manifest.json"><meta name="theme-color" content="#0089a7"><meta name="referrer" content="no-referrer"><link rel="apple-touch-icon" sizes="180x180" href="/favicon.ico"><title>递归 | Oaker小站</title><meta name="description" content="Just playing around">
-    <link rel="modulepreload" href="/assets/app.c8e57aca.js"><link rel="modulepreload" href="/assets/recursion.html.eb3dea8c.js"><link rel="modulepreload" href="/assets/recursion.html.ba480e02.js">
+    <link rel="modulepreload" href="/assets/app.0a28e50e.js"><link rel="modulepreload" href="/assets/recursion.html.125221e3.js"><link rel="modulepreload" href="/assets/recursion.html.d663a8f9.js">
     <link rel="stylesheet" href="/assets/style.1f6754f1.css">
   </head>
   <body>
@@ -56,6 +56,6 @@ f(n) = f(n - 1) + 1
 <span class="token punctuation">}</span>
 <span class="token function">getElementById</span><span class="token punctuation">(</span>document<span class="token punctuation">,</span> <span class="token string">&quot;d-cal&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre></div><h2 id="缺点" tabindex="-1"><a class="header-anchor" href="#缺点" aria-hidden="true">#</a> 缺点</h2><ol><li>堆栈溢出</li><li>效率，不及非递归实现</li></ol><blockquote></blockquote><p>在程序执行中，递归是利用堆栈来实现的。每当进入一个函数调用，栈就会增加一层栈帧（存放临时变量），每次函数返回，栈就会减少一层栈帧。而栈不是无限大的，当递归层数过多时，就会造成 栈溢出 的后果。</p><p>应对：限制递归深度</p><h2 id="优化" tabindex="-1"><a class="header-anchor" href="#优化" aria-hidden="true">#</a> 优化</h2><p>重复计算：memo</p><p>转为非递归，本质并没有变</p><p>记忆化递归，时间由 O(n^2) 降到 O(n)</p><p>滚动数组，可以将空间由 O(n) 降到 O(1)</p><h2 id="调试" tabindex="-1"><a class="header-anchor" href="#调试" aria-hidden="true">#</a> 调试</h2><ol><li><p>打印日志发现，递归值。</p></li><li><p>结合条件断点进行调试。</p></li></ol><p>代入较小的数枚举验证</p><!--]--></div><footer class="page-meta"><!----><div class="meta-item last-updated"><span class="meta-item-label">Last Updated: </span><!----></div><div class="meta-item contributors"><span class="meta-item-label">Contributors: </span><span class="meta-item-info"><!--[--><!--[--><span class="contributor" title="email: gongyi01@baidu.com">gongyi01</span><!----><!--]--><!--]--></span></div></footer><nav class="page-nav"><p class="inner"><span class="prev"><a href="/javascript/algorithms/leetcode.html" class="" aria-label="Leetcode"><!--[--><!--]--> Leetcode <!--[--><!--]--></a></span><span class="next"><a href="/javascript/algorithms/search.html" class="" aria-label="查找"><!--[--><!--]--> 查找 <!--[--><!--]--></a></span></p></nav><!--[--><!--]--></main><!--]--></div><!----><!--]--></div>
-    <script type="module" src="/assets/app.c8e57aca.js" defer></script>
+    <script type="module" src="/assets/app.0a28e50e.js" defer></script>
   </body>
 </html>

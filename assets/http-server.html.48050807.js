@@ -1,0 +1,1 @@
+const e={key:"v-eadfc676",path:"/node/http-server.html",title:"http-server",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"live-server",slug:"live-server",children:[]}],git:{updatedTime:1695384324e3,contributors:[{name:"gongyi01",email:"gongyi01@baidu.com",commits:1}]},filePathRelative:"node/http-server.md"};export{e as data};

@@ -1,1 +1,0 @@
-const t={key:"v-48216b8e",path:"/javascript/scope.html",title:"\u4F5C\u7528\u57DF",lang:"en-US",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1690537847e3,contributors:[{name:"gongyi01",email:"gongyi01@baidu.com",commits:1}]},filePathRelative:"javascript/scope.md"};export{t as data};
