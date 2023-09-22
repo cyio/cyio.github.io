@@ -3,6 +3,12 @@
 
 ## ref 与 reactivity
 
+ref 用于处理简单的响应式值
+
+模板中自动解包（仅顶级）
+
+reactive 深层响应式
+
 问题: reactivity 由于使用 proxy，直接对数组和对象赋值，会失去响应式
 
 解法：
@@ -109,3 +115,19 @@ https://chatthing.ai/bots/a2625c1a-8012-42dc-b87d-10e3f0196306/
 [更灵活的代码组织 - 组合式 API 常见问答 | Vue.js](https://cn.vuejs.org/guide/extras/composition-api-faq.html#more-flexible-code-organization)
 
 官方示例：比如文件浏览器，useCreateFolder  data 声明、计算属性聚合在一个函数中
+
+## setup
+
+不能访问 this，需要显式返回模板数据
+
+## Suspense
+
+模板数据等待，自动化
+
+支持两种情况
+1. 异步依赖：async setup 顶级 await
+2. 异步组件：async component，等拉取 JS bundle
+
+https://codesandbox.io/s/using-suspense-and-async-setup-in-vue-3-forked-yw2q9l?file=/src/components/MyAsyncComponent.vue
+
+高级示例：[Suspense | Vue.js](https://vuejs.org/guide/built-ins/suspense.html#combining-with-other-components)

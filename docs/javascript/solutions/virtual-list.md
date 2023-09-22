@@ -1,12 +1,16 @@
+# 虚拟列表
+
+## Why
+
 如何渲染大量数据在页面上？
 
-## 虚拟列表
+## 原理
 
 只渲染可视区域
 
 滚动时，计算并更新开始位置和结束位置
 
-### vue-virtual-scroll-list
+## vue-virtual-scroll-list
 
 使用：
 resized  item mounted 时触发

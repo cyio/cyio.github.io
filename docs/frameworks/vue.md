@@ -586,3 +586,8 @@ scrollBehavior
 
 [vue.js - What exactly is Vue's runtime-only build and how does it differ from compiler build? - Stack Overflow](https://stackoverflow.com/questions/66393740/what-exactly-is-vues-runtime-only-build-and-how-does-it-differ-from-compiler-bu)
 
+## 计算属性与方法
+
+计算属性 三大特点：缓存、自动依赖追踪、模板中使用
+
+计算属性适合在模板中使用，将复杂的计算逻辑与界面绑定分离，以及在频繁使用相同计算逻辑的情况下进行性能优化。方法则适合处理具有交互性、需要手动触发或不需要缓存的逻辑。选择使用哪种方式取决于你的具体需求和设计考虑。
