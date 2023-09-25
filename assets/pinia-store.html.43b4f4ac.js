@@ -1,0 +1,1 @@
+const e={key:"v-1ee09a0e",path:"/frameworks/pinia-store.html",title:"",lang:"en-US",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1695611604e3,contributors:[{name:"cyio",email:"icaner@qq.com",commits:1}]},filePathRelative:"frameworks/pinia-store.md"};export{e as data};
