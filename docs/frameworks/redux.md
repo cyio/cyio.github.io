@@ -86,3 +86,6 @@ takeEvery or takeLatest saga 有多个时
 
 [https://github.com/redux-saga/redux-saga-beginner-tutorial](https://gist.github.com/cyio/627a6bbe5a3eb3c43a6630804568c59e)
 
+> Redux 最大的问题不在于 boilerplate，而在于违反 code locality，也就是处理相近逻辑的代码必须放在相近的位置。你想看完一个 action 前后所有逻辑？那你至少要打开三四个文件，看看它是如何被 dispatch 的，看看它的 reducer 做了什么。如果这是个异步操作，你还要跨越多个 action 才能理解从前到后这到底在做什么。
+
+链接：https://www.zhihu.com/question/525009644/answer/3172271462  

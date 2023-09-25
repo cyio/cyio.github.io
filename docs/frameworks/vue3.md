@@ -1,6 +1,8 @@
 # Vue 3
 [[toc]]
 
+![image.png](https://img.oaker.bid/?url=http://tvax1.sinaimg.cn/mw690/4e5d3ea7ly1hhzulm48rwj235s1xuqv5.jpg)
+
 ## ref 与 reactivity
 
 ref 用于处理简单的响应式值

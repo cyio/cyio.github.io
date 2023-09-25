@@ -263,3 +263,9 @@ flyweight
 
 [前端的设计模式系列-基本原则 | 前端的设计模式系列](https://pattern.windliang.wang/posts/%25E5%2589%258D%25E7%25AB%25AF%25E7%259A%2584%25E8%25AE%25BE%25E8%25AE%25A1%25E6%25A8%25A1%25E5%25BC%258F%25E7%25B3%25BB%25E5%2588%2597-%25E5%259F%25BA%25E6%259C%25AC%25E5%258E%259F%25E5%2588%2599.html)
 [Patterns.dev - Modern Web App Design Patterns](https://www.patterns.dev/)
+
+## 代码临近组织
+
+code locality
+
+通常指的是在软件程序中将相关的代码组件放在一起的概念。这种做法旨在改善代码的可读性、可维护性和整体开发效率。通过将相关的代码元素放在一起，开发人员可以更容易地理解和处理逻辑，减少在代码库中导航和理解所需的认知负担。

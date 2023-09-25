@@ -292,3 +292,6 @@ Qt是一个跨平台的C++应用程序开发框架，它提供了丰富的功能
 
 由于 Chromium 需要同时运行JavaScript和渲染网页，Electron应用程序的性能可能相对较低，尤其是在处理大量数据或运行复杂计算时。
 
+## worker
+
+在 Electron 中，你可以直接使用 Node.js 的多线程模块 `worker_threads` 来实现多线程任务，而无需使用 Web Worker。
