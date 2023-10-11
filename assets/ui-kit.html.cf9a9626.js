@@ -1,0 +1,1 @@
+const t={key:"v-7d6a2d4d",path:"/project/ui-kit.html",title:"UI-KIT",lang:"en-US",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:169702367e4,contributors:[{name:"gongyi01",email:"gongyi01@baidu.com",commits:1}]},filePathRelative:"project/ui-kit.md"};export{t as data};

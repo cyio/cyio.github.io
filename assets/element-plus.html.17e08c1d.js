@@ -1,0 +1,5 @@
+import{_ as n,e as s}from"./app.09ed0e9b.js";const a={},e=s(`<h2 id="\u7236\u7EC4\u4EF6\u5982\u4F55\u4F7F\u7528-defineexpose-\u66B4\u9732\u7684\u5C5E\u6027" tabindex="-1"><a class="header-anchor" href="#\u7236\u7EC4\u4EF6\u5982\u4F55\u4F7F\u7528-defineexpose-\u66B4\u9732\u7684\u5C5E\u6027" aria-hidden="true">#</a> \u7236\u7EC4\u4EF6\u5982\u4F55\u4F7F\u7528 defineExpose \u66B4\u9732\u7684\u5C5E\u6027</h2><div class="language-javascript ext-js"><pre class="language-javascript"><code><span class="token keyword">function</span> <span class="token function">changeButtonClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// \u4FEE\u6539\u5B50\u7EC4\u4EF6\u66B4\u9732\u7684\u5C5E\u6027</span>
+  buttonRef<span class="token punctuation">.</span>value<span class="token punctuation">.</span>buttonClass <span class="token operator">=</span> <span class="token string">&#39;new-class&#39;</span>
+<span class="token punctuation">}</span>
+</code></pre></div>`,2);function t(c,o){return e}var l=n(a,[["render",t],["__file","element-plus.html.vue"]]);export{l as default};
