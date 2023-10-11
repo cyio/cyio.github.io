@@ -43,3 +43,7 @@ ES6 module + rollup-based for production
 >vite在dev下有明显的性能提升，体验是飞速的，但是在浏览器请求页面时，会同时加载大量js文件，这导致在速度上也有一定的牺牲，而webpack在构建上确实会慢很多，并且项目的文件越多越慢，但是一但构建好，在浏览器端体验是要比vite快的。另外vite即便是在生产环境下采用rollup对文件进行打包，但是对于IE的支持还是不好，并且生产打包的速度和webpack基本上一致，总之，如果项目已经很稳定并且很庞大，不建议换vite。
 
 [B端系统改造Vite最佳实践 | 吕小鸣前端博客](https://www.nihaoshijie.com.cn/index.php/archives/1903/)
+
+## Rolldown
+
+[尤雨溪：Vite的现状与未来展望 - 前端充电宝 - 博客园](https://www.cnblogs.com/cuggz/archive/2023/10/06/17744353.html)

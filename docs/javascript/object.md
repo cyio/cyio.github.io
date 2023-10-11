@@ -36,12 +36,13 @@ for (myvar in obj) {
 - `Object.getOwnPropertyNames()`与`Object.keys()`的区别是，后者仅可以输出可枚举属性(哪些算不可枚举属性，继承的内置方法 fuction，注意前面方法中的 own)
   简单说是 in 和 own 的区分，前者能取到继承属性
 
-### 合并
+### 复制、合并
+
 Object.assign
 
 参数：(target, source, ...)
 
-注意会改变 target
+会修改目标对象的属性，但不会改变目标对象指针
 
 如果只是想合并 `let merged = Object.assign({}, a, b)`
 

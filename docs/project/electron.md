@@ -187,7 +187,11 @@ https://github.dev/sindresorhus/electron-unhandled/blob/a302ae5367af900872d889cd
 
 electron 的一个模块，收集主进程崩溃信息，支持设置上报地址，可配置 sentry 使用
 
-crash free sessions 免于崩溃的会话数，100 减去即崩溃的会话数
+crash free sessions 免于崩溃、即正常的会话数，用 100 减去即崩溃的会话数
+
+存储用户目录：Crashpad
+
+https://www.electronjs.org/docs/latest/api/crash-reporter
 
 ## 打包
 

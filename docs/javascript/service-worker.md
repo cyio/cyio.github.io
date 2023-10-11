@@ -1,5 +1,7 @@
 # Service Worker
 
+> rocket science
+
 - Service workers are generic, event-driven, time-limited script contexts that run at an origin.
 - web-worker 为 JS 增加多线程，比如计算量大可以交给 web-worker
 - service-worker 是基于 web-worker，主要处理网络请求相关
@@ -16,3 +18,6 @@
 [Introduction to Service Worker  |  Web  |  Google Developers](https://developers.google.com/web/ilt/pwa/introduction-to-service-worker)
 [Service Worker 全面进阶 - 前端的 bigboom - SegmentFault 思否](https://segmentfault.com/a/1190000008050742)
 
+## issue
+
+[谨慎处理 Service Worker 的更新 - 知乎](https://zhuanlan.zhihu.com/p/51118741)

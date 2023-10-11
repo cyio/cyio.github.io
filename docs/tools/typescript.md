@@ -294,3 +294,20 @@ pig.name = 'jack'
 ## 适合场景
 
 [你为什么不使用 TypeScript？ - 知乎](https://www.zhihu.com/question/273619114/answer/1907885114)
+
+## 使用JavaScript与JSDoc注释来模拟TypeScript的类型检查和类型提示功能
+
+VSCode内置了对JSDoc的支持，无需额外配置
+
+VSCode VSCode  10 个最常用技巧
+1. 在函数或方法的上方输入`/**`，然后按`Enter`
+2. 三段式结构，类型、字段名、注释）：`* @property {string} name - 用户名字`
+3. 函数上 hover 提示类型约束
+
+```
+变量类型 @type
+自定义类型 @typedef
+函数描述 @description
+枚举 @enum
+示例 @example
+```

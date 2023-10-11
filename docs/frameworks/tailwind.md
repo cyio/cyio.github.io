@@ -4,7 +4,6 @@
 
 - 替代一部分设计师工作-出设计稿
 - 替代一部分前端工作-还原设计稿
-
 ## 优劣
 
 - 不用给 class 起名，同时避免全局污染
@@ -17,7 +16,20 @@
 
 默认 0.25rem == 4px，桌面端 x4 就好了
 
+gap-4  4个单位的间距，Tailwind 预定义 1 个单位 0.25rem spacing
+
 ## 布局
+
+```html
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+  <!-- 这里放置栅格项 -->
+  <div class="bg-gray-200 p-4">栅格项 1</div>
+  <div class="bg-gray-200 p-4">栅格项 2</div>
+  <div class="bg-gray-200 p-4">栅格项 3</div>
+  <div class="bg-gray-200 p-4">栅格项 4</div>
+</div>
+
+```
 
 ## 盒模型
 
@@ -25,7 +37,9 @@ py-6  padding-y 纵轴
 
 ## 颜色
 
-bg-gray-50 到 bg-gray-950 明度
+bg-gray-50 到 bg-gray-950 明度/色阶
+
+bg-gray-950/50 加上 50% 透明
 
 shadow-xl 2xl
 
@@ -47,16 +61,17 @@ leading-7 行间距为字体大小的 1.7 倍
 
 [前端成功转型后端开发的机会在哪里；如何评价框架TailwindCSS；前端的未来是远程工作吗｜极客观点-阿里云开发者社区](https://developer.aliyun.com/article/1036306)
 
-## 官网
+## 商业模式
 
 tailwindui 是官方商业项目，百万美元生意
 
 ## 与 bootstrap 比较
 
+bootstrap 基于组件
+
 同质化严重
 
-utility-first，随意组合、自由度高
-
+tailwind utility-first，随意组合、自由度高
 
 ## 使用体验&技巧
 
@@ -89,3 +104,77 @@ live 看效果
 https://play.tailwindcss.com/
 
 https://ui.shadcn.com/
+
+## 速查
+
+1. **布局 (Layout)**:
+    
+    - `container`: 设置页面宽度和内边距，使内容居中。
+    - `mx-auto`: 设置左右外边距为自动以水平居中内容。
+    - `flex`: 创建一个弹性容器，用于创建灵活的布局。
+    - `grid`: 创建一个网格容器，用于网格布局。
+    - `col-span-{n}`: 定义一个网格列的跨度，其中 `{n}` 是一个整数。
+2. **背景 (Background)**:
+    
+    - `bg-{color}`: 设置背景颜色，其中 `{color}` 是一个颜色名称或颜色代码。
+    - `bg-opacity-{value}`: 设置背景颜色的不透明度，其中 `{value}` 是 0 到 100 之间的数字。
+3. **文本 (Typography)**:
+    
+    - `text-{color}`: 设置文本颜色。
+    - `text-opacity-{value}`: 设置文本颜色的不透明度。
+    - `text-{size}`: 设置文本大小，其中 `{size}` 可以是类似 `sm`、`lg`、`xl` 的尺寸。
+    - `font-{weight}`: 设置字体粗细，其中 `{weight}` 可以是 `normal`、`bold`、`semibold` 等。
+4. **边框 (Border)**:
+    
+    - `border`: 添加边框。
+    - `border-{color}`: 设置边框颜色。
+    - `border-{width}`: 设置边框宽度，其中 `{width}` 可以是 `1`、`2`、`4` 等。
+    - `rounded`: 添加圆角边框。
+    - `border-opacity-{value}`: 设置边框颜色的不透明度。
+5. **间距 (Spacing)**:
+    
+    - `m-{size}`: 设置外边距。
+    - `p-{size}`: 设置内边距。
+6. **宽度和高度 (Width and Height)**:
+    
+    - `w-{size}`: 设置元素的宽度。
+    - `h-{size}`: 设置元素的高度。
+7. **阴影和动画 (Shadows and Animations)**:
+    
+    - `shadow-{size}`: 添加阴影效果。
+    - `animate-{animation}`: 添加动画效果，其中 `{animation}` 是动画的名称。
+8. **响应式 (Responsive)**:
+    
+    - `sm`, `md`, `lg`, `xl`: 用于在不同屏幕尺寸上应用不同的样式。
+
+## 高级示例
+
+### 卡片
+
+```html
+<div class="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden">
+  <img class="w-full h-48 object-cover" src="https://via.placeholder.com/300x200" alt="Card image">
+  <div class="px-6 py-4">
+    <h3 class="text-xl font-semibold text-gray-800">卡片标题</h3>
+    <p class="mt-2 text-gray-600">这是卡片的一些文本内容。你可以在这里添加更多信息。</p>
+  </div>
+</div>
+
+```
+
+## 自定义、扩展
+
+1. 原始方式，直接定义 class
+2. @layer 指令，明确添加到某一层
+
+```
+base // 第一层
+components // 第二层，可被 util 规则覆盖
+utilities
+```
+
+[Adding Custom Styles - Tailwind CSS](https://tailwindcss.com/docs/adding-custom-styles)
+
+## 兼容性
+
+不支持 IE
