@@ -10,11 +10,17 @@
 
 ## 原理
 
+设计理念：原子类、组合
+
 > tailwind 本质上就是一个 postcss 插件，通过 AST 来分析 css 代码，对 css 做增删改，并且可以通过 extractor 提取 js、html 中的 class，之后基于这些来生成最终的 css 代码。
+
+### JIT 编译:
+
+通过 Just-In-Time (JIT) 编译，Tailwind CSS 会在构建时根据项目中实际使用的类生成精简的 CSS，而不会包含未使用的样式，从而减小 CSS 文件的大小。
 
 ## 单位
 
-默认 0.25rem == 4px，桌面端 x4 就好了
+默认 1 个单位 0.25rem == 4px，桌面端 x4 就好了
 
 gap-4  4个单位的间距，Tailwind 预定义 1 个单位 0.25rem spacing
 
@@ -81,8 +87,6 @@ tailwind utility-first，随意组合、自由度高
 
 - 需要 CSS 基础，编写体验与写 CSS 加补全类似
 - postcss 替代 sass/less
-
-
 ## script 方式
 
 https://cdn.tailwindcss.com/ 会 302 重定向到最新版，100kb 大小
@@ -162,14 +166,26 @@ https://ui.shadcn.com/
 
 ```
 
+## 布局
+
+```html
+<div class="p-2 text-center h-300 bg-slate-100">header</div>
+<div class="flex">
+  <div class="w-1/4 bg-gray-300 p-4 h-screen">left</div>
+  <div class="w-3/4 p-4 h-screen">right</div>
+</div>
+```
 ## 自定义、扩展
 
 1. 原始方式，直接定义 class
 2. @layer 指令，明确添加到某一层
 
 ```
-base // 第一层
+// 三层结构，优先级
+base // 第一层，全局基础样式
+
 components // 第二层，可被 util 规则覆盖
+
 utilities
 ```
 
@@ -178,3 +194,42 @@ utilities
 ## 兼容性
 
 不支持 IE
+
+```
+<div class="p-2 text-center h-300 bg-slate-100">header</div>
+
+<div class="flex">
+
+<div class="w-1/4 bg-gray-300 p-4 h-screen">left</div>
+
+<div class="w-3/4 p-4 h-screen">right</div>
+
+</div>
+```
+
+## 源码
+
+`plugins` 数组： 这个数组包含了一系列的函数，它们在处理 CSS 样式时会被依次执行。这些函数用于处理导入规则、处理 Tailwind CSS 特性、以及应用 Lightning CSS 转换。
+
+- `handleImportAtRules()`: 返回一些处理导入规则的函数。
+- 一个异步函数，用于处理 Tailwind CSS 特性，通过调用 `processTailwindFeatures`。
+- `lightningCssPlugin`: 用于将 CSS 样式应用 Lightning CSS 转换。
+
+lightningcss rust 编写，光速，追求性能，类似 esbuild
+可以控制 target
+
+## 对比
+
+| | | | | | |
+
+|---|---|---|---|---|---|
+
+|名称|star 数|定位|诞生时间|优劣|使用场景|
+
+|Tailwind CSS|72.8k|实用的 CSS 框架，提供原子级样式|2017 年|优点：更灵活，可自定义样式，小型项目适用<br><br>缺点：学习曲线较陡峭，需要编写更多类名|小型项目、个性化设计、更灵活的需求|
+
+|Bootstrap|166k|综合组件库|2011 年|优点：快速搭建，大型项目适用<br><br>缺点：较固定，自定义样式复杂|大型项目、快速开发、传统的网站建设|
+
+|Element Plus|11.4k|综合组件库|2021 年|
+
+|Ant Design Vue|3.6k|综合组件库|2019 年|

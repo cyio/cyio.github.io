@@ -104,7 +104,7 @@ if (a === b) {
 1. 暴力 O n^3
 2. 双指针 如何做到不重复（有序 + 有两个数字不重复，第三个数字一定不重复，不会出现 [1, 2]，[2, 1]，每个数字开头的解要穷举）
 
-```
+```js
 function threeSum(nums, target = 0) {
     // let res = []
     let res: number[][] = []
