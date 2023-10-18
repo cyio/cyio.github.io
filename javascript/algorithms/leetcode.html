@@ -23,7 +23,7 @@
 			}
     </script>
     <link rel="icon" href="/favicon.ico"><link rel="manifest" href="/manifest.json"><meta name="theme-color" content="#0089a7"><meta name="referrer" content="no-referrer"><link rel="apple-touch-icon" sizes="180x180" href="/favicon.ico"><title>Leetcode | Oaker小站</title><meta name="description" content="Just playing around">
-    <link rel="modulepreload" href="/assets/app.09ed0e9b.js"><link rel="modulepreload" href="/assets/leetcode.html.806e1e92.js"><link rel="modulepreload" href="/assets/leetcode.html.a09ba8df.js">
+    <link rel="modulepreload" href="/assets/app.8f3197fa.js"><link rel="modulepreload" href="/assets/leetcode.html.38e8a680.js"><link rel="modulepreload" href="/assets/leetcode.html.e5be0f22.js">
     <link rel="stylesheet" href="/assets/style.1f6754f1.css">
   </head>
   <body>
@@ -32,38 +32,38 @@
 <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
   table<span class="token punctuation">[</span>row<span class="token punctuation">]</span><span class="token punctuation">[</span>col<span class="token punctuation">]</span> <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">max</span><span class="token punctuation">(</span>table<span class="token punctuation">[</span>row<span class="token punctuation">]</span><span class="token punctuation">[</span>col <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> table<span class="token punctuation">[</span>row <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>col<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code></pre></div><p><img src="https://img.oaker.bid/?url=http://ww2.sinaimg.cn/large/4e5d3ea7ly1gyr42umo68j20av06ytbt.jpg" alt="4e5d3ea7ly1gyr42umo68j20av06ytbt.jpg (391×250)"></p><p>关联题目：583. 两个字符串的删除操作</p><h2 id="三数之和" tabindex="-1"><a class="header-anchor" href="#三数之和" aria-hidden="true">#</a> 三数之和</h2><ol><li>暴力 O n^3</li><li>双指针 如何做到不重复（有序 + 有两个数字不重复，第三个数字一定不重复，不会出现 [1, 2]，[2, 1]，每个数字开头的解要穷举）</li></ol><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>function threeSum(nums, target = 0) {
-    // let res = []
-    let res: number[][] = []
-    nums.sort((a, b) =&gt; a - b)
-    for (let i = 0; i &lt; nums.length; i++) {
-        if (i &gt; 0 &amp;&amp; nums[i] === nums[i - 1]) continue
-        let l = i + 1
-        let r = nums.length - 1
-        while(l &lt; r) {
-            let other = target - nums[i]
-            let sum = nums[l] + nums[r]
-            if (sum &gt; other) r--
-            if (sum &lt; other) l++
-            if (sum === other) {
-                res.push([nums[i], nums[l], nums[r]])
-                if (l &lt; r &amp;&amp; nums[l + 1] === nums[l]) { // 下一个值与当前值相同时，多跳一步
-                    l+=2
-                } else {
-                    l++
-                }
-            }
-        }
-    }
+</code></pre></div><p><img src="https://img.oaker.bid/?url=http://ww2.sinaimg.cn/large/4e5d3ea7ly1gyr42umo68j20av06ytbt.jpg" alt="4e5d3ea7ly1gyr42umo68j20av06ytbt.jpg (391×250)"></p><p>关联题目：583. 两个字符串的删除操作</p><h2 id="三数之和" tabindex="-1"><a class="header-anchor" href="#三数之和" aria-hidden="true">#</a> 三数之和</h2><ol><li>暴力 O n^3</li><li>双指针 如何做到不重复（有序 + 有两个数字不重复，第三个数字一定不重复，不会出现 [1, 2]，[2, 1]，每个数字开头的解要穷举）</li></ol><div class="language-javascript ext-js line-numbers-mode"><pre class="language-javascript"><code><span class="token keyword">function</span> <span class="token function">threeSum</span><span class="token punctuation">(</span><span class="token parameter">nums<span class="token punctuation">,</span> target <span class="token operator">=</span> <span class="token number">0</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// let res = []</span>
+    <span class="token keyword">let</span> <span class="token literal-property property">res</span><span class="token operator">:</span> number<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    nums<span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span> b</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> a <span class="token operator">-</span> b<span class="token punctuation">)</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> nums<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">&gt;</span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">===</span> nums<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token keyword">continue</span>
+        <span class="token keyword">let</span> l <span class="token operator">=</span> i <span class="token operator">+</span> <span class="token number">1</span>
+        <span class="token keyword">let</span> r <span class="token operator">=</span> nums<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span>l <span class="token operator">&lt;</span> r<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">let</span> other <span class="token operator">=</span> target <span class="token operator">-</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+            <span class="token keyword">let</span> sum <span class="token operator">=</span> nums<span class="token punctuation">[</span>l<span class="token punctuation">]</span> <span class="token operator">+</span> nums<span class="token punctuation">[</span>r<span class="token punctuation">]</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>sum <span class="token operator">&gt;</span> other<span class="token punctuation">)</span> r<span class="token operator">--</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>sum <span class="token operator">&lt;</span> other<span class="token punctuation">)</span> l<span class="token operator">++</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>sum <span class="token operator">===</span> other<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                res<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">[</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> nums<span class="token punctuation">[</span>l<span class="token punctuation">]</span><span class="token punctuation">,</span> nums<span class="token punctuation">[</span>r<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>l <span class="token operator">&lt;</span> r <span class="token operator">&amp;&amp;</span> nums<span class="token punctuation">[</span>l <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">===</span> nums<span class="token punctuation">[</span>l<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// 下一个值与当前值相同时，多跳一步</span>
+                    l<span class="token operator">+=</span><span class="token number">2</span>
+                <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                    l<span class="token operator">++</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
 
-    return res
-}
+    <span class="token keyword">return</span> res
+<span class="token punctuation">}</span>
 
 
 
-console.log(threeSum([-1, -2, 2, -2, 0, 4, 1]))
-console.log(threeSum([0, 0, 0, 0]))
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">threeSum</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">threeSum</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br></div></div><!--]--></div><footer class="page-meta"><!----><div class="meta-item last-updated"><span class="meta-item-label">Last Updated: </span><!----></div><div class="meta-item contributors"><span class="meta-item-label">Contributors: </span><span class="meta-item-info"><!--[--><!--[--><span class="contributor" title="email: gongyi01@baidu.com">gongyi01</span><!----><!--]--><!--]--></span></div></footer><nav class="page-nav"><p class="inner"><span class="prev"><a href="/javascript/algorithms/leetcode-topic-model.html" class="" aria-label="题模"><!--[--><!--]--> 题模 <!--[--><!--]--></a></span><span class="next"><a href="/javascript/algorithms/recursion.html" class="" aria-label="递归"><!--[--><!--]--> 递归 <!--[--><!--]--></a></span></p></nav><!--[--><!--]--></main><!--]--></div><!----><!--]--></div>
-    <script type="module" src="/assets/app.09ed0e9b.js" defer></script>
+    <script type="module" src="/assets/app.8f3197fa.js" defer></script>
   </body>
 </html>

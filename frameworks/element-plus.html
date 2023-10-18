@@ -23,7 +23,7 @@
 			}
     </script>
     <link rel="icon" href="/favicon.ico"><link rel="manifest" href="/manifest.json"><meta name="theme-color" content="#0089a7"><meta name="referrer" content="no-referrer"><link rel="apple-touch-icon" sizes="180x180" href="/favicon.ico"><title>Oaker小站</title><meta name="description" content="Just playing around">
-    <link rel="modulepreload" href="/assets/app.09ed0e9b.js"><link rel="modulepreload" href="/assets/element-plus.html.cefabf85.js"><link rel="modulepreload" href="/assets/element-plus.html.17e08c1d.js">
+    <link rel="modulepreload" href="/assets/app.8f3197fa.js"><link rel="modulepreload" href="/assets/element-plus.html.9920934e.js"><link rel="modulepreload" href="/assets/element-plus.html.e73bbf5e.js">
     <link rel="stylesheet" href="/assets/style.1f6754f1.css">
   </head>
   <body>
@@ -31,7 +31,14 @@
   <span class="token comment">// 修改子组件暴露的属性</span>
   buttonRef<span class="token punctuation">.</span>value<span class="token punctuation">.</span>buttonClass <span class="token operator">=</span> <span class="token string">&#39;new-class&#39;</span>
 <span class="token punctuation">}</span>
+</code></pre></div><p>渲染性能，主要发生在 mount -&gt; patch，以 slide 为例，用了很多 computed，自己实现只用 1 个</p><p>页面用了几十个组件</p><div class="language-text ext-text"><pre class="language-text"><code>实例化组件
+	Render 函数执行
+		创建虚拟 DOM
+			更新虚拟 DOM
+				Patch（补丁）比较，找出变更
+					挂载到 DOM
+						生命周期钩子执行 mounted
 </code></pre></div><!--]--></div><footer class="page-meta"><!----><div class="meta-item last-updated"><span class="meta-item-label">Last Updated: </span><!----></div><div class="meta-item contributors"><span class="meta-item-label">Contributors: </span><span class="meta-item-info"><!--[--><!--[--><span class="contributor" title="email: gongyi01@baidu.com">gongyi01</span><!----><!--]--><!--]--></span></div></footer><nav class="page-nav"><p class="inner"><span class="prev"><a href="/frameworks/date-fns.html" class="" aria-label="date-fns"><!--[--><!--]--> date-fns <!--[--><!--]--></a></span><span class="next"><a href="/frameworks/element-ui.html" class="" aria-label="element-ui"><!--[--><!--]--> element-ui <!--[--><!--]--></a></span></p></nav><!--[--><!--]--></main><!--]--></div><!----><!--]--></div>
-    <script type="module" src="/assets/app.09ed0e9b.js" defer></script>
+    <script type="module" src="/assets/app.8f3197fa.js" defer></script>
   </body>
 </html>
