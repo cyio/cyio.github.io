@@ -1,0 +1,1 @@
+const e={key:"v-9df2e2d6",path:"/javascript/solutions/reduce.html",title:"reduce",lang:"en-US",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1698148719e3,contributors:[{name:"gongyi01",email:"gongyi01@baidu.com",commits:1}]},filePathRelative:"javascript/solutions/reduce.md"};export{e as data};
