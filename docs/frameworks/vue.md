@@ -338,10 +338,27 @@ plugin 需要写个 install 方法，内部还是用 组件注册，好处是可
 [Vue3 Composition API如何替换Vue Mixins - 掘金](https://juejin.cn/post/6844904136065056781)
 
 ## provide/inject
+
 组件层级深时，父组件向后代传 prop 麻烦，怎么解决？
 
-示例：
+不会造成全局污染，需要配对使用
 
+适用场景：如全局状态管理、配置信息、国际化、用户身份验证等，提供了一种避免通过`props`层层传递数据的方式
+
+```jsx
+// 使用提供者和自定义Hook
+function MyComponent() {
+  const { state, dispatch } = useMyContext();
+
+  return (
+    <div>
+      <p>Count: {state.count}</p>
+      <button onClick={() => dispatch({ type: 'INCREMENT' })}>Increment</button>
+      <button onClick={() => dispatch({ type: 'DECREMENT' })}>Decrement</button>
+    </div>
+  );
+}
+```
 ## Vue-JSX
 
 - 不支持 v-model

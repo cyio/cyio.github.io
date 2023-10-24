@@ -166,6 +166,21 @@ https://ui.shadcn.com/
 
 ```
 
+### 滑块
+
+```html
+<div class="flex flex-row justify-between">
+  <div class="w-1/2">
+    <div class="flex flex-col">
+      <label class="text-sm font-bold">程度</label>
+      <input type="range" value="25" min="0" max="100" class="w-full bg-gray-200 border-2 rounded-lg">
+    </div>
+  </div>
+  <div class="w-1/2">
+    <div class="text-sm">25%</div>
+  </div>
+</div>
+```
 ## 布局
 
 ```html

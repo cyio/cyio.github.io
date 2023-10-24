@@ -133,3 +133,17 @@ https://chatthing.ai/bots/a2625c1a-8012-42dc-b87d-10e3f0196306/
 https://codesandbox.io/s/using-suspense-and-async-setup-in-vue-3-forked-yw2q9l?file=/src/components/MyAsyncComponent.vue
 
 高级示例：[Suspense | Vue.js](https://vuejs.org/guide/built-ins/suspense.html#combining-with-other-components)
+
+## Provide
+
+如果用 ref，默认子组件可以修改，解决如下
+
+```js
+    const userData = ref({
+      username: 'John',
+      email: 'john@example.com',
+    });
+
+    // 冻结提供的数据对象，使其只读
+    provide('userData', Object.freeze(userData.value));
+```
