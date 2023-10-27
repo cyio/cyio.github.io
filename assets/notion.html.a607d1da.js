@@ -1,0 +1,1 @@
+const t={key:"v-21de0997",path:"/tools/notion.html",title:"Notion",lang:"en-US",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1698407884e3,contributors:[{name:"gongyi01",email:"gongyi01@baidu.com",commits:1}]},filePathRelative:"tools/notion.md"};export{t as data};

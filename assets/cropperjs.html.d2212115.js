@@ -1,0 +1,1 @@
+const e={key:"v-6654a378",path:"/frameworks/cropperjs.html",title:"cropperjs",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"vue-cropperjs",slug:"vue-cropperjs",children:[]}],git:{updatedTime:1698407884e3,contributors:[{name:"gongyi01",email:"gongyi01@baidu.com",commits:1}]},filePathRelative:"frameworks/cropperjs.md"};export{e as data};
