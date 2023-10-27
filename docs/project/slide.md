@@ -1,7 +1,9 @@
 # slide 
 
+> 废弃，改用 marp
+
 工具
-`reveal-md projects/unit-test_slide.md -w`
+`reveal-md projects/ajz/unit-test_slide.md -w`
 
 `s` speaker notes
 ```
@@ -19,8 +21,6 @@ alt-click 放大元素
 yaml 配置
 
 分隔符严格匹配，不要有空格
-
-
 ## Speaker Notes
 
 新开窗口，需要两个屏幕

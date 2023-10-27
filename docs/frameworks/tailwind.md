@@ -26,6 +26,20 @@ gap-4  4个单位的间距，Tailwind 预定义 1 个单位 0.25rem spacing
 
 ## 布局
 
+flex
+
+```html
+<div class="h-300 bg-slate-100 p-2 text-center">header</div>
+
+<div class="flex">
+  <div class="h-screen w-1/4 bg-gray-300 p-4">left</div>
+  <div class="h-screen w-3/4 p-4">right</div>
+</div>
+
+```
+
+grid
+
 ```html
 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
   <!-- 这里放置栅格项 -->
@@ -209,19 +223,6 @@ utilities
 ## 兼容性
 
 不支持 IE
-
-```
-<div class="p-2 text-center h-300 bg-slate-100">header</div>
-
-<div class="flex">
-
-<div class="w-1/4 bg-gray-300 p-4 h-screen">left</div>
-
-<div class="w-3/4 p-4 h-screen">right</div>
-
-</div>
-```
-
 ## 源码
 
 `plugins` 数组： 这个数组包含了一系列的函数，它们在处理 CSS 样式时会被依次执行。这些函数用于处理导入规则、处理 Tailwind CSS 特性、以及应用 Lightning CSS 转换。

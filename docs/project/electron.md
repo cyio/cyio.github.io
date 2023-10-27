@@ -176,11 +176,24 @@ MacOS 10.10+
 
 分享这半年的 Electron 应用开发和优化经验 - 掘金 [https://juejin.cn/post/6844904029231775758](https://juejin.cn/post/6844904029231775758)
 
-## 异常捕获封装
+## 异常捕获
 
-1. render
-2. main
+### 渲染进程
 
+表现：白屏、黑屏，窗口在但没有内容
+
+- JavaScript 错误，未捕获的异常或死循环，可能会导致进程被终止
+- 手动终止
+- 内存耗尽
+
+事件：render-process-gone，处理参考 白屏部分
+
+> Sentry 主要用于捕获 JavaScript 异常和错误以及 Electron 主进程中的问题，包括`process.on('uncaughtException'`
+
+### 主进程
+
+
+封装参考
 https://github.dev/sindresorhus/electron-unhandled/blob/a302ae5367af900872d889cdb47fe26907fa47fe/index.js#L123
 
 ### crashReporter
