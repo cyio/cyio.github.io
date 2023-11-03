@@ -23,7 +23,7 @@
 			}
     </script>
     <link rel="icon" href="/favicon.ico"><link rel="manifest" href="/manifest.json"><meta name="theme-color" content="#0089a7"><meta name="referrer" content="no-referrer"><link rel="apple-touch-icon" sizes="180x180" href="/favicon.ico"><title>内存管理 | Oaker小站</title><meta name="description" content="Just playing around">
-    <link rel="modulepreload" href="/assets/app.099721c4.js"><link rel="modulepreload" href="/assets/memory.html.77c73e62.js"><link rel="modulepreload" href="/assets/memory.html.4c92ee0c.js">
+    <link rel="modulepreload" href="/assets/app.bacf2a9d.js"><link rel="modulepreload" href="/assets/memory.html.701f3db5.js"><link rel="modulepreload" href="/assets/memory.html.4bf6cb44.js">
     <link rel="stylesheet" href="/assets/style.1f6754f1.css">
   </head>
   <body>
@@ -32,6 +32,6 @@
 stack     heap
 fn/local  obj/global
 </code></pre></div><h2 id="栈空间" tabindex="-1"><a class="header-anchor" href="#栈空间" aria-hidden="true">#</a> 栈空间</h2><p>用完回收，连续存储，先进后出</p><h2 id="堆空间" tabindex="-1"><a class="header-anchor" href="#堆空间" aria-hidden="true">#</a> 堆空间</h2><p>分为老生代、新生代</p><p>新生代：空间小，速度快，但空间利用率低。回收策略：Scanvage算法</p><p>老生代：新生代对象多次回收仍存活，空间大。回收策略：标记清除和标记整理</p><h2 id="内存泄漏" tabindex="-1"><a class="header-anchor" href="#内存泄漏" aria-hidden="true">#</a> 内存泄漏</h2><p>如果一个值不再需要了，引用数却不为0，垃圾回收机制无法释放这块内存，从而导致内存泄漏。</p><ol><li>缓存不断增长 <ol><li>缓存策略（LRU、无缓存运行）</li><li>weakmap，避免干扰垃圾自动回收</li></ol></li><li>事件重复绑定，比如在频繁触发的事件放置监听器 <ol><li>解绑</li></ol></li><li>不断增长的数组: 生产大于消费</li></ol><p>无法立即释放内存有两种情况，一是全局变量，一是闭包中间函数引用</p><p>node 有固定的内存使用上限，V8 1.4G</p><p>使用 Buffer 可以读取超过 V8 内存限制的大文件</p><p>Buffer 对象，属于堆外内存，意指不受 V8 分配</p><p>新生代中的对象存活时间较短，而老生代中的对象存活时间较长或者为常驻对象</p><p>如果你要往对象上添加数据，又不想干扰垃圾回收机制，就可以使用 WeakMap</p><!--]--></div><footer class="page-meta"><!----><div class="meta-item last-updated"><span class="meta-item-label">Last Updated: </span><!----></div><div class="meta-item contributors"><span class="meta-item-label">Contributors: </span><span class="meta-item-info"><!--[--><!--[--><span class="contributor" title="email: gongyi01@baidu.com">gongyi01</span><!----><!--]--><!--]--></span></div></footer><nav class="page-nav"><p class="inner"><span class="prev"><a href="/javascript/math.html" class="" aria-label="math"><!--[--><!--]--> math <!--[--><!--]--></a></span><span class="next"><a href="/javascript/methods.html" class="" aria-label="常用方法"><!--[--><!--]--> 常用方法 <!--[--><!--]--></a></span></p></nav><!--[--><!--]--></main><!--]--></div><!----><!--]--></div>
-    <script type="module" src="/assets/app.099721c4.js" defer></script>
+    <script type="module" src="/assets/app.bacf2a9d.js" defer></script>
   </body>
 </html>

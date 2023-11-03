@@ -1,1 +1,0 @@
-const t={key:"v-60e46192",path:"/javascript/solutions/virtual-dom.html",title:"\u865A\u62DFDOM\u7684\u597D\u5904",lang:"en-US",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1698407884e3,contributors:[{name:"gongyi01",email:"gongyi01@baidu.com",commits:1}]},filePathRelative:"javascript/solutions/virtual-dom.md"};export{t as data};
