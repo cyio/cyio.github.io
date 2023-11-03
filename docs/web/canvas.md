@@ -138,3 +138,7 @@ const data = fs.readFileSync(pathToFile);
 const bmp = await createImageBitmap(new Blob([data]));
 const {width, height} = bmp;
 ```
+
+## 压缩图片
+
+canvas.toBlob 可设置格式和质量

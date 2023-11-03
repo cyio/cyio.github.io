@@ -1,4 +1,10 @@
-# WebAssembly
+# WebAssembly - 通用跨编程语言字节码技术
+
+## 特点
+
+**中间表示**：
+**原生支持**：相通底层内存模型
+**生态系统**：高度兼容
 
 [Why using WebAssembly and Rust improves Node.js performance – IBM Developer](https://developer.ibm.com/technologies/web-development/articles/why-webassembly-and-rust-together-improve-nodejs-performance/)
 
@@ -7,4 +13,5 @@
 > 如果你只是写一个功能比较简单的应用练练手，直接用 rust-wasm 一整套工具链(wasm-pack, wasm-bindgen)应该可以比较快的完成目标，大概率你应该不会遇到 rust 语言的坑，所有权等。
 
 [FFMPEG.WASM](https://ffmpegwasm.github.io/)
-[谷歌：如何以最高效的方式加载 WebAssembly - 掘金](https://juejin.cn/post/6844903591279329294)
+
+[WAMR - WebAssembly Micro Runtime](https://bytecodealliance.github.io/wamr.dev/)

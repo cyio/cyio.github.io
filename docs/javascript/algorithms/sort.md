@@ -136,6 +136,7 @@ console.log(result)
 
 1. 找出基准值
 2. 递归形式：[...fn(left), pivot, ...fn(right)]
+3. pivot 单独拿出来，不需要参与递归处理
 
 ```js
 // 先考虑主要功能，再考虑边界情况
