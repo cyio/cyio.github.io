@@ -1,1 +1,0 @@
-const e={key:"v-00400fc4",path:"/blog/chrome-extension-upgrade-v3.html",title:"Chrome \u6269\u5C55\u5347\u7EA7\u5230 v3",lang:"en-US",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1699004279e3,contributors:[{name:"gongyi01",email:"gongyi01@baidu.com",commits:1}]},filePathRelative:"blog/chrome-extension-upgrade-v3.md"};export{e as data};
