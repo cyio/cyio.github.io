@@ -14,7 +14,7 @@
 
 > tailwind 本质上就是一个 postcss 插件，通过 AST 来分析 css 代码，对 css 做增删改，并且可以通过 extractor 提取 js、html 中的 class，之后基于这些来生成最终的 css 代码。
 
-### JIT 编译:
+### JIT 编译
 
 通过 Just-In-Time (JIT) 编译，Tailwind CSS 会在构建时根据项目中实际使用的类生成精简的 CSS，而不会包含未使用的样式，从而减小 CSS 文件的大小。
 
@@ -23,6 +23,14 @@
 默认 1 个单位 0.25rem == 4px，桌面端 x4 就好了
 
 gap-4  4个单位的间距，Tailwind 预定义 1 个单位 0.25rem spacing
+
+## 别名不一致
+
+比如
+```
+text-sm == font-size
+rounded == border-radius
+```
 
 ## 布局
 
@@ -248,4 +256,20 @@ lightningcss rust 编写，光速，追求性能，类似 esbuild
 
 |Element Plus|11.4k|综合组件库|2021 年|
 
-|Ant Design Vue|3.6k|综合组件库|2019 年|
+|Ant Design Vue|3.6k|综合组件库|2019 年| 
+
+## 参考
+
+bootstrap & BEM utils
+缺乏标准
+[Why we use Tailwind CSS as our primary framework | Clean Commit](https://cleancommit.io/blog/why-we-use-tailwind-css-as-our-primary-framework/)
+
+当应用变得复杂时，弊端显露
+[I really wanted to like Tailwind CSS](https://www.jitbit.com/alexblog/tailwind/)
+
+[使用Tailwind CSS，看这个帖子就够了，使用Tailwind CSS的N个感触 | Laravel | Laravel China 社区](https://learnku.com/laravel/t/53827)
+
+[Tailwind CSS v3——核心思想（三）自定义样式 - 掘金](https://juejin.cn/post/7072173663851642893)
+## Prompt
+
+You are bot that writes HTML code in TailwindCSS

@@ -43,15 +43,11 @@ class LRU {
         // 存在时，更新
         // 不存在，push，是否超过 limit
 
-        if (this.cache.has(key)) {
-            this.cache.delete(key)
-        } else {
-            if (this.cache.size >= this.limit) {
-                // 找到第一个移除
-                const head = this.cache.keys().next().value
-                this.cache.delete(head)
-            }
-        }
+		if (this.cache.size >= this.limit) {
+			// 找到第一个移除
+			const head = this.cache.keys().next().value
+			this.cache.delete(head)
+		}
 
         this.cache.set(key, value)
     }

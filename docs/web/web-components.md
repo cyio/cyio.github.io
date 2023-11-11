@@ -61,3 +61,6 @@ https://open-wc.org/guides/developing-components/getting-started/
 Vendor lock-in
 
 [Will Web Components Replace Frontend Frameworks?](https://web-highlights.com/blog/will-web-components-replace-frontend-frameworks-they-are-built-to-solve-different-problems/)
+
+markdown 内嵌便携
+[Web Components Will Outlive Your JavaScript Framework | jakelazaroff.com](https://jakelazaroff.com/words/web-components-will-outlive-your-javascript-framework/)

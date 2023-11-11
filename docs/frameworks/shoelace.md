@@ -14,6 +14,10 @@ Shoelace 是一款面向未来的 Web 组件库，提供了一系列专业设计
 - 可自定义性更强，比如 popup，在线调整
 - Mutation Observer 监听指定属性
 - Resize Observer 监听容器尺寸变化
+
+## 事件
+
+自定义事件跟原生事件一样，要用 addEventListener
 ## CDN
 
 CDN  + autoloader 自动懒加载
@@ -36,3 +40,12 @@ CDN  + autoloader 自动懒加载
 > Microsoft Store 使用 Shoelace、Lit、Vite 和 C# ASPNET 后端共同打造出更现代的新版本
 
 [放弃React改用Web组件，微软这次重构让开发者不解：没有任何意义_大前端_褚杏娟_InfoQ精选文章](https://www.infoq.cn/news/aRc3dogIgR4dABwJRWXw)
+
+
+## 上手，实现一个组件
+
+[my button · cyio/shoelace@b115bca](https://github.com/cyio/shoelace/commit/b115bca6b2fea08544cd7b90dd6ff9c2297fd47b)
+
+<pre class="language-html preview">
+	<button>button</button>
+</pre>

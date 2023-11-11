@@ -147,3 +147,9 @@ https://codesandbox.io/s/using-suspense-and-async-setup-in-vue-3-forked-yw2q9l?f
     // 冻结提供的数据对象，使其只读
     provide('userData', Object.freeze(userData.value));
 ```
+
+## script setup
+
+编译时语法糖
+
+https://www.patterns.dev/vue/script-setup
