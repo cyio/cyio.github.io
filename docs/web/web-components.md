@@ -64,3 +64,7 @@ Vendor lock-in
 
 markdown 内嵌便携
 [Web Components Will Outlive Your JavaScript Framework | jakelazaroff.com](https://jakelazaroff.com/words/web-components-will-outlive-your-javascript-framework/)
+
+
+HTML 元素增强，不一定使用高级功能
+[Adactio: Journal—HTML web components](https://adactio.com/journal/20618)

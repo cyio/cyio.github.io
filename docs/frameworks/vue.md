@@ -162,8 +162,6 @@ EventBus.$on('i-got-clicked', clickCount => {
 1. 组件级 watcher
 2. 存入队列，nextTick 时执行
 3. 用户定义的 nextTick cb 放在最后
-
-
 ## 生命周期
 
 - `beforeDestory`不会在窗口 refresh 或 close 时触发，一般用在路由切换
@@ -339,7 +337,7 @@ plugin 需要写个 install 方法，内部还是用 组件注册，好处是可
 
 ## provide/inject
 
-组件层级深时，父组件向后代传 prop 麻烦，怎么解决？
+解决 Prop 逐级透传问题
 
 不会造成全局污染，需要配对使用
 

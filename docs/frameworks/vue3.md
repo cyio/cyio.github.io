@@ -1,11 +1,11 @@
 # Vue 3
 [[toc]]
 
-![image.png](https://img.oaker.bid/?url=http://tvax1.sinaimg.cn/mw690/4e5d3ea7ly1hhzulm48rwj235s1xuqv5.jpg)
+![image.png](https://img.oaker.bid/?url=http://tvax1.sinaimg.cn/mw1024/4e5d3ea7ly1hhzulm48rwj235s1xuqv5.jpg)
 
 ## ref 与 reactivity
 
-ref 用于处理简单的响应式值
+ref 用于处理简单的响应式值（想象成盒子）
 
 模板中自动解包（仅顶级）
 
@@ -134,10 +134,9 @@ https://codesandbox.io/s/using-suspense-and-async-setup-in-vue-3-forked-yw2q9l?f
 
 高级示例：[Suspense | Vue.js](https://vuejs.org/guide/built-ins/suspense.html#combining-with-other-components)
 
-## Provide
+## Provide / Inject
 
 如果用 ref，默认子组件可以修改，解决如下
-
 ```js
     const userData = ref({
       username: 'John',
@@ -145,9 +144,13 @@ https://codesandbox.io/s/using-suspense-and-async-setup-in-vue-3-forked-yw2q9l?f
     });
 
     // 冻结提供的数据对象，使其只读
-    provide('userData', Object.freeze(userData.value));
+    // provide('userData', Object.freeze(userData.value));
+	provide('userData', readonly(userData));
 ```
 
+适合于插件
+
+数据声明与修改函数，建议放到同一个组件，将修改函数传递下去，便于维护。
 ## script setup
 
 编译时语法糖

@@ -210,3 +210,54 @@ TODO
   png jpg webp avif
 2. 减少请求
   base64 http 1.1 雪碧图
+
+
+## 同步处理阻塞
+
+onload 中进行像素处理，可能产生阻塞
+
+示例：getImageData 是处理像素的耗时任务
+
+```js
+var img = new Image();
+img.src = 'yourImage.jpg';
+
+img.onload = function() {
+  var canvas = document.createElement('canvas');
+  canvas.width = img.width;
+  canvas.height = img.height;
+  var ctx = canvas.getContext('2d');
+  ctx.drawImage(img, 0, 0);
+
+  // 在图像加载完成后，可以使用 getImageData 了
+  var imageData = ctx.getImageData(x, y, width, height);
+  var data = imageData.data;
+
+  // 处理像素数据
+};
+```
+
+优化：将耗时任务放到 Promise 中
+
+```js
+var img = new Image();
+img.src = 'yourImage.jpg';
+
+img.onload = function() {
+  // 使用 createImageBitmap 异步处理图像
+  createImageBitmap(img).then(function(bitmap) {
+    var canvas = document.createElement('canvas');
+    canvas.width = bitmap.width;
+    canvas.height = bitmap.height;
+    var ctx = canvas.getContext('2d');
+    ctx.drawImage(bitmap, 0, 0);
+
+    // 现在可以使用 getImageData 了
+    var imageData = ctx.getImageData(x, y, width, height);
+    var data = imageData.data;
+
+    // 处理像素数据
+  });
+};
+
+```

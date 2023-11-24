@@ -264,8 +264,20 @@ flyweight
 [前端的设计模式系列-基本原则 | 前端的设计模式系列](https://pattern.windliang.wang/posts/%25E5%2589%258D%25E7%25AB%25AF%25E7%259A%2584%25E8%25AE%25BE%25E8%25AE%25A1%25E6%25A8%25A1%25E5%25BC%258F%25E7%25B3%25BB%25E5%2588%2597-%25E5%259F%25BA%25E6%259C%25AC%25E5%258E%259F%25E5%2588%2599.html)
 [Patterns.dev - Modern Web App Design Patterns](https://www.patterns.dev/)
 
-## 代码临近组织
+## 代码局部性（code locality）
 
-code locality
+> 理解为代码临近组织，相关逻辑放到一个函数，一个文件，一个包
 
 通常指的是在软件程序中将相关的代码组件放在一起的概念。这种做法旨在改善代码的可读性、可维护性和整体开发效率。通过将相关的代码元素放在一起，开发人员可以更容易地理解和处理逻辑，减少在代码库中导航和理解所需的认知负担。
+
+比如前端 store 相关处理，避免父子组件同时访问和调用，尽量在容器组件处理
+
+状态集中管理和受控组件模式（始终反映外部数据源的状态，而不是多数据源，数据源收敛）
+
+单一职责原则，UI组件的主要责任应该是渲染界面和处理用户交互，而不应该直接管理应用的状态。通过直接访问store，UI组件可能变得过于复杂，同时承担了与状态管理相关的职责，违反了单一职责原则。
+
+数据封装原则 (Encapsulation): 直接访问store可能导致组件对store中数据的依赖性过高，破坏了数据的封装性。组件应该尽量只关心自己的数据和逻辑，而不应该直接操作全局状态。
+
+解耦原则 (Decoupling): 直接访问store会导致组件与特定的状态管理工具（如Vuex或Redux）紧密耦合。这使得将来更换状态管理库或者使用不同的状态管理策略变得更加困难。
+
+[Code Locality and the Ability To Navigate – Martin Vysny – First Principles Thinking](https://mvysny.github.io/code-locality-and-ability-to-navigate/)

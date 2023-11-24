@@ -1,5 +1,7 @@
 # 虚拟列表
 
+> 又名 虚拟滚动
+
 ## Why
 
 如何渲染大量数据在页面上？
@@ -12,24 +14,27 @@
 
 ## vue-virtual-scroll-list
 
-使用：
+### 使用：
 resized  item mounted 时触发
 
-场景：
+### 场景：
+
 - 有限数据
 - 无限加载
 - 横向
 - 保持状态，如选中
 - 聊天室，现成解决方案
 
-原理：
+### 原理：
+
 滚动时通过改变 padding 的值来模拟滚动，里面的每一个 item 在滚动时被动态替换
 
 item 固定高度，可以提前计算出总高度 padding =  item-height * 
 
 item 高度不定，padding 初始为 0
 
-源码：
+### 源码：
+
 h(type, attrs, children) 函数第三个参数是 children
 
 item 用 _ResizeObserver_ 观测自身，触发 resized 事件
@@ -46,9 +51,6 @@ updateRange 更新 start/end，触发时机？head/footer resized？
 
 ![image.png](https://img.oaker.bid/?url=http://tva1.sinaimg.cn/large/4e5d3ea7ly1h7co3h80vnj20nq0ben0f.jpg)
 
-
-https://github.dev/tangbc/vue-virtual-scroll-list
-
 [长列表优化之虚拟列表__Vue.js - VueClub](https://www.vue-js.com/topic/5f9789724590fe0031e5927c)
 
 [javascript - 面试题：渲染十万条数据解决方案_个人文章 - SegmentFault 思否](https://segmentfault.com/a/1190000041415120)
@@ -62,3 +64,11 @@ https://github.dev/tangbc/vue-virtual-scroll-list
 ## 时间分片
 
 一次性渲染是瓶颈，分批渲染
+
+利用 transform 的 translate3d 属性来实现虚拟滚动。这样做的原因是，使用 translate3d 可以触发 GPU 加速，提高滚动的性能。它通过计算列表项的高度，并在滚动时动态地更新 transform 属性，以实现虚拟滚动的效果。
+
+## 
+
+## 参考
+
+[前端多数据渲染优化 - Grewer - 博客园](https://www.cnblogs.com/Grewer/p/16084947.html)

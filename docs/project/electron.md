@@ -80,8 +80,8 @@ postMessage 消息通道，与 Web 中的等价。场景：消息保证、即使
 
 webview document.title/executeJavaScript 
 
-remote 模块，模拟本地调用，废弃，推荐 invoke
-
+~~remote 模块，模拟本地调用，废弃，推荐 invoke
+~~
 electron 的 IPC 基于 chromium 的 IPC？
 
 MessagePort对象可以在渲染器或主进程中创建，并使用ipcRenderer.postMessage和WebContents.postMessage方法来回传递。请注意，通常的IPC方法（如send和invoke）不能用于传输MessagePorts，只有postMessage方法可以传输MessagePorts。
@@ -190,6 +190,7 @@ MacOS 10.10+
 
 > Sentry 主要用于捕获 JavaScript 异常和错误以及 Electron 主进程中的问题，包括`process.on('uncaughtException'`
 
+[electron-render-oom](electron-render-oom.md)
 ### 主进程
 
 
