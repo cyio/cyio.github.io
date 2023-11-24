@@ -102,7 +102,10 @@ import { EventBus } from './event-bus.js'
 
 EventBus.$emit('i-got-clicked', this.clickCount)
 
-EventBus.$on('i-got-clicked', clickCount => {
+EventBus.$on('i-got-cli
+			 
+			 
+			 cked', clickCount => {
   console.log(`Oh, that's nice. It's gotten ${clickCount} clicks! :)`)
 })
 ```
@@ -509,7 +512,7 @@ new Vue({
 
 ```js
 const toggle = {
-  data() {
+	  data() {
     return {
       isShowing: false
     }
