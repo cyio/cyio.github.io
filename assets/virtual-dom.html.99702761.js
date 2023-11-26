@@ -1,0 +1,1 @@
+const t={key:"v-60e46192",path:"/javascript/solutions/virtual-dom.html",title:"\u865A\u62DFDOM\u7684\u597D\u5904",lang:"en-US",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1700999211e3,contributors:[{name:"cyio",email:"icaner@qq.com",commits:1}]},filePathRelative:"javascript/solutions/virtual-dom.md"};export{t as data};

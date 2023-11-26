@@ -1,1 +1,0 @@
-const t={key:"v-10262ea6",path:"/javascript/solutions/two-sum.html",title:"",lang:"en-US",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1700824244e3,contributors:[{name:"cyio",email:"icaner@qq.com",commits:1}]},filePathRelative:"javascript/solutions/two-sum.md"};export{t as data};
