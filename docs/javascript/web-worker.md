@@ -41,3 +41,5 @@ worker.addEventListener('error', function (event) {
 [Mental model - Qwik](https://qwik.builder.io/guide/mental-model)
 
 ## 即使一个 worker 线程也可以利用多核处理器加速
+
+[Exploring The Potential Of Web Workers For Multithreading On The Web — Smashing Magazine](https://www.smashingmagazine.com/2023/04/potential-web-workers-multithreading-web/)
