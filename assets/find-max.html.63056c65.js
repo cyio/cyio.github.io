@@ -1,1 +1,0 @@
-const t={key:"v-a7926b2a",path:"/javascript/solutions/find-max.html",title:"\u83B7\u53D6\u53D6\u6570\u7EC4\u7684\u6700\u5927\u503C\uFF08ES5\u3001ES6\uFF09",lang:"en-US",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1700999211e3,contributors:[{name:"cyio",email:"icaner@qq.com",commits:1}]},filePathRelative:"javascript/solutions/find-max.md"};export{t as data};
