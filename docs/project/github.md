@@ -29,8 +29,11 @@ gist file.diff
 gist -p file.diff
 ```
 
-## hub cli
-```sh
-# 在本地项目下运行
-hub create
-```
+
+## gh cli
+
+gh repo create project-name --public
+push/pull
+clone
+
+prompt: gh repo cli use tips

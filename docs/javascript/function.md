@@ -148,7 +148,9 @@ var joy = {
 mike.say() // MIKE
 mike.say.bind(joy)() // JOY，this 指向被改成 joy
 ```
-## 防抖和节流 dt
+
+## 防抖和节流
+
 > debounce/throttle
 
 ```
@@ -158,10 +160,11 @@ debounce ---- 6 //  1 执行后不再点击(空闲)，执行 6，否则会延迟
 throttle 1 -- 6 //  1 执行后的后续点击，不影响 6 的执行
 ```
 
-| 异同         | debounce | throttle |
-|--------------|----------|----------|
-| 用途         | 延迟、等待     | 过滤     |
-| 立刻执行一次 | 否       | 是       |
+| 异同         | debounce   | throttle |
+| ------------ | ---------- | -------- |
+| 用途         | 延迟 | 降低频率     |
+| leading（立刻执行一次） | 否         | 是       |
+|       trailing       |    是        |     否     |
 
 - 都是为了限制一定时间内执行频率，一般用于减少用户输入引起的函数调用次数
 - 从用途上思考，是要延迟、还是过滤
@@ -169,6 +172,11 @@ throttle 1 -- 6 //  1 执行后的后续点击，不影响 6 的执行
 - `_.debounce(fn, true) `过滤意外点击，空闲 m 秒才执行一次，而 throttle 后续事件还是会执行，不会等空闲，而是保证一定频率，m 秒内不超过 n 次
 - 提交按钮点击，希望过滤掉误点(短时间内几次)，只执行一次，两个方法都能通过配置参数满足，但不准确符合，建议用一个开始标记解决。只有特定场景有明显区别，比如一直触发，是否需要执行
 - throttle 无论触发多频繁，都按照设定频率执行，resize
+
+> 想象用拍篮球，debounce 是弹一次，增加延时就是增加力度，弹得更高。throttle 是连续拍球，设置时间间隔，降低频率，否则你会气喘
+
+连续按键，希望立刻响应，然后忽略
+[throttle and debounce in quick key press scene - CodeSandbox](https://codesandbox.io/p/sandbox/throttle-and-debounce-in-quick-key-press-scene-kpht45)
 
 拿这个例子，各点两次，观察区别 [Underscore.js throttle vs debounce example - JSFiddle - Code Playground](https://jsfiddle.net/missinglink/19e2r2we/)
 

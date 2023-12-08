@@ -65,9 +65,31 @@ updateRange 更新 start/end，触发时机？head/footer resized？
 
 一次性渲染是瓶颈，分批渲染
 
-利用 transform 的 translate3d 属性来实现虚拟滚动。这样做的原因是，使用 translate3d 可以触发 GPU 加速，提高滚动的性能。它通过计算列表项的高度，并在滚动时动态地更新 transform 属性，以实现虚拟滚动的效果。
+## vue-virtual-scroller
 
-## 
+grid 和 list，有不同组件
+
+问题：
+- scrollToItem 只支持 index，只能滚动该元素到屏幕顶部
+- 不确定高度：参考 simple-list demo，需要用指定组件对 item 包一下，以计算 item 高度
+
+### 源码
+
+数据：pool
+
+滚动: CSS transform
+
+> 利用 transform 的 translate3d 属性来实现虚拟滚动。这样做的原因是，使用 translate3d 可以触发 GPU 加速，提高滚动的性能。它通过计算列表项的高度，并在滚动时动态地更新 transform 属性，以实现虚拟滚动的效果。
+
+scrollToPosition 计算距离，操作 el.scrollTop
+scrollDistance 计算
+```js
+      if (this.itemSize === null) {
+        scroll = index > 0 ? this.sizes[index - 1].accumulator : 0
+      } else {
+        scroll = Math.floor(index / gridItems) * this.itemSize
+      }
+```
 
 ## 参考
 

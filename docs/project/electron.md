@@ -250,6 +250,10 @@ contextIsolation 环境上下文隔离开关，是在 Electron 5.0 版本中引�
 
 [挖洞经验 | 综合三个Bug实现Discord桌面应用RCE漏洞 - FreeBuf网络安全行业门户](https://www.freebuf.com/articles/web/252806.html)
 
+## contextBridge
+
+属于 render process，中间隔离环境，双向同步桥
+
 ## 版本
 
 Electron 22, which contains Chromium 108, will thus be the last supported version.
