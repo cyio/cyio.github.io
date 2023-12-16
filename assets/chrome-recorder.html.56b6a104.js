@@ -1,1 +1,0 @@
-const e={key:"v-b657fec8",path:"/web/chrome-recorder.html",title:"chrome-recorder",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"\u5BFC\u51FA",slug:"\u5BFC\u51FA",children:[]}],git:{updatedTime:1702027638e3,contributors:[{name:"gongyi01",email:"gongyi01@baidu.com",commits:1}]},filePathRelative:"web/chrome-recorder.md"};export{e as data};
