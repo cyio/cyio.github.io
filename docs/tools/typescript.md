@@ -293,6 +293,8 @@ pig.name = 'jack'
 
 ## 适合场景
 
+- 持续迭代的复杂项目
+
 [你为什么不使用 TypeScript？ - 知乎](https://www.zhihu.com/question/273619114/answer/1907885114)
 
 ## 使用JavaScript与JSDoc注释来模拟TypeScript的类型检查和类型提示功能

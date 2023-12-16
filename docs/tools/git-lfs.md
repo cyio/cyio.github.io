@@ -14,7 +14,6 @@ git lfs track "<file_pattern>"
 git lfs pull
 ```
 
-
 ## Github
 
 静态网站图片怎么展示？可以 action 配置中开启，脚本会拉取

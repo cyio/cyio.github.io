@@ -42,3 +42,13 @@ npm install -g live-server
 https://github.com/tapio/live-server/issues/208#issuecomment-733510202
 
 vue 作者建议用  cdn alias，构建后保证可用 https://github.com/vitejs/vite/issues/2483#issuecomment-799527624
+
+## vite serve
+
+```
+vite serve
+
+vite serve --open=b.html
+
+vite serve ./ --base /en
+```

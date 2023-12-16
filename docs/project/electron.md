@@ -178,6 +178,9 @@ MacOS 10.10+
 
 ## 异常捕获
 
+兜底捕获
+- 主进程不加，会异常退出 `process.on('uncaughtException'`
+- 渲染进程，该进程会退出，不影响其他渲染进程或主进程 `window.onerror`
 ### 渲染进程
 
 表现：白屏、黑屏，窗口在但没有内容
@@ -206,6 +209,7 @@ crash free sessions 免于崩溃、即正常的会话数，用 100 减去即崩�
 存储用户目录：Crashpad
 
 https://www.electronjs.org/docs/latest/api/crash-reporter
+
 
 ## 打包
 

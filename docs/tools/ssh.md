@@ -14,6 +14,8 @@ pbcopy < ~/.ssh/id_rsa.pub
 
 `ssh -vv "your githost"`为什么要用这个，因为参数`-T`，即使返回成功，配置也可能不行（push 时还会问账密）
 
+> 端口默认是 22，如果是公司，可能不一样，需要 config 指定
+
 ## remote
 
 [[server/vps-init#SSH/Mosh 登陆]]
