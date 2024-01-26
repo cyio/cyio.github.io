@@ -1,1 +1,0 @@
-const t={key:"v-10d28ad7",path:"/tools/zsh.html",title:"Zsh",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"\u5FEB\u6377\u952E",slug:"\u5FEB\u6377\u952E",children:[{level:3,title:"git",slug:"git",children:[]}]}],git:{updatedTime:1702697852e3,contributors:[{name:"gongyi01",email:"gongyi01@baidu.com",commits:1}]},filePathRelative:"tools/zsh.md"};export{t as data};

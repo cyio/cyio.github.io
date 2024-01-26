@@ -23,7 +23,7 @@
 			}
     </script>
     <link rel="icon" href="/favicon.ico"><link rel="manifest" href="/manifest.json"><meta name="theme-color" content="#0089a7"><meta name="referrer" content="no-referrer"><link rel="apple-touch-icon" sizes="180x180" href="/favicon.ico"><title>Oaker小站</title><meta name="description" content="Just playing around">
-    <link rel="modulepreload" href="/assets/app.a360fde3.js"><link rel="modulepreload" href="/assets/download.html.37c08b6b.js"><link rel="modulepreload" href="/assets/download.html.268955f8.js">
+    <link rel="modulepreload" href="/assets/app.7ba70c05.js"><link rel="modulepreload" href="/assets/download.html.d1c593ce.js"><link rel="modulepreload" href="/assets/download.html.2bf701bf.js">
     <link rel="stylesheet" href="/assets/style.1f6754f1.css">
   </head>
   <body>
@@ -40,6 +40,6 @@ readStream<span class="token punctuation">.</span><span class="token function">o
   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>chunk<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre></div><p>在上面的代码中，readStream.on() 方法监听了 data 事件，当有数据可读时，会触发该事件，并将读取到的数据作为参数传递给回调函数。由于设置了编码方式为 utf8，因此读取到的数据会被转换为字符串形式。</p><p>总之，Stream 和 Buffer 是处理数据的两种不同方式。在 Stream 中经常需要将数据转换为 Buffer 对象进行处理，而在某些情况下也可以直接使用 Buffer 对象来处理数据。</p><h3 id="buffer-能处理多大文件-多大文件应该用-stream" tabindex="-1"><a class="header-anchor" href="#buffer-能处理多大文件-多大文件应该用-stream" aria-hidden="true">#</a> buffer 能处理多大文件，多大文件应该用 stream</h3><p>在 Node.js 中，Buffer 一般用于处理小型数据，因为 Buffer 对象需要在内存中分配连续的空间，因此当需要处理大量数据时，会占用大量的内存，可能会导致内存不足的问题。</p><p>对于大型数据，应该使用 Stream 来处理。Stream 可以将数据分成小块进行处理，因此可以处理大型数据而不会占用过多的内存。例如，可以使用 fs.createReadStream() 和 fs.createWriteStream() 方法来处理大型文件：</p><!--]--></div><footer class="page-meta"><!----><div class="meta-item last-updated"><span class="meta-item-label">Last Updated: </span><!----></div><div class="meta-item contributors"><span class="meta-item-label">Contributors: </span><span class="meta-item-info"><!--[--><!--[--><span class="contributor" title="email: gongyi01@baidu.com">gongyi01</span><!----><!--]--><!--]--></span></div></footer><nav class="page-nav"><p class="inner"><span class="prev"><a href="/web/dom.html" class="" aria-label="DOM"><!--[--><!--]--> DOM <!--[--><!--]--></a></span><span class="next"><a href="/web/e2e-test.html" class="" aria-label="前端测试"><!--[--><!--]--> 前端测试 <!--[--><!--]--></a></span></p></nav><!--[--><!--]--></main><!--]--></div><!----><!--]--></div>
-    <script type="module" src="/assets/app.a360fde3.js" defer></script>
+    <script type="module" src="/assets/app.7ba70c05.js" defer></script>
   </body>
 </html>
