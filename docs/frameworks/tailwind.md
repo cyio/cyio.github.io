@@ -232,7 +232,8 @@ utilities
 
 ## 兼容性
 
-不支持 IE
+v3.0 不支持 IE
+1.x 支持 IE
 ## 源码
 
 `plugins` 数组： 这个数组包含了一系列的函数，它们在处理 CSS 样式时会被依次执行。这些函数用于处理导入规则、处理 Tailwind CSS 特性、以及应用 Lightning CSS 转换。

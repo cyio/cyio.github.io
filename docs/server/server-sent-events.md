@@ -14,6 +14,8 @@ Server-sent events (SSE) 是一种实现服务器向客户端推送事件的 Web
 
 ## 缺点
 
+**单向通信、有状态连接**
+
 虽然 Server-sent events（SSE）有很多优点，但也存在一些缺点，包括：
 
 1.  兼容性问题：虽然 SSE 是一种 HTML5 规范，但并不是所有浏览器都支持它。特别是在旧版的浏览器上可能会有问题（IE 不支持），需要使用 Polyfill 来解决兼容性问题。
@@ -41,6 +43,10 @@ Server-sent events（SSE）是一种基于Web的技术，已经被广泛应用�
 
 除了上述公司和项目，还有许多其他的公司和项目正在使用SSE来实现实时通知、协作、监控和日志记录等功能。因此，SSE 是一个非常有用的Web技术，在许多不同的应用场景中都得到了广泛的应用。
 
+## DEMO
+
+https://github.com/cyio/sse-tutorial
+
 [实时通信变得简单——使用Node.js和Server-sent events的完整教程 - 掘金](https://juejin.cn/post/7205412097953808445)
 
 SSE 封装
@@ -63,3 +69,11 @@ https://glitch.com/~fetch-request-stream
 
 [Consume Web streams from OpenAI using vanilla JavaScript - NO DEPENDENCIES! - YouTube](https://www.youtube.com/watch?v=o1yKuH86_So)
 https://umaar.com/dev-tips/269-web-streams-openai/
+
+## 与 WS 对比
+
+- 是否保持长连接，可扩展性，成本
+
+## 模拟 WS
+
+- 模拟：把历史输入都带上

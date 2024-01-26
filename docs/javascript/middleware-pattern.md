@@ -28,6 +28,7 @@ https://segmentfault.com/a/1190000023684453
 [Difference between middlewares and helpers? : node](https://www.reddit.com/r/node/comments/wgnyb8/difference_between_middlewares_and_helpers/)
 
 ## 弊端：
+
 - API 难理解，需要理解中件间运作机制和其他中间件
 - 问题排查难度上升，不同中间件互相影响
 

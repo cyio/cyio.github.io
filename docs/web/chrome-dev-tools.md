@@ -127,3 +127,11 @@ Now, in order to answer the height question, the browser must _first_ apply th
 main 中竖向，是调用栈
 
 元素越多，CPU 调低，问题越明显 
+
+## 激活态元素定位
+
+```js
+setTimeout(() => { debugger }, 3000)
+```
+
+执行后，点击触发元素。断点会停住
