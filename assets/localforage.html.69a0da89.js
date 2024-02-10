@@ -1,0 +1,1 @@
+const e={key:"v-2ae43232",path:"/project/localforage.html",title:"",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"\u6269\u5C55 localStorage",slug:"\u6269\u5C55-localstorage",children:[]}],git:{updatedTime:1707544575e3,contributors:[{name:"gongyi01",email:"gongyi01@baidu.com",commits:1}]},filePathRelative:"project/localforage.md"};export{e as data};

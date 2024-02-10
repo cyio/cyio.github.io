@@ -1,1 +1,0 @@
-const t={key:"v-2855e268",path:"/project/v-transit.html",title:"v-transit",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"\u62C6\u89E3",slug:"\u62C6\u89E3",children:[]}],git:{updatedTime:1706270471e3,contributors:[{name:"gongyi01",email:"gongyi01@baidu.com",commits:1}]},filePathRelative:"project/v-transit.md"};export{t as data};
