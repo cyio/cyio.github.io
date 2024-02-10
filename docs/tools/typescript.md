@@ -313,3 +313,6 @@ VSCode VSCode  10 个最常用技巧
 枚举 @enum
 示例 @example
 ```
+
+
+[基于JSDoc实现TypeScript类型安全的实践报告 - 周爱民 - 掘金](https://juejin.cn/post/7310980511453954063)

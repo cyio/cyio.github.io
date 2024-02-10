@@ -312,6 +312,9 @@ https://nodejs.org/api/n-api.html#node-api
 
 https://koffi.dev/functions?highlight=decode
 
+## NAPI & Rust
+
+[Exposing a Rust Library to Node with Napi-rs](https://johns.codes/blog/exposing-a-rust-library-to-node-with-napirs)
 ## QT
 
 Qt是一个跨平台的C++应用程序开发框架，它提供了丰富的功能和高性能。Qt应用程序通常被编译为本地机器码，因此在性能方面表现较好。Qt还有一个轻量级的版本Qt Quick，它使用QML语言来构建用户界面，可以实现更快的渲染和动画效果。
@@ -321,3 +324,13 @@ Qt是一个跨平台的C++应用程序开发框架，它提供了丰富的功能
 ## worker
 
 在 Electron 中，你可以直接使用 Node.js 的多线程模块 `worker_threads` 来实现多线程任务，而无需使用 Web Worker。
+
+## IPC  效率与安全
+
+- 在 Electron 应用中，存在权责问题，即应该在渲染进程还是主进程执行某些操作，例如发起请求或读写文件。
+- 移植 Electron 应用至 Web 环境时，需要确保渲染进程的安全性和沙箱化。
+- 在渲染进程中赋予文件系统（fs）能力可能存在安全隐患，因此通过主进程处理字节码，渲染进程通过 IPC 通信可提高安全性。
+- Electron 版本升级后，由于引入 preload.js 导致部分功能无法使用，需要社区迁移包临时替代，使得大量功能转移到了 preload.js 中。
+- IPC 使用一种安全的序列化算法，虽然效率略低，但可以屏蔽许多安全问题，开发者也可以自行实现协议解决效率和安全问题。
+
+[electron有preload导入node的module，为什么常见情况都是使用相对低效的ipc？ - 知乎](https://www.zhihu.com/question/640872750/answer/3376148295)

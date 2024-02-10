@@ -69,3 +69,9 @@ alias play='file="/tmp/play.ts" && touch "$file" && code "$file" && deno run --w
 终端无法启动
 搜 - open log - select window type
 [Terminal Issues · microsoft/vscode Wiki](https://github.com/microsoft/vscode/wiki/Terminal-Issues#enabling-trace-logging)
+## juypter
+
+读音 猪派特
+
+> 作者试过所有笔记 app， vscode + markdown 还是最好，特别是 vscode 对 juypter 第一级支持，而现在 juypter 支持了 JS，通过 deno 解释
+https://twitter.com/wesbos/status/1754674921706315949
