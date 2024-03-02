@@ -56,6 +56,9 @@
     [How to generate a HAR file in Chrome or Firefox - KB254 - In](https://www.inflectra.com/support/knowledgebase/kb254.aspx)
 - Replay XHR 重放请求，不必刷新页面
 
+### disable cache
+
+无法取消，解决办法 https://i.stack.imgur.com/RFt6g.png
 ## playground
 可以巧用 snippets 作 playground，快速调试代码
 

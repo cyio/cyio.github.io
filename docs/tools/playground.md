@@ -7,3 +7,5 @@
 `cmd+j`切换 editor/preview
 
 [TypeScript: TS Playground - An online editor for exploring TypeScript and JavaScript](https://www.typescriptlang.org/play?filetype=js&dtPR=57963&install-plugin=playground-dt-review#code/MYewdgziA2CmB00QHMAUByAFgS3QSiA)
+
+[Playground | MDN](https://developer.mozilla.org/en-US/play)

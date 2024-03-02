@@ -2,6 +2,8 @@
 
 [[toc]]
 
+定位：渐进式 framework
+
 ## MVVM
 Model-View-ViewModel
 ![1643060c121f7361~tplv-t2oaga2asx-zoom-in-crop-mark:1304:0:0:0.awebp (685×362)](https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2018/6/24/1643060c121f7361~tplv-t2oaga2asx-zoom-in-crop-mark:1304:0:0:0.awebp)
