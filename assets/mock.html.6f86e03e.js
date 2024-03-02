@@ -1,0 +1,1 @@
+const e={key:"v-6f8c4e3b",path:"/web/mock.html",title:"Mock",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"\u65B9\u6848",slug:"\u65B9\u6848",children:[]}],git:{updatedTime:170937369e4,contributors:[{name:"gongyi01",email:"gongyi01@baidu.com",commits:1}]},filePathRelative:"web/mock.md"};export{e as data};

@@ -1,0 +1,1 @@
+const t={key:"v-174c878a",path:"/javascript/solutions/is-palindrome.html",title:"\u5224\u65AD\u56DE\u6587\u5B57\u7B26\u4E32",lang:"en-US",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:170937369e4,contributors:[{name:"gongyi01",email:"gongyi01@baidu.com",commits:1}]},filePathRelative:"javascript/solutions/is-palindrome.md"};export{t as data};

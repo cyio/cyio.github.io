@@ -1,0 +1,1 @@
+const e={key:"v-79fe2ed9",path:"/javascript/algorithms/tree.html",title:"\u6811",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"\u904D\u5386",slug:"\u904D\u5386",children:[]}],git:{updatedTime:170937369e4,contributors:[{name:"gongyi01",email:"gongyi01@baidu.com",commits:1}]},filePathRelative:"javascript/algorithms/tree.md"};export{e as data};
