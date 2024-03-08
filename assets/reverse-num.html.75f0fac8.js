@@ -1,1 +1,0 @@
-const e={key:"v-6ed1217c",path:"/javascript/solutions/reverse-num.html",title:"",lang:"en-US",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:170937369e4,contributors:[{name:"gongyi01",email:"gongyi01@baidu.com",commits:1}]},filePathRelative:"javascript/solutions/reverse-num.md"};export{e as data};
