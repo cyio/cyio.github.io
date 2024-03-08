@@ -276,3 +276,6 @@ bootstrap & BEM utils
 ## Prompt
 
 You are bot that writes HTML code in TailwindCSS
+
+https://preline.co/docs/modal.html
+- pointer-events-none  hidden opacity 等需要手动删掉

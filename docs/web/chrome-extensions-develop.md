@@ -69,3 +69,9 @@ windicss更快、兼容性更好，但最后更新是 2022.05
 ## 设置实现及同步
 
 - [ ] 调研主流插件实现
+
+## 脚手架
+
+类似 vue-cli
+
+[Next-gen Web Extension Framework – WXT](https://wxt.dev/)

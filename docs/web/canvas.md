@@ -59,6 +59,7 @@ Clamped 固定的
 
 - 不阻塞主线程
 - 也不会被主线程的重任务阻塞
+- 如何渲染：不能当作普通 canvas 数据直接渲染，需要使用 transferToImageBitmap，不涉及数据拷贝。执行后，浏览器将接管 OffscreenCanvas 的内存，并且 OffscreenCanvas 本身将不再包含任何数据。
 
 OffscreenCanvas 是 HTML5 新增的功能之一，它允许在后台线程中进行离屏渲染，而无需在主线程中创建和操作 DOM 元素。
 
@@ -142,3 +143,11 @@ const {width, height} = bmp;
 ## 压缩图片
 
 canvas.toBlob 可设置格式和质量
+
+## drawimage
+
+```
+context.drawImage(image, sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight)
+
+截取
+```
