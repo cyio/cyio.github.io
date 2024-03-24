@@ -1,0 +1,1 @@
+const e={key:"v-777e5a2b",path:"/web/html-head.html",title:"html head",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"viewport",slug:"viewport",children:[]}],git:{updatedTime:1711241088e3,contributors:[{name:"gongyi01",email:"gongyi01@baidu.com",commits:1}]},filePathRelative:"web/html-head.md"};export{e as data};

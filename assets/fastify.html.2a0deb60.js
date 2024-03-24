@@ -1,1 +1,0 @@
-const t={key:"v-99caeb8c",path:"/frameworks/fastify.html",title:"Fastify",lang:"en-US",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1709890929e3,contributors:[{name:"gongyi01",email:"gongyi01@baidu.com",commits:1}]},filePathRelative:"frameworks/fastify.md"};export{t as data};

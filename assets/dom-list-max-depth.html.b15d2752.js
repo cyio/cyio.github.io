@@ -1,0 +1,1 @@
+const t={key:"v-ca469736",path:"/javascript/solutions/dom-list-max-depth.html",title:"DOM \u5217\u8868\u6700\u5927\u6DF1\u5EA6",lang:"en-US",frontmatter:{},excerpt:"",headers:[],git:{updatedTime:1711241088e3,contributors:[{name:"gongyi01",email:"gongyi01@baidu.com",commits:1}]},filePathRelative:"javascript/solutions/dom-list-max-depth.md"};export{t as data};

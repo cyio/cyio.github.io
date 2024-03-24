@@ -1,0 +1,13 @@
+import{_ as n,e as s}from"./app.a812d536.js";const a={},p=s(`<h1 id="\u5224\u65AD\u56DE\u6587\u5B57\u7B26\u4E32" tabindex="-1"><a class="header-anchor" href="#\u5224\u65AD\u56DE\u6587\u5B57\u7B26\u4E32" aria-hidden="true">#</a> \u5224\u65AD\u56DE\u6587\u5B57\u7B26\u4E32</h1><p>\u601D\u8DEF\uFF1A \u9006\u8F6C\u5B57\u7B26\u4E32\uFF0C\u5982\u679C\u5B57\u7B26\u4E32\u7279\u522B\u957F\uFF0C\u9700\u8981\u989D\u5916\u5185\u5B58\uFF0C\u53EF\u80FD\u6709\u6027\u80FD\u95EE\u9898</p><p>\u8FDB\u9636\u601D\u8DEF\uFF1A\u53CC\u6307\u9488</p><p>\u5B9E\u73B0\u4E0A\uFF0C\u7528 while \u5199\u7B80\u5355\uFF0Cfor \u9700\u8981\u6298\u7B97</p><div class="language-javascript ext-js"><pre class="language-javascript"><code><span class="token keyword">function</span> <span class="token function">isPalindrome</span><span class="token punctuation">(</span><span class="token parameter"><span class="token literal-property property">s</span><span class="token operator">:</span> string</span><span class="token punctuation">)</span><span class="token operator">:</span> boolean <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> l <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">let</span> r <span class="token operator">=</span> s<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>l <span class="token operator">&lt;</span> r<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>s<span class="token punctuation">[</span>l<span class="token punctuation">]</span> <span class="token operator">!==</span> s<span class="token punctuation">[</span>r<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token boolean">false</span>
+        <span class="token punctuation">}</span>
+        l<span class="token operator">++</span><span class="token punctuation">;</span>
+        r<span class="token operator">--</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token boolean">true</span>
+<span class="token punctuation">}</span>
+</code></pre></div>`,5);function t(o,e){return p}var l=n(a,[["render",t],["__file","is-palindrome.html.vue"]]);export{l as default};
