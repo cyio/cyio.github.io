@@ -91,6 +91,21 @@ scrollDistance 计算
       }
 ```
 
+### pool 数据丢失 
+
+需要源码打点
+[Missing elements after RecycleScroller is displayed · Issue #794 · Akryum/vue-virtual-scroller](https://github.com/Akryum/vue-virtual-scroller/issues/794#issuecomment-1443121523)
+[Space between items in the list is wrong · Issue #749 · Akryum/vue-virtual-scroller](https://github.com/Akryum/vue-virtual-scroller/issues/749)
+## 将元素滚动到可见区域
+
+scrollIntoView
+- smooth 有时看起来像卡，用默认值 instant 更好
+- block 表示垂直，inline 表示水平，两者默认者不同，注意使用。
+- nearest 与父元素最近的边对齐
+```
+images[currentIndex - 1].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+```
+	
 ## 参考
 
 [前端多数据渲染优化 - Grewer - 博客园](https://www.cnblogs.com/Grewer/p/16084947.html)
