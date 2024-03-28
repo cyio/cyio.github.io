@@ -87,3 +87,4 @@ docs/tmp.*
 .vscode
 docs/.obsidian/plugins/
 docs/.obsidian/workspace.json
+docs/.vitepress/cache/
