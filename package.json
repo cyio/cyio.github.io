@@ -1,9 +1,6 @@
 {
   "type": "module",
   "scripts": {
-    "start": "npm run docs:dev",
-    "docs:dev": "vuepress dev docs --port 8090",
-    "docs:build": "vuepress build docs",
     "dev": "vitepress dev docs --port=8732",
     "build": "vitepress build docs"
   },
