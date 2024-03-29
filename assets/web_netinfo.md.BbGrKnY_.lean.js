@@ -1,0 +1,1 @@
+import{_ as i,c as a,o as n,a4 as s}from"./chunks/framework.4aTu-Nia.js";const E=JSON.parse('{"title":"netinfo","description":"","frontmatter":{},"headers":[],"relativePath":"web/netinfo.md","filePath":"web/netinfo.md"}'),e={name:"web/netinfo.md"},t=s("",8),o=[t];function r(l,h,p,k,d,c){return n(),a("div",null,o)}const f=i(e,[["render",r]]);export{E as __pageData,f as default};

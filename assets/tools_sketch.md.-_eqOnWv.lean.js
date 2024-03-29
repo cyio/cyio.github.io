@@ -1,0 +1,1 @@
+import{_ as e,c as t,o as a,a4 as o}from"./chunks/framework.4aTu-Nia.js";const f=JSON.parse('{"title":"sketch","description":"","frontmatter":{},"headers":[],"relativePath":"tools/sketch.md","filePath":"tools/sketch.md"}'),s={name:"tools/sketch.md"},r=o("",8),l=[r];function c(h,n,i,_,d,p){return a(),t("div",null,l)}const m=e(s,[["render",c]]);export{f as __pageData,m as default};

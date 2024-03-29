@@ -1,0 +1,1 @@
+import{_ as i,c as s,o as a,a4 as l}from"./chunks/framework.4aTu-Nia.js";const u=JSON.parse('{"title":"上传","description":"","frontmatter":{},"headers":[],"relativePath":"web/upload.md","filePath":"web/upload.md"}'),t={name:"web/upload.md"},e=l("",34),h=[e];function n(p,k,r,o,d,E){return a(),s("div",null,h)}const c=i(t,[["render",n]]);export{u as __pageData,c as default};

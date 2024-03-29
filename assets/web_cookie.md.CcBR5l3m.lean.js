@@ -1,0 +1,1 @@
+import{_ as s,c as i,o as a,a4 as n}from"./chunks/framework.4aTu-Nia.js";const c=JSON.parse('{"title":"Cookie","description":"","frontmatter":{},"headers":[],"relativePath":"web/cookie.md","filePath":"web/cookie.md"}'),h={name:"web/cookie.md"},e=n("",35),t=[e];function k(l,p,r,o,d,E){return a(),i("div",null,t)}const y=s(h,[["render",k]]);export{c as __pageData,y as default};

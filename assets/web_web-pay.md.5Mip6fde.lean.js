@@ -1,0 +1,1 @@
+import{_ as s,c as i,o as a,a4 as n}from"./chunks/framework.4aTu-Nia.js";const o=JSON.parse('{"title":"网页支付","description":"","frontmatter":{},"headers":[],"relativePath":"web/web-pay.md","filePath":"web/web-pay.md"}'),t={name:"web/web-pay.md"},h=n("",3),e=[h];function l(p,k,E,r,d,c){return a(),i("div",null,e)}const y=s(t,[["render",l]]);export{o as __pageData,y as default};

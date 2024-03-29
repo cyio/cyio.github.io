@@ -1,0 +1,1 @@
+import{_ as e,c as a,o as t,a4 as l}from"./chunks/framework.4aTu-Nia.js";const _=JSON.parse('{"title":"babel","description":"","frontmatter":{},"headers":[],"relativePath":"web/babel.md","filePath":"web/babel.md"}'),r={name:"web/babel.md"},o=l("",6),s=[o];function i(b,n,p,c,h,u){return t(),a("div",null,s)}const d=e(r,[["render",i]]);export{_ as __pageData,d as default};

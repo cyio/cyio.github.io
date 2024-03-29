@@ -1,0 +1,1 @@
+import{_ as a,c as e,o as s,a4 as t}from"./chunks/framework.4aTu-Nia.js";const k=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"tools/ssh.md","filePath":"tools/ssh.md"}'),o={name:"tools/ssh.md"},i=t("",9),h=[i];function r(n,l,c,p,d,u){return s(),e("div",null,h)}const b=a(o,[["render",r]]);export{k as __pageData,b as default};

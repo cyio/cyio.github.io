@@ -1,0 +1,1 @@
+import{_ as e,c as o,o as a,a4 as t}from"./chunks/framework.4aTu-Nia.js";const u=JSON.parse('{"title":"blob","description":"","frontmatter":{},"headers":[],"relativePath":"web/blob.md","filePath":"web/blob.md"}'),l={name:"web/blob.md"},r=t("",5),b=[r];function i(s,n,d,c,p,_){return a(),o("div",null,b)}const m=e(l,[["render",i]]);export{u as __pageData,m as default};

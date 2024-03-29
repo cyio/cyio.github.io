@@ -1,0 +1,1 @@
+import{_ as e,c as t,o as a,a4 as r}from"./chunks/framework.4aTu-Nia.js";const w=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"project/apis.md","filePath":"project/apis.md"}'),o={name:"project/apis.md"},c=r("",8),p=[c];function s(i,h,n,l,_,d){return a(),t("div",null,p)}const m=e(o,[["render",s]]);export{w as __pageData,m as default};

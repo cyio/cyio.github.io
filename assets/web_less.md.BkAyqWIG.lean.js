@@ -1,0 +1,1 @@
+import{_ as s,c as i,o as a,a4 as n}from"./chunks/framework.4aTu-Nia.js";const y=JSON.parse('{"title":"Less","description":"","frontmatter":{},"headers":[],"relativePath":"web/less.md","filePath":"web/less.md"}'),l={name:"web/less.md"},h=n("",12),p=[h];function k(t,e,E,d,r,g){return a(),i("div",null,p)}const o=s(l,[["render",k]]);export{y as __pageData,o as default};

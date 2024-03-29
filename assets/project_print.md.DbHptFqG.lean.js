@@ -1,0 +1,1 @@
+import{_ as t,c as e,o as l,a4 as a}from"./chunks/framework.4aTu-Nia.js";const f=JSON.parse('{"title":"打印","description":"","frontmatter":{},"headers":[],"relativePath":"project/print.md","filePath":"project/print.md"}'),i={name:"project/print.md"},o=a("",7),r=[o];function _(s,n,c,p,d,u){return l(),e("div",null,r)}const m=t(i,[["render",_]]);export{f as __pageData,m as default};

@@ -1,0 +1,1 @@
+import{_ as s,c as i,o as a,a4 as n}from"./chunks/framework.4aTu-Nia.js";const F=JSON.parse('{"title":"滚动","description":"","frontmatter":{},"headers":[],"relativePath":"web/scroll.md","filePath":"web/scroll.md"}'),l={name:"web/scroll.md"},h=n("",17),k=[h];function t(p,e,E,r,d,g){return a(),i("div",null,k)}const c=s(l,[["render",t]]);export{F as __pageData,c as default};

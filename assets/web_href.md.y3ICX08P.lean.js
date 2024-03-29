@@ -1,0 +1,1 @@
+import{_ as e,c as a,o,a4 as t}from"./chunks/framework.4aTu-Nia.js";const f=JSON.parse('{"title":"Anchor","description":"","frontmatter":{},"headers":[],"relativePath":"web/href.md","filePath":"web/href.md"}'),n={name:"web/href.md"},r=t("",11),s=[r];function l(c,i,d,p,h,u){return o(),a("div",null,s)}const g=e(n,[["render",l]]);export{f as __pageData,g as default};
