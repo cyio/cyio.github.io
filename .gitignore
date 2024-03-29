@@ -88,3 +88,4 @@ docs/tmp.*
 docs/.obsidian/plugins/
 docs/.obsidian/workspace.json
 docs/.vitepress/cache/
+package-lock.json

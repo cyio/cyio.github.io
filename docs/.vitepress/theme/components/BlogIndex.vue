@@ -1,14 +1,6 @@
-<script setup lang="ts">
-import { data as posts } from './blog.data'
-
-function getDateTime(time: number) {
-  return new Date(time).toISOString()
-}
-</script>
-
 <template>
   <ul class="blog-list">
-    <li class="blog-entry" v-for="post of posts">
+    <li class="blog-entry" v-for="post of posts" :key="post.title">
       <article>
         <time :datetime="getDateTime(post.date.time)">{{
           post.date.string
@@ -20,6 +12,22 @@ function getDateTime(time: number) {
     </li>
   </ul>
 </template>
+
+<script setup lang="ts">
+import { onMounted } from 'vue'
+import { data as posts } from './blog.data'
+
+function getDateTime(time: number) {
+  return new Date(time).toISOString()
+}
+
+onMounted(async () => {
+  const response = await fetch('https://jsonplaceholder.typicode.com/posts');
+  const data = await response.json();
+  console.log('data', data)
+})
+
+</script>
 
 <style scoped>
 .blog-list {

@@ -14,3 +14,10 @@ hero:
       link: https://github.com/cyio
   # footer: 当一个程序员对算法、语言标准、底层、原生、英文文档这些词汇产生恐惧感的时候，他的技术生命已经走到尽头
 ---
+
+<script setup>
+import Quote from './.vitepress/theme/components/Quote.vue'
+</script>
+
+
+<Quote />

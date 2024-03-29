@@ -30,7 +30,7 @@ export default defineConfig({
       label: '页面导航'
     },
     footer: {
-      message: '当一个程序员对算法、语言标准、底层、原生、英文文档这些词汇产生恐惧感的时候，他的技术生命已经走到尽头',
+      // message: '当一个程序员对算法、语言标准、底层、原生、英文文档这些词汇产生恐惧感的时候，他的技术生命已经走到尽头',
       // copyright: 'Copyright © 2019-present Evan You'
     },
 
