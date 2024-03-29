@@ -1,0 +1,1 @@
+import{_ as e,c as t,o as a,a4 as n}from"./chunks/framework.DzOtv0XR.js";const m=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"node/bun.md","filePath":"node/bun.md"}'),s={name:"node/bun.md"},p=n("",7),r=[p];function o(c,i,d,_,l,u){return a(),t("div",null,r)}const b=e(s,[["render",o]]);export{m as __pageData,b as default};

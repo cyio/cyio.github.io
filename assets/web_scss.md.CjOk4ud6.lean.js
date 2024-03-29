@@ -1,1 +1,0 @@
-import{_ as s,c as i,o as a,a4 as n}from"./chunks/framework.4aTu-Nia.js";const g=JSON.parse('{"title":"SCSS","description":"","frontmatter":{},"headers":[],"relativePath":"web/scss.md","filePath":"web/scss.md"}'),e={name:"web/scss.md"},l=n("",13),h=[l];function t(p,k,r,d,c,E){return a(),i("div",null,h)}const y=s(e,[["render",t]]);export{g as __pageData,y as default};

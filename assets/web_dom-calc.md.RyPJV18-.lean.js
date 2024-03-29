@@ -1,0 +1,1 @@
+import{_ as s,c as i,o as a,a4 as n}from"./chunks/framework.DzOtv0XR.js";const o=JSON.parse('{"title":"DOM 计算","description":"","frontmatter":{},"headers":[],"relativePath":"web/dom-calc.md","filePath":"web/dom-calc.md"}'),t={name:"web/dom-calc.md"},e=n("",7),l=[e];function h(p,k,E,r,c,d){return a(),i("div",null,l)}const y=s(t,[["render",h]]);export{o as __pageData,y as default};

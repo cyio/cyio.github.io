@@ -1,1 +1,0 @@
-import{_ as e,c as a,o as t,a4 as o}from"./chunks/framework.4aTu-Nia.js";const u=JSON.parse('{"title":"Zsh","description":"","frontmatter":{},"headers":[],"relativePath":"tools/zsh.md","filePath":"tools/zsh.md"}'),s={name:"tools/zsh.md"},r=o("",6),h=[r];function i(c,l,n,d,_,p){return t(),a("div",null,h)}const f=e(s,[["render",i]]);export{u as __pageData,f as default};

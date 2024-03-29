@@ -1,0 +1,1 @@
+import{_ as s,c as i,o as a,a4 as l}from"./chunks/framework.DzOtv0XR.js";const c=JSON.parse('{"title":"图片","description":"","frontmatter":{},"headers":[],"relativePath":"web/images.md","filePath":"web/images.md"}'),e={name:"web/images.md"},t=l("",81),n=[t];function h(p,k,r,d,E,o){return a(),i("div",null,n)}const y=s(e,[["render",h]]);export{c as __pageData,y as default};

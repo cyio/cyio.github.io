@@ -1,0 +1,1 @@
+import{_ as s,c as e,o as a,a4 as i}from"./chunks/framework.DzOtv0XR.js";const E=JSON.parse('{"title":"前端测试","description":"","frontmatter":{},"headers":[],"relativePath":"web/e2e-test.md","filePath":"web/e2e-test.md"}'),t={name:"web/e2e-test.md"},r=i("",16),n=[r];function l(h,p,o,k,c,d){return a(),e("div",null,n)}const y=s(t,[["render",l]]);export{E as __pageData,y as default};

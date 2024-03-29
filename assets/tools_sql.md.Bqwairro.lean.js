@@ -1,1 +1,0 @@
-import{_ as s,c as a,o as i,a4 as l}from"./chunks/framework.4aTu-Nia.js";const E=JSON.parse('{"title":"SQL","description":"","frontmatter":{},"headers":[],"relativePath":"tools/sql.md","filePath":"tools/sql.md"}'),e={name:"tools/sql.md"},n=l("",46),h=[n];function t(p,k,r,d,o,c){return i(),a("div",null,h)}const y=s(e,[["render",t]]);export{E as __pageData,y as default};

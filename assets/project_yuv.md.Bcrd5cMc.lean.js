@@ -1,0 +1,1 @@
+import{_ as a,c as e,o as p,a4 as t}from"./chunks/framework.DzOtv0XR.js";const _=JSON.parse('{"title":"YUV","description":"","frontmatter":{},"headers":[],"relativePath":"project/yuv.md","filePath":"project/yuv.md"}'),s={name:"project/yuv.md"},n=t("",26),o=[n];function i(l,r,c,h,d,u){return p(),e("div",null,o)}const b=a(s,[["render",i]]);export{_ as __pageData,b as default};

@@ -1,0 +1,1 @@
+import{_ as s,c as a,o as i,a4 as t}from"./chunks/framework.DzOtv0XR.js";const C=JSON.parse('{"title":"HLS","description":"","frontmatter":{},"headers":[],"relativePath":"project/hls.md","filePath":"project/hls.md"}'),e={name:"project/hls.md"},h=t("",38),n=[h];function l(p,r,k,d,o,F){return i(),a("div",null,n)}const g=s(e,[["render",l]]);export{C as __pageData,g as default};

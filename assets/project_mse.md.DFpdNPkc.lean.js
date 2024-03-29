@@ -1,1 +1,0 @@
-import{_ as s,c as i,o as a,a4 as e}from"./chunks/framework.4aTu-Nia.js";const g=JSON.parse('{"title":"MSE api","description":"","frontmatter":{},"headers":[],"relativePath":"project/mse.md","filePath":"project/mse.md"}'),n={name:"project/mse.md"},t=e("",14),p=[t];function h(l,k,r,d,E,o){return a(),i("div",null,p)}const u=s(n,[["render",h]]);export{g as __pageData,u as default};

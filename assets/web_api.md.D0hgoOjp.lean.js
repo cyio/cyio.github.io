@@ -1,1 +1,0 @@
-import{_ as a,c as e,o,a4 as t}from"./chunks/framework.4aTu-Nia.js";const _=JSON.parse('{"title":"API","description":"","frontmatter":{},"headers":[],"relativePath":"web/api.md","filePath":"web/api.md"}'),r={name:"web/api.md"},l=t("",17),i=[l];function s(n,h,p,d,c,m){return o(),e("div",null,i)}const f=a(r,[["render",s]]);export{_ as __pageData,f as default};

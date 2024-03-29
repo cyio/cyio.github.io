@@ -1,1 +1,0 @@
-import{_ as i,c as s,o as a,a4 as t}from"./chunks/framework.4aTu-Nia.js";const c=JSON.parse('{"title":"Pug","description":"","frontmatter":{},"headers":[],"relativePath":"tools/pug.md","filePath":"tools/pug.md"}'),l={name:"tools/pug.md"},p=t("",2),h=[p];function n(e,k,r,d,E,g){return a(),s("div",null,h)}const y=i(l,[["render",n]]);export{c as __pageData,y as default};

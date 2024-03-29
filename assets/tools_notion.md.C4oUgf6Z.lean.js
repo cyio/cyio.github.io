@@ -1,1 +1,0 @@
-import{_ as o,c as t,o as a,a4 as e}from"./chunks/framework.4aTu-Nia.js";const m=JSON.parse('{"title":"Notion","description":"","frontmatter":{},"headers":[],"relativePath":"tools/notion.md","filePath":"tools/notion.md"}'),i={name:"tools/notion.md"},n=e("",5),l=[n];function r(s,_,c,d,h,p){return a(),t("div",null,l)}const f=o(i,[["render",r]]);export{m as __pageData,f as default};

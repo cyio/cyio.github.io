@@ -1,0 +1,1 @@
+import{_ as t,c as a,o as s,a4 as e}from"./chunks/framework.DzOtv0XR.js";const x=JSON.parse('{"title":"Tmux","description":"","frontmatter":{},"headers":[],"relativePath":"tools/tmux.md","filePath":"tools/tmux.md"}'),n={name:"tools/tmux.md"},p=e("",27),d=[p];function r(l,i,o,c,h,u){return s(),a("div",null,d)}const g=t(n,[["render",r]]);export{x as __pageData,g as default};

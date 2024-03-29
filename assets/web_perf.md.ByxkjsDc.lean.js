@@ -1,1 +1,0 @@
-import{_ as e,c as a,o as r,a4 as t}from"./chunks/framework.4aTu-Nia.js";const u=JSON.parse('{"title":"性能","description":"","frontmatter":{},"headers":[],"relativePath":"web/perf.md","filePath":"web/perf.md"}'),i={name:"web/perf.md"},s=t("",130),o=[s];function l(n,p,h,c,d,g){return r(),a("div",null,o)}const b=e(i,[["render",l]]);export{u as __pageData,b as default};

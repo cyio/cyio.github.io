@@ -1,1 +1,0 @@
-import{_ as s,c as i,o as a,a4 as n}from"./chunks/framework.4aTu-Nia.js";const g=JSON.parse('{"title":"MQTT","description":"","frontmatter":{},"headers":[],"relativePath":"project/mqtt.md","filePath":"project/mqtt.md"}'),t={name:"project/mqtt.md"},p=n("",12),l=[p];function e(h,k,r,E,o,d){return a(),i("div",null,l)}const m=s(t,[["render",e]]);export{g as __pageData,m as default};

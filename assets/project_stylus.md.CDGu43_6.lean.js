@@ -1,1 +1,0 @@
-import{_ as s,c as i,o as t,a4 as a}from"./chunks/framework.4aTu-Nia.js";const g=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"project/stylus.md","filePath":"project/stylus.md"}'),e={name:"project/stylus.md"},l=a("",2),n=[l];function p(r,h,k,o,d,c){return t(),i("div",null,n)}const _=s(e,[["render",p]]);export{g as __pageData,_ as default};

@@ -1,0 +1,1 @@
+import{_ as e,c as a,o as t,a4 as r}from"./chunks/framework.DzOtv0XR.js";const m=JSON.parse('{"title":"省市区联动","description":"","frontmatter":{},"headers":[],"relativePath":"web/pca.md","filePath":"web/pca.md"}'),i={name:"web/pca.md"},o=r("",5),c=[o];function s(l,n,d,h,_,p){return t(),a("div",null,c)}const b=e(i,[["render",s]]);export{m as __pageData,b as default};

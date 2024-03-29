@@ -1,0 +1,1 @@
+import{_ as a,c as e,o,a4 as l}from"./chunks/framework.DzOtv0XR.js";const b=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"books/原则.md","filePath":"books/原则.md"}'),t={name:"books/原则.md"},i=l("",31),p=[i];function r(s,c,n,h,d,_){return o(),e("div",null,p)}const q=a(t,[["render",r]]);export{b as __pageData,q as default};

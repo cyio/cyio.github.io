@@ -1,0 +1,1 @@
+import{_ as s,c as i,o as a,a4 as n}from"./chunks/framework.DzOtv0XR.js";const c=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"web/jquery.md","filePath":"web/jquery.md"}'),t={name:"web/jquery.md"},h=n("",16),l=[h];function p(k,e,E,d,r,g){return a(),i("div",null,l)}const y=s(t,[["render",p]]);export{c as __pageData,y as default};

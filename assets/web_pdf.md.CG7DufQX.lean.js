@@ -1,1 +1,0 @@
-import{_ as s,c as i,o as a,a4 as t}from"./chunks/framework.4aTu-Nia.js";const c=JSON.parse('{"title":"PDF","description":"","frontmatter":{},"headers":[],"relativePath":"web/pdf.md","filePath":"web/pdf.md"}'),n={name:"web/pdf.md"},h=t("",25),e=[h];function p(l,k,r,d,E,o){return a(),i("div",null,e)}const y=s(n,[["render",p]]);export{c as __pageData,y as default};

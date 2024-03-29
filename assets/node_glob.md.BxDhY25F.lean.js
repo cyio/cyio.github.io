@@ -1,0 +1,1 @@
+import{_ as s,c as i,o as a,a4 as n}from"./chunks/framework.DzOtv0XR.js";const c=JSON.parse('{"title":"glob","description":"","frontmatter":{},"headers":[],"relativePath":"node/glob.md","filePath":"node/glob.md"}'),l={name:"node/glob.md"},t=n("",3),h=[t];function e(p,k,r,E,d,o){return a(),i("div",null,h)}const y=s(l,[["render",e]]);export{c as __pageData,y as default};

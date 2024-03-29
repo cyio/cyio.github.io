@@ -1,0 +1,1 @@
+import{_ as s,c as i,o as a,a4 as t}from"./chunks/framework.DzOtv0XR.js";const g=JSON.parse('{"title":"页面编码","description":"","frontmatter":{},"headers":[],"relativePath":"web/encode.md","filePath":"web/encode.md"}'),n={name:"web/encode.md"},h=t("",7),e=[h];function l(p,k,E,r,d,o){return a(),i("div",null,e)}const y=s(n,[["render",l]]);export{g as __pageData,y as default};

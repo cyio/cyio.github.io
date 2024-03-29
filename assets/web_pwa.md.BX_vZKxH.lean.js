@@ -1,1 +1,0 @@
-import{_ as a,c as s,o as e,a4 as i}from"./chunks/framework.4aTu-Nia.js";const g=JSON.parse('{"title":"PWA","description":"","frontmatter":{},"headers":[],"relativePath":"web/pwa.md","filePath":"web/pwa.md"}'),t={name:"web/pwa.md"},r=i("",62),n=[r];function l(h,p,o,k,d,c){return e(),s("div",null,n)}const u=a(t,[["render",l]]);export{g as __pageData,u as default};

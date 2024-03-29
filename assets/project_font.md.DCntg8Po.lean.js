@@ -1,0 +1,1 @@
+import{_ as s,c as i,o as a,a4 as n}from"./chunks/framework.DzOtv0XR.js";const c=JSON.parse('{"title":"font","description":"","frontmatter":{},"headers":[],"relativePath":"project/font.md","filePath":"project/font.md"}'),t={name:"project/font.md"},h=n("",11),l=[h];function k(p,e,E,r,o,g){return a(),i("div",null,l)}const y=s(t,[["render",k]]);export{c as __pageData,y as default};

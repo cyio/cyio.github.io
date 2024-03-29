@@ -1,1 +1,0 @@
-import{_ as s,c as i,o as a,a4 as n}from"./chunks/framework.4aTu-Nia.js";const g=JSON.parse('{"title":"Mock","description":"","frontmatter":{},"headers":[],"relativePath":"web/mock.md","filePath":"web/mock.md"}'),l={name:"web/mock.md"},t=n("",5),e=[t];function h(p,k,r,o,d,c){return a(),i("div",null,e)}const y=s(l,[["render",h]]);export{g as __pageData,y as default};

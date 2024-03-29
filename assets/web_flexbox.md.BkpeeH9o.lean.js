@@ -1,1 +1,0 @@
-import{_ as s,c as i,o as a,a4 as l}from"./chunks/framework.4aTu-Nia.js";const c=JSON.parse('{"title":"Flexbox","description":"","frontmatter":{},"headers":[],"relativePath":"web/flexbox.md","filePath":"web/flexbox.md"}'),e={name:"web/flexbox.md"},t=l("",23),n=[t];function h(p,r,k,o,d,E){return a(),i("div",null,n)}const y=s(e,[["render",h]]);export{c as __pageData,y as default};

@@ -1,1 +1,0 @@
-import{_ as s,c as i,o as a,a4 as n}from"./chunks/framework.4aTu-Nia.js";const c=JSON.parse('{"title":"Axios","description":"","frontmatter":{},"headers":[],"relativePath":"tools/axios.md","filePath":"tools/axios.md"}'),t={name:"tools/axios.md"},h=n("",19),e=[h];function l(p,k,r,o,d,E){return a(),i("div",null,e)}const y=s(t,[["render",l]]);export{c as __pageData,y as default};

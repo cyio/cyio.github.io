@@ -1,0 +1,1 @@
+import{_ as s,c as a,o as i,a4 as n}from"./chunks/framework.DzOtv0XR.js";const o=JSON.parse('{"title":"Canvas","description":"","frontmatter":{},"headers":[],"relativePath":"web/canvas.md","filePath":"web/canvas.md"}'),t={name:"web/canvas.md"},h=n("",47),e=[h];function l(p,k,r,d,g,E){return i(),a("div",null,e)}const y=s(t,[["render",l]]);export{o as __pageData,y as default};

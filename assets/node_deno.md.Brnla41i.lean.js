@@ -1,1 +1,0 @@
-import{_ as e,c as o,o as t,a4 as a}from"./chunks/framework.4aTu-Nia.js";const u=JSON.parse('{"title":"Deno","description":"","frontmatter":{},"headers":[],"relativePath":"node/deno.md","filePath":"node/deno.md"}'),r={name:"node/deno.md"},n=a("",11),i=[n];function d(s,c,_,l,p,h){return t(),o("div",null,i)}const f=e(r,[["render",d]]);export{u as __pageData,f as default};

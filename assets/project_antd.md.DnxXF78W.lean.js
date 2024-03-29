@@ -1,1 +1,0 @@
-import{_ as a,c as t,o as e,a4 as o}from"./chunks/framework.4aTu-Nia.js";const f=JSON.parse('{"title":"antd","description":"","frontmatter":{},"headers":[],"relativePath":"project/antd.md","filePath":"project/antd.md"}'),n={name:"project/antd.md"},r=o("",5),d=[r];function i(s,c,_,l,h,m){return e(),t("div",null,d)}const u=a(n,[["render",i]]);export{f as __pageData,u as default};

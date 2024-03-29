@@ -1,1 +1,0 @@
-import{_ as s,c as a,o as i,a4 as n}from"./chunks/framework.4aTu-Nia.js";const E=JSON.parse('{"title":"SVG","description":"","frontmatter":{},"headers":[],"relativePath":"web/svg.md","filePath":"web/svg.md"}'),e={name:"web/svg.md"},t=n("",33),l=[t];function p(h,r,o,k,c,d){return i(),a("div",null,l)}const u=s(e,[["render",p]]);export{E as __pageData,u as default};

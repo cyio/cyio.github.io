@@ -1,1 +1,0 @@
-import{_ as s,c as i,o as a,a4 as l}from"./chunks/framework.4aTu-Nia.js";const E=JSON.parse('{"title":"gulp","description":"","frontmatter":{},"headers":[],"relativePath":"node/gulp.md","filePath":"node/gulp.md"}'),n={name:"node/gulp.md"},p=l("",6),e=[p];function t(h,k,r,d,o,g){return a(),i("div",null,e)}const u=s(n,[["render",t]]);export{E as __pageData,u as default};

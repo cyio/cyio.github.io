@@ -1,0 +1,1 @@
+import{_ as s,c as i,o as a,a4 as n}from"./chunks/framework.DzOtv0XR.js";const F=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"project/bocai.md","filePath":"project/bocai.md"}'),h={name:"project/bocai.md"},k=n("",17),l=[k];function p(t,e,E,d,r,g){return a(),i("div",null,l)}const c=s(h,[["render",p]]);export{F as __pageData,c as default};
