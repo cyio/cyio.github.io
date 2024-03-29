@@ -1,6 +1,6 @@
 import { defineConfig } from 'vitepress'
 import path from 'node:path';
-import glob from 'glob';
+import {glob} from 'glob';
 import {getFirstHeading} from './util';
 
 export default defineConfig({
