@@ -1,1 +1,0 @@
-import{_ as a,c as i,o as s,a4 as e}from"./chunks/framework.DzOtv0XR.js";const g=JSON.parse('{"title":"NPM","description":"","frontmatter":{},"headers":[],"relativePath":"node/npm.md","filePath":"node/npm.md"}'),n={name:"node/npm.md"},l=e("",84),p=[l];function t(r,h,o,c,d,k){return s(),i("div",null,p)}const u=a(n,[["render",t]]);export{g as __pageData,u as default};

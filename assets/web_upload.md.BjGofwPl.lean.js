@@ -1,0 +1,1 @@
+import{_ as s,c as i,o as a,a4 as l}from"./chunks/framework.DzOtv0XR.js";const u=JSON.parse('{"title":"上传","description":"","frontmatter":{},"headers":[],"relativePath":"web/upload.md","filePath":"web/upload.md"}'),t={name:"web/upload.md"},e=l("",33),h=[e];function n(p,k,r,o,d,E){return a(),i("div",null,h)}const c=s(t,[["render",n]]);export{u as __pageData,c as default};

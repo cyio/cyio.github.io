@@ -1,0 +1,1 @@
+import{_ as s,c as a,o as i,a4 as n}from"./chunks/framework.DzOtv0XR.js";const E=JSON.parse('{"title":"SQL","description":"","frontmatter":{},"headers":[],"relativePath":"tools/sql.md","filePath":"tools/sql.md"}'),e={name:"tools/sql.md"},t=n("",45),l=[t];function h(p,k,r,d,o,c){return i(),a("div",null,l)}const y=s(e,[["render",h]]);export{E as __pageData,y as default};
