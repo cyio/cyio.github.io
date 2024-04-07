@@ -1,5 +1,4 @@
-# WebWorkers
-[toc]
+# Web Workers
 
 创建线程池，复用多核能力加速计算
 

@@ -1,6 +1,6 @@
 # Typescript
 
-[[toc]]
+
 
 TypeScript 是一种由微软开发的静态类型语言，它是 JavaScript 的超集。与 JavaScript 不同的是，TypeScript 强制要求变量、函数和对象属性等具有明确的类型，并在编译时检查这些类型，以帮助开发人员在代码编写阶段就发现潜在的问题。
 

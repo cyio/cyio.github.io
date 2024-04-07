@@ -1,5 +1,5 @@
 # clean code
-[[toc]]
+
 
 ## [编程的智慧](http://www.yinwang.org/blog-cn/2015/11/21/programming-philosophy)
 

@@ -1,5 +1,4 @@
 # this
-[[toc]]
 
 ## basic
 

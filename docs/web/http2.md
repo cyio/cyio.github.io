@@ -1,5 +1,5 @@
 # HTTP 2
-[[toc]]
+
 
 ## TLDR
 

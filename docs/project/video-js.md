@@ -1,5 +1,5 @@
 # videojs
-[[toc]]
+
 
 [video.js/player-workflows.md at master · videojs/video.js · GitHub](https://github.com/videojs/video.js/blob/master/docs/guides/player-workflows.md#accesing-the-tech-on-the-player)
 

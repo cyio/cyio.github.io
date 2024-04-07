@@ -1,5 +1,5 @@
 # Vue 3 源码学习
-[[toc]]
+
 
 在线源码 https://vscode.dev/github/vuejs/core
 

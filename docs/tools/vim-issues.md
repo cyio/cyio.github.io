@@ -1,5 +1,5 @@
 # VIM-ISSUES
-[[toc]]
+
 
 ## ssh 上复制
 

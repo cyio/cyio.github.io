@@ -1,5 +1,4 @@
 # Promise
-[[toc]]
 
 ![image.png](https://img.oaker.bid/?url=http://ww2.sinaimg.cn/large/4e5d3ea7ly1h0hvynxp8oj20nz0b0767.jpg)
 

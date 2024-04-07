@@ -1,5 +1,5 @@
 # Vue 源码学习
-[[toc]]
+
 
 ## 源码
 https://vscode.dev/github/vuejs/vue

@@ -1,5 +1,5 @@
 # HTTP
-[[toc]]
+
 
 [Connection management in HTTP/1.x - HTTP | MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Connection_management_in_HTTP_1.x)
 

@@ -1,14 +1,5 @@
-<!-- <template>
-  <div id="footer">
-    <blockquote>
-      当一个程序员对算法、语言标准、底层、原生、英文文档这些词汇产生恐惧感的时候，他的技术生命已经走到尽头
-    </blockquote>
-  </div>
-</template> -->
 <template>
   <div id="quote">
-    <!-- {{ data }} -->
-    <!-- <h1>格言如下：</h1> -->
     <div v-show="quote.content" class="quote-text">
       "{{ quote.content }}" - {{ quote.author }}
     </div>
@@ -19,12 +10,20 @@
 import { ref, onMounted } from 'vue';
 import { data } from './quote.data'
 
-const quote = ref(data);
+const quote = ref({});
+// const quote = ref(data); // 会闪
 
 async function init() {
-  const response = await fetch('https://api.quotable.io/random');
-  quote.value = await response.json();
+  try {
+    const response = await fetch('https://api.quotable.io/random');
+    quote.value = await response.json();
+  } catch (error) {
+    // 处理错误
+    console.error(error);
+    quote.value = data;
+  }
 }
+
 
 onMounted(() => {
   init()

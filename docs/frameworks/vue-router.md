@@ -1,5 +1,5 @@
 # vue-router
-[[toc]]
+
 
 ## 路由原理
 hash / history

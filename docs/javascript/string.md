@@ -1,5 +1,5 @@
 # 字符串
-[[toc]]
+
 
 ```js
 var stringValue = "Hello World";

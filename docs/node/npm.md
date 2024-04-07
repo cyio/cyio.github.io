@@ -1,5 +1,5 @@
 # NPM
-[[toc]]
+
 
 ## 安装机制
 ![Pasted image 20221103214318.png](https://img.oaker.bid/?url=http://tvax1.sinaimg.cn/large/4e5d3ea7gy1h9ply62zinj20p90cgq7n.jpg)
