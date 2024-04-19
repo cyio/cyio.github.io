@@ -83,6 +83,10 @@ leading-7 行间距为字体大小的 1.7 倍
 
 ## 组件库
 
+## pop
+
+关键字  group group-hover 实际就是 css 的简写
+
 [Sailboat UI - Modern UI component library for Tailwind CSS](https://sailboatui.com/)
 [daisyUI — Tailwind CSS Components](https://daisyui.com/)
 [http://Tailblock.cc](https://link.zhihu.com/?target=http%3A//Tailblock.cc) ，有一系列可以直接拿来用的 tailwind 组件
@@ -115,6 +119,10 @@ tailwind utility-first，随意组合、自由度高
 
 https://cdn.tailwindcss.com/ 会 302 重定向到最新版，100kb 大小
 
+## 响应式
+
+- 根级 动态算，
+- 父级添加 text-base，影响
 ## 编辑器
 
 官方插件，相当于带有翻译功能
@@ -246,8 +254,6 @@ lightningcss rust 编写，光速，追求性能，类似 esbuild
 可以控制 target
 
 ## 对比
-
-| | | | | | |
 
 |---|---|---|---|---|---|
 
