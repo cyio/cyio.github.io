@@ -1,1 +1,0 @@
-import{_ as a,c as e,o as r,a4 as i}from"./chunks/framework.DzOtv0XR.js";const u=JSON.parse('{"title":"画图","description":"","frontmatter":{},"headers":[],"relativePath":"project/draw.md","filePath":"project/draw.md"}'),l={name:"project/draw.md"},t=i("",45),o=[t];function n(h,d,s,p,c,m){return r(),e("div",null,o)}const g=a(l,[["render",n]]);export{u as __pageData,g as default};
