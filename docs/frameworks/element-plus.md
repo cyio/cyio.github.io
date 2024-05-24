@@ -22,3 +22,7 @@ function changeButtonClass() {
 					挂载到 DOM
 						生命周期钩子执行 mounted
 ```
+
+## 移动端
+
+有基本的响应式，必要时可用样式覆盖

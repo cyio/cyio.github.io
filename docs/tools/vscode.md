@@ -75,3 +75,7 @@ alias play='file="/tmp/play.ts" && touch "$file" && code "$file" && deno run --w
 
 > 作者试过所有笔记 app， vscode + markdown 还是最好，特别是 vscode 对 juypter 第一级支持，而现在 juypter 支持了 JS，通过 deno 解释
 https://twitter.com/wesbos/status/1754674921706315949
+
+## video
+
+https://x.com/wesbos/status/1783134628196319288

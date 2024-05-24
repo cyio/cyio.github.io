@@ -12,6 +12,13 @@
 - 数据处理：排序、查找
 - 预渲染：canvas（new OffscreenCanvas）
 
+## 限制
+
+- **同源策略**
+- **DOM 访问限制**
+- **通信限制** 基于拷贝的消息通信，不能直接共享内存
+- **文件系统访问限制**：沙盒运行
+- **无法访问全局作用域**
 ## 使用
 
 - 支持内联创建 blob url
@@ -38,7 +45,5 @@ worker.addEventListener('error', function (event) {
 [我们是如何利用 Qwik 和 Partytown 削减掉 页面中 99% 的 JavaScript 的 - 知乎](https://zhuanlan.zhihu.com/p/445122206)
 
 [Mental model - Qwik](https://qwik.builder.io/guide/mental-model)
-
-## 即使一个 worker 线程也可以利用多核处理器加速
 
 [Exploring The Potential Of Web Workers For Multithreading On The Web — Smashing Magazine](https://www.smashingmagazine.com/2023/04/potential-web-workers-multithreading-web/)

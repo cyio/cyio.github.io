@@ -338,3 +338,27 @@ Qt是一个跨平台的C++应用程序开发框架，它提供了丰富的功能
 ## 缓存管理策略
 
 **缓存淘汰策略**：当缓存空间不足时，应用程序需要决定淘汰哪些数据以腾出空间存储新数据。如 LRU。
+
+## 高清屏幕
+
+clientX 表示光标位置
+
+```
+const offsetX = Math.round((clientX - canvasImgRect.value.left) * screenScaleFactor.value);
+```
+
+## dev tools
+
+load api
+
+复用 chrome 安装的插件，封装的 npm 插件主要是解决路径和插件配置。
+独立 npm app connect 没跑通
+
+[DevTools Extension | Electron](https://www.electronjs.org/docs/latest/tutorial/devtools-extension#manually-loading-a-devtools-extension)
+
+npm 包 electron-devtools-installer，使用了过时语法，并且从 chrome web store 下载，尽管官网依然有推荐。
+
+如果使用 forge 或 builder ，也有对应方式
+
+ - [ ] [解锁前端新潜能：如何使用 Rust 锈化前端工具链_taro_京东零售技术_InfoQ写作社区](https://xie.infoq.cn/article/9d3dd2687c865d8caad3d32fd)
+

@@ -11,7 +11,7 @@ ref 用于处理简单的响应式值（想象成盒子）
 
 reactive 深层响应式
 
-问题: reactivity 由于使用 proxy，直接对数组和对象赋值，会失去响应式
+### 问题：reactivity 由于使用 proxy，直接对数组和对象赋值，会失去响应式
 
 解法：
 1. 只作为对象子数据使用 `obj = { arr: [] }; obj.arr = []`
@@ -23,7 +23,7 @@ arr.push(...res) // 解构然后push进去
 
 [我的 composition-api 风格指南 - 掘金](https://juejin.cn/post/7044154218977951758)
 
-问题: 直接解构响应对象，解构出的值会丢失响应性
+### 问题：直接解构响应对象，解构出的值会丢失响应性
 ```js
 let { author, title } = book
 // fix
