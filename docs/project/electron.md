@@ -285,10 +285,13 @@ https://blackglory.me/notes/electron
 
 ## 性能
 
-1. 延迟 require（IO、递归引用）
-2. V8 Snapshot，预处理 JS
-[How to make your Electron app launch 1,000ms faster | by Takuya Matsuyama | Dev as Life](https://blog.inkdrop.app/how-to-make-your-electron-app-launch-1000ms-faster-32ce1e0bb52c)
+测量然后优化，vscode 成功经验，官方给出了 checklist，可逐项检查
 
+1. 延迟 require（IO、递归引用）和 new
+2. V8 Snapshot，预处理 JS
+
+[How to make your Electron app launch 1,000ms faster | by Takuya Matsuyama | Dev as Life](https://blog.inkdrop.app/how-to-make-your-electron-app-launch-1000ms-faster-32ce1e0bb52c)
+[简单有效的 chromium 内存优化 - 知乎](https://zhuanlan.zhihu.com/p/700466961)
 
 ## node-ffi & napi
 
@@ -361,4 +364,3 @@ npm 包 electron-devtools-installer，使用了过时语法，并且从 chrome w
 如果使用 forge 或 builder ，也有对应方式
 
  - [ ] [解锁前端新潜能：如何使用 Rust 锈化前端工具链_taro_京东零售技术_InfoQ写作社区](https://xie.infoq.cn/article/9d3dd2687c865d8caad3d32fd)
-

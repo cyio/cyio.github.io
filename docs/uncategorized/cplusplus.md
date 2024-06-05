@@ -8,9 +8,13 @@
 [JavaScript vs C++ detailed comparison as of 2018 - Slant](https://www.slant.co/versus/111/127/~javascript_vs_c)
 [C++ - YouTube](https://www.youtube.com/playlist?list=PLlrATfBNZ98dudnM48yfGUldqGD0S4FFb)
 ## 编译环境
+
 * c `gcc` c++`g++`
 * vim 定制 F9 编译，F8 运行
+* vscode 插件，已经集成了运行程序
 
+[一键搞定 VSCode 下的 C/C++基本开发环境配置 - 知乎](https://zhuanlan.zhihu.com/p/137760796)
+[3.添加文件和目标_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1us4y1J7HL/?p=3&spm_id_from=pageDriver&vd_source=cd540dde0d36a467c866b595c9f74eda)
 ## 教程&在线运行
 
 https://www.runoob.com/cplusplus/cpp-functions.html

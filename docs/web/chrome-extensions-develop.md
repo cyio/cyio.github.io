@@ -75,3 +75,6 @@ windicss更快、兼容性更好，但最后更新是 2022.05
 类似 vue-cli
 
 [Next-gen Web Extension Framework – WXT](https://wxt.dev/)
+
+## 安全性
+
