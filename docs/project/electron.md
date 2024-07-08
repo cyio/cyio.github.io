@@ -64,13 +64,12 @@ win.close()
 [安全性，原生能力和你的责任 | Electron ](https://electronjs.org/docs/tutorial/security#2-do-not-enable-nodejs-integration-for-remote-content)
 [Electron 深度实践总结 | 欧长坤的博客](https://changkun.us/archives/2017/03/217/)
 
-## 进程通信 IPC
+## IPC-进程通信 
 
-主进程与渲染进程
-
-渲染进程之间
-- 本地存储
-- 主进程中转（因为两个进程平行，只能通过父级通信）
+1. 主进程与渲染进程
+2. 渲染进程之间
+	- 本地存储
+	- 主进程中转（因为两个进程平行，只能通过父级通信）
 
 send 不需要回复。场景：计数、数据更新
 
@@ -91,6 +90,15 @@ https://www.electronjs.org/docs/latest/tutorial/message-ports/
 [Electron进程通信 - 知乎](https://zhuanlan.zhihu.com/p/453287153)
 [前端不懂进程通信？看完这篇就懂了 - 掘金](https://juejin.cn/post/6988484297485189127)
 
+### IPC  效率与安全
+
+- 在 Electron 应用中，存在权责问题，即应该在渲染进程还是主进程执行某些操作，例如发起请求或读写文件。
+- 移植 Electron 应用至 Web 环境时，需要确保渲染进程的安全性和沙箱化。
+- 在渲染进程中赋予文件系统（fs）能力可能存在安全隐患，因此通过主进程处理字节码，渲染进程通过 IPC 通信可提高安全性。
+- Electron 版本升级后，由于引入 preload.js 导致部分功能无法使用，需要社区迁移包临时替代，使得大量功能转移到了 preload.js 中。
+- IPC 使用一种安全的序列化算法，虽然效率略低，但可以屏蔽许多安全问题，开发者也可以自行实现协议解决效率和安全问题。
+
+[electron有preload导入node的module，为什么常见情况都是使用相对低效的ipc？ - 知乎](https://www.zhihu.com/question/640872750/answer/3376148295)
 ## asar 归档
 
 - 只读、随机访问（虚拟文件夹）
@@ -99,36 +107,6 @@ https://www.electronjs.org/docs/latest/tutorial/message-ports/
 - 减少文件数，加快安装
 
 [快应用开发工具之 asar](https://quickapp.vivo.com.cn/quickapp-ide-asar/)
-
-## 拖拽下载
-
-event.sender.startDrag
-https://www.electronjs.org/zh/docs/latest/api/web-contents#contentsstartdragitem
-https://www.electronjs.org/zh/docs/latest/tutorial/native-file-drag-drop
-
-不能监听系统事件，只适合本地文件拖拽
-
-原因：
-1. 无法拿到目标路径
-2. 拖拽到系统本地，走了系统行为（下载文件 URL 到临时目录，再拷贝到目标文件夹）
-3. 文件夹没有 URL，无法下载
-https://github.com/liupan1890/aliyunpan/issues/576
-参考 vscode，只支持单文件，但这只是本地间
-https://github.com/electron/electron/issues/7118#issuecomment-483681104
-https://cloud.tencent.com/developer/article/1562722
-
-[weekly/59.精读《如何利用 Nodejs 监听文件夹》.md at master · ascoders/weekly](https://github.com/ascoders/weekly/blob/master/%25E5%2589%258D%25E6%25B2%25BF%25E6%258A%2580%25E6%259C%25AF/59.%25E7%25B2%25BE%25E8%25AF%25BB%25E3%2580%258A%25E5%25A6%2582%25E4%25BD%2595%25E5%2588%25A9%25E7%2594%25A8%2520Nodejs%2520%25E7%259B%2591%25E5%2590%25AC%25E6%2596%2587%25E4%25BB%25B6%25E5%25A4%25B9%25E3%2580%258B.md)
-
-[electron 拖拽未下载文件到本地功能实现 - 掘金](https://juejin.cn/post/7095557874658574373#heading-1)
-[Electron桌面端拖拽下载的实现 | 新时代农民工的日常](https://pinkcle.com/electron/dragdrop.html)
-
-替代方案：监听系统文件夹变化，局限是适合有限监听的文件夹
-主要风险：权限、兼容性
-
-vscode 窗口内部拖拽实现，由于 startDrag 不支持内部，改用 e.dataTransfer.setData
-https://github.com/electron/electron/issues/7118#issuecomment-483681104
-
-[Simple drag and drop function in Electron - Moment For Technology](https://www.mo4tech.com/simple-drag-and-drop-function-in-electron.html)
 
 ## 生产包热更新
 
@@ -143,11 +121,11 @@ https://github.com/electron/electron/issues/7118#issuecomment-483681104
 
 默认没有网络缓存？
 
-## webview vs browserview
+### webview vs browserview
 
 最大的区别在于 browserview 托管于 main process 而不是 renderer。这非常类似于 Chrome 中对页面的处理方式，因此可以获得很高的页面响应速度。
 
-## issues
+## 问题
 
 - 系统差异，windows 无法 open？
 
@@ -176,6 +154,35 @@ MacOS 10.10+
 
 分享这半年的 Electron 应用开发和优化经验 - 掘金 [https://juejin.cn/post/6844904029231775758](https://juejin.cn/post/6844904029231775758)
 
+### 拖拽下载
+
+event.sender.startDrag
+https://www.electronjs.org/zh/docs/latest/api/web-contents#contentsstartdragitem
+https://www.electronjs.org/zh/docs/latest/tutorial/native-file-drag-drop
+
+不能监听系统事件，只适合本地文件拖拽
+
+原因：
+1. 无法拿到目标路径
+2. 拖拽到系统本地，走了系统行为（下载文件 URL 到临时目录，再拷贝到目标文件夹）
+3. 文件夹没有 URL，无法下载
+https://github.com/liupan1890/aliyunpan/issues/576
+参考 vscode，只支持单文件，但这只是本地间
+https://github.com/electron/electron/issues/7118#issuecomment-483681104
+https://cloud.tencent.com/developer/article/1562722
+
+[weekly/59.精读《如何利用 Nodejs 监听文件夹》.md at master · ascoders/weekly](https://github.com/ascoders/weekly/blob/master/%25E5%2589%258D%25E6%25B2%25BF%25E6%258A%2580%25E6%259C%25AF/59.%25E7%25B2%25BE%25E8%25AF%25BB%25E3%2580%258A%25E5%25A6%2582%25E4%25BD%2595%25E5%2588%25A9%25E7%2594%25A8%2520Nodejs%2520%25E7%259B%2591%25E5%2590%25AC%25E6%2596%2587%25E4%25BB%25B6%25E5%25A4%25B9%25E3%2580%258B.md)
+
+[electron 拖拽未下载文件到本地功能实现 - 掘金](https://juejin.cn/post/7095557874658574373#heading-1)
+[Electron桌面端拖拽下载的实现 | 新时代农民工的日常](https://pinkcle.com/electron/dragdrop.html)
+
+替代方案：监听系统文件夹变化，局限是适合有限监听的文件夹
+主要风险：权限、兼容性
+
+vscode 窗口内部拖拽实现，由于 startDrag 不支持内部，改用 e.dataTransfer.setData
+https://github.com/electron/electron/issues/7118#issuecomment-483681104
+
+[Simple drag and drop function in Electron - Moment For Technology](https://www.mo4tech.com/simple-drag-and-drop-function-in-electron.html)
 ## 异常捕获
 
 兜底捕获
@@ -223,7 +230,6 @@ https://www.electronjs.org/docs/latest/tutorial/tutorial-packaging
 
 
 ## webview
-
 
 Preload scripts 类似 chrome 扩展的 content scripts
 
@@ -293,7 +299,9 @@ https://blackglory.me/notes/electron
 [How to make your Electron app launch 1,000ms faster | by Takuya Matsuyama | Dev as Life](https://blog.inkdrop.app/how-to-make-your-electron-app-launch-1000ms-faster-32ce1e0bb52c)
 [简单有效的 chromium 内存优化 - 知乎](https://zhuanlan.zhihu.com/p/700466961)
 
-## node-ffi & napi
+## FFI
+
+### node-ffi & napi
 
 > 外部函数接口
 
@@ -307,7 +315,7 @@ node-ffi 是一个 Node.js 模块，它允许你调用本地动态链接库中�
 
 https://nodejs.org/api/n-api.html#node-api
 
-## koffi
+### koffi
 
 在Koffi中，指针是一个变量，它保存了另一个变量或对象的内存地址。"koffi.decode()"函数允许你访问特定内存地址上存储的数据，并将其解释为JS函数。
 
@@ -315,6 +323,19 @@ https://nodejs.org/api/n-api.html#node-api
 
 https://koffi.dev/functions?highlight=decode
 
+### FFI 直接调用已有的动态库，有性能损耗吗
+
+使用FFI（Foreign Function Interface）直接调用已有的动态库通常会比使用原生模块性能略有损耗，因为FFI需要在运行时进行**动态链接和调用，而原生模块则是静态链接，性能更高**。这种性能损耗通常是很小的，特别是对于大部分应用来说，可以忽略不计。因此，如果开发成本和快速迭代对你的项目更为重要，FFI是一个很好的选择。
+
+## 原生渲染
+
+场景：需要 webgl 渲染，如视频、图片像素
+IPC 不适合传输大量数据
+解决方案：
+将窗体背景色调成透明，同时增加一个子窗口装载SDL，原生渲染 opengl
+交互事件需要透传给原生模块
+
+共享内存，没有有效方案
 ## NAPI & Rust
 
 [Exposing a Rust Library to Node with Napi-rs](https://johns.codes/blog/exposing-a-rust-library-to-node-with-napirs)
@@ -324,19 +345,9 @@ Qt是一个跨平台的C++应用程序开发框架，它提供了丰富的功能
 
 由于 Chromium 需要同时运行JavaScript和渲染网页，Electron应用程序的性能可能相对较低，尤其是在处理大量数据或运行复杂计算时。
 
-## worker
+## Worker 多线程
 
 在 Electron 中，你可以直接使用 Node.js 的多线程模块 `worker_threads` 来实现多线程任务，而无需使用 Web Worker。
-
-## IPC  效率与安全
-
-- 在 Electron 应用中，存在权责问题，即应该在渲染进程还是主进程执行某些操作，例如发起请求或读写文件。
-- 移植 Electron 应用至 Web 环境时，需要确保渲染进程的安全性和沙箱化。
-- 在渲染进程中赋予文件系统（fs）能力可能存在安全隐患，因此通过主进程处理字节码，渲染进程通过 IPC 通信可提高安全性。
-- Electron 版本升级后，由于引入 preload.js 导致部分功能无法使用，需要社区迁移包临时替代，使得大量功能转移到了 preload.js 中。
-- IPC 使用一种安全的序列化算法，虽然效率略低，但可以屏蔽许多安全问题，开发者也可以自行实现协议解决效率和安全问题。
-
-[electron有preload导入node的module，为什么常见情况都是使用相对低效的ipc？ - 知乎](https://www.zhihu.com/question/640872750/answer/3376148295)
 
 ## 缓存管理策略
 

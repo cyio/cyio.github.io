@@ -40,12 +40,36 @@ C++ 程序可以定义为对象的集合，这些对象通过调用彼此的方�
 
 ## 数据类型
 
+### 基本
+
 * 相对 C 的`char`，增加了`string`类型，只能用双引号
 * 不能用`+`直接拼接字符串，需要先声明，至少有一个指定类型
 * 单引号，只能是字符（一个），双引号是字符串，末尾会自动追加`\0`
 * 数组，必须指定个数`int n[2] = {1, 2};` 或者`int *n = new int(2);`
 * 类型声明错误，会导致隐式转换，丢失精度
+* `long long` 32位整型扩展到 64 位
+### 字符串
 
+推荐使用 `std:string`，动态长度、内存安全，可以方便地重新赋值，而不是`char*`
+### 结构与类
+
+* C++ 中的结构体（`struct`）和类（`class`）与 JavaScript 的对象类似，但更加强大。
+
+如何打印 struct，cout 不支持，重载 ostream 只能解决这个 struct，想通用需要用到模板和宏
+
+### 标准模板库（STL）
+
+常用容器如 `std::vector` 动态数组、`std::map`、`std::set` 等
+
+#### map
+
+first 表示 key，second 表示 value
+
+item->second
+## 自动变量与静态变量
+
+自动变量，相当于局部变量
+静态变量，声明在内部，但值可以保持。static 限制变量声明所在文件或函数有效。
 ## 函数
 
 * 函数名前指定返回类型
@@ -55,8 +79,6 @@ C++ 程序可以定义为对象的集合，这些对象通过调用彼此的方�
     [C++ 内联函数分析 - 个人文章 - SegmentFault 思否](https://segmentfault.com/a/1190000015967573?utm_source=tag-newest)
 * 会执行最后一个函数
 
-
-`->` 是C++中用于访问类的成员或结构体的成员的运算符。相当于 `.`
 Boost 扩展库
 messageloop 异步执行
 `*`号放在变量前，访问指针指向的对象的值
@@ -79,7 +101,16 @@ cout 表示 character output
 
 不像 JS 需要 extends
 ```
-class Rectangle: public Shape
+// Base class
+class Animal {
+public:
+    void eat() {
+        cout << "Eating..." << endl;
+    }
+};
+
+class Dog: public Animal {
+};
 ```
 
 ## 函数
@@ -92,7 +123,7 @@ Lambda ->
 
 编译器判断用匹配哪个，重载决策
 
-## 指针
+## 指针（硬币两面）
 
 连字号（&）运算符访问内存地址
 声明配合 * 号
@@ -100,10 +131,22 @@ Lambda ->
 - 指针必须始终指向有效的内存位置。否则，会导致程序崩溃或其他未定义行为。
 - 当不再需要指针时，必须释放指向的内存。否则，会导致内存泄漏。
 - 使用智能指针等安全替代
-
+- new 创建动态 size 数组，返回是分配的内存地址，因此类型是指针
+```C++
+int x = 10;
+int* p = &x;  // p 是一个指针，存储 x 的地址
+std::cout << *p << std::endl;  // 通过指针 p 访问 x 的值
+```
 ## 引用
 
 作为函数的参数或返回值，更安全
+```C++
+int y = 20;
+int& ref = y;  // ref 是 y 的引用
+ref = 30;  // 改变 ref 的值会改变 y 的值
+std::cout << y << std::endl;  // 输出 30
+```
+
 ## 前端工程师，学习 C++，有哪些快速入门必须知道的语法差异和概念
 
 学习 C++ 作为前端工程师是一个不错的选择，因为它可以让你更深入地了解计算机科学和编程原理。以下是一些你可能想要了解的快速入门必备知识：
@@ -160,7 +203,8 @@ Lambda ->
    }
    ```
 
-4. **函数重载**：避免使用
+4. **函数重载**：
+强类型语言非常常见，参数为多种类型，最简单就是写多个名称相同参数（类型）不同的函数
    ```cpp
    void print(int num) {
        cout << "Integer: " << num << endl;
@@ -176,6 +220,25 @@ Lambda ->
        return 0;
    }
    ```
+
+更好方案是用模板
+```C++
+#include <iostream>
+using namespace std;
+
+// 定义模板函数
+template<typename T>
+void print(T num) {
+    cout << "Value: " << num << endl;
+}
+
+int main() {
+    print(5);      // 调用 print<int>，输出: Value: 5
+    print(3.14);   // 调用 print<double>，输出: Value: 3.14
+    return 0;
+}
+
+```
 
 5. **类和对象**：
    ```cpp
@@ -248,4 +311,48 @@ Lambda ->
 
 这些是 `*` 和 `&` 在 C++ 中的一些常见用法和含义。它们是 C++ 中重要且常用的符号，理解它们的含义对于正确地使用指针和引用至关重要。
 
+## UML画图
 
+1. 类图：`-`表示私有，`+` 表示公共
+	[ClassDiagramBook.png (579×351)](https://www3.ntu.edu.sg/home/ehchua/programming/cpp/images/ClassDiagramBook.png)
+1. 组件图：进程包含类，进程间 IPC 通信
+2. 序列图（时序）
+3. 部署图
+
+一张图没办法全部表示了，可以分成多张图
+基本流程、跨进程通信、细化流程
+
+[C++ 后端项目类交叉引用画图](https://chatgpt.com/c/db0ae920-f552-4cf2-af49-c85224203f64)
+## 多线程
+
+任务处理
+
+### 互斥锁
+
+mutex 是“mutual exclusion”的缩写，意思是“互斥”
+
+同一时刻只有一个线程可以修改 `shared_variable`
+## 异常处理
+
+## 符号
+
+. 操作符：用于对象本身或引用。
+-> 操作符：用于指针，包括原生指针和智能指针。
+
+## 调试
+
+- 条件断点：如指定进程崩溃
+- 关掉编译优化
+- debug 开关文件，查看日志
+
+## 安装
+
+https://visualstudio.microsoft.com/zh-hans/downloads
+配 host
+https://blog.csdn.net/littlehaes/article/details/106492231
+
+mac clion
+
+加固、反调试
+
+![[image/cplusplus-1719487474586.webp]]

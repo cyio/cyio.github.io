@@ -13,6 +13,7 @@
 5. 使用 git revert 回滚某次的提交 
 6. 使用 git stash 来暂存文件 
 7. 配置 git alias 提升工作效率
+8. git log --first-parent    只展示当前分支，除了合并
 
 [Learn Git Branching](https://learngitbranching.js.org/?demo=&locale=zh_CN)
 
