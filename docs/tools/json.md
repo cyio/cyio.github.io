@@ -17,4 +17,9 @@
     fx .data > .git/data.json
     fx .data .result 'this[0]'
     ```
+
 * 选中`Option+Mouse	`
+
+## 后端返空数组问题
+
+从 JSON 协议角度，保持数据结构一致性，语义清晰，应该返 `[]`

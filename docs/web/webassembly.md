@@ -15,3 +15,23 @@
 [FFMPEG.WASM](https://ffmpegwasm.github.io/)
 
 [WAMR - WebAssembly Micro Runtime](https://bytecodealliance.github.io/wamr.dev/)
+
+## 性能
+
+不一定更快，比如转图，用 rust 又通过 FFI 调用 c，需要额外的适配处理
+> wasm版的webp转码速度比纯rust或纯c的版本，慢了8-10倍
+
+## WasmEdge
+
+体积、速度、安全优势，相比于 linux/Node
+QuickJS 小型、可嵌入，几个 C 文件，在任何环境运行
+
+[边缘云微服务——如何利用 WasmEdge 和 Rust 构建高性能和安全的应用程序](https://www.freecodecamp.org/chinese/news/edge-cloud-microservices-with-wasmedge-and-rust/)
+
+## Rust 和 C
+
+Rust 提供了更好的内存安全保证和现代化的语言特性，而 C 则有更成熟的生态系统和更广泛的使用基础。
+
+## 内存
+
+每个 Wasm 实例拥有自己的私有内存空间，它不是跨进程共享的。内存是局限于单个 JavaScript 上下文和 Wasm 模块实例的。

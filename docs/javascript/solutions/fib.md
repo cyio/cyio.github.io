@@ -103,3 +103,46 @@ console.log(fib(5))
 
 1. memo，更好
 2. 只记录前两值
+
+
+练习 2024-07-10
+```js
+function fib1(n) {
+    if (n === 0) return 0
+    if (n === 1) return 1
+    return fib(n - 1) + fib(n - 2)
+}
+
+// 0, 1, 1, 2, 3
+let r = fib(3) // 2
+let r2 = fib(5) // 5
+console.log(r, r2)
+
+// o(n log n)
+// for
+// 尾递归优化
+function fib2(n) {
+    let arr = [0, 1]
+    for (let i = 2; i <= n; i++) {
+        arr[i] = arr[i - 1] + arr[i - 2]
+    }
+    return arr[n]
+}
+
+// 优化空间占用
+// i = 2; 1, 1
+// i = 3; 1, 2
+// i = 4; 2, 3;
+// i = 5; 3, 5;
+function fib(n) {
+    if (n <= 0) return 0;
+    if (n === 1) return 1;
+
+    let a = 0, b = 1
+    for (let i = 2; i <= n; i++) {
+        [a, b] = [b, a + b]
+    }
+    return b
+}
+
+```

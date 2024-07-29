@@ -278,7 +278,19 @@ GET/PUT/DELETE 满足
 
 403 Forbidden 服务端有能力处理，客户端 IP 被封禁
 
-## form-urlencoded
+## POST
+
+不同方式比较
+`application/json` 默认
+`application/x-www-form-urlencoded`，用于简单的键值对（传统表单），不适合较复杂数据类型
+
+体积限制，一般不用担心，客户端或服务器软件都是 MB 级的，
+
+数据库，MySQL text 是 6 万多限制
+
+对于复杂对象进行字符压缩，序列化能压缩空格
+
+### form-urlencoded
 
 axios 默认将 JS 对象序列化成 JSON，保留原数据类型
 

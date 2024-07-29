@@ -375,3 +375,9 @@ npm 包 electron-devtools-installer，使用了过时语法，并且从 chrome w
 如果使用 forge 或 builder ，也有对应方式
 
  - [ ] [解锁前端新潜能：如何使用 Rust 锈化前端工具链_taro_京东零售技术_InfoQ写作社区](https://xie.infoq.cn/article/9d3dd2687c865d8caad3d32fd)
+## 跨进程/线程共享大量数据
+
+SharedArrayBuffer 是通用方案，共享二进制数据缓冲区
+比如在不同 Web Workers 之间，免去复制
+
+需要设置 header 安全头
