@@ -1,4 +1,6 @@
-# kNN(k-Nearest Neighbor)
+# kNN
+
+k-Nearest Neighbor
 
 核心思想：**根据待分类样本的K个最近邻样本的类别，来预测待分类样本的类别。**
 

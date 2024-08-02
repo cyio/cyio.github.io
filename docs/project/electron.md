@@ -108,15 +108,31 @@ https://www.electronjs.org/docs/latest/tutorial/message-ports/
 
 [快应用开发工具之 asar](https://quickapp.vivo.com.cn/quickapp-ide-asar/)
 
-## 生产包热更新
+## 热更新/自动更新
 
-方案：asar（主进程） + update.zip(渲染进程)
-
-需要拆项目
-
-- 降低迭代成本（分发带宽？）
-- 提升
-
+1. asar（主进程） + update.zip（渲染进程）
+    - 需要拆分项目
+    - 优点：
+        - 降低迭代成本（减少分发带宽使用）
+        - 提升更新效率
+    - 缺点：
+        - 增加项目复杂度
+        - 可能需要额外的服务器支持
+2. electron-updater
+    - 使用内容可变长度分块（Content-Defined Chunking, CDC）
+    - 支持 range 请求，实现增量更新
+    - 优点：
+        - 官方支持，集成度高
+        - 支持多平台（Windows, macOS, Linux）
+        - 自动处理更新检查、下载和安装
+3. 更新策略考虑
+    - 强制更新 vs 可选更新
+    - 后台静默更新 vs 用户交互更新
+    - 更新频率和时机
+4. 安全性考虑
+    - 更新包签名验证
+    - HTTPS 传输
+    - 防篡改机制
 ## webview 
 
 默认没有网络缓存？

@@ -6,21 +6,7 @@
 
 服务商级别的优化和便利
 
-## 特点
-
-现代化框架需要哪些特性
-
-1.  自动代码分割（跟 vue/react 脚手架类似，基于页面）：Next.js 会自动将页面和组件按需加载，提高页面加载速度和性能。
-2.  服务器端渲染（vs 客户端渲染）：Next.js 支持服务器端渲染，可以提高 SEO 和首屏加载速度。
-3.  静态文件服务（没区别）：Next.js 可以将静态文件直接服务于客户端，提高页面加载速度。
-4.  自动优化（vs 手动）：Next.js 会自动分析页面和组件，进行优化，提高性能。
-5.  热加载（有变化？）：Next.js 支持热加载，修改代码后可以快速看到效果。
-6.  客户端路由：Next.js 支持客户端路由，可以提高用户体验。
-7.  支持 TypeScript：Next.js 支持 TypeScript，提供了更好的类型检查和 IDE 支持。
-8.  支持 API 路由（全栈）：Next.js 可以直接将 API 服务于客户端，方便构建前后端分离应用。
-9.  支持多种部署方式：Next.js 可以部署在多种环境中，包括服务器、静态托管服务和云函数等。
-
-## hello world
+## Hello World 示例
 
 pages -> next -> next build -> next start(prod)
 ```
@@ -47,17 +33,11 @@ pages 目录最关键，不可变
 
 ## fast refresh
 
-与 HMR 类似？
+- 类似于 HMR（热模块替换），允许在开发过程中实时查看更改。
 
 ## 编译
 
 5000个模块，intel 编译 5-10s，m1 2-4s，快一倍
-
-React 服务器组件也是如此。人们听到“服务器”并假设是 Node.js。但 RSC 可以在构建期间运行。事实上，在 Next 13 App Router 中它是*默认值*。如果你在 RSC 中获取某些东西，它将*在构建时*，除非你选择动态渲染。
-
-我们看到的转变（是的，正在努力实现）并不是从“编写 SPA”到“不编写 SPA”。它是从“被锁定在 SPA 中”（以后很难添加内置时间或服务器端集成）到“使用对每个页面有意义的任何模式”。hybrid era.
-
-这是一种转变，但主要是一种心理转变。
 
 [Next.js SPA example with dynamic client-only routing and static hosting](https://gist.github.com/gaearon/9d6b8eddc7f5e647a054d7b333434ef6)
 
@@ -65,53 +45,29 @@ React 服务器组件也是如此。人们听到“服务器”并假设是 Node
 
 ## 原理
 
-1. 将 pages 的文件编译
-2. 编译时根据文件结构顺便把路由配置表生成
-3. 请求时根据请求路径去路由表查询结果，最后根据路由动态加载相应的页面文件。
-
-## 自动优化
-
-1.  自动代码分割：Next.js 会自动将页面和组件按需加载，提高页面加载速度和性能。
-2.  预取：Next.js 会自动分析页面和组件的依赖关系，提前加载可能需要的资源，从而减少页面加载时间。
-3.  缓存：Next.js 会自动缓存静态资源和页面数据，提高页面加载速度和性能。
-4.  压缩和混淆：Next.js 会自动压缩和混淆 JavaScript 和 CSS 代码，减少文件大小，提高页面加载速度和性能。
-5.  图像优化：Next.js 会自动优化图像，包括压缩、缩放和 WebP 转换等，提高页面加载速度和性能。
-6.  预渲染：Next.js 支持预渲染，可以将页面预先生成为静态 HTML 文件，提高 SEO 和首屏加载速度。
+1. 编译 pages 目录的文件
+2. 根据文件结构生成路由配置表
+3. 根据请求路径查询路由表并动态加载页面文件
 
 ## Image 组件
 
-性能：最优格式和体积
-体验：占位
-
-内转 proxy server，可处理远程图片
-
-后缀名与 MIME 可能不一致
+- 性能优化：选择最优格式和体积。
+- 提供占位符。
+- 内置代理服务器处理远程图片。
 
 ## 打包部署
 
-默认输出到 .next 文件夹
+- 默认输出到 `.next` 文件夹。
+- **自托管**：需维护 Node.js 环境，体验和维护成本较高。
+- **静态托管**：可以将应用导出为纯静态网站。
 
-### 自托管
-
-自己搭个 node 环境，体验落后且维护成本高
-
-导出纯静态托管
 [Advanced Features: Static HTML Export | Next.js](https://nextjs.org/docs/advanced-features/static-html-export)
 
-### vercel 部署优化
+### Vercel 部署优化
 
-api 路由走 serverless function，无限扩容
-Middleware 走 edge function，快速启动
-
-git 钩子自动部署
-
-1.  什么是 Next.js 的服务器端渲染（SSR）？有什么优点和缺点？
-	- 优点：首屏、SEO
-	- 缺点：开发、部署成本，服务器压力
-1.  如何在 Next.js 中使用数据获取（Data Fetching）？有哪些方式可以实现数据获取？
-2.  什么是 Next.js 的静态生成（Static Generation）？与服务器端渲染有何不同？
-3.  如何在 Next.js 中实现动态路由（Dynamic Routing）？有哪些注意点？
-4.  如何在 Next.js 中实现代码分割（Code Splitting）？有哪些常见的代码分割策略？
+- API 路由走 serverless function，无限扩容。
+- Middleware 走 edge function，快速启动。
+- 使用 Git 钩子进行自动部署。
 
 ### 部署到 cloudflare
 
@@ -125,18 +81,17 @@ build id 是随机的，多个不同的构建会导致缓存失效。解决方�
 
 ## 数据获取
 
-getStaticProps 构建时预渲染，不怎么变的数据。框架勾子，拿到的数据，以 prop 传递给组件
-getServerSideProps 实时更新
-getStaticPaths
+- **`getStaticProps`**：构建时预渲染，不常变化的数据。
+- **`getServerSideProps`**：实时获取数据。
+- **`getStaticPaths`**：构建时生成静态页面，支持动态路由。
+
 > 在构建时，Next.js将使用getStaticPaths返回的参数值来生成静态页面。对于每个参数值，Next.js将调用getStaticProps函数，获取该参数的静态数据，并将其传递给页面组件作为props。
 
-![640 (1080×538)](https://mmbiz.qpic.cn/mmbiz_png/ZCdKIQujeZya9N0I4XCYSNLb8bVXoCicArsOTUhGto6QmADytvuZL2R0y7Wpbd4EHH2GblTVVWxWuHkZoibPljrQ/640?wx_fmt=png&wxfrom=5&wx_lazy=1&wx_co=1)
+![[image/next-1722578971144.webp]]
 
 ## 国内
 
-umi
-
-如果是今年选Node.js Web框架，大概只有Midway、Nest和next.js了
+- Umi、Midway、Nest.js 和 Next.js 是主要选择。
 
 ## 缺点
 
@@ -151,8 +106,6 @@ umi
 [Want Next.js at the edge? Just use Vercel | Not a blog](https://zhuhaow.me/want-nextjs-at-edge-just-use-vercel/)
 
 https://www.v2ex.com/t/938396
-
-
 ## prisma
 
 [[prisma]]
