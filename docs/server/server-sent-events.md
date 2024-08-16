@@ -70,6 +70,10 @@ https://glitch.com/~fetch-request-stream
 [Consume Web streams from OpenAI using vanilla JavaScript - NO DEPENDENCIES! - YouTube](https://www.youtube.com/watch?v=o1yKuH86_So)
 https://umaar.com/dev-tips/269-web-streams-openai/
 
+## HTTP Streaming (Transfer-Encoding: chunked)
+
+更通用，支持任意数据格式，而 SSE 只支持文本
+
 ## 与 WS 对比
 
 - 是否保持长连接，可扩展性，成本
