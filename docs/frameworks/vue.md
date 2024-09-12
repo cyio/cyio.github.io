@@ -134,21 +134,13 @@ EventBus.$on('i-got-cli
 
 ## diff 算法
 
+[[../../../inbox/v-for-render-large-list|v-for-render-large-list]]
+
 > vnode 虚拟节点（节点描述）
 
 比较新旧 vnode 以决定如何更新真实 DOM
 
 算法：同层比较，深度优先
-
-1. 节点比较
-  2. 不同，替换，插入新 vnode，移除旧 vnode
-  3. 相同，子节点比较
-    1. 子节点均是文本，更新文本
-    2. 同时有子节点 updateChildren
-       - 首先假设头尾节点可能相同做4次比对尝试，如果没有找到相同节点才按照通用方式遍历查找，查找结束再按情况处理剩下的节点
-       - 借助 key 通常可以非常精确找到相同节点，因此整个 patch 过程非常高效
-    3. 仅新 vnode 有子节点，创建
-    4. 仅旧 vnode 有子节点，删除
 
 [【一】2020大厂前端面试题大汇总之Vue专题 - YouTube](https://www.youtube.com/watch?v=ApNCeWNBVrk)
 

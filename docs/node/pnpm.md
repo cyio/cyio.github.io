@@ -11,7 +11,7 @@ trash node_modules/.pnpm
 
 ### 手动解决 electron 依赖 404 问题
 
-1. 找到对应版本
+1. 找到对应版本，下载
 2. 修改 install.js
 ```
 extractFile(path.resolve(__dirname, './electron-v28.1.0-darwin-arm64.zip'));

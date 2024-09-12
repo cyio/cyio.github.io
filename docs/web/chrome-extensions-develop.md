@@ -78,3 +78,20 @@ windicss更快、兼容性更好，但最后更新是 2022.05
 
 ## 安全性
 
+提示 Refused to execute inline script because it violates the following Content Security Policy directive
+
+```
+ntDocument.documentElement.appendChild(t
+```
+
+### 使用 `chrome.scripting` API
+
+在 Manifest V3 中，推荐使用 `chrome.scripting` API 动态注入脚本。例如：
+
+```js
+chrome.scripting.executeScript({
+  target: {tabId: yourTabId},
+  files: ['your-script.js']
+});
+
+```
