@@ -1,5 +1,32 @@
 # 数组扁平化
 
+## 0. 迭代  +  模拟栈
+
+递归一般是从后往前、从大往小处理
+优点：避免了递归栈溢出问题
+
+```js
+function flat(arr) {
+    let result = []
+    let stack = [...arr] // 拷贝
+
+    while(stack.length) {
+        const value = stack.pop() // 先出
+        console.log(value)
+        if (Array.isArray(value)) {
+            stack.push(...value) // 后进
+        } else {
+            result.unshift(value) // 添加到前面
+        }
+    }
+
+    return result
+}
+
+console.log(flat([1, 2, 3, [4, [5]]]))
+
+```
+
 ## 1. flat
 
 flat 指定深度递归合并，默认深度 1，无限深度 Infinite

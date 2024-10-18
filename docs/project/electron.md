@@ -133,6 +133,12 @@ https://www.electronjs.org/docs/latest/tutorial/message-ports/
     - 更新包签名验证
     - HTTPS 传输
     - 防篡改机制
+
+### BlockMap
+
+1. hash 记录分块信息
+2. 客户端更新时，比较新旧包
+3. range 请求，只下载差异部分，就像下载大文件
 ## webview 
 
 默认没有网络缓存？
