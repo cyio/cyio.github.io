@@ -7,6 +7,8 @@
 ## 传书
 
 1. 邮件
+	1.  6 寸 PDF，内容少
+	2. 内容多，使用 ePub
 
 格式：azw（不是 azw3）、mobi、epub、html、zip、排版后的 6 寸 pdf、 txt
 
@@ -17,7 +19,7 @@ https://www.amazon.cn/gp/help/customer/display.html?nodeId=G7NECT4B4ZWHQ8WV
 
 > 我们可以通过在电脑上调整pdf大小来实现在Kindle阅读pdf。方法如下：点开pdf之后，选择打印，在打印界面选择纸张大小，一般B5即可（或者选择缩放到合适大小），然后点铺满纸张，保存为新pdf即可。
 
-发送失败会有邮件回复，如果需要验证也会有邮件
+> 发送失败会有邮件回复，如果需要验证也会有邮件
 
 2. 手机 OTG
 

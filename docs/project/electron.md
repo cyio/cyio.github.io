@@ -1,12 +1,10 @@
 # electron
 
-Electron == CEF + Node.js
-
-CEF： Chromium 嵌入式框架
+## 基础概念
 
 ![v2-f85361afb9a037b24b279c9a87d6635e_r.jpg (490×454)](https://pic3.zhimg.com/v2-f85361afb9a037b24b279c9a87d6635e_r.jpg)
 
-## CEF： Chromium 嵌入式框架
+### CEF： Chromium 嵌入式框架
 
 CEF专注于促进第三方应用程序中的嵌入式浏览器用例
 
@@ -32,39 +30,13 @@ https://github.com/chromiumembedded/cef
 
 https://blog.scottlogic.com/2023/02/01/webview2-electron-challengers-and-slightly-lighter-desktop-web-applications.html
 
-## 进程
+### 进程
 
 - 2 个进程：主进程和渲染器进程
-- web页面运行在渲染进程
-- 与浏览器区别，页面可访问底层（通过主进程）
-- GUI 操作，必须与主进程通讯
-- require 时需要引 remote [javascript - How to fix BrowserWindow is not a constructor error when creating child window in Electron renderer process - Stack Overflow](https://stackoverflow.com/questions/45639628/how-to-fix-browserwindow-is-not-a-constructor-error-when-creating-child-window-i)
-- nodeIntegration 5.0 起默认为 false
 
 [The Secret of Good Electron Apps](https://jlongster.com/secret-of-good-electron-apps)
 
-
-## 调试
-最好打开开发工具，`CTRL-ALT-T`
-新开页无法使用开发工具？
-
-## 窗口管理
-不用`window.open`，`a target=_blank`开新窗口就可用`window.close`关掉
-进阶，可以用
-```js
-import { remote } from 'electron'
-var win = remote.getCurrentWindow()
-win.close()
-```
-[electron test close window](https://codepen.io/cyio/pen/QZPLaV)
-[Electron 应用架构 | Electron 进程通讯](https://electronjs.org/docs/tutorial/application-architecture#%25E9%25A2%2598%25E5%25A4%2596%25E8%25AF%259D%25EF%25BC%259A%25E8%25BF%259B%25E7%25A8%258B%25E9%2597%25B4%25E9%2580%259A%25E8%25AE%25AF)
-[Electron 常见问题 (FAQ) | Electron 如何在两个网页间共享数据](https://electronjs.org/docs/faq#%25E5%25A6%2582%25E4%25BD%2595%25E5%259C%25A8%25E4%25B8%25A4%25E4%25B8%25AA%25E7%25BD%2591%25E9%25A1%25B5%25E9%2597%25B4%25E5%2585%25B1%25E4%25BA%25AB%25E6%2595%25B0%25E6%258D%25AE%25EF%25BC%259F)
-
-- 推荐使用 preload
-[安全性，原生能力和你的责任 | Electron ](https://electronjs.org/docs/tutorial/security#2-do-not-enable-nodejs-integration-for-remote-content)
-[Electron 深度实践总结 | 欧长坤的博客](https://changkun.us/archives/2017/03/217/)
-
-## IPC-进程通信 
+## 进程间通信 (IPC)
 
 1. 主进程与渲染进程
 2. 渲染进程之间
@@ -79,8 +51,8 @@ postMessage 消息通道，与 Web 中的等价。场景：消息保证、即使
 
 webview document.title/executeJavaScript 
 
-~~remote 模块，模拟本地调用，废弃，推荐 invoke
-~~
+~~remote 模块，模拟本地调用，废弃，推荐 invoke~~
+
 electron 的 IPC 基于 chromium 的 IPC？
 
 MessagePort对象可以在渲染器或主进程中创建，并使用ipcRenderer.postMessage和WebContents.postMessage方法来回传递。请注意，通常的IPC方法（如send和invoke）不能用于传输MessagePorts，只有postMessage方法可以传输MessagePorts。
@@ -99,7 +71,67 @@ https://www.electronjs.org/docs/latest/tutorial/message-ports/
 - IPC 使用一种安全的序列化算法，虽然效率略低，但可以屏蔽许多安全问题，开发者也可以自行实现协议解决效率和安全问题。
 
 [electron有preload导入node的module，为什么常见情况都是使用相对低效的ipc？ - 知乎](https://www.zhihu.com/question/640872750/answer/3376148295)
-## asar 归档
+
+## API与应用
+### 窗口管理
+不用`window.open`，`a target=_blank`开新窗口就可用`window.close`关掉
+进阶，可以用
+```js
+import { remote } from 'electron'
+var win = remote.getCurrentWindow()
+win.close()
+```
+
+[electron test close window](https://codepen.io/cyio/pen/QZPLaV)
+[Electron 应用架构 | Electron 进程通讯](https://electronjs.org/docs/tutorial/application-architecture#%25E9%25A2%2598%25E5%25A4%2596%25E8%25AF%259D%25EF%25BC%259A%25E8%25BF%259B%25E7%25A8%258B%25E9%2597%25B4%25E9%2580%259A%25E8%25AE%25AF)
+[Electron 常见问题 (FAQ) | Electron 如何在两个网页间共享数据](https://electronjs.org/docs/faq#%25E5%25A6%2582%25E4%25BD%2595%25E5%259C%25A8%25E4%25B8%25A4%25E4%25B8%25AA%25E7%25BD%2591%25E9%25A1%25B5%25E9%2597%25B4%25E5%2585%25B1%25E4%25BA%25AB%25E6%2595%25B0%25E6%258D%25AE%25EF%25BC%259F)
+
+- 推荐使用 preload
+[安全性，原生能力和你的责任 | Electron ](https://electronjs.org/docs/tutorial/security#2-do-not-enable-nodejs-integration-for-remote-content)
+[Electron 深度实践总结 | 欧长坤的博客](https://changkun.us/archives/2017/03/217/)
+
+## webview 
+
+默认没有网络缓存？
+
+### webview vs browserview
+
+最大的区别在于 browserview 托管于 main process 而不是 renderer。这非常类似于 Chrome 中对页面的处理方式，因此可以获得很高的页面响应速度。
+
+Preload scripts 类似 chrome 扩展的 content scripts
+
+主进程是 nodejs 环境，有完全系统访问权
+
+渲染进程运行页面，安全原因默认不能运行 nodejs
+
+官方 contextBridge，显式声明暴露的能力 
+
+使用executeJavaScript方法可以在主进程中向webview注入方法，使用preload脚本可以在渲染进程中向webview注入方法。
+
+进程间通信：[Using Preload Scripts | Electron](https://www.electronjs.org/docs/latest/tutorial/tutorial-preload#communicating-between-processes)
+
+[node.js - Electron Preload vs Electron Main - Stack Overflow](https://stackoverflow.com/questions/71791530/electron-preload-vs-electron-main)
+
+第三方依赖 bug https://github.com/electron/forge/issues/2931#issuecomment-1306377240
+
+[解决electron嵌入webview显示空白无法使用_electron webview 不显示_谢泽的网络日志的博客-CSDN博客](https://blog.csdn.net/a0405221/article/details/120928463)
+
+[electron中与webview的通讯-Web前端(W3Cways.com) - Web前端学习之路](https://www.w3cways.com/2459.html)
+
+为 webview 注入方法，原理：
+[Context Isolation | Electron](https://www.electronjs.org/docs/latest/tutorial/context-isolation#before-context-isolation-disabled)
+
+如果contextIsolation为false，那么web页面中的JS可以影响Electron内部渲染时的JS代码和预加载脚本执行。比如先入侵 web 加入恶意脚本，再传递到 preload node 环境。**远程代码执行漏洞（RCE）**
+
+contextIsolation 环境上下文隔离开关，是在 Electron 5.0 版本中引入的，默认值是 false。从 12.0 版本开始，默认值变为 true
+
+[挖洞经验 | 综合三个Bug实现Discord桌面应用RCE漏洞 - FreeBuf网络安全行业门户](https://www.freebuf.com/articles/web/252806.html)
+
+## contextBridge
+
+属于 render process，中间隔离环境，双向同步桥
+## 工程与打包
+### asar 归档
 
 - 只读、随机访问（虚拟文件夹）
 - 用 JSON 存储信息，易于实现解析器
@@ -108,7 +140,7 @@ https://www.electronjs.org/docs/latest/tutorial/message-ports/
 
 [快应用开发工具之 asar](https://quickapp.vivo.com.cn/quickapp-ide-asar/)
 
-## 热更新/自动更新
+### 热更新/自动更新
 
 1. asar（主进程） + update.zip（渲染进程）
     - 需要拆分项目
@@ -139,13 +171,13 @@ https://www.electronjs.org/docs/latest/tutorial/message-ports/
 1. hash 记录分块信息
 2. 客户端更新时，比较新旧包
 3. range 请求，只下载差异部分，就像下载大文件
-## webview 
+### 打包
 
-默认没有网络缓存？
+https://www.electronjs.org/docs/latest/tutorial/tutorial-packaging
 
-### webview vs browserview
+测试 electron v21 空项目 dmg 220Mb
 
-最大的区别在于 browserview 托管于 main process 而不是 renderer。这非常类似于 Chrome 中对页面的处理方式，因此可以获得很高的页面响应速度。
+[macOS 提示：“应用程序” 已损坏，无法打开的解决方法总结 - sysin | SYStem INside | 软件与技术分享](https://sysin.org/blog/macos-if-crashes-when-opening/)
 
 ## 问题
 
@@ -239,53 +271,6 @@ crash free sessions 免于崩溃、即正常的会话数，用 100 减去即崩�
 
 https://www.electronjs.org/docs/latest/api/crash-reporter
 
-
-## 打包
-
-https://www.electronjs.org/docs/latest/tutorial/tutorial-packaging
-
-测试 electron v21 空项目 dmg 220Mb
-
-[macOS 提示：“应用程序” 已损坏，无法打开的解决方法总结 - sysin | SYStem INside | 软件与技术分享](https://sysin.org/blog/macos-if-crashes-when-opening/)
-
-## electron-forge cli
-
-
-## webview
-
-Preload scripts 类似 chrome 扩展的 content scripts
-
-主进程是 nodejs 环境，有完全系统访问权
-
-渲染进程运行页面，安全原因默认不能运行 nodejs
-
-官方 contextBridge，显式声明暴露的能力 
-
-使用executeJavaScript方法可以在主进程中向webview注入方法，使用preload脚本可以在渲染进程中向webview注入方法。
-
-进程间通信：[Using Preload Scripts | Electron](https://www.electronjs.org/docs/latest/tutorial/tutorial-preload#communicating-between-processes)
-
-[node.js - Electron Preload vs Electron Main - Stack Overflow](https://stackoverflow.com/questions/71791530/electron-preload-vs-electron-main)
-
-第三方依赖 bug https://github.com/electron/forge/issues/2931#issuecomment-1306377240
-
-[解决electron嵌入webview显示空白无法使用_electron webview 不显示_谢泽的网络日志的博客-CSDN博客](https://blog.csdn.net/a0405221/article/details/120928463)
-
-[electron中与webview的通讯-Web前端(W3Cways.com) - Web前端学习之路](https://www.w3cways.com/2459.html)
-
-为 webview 注入方法，原理：
-[Context Isolation | Electron](https://www.electronjs.org/docs/latest/tutorial/context-isolation#before-context-isolation-disabled)
-
-如果contextIsolation为false，那么web页面中的JS可以影响Electron内部渲染时的JS代码和预加载脚本执行。比如先入侵 web 加入恶意脚本，再传递到 preload node 环境。**远程代码执行漏洞（RCE）**
-
-contextIsolation 环境上下文隔离开关，是在 Electron 5.0 版本中引入的，默认值是 false。从 12.0 版本开始，默认值变为 true
-
-[挖洞经验 | 综合三个Bug实现Discord桌面应用RCE漏洞 - FreeBuf网络安全行业门户](https://www.freebuf.com/articles/web/252806.html)
-
-## contextBridge
-
-属于 render process，中间隔离环境，双向同步桥
-
 ## 版本
 
 Electron 22, which contains Chromium 108, will thus be the last supported version.
@@ -311,7 +296,7 @@ In line with Chromium's deprecation policy, _Electron_ will end support of _W
 https://blackglory.me/notes/electron
 
 
-## 性能
+## 性能优化
 
 测量然后优化，vscode 成功经验，官方给出了 checklist，可逐项检查
 
@@ -361,7 +346,9 @@ IPC 不适合传输大量数据
 ## NAPI & Rust
 
 [Exposing a Rust Library to Node with Napi-rs](https://johns.codes/blog/exposing-a-rust-library-to-node-with-napirs)
-## QT
+## 其他跨平台方案
+
+### QT
 
 Qt是一个跨平台的C++应用程序开发框架，它提供了丰富的功能和高性能。Qt应用程序通常被编译为本地机器码，因此在性能方面表现较好。Qt还有一个轻量级的版本Qt Quick，它使用QML语言来构建用户界面，可以实现更快的渲染和动画效果。
 
@@ -396,7 +383,6 @@ npm 包 electron-devtools-installer，使用了过时语法，并且从 chrome w
 
 如果使用 forge 或 builder ，也有对应方式
 
- - [ ] [解锁前端新潜能：如何使用 Rust 锈化前端工具链_taro_京东零售技术_InfoQ写作社区](https://xie.infoq.cn/article/9d3dd2687c865d8caad3d32fd)
 ## 跨进程/线程共享大量数据
 
 SharedArrayBuffer 是通用方案，共享二进制数据缓冲区

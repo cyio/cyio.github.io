@@ -1,5 +1,5 @@
-
 # 事件循环
+## 1. 基本概念
 
 简单说，JS 中替代线程的任务调度机制。
 
@@ -37,7 +37,72 @@ https://chatgpt.com/c/66e407cc-b090-8008-959b-ae25a7ad6040
 
 4. **事件循环（Event Loop）**：事件循环的核心是不断检查调用栈是否为空，以及任务队列中是否有任务需要执行。当调用栈为空时，事件循环会从微任务队列中取出一个任务执行，直到微任务队列为空才会执行宏任务队列中的任务。
 
-### 事件循环的工作流程
+### 为什么用单线程
+
+JavaScript 是用于实现网页交互逻辑的，涉及到 dom 操作，如果多个线程同时操作需要做同步互斥的处理，为了简化就设计成了单线程
+
+单线程由于存在阻塞问题，因此需要调度机制来解决
+## 2. 调用栈
+
+主线程
+
+只有一个执行上下文，控制权转移
+
+## 3. 事件队列
+
+异步回调
+
+异步任务通过其他线程处理，处理完后，添加到消息队列，等待 event loop 取出执行
+
+## 4. 任务类型
+
+### 宏任务
+
+宏任务 (macrotask) 是指需要在事件循环队列中排队等待执行的任务。通常，宏任务是由浏览器或 Node.js 运行时环境提供的 API 触发的，例如：
+
+1.  setTimeout 和 setInterval
+2.  I/O 操作（如文件读取、数据库操作等）
+3.  UI 渲染
+4.  事件监听器
+5.  postMessage 和 MessageChannel
+
+需要注意的是，由于 JavaScript 是单线程执行的，因此在事件循环队列中只有一个宏任务在被执行，其他的任务（包括微任务）都要等待当前宏任务执行完毕之后才能被执行。另外，如果在当前宏任务执行期间触发了新的宏任务，那么它将被加入到事件循环队列的尾部等待执行，而不会中断当前正在执行的宏任务。
+
+### 微任务
+
+以下是 JavaScript 中常见的微任务：
+
+1.  Promise 状态变化时的回调函数 (then, catch, finally)
+2.  process.nextTick() (Node.js 环境中)
+3.  Object.observe() (已废弃)
+4.  MutationObserver (DOM 变化观察器)
+5.  queueMicrotask() (在 ECMAScript 2019 标准中引入，可以使用该方法将任务添加到微任务队列中)
+
+需要注意的是，虽然微任务的执行顺序比宏任务的执行顺序更高，但是它们不会打断正在执行的宏任务，只有当宏任务执行完后才会执行微任务队列中的任务。
+
+题目：说出执行顺序
+```js
+process.nextTick(() => console.log(5))
+
+Promise.resolve().then(() => console.log(1))
+
+;(async () => console.log(2))()
+
+;(() => console.log(3))()
+
+setTimeout(() => console.log(4))
+
+// 2 3 5 1 4
+```
+
+- L0: nextTick 无论放哪，都会在同步代码和任务间执行
+- L1：安排微任务。 完成所有同步 JS 后执行，类型与 L0 相同，排队
+- L2：IIFE 后执行。 它是一个异步功能，但仍然同步执行（没有等待！），没有用 return
+- L3：一个 IIFE，同步。
+- L4：一个任务，所以它将在微任务之后运行。 所以 2-3-5-1-4
+
+**同步代码 -> node nextTick -> 微任务 promise -> 任务 setTimeout**
+## 5. Event Loop 过程
 
 1. **执行同步代码**：在调用栈中执行所有同步代码（也就是直接写在脚本中的代码）。
 
@@ -80,17 +145,11 @@ console.log('End');
 通过理解事件循环，我们可以更好地控制异步代码的执行顺序，从而优化应用性能。
 
 单线程的机制保证了 JavaScript 的执行顺序和一致性，但也需要我们在处理长时间运行任务时，注意避免阻塞调用栈，以免影响用户体验。
-## 特点
-
-  - JS 引擎是单线程的
-  - Event Loop 是 javascript 的执行机制
-  - 微任务优于宏任务先执行
-
 
 ```
-线程
+主线程 - exec stack
   事件循环
-    任务队列
+    任务队列 - task quene
       宏任务 task
       微任务 job
 ``` 
@@ -104,19 +163,39 @@ console.log('End');
 
 ![](https://javascript.info/article/event-loop/eventLoop-full.svg)
 
-## 为什么用单线程
-
-JavaScript 是用于实现网页交互逻辑的，涉及到 dom 操作，如果多个线程同时操作需要做同步互斥的处理，为了简化就设计成了单线程
-
-单线程由于存在阻塞问题，因此需要调度机制来解决
-
-## 支持异步
-
-## 支持优先级（高优插入）
 
 [浏览器和 Node.js 的 EventLoop 为什么这么设计？ - 首席CTO笔记](https://www.shouxicto.com/article/3012.html)
 
-## Node
+## 其他
+
+### 事件循环阻塞
+
+如果有正在进行的 JS 任务，无论时间长短，渲染就不会进行，对用户交互也会有影响
+
+解决：
+1. 长耗时任务分解，通过定时器或者Web Worker等机制分批执行
+2. 进度提示
+3. 延迟执行：比如创建自定义事件，等事件冒泡在各层完成后，再 dispatch
+
+[Event loop: microtasks and macrotasks](https://javascript.info/event-loop)
+
+
+详细说明 Event Loop
+https://xie.infoq.cn/article/934dc016b4f65ba60252bb713#:~:text=%E7%BA%A6%2039%20%E5%88%86%E9%92%9F-,%E8%AF%A6%E7%BB%86%E8%AF%B4%E6%98%8E%20Event%20loop,-%E4%BC%97%E6%89%80%E5%91%A8%E7%9F%A5%20JS%20%E6%98%AF
+
+
+### 为什么需要事件循环
+
+事件循环是现代编程语言中常用的一种并发处理模型，它的主要作用是处理异步事件和回调函数，以提高程序的性能和响应能力。
+
+传统的编程模型中，通常采用多线程或多进程的方式处理并发任务。这种模型的缺点是线程或进程的创建和销毁需要消耗大量的资源，而且在线程或进程之间的数据共享和同步也非常困难。另外，由于线程或进程数量的限制，这种模型很难扩展到处理大量的并发任务。
+
+相比之下，事件循环模型是一种更加轻量级和高效的并发处理模型。在事件循环模型中，所有任务都在一个单独的线程中运行，通过任务队列来管理任务的执行顺序。当一个任务完成后，事件循环会自动从队列中取出下一个任务进行处理，从而实现任务的异步执行。这种模型不仅能够提高程序的性能和响应能力，而且还可以轻松处理大量的并发任务，因为它不需要创建大量的线程或进程。
+
+另外，事件循环还能够处理很多其他的编程场景，如动画效果、用户输入事件等。在这些场景下，事件循环可以帮助我们实现实时的交互和响应，提高用户体验和应用程序的质量。
+
+因此，事件循环是现代编程语言中非常重要的一个概念，对于提高程序性能和响应能力、处理并发任务、实现实时交互等都具有重要的作用。
+### Node
 
 高性能需求，更复杂
 
@@ -192,7 +271,7 @@ setTimeout(myCallback, 0); // 等执行栈清空后执行
 并不表示，1s 后执行，而是 1s 后将 myCallback 添加到事件循环的队列，排队执行
 
 
-## 浏览器与 Node 差异
+### 浏览器与 Node 差异
 
 Node.js 也采用了事件循环模型，但是和浏览器中的 JavaScript 事件循环有一些区别。以下是一些主要的差异：
 
@@ -202,57 +281,9 @@ Node.js 也采用了事件循环模型，但是和浏览器中的 JavaScript 事
 4.  在浏览器中，通过 setTimeout() 和 setInterval() 函数可以向事件队列中添加任务，而在 Node.js 中，可以使用类似 setImmediate()、process.nextTick()、setTimeout() 和 setInterval() 等函数来添加任务。
 5.  在 Node.js 中，事件循环可以使用 cluster 模块来创建多个进程，并在这些进程之间共享任务队列，以提高程序的性能和可靠性。
 
-## 宏任务
+### requestAnimationFrame
 
-宏任务 (macrotask) 是指需要在事件循环队列中排队等待执行的任务。通常，宏任务是由浏览器或 Node.js 运行时环境提供的 API 触发的，例如：
-
-1.  setTimeout 和 setInterval
-2.  I/O 操作（如文件读取、数据库操作等）
-3.  UI 渲染
-4.  事件监听器
-5.  postMessage 和 MessageChannel
-
-需要注意的是，由于 JavaScript 是单线程执行的，因此在事件循环队列中只有一个宏任务在被执行，其他的任务（包括微任务）都要等待当前宏任务执行完毕之后才能被执行。另外，如果在当前宏任务执行期间触发了新的宏任务，那么它将被加入到事件循环队列的尾部等待执行，而不会中断当前正在执行的宏任务。
-
-## 微任务
-
-以下是 JavaScript 中常见的微任务：
-
-1.  Promise 状态变化时的回调函数 (then, catch, finally)
-2.  process.nextTick() (Node.js 环境中)
-3.  Object.observe() (已废弃)
-4.  MutationObserver (DOM 变化观察器)
-5.  queueMicrotask() (在 ECMAScript 2019 标准中引入，可以使用该方法将任务添加到微任务队列中)
-
-需要注意的是，虽然微任务的执行顺序比宏任务的执行顺序更高，但是它们不会打断正在执行的宏任务，只有当宏任务执行完后才会执行微任务队列中的任务。
-
-题目：说出执行顺序
-```js
-process.nextTick(() => console.log(5))
-
-Promise.resolve().then(() => console.log(1))
-
-;(async () => console.log(2))()
-
-;(() => console.log(3))()
-
-setTimeout(() => console.log(4))
-
-// 2 3 5 1 4
-```
-
-- L0: nextTick 无论放哪，都会在同步代码和任务间执行
-- L1：安排微任务。 完成所有同步 JS 后执行，类型与 L0 相同，排队
-- L2：IIFE 后执行。 它是一个异步功能，但仍然同步执行（没有等待！），没有用 return
-- L3：一个 IIFE，同步。
-- L4：一个任务，所以它将在微任务之后运行。 所以 2-3-5-1-4
-
-**同步代码 -> node nextTick -> 微任务 promise -> 任务 setTimeout**
-
-## requestAnimationFrame
-
-## 常见误解
-1. 任务队列用了 quene？
+### 任务队列用了 quene？
 
 不是，用的 set，轮询的方法，不同类型任务执行顺序不一样
 
@@ -264,8 +295,6 @@ setTimeout(() => console.log(4))
 
 [Jake Archibald: In The Loop - JSConf.Asia - YouTube](https://www.youtube.com/watch?v=cCOL7MC4Pl0&t=1521s)  
 [第 25 题：浏览器和 Node 事件循环的区别 · Issue #26 · Advanced-Frontend/Daily-Interview-Question · GitHub](https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/26)
-
-
 
 ```js
 Promise.resolve().then(() => console.log(1))
@@ -286,32 +315,3 @@ process.nextTick(() => console.log(5))
 
 [事件循环以及浏览器渲染时机 - 简书](https://www.jianshu.com/p/af302f8c388f)
 [事件循环是如何影响页面渲染的？ - 云+社区 - 腾讯云](https://cloud.tencent.com/developer/article/1843653)
-
-
-## 为什么需要事件循环
-
-事件循环是现代编程语言中常用的一种并发处理模型，它的主要作用是处理异步事件和回调函数，以提高程序的性能和响应能力。
-
-传统的编程模型中，通常采用多线程或多进程的方式处理并发任务。这种模型的缺点是线程或进程的创建和销毁需要消耗大量的资源，而且在线程或进程之间的数据共享和同步也非常困难。另外，由于线程或进程数量的限制，这种模型很难扩展到处理大量的并发任务。
-
-相比之下，事件循环模型是一种更加轻量级和高效的并发处理模型。在事件循环模型中，所有任务都在一个单独的线程中运行，通过任务队列来管理任务的执行顺序。当一个任务完成后，事件循环会自动从队列中取出下一个任务进行处理，从而实现任务的异步执行。这种模型不仅能够提高程序的性能和响应能力，而且还可以轻松处理大量的并发任务，因为它不需要创建大量的线程或进程。
-
-另外，事件循环还能够处理很多其他的编程场景，如动画效果、用户输入事件等。在这些场景下，事件循环可以帮助我们实现实时的交互和响应，提高用户体验和应用程序的质量。
-
-因此，事件循环是现代编程语言中非常重要的一个概念，对于提高程序性能和响应能力、处理并发任务、实现实时交互等都具有重要的作用。
-
-## interview
-
-详细说明 Event Loop
-https://xie.infoq.cn/article/934dc016b4f65ba60252bb713#:~:text=%E7%BA%A6%2039%20%E5%88%86%E9%92%9F-,%E8%AF%A6%E7%BB%86%E8%AF%B4%E6%98%8E%20Event%20loop,-%E4%BC%97%E6%89%80%E5%91%A8%E7%9F%A5%20JS%20%E6%98%AF
-
-## 事件循环阻塞
-
-如果有正在进行的 JS 任务，无论时间长短，渲染就不会进行，对用户交互也会有影响
-
-解决：
-1. 长耗时任务分解，通过定时器或者Web Worker等机制分批执行
-2. 进度提示
-3. 延迟执行：比如创建自定义事件，等事件冒泡在各层完成后，再 dispatch
-
-[Event loop: microtasks and macrotasks](https://javascript.info/event-loop)

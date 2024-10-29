@@ -72,3 +72,21 @@ grid-area: 1/2/4/6 区域简写，row / col
 [Deep Dive into CSS Grid ― Scotch.io](https://scotch.io/tutorials/deep-dive-into-css-grid-2)
 
 [An Interactive Guide to CSS Grid](https://www.joshwcomeau.com/css/interactive-guide-to-grid/)
+
+### 响应式缩略图列表
+
+```css
+scroll-padding-top: 12px;
+
+overflow-y: auto;
+
+display: grid;
+
+grid-row-gap: 12px;
+
+grid-column-gap: 12px;
+
+grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+
+grid-auto-rows: 80px;
+```
