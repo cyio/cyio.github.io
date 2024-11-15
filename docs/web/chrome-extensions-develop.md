@@ -95,3 +95,8 @@ chrome.scripting.executeScript({
 });
 
 ```
+
+
+## 效率
+
+location.href 获取地址，右键在 new tab 打开p

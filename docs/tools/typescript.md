@@ -124,6 +124,7 @@ type $TSFixMe = any
 {/* 
   // @ts-ignore */}
 ```
+
 渐近`nocheck -> expect-error`
 
 [解读 Errors | 深入理解 TypeScript](https://jkchao.github.io/typescript-book-chinese/error/interpreting.html#%25E7%25AE%2580%25E6%25B4%2581)

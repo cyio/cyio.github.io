@@ -90,6 +90,18 @@ win.close()
 [安全性，原生能力和你的责任 | Electron ](https://electronjs.org/docs/tutorial/security#2-do-not-enable-nodejs-integration-for-remote-content)
 [Electron 深度实践总结 | 欧长坤的博客](https://changkun.us/archives/2017/03/217/)
 
+## 窗口
+
+parent 自动管理
+modal 禁用父窗口交互
+
+对话框、多窗口应用、消息通知
+
+## 显示
+
+getCurrentScaleFactor 与 window.devicePixelRatio 可能不一致
+
+2 表示UI元素的逻辑像素与物理像素的比例为1:2，高分辨率
 ## webview 
 
 默认没有网络缓存？
@@ -389,3 +401,13 @@ SharedArrayBuffer 是通用方案，共享二进制数据缓冲区
 比如在不同 Web Workers 之间，免去复制
 
 需要设置 header 安全头
+
+## 三方库
+
+### TTLCache
+
+内存级缓存，高性能，保护数据
+
+`TTLCache` 确实是内存级缓存，但在 Electron 的架构中，主进程和渲染进程本质上是分离的进程，各自有独立的内存空间，无法直接共享变量或数据。Electron 默认不支持跨进程的直接内存访问，因此渲染进程无法直接访问主进程中的 `TTLCache` 数据，而是需要通过 IPC 从主进程请求数据。这个过程中，数据会被序列化、拷贝传输，导致了性能瓶颈，尤其是对于大数据来说。
+
+SharedArrayBuffer

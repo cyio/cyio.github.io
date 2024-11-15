@@ -19,3 +19,4 @@ pbcopy < ~/.ssh/id_rsa.pub
 ## remote
 
 [[server/vps-init#SSH/Mosh 登陆]]
+

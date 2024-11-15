@@ -1,16 +1,20 @@
 # kindle
 
+## 管理
+
+[Amazon.com: Manage Your Content and Devices](https://www.amazon.com/hz/mycd/digital-console/contentlist/pdocs/dateDsc/)
+
+[Send to Kindle](https://www.amazon.com/sendtokindle)
+
 ## 格式
 
 首选 mobi
 
+格式：azw（不是 azw3）、mobi、epub、html、zip、排版后的 6 寸 pdf、 txt
+
 ## 传书
 
-1. 邮件
-	1.  6 寸 PDF，内容少
-	2. 内容多，使用 ePub
-
-格式：azw（不是 azw3）、mobi、epub、html、zip、排版后的 6 寸 pdf、 txt
+### 邮件
 
 大小：附件数量 25 不大于 50mb，但是 Gmail 限制 25MB，可以压缩成 zip
 https://www.amazon.cn/gp/help/customer/display.html?nodeId=G7NECT4B4ZWHQ8WV
@@ -21,7 +25,7 @@ https://www.amazon.cn/gp/help/customer/display.html?nodeId=G7NECT4B4ZWHQ8WV
 
 > 发送失败会有邮件回复，如果需要验证也会有邮件
 
-2. 手机 OTG
+### 手机 OTG
 
 ## 场景
 专业书籍更适合用电脑
