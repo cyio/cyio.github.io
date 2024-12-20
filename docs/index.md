@@ -6,9 +6,9 @@ hero:
   # text: "Just for fun"
   tagline: Frontend/AI/Blockchain/Linux
   actions:
-    - theme: brand
-      text: 知乎
-      link: https://www.zhihu.com/people/oaker/posts
+    # - theme: brand
+    #   text: 知乎
+    #   link: https://www.zhihu.com/people/oaker/posts
     - theme: alt
       text: View on GitHub
       link: https://github.com/cyio

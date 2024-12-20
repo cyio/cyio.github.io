@@ -72,6 +72,9 @@ https://www.electronjs.org/docs/latest/tutorial/message-ports/
 
 [electron有preload导入node的module，为什么常见情况都是使用相对低效的ipc？ - 知乎](https://www.zhihu.com/question/640872750/answer/3376148295)
 
+### 底层实现 Mojo 
+
+Electron 提供了 `ipcMain` 和 `ipcRenderer` 接口，但它实际上是基于 Chromium 的 Mojo 框架和 Node.js 的 EventEmitter 封装而来的。
 ## API与应用
 ### 窗口管理
 不用`window.open`，`a target=_blank`开新窗口就可用`window.close`关掉
@@ -190,6 +193,13 @@ https://www.electronjs.org/docs/latest/tutorial/tutorial-packaging
 测试 electron v21 空项目 dmg 220Mb
 
 [macOS 提示：“应用程序” 已损坏，无法打开的解决方法总结 - sysin | SYStem INside | 软件与技术分享](https://sysin.org/blog/macos-if-crashes-when-opening/)
+
+```
+# 关闭Gatekeeper
+sudo spctl --master-disable
+# 解除应用程序隔离属性
+sudo xattr -rd com.apple.quarantine /path/to/your/app
+```
 
 ## 问题
 
@@ -342,6 +352,8 @@ https://nodejs.org/api/n-api.html#node-api
 
 https://koffi.dev/functions?highlight=decode
 
+## 参数类型必须正确，否则调用失败但没有日志
+
 ### FFI 直接调用已有的动态库，有性能损耗吗
 
 使用FFI（Foreign Function Interface）直接调用已有的动态库通常会比使用原生模块性能略有损耗，因为FFI需要在运行时进行**动态链接和调用，而原生模块则是静态链接，性能更高**。这种性能损耗通常是很小的，特别是对于大部分应用来说，可以忽略不计。因此，如果开发成本和快速迭代对你的项目更为重要，FFI是一个很好的选择。
@@ -411,3 +423,29 @@ SharedArrayBuffer 是通用方案，共享二进制数据缓冲区
 `TTLCache` 确实是内存级缓存，但在 Electron 的架构中，主进程和渲染进程本质上是分离的进程，各自有独立的内存空间，无法直接共享变量或数据。Electron 默认不支持跨进程的直接内存访问，因此渲染进程无法直接访问主进程中的 `TTLCache` 数据，而是需要通过 IPC 从主进程请求数据。这个过程中，数据会被序列化、拷贝传输，导致了性能瓶颈，尤其是对于大数据来说。
 
 SharedArrayBuffer
+
+## 剪贴板
+
+技术上可行，框架提供功能，其他框架也有这个能力。安全责任在开发商、商店、用户
+
+```js
+const { clipboard } = require('electron');
+
+setInterval(() => {
+  const text = clipboard.readText();
+  console.log('剪贴板内容:', text);
+}, 1000); // 每秒读取一次
+
+```
+
+
+## 崩溃
+
+V8
+[Debugging a NetdiskAPI/Photoluv Crash - Claude](https://claude.ai/chat/801fa98e-c67e-4c32-8db6-da2bd47d8f80)
+
+## 快捷键
+
+缩小、刷新等排除
+
+https://github.dev/alex8088/electron-toolkit/tree/master/packages/utils

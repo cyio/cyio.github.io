@@ -741,3 +741,14 @@ git config --global alias.undo restore -smain -SW -- This way, you can just do: 
 项目周期长，改动多，长时间未合入主分支，合并复杂度会上升
 
 怎么合：建立三方分支
+
+## 本地变更忽略
+
+1. 新建 files-to-ignore.txt
+2. 脚本 [ignore-changes.sh](https://gist.github.com/cyio/d95a2f30545e0cd2c39ffe500afcca58)
+
+默认忽略，反操作 xx.sh restore
+
+## 一台电脑使用多个 Git 身份
+
+![[image/git-1733837142198.webp]]

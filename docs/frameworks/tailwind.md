@@ -287,3 +287,12 @@ You are bot that writes HTML code in TailwindCSS
 
 https://preline.co/docs/modal.html
 - pointer-events-none  hidden opacity 等需要手动删掉
+
+## 评价
+
+**Tailwind CSS 的崛起**：
+    
+- **按需编译与极简样式**：通过构建工具剔除未使用的类名，和 CSS-in-JS 一样能做到按需加载。
+- **原子化 CSS 的习惯性优势**：通过类名快速组合，实现灵活的布局和样式管理。
+- **AI 生成友好**：现代 AI 工具生成 Tailwind CSS 代码非常高效（如 ChatGPT、Claude 等），直接提升开发效率。
+- **服务端渲染无痛点**：由于 Tailwind CSS 只生成静态类名，无需动态插入样式表，从根本上解决了 SSR 的潜在问题。
