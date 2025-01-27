@@ -36,7 +36,7 @@ https://blog.scottlogic.com/2023/02/01/webview2-electron-challengers-and-slightl
 
 [The Secret of Good Electron Apps](https://jlongster.com/secret-of-good-electron-apps)
 
-## 进程间通信 (IPC)
+## IPC (进程间通信)
 
 1. 主进程与渲染进程
 2. 渲染进程之间
@@ -55,7 +55,15 @@ webview document.title/executeJavaScript
 
 electron 的 IPC 基于 chromium 的 IPC？
 
-MessagePort对象可以在渲染器或主进程中创建，并使用ipcRenderer.postMessage和WebContents.postMessage方法来回传递。请注意，通常的IPC方法（如send和invoke）不能用于传输MessagePorts，只有postMessage方法可以传输MessagePorts。
+### MessagePort
+
+MessagePort 对象可以在渲染器或主进程中创建，并使用ipcRenderer.postMessage和WebContents.postMessage方法来回传递。请注意，通常的IPC方法（如send和invoke）不能用于传输MessagePorts，只有postMessage方法可以传输MessagePorts。
+
+MessagePort 更底层，支持二进制（ArrayBuffer）、0 拷贝（共享内存）、数据流、双向通信。一般通信，考虑简单和安全，以字节流序列化反序列化处理，有开销，不适合频繁通信和大体积数据。
+
+需要指定选项  transfer，否则还是可能走序列化（比一般方式高效）
+
+- [ ] demo 验证，是否 0 拷贝
 
 https://www.electronjs.org/docs/latest/tutorial/message-ports/
 
@@ -155,6 +163,17 @@ contextIsolation 环境上下文隔离开关，是在 Electron 5.0 版本中引�
 
 [快应用开发工具之 asar](https://quickapp.vivo.com.cn/quickapp-ide-asar/)
 
+主进程会编到 exe
+
+安全性考虑
+- 将核心逻辑放在主进程
+- 严格控制 IPC 通信
+- 实施强访问控制
+- 保护主进程代码不被轻易反编译
+- 使用加密存储敏感数据
+- 完整性校验， asar 哈希验证
+- 重要资源单独保护，指定不打到 asar
+
 ### 热更新/自动更新
 
 1. asar（主进程） + update.zip（渲染进程）
@@ -200,6 +219,12 @@ sudo spctl --master-disable
 # 解除应用程序隔离属性
 sudo xattr -rd com.apple.quarantine /path/to/your/app
 ```
+
+
+## 签名
+
+签名都是用操作系统工具
+win 不签名，会有警告
 
 ## 问题
 
@@ -328,22 +353,27 @@ https://blackglory.me/notes/electron
 [How to make your Electron app launch 1,000ms faster | by Takuya Matsuyama | Dev as Life](https://blog.inkdrop.app/how-to-make-your-electron-app-launch-1000ms-faster-32ce1e0bb52c)
 [简单有效的 chromium 内存优化 - 知乎](https://zhuanlan.zhihu.com/p/700466961)
 
-## FFI
+[[../../../inbox/electron-perf|electron-perf]]
 
+## FFI（外部功能接口）
+
+### dll
+动态库，程序运行时加载
+## N-API
+
+`ffi-napi` 和 `koffi` 这些库的核心功能是通过 **Node.js 的 N-API** 实现的
+napi 支持不同 node 版本
+
+操作系统加载库（抹平），然后暴露给 JS 供调用
 ### node-ffi & napi
-
-> 外部函数接口
 
 node-ffi 和 napi 都是 Node.js 中用于访问本地代码的工具，但它们有不同的设计目的和使用场景。
 
 node-ffi 是一个 Node.js 模块，它允许你调用本地动态链接库中的函数，而无需编写 C++ 绑定代码。node-ffi 的主要设计目的是为了让 Node.js 开发者能够方便地访问本地系统功能，例如操作系统 API、硬件驱动程序等。使用 node-ffi，你可以在 Node.js 中轻松地调用 C 语言编写的动态链接库，而无需编写任何 C++ 绑定代码。
 
-而 napi 是 Node.js 提供的一组 API，它允许开发者编写可跨平台、可移植的 C++ 扩展，并且这些扩展可以在不同版本的 Node.js 上运行。napi 的主要设计目的是为了让开发者能够编写高效、可靠的 Node.js 扩展，而不必考虑不同版本的 Node.js 之间的差异。使用 napi，你可以更轻松地编写跨平台的 Node.js 扩展，并且这些扩展可以在多个版本的 Node.js 上运行。
-
 因此，node-ffi 和 napi 在设计目的和使用场景上存在差异。如果你需要快速访问本地系统功能，那么 node-ffi 是一个很好的选择；如果你需要编写可跨平台的高效 Node.js 扩展，那么 napi 是更好的选择。
 
 https://nodejs.org/api/n-api.html#node-api
-
 ### koffi
 
 在Koffi中，指针是一个变量，它保存了另一个变量或对象的内存地址。"koffi.decode()"函数允许你访问特定内存地址上存储的数据，并将其解释为JS函数。
@@ -351,8 +381,6 @@ https://nodejs.org/api/n-api.html#node-api
 如果您要在JS环境中使用"koffi.decode()"函数来获取JS函数，可能是为了与Koffi代码进行交互，或者将Koffi代码嵌入到现有的JS应用程序中。这样可以利用Koffi的特性和功能，并与现有的JS代码进行集成。
 
 https://koffi.dev/functions?highlight=decode
-
-## 参数类型必须正确，否则调用失败但没有日志
 
 ### FFI 直接调用已有的动态库，有性能损耗吗
 

@@ -109,6 +109,6 @@ const a = 1
 [Using Markdown in Vim](https://vim.works/2019/03/16/using-markdown-in-vim/)
 
 
-## mindmap
+## 大纲转 mindmap
 
-https://markmap.js.org/repl
+[Try markmap](https://markmap.js.org/repl)

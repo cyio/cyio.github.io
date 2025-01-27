@@ -56,3 +56,27 @@ AI can help you write better: Use these 3 free AI websites:
 
 AGI（通用人工智能）还比较遥远，但这是一个渐进的过程，可能很多人对 AGI 达到的标准都有不同的看法。但这是一个思考框架，也是推动 OpenAI 前进的动力。
 
+
+- **高效的合作模式**：
+    
+    - 当将 AI 视为“副驾驶”并主动设计和分解任务时，能够显著提升效率。
+    - 简单任务完全交给 AI 处理，也可以取得良好效果。
+- **复杂任务的挑战**：
+    
+    - 在复杂任务中，如果完全依赖 AI，可能会因为需要理解 AI 的思路和修正其错误而降低效率。
+    - AI 思路不正确时，往往需要重新编写，浪费时间。
+- **使用者能力的关键性**：
+    
+    - AI 辅助编程的效果上限取决于使用者的编程水平。
+    - 不能懒惰或完全依赖 AI，仍需不断学习和积累编程知识，才能在复杂任务中有效驾驭 AI。
+
+openai 替代
+1、编程用claude，开源用qwen-instruct32b coder
+2、compute use用claude，国内用智谱
+3、视觉理解用gemini2，国内用火山
+4、realtime用gemini（中文用智谱和火山）
+5、视频生成用runway（国内用即梦、kling）
+6、图像生成用comfyui+flux
+7、疑难杂症用flash thinking（以前用o1）。
+
+已经完全切换到ai atudio
