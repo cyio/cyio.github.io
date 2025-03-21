@@ -92,3 +92,18 @@ flex: 1
 
 > chrome73,74 版本以后 flex 布局 Web 应用程序中的溢出将不再起作用，要在 flex 父元素，原来是 min-height: auto; 现在改为 min-height: 0;才可以
 
+## 响应式，多列变一列
+
+```
+.container
+    display: flex
+    flex-wrap: wrap
+    gap: 20
+    .item
+        flex: 1
+        min-width: 200
+
+media-query < 750
+    .container
+        flex-direction: column
+```

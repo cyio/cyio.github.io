@@ -3,9 +3,9 @@
 
 - [HTML Standard](https://html.spec.whatwg.org/multipage/)
 
-- 如果在文档开始处没有发现文档类型声明，则所有浏览器都会默认开启严格模式
+## script
 
-## 外链脚本下载与执行
+### 下载与执行
 
 DOM parser => JS engine => DOM parser
 
@@ -33,13 +33,19 @@ DOM parser => JS engine => DOM parser
 
     [async vs defer attributes - Growing with the Web](http://www.growingwiththeweb.com/2014/02/async-vs-defer-attributes.html)
 
-- 目前大网站，有使用 async ，但没 defer，两者兼容性对低版本 IE 是个问题(IE10 以下)，因此 Web 端网站要求强兼容性的话就不要用了
-
     [使用 defer 或 async 加载脚本 | levy](http://levy.work/2017-01-25-script-defer-and-async/)
 
 - 与页面渲染相关，慎用 async，执行不可靠，可能晚于如 vue 的 mounted
 
 - src 必须存在，不能手动创建
+
+### 位置
+
+head 底部 或 body 底部
+
+head 或 body，即使你放到 html 层， 浏览器也会将 script 移动到 head 或 body 内
+
+[javascript - difference between putting scripts in body or outside body - Stack Overflow](https://stackoverflow.com/questions/31867747/difference-between-putting-scripts-in-body-or-outside-body)
 
 ## HTML/CSS/JS 依赖、阻塞关系
 
@@ -158,32 +164,7 @@ css加载不会阻塞DOM树的解析，但会阻塞 DOM 渲染和后续 JS 的�
 
     [Vertical-Align: All You Need To Know - Christopher Aue](http://christopheraue.net/2014/03/05/vertical-align/)
 
-  - 在线工具 [How to Center in CSS](http://howtocenterincss.com/)
-
-  - logo 定位
-
-    header {
-    background: #231f20;
-    padding: 10px 0;
-    }
-    .center {
-    max-width: 1240px;
-    margin: 0 auto;
-    padding: 0 20px;
-    position: relative;
-    }
-    .header-middle {
-    position: absolute;
-    color:red;
-    left:45%;
-    top:24px;
-    }
-
-## html5 下 ios，android 数字键盘的统一（如输入手机号)
-
-- type 设为 tel，两个平台都会调出拨号键盘
-- type 为 num 时，ios 调出的是全键盘，不符合预期
-
+  - 在线工具 [How to Center in CSS](http://howtocenterincss.com/
 
 ## DNS 预取
 
@@ -204,13 +185,6 @@ preconnect 缺点 cpu 开销
 
 [预加载系列一：DNS Prefetching 的正确使用姿势 - Delai - 有赞技术团队](https://tech.youzan.com/dns-prefetching/)
 
-## 三种方式阻止 href 跳转
-
-[How to prevent a click on a '#' link from jumping to top of page?](https://stackoverflow.com/a/44491091/5657916)
-最简单的，锚点跳转找不到
-
-```
-<a href="#!" class="someclass">Text</a>
 ```
 
 ## head/meta
@@ -258,6 +232,7 @@ article[data-columns='3'] {
 [vue/html-parser.js at dev · vuejs/vue](https://github.com/vuejs/vue/blob/dev/src/compiler/parser/html-parser.js)
 
 ## preload
+
 可以对各种资源预取，包括 media
 [Preloading content with rel="preload" - HTML: Hypertext Markup Language | MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content)
 
@@ -281,14 +256,8 @@ swiper 等三方依赖应该阻塞，new 时如果找不到，抛错会阻塞执
 兼容性：firefox 不支持，会忽略退化
 
 ## dl dt dd
+
 定义列表， dd 会缩进两个字
-
-## script 位置
-head 底部 或 body 底部
-
-head 或 body，即使你放到 html 层， 浏览器也会将 script 移动到 head 或 body 内
-
-[javascript - difference between putting scripts in body or outside body - Stack Overflow](https://stackoverflow.com/questions/31867747/difference-between-putting-scripts-in-body-or-outside-body)
 
 ## 页面事件
 
@@ -311,6 +280,12 @@ vue mounted 依赖 dom 挂载点，所以是在 DOMContentLoaded 发生后执行
 [Synchronous and asynchronous requests - Web APIs | MDN](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Synchronous_and_Asynchronous_Requests)
 
 ## offsetParent
+
 offsetParent 最近定位祖先元素、body
 offsetLeft 相对于 offsetParent 偏移
 
+## issue
+### html5 下 ios，android 数字键盘的统一（如输入手机号)
+
+- type 设为 tel，两个平台都会调出拨号键盘
+- type 为 num 时，ios 调出的是全键盘，不符合预期

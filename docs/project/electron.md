@@ -59,7 +59,7 @@ electron 的 IPC 基于 chromium 的 IPC？
 
 MessagePort 对象可以在渲染器或主进程中创建，并使用ipcRenderer.postMessage和WebContents.postMessage方法来回传递。请注意，通常的IPC方法（如send和invoke）不能用于传输MessagePorts，只有postMessage方法可以传输MessagePorts。
 
-MessagePort 更底层，支持二进制（ArrayBuffer）、0 拷贝（共享内存）、数据流、双向通信。一般通信，考虑简单和安全，以字节流序列化反序列化处理，有开销，不适合频繁通信和大体积数据。
+MessagePort 更底层，支持二进制（ArrayBuffer）、0 拷贝（共享内存）、数据流、双向通信。IPC 一般通信，考虑简单和安全，以字节流序列化反序列化处理，有开销，不适合频繁通信和大体积数据。
 
 需要指定选项  transfer，否则还是可能走序列化（比一般方式高效）
 
@@ -69,6 +69,8 @@ https://www.electronjs.org/docs/latest/tutorial/message-ports/
 
 [Electron进程通信 - 知乎](https://zhuanlan.zhihu.com/p/453287153)
 [前端不懂进程通信？看完这篇就懂了 - 掘金](https://juejin.cn/post/6988484297485189127)
+
+https://chatgpt.com/c/67c5290d-78fc-8008-96f3-810d989e734a
 
 ### IPC  效率与安全
 

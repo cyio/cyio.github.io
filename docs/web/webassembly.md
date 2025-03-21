@@ -1,4 +1,6 @@
-# WebAssembly - 通用跨编程语言字节码技术
+# WebAssembly 
+
+通用跨编程语言字节码技术
 
 ## 特点
 
@@ -26,7 +28,7 @@
 体积、速度、安全优势，相比于 linux/Node
 QuickJS 小型、可嵌入，几个 C 文件，在任何环境运行
 
-[边缘云微服务——如何利用 WasmEdge 和 Rust 构建高性能和安全的应用程序](https://www.freecodecamp.org/chinese/news/edge-cloud-microservices-with-wasmedge-and-rust/)
+[边缘云微服务——如何利用 WasmEdge 和 Rust 构建高性能和安全的应用程序](https://www.freecodecamp.com/chinese/news/edge-cloud-microservices-with-wasmedge-and-rust/)
 
 ## Rust 和 C
 
@@ -35,3 +37,7 @@ Rust 提供了更好的内存安全保证和现代化的语言特性，而 C 则
 ## 内存
 
 每个 Wasm 实例拥有自己的私有内存空间，它不是跨进程共享的。内存是局限于单个 JavaScript 上下文和 Wasm 模块实例的。
+
+## 总结
+
+WebAssembly 是一种通用的跨编程语言字节码技术，特点包括作为中间表示、原生支持和高度兼容的生态系统。虽然不一定总是更快，但在某些场景下，如边缘云微服务，结合 Rust 和 WasmEdge 可以构建高性能和安全的应用程序。Rust 和 C 各有优势，Rust 提供内存安全保证，C 生态成熟。每个 Wasm 实例有私有内存空间。
