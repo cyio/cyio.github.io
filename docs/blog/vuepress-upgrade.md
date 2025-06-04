@@ -21,7 +21,7 @@ vite 采用 ES6 module，浏览器原生支持，实现无刷更新。
 
 
 升级变更见代码
-[Merge branch 'migrate-v2' into dev · cyio/cyio.github.io@e3b2320](https://github.com/cyio/cyio.github.io/commit/e3b2320f369324bd87b3aae45e7b19385b439653#diff-52eb86351480925d61947a58caca1ea76d10950ec26533f16f37cb12a3519dff)
+[Merge branch 'migrate-v2' into dev · cyio/blog@e3b2320](https://github.com/cyio/blog/commit/e3b2320f369324bd87b3aae45e7b19385b439653#diff-52eb86351480925d61947a58caca1ea76d10950ec26533f16f37cb12a3519dff)
 
 ## 感受
 

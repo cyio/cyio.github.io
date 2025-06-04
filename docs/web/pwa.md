@@ -113,6 +113,25 @@ https://developer.chrome.com/docs/workbox/caching-strategies-overview/
 - 节省公司资源：与常规缓存相比，能减少多少资源请求？
 - 技术复杂度和成本：相较 SSR 低
 
+## 多页配置
+
+> **PWA 的核心是一个单页面应用（SPA）**：它通过注册一个 Service Worker 来拦截和缓存网络请求，一般是针对一个入口文件（如 `index.html`）。
+
+多页入口会缓存
+
+> **只要不匹配已缓存的 HTML 路径，就 fallback 到 `navigateFallback` 指定的页面（例如 `/index.html`）**。
+
+而像你访问的 `/pay.html?a=1`，虽然你缓存了 `/pay.html`，但带参数的路径 `/pay.html?a=1` 不被视为「已缓存资源」，所以 fallback 触发了，转向了 `/index.html`。
+
+怎么解决？SW 忽略处理，直接访问网络
+```
+        workbox: {
+          navigateFallbackDenylist: [
+            // 只排除带参数的 /pay.html，如 /pay.html?a=1
+            /^\/pay\.html\?.+/,
+          ],
+        },
+```
 ## Issues
 
 离线后只能从入口访问？不能从子页面
