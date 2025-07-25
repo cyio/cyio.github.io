@@ -156,3 +156,31 @@ https://codesandbox.io/s/using-suspense-and-async-setup-in-vue-3-forked-yw2q9l?f
 编译时语法糖
 
 https://www.patterns.dev/vue/script-setup
+
+## issues
+
+### 当组件有多个根节点或者根节点不是元素时，指令无法正常工作
+
+比如
+```
+// 组件内又是一个组件，v-show 无效
+<hello v-show
+	<hi
+```
+
+### Vue组件更新时无法读取 emitsOptions 属性
+
+这个错误通常发生在以下情况：
+
+1. 循环依赖问题 ： liquid.ts 和 mask-edit.ts 之间存在循环依赖
+2. 状态计算时机问题 ： isRetouchMode 是一个计算属性，依赖于 isMaskEditMode ，而在组件状态变化时可能出现时序问题
+
+Hook 相互引用的主要问题：
+1. 循环依赖 ：当 Hook A 引用 Hook B，而 Hook B 又引用 Hook A 时，会形成循环依赖
+2. 初始化时序问题 ：Vue 的响应式系统在组件初始化时可能导致某些内部属性（如 emitsOptions ）暂时为 null
+3. 模块加载顺序 ：ES6 模块的加载顺序可能导致某个 hook 在另一个 hook 完全初始化之前就被调用
+
+最佳实践：
+1. 避免在模块顶层调用 hook（重复调用，依然有风险）
+2. 将计算逻辑移到组件内部（推荐） 
+3. 使用全局状态管理，创建一个专门的状态管理 hook（提高复用性）

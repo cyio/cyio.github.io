@@ -152,6 +152,12 @@ contextIsolation 环境上下文隔离开关，是在 Electron 5.0 版本中引�
 
 [挖洞经验 | 综合三个Bug实现Discord桌面应用RCE漏洞 - FreeBuf网络安全行业门户](https://www.freebuf.com/articles/web/252806.html)
 
+## context Isolation  上下文隔离
+
+防止网页任意访问 preload.js 中的内容，比如接口，进而攻击主进程
+
+通信必须用 contextBridge.exposeInMainWorld 和 ipcRenderer 显式定义和暴露
+
 ## contextBridge
 
 属于 render process，中间隔离环境，双向同步桥

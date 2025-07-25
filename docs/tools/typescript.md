@@ -1,6 +1,8 @@
 # Typescript
 
+> **你定义了值，TypeScript 自动派生类型，编辑器就能给出“值域 + 错误提示 + 补全建议”三位一体的智能提示体验。**
 
+> TS 关键字：类型、泛型、推导、提示，约束
 
 TypeScript 是一种由微软开发的静态类型语言，它是 JavaScript 的超集。与 JavaScript 不同的是，TypeScript 强制要求变量、函数和对象属性等具有明确的类型，并在编译时检查这些类型，以帮助开发人员在代码编写阶段就发现潜在的问题。
 
@@ -32,7 +34,7 @@ G
 
 [《TypeScript开发实战》总结 - 知乎](https://zhuanlan.zhihu.com/p/82567664)
 
-## 类型注解
+## 类型注解：冒号
 
 类型注解用于明确变量、函数和对象属性等的类型。在 TypeScript 中，可以使用冒号语法指定类型，例如：
 
@@ -66,14 +68,6 @@ type OtherProps = {
 }
 ```
 
-## 对象入参
-
-```js
-function Heading({ name, color }: Props): React.ReactNode {
-  return <h1>My Website Heading</h1>
-}
-```
-
 ## extends
 
 type 也可以扩展，用`&`符号
@@ -94,9 +88,9 @@ type TAB = A & {
 
 ## 泛型
 
-泛型可以让代码更具有通用性。在 TypeScript 中，可以使用尖括号语法指定泛型类型，例如：
+泛型是定义时不指定具体类型，使用时传入，保持输入输出类型一致，增强复用和类型安全
 
-适用多个类型，保证返回类型一致
+作为函数的类型参数，使输入输出类型关联
 
 ```js
 // 定义，相当于函数，入参是类型约束
@@ -224,20 +218,6 @@ class MyClass {
 
     提示结尾的访问，可能取不到，需要使用`?`
 
-## 新特性
-unknown type 处理第三方库或 API 数据，表示需要检查数据有效性。如，接口字段有多种类型，null/[]
-
-```
-  readonly scores: readonly number[];
-```
-第一个表示不能熏赋值，第二个表示内部不可变
-
-const assertions 不可变数据结构
-
-[6 useful TypeScript 3 features you need to know | Building SPAs](https://www.carlrippon.com/6-useful-typescript-3-features-you-need-to-know/)
-
-[一份不可多得的 TS 学习指南（1.8W字）](https://juejin.cn/post/6872111128135073806)
-
 ## getter 和 setter 作用
 
 - 实现只读私有变量,不提供 setter
@@ -269,29 +249,6 @@ pig.name = 'jack'
 ```
 > 子组件需要的参数声明也不具有强制性，参考 React 组件参数传递是具有强约束力并且能静态检测，目前 Vue 仍然是在运行时抛出
 
-
-## interview
-
-1.  TypeScript 是什么？它与 JavaScript 有什么不同？
-    
-2.  TypeScript 中的类型注解有什么作用？如何使用类型注解？
-    
-3.  TypeScript 中的泛型有什么作用？如何使用泛型？
-    
-4.  TypeScript 中的接口有什么作用？如何使用接口？
-    
-5.  TypeScript 中的枚举有什么作用？如何使用枚举？
-    
-6.  TypeScript 中的类有什么作用？如何使用类？
-    
-7.  TypeScript 中的命名空间有什么作用？如何使用命名空间？
-    
-8.  TypeScript 中的装饰器有什么作用？如何使用装饰器？
-    
-9.  TypeScript 如何与常见的 JavaScript 框架和库配合使用？
-    
-10.  TypeScript 中的类型断言有什么作用？如何使用类型断言？
-
 ## 适合场景
 
 - 持续迭代的复杂项目
@@ -317,3 +274,42 @@ VSCode VSCode  10 个最常用技巧
 
 
 [基于JSDoc实现TypeScript类型安全的实践报告 - 周爱民 - 掘金](https://juejin.cn/post/7310980511453954063)
+
+
+## 类型断言：从未知类型恢复为精确类型
+
+用来**告诉编译器把某个值断言成指定的类型**，绕过编译器的类型推断或检查。
+
+as
+
+比如 api / JSON.parse 从 any 到 as，特别适合服务端接口用
+
+## 联合类型与交叉类型
+
+`|` 联合，或
+`&` and、merge 、交叉
+
+## 字面量类型：值的限制
+
+```js
+type Status = 'pending' | 'success' | 'error';
+type HttpMethod = 'GET' | 'POST' | 'PUT' | 'DELETE';
+
+type Request = {
+  method: HttpMethod;
+  status: Status;
+};
+
+```
+
+
+## 自动推导：类型复用
+
+typeof  类型复用，根据已有的数据，保持同步
+
+## 源头类型保障
+
+类型提示、约束
+严格类型校验
+
+https://chatgpt.com/share/6882e781-ff90-8008-a70d-881de8b0ac04
