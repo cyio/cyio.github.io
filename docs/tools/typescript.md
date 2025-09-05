@@ -68,6 +68,7 @@ type OtherProps = {
 }
 ```
 
+
 ## extends
 
 type 也可以扩展，用`&`符号
@@ -92,17 +93,9 @@ type TAB = A & {
 
 作为函数的类型参数，使输入输出类型关联
 
-```js
-// 定义，相当于函数，入参是类型约束
-function identity<T>(arg: T): T {
-  return arg
-}
-// 使用
-let output = identity < string > 'myString' // type of output will be 'string'
-let output1 = identity < string > 23 // type of output will be 'string'
-```
+定义和调用都用到 `<>`
 
-React.FC 有泛型接口
+## 关闭检查
 
 ```
 type $TSFixMe = any

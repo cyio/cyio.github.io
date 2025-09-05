@@ -363,36 +363,71 @@ https://blackglory.me/notes/electron
 
 [[../../../inbox/electron-perf|electron-perf]]
 
+补充后的完整简明版本如下，已加入 `koffi` 与 `ffi-napi` / `node-ffi` 的关系与区别说明：
+
+---
+
 ## FFI（外部功能接口）
 
-### dll
-动态库，程序运行时加载
-## N-API
+### DLL
 
-`ffi-napi` 和 `koffi` 这些库的核心功能是通过 **Node.js 的 N-API** 实现的
-napi 支持不同 node 版本
+动态链接库，程序**运行时加载**，可被其他程序调用。
 
-操作系统加载库（抹平），然后暴露给 JS 供调用
-### node-ffi & napi
+---
 
-node-ffi 和 napi 都是 Node.js 中用于访问本地代码的工具，但它们有不同的设计目的和使用场景。
+### N-API 与 FFI 库
 
-node-ffi 是一个 Node.js 模块，它允许你调用本地动态链接库中的函数，而无需编写 C++ 绑定代码。node-ffi 的主要设计目的是为了让 Node.js 开发者能够方便地访问本地系统功能，例如操作系统 API、硬件驱动程序等。使用 node-ffi，你可以在 Node.js 中轻松地调用 C 语言编写的动态链接库，而无需编写任何 C++ 绑定代码。
+`ffi-napi`、`koffi` 等库基于 **Node.js 的 N-API** 实现，可跨平台并支持不同 Node 版本。
 
-因此，node-ffi 和 napi 在设计目的和使用场景上存在差异。如果你需要快速访问本地系统功能，那么 node-ffi 是一个很好的选择；如果你需要编写可跨平台的高效 Node.js 扩展，那么 napi 是更好的选择。
+它们通过操作系统加载本地动态库，并将其中函数暴露给 JS 调用。
 
-https://nodejs.org/api/n-api.html#node-api
-### koffi
+---
 
-在Koffi中，指针是一个变量，它保存了另一个变量或对象的内存地址。"koffi.decode()"函数允许你访问特定内存地址上存储的数据，并将其解释为JS函数。
+### node-ffi vs ffi-napi vs N-API
 
-如果您要在JS环境中使用"koffi.decode()"函数来获取JS函数，可能是为了与Koffi代码进行交互，或者将Koffi代码嵌入到现有的JS应用程序中。这样可以利用Koffi的特性和功能，并与现有的JS代码进行集成。
+|库/接口|特点|是否维护|是否基于 N-API|适用场景|
+|---|---|---|---|---|
+|**node-ffi**|最早的 FFI 实现，调用简单|不再维护|❌|快速接入系统 API|
+|**ffi-napi**|node-ffi 的升级版，使用 N-API|✅|✅|推荐替代 node-ffi|
+|**N-API**|Node 官方 API，需要手写 C/C++ 扩展|✅|✅|高性能扩展、复杂逻辑|
 
-https://koffi.dev/functions?highlight=decode
+---
+
+### koffi vs ffi-napi
+
+**koffi** 是比 `ffi-napi` 更现代、更易用的 FFI 库：
+
+|特点|ffi-napi|koffi|
+|---|---|---|
+|依赖编译|是（native bindings）|否（纯 JS 实现）|
+|性能|较高|略低|
+|安装便捷性|安装可能卡在编译|完全无编译，跨平台更稳|
+|类型定义|较弱|强，支持结构体、指针、多级嵌套|
+|学习成本|中等|更易用，文档清晰|
+
+📌 **总结**：
+
+- 免编译，体验最好：**选 koffi**
+    
+- 需高性能调用原生库：**选 ffi-napi**
+    
+- 有更复杂 C/C++ 扩展需求：**手写 N-API**
+    
+
+---
+
+### koffi 示例功能
+
+- `koffi.decode(ptr)`：从指针地址读取内存内容，转换为 JS 函数/结构。
+    
+- 更像 JS 风格写法，适合 Node 项目直接嵌入调用底层库。
+    
+
+官网文档：[https://koffi.dev/functions?highlight=decode](https://koffi.dev/functions?highlight=decode)
 
 ### FFI 直接调用已有的动态库，有性能损耗吗
 
-使用FFI（Foreign Function Interface）直接调用已有的动态库通常会比使用原生模块性能略有损耗，因为FFI需要在运行时进行**动态链接和调用，而原生模块则是静态链接，性能更高**。这种性能损耗通常是很小的，特别是对于大部分应用来说，可以忽略不计。因此，如果开发成本和快速迭代对你的项目更为重要，FFI是一个很好的选择。
+FFI需要在运行时进行**动态链接和调用，而原生模块则是静态链接，性能更高**。这种性能损耗通常是很小的，特别是对于大部分应用来说，可以忽略不计。
 
 ## 原生渲染
 
@@ -485,3 +520,8 @@ V8
 缩小、刷新等排除
 
 https://github.dev/alex8088/electron-toolkit/tree/master/packages/utils
+
+## mac 公证
+
+waitForNotarization
+依赖 apple CDN，可能得挂梯子
