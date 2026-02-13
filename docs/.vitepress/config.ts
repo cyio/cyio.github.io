@@ -4,6 +4,7 @@ import {glob} from 'glob';
 import {getFirstHeading} from './util';
 
 export default defineConfig({
+  base: '/blog/',
   // 打包输出目录
   outDir: '../dist',
 

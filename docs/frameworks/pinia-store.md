@@ -42,3 +42,13 @@ action 关联 mutation
 时光机回放 action
 验证 getter
 优化性能，可看到操作耗时
+
+## 直接修改 state
+
+意外变更，难以追查
+trace 或 dev tools event log 看不出来准确的变更源
+
+官方比较灵活
+需要用 proxy 拦截，或者 TS 标记
+
+https://chatgpt.com/share/68f62616-d46c-8008-b5a5-dcf03d67cfa2

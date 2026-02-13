@@ -493,8 +493,6 @@ SharedArrayBuffer 是通用方案，共享二进制数据缓冲区
 
 `TTLCache` 确实是内存级缓存，但在 Electron 的架构中，主进程和渲染进程本质上是分离的进程，各自有独立的内存空间，无法直接共享变量或数据。Electron 默认不支持跨进程的直接内存访问，因此渲染进程无法直接访问主进程中的 `TTLCache` 数据，而是需要通过 IPC 从主进程请求数据。这个过程中，数据会被序列化、拷贝传输，导致了性能瓶颈，尤其是对于大数据来说。
 
-SharedArrayBuffer
-
 ## 剪贴板
 
 技术上可行，框架提供功能，其他框架也有这个能力。安全责任在开发商、商店、用户
@@ -525,3 +523,7 @@ https://github.dev/alex8088/electron-toolkit/tree/master/packages/utils
 
 waitForNotarization
 依赖 apple CDN，可能得挂梯子
+
+## 示例项目
+
+[H-Haynes/TIMP: TIMP音乐聚合平台是一个聚合多个平台的桌面音乐播放软件，支持网易云音乐、QQ音乐、酷狗音乐、酷我音乐](https://github.com/H-Haynes/TIMP)
