@@ -652,12 +652,14 @@ git rev-list --left-right --count origin/master...test-branch
 
 > 基于文件夹
 
+[[../../../inbox/git-worktree]]
+
 用途：
 1. 多个独立工作区（hotfix/PR reivew/运行并行环境）
 2. 目录对比
 
 优点：
-- 可以避免来回 stash，污染工作区，丢失变更
+- 可以避免来回 stash 切换上下文，污染工作区，丢失变更
 - 避免 clone 多个相同仓库
 - switch branch 需要 IDE 做很多切换索引工作
 

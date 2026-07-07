@@ -1,529 +1,276 @@
 # electron
 
-## 基础概念
+## 架构
 
-![v2-f85361afb9a037b24b279c9a87d6635e_r.jpg (490×454)](https://pic3.zhimg.com/v2-f85361afb9a037b24b279c9a87d6635e_r.jpg)
+主进程（Node.js 环境，完整系统权限）+ 渲染进程（页面，默认沙箱，无 Node.js）。
 
-### CEF： Chromium 嵌入式框架
-
-CEF专注于促进第三方应用程序中的嵌入式浏览器用例
-
-C++ 实现
-
-> CEF支持广泛的编程语言和操作系统，可以轻松地集成到新的和现有的应用程序中。它的设计从头到尾兼顾了性能和易用性。基本框架包括通过本机库公开的C和c++编程接口，本机库将主机应用程序与Chromium和Blink实现细节隔离开来。它提供了浏览器和主机应用程序之间的紧密集成，包括对自定义插件、协议、JavaScript对象和JavaScript扩展的支持。主机应用程序可以选择性地控制资源加载、导航、上下文菜单、打印等，同时利用谷歌Chrome Web浏览器中提供的相同性能和HTML5技术。
-
-底层是 Google 公司带头的开源社区
-
-https://github.com/chromiumembedded/cef
-
-组件：
-- 动态库（各平台）
-- 支持文件
-- 资源
-- 可执行 client
-
-架构
-- CEF使用多个进程。主要的应用程序进程称为“浏览器”进程。将为渲染器、插件、GPU等创建子进程。
-- 在Windows和Linux上，相同的可执行文件可以用于主进程和子进程。在OS X上，你需要为子进程创建一个单独的可执行文件和应用程序包。
-- CEF中的大多数进程都有多个线程。CEF为在这些不同的线程之间提交任务提供了函数和接口。
-- 一些回调和函数只能在特定进程或特定线程上使用。在第一次开始使用新的回调函数或函数之前，请确保阅读API头中的源代码注释。
-
-https://blog.scottlogic.com/2023/02/01/webview2-electron-challengers-and-slightly-lighter-desktop-web-applications.html
-
-### 进程
-
-- 2 个进程：主进程和渲染器进程
+多进程模型继承自 Chromium：渲染、插件、GPU 各自独立进程。
 
 [The Secret of Good Electron Apps](https://jlongster.com/secret-of-good-electron-apps)
 
-## IPC (进程间通信)
+## IPC 进程间通信
 
-1. 主进程与渲染进程
-2. 渲染进程之间
-	- 本地存储
-	- 主进程中转（因为两个进程平行，只能通过父级通信）
+### 三种方式
 
-send 不需要回复。场景：计数、数据更新
+| 方式 | 特点 | 适用场景 |
+|---|---|---|
+| `send` | 单向，无需回复 | 计数、数据更新 |
+| `invoke` | Promise，双向 | 获取设置、查询数据 |
+| `postMessage` | 消息通道，支持 MessagePort | 消息保证、连接两个渲染进程 |
 
-invoke 执行方法（便利），promise 。场景：获取 electron 设置
-
-postMessage 消息通道，与 Web 中的等价。场景：消息保证、即使监听器还未注册，主进程作为中间人、连接两个渲染进程
-
-webview document.title/executeJavaScript 
-
-~~remote 模块，模拟本地调用，废弃，推荐 invoke~~
-
-electron 的 IPC 基于 chromium 的 IPC？
+渲染进程间通信需经主进程中转，或使用本地存储。
 
 ### MessagePort
 
-MessagePort 对象可以在渲染器或主进程中创建，并使用ipcRenderer.postMessage和WebContents.postMessage方法来回传递。请注意，通常的IPC方法（如send和invoke）不能用于传输MessagePorts，只有postMessage方法可以传输MessagePorts。
+比普通 IPC 更底层：支持二进制（ArrayBuffer）、零拷贝（共享内存）、数据流、双向通信。
 
-MessagePort 更底层，支持二进制（ArrayBuffer）、0 拷贝（共享内存）、数据流、双向通信。IPC 一般通信，考虑简单和安全，以字节流序列化反序列化处理，有开销，不适合频繁通信和大体积数据。
+普通 IPC 以字节流序列化/反序列化，有开销，不适合频繁或大体积数据传输。
 
-需要指定选项  transfer，否则还是可能走序列化（比一般方式高效）
+> 必须指定 `transfer` 选项才能走零拷贝路径，否则仍会序列化。
 
-- [ ] demo 验证，是否 0 拷贝
+[Message Ports | Electron](https://www.electronjs.org/docs/latest/tutorial/message-ports/)
 
-https://www.electronjs.org/docs/latest/tutorial/message-ports/
+### 安全与效率
+
+- 渲染进程直接给 `fs` 能力有 RCE 风险，推荐通过主进程 IPC 代理文件操作
+- IPC 使用安全序列化算法，可屏蔽大量安全问题，开销小但存在
+- 大量数据传输推荐 MessagePort 或 SharedArrayBuffer
+
+### 底层实现
+
+Electron 的 `ipcMain` / `ipcRenderer` 基于 Chromium 的 **Mojo** 框架 + Node.js EventEmitter 封装。
 
 [Electron进程通信 - 知乎](https://zhuanlan.zhihu.com/p/453287153)
-[前端不懂进程通信？看完这篇就懂了 - 掘金](https://juejin.cn/post/6988484297485189127)
-
-https://chatgpt.com/c/67c5290d-78fc-8008-96f3-810d989e734a
-
-### IPC  效率与安全
-
-- 在 Electron 应用中，存在权责问题，即应该在渲染进程还是主进程执行某些操作，例如发起请求或读写文件。
-- 移植 Electron 应用至 Web 环境时，需要确保渲染进程的安全性和沙箱化。
-- 在渲染进程中赋予文件系统（fs）能力可能存在安全隐患，因此通过主进程处理字节码，渲染进程通过 IPC 通信可提高安全性。
-- Electron 版本升级后，由于引入 preload.js 导致部分功能无法使用，需要社区迁移包临时替代，使得大量功能转移到了 preload.js 中。
-- IPC 使用一种安全的序列化算法，虽然效率略低，但可以屏蔽许多安全问题，开发者也可以自行实现协议解决效率和安全问题。
-
-[electron有preload导入node的module，为什么常见情况都是使用相对低效的ipc？ - 知乎](https://www.zhihu.com/question/640872750/answer/3376148295)
-
-### 底层实现 Mojo 
-
-Electron 提供了 `ipcMain` 和 `ipcRenderer` 接口，但它实际上是基于 Chromium 的 Mojo 框架和 Node.js 的 EventEmitter 封装而来的。
-## API与应用
-### 窗口管理
-不用`window.open`，`a target=_blank`开新窗口就可用`window.close`关掉
-进阶，可以用
-```js
-import { remote } from 'electron'
-var win = remote.getCurrentWindow()
-win.close()
-```
-
-[electron test close window](https://codepen.io/cyio/pen/QZPLaV)
-[Electron 应用架构 | Electron 进程通讯](https://electronjs.org/docs/tutorial/application-architecture#%25E9%25A2%2598%25E5%25A4%2596%25E8%25AF%259D%25EF%25BC%259A%25E8%25BF%259B%25E7%25A8%258B%25E9%2597%25B4%25E9%2580%259A%25E8%25AE%25AF)
-[Electron 常见问题 (FAQ) | Electron 如何在两个网页间共享数据](https://electronjs.org/docs/faq#%25E5%25A6%2582%25E4%25BD%2595%25E5%259C%25A8%25E4%25B8%25A4%25E4%25B8%25AA%25E7%25BD%2591%25E9%25A1%25B5%25E9%2597%25B4%25E5%2585%25B1%25E4%25BA%25AB%25E6%2595%25B0%25E6%258D%25AE%25EF%25BC%259F)
-
-- 推荐使用 preload
-[安全性，原生能力和你的责任 | Electron ](https://electronjs.org/docs/tutorial/security#2-do-not-enable-nodejs-integration-for-remote-content)
-[Electron 深度实践总结 | 欧长坤的博客](https://changkun.us/archives/2017/03/217/)
-
-## 窗口
-
-parent 自动管理
-modal 禁用父窗口交互
-
-对话框、多窗口应用、消息通知
-
-## 显示
-
-getCurrentScaleFactor 与 window.devicePixelRatio 可能不一致
-
-2 表示UI元素的逻辑像素与物理像素的比例为1:2，高分辨率
-## webview 
-
-默认没有网络缓存？
-
-### webview vs browserview
-
-最大的区别在于 browserview 托管于 main process 而不是 renderer。这非常类似于 Chrome 中对页面的处理方式，因此可以获得很高的页面响应速度。
-
-Preload scripts 类似 chrome 扩展的 content scripts
-
-主进程是 nodejs 环境，有完全系统访问权
-
-渲染进程运行页面，安全原因默认不能运行 nodejs
-
-官方 contextBridge，显式声明暴露的能力 
-
-使用executeJavaScript方法可以在主进程中向webview注入方法，使用preload脚本可以在渲染进程中向webview注入方法。
-
-进程间通信：[Using Preload Scripts | Electron](https://www.electronjs.org/docs/latest/tutorial/tutorial-preload#communicating-between-processes)
-
-[node.js - Electron Preload vs Electron Main - Stack Overflow](https://stackoverflow.com/questions/71791530/electron-preload-vs-electron-main)
-
-第三方依赖 bug https://github.com/electron/forge/issues/2931#issuecomment-1306377240
-
-[解决electron嵌入webview显示空白无法使用_electron webview 不显示_谢泽的网络日志的博客-CSDN博客](https://blog.csdn.net/a0405221/article/details/120928463)
-
-[electron中与webview的通讯-Web前端(W3Cways.com) - Web前端学习之路](https://www.w3cways.com/2459.html)
-
-为 webview 注入方法，原理：
-[Context Isolation | Electron](https://www.electronjs.org/docs/latest/tutorial/context-isolation#before-context-isolation-disabled)
-
-如果contextIsolation为false，那么web页面中的JS可以影响Electron内部渲染时的JS代码和预加载脚本执行。比如先入侵 web 加入恶意脚本，再传递到 preload node 环境。**远程代码执行漏洞（RCE）**
-
-contextIsolation 环境上下文隔离开关，是在 Electron 5.0 版本中引入的，默认值是 false。从 12.0 版本开始，默认值变为 true
-
-[挖洞经验 | 综合三个Bug实现Discord桌面应用RCE漏洞 - FreeBuf网络安全行业门户](https://www.freebuf.com/articles/web/252806.html)
-
-## context Isolation  上下文隔离
-
-防止网页任意访问 preload.js 中的内容，比如接口，进而攻击主进程
-
-通信必须用 contextBridge.exposeInMainWorld 和 ipcRenderer 显式定义和暴露
-
-## contextBridge
-
-属于 render process，中间隔离环境，双向同步桥
-## 工程与打包
-### asar 归档
-
-- 只读、随机访问（虚拟文件夹）
-- 用 JSON 存储信息，易于实现解析器
-- 规避文件路径太长（win）
-- 减少文件数，加快安装
-
-[快应用开发工具之 asar](https://quickapp.vivo.com.cn/quickapp-ide-asar/)
-
-主进程会编到 exe
-
-安全性考虑
-- 将核心逻辑放在主进程
-- 严格控制 IPC 通信
-- 实施强访问控制
-- 保护主进程代码不被轻易反编译
-- 使用加密存储敏感数据
-- 完整性校验， asar 哈希验证
-- 重要资源单独保护，指定不打到 asar
-
-### 热更新/自动更新
-
-1. asar（主进程） + update.zip（渲染进程）
-    - 需要拆分项目
-    - 优点：
-        - 降低迭代成本（减少分发带宽使用）
-        - 提升更新效率
-    - 缺点：
-        - 增加项目复杂度
-        - 可能需要额外的服务器支持
-2. electron-updater
-    - 使用内容可变长度分块（Content-Defined Chunking, CDC）
-    - 支持 range 请求，实现增量更新
-    - 优点：
-        - 官方支持，集成度高
-        - 支持多平台（Windows, macOS, Linux）
-        - 自动处理更新检查、下载和安装
-3. 更新策略考虑
-    - 强制更新 vs 可选更新
-    - 后台静默更新 vs 用户交互更新
-    - 更新频率和时机
-4. 安全性考虑
-    - 更新包签名验证
-    - HTTPS 传输
-    - 防篡改机制
-
-### BlockMap
-
-1. hash 记录分块信息
-2. 客户端更新时，比较新旧包
-3. range 请求，只下载差异部分，就像下载大文件
-### 打包
-
-https://www.electronjs.org/docs/latest/tutorial/tutorial-packaging
-
-测试 electron v21 空项目 dmg 220Mb
-
-[macOS 提示：“应用程序” 已损坏，无法打开的解决方法总结 - sysin | SYStem INside | 软件与技术分享](https://sysin.org/blog/macos-if-crashes-when-opening/)
-
-```
-# 关闭Gatekeeper
-sudo spctl --master-disable
-# 解除应用程序隔离属性
-sudo xattr -rd com.apple.quarantine /path/to/your/app
-```
-
-
-## 签名
-
-签名都是用操作系统工具
-win 不签名，会有警告
-
-## 问题
-
-- 系统差异，windows 无法 open？
-
-###  白屏
-
-windows 兼容性，如 windows server。解决：追加 --no-sandbox 或 打包 32 位版本
-
-Win7+，不支持 arm
-
-MacOS 10.10+
-
-[javascript - What is minimum system requirements to run electron apps? - Stack Overflow](https://stackoverflow.com/questions/36306450/what-is-minimum-system-requirements-to-run-electron-apps)
-事件: 'render-process-gone’  判断 reason
-
-[https://www.electronjs.org/zh/docs/latest/api/app#%E4%BA%8B%E4%BB%B6-render-process-gone](https://www.electronjs.org/zh/docs/latest/api/app#%E4%BA%8B%E4%BB%B6-render-process-gone)
-
-增加消息提示，让用户重新打开
-
-[【Electron】vue+electron白屏问题的解决方案 - 掘金]([https://juejin.cn/post/7136124646079856671](https://juejin.cn/post/7136124646079856671))
-
-### webview 窗口打开慢
-
-1. 后台预热，隐藏窗口，定位到屏幕之外 + skipTaskBar任务栏不可见
-2. 窗口池，复用
-3. 常驻，通用类窗口，如通知、图片查看器
-
-分享这半年的 Electron 应用开发和优化经验 - 掘金 [https://juejin.cn/post/6844904029231775758](https://juejin.cn/post/6844904029231775758)
-
-### 拖拽下载
-
-event.sender.startDrag
-https://www.electronjs.org/zh/docs/latest/api/web-contents#contentsstartdragitem
-https://www.electronjs.org/zh/docs/latest/tutorial/native-file-drag-drop
-
-不能监听系统事件，只适合本地文件拖拽
-
-原因：
-1. 无法拿到目标路径
-2. 拖拽到系统本地，走了系统行为（下载文件 URL 到临时目录，再拷贝到目标文件夹）
-3. 文件夹没有 URL，无法下载
-https://github.com/liupan1890/aliyunpan/issues/576
-参考 vscode，只支持单文件，但这只是本地间
-https://github.com/electron/electron/issues/7118#issuecomment-483681104
-https://cloud.tencent.com/developer/article/1562722
-
-[weekly/59.精读《如何利用 Nodejs 监听文件夹》.md at master · ascoders/weekly](https://github.com/ascoders/weekly/blob/master/%25E5%2589%258D%25E6%25B2%25BF%25E6%258A%2580%25E6%259C%25AF/59.%25E7%25B2%25BE%25E8%25AF%25BB%25E3%2580%258A%25E5%25A6%2582%25E4%25BD%2595%25E5%2588%25A9%25E7%2594%25A8%2520Nodejs%2520%25E7%259B%2591%25E5%2590%25AC%25E6%2596%2587%25E4%25BB%25B6%25E5%25A4%25B9%25E3%2580%258B.md)
-
-[electron 拖拽未下载文件到本地功能实现 - 掘金](https://juejin.cn/post/7095557874658574373#heading-1)
-[Electron桌面端拖拽下载的实现 | 新时代农民工的日常](https://pinkcle.com/electron/dragdrop.html)
-
-替代方案：监听系统文件夹变化，局限是适合有限监听的文件夹
-主要风险：权限、兼容性
-
-vscode 窗口内部拖拽实现，由于 startDrag 不支持内部，改用 e.dataTransfer.setData
-https://github.com/electron/electron/issues/7118#issuecomment-483681104
-
-[Simple drag and drop function in Electron - Moment For Technology](https://www.mo4tech.com/simple-drag-and-drop-function-in-electron.html)
-## 异常捕获
-
-兜底捕获
-- 主进程不加，会异常退出 `process.on('uncaughtException'`
-- 渲染进程，该进程会退出，不影响其他渲染进程或主进程 `window.onerror`
-### 渲染进程
-
-表现：白屏、黑屏，窗口在但没有内容
-
-- JavaScript 错误，未捕获的异常或死循环，可能会导致进程被终止
-- 手动终止
-- 内存耗尽
-
-事件：render-process-gone，处理参考 白屏部分
-
-> Sentry 主要用于捕获 JavaScript 异常和错误以及 Electron 主进程中的问题，包括`process.on('uncaughtException'`
-
-[electron-render-oom](electron-render-oom.md)
-### 主进程
-
-
-封装参考
-https://github.dev/sindresorhus/electron-unhandled/blob/a302ae5367af900872d889cdb47fe26907fa47fe/index.js#L123
-
-### crashReporter
-
-electron 的一个模块，收集主进程崩溃信息，支持设置上报地址，可配置 sentry 使用
-
-crash free sessions 免于崩溃、即正常的会话数，用 100 减去即崩溃的会话数
-
-存储用户目录：Crashpad
-
-https://www.electronjs.org/docs/latest/api/crash-reporter
-
-## 版本
-
-Electron 22, which contains Chromium 108, will thus be the last supported version.
-
-In line with Chromium's deprecation policy, _Electron_ will end support of _Windows 7_, Windows 8 and Windows 8.1 beginning in _Electron_ 23.
-
-不再收到更新支持，有可能能运行？
 
 ## 安全
 
+### Context Isolation（上下文隔离）
 
-## 参考
-[javascript - how to open new window in place of current window in Electron - Stack Overflow](https://stackoverflow.com/questions/36072035/how-to-open-new-window-in-place-of-current-window-in-electron/38043021)
-[Electron简单笔记 - 小翼的前端天地](https://www.my-fe.pub/post/electron-note.html)
-[electron.WebContents.on JavaScript and Node.js code examples | Codota](https://www.codota.com/code/javascript/functions/electron/WebContents/on)
-[node.js - Remove menubar from Electron app - Stack Overflow](https://stackoverflow.com/questions/39091964/remove-menubar-from-electron-app)
-[Atom Electron - Close the window with javascript - Stack Overflow](https://stackoverflow.com/questions/31171597/atom-electron-close-the-window-with-javascript)
+防止网页脚本访问 preload.js 内容，进而攻击主进程。
 
-[cawa-93/vite-electron-builder: Secure boilerplate for Electron app based on Vite. TypeScript + Vue/React/Angular/Svelte/Vanilla](https://github.com/cawa-93/vite-electron-builder)
+- Electron 5.0 引入，12.0 起默认开启
+- 关闭后，恶意网页可污染 preload 的 Node 环境，造成 **RCE 漏洞**
 
-[electron多进程方案解决界面卡顿 - 掘金](https://juejin.cn/post/6999257401522126856)
+通信必须通过 `contextBridge.exposeInMainWorld` + `ipcRenderer` 显式定义暴露的接口。
 
-https://blackglory.me/notes/electron
+### contextBridge
 
+属于渲染进程，位于隔离环境与页面之间，提供双向同步桥。
 
-## 性能优化
+### Preload
 
-测量然后优化，vscode 成功经验，官方给出了 checklist，可逐项检查
+类似 Chrome 扩展的 content scripts，在渲染进程加载页面前执行，可访问 Node.js API。
 
-1. 延迟 require（IO、递归引用）和 new
-2. V8 Snapshot，预处理 JS
+推荐将所有主进程能力通过 preload + contextBridge 显式暴露，而非开放 Node.js 集成。
 
-[How to make your Electron app launch 1,000ms faster | by Takuya Matsuyama | Dev as Life](https://blog.inkdrop.app/how-to-make-your-electron-app-launch-1000ms-faster-32ce1e0bb52c)
-[简单有效的 chromium 内存优化 - 知乎](https://zhuanlan.zhihu.com/p/700466961)
+[Context Isolation | Electron](https://www.electronjs.org/docs/latest/tutorial/context-isolation)
+[挖洞经验 | Discord RCE 漏洞](https://www.freebuf.com/articles/web/252806.html)
 
-[[../../../inbox/electron-perf|electron-perf]]
+## 窗口与显示
 
-补充后的完整简明版本如下，已加入 `koffi` 与 `ffi-napi` / `node-ffi` 的关系与区别说明：
+### 窗口管理
 
----
+- `parent`：子窗口自动跟随父窗口
+- `modal`：禁用父窗口交互
+- 不用 `window.open` / `<a target="_blank">` 打开的窗口，可用 `window.close()` 关闭
 
-## FFI（外部功能接口）
+### webview vs BrowserView
 
-### DLL
+最大区别：BrowserView 托管于主进程（类似 Chrome 标签页实现），响应速度更高。
 
-动态链接库，程序**运行时加载**，可被其他程序调用。
+- `executeJavaScript`：主进程向 webview 注入方法
+- preload 脚本：渲染进程向 webview 注入方法
 
----
+[进程间通信 | Electron](https://www.electronjs.org/docs/latest/tutorial/tutorial-preload#communicating-between-processes)
 
-### N-API 与 FFI 库
+### 高清屏幕
 
-`ffi-napi`、`koffi` 等库基于 **Node.js 的 N-API** 实现，可跨平台并支持不同 Node 版本。
+`getCurrentScaleFactor` 与 `window.devicePixelRatio` 可能不一致，计算坐标时注意：
 
-它们通过操作系统加载本地动态库，并将其中函数暴露给 JS 调用。
+```js
+const offsetX = Math.round((clientX - rect.left) * screenScaleFactor);
+```
 
----
+## 原生能力
 
-### node-ffi vs ffi-napi vs N-API
+### FFI（外部功能接口）
 
-|库/接口|特点|是否维护|是否基于 N-API|适用场景|
+在 Node.js 中调用本地动态库（DLL / dylib / .so）的方式对比：
+
+| 库 | 依赖编译 | 性能 | 类型支持 | 推荐场景 |
 |---|---|---|---|---|
-|**node-ffi**|最早的 FFI 实现，调用简单|不再维护|❌|快速接入系统 API|
-|**ffi-napi**|node-ffi 的升级版，使用 N-API|✅|✅|推荐替代 node-ffi|
-|**N-API**|Node 官方 API，需要手写 C/C++ 扩展|✅|✅|高性能扩展、复杂逻辑|
+| **node-ffi** | 是 | 高 | 弱 | 已废弃，不推荐 |
+| **ffi-napi** | 是（native bindings） | 高 | 中 | 需高性能时 |
+| **koffi** | 否（纯 JS） | 略低 | 强（结构体、指针、嵌套）| 优先选择 |
+| **N-API** | 是（手写 C/C++） | 最高 | 完全自定义 | 复杂扩展 |
 
----
+FFI 动态链接有少量调用开销，大部分场景可忽略。
 
-### koffi vs ffi-napi
-
-**koffi** 是比 `ffi-napi` 更现代、更易用的 FFI 库：
-
-|特点|ffi-napi|koffi|
-|---|---|---|
-|依赖编译|是（native bindings）|否（纯 JS 实现）|
-|性能|较高|略低|
-|安装便捷性|安装可能卡在编译|完全无编译，跨平台更稳|
-|类型定义|较弱|强，支持结构体、指针、多级嵌套|
-|学习成本|中等|更易用，文档清晰|
-
-📌 **总结**：
-
-- 免编译，体验最好：**选 koffi**
-    
-- 需高性能调用原生库：**选 ffi-napi**
-    
-- 有更复杂 C/C++ 扩展需求：**手写 N-API**
-    
-
----
-
-### koffi 示例功能
-
-- `koffi.decode(ptr)`：从指针地址读取内存内容，转换为 JS 函数/结构。
-    
-- 更像 JS 风格写法，适合 Node 项目直接嵌入调用底层库。
-    
-
-官网文档：[https://koffi.dev/functions?highlight=decode](https://koffi.dev/functions?highlight=decode)
-
-### FFI 直接调用已有的动态库，有性能损耗吗
-
-FFI需要在运行时进行**动态链接和调用，而原生模块则是静态链接，性能更高**。这种性能损耗通常是很小的，特别是对于大部分应用来说，可以忽略不计。
-
-## 原生渲染
-
-场景：需要 webgl 渲染，如视频、图片像素
-IPC 不适合传输大量数据
-解决方案：
-将窗体背景色调成透明，同时增加一个子窗口装载SDL，原生渲染 opengl
-交互事件需要透传给原生模块
-
-共享内存，没有有效方案
-## NAPI & Rust
-
+[koffi 文档](https://koffi.dev/functions)
 [Exposing a Rust Library to Node with Napi-rs](https://johns.codes/blog/exposing-a-rust-library-to-node-with-napirs)
-## 其他跨平台方案
 
-### QT
+### Worker 多线程
 
-Qt是一个跨平台的C++应用程序开发框架，它提供了丰富的功能和高性能。Qt应用程序通常被编译为本地机器码，因此在性能方面表现较好。Qt还有一个轻量级的版本Qt Quick，它使用QML语言来构建用户界面，可以实现更快的渲染和动画效果。
+直接使用 Node.js 的 `worker_threads`，无需 Web Worker。
 
-由于 Chromium 需要同时运行JavaScript和渲染网页，Electron应用程序的性能可能相对较低，尤其是在处理大量数据或运行复杂计算时。
+### 共享内存
 
-## Worker 多线程
+`SharedArrayBuffer` 是跨进程/线程共享二进制数据的通用方案，免去复制开销。
 
-在 Electron 中，你可以直接使用 Node.js 的多线程模块 `worker_threads` 来实现多线程任务，而无需使用 Web Worker。
+需设置安全响应头（`Cross-Origin-Opener-Policy` / `Cross-Origin-Embedder-Policy`）。
 
-## 缓存管理策略
-
-**缓存淘汰策略**：当缓存空间不足时，应用程序需要决定淘汰哪些数据以腾出空间存储新数据。如 LRU。
-
-## 高清屏幕
-
-clientX 表示光标位置
-
-```
-const offsetX = Math.round((clientX - canvasImgRect.value.left) * screenScaleFactor.value);
-```
-
-## dev tools
-
-load api
-
-复用 chrome 安装的插件，封装的 npm 插件主要是解决路径和插件配置。
-独立 npm app connect 没跑通
-
-[DevTools Extension | Electron](https://www.electronjs.org/docs/latest/tutorial/devtools-extension#manually-loading-a-devtools-extension)
-
-npm 包 electron-devtools-installer，使用了过时语法，并且从 chrome web store 下载，尽管官网依然有推荐。
-
-如果使用 forge 或 builder ，也有对应方式
-
-## 跨进程/线程共享大量数据
-
-SharedArrayBuffer 是通用方案，共享二进制数据缓冲区
-比如在不同 Web Workers 之间，免去复制
-
-需要设置 header 安全头
-
-## 三方库
-
-### TTLCache
-
-内存级缓存，高性能，保护数据
-
-`TTLCache` 确实是内存级缓存，但在 Electron 的架构中，主进程和渲染进程本质上是分离的进程，各自有独立的内存空间，无法直接共享变量或数据。Electron 默认不支持跨进程的直接内存访问，因此渲染进程无法直接访问主进程中的 `TTLCache` 数据，而是需要通过 IPC 从主进程请求数据。这个过程中，数据会被序列化、拷贝传输，导致了性能瓶颈，尤其是对于大数据来说。
-
-## 剪贴板
-
-技术上可行，框架提供功能，其他框架也有这个能力。安全责任在开发商、商店、用户
+### 剪贴板
 
 ```js
 const { clipboard } = require('electron');
-
-setInterval(() => {
-  const text = clipboard.readText();
-  console.log('剪贴板内容:', text);
-}, 1000); // 每秒读取一次
-
+const text = clipboard.readText();
 ```
 
+技术可行，安全责任在开发者。
 
-## 崩溃
+### 快捷键
 
-V8
-[Debugging a NetdiskAPI/Photoluv Crash - Claude](https://claude.ai/chat/801fa98e-c67e-4c32-8db6-da2bd47d8f80)
+注意排除系统默认快捷键（缩放、刷新等）。
 
-## 快捷键
+[electron-toolkit/utils](https://github.dev/alex8088/electron-toolkit/tree/master/packages/utils)
 
-缩小、刷新等排除
+## 工程
 
-https://github.dev/alex8088/electron-toolkit/tree/master/packages/utils
+### 打包与 asar
 
-## mac 公证
+asar 是只读归档格式，随机访问，用 JSON 存储索引：
+- 规避 Windows 路径过长问题
+- 减少文件数，加快安装
+- 主进程代码会编译进可执行文件
 
-waitForNotarization
-依赖 apple CDN，可能得挂梯子
+安全加固：
+- 核心逻辑放主进程，严格控制 IPC
+- asar 哈希完整性校验
+- 重要资源单独保护（指定不打入 asar）
+- 加密存储敏感数据
 
-## 示例项目
+### 热更新
 
-[H-Haynes/TIMP: TIMP音乐聚合平台是一个聚合多个平台的桌面音乐播放软件，支持网易云音乐、QQ音乐、酷狗音乐、酷我音乐](https://github.com/H-Haynes/TIMP)
+**方案一：asar + update.zip 拆分**
+- 主进程走 asar 更新，渲染进程走 zip
+- 优点：降低分发带宽；缺点：增加项目复杂度
+
+**方案二：electron-updater**（推荐）
+- 基于内容分块（CDC）+ range 请求，支持增量更新
+- 官方支持，跨平台（Windows / macOS / Linux）
+
+**BlockMap**：记录分块 hash，更新时比对新旧包，只下载差异部分。
+
+更新策略：强制 vs 可选、静默 vs 交互、更新包签名验证 + HTTPS 传输。
+
+### 签名与公证
+
+- Windows：不签名会有安全警告，使用系统工具签名
+- macOS：需 Apple 公证（`waitForNotarization`），依赖 Apple CDN，可能需要代理
+
+解除隔离属性（本地测试用）：
+```bash
+sudo xattr -rd com.apple.quarantine /path/to/your.app
+```
+
+### DevTools 扩展
+
+复用 Chrome 已安装插件（解决路径和配置问题）：
+
+```js
+// 手动加载
+await session.defaultSession.loadExtension('/path/to/extension')
+```
+
+[DevTools Extension | Electron](https://www.electronjs.org/docs/latest/tutorial/devtools-extension)
+
+> `electron-devtools-installer` 使用过时语法且从 Chrome Web Store 下载，不推荐。
+
+## 性能优化
+
+测量后再优化（参考 VSCode 经验）：
+
+1. **延迟加载**：推迟 `require`（避免 IO 阻塞和递归引用）和 `new`
+2. **V8 Snapshot**：预处理 JS，减少启动解析时间
+3. **窗口预热**：后台隐藏窗口（定位到屏幕外 + `skipTaskBar`），或维护窗口池复用
+
+[如何让 Electron 启动快 1000ms](https://blog.inkdrop.app/how-to-make-your-electron-app-launch-1000ms-faster-32ce1e0bb52c)
+[简单有效的 Chromium 内存优化](https://zhuanlan.zhihu.com/p/700466961)
+
+## 异常与崩溃
+
+### 主进程
+
+不捕获会导致应用退出：
+
+```js
+process.on('uncaughtException', (err) => { /* 日志 + 重启 */ })
+```
+
+[封装参考 electron-unhandled](https://github.dev/sindresorhus/electron-unhandled)
+
+### 渲染进程
+
+表现为白屏/黑屏，原因：JS 未捕获异常、内存耗尽、手动终止。
+
+```js
+window.onerror = (msg, src, line, col, err) => { /* 上报 */ }
+```
+
+监听 `render-process-gone` 事件（含 `reason` 字段），提示用户重新打开窗口。
+
+### crashReporter
+
+收集主进程崩溃信息，支持上报到 Sentry：
+
+```js
+crashReporter.start({ submitURL: 'https://your-sentry-dsn' })
+```
+
+崩溃文件存储于用户目录的 `Crashpad` 文件夹。
+
+[crashReporter API](https://www.electronjs.org/docs/latest/api/crash-reporter)
+
+## 常见问题
+
+### 白屏
+
+Windows 兼容性问题（如 Windows Server）：
+- 追加启动参数 `--no-sandbox`
+- 或打包 32 位版本
+
+系统支持：Win7+（不支持 ARM）、macOS 10.10+。
+
+### 拖拽下载
+
+`event.sender.startDrag` 只支持本地文件，不支持：
+- 获取目标路径
+- 拖拽到系统时下载远程文件
+- 文件夹（无 URL）
+
+替代方案：监听系统文件夹变化（`fs.watch`），局限于有限目录。
+窗口内部拖拽改用 `e.dataTransfer.setData`（参考 VSCode 实现）。
+
+[electron 拖拽下载实现 - 掘金](https://juejin.cn/post/7095557874658574373)
+
+### 原生渲染（WebGL / 视频）
+
+IPC 不适合传大量像素数据，方案：
+- 窗口背景透明 + 子窗口装载 SDL，原生渲染 OpenGL
+- 交互事件需透传给原生模块
+- 共享内存目前无有效方案
+
+## 版本兼容
+
+- Electron 22（Chromium 108）为最后支持 Windows 7/8/8.1 的版本
+- Electron 23 起放弃上述 Windows 版本支持
+
+## 参考
+
+- [Electron 官方文档](https://www.electronjs.org/docs/latest)
+- [Electron 深度实践总结 | 欧长坤](https://changkun.us/archives/2017/03/217/)
+- [分享半年 Electron 开发和优化经验 - 掘金](https://juejin.cn/post/6844904029231775758)
+- [electron 多进程方案解决界面卡顿 - 掘金](https://juejin.cn/post/6999257401522126856)
+- [blackglory Electron 笔记](https://blackglory.me/notes/electron)
+- [示例项目：TIMP 音乐聚合平台](https://github.com/H-Haynes/TIMP)
+- [Vite + Electron 安全模板](https://github.com/cawa-93/vite-electron-builder)
